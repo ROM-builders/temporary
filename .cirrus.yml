@@ -1,6 +1,7 @@
 task:
   name: Build
   persistent_worker: {}
+  timeout_in: 2h
   env:
     USE_CCACHE: 1
   build_script: bash build_rom.sh
