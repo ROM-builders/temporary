@@ -1,4 +1,4 @@
 task:
   name: Build
   persistent_worker: {}
-  build_script: ./build_rom.sh
+  build_script: bash build_rom.sh
