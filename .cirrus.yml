@@ -1,4 +1,6 @@
 task:
   name: Build
   persistent_worker: {}
+  env:
+    USE_CCACHE: 1
   build_script: bash build_rom.sh
