@@ -4,14 +4,17 @@ set -e
 set -x
 
 # sync rom
-repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x
-git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests
+repo init -u git://github.com/DerpFest-11/manifest.git -b 11 --depth=1
+git clone https://github.com/derp-sdm660-common/Local-Manifests --depth=1 -b derp4.19 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+
+#Setup
+rm -rf device/generic/opengl-transport
 
 # build rom
 source build/envsetup.sh
-lunch aosp_mido-user
-m aex -j$(nproc --all)
+lunch derp_X00T-userdebug
+mka derp
 
 # upload rom
 up(){
@@ -19,4 +22,4 @@ up(){
 	# 14 days, 10 GB limit
 }
 
-up out/target/product/mido/*.zip
+up out/target/product/X00T/*.zip
