@@ -5,13 +5,18 @@ task:
     USE_CCACHE: 1
     ROM_NAME: "grep init sync_rom.sh | cut -d / -f 4"
   sync_script:
+    - cp /tmp/mido-AospExtended-Apon77 /tmp/AospExtended -a
     - mkdir -p /tmp/$(bash -c "$ROM_NAME") && cd "$_"
-    - pwd
-    - sleep 1m
     - bash $CIRRUS_WORKING_DIR/sync_rom.sh
   build_script:
+    - cd /tmp/$(bash -c "$ROM_NAME")
     - bash $CIRRUS_WORKING_DIR/build_rom.sh
   upload_script:
+    - cd /tmp/$(bash -c "$ROM_NAME")
     - bash $CIRRUS_WORKING_DIR/upload_rom.sh
   remove_script:
-    - bash $CIRRUS_WORKING_DIR/upload_rom.sh
+    - cd /tmp/$(bash -c "$ROM_NAME")
+    - rm -rf .repo/local_manifests
+    - rm -rf device kernel
+    - rm -rf out/target/product/*/.zip
+    - ls out/target/product/*
