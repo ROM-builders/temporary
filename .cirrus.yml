@@ -5,9 +5,6 @@ task:
     USE_CCACHE: 1
     ROM_NAME: "grep init sync_rom.sh | cut -d / -f 4"
   sync_script:
-    - ls /tmp
-    - rm -rf /tmp/AospExtended
-    - ls /tmp
     - mkdir -p /tmp/$(bash -c "$ROM_NAME") && cd "$_"
     - bash $CIRRUS_WORKING_DIR/sync_rom.sh
   build_script:
