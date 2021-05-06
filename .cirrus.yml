@@ -3,7 +3,6 @@ task:
   persistent_worker: {}
   env:
     USE_CCACHE: 1
-    CIRRUS_WORKING_DIR: /tmp/$CIRRUS_REPO_NAME
   env_script:
     - env
   clone_script:
