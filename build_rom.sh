@@ -4,14 +4,18 @@ set -e
 set -x
 
 # sync rom
-repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x
-git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+repo init --depth=1 -u https://github.com/StyxProject/manifest -b R
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+
+#Setup
+git clone https://github.com/arulebin/device_xiaomi_rosy.git -b styx device/xiaomi/rosy
+git clone https://github.com/arulebin/vendor_xiaomi_rosy.git vendor/xiaomi/rosy
+git clone https://github.com/arulebin/kernel_xiaomi_rosy.git kernel/xiaomi/rosy
 
 # build rom
 source build/envsetup.sh
-lunch aosp_mido-user
-m aex -j$(nproc --all)
+lunch styx_rosy-userdebug
+m styx-ota -j$(nproc --all)
 
 # upload rom
 up(){
@@ -19,4 +23,4 @@ up(){
 	# 14 days, 10 GB limit
 }
 
-up out/target/product/mido/*.zip
+up out/target/product/rosy/*.zip
