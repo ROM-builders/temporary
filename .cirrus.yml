@@ -1,18 +1,17 @@
 task:
   name: Build
   persistent_worker: {}
-  timeout_in: 3h
   env:
     USE_CCACHE: 1
     CIRRUS_WORKING_DIR: /tmp/$CIRRUS_REPO_NAME
   clone_script:
+    - du -hs /tmp/$CIRRUS_REPO_NAME
     - repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x || true
   sync_script:
     - rm -rf .repo/local_manifests || true
     - git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests
     - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
   build_script:
-    - ccache -z
     - source build/envsetup.sh
     - lunch aosp_mido-user
     - m aex -j$(nproc --all)
