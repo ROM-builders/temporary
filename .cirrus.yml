@@ -5,7 +5,6 @@ task:
     USE_CCACHE: 1
     CIRRUS_WORKING_DIR: /tmp/$CIRRUS_REPO_NAME
   clone_script:
-    - du -hs /tmp/$CIRRUS_REPO_NAME
     - repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x || true
   sync_script:
     - rm -rf .repo/local_manifests || true
