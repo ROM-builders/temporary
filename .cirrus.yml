@@ -6,6 +6,7 @@ task:
     ROM_NAME: "grep init build_rom.sh | cut -d / -f 4"
   env_script:
     - env
+    - bash -c "$ROM_NAME"
   sync_script:
     - bash sync_rom.sh
   build_script:
