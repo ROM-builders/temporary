@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -ex
+set -exv
 
 # build rom
 source build/envsetup.sh
