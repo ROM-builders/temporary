@@ -3,7 +3,12 @@ task:
   persistent_worker: {}
   env:
     USE_CCACHE: 1
+    ROM_NAME: "grep init build_rom.sh | cut -d / -f 4"
   env_script:
     - env
-  ls_script:
-    - ls /tmp
+  sync_script:
+    - bash sync_rom.sh
+  build_script:
+    - bash build_rom.sh
+  upload_script:
+    - bash upload_rom.sh
