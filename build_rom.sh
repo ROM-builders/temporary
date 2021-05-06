@@ -1,22 +1,17 @@
 #!/bin/bash
 
-set -e
-set -x
+# Source
 
-# sync rom
-repo init --depth=1 -u https://github.com/StyxProject/manifest -b R
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+repo init -u git://github.com/DotOS/manifest.git -b dot11 --depth=1
 
-#Setup
-git clone https://github.com/arulebin/device_xiaomi_rosy.git -b styx device/xiaomi/rosy
-git clone https://github.com/arulebin/vendor_xiaomi_rosy.git vendor/xiaomi/rosy
-git clone https://github.com/arulebin/kernel_xiaomi_rosy.git kernel/xiaomi/rosy
-rm -rf hardware/qcom-caf/msm8996
+repo sync --force-sync --no-tags --no-clone-bundle
 
-# build rom
+# hals and trees
+rm -rf vendor/codeaurora/telephony hardware/qcom-caf/msm8996/media hardware/qcom-caf/msm8996/audio hardware/qcom-caf/msm8996/display && git clone https://github.com/wave-project/vendor_codeaurora_telephony --depth=1 --single-branch vendor/codeaurora/telephony/ && git clone --single-branch https://github.com/Jabiyeff/android_hardware_qcom_media hardware/qcom-caf/msm8996/media && git clone --single-branch https://github.com/Jabiyeff/android_hardware_qcom_display hardware/qcom-caf/msm8996/display && git clone https://github.com/LineageOS/android_hardware_qcom_audio --single-branch -b lineage-18.1-caf-msm8996 hardware/qcom-caf/msm8996/audio && git clone https://github.com/MiDoNaSR545/android_device_xiaomi_ysl -b dotos --depth=1 device/xiaomi/ysl && git clone https://github.com/MiDoNaSR545/android_vendor_xiaomi_ysl -b r11.0 --depth=1 vendor/xiaomi/ysl && git clone https://github.com/stormbreaker-project/kernel_xiaomi_ysl.git --depth=1 -b eleven kernel/xiaomi/ysl
+
 source build/envsetup.sh
-lunch styx_rosy-user
-m styx-ota -j$(nproc --all)
+lunch dot_ysl-user
+make bacon
 
 # upload rom
 up(){
@@ -24,5 +19,5 @@ up(){
 	# 14 days, 10 GB limit
 }
 
-up out/target/product/rosy/*.zip
+up out/target/product/ysl/*.zip
 
