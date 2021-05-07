@@ -8,12 +8,15 @@ task:
     PATH: "~/bin:$PATH"
   sync_script:
     - cat /home/cirrus/.ccache/ccache.conf
-    - sleep 2m
+    - ccache -s 
     - mkdir -p /tmp/$(bash -c "$ROM_NAME") && cd "$_"
     - rm -rf .repo/local_manifests
     - bash $CIRRUS_WORKING_DIR/sync_rom.sh
+    - ccache -s 
   build_script:
     - ccache -z
+    - ccache -C
+    - ccache -s
     - cd /tmp/$(bash -c "$ROM_NAME")
     - bash $CIRRUS_WORKING_DIR/build_rom.sh
     - ccache -s
