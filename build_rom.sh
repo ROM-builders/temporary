@@ -2,9 +2,8 @@
 
 set -exv
 
-#build rom
+# Build PE
+echo -e "Be ready to build PE"
 . build/envsetup.sh
-lunch aosip_ysl-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
-export WITH_GAPPS=true
-time m kronic
+lunch aosp_ysl-userdebug
+make bacon
