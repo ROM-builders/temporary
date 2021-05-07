@@ -5,9 +5,10 @@ task:
   env:
     USE_CCACHE: 1
     ROM_NAME: "grep init sync_rom.sh | cut -d / -f 4"
+    PATH: "$CIRRUS_WORKING_DIR:$PATH"
   sync_script:
-    - nice=fine
-    - echo $nice
+    - echo $PATH
+    - exit
     - mkdir -p /tmp/$(bash -c "$ROM_NAME") && cd "$_"
     - rm -rf .repo/local_manifests
     - bash $CIRRUS_WORKING_DIR/sync_rom.sh
