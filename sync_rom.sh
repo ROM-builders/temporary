@@ -2,12 +2,8 @@
 
 set -exv
 
-ccache -s
-which ccache
-ccache -V
-cat /home/cirrus/.ccache/ccache.conf
+ccache -p
 sleep 2m
-
 #sync rom
 repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x
 git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests
