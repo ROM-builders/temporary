@@ -15,7 +15,7 @@ task:
     - ccache -z
     - cd ~/$(bash -c "$ROM_NAME")
     - bash $CIRRUS_WORKING_DIR/build_rom.sh
-  ccache_script:
+  ccache_stats_script:
     - ccache -p
     - ccache -s
     - ccache -x
