@@ -1,7 +1,26 @@
 task:
   name: Build
   persistent_worker: {}
-  timeout_in: 2h
+  timeout_in: 90m
   env:
     USE_CCACHE: 1
-  build_script: bash build_rom.sh
+    ROM_NAME: "grep init sync_rom.sh | cut -d / -f 4"
+    PATH: "~/bin:$PATH"
+  sync_script:
+    - mkdir -p ~/$(bash -c "$ROM_NAME")
+    - cd ~/$(bash -c "$ROM_NAME")
+    - rm -rf .repo/local_manifests
+    - bash $CIRRUS_WORKING_DIR/sync_rom.sh
+  build_script:
+    - ccache -z
+    - cd ~/$(bash -c "$ROM_NAME")
+    - bash $CIRRUS_WORKING_DIR/build_rom.sh
+  ccache_stats_script:
+    - ccache -s
+  upload_script:
+    - cd ~/$(bash -c "$ROM_NAME")
+    - bash $CIRRUS_WORKING_DIR/upload_rom.sh
+  remove_script:
+    - cd ~/$(bash -c "$ROM_NAME")
+    - rm -rf .repo/local_manifests
+    - rm -rf out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh | cut -d _ -f 2 | cut -d - -f 1)/*.zip
