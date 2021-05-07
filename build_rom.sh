@@ -3,6 +3,6 @@
 set -exv
 
 # build rom
-source build/envsetup.sh
-lunch derp_vayu-userdebug
-mka derp
+. build/envsetup.sh
+lunch aosp_X00TD-userdebug
+mka bacon -j$(nproc --all)
