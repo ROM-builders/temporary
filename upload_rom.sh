@@ -2,12 +2,10 @@
 
 set -exv
 
-# Upload rom
+# upload rom
 up(){
-	curl --upload-file "$1" https://transfer.sh/"$(basename "$1")"; echo
+	curl --upload-file $1 https://transfer.sh/$(basename $1); echo
+	# 14 days, 10 GB limit
 }
 
-for LOOP in out/target/product/mido/*.zip; do
-	up "$LOOP"
-	echo "$LOOP"
-done
+up out/target/product/umi/*.zip
