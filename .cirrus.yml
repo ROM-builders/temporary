@@ -8,7 +8,8 @@ task:
     PATH: "~/bin:$PATH"
   sync_script:
     - which ccache
-    - cp $CIRRUS_WORKING_DIR/ccache ~/bin
+    - mkdir ~/bin
+    - cp $CIRRUS_WORKING_DIR/ccache ~/bin/ccache
     - mkdir -p /tmp/$(bash -c "$ROM_NAME") && cd "$_"
     - rm -rf .repo/local_manifests
     - bash $CIRRUS_WORKING_DIR/sync_rom.sh
