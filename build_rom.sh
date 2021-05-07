@@ -2,7 +2,7 @@
 
 set -exv
 
-# Build the ROM
+# build rom
 source build/envsetup.sh
-lunch lineage_daisy-userdebug
-mka bacon -j16
+lunch p404_whyred-userdebug
+m bacon
