@@ -4,7 +4,7 @@ set -exv
 
 # Sync ROM source
 repo init -u git://github.com/LineageOS/android.git -b lineage-18.1 --depth=1
-repo sync -j16 --optimized-fetch --no-tags --no-clone-bundle
+repo sync -j16 --optimized-fetch --no-tags --no-clone-bundle --force-sync
 
 # Clone DT, VT, kernel and more needed stuff
 git clone --depth=1 https://github.com/LinkBoi00/vendor_xiaomi_daisy-eleven vendor/xiaomi --depth 1
