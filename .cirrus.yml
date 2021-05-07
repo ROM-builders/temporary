@@ -7,6 +7,8 @@ task:
     ROM_NAME: "grep init sync_rom.sh | cut -d / -f 4"
     PATH: "~/bin:$PATH"
   sync_script:
+    - cat /home/cirrus/.ccache/ccache.conf
+    - sleep 2m
     - mkdir -p /tmp/$(bash -c "$ROM_NAME") && cd "$_"
     - rm -rf .repo/local_manifests
     - bash $CIRRUS_WORKING_DIR/sync_rom.sh
