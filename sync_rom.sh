@@ -2,16 +2,16 @@
 
 set -exv
 
-# Sync Rom
+# sync rom
+repo init -u https://github.com/PixelExperience/manifest -b eleven --depth=1
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
-echo -e "Syncing PixelExperience"
-repo init -u git://github.com/PixelExperience/manifest.git -b eleven-plus --depth=1
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
-
-# Setup vt,kt,dt and hals.
-
-echo -e "Setup envorviment (git clone)"
-git clone https://github.com/sushmit1/device_xiaomi_ysl -b aosp device/xiaomi/ysl --depth 1
-git clone https://github.com/sushmit1/android_vendor_xiaomi_ysl -b r11.0 vendor/xiaomi/ysl --depth 1
-git clone https://github.com/DhruvChhura/kernel-perf kernel/xiaomi/ysl --depth 1
-rm -rf vendor/codeaurora/telephony hardware/qcom-caf/msm8996/media hardware/qcom-caf/msm8996/audio hardware/qcom-caf/msm8996/display && git clone https://github.com/wave-project/vendor_codeaurora_telephony --depth=1 --single-branch vendor/codeaurora/telephony/ && git clone --single-branch https://github.com/Jabiyeff/android_hardware_qcom_media hardware/qcom-caf/msm8996/media && git clone --single-branch https://github.com/Jabiyeff/android_hardware_qcom_display hardware/qcom-caf/msm8996/display &&  git clone https://github.com/LineageOS/android_hardware_qcom_audio --single-branch -b lineage-18.1-caf-msm8996 hardware/qcom-caf/msm8996/audio
+#device
+git clone https://github.com/P-Salik/android_device_realme_RMX1941 device/realme/RMX1941 --depth 1
+git clone https://github.com/P-Salik/android_vendor_realme_RMX1941 vendor/realme/RMX1941 --depth 1
+cd external/selinux
+git fetch https://github.com/PixelExperience/external_selinux/commit/9d6ebe89430ffe0aeeb156f572b2a810f9dc98cc && git cherry-pick 9d6ebe89430ffe0aeeb156f572b2a810f9dc98cc
+git fetch https://github.com/PixelExperience/frameworks_base/commit/37f5a323245b0fd6269752742a2eb7aa3cae24a7 && git cherry-pick 37f5a323245b0fd6269752742a2eb7aa3cae24a7
+git fetch https://github.com/PixelExperience/frameworks_opt_net_wifi/commit/3bd2c14fbda9c079a4dc39ff4601ba54da589609 && git cherry-pick 3bd2c14fbda9c079a4dc39ff4601ba54da589609
+git fetch https://github.com/PixelExperience/frameworks_opt_net_ims/commit/661ae9749b5ea7959aa913f2264dc5e170c63a0a && git cherry-pick 661ae9749b5ea7959aa913f2264dc5e170c63a0a
+cd ../..

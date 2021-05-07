@@ -2,8 +2,7 @@
 
 set -exv
 
-# Build PE
-echo -e "Be ready to build PE"
-. build/envsetup.sh
-lunch aosp_ysl-userdebug
-make bacon
+# building rom
+source build/envsetup.sh
+lunch aosp_RMX1941-userdebug
+mka bacon -j8
