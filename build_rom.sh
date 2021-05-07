@@ -2,6 +2,7 @@
 
 set -exv
 
+# Build the ROM
 source build/envsetup.sh
-lunch aosp_ysl-userdebug
-make bacon
+lunch lineage_daisy-userdebug
+mka bacon -j16

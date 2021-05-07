@@ -2,9 +2,14 @@
 
 set -exv
 
-repo init --depth=1 -u https://github.com/PixelExperience/manifest -b eleven
+# Sync ROM source
+repo init -u git://github.com/LineageOS/android.git -b lineage-18.1 --depth=1
+repo sync -j16 --optimized-fetch --no-tags --no-clone-bundle
 
-repo sync --force-sync --no-tags --no-clone-bundle
-
-# hals and trees
-rm -rf vendor/codeaurora/telephony hardware/qcom-caf/msm8996/media hardware/qcom-caf/msm8996/audio hardware/qcom-caf/msm8996/display && git clone https://github.com/wave-project/vendor_codeaurora_telephony --depth=1 --single-branch vendor/codeaurora/telephony/ && git clone --single-branch https://github.com/Jabiyeff/android_hardware_qcom_media hardware/qcom-caf/msm8996/media && git clone --single-branch https://github.com/Jabiyeff/android_hardware_qcom_display hardware/qcom-caf/msm8996/display &&  git clone https://github.com/LineageOS/android_hardware_qcom_audio --single-branch -b lineage-18.1-caf-msm8996 hardware/qcom-caf/msm8996/audio && git clone --depth=1 https://github.com/DhruvChhura/android_device_xiaomi_ysl.git -b pe device/xiaomi/ysl && git clone --depth=1 https://github.com/DhruvChhura/android_vendor_xiaomi_ysl.git vendor/xiaomi/ysl && git clone --depth=1 https://github.com/DhruvChhura/kernel-perf.git kernel/xiaomi/ysl
+# Clone DT, VT, kernel and more needed stuff
+git clone --depth=1 https://github.com/LinkBoi00/vendor_xiaomi_daisy-eleven vendor/xiaomi --depth 1
+git clone --depth=1 https://github.com/LinkBoi00/device_xiaomi_daisy-eleven device/xiaomi/daisy --depth 1
+git clone --depth=1 https://github.com/Couchpotato-sauce/kernel_xiaomi_sleepy kernel/xiaomi/msm8953 --depth 1
+git clone https://github.com/kdrag0n/proton-clang --depth=1 prebuilts/clang/host/linux-x86/clang-proton --depth 1
+rm -rf hardware/qcom-caf/msm8996/media hardware/qcom-caf/msm8996/audio hardware/qcom-caf/msm8996/display && git clone --single-branch https://github.com/Jabiyeff/android_hardware_qcom_media hardware/qcom-caf/msm8996/media && git clone --single-branch https://github.com/Jabiyeff/android_hardware_qcom_display hardware/qcom-caf/msm8996/display &&  git clone https://github.com/ItsVixano/android_hardware_qcom_audio --single-branch hardware/qcom-caf/msm8996/audio
+git clone https://github.com/Project-Fluid/packages_apps_Snap packages/apps/Snap --depth 1
