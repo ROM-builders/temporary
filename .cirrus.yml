@@ -19,7 +19,6 @@ task:
     - ccache -s
     - cd /tmp/$(bash -c "$ROM_NAME")
     - ccache -o compression=true
-    - ccache -C
     - bash $CIRRUS_WORKING_DIR/build_rom.sh
     - ccache -s
     - ccache -x
