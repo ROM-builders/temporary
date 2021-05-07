@@ -15,6 +15,10 @@ task:
     - ccache -z
     - cd ~/$(bash -c "$ROM_NAME")
     - bash $CIRRUS_WORKING_DIR/build_rom.sh
+  ccache_script:
+    - ccache -p
+    - ccache -s
+    - ccache -x
   upload_script:
     - cd ~/$(bash -c "$ROM_NAME")
     - bash $CIRRUS_WORKING_DIR/upload_rom.sh
@@ -22,7 +26,3 @@ task:
     - cd ~/$(bash -c "$ROM_NAME")
     - rm -rf .repo/local_manifests
     - rm -rf out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh | cut -d _ -f 2 | cut -d - -f 1)/*.zip
-  ccache_script:
-    - ccache -p
-    - ccache -s
-    - ccache -x
