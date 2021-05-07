@@ -7,20 +7,22 @@ task:
     ROM_NAME: "grep init sync_rom.sh | cut -d / -f 4"
     PATH: "~/bin:$PATH"
   sync_script:
-    - ccache -p
-    - mkdir -p /tmp/$(bash -c "$ROM_NAME") && cd "$_"
+    - mkdir -p ~/$(bash -c "$ROM_NAME")
+    - cd ~/$(bash -c "$ROM_NAME")
     - rm -rf .repo/local_manifests
     - bash $CIRRUS_WORKING_DIR/sync_rom.sh
   build_script:
     - ccache -z
-    - cd /tmp/$(bash -c "$ROM_NAME")
+    - cd ~/$(bash -c "$ROM_NAME")
     - bash $CIRRUS_WORKING_DIR/build_rom.sh
-    - ccache -s
-    - ccache -x
   upload_script:
-    - cd /tmp/$(bash -c "$ROM_NAME")
+    - cd ~/$(bash -c "$ROM_NAME")
     - bash $CIRRUS_WORKING_DIR/upload_rom.sh
   remove_script:
-    - cd /tmp/$(bash -c "$ROM_NAME")
+    - cd ~/$(bash -c "$ROM_NAME")
     - rm -rf .repo/local_manifests
     - rm -rf out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh | cut -d _ -f 2 | cut -d - -f 1)/*.zip
+  ccache_script:
+    - ccache -p
+    - ccache -s
+    - ccache -x
