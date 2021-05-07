@@ -2,7 +2,7 @@
 
 set -exv
 
-# Build the ROM
-source build/envsetup.sh
-lunch lineage_daisy-userdebug
-mka bacon -j16
+# Run Build
+. build/envsetup.sh
+lunch styx_rosy-user
+m styx-ota -j$(nproc --all)

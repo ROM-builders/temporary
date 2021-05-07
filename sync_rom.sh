@@ -2,13 +2,12 @@
 
 set -exv
 
-# Sync ROM source
-repo init -u git://github.com/LineageOS/android.git -b lineage-18.1 --depth=1
-repo sync -j16 --optimized-fetch --no-tags --no-clone-bundle
+# Sync Rom
+repo init -u --depth=1 https://github.com/StyxProject/manifest -b R --depth=1
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
-# Clone DT, VT, kernel and more needed stuff
-git clone --depth=1 https://github.com/LinkBoi00/vendor_xiaomi_daisy-eleven vendor/xiaomi --depth 1
-git clone --depth=1 https://github.com/LinkBoi00/device_xiaomi_daisy-eleven device/xiaomi/daisy --depth 1
-git clone --depth=1 https://github.com/Couchpotato-sauce/kernel_xiaomi_sleepy kernel/xiaomi/msm8953 --depth 1
-git clone https://github.com/kdrag0n/proton-clang --depth=1 prebuilts/clang/host/linux-x86/clang-proton --depth 1
-rm -rf hardware/qcom-caf/msm8996/media hardware/qcom-caf/msm8996/audio hardware/qcom-caf/msm8996/display && git clone --single-branch https://github.com/Jabiyeff/android_hardware_qcom_media hardware/qcom-caf/msm8996/media && git clone --single-branch https://github.com/Jabiyeff/android_hardware_qcom_display hardware/qcom-caf/msm8996/display &&  git clone https://github.com/ItsVixano/android_hardware_qcom_audio --single-branch hardware/qcom-caf/msm8996/audio
+# Setup vt,kt,dt and hals.
+git clone https://github.com/StyxProject-Devices/device_xiaomi_rosy.git -b R device/xiaomi/rosy --depth 1
+git clone https://github.com/arulebin/vendor_xiaomi_rosy  vendor/xiaomi/rosy --depth 1
+git clone https://github.com/arulebin/kernel_xiaomi_rosy --depth=1 kernel/xiaomi/rosy
+rm -rf hardware/qcom-caf/msm8996 && git clone --single-branch https://github.com/Jabiyeff/android_hardware_qcom_media hardware/qcom-caf/msm8996-rosy/media && git clone --single-branch https://github.com/Jabiyeff/android_hardware_qcom_display hardware/qcom-caf/msm8996-rosy/display &&  git clone https://github.com/LineageOS/android_hardware_qcom_audio --single-branch -b lineage-18.1-caf-msm8996 hardware/qcom-caf/msm8996-rosy/audio
