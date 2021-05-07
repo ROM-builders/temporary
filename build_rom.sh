@@ -10,4 +10,4 @@ export SKIP_API_CHECKS=true
 mka api-stubs-docs
 mka system-api-stubs-docs
 mka test-api-stubs-docs
-mka bacon -j8
+mka bacon -j$(nproc --all)
