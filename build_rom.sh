@@ -2,7 +2,9 @@
 
 set -exv
 
-# build rom
-source build/envsetup.sh
-lunch fluid_umi-userdebug
-mka bacon -j64
+#build rom
+. build/envsetup.sh
+lunch aosip_ysl-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
+export WITH_GAPPS=true
+time m kronic
