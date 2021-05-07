@@ -7,7 +7,9 @@ task:
     ROM_NAME: "grep init sync_rom.sh | cut -d / -f 4"
     PATH: "~/bin:$PATH"
   sync_script:
+    - echo 'max_size = 1024.0G' > /home/cirrus/.ccache/ccache.conf
     - cat /home/cirrus/.ccache/ccache.conf
+    - ccache -p
     - ccache -s 
     - mkdir -p /tmp/$(bash -c "$ROM_NAME") && cd "$_"
     - rm -rf .repo/local_manifests
@@ -21,7 +23,7 @@ task:
     - bash $CIRRUS_WORKING_DIR/build_rom.sh
     - ccache -s
     - ccache -x
-    - ccache -v
+    - ccache -V
   upload_script:
     - cd /tmp/$(bash -c "$ROM_NAME")
     - bash $CIRRUS_WORKING_DIR/upload_rom.sh
