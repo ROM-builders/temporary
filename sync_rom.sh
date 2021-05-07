@@ -3,7 +3,7 @@
 set -exv
 
 # sync rom
-repo init -u https://github.com/PixelPlusUI-Elle/manifest -b eleven
+repo init -u https://github.com/PixelPlusUI-Elle/manifest -b eleven --depth=1
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 #Setup
