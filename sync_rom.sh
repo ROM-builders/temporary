@@ -3,7 +3,7 @@
 set -exv
 
 # Sync Rom
-repo init -u --depth=1 https://github.com/StyxProject/manifest -b R --depth=1
+repo init -u --depth=1 https://github.com/StyxProject/manifest -b R
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 # Setup vt,kt,dt and hals.
