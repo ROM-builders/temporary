@@ -13,6 +13,7 @@ task:
   build_script:
     - cd /tmp/$(bash -c "$ROM_NAME")
     - bash $CIRRUS_WORKING_DIR/build_rom.sh
+    - ccache -s
   upload_script:
     - cd /tmp/$(bash -c "$ROM_NAME")
     - bash $CIRRUS_WORKING_DIR/upload_rom.sh
