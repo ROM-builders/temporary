@@ -5,12 +5,10 @@ task:
   env:
     USE_CCACHE: 1
     ROM_NAME: "grep init sync_rom.sh | cut -d / -f 4"
-    PATH: "~/bin:$PATH"
+      #PATH: "~/bin:$PATH"
   sync_script:
-    - which ccache
-    - cp $CIRRUS_WORKING_DIR/ccache ~/bin/ccache
-    - which ccache
     - ccache -V
+    - cccahe -p 
     - sleep 2m
     - mkdir -p /tmp/$(bash -c "$ROM_NAME") && cd "$_"
     - rm -rf .repo/local_manifests
