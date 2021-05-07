@@ -13,13 +13,10 @@ task:
     - bash $CIRRUS_WORKING_DIR/sync_rom.sh
   build_script:
     - ccache -z
-    - ccache -s
     - cd /tmp/$(bash -c "$ROM_NAME")
-    - ccache -o compression=true
     - bash $CIRRUS_WORKING_DIR/build_rom.sh
     - ccache -s
     - ccache -x
-    - ccache -V
   upload_script:
     - cd /tmp/$(bash -c "$ROM_NAME")
     - bash $CIRRUS_WORKING_DIR/upload_rom.sh
