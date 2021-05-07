@@ -2,7 +2,6 @@
 
 set -exv
 
-# Build the ROM
-source build/envsetup.sh
-lunch lineage_daisy-userdebug
-mka bacon -j16
+. build/envsetup.sh
+lunch soni_begonia-userdebug
+mka bacon

@@ -2,13 +2,26 @@
 
 set -exv
 
-# Sync ROM source
-repo init -u git://github.com/LineageOS/android.git -b lineage-18.1 --depth=1
-repo sync -j16 --optimized-fetch --no-tags --no-clone-bundle
+repo_init () {
+	repo init -q --no-repo-verify --depth=1 -u git://github.com/XOSP-Reborn/manifest.git -b eleven -g default,-device,-mips,-darwin,-notdefault
+}
 
-# Clone DT, VT, kernel and more needed stuff
-git clone --depth=1 https://github.com/LinkBoi00/vendor_xiaomi_daisy-eleven vendor/xiaomi --depth 1
-git clone --depth=1 https://github.com/LinkBoi00/device_xiaomi_daisy-eleven device/xiaomi/daisy --depth 1
-git clone --depth=1 https://github.com/Couchpotato-sauce/kernel_xiaomi_sleepy kernel/xiaomi/msm8953 --depth 1
-git clone https://github.com/kdrag0n/proton-clang --depth=1 prebuilts/clang/host/linux-x86/clang-proton --depth 1
-rm -rf hardware/qcom-caf/msm8996/media hardware/qcom-caf/msm8996/audio hardware/qcom-caf/msm8996/display && git clone --single-branch https://github.com/Jabiyeff/android_hardware_qcom_media hardware/qcom-caf/msm8996/media && git clone --single-branch https://github.com/Jabiyeff/android_hardware_qcom_display hardware/qcom-caf/msm8996/display &&  git clone https://github.com/ItsVixano/android_hardware_qcom_audio --single-branch hardware/qcom-caf/msm8996/audio
+repo_sync () {
+  repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+}
+
+clone_dependencies () {
+  git clone https://github.com/sasukeuchiha-clan/redmi_begonia -b soni device/redmi/begonia --depth 1
+  git clone https://github.com/PotatoDevices/vendor_redmi_begonia vendor/redmi/begonia --depth 1
+  git clone https://github.com/PotatoDevices/vendor_redmi_begonia-firmware vendor/redmi/begonia-firmware --depth 1
+  git clone https://github.com/ZyCromerZ/begonia -b 20210205/main-ALMK2 kernel/xiaomi/mt6785 --depth 1
+  git clone https://github.com/PotatoDevices/vendor_mediatek_opensource vendor/mediatek/opensource --depth 1
+  git clone https://github.com/PotatoDevices/vendor_mediatek_interfaces vendor/mediatek/interfaces --depth 1
+  git clone https://github.com/Descendant-Devices/vendor_mediatek_ims vendor/mediatek/ims --depth 1
+  git clone https://github.com/PotatoProject/device_mediatek_sepolicy -b dumaloo-release device/mediatek/sepolicy --depth 1
+}
+
+repo_init
+repo_sync
+clone_dependencies
+
