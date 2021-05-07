@@ -7,4 +7,4 @@ set -exv
 lunch aosip_ysl-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export WITH_GAPPS=true
-time m kronic
+time m kronic -j$(nproc --all)
