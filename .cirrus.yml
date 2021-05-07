@@ -7,8 +7,6 @@ task:
     ROM_NAME: "grep init sync_rom.sh | cut -d / -f 4"
     PATH: "~/bin:$PATH"
   sync_script:
-    - ccache -C
-    - sleep 2m
     - mkdir -p ~/$(bash -c "$ROM_NAME")
     - cd ~/$(bash -c "$ROM_NAME")
     - rm -rf .repo/local_manifests
