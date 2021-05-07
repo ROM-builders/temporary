@@ -5,6 +5,7 @@ set -exv
 ccache -s
 which ccache
 ccache -V
+cat /home/cirrus/.ccache/ccache.conf
 sleep 2m
 
 #sync rom
