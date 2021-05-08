@@ -10,6 +10,7 @@ task:
     - mkdir -p ~/$(bash -c "$ROM_NAME")
     - cd ~/$(bash -c "$ROM_NAME")
     - rm -rf .repo/local_manifests
+    - rm -rf hardware/qcom-caf/*
     - bash $CIRRUS_WORKING_DIR/sync_rom.sh
   build_script:
     - ccache -z
