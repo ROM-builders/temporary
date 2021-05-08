@@ -2,10 +2,10 @@
 
 set -exv
 
-# upload rom
-up(){
+# Upload ROM
+upload(){
 	curl --upload-file $1 https://transfer.sh/$(basename $1); echo
 	# 14 days, 10 GB limit
 }
 
-up out/target/product/daisy/*.zip
+upload out/target/product/daisy/*.zip
