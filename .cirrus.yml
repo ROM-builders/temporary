@@ -2,6 +2,7 @@ task:
   name: Build
   persistent_worker: {}
   CIRRUS_CLONE_DEPTH: 1
+  CIRRUS_WORKING_DIR: "/dev/shm"
   timeout_in: 90m
   env:
     USE_CCACHE: 1
