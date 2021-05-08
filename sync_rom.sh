@@ -3,30 +3,15 @@
 set -exv
 
 # sync rom
-repo init --depth=1 -u https://github.com/PixelPlusUI/manifest -b eleven
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+repo init --depth=1 -u https://github.com/Project-Fluid/manifest.git -b fluid-11
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
-#device
-git clone https://github.com/P-Salik/android_device_realme_RMX1941 device/realme/RMX1941
-
-git clone https://github.com/P-Salik/android_vendor_realme_RMX1941 vendor/realme/RMX1941
-
-cd external/selinux
-wget https://github.com/PixelExperience/external_selinux/commit/9d6ebe89430ffe0aeeb156f572b2a810f9dc98cc.patch
-patch -p1 < *.patch
-cd ../..
-
-cd frameworks/base
-wget https://github.com/PixelExperience/frameworks_base/commit/37f5a323245b0fd6269752742a2eb7aa3cae24a7.patch
-patch -p1 < *.patch
-cd ../..
-
-cd frameworks/opt/net/wifi
-wget https://github.com/PixelExperience/frameworks_opt_net_wifi/commit/3bd2c14fbda9c079a4dc39ff4601ba54da589609.patch
-patch -p1 < *.patch
-cd ../../../..
-
-cd frameworks/opt/net/ims
-wget https://github.com/PixelExperience/frameworks_opt_net_ims/commit/661ae9749b5ea7959aa913f2264dc5e170c63a0a.patch
-patch -p1 < *.patch
-cd ../../../../
+# Setup
+find hardware/ril/libril vendor/qcom/opensource/power .repo/ -delete
+git clone https://github.com/NusantaraProject-ROM/android_vendor_qcom_opensource_power -b 11 vendor/qcom/opensource/power
+git clone https://github.com/nnippon/android_hardware_samsung -b aosp --depth=1 hardware/samsung
+git clone https://github.com/nnippon/android_device_samsung_j4primelte -b fluid --depth=1 device/samsung/j4primelte
+git clone https://github.com/nnippon/android_vendor_samsung-common --depth=1 vendor/samsung
+git clone https://github.com/nnippon/android_device_samsung_msm8917-common -b fluid --depth=1 device/samsung/msm8917-common
+git clone https://github.com/nnippon/android_kernel_samsung_msm8917 --depth=1 kernel/samsung/msm8917
+git clone https://github.com/lostark13/vendor_MiuiCamera --depth=1 vendor/MiuiCamera
