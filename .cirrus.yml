@@ -1,27 +1,9 @@
 task:
-  name: Build
-  persistent_worker: {}
-  CIRRUS_CLONE_DEPTH: 1
-  CIRRUS_WORKING_DIR: "/dev/shm"
-  timeout_in: 90m
-  env:
-    USE_CCACHE: 1
-    ROM_NAME: "grep init sync_rom.sh | cut -d / -f 4"
-    PATH: "~/bin:$PATH"
-  sync_script:
-    - mkdir -p ~/$(bash -c "$ROM_NAME")
-    - cd ~/$(bash -c "$ROM_NAME")
-    - rm -rf .repo/local_manifests
-    - bash $CIRRUS_WORKING_DIR/sync_rom.sh
-  build_script:
-    - ccache -z
-    - cd ~/$(bash -c "$ROM_NAME")
-    - bash $CIRRUS_WORKING_DIR/build_rom.sh
-  ccache_stats_script:
-    - ccache -s
-  upload_script:
-    - cd ~/$(bash -c "$ROM_NAME")
-    - bash $CIRRUS_WORKING_DIR/upload_rom.sh
-  remove_script:
-    - cd ~/$(bash -c "$ROM_NAME")
-    - rm -rf out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh | cut -d _ -f 2 | cut -d - -f 1)/*.zip
+    name: Sync test
+    timeout_in: 120m
+    container:
+      image: apon77/aosp:latest
+      cpu: 2
+      memory: 4G
+    sync_script:
+      - bash sync_rom.sh
