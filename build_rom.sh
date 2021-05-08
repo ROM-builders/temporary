@@ -6,3 +6,4 @@ set -exv
 source build/envsetup.sh
 lunch derp_vayu-userdebug
 mka derp
+
