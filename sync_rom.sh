@@ -3,14 +3,7 @@
 set -exv
 
 # sync rom
-repo init --depth=1 -u https://github.com/Project-Fluid/manifest.git -b fluid-11
+repo init -u https://github.com/Project-Fluid/manifest.git --depth=1 -b fluid-11
+git clone https://github.com/adrian-8901/local_mainfest.git --depth-1 -b fluid .repo/local_mainfests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 echo finished sync
-
-# Setup
-git clone https://github.com/adrian-8901/device_xiaomi_umi.git -b fluid device/xiaomi/umi
-git clone https://github.com/adrian-8901/device_xiaomi_sm8250-common.git -b fluid device/xiaomi/sm8250-common
-git clone https://github.com/dataoutputstream/vendor_xiaomi_sm8250.git -b fluid vendor/xiaomi/sm8250-common
-git clone https://github.com/xiaomi-sm8250-devs/android_kernel_xiaomi_sm8250.git -b lineage-18.1 kernel/xiaomi/sm8250-common
-
-
