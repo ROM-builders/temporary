@@ -4,6 +4,6 @@ task:
     container:
       image: apon77/aosp:latest
       cpu: 2
-      memory: 4G
+      memory: 8G
     sync_script:
       - bash sync_rom.sh
