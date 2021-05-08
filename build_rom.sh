@@ -3,6 +3,6 @@
 set -exv
 
 # building rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch aosp_RMX1941-userdebug
-mka bacon -j8
+mka bacon
