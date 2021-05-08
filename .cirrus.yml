@@ -1,6 +1,7 @@
 task:
   name: Build
   persistent_worker: {}
+  CIRRUS_CLONE_DEPTH: 1
   timeout_in: 90m
   env:
     USE_CCACHE: 1
