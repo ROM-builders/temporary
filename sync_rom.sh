@@ -1,10 +1,14 @@
 #!/bin/bash
 
-# sync rom
-repo init --depth=1 -u git://github.com/CipherOS/android_manifest.git -b eleven
+set -exv
 
-git clone https://github.com/DhruvChhura/frostmanifest.git --depth=1 -b derp .repo/local_manifests
+# Init Repo
+repo init --no-repo-verify --depth=1 -u https://github.com/AOSPA/manifest -b ruby -g default,-device,-mips,-darwin,-notdefault
+sed -i 's/source.codeaurora.org/portland.source.codeaurora.org/g' .repo/manifests/default.xml
 
+# Device sources
+git clone https://github.com/AOSPA-Sakura/sakura_local_manifests .repo/local_manifests
+
+# Sync Repo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
-
 
