@@ -3,7 +3,6 @@
 set -exv
 
 # sync rom
-repo init -u git://github.com/XOSP-Reborn/manifest.git -b eleven --depth=1
-git clone https://github.com/sasukeuchiha-clan/Begonia --depth=1 -b soni .repo/local_manifests
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
-rm -rf hardware/qcom-caf*
+repo init --depth=1 -u https://github.com/CherishOS/android_manifest.git -b eleven
+git clone https://github.com/sasukeuchiha-clan/Begonia --depth 1 -b CherishOS .repo/local_manifests
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
