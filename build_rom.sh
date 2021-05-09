@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Source
+# Source.
 
 repo init -u git://github.com/DotOS/manifest.git -b dot11 --depth=1
 
