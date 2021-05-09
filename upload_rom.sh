@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -exv
-
 # upload rom
 up(){
 	curl --upload-file $1 https://transfer.sh/$(basename $1); echo
