@@ -36,7 +36,7 @@ cd ../../../../
 
 # build rom
 . build/envsetup.sh
-lunch arrow_RMX1941-userdebug
+lunch arrow_RMX1941-eng
 chmod -R 755 out/
 m bacon
 
