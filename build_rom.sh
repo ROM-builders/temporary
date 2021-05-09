@@ -3,7 +3,7 @@
 set -exv
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch lineage_mojito-userdebug
 export SKIP_ABI_CHECKS=true 
 export SKIP_API_CHECKS=true
