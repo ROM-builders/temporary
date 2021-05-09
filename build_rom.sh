@@ -2,6 +2,6 @@
 
 set -exv
 
-. build/envsetup.sh
-lunch soni_begonia-userdebug
-mka bacon
+source build/envsetup.sh
+lunch cherish_begonia-userdebug
+mka bacon -j$(nproc --all)
