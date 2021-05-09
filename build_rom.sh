@@ -2,7 +2,7 @@
 
 # Build the ROM
 source build/envsetup.sh
-lunch lineage_daisy-userdebug
+lunch lineage_daisy-user
 mka bacon
 
 
