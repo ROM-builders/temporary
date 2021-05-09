@@ -8,4 +8,4 @@ up(){
 	# 14 days, 10 GB limit
 }
 
-up out/target/product/j4primelte/*.zip
+up out/target/product/j*primelte/*.zip
