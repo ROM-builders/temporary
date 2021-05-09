@@ -4,14 +4,15 @@ set -e
 set -x
 
 # sync rom
-repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x
-git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests
+repo init --depth=1 -u https://github.com/PixelPlusUI-Elle/manifest -b eleven
+git clone https://github.com/asus-tree-4-19/local_manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 # build rom
-source build/envsetup.sh
-lunch aosp_mido-user
-m aex -j$(nproc --all)
+. build/envsetup.sh
+lunch aosp_X00T-userdebug
+
+mka bacon -j$(nproc --all)
 
 # upload rom
 up(){
@@ -19,4 +20,4 @@ up(){
 	# 14 days, 10 GB limit
 }
 
-up out/target/product/mido/*.zip
+up out/target/product/X00T/*.zip
