@@ -10,7 +10,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lunch_CPH1859-userdebug
+lunch lineage_CPH1859-userdebug
 make bacon  -j$(nproc --all)
 
 # upload rom
