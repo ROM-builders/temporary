@@ -6,5 +6,4 @@ set -exv
 source build/envsetup.sh
 lunch aosp_mido-user
 #m aex -j$(nproc --all)
-make clean
 make init
