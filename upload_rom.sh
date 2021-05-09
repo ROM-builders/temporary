@@ -9,4 +9,3 @@ up(){
 }
 
 up out/target/product/vayu/*.zip
-
