@@ -3,6 +3,7 @@
 set -exv
 
 # Run Build
-. build/envsetup.sh
-lunch styx_rosy-user
-m styx-ota -j$(nproc --all)
+source build/envsetup.sh
+export CIPHER_OFFICIAL=true
+lunch lineage_rosy-userdebug
+make bacon -j$(nproc --all)
