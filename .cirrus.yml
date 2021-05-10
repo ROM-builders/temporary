@@ -4,7 +4,7 @@ test_task:
   test_script:
     - ./ccache -V
     - which ccache
-    - sleep 1m
+    - sleep 5
 task:
   name: Build
   depends_on:
@@ -18,5 +18,6 @@ task:
         volumes:
           - /home/cirrus/roms:/tmp/roms
   check_script:
+    - ccache -V
     - sleep 2
 
