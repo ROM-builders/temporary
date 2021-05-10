@@ -17,7 +17,7 @@ task:
         memory: 40g
         volumes:
           - /home/cirrus/roms:/tmp/roms
-          - /home/cirrus/.config/rclone:~/.config/rclone
+          - /home/cirrus/.config/rclone:/home/ci/.config/rclone
   check_script:
     - ccache -V
     - rclone lsd cirrus:
