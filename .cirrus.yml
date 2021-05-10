@@ -4,7 +4,7 @@ test_task:
   test_script:
     - ./ccache -V
     - which ccache
-    - sleep 5
+    - sleep 1
 task:
   name: Build
   depends_on:
@@ -17,7 +17,9 @@ task:
         memory: 40g
         volumes:
           - /home/cirrus/roms:/tmp/roms
+          - /home/cirrus/.config/rclone:~/.config/rclone
   check_script:
     - ccache -V
+    - rclone lsd cirrus:
     - sleep 2
 
