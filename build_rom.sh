@@ -9,7 +9,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_mido-user
-m aex -j10
+m init
 
 # upload rom
 time rclone copy out/target/product/mido/AospExtended*.zip cirrus:mido -P
