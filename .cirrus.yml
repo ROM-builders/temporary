@@ -14,4 +14,4 @@ task:
     - nproc
     - ls /tmp/home
     - ccache -V
-    - which cccahe
+    - which ccache
