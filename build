@@ -4,7 +4,7 @@ rm -rf .repo
 
 
 . build/envsetup.sh
-lunch aosp_RMX2193-eng
+lunch aosp_RMX1941-eng
 export SKIP_API_CHECKS=true
 export SKIP_ABI_CHECKS=true
 cd /tmp/rom
@@ -29,11 +29,11 @@ make_metalava(){
 
 make_rom(){
 	mka bacon -j8
-	zip=$(up out/target/product/RMX2193/*zip)
+	zip=$(up out/target/product/RMX1941/*zip)
 	echo " "
 	echo "$zip"
 	curl -sL https://git.io/file-transfer | sh
-	./transfer wet out/target/product/RMX2193/*zip
+	./transfer wet out/target/product/RMX1941/*zip
 }
 
 make_metalava
