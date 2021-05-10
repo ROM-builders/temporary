@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -exv
+
 MANIFEST=https://github.com/Evolution-X/manifest
 BRANCH=elle
 
