@@ -77,5 +77,3 @@ else
     echo "Looks like you have more than 14 lines in your script, please use the provided script with your rom bringup and dont add extra lines"
     exit 1
 fi
-
-
