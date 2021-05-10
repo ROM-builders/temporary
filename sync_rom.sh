@@ -3,6 +3,8 @@
 set -e
 set -x
 
+apt install wget
+
 # sync rom
 repo init --depth=1 -u https://github.com/ArrowOS/android_manifest.git -b arrow-11.0
 git clone https://github.com/P-Salik/local_manifest --depth=11 -b main .repo/local_manifests
