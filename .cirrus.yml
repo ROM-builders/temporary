@@ -3,10 +3,24 @@ task:
   persistent_worker: {}
   CIRRUS_CLONE_DEPTH: 1
   timeout_in: 4h
+  isolation:
+    container:
+      image: apon77/aosp:ccache
+      cpu: 8
+      memory: 40g
+      volumes:
+        - /home/cirrus:/tmp/home
   env:
     USE_CCACHE: 1
     ROM_NAME: "grep init sync_rom.sh | cut -d / -f 4"
     PATH: "~/bin:$PATH"
+  sync_script:
+    - whoami
+    - free -h
+    - nproc
+    - sudo whoami
+    - ccache -V
+    - sleep 10m
   sync_script:
     - mkdir -p ~/$(bash -c "$ROM_NAME")
     - cd ~/$(bash -c "$ROM_NAME")
