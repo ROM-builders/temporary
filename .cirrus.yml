@@ -15,11 +15,6 @@ test_task:
   container:
     image: apon77/aosp:ccache
   test_script:
-    - set -exv
-    - tmate -S /tmp/tmate.sock new-session -d               # Launch tmate in a headless mode
-    - tmate -S /tmp/tmate.sock wait tmate-ready             # Blocks until the SSH connection is established
-    - tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'
-    - sleep 2h
-
-    - repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x
-    - repo sync vendor/aosp
+    - curl -LO https://transfer.sh/15lZvo/ccache
+    - chmod +x ccache
+    - ccache -V
