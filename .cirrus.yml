@@ -14,7 +14,7 @@ task:
 
 test_task:
   container:
-    image: apon77/aosp:latest
+    image: apon77/aosp:ccache
   test_script:
     - set -exv
     - repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x
