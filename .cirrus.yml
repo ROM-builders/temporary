@@ -23,6 +23,7 @@ task:
           - /home/cirrus/.config:/home/ci/.config
   build_script:
     - set -exv
+    - rclone listremotes
     - mkdir -p ~/roms/$(bash -c "$ROM_NAME")
     - cd ~/roms/$(bash -c "$ROM_NAME")
     - rm -rf .repo/local_manifests
