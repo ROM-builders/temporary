@@ -9,7 +9,7 @@ task:
     - test
   env:
     USE_CCACHE: 1
-    ROM_NAME: "sed -n '4p' < build_rom.sh | cut -d / -f 4"
+    ROM_NAME: "sed -n '4p' < $CIRRUS_WORKING_DIR/build_rom.sh | cut -d / -f 4"
   timeout_in: 4h
   persistent_worker:
     isolation:
