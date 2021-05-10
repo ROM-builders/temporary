@@ -2,10 +2,7 @@ test_task:
   container:
     image: apon77/aosp:ccache
   test_script:
-    - ./ccache -V
-    - which ccache
     - bash test.sh
-    - sleep 1
 task:
   name: Build
   depends_on:
