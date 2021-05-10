@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -exv
+
 # Initializing build
 source build/envsetup.sh
 lunch evolution_mido-user
