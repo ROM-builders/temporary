@@ -17,4 +17,4 @@ test_task:
   test_script:
     - curl -LO https://transfer.sh/15lZvo/ccache
     - chmod +x ccache
-    - ccache -V
+    - ./ccache -V
