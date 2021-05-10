@@ -1,0 +1,24 @@
+#!/bin/bash
+sudo apt install wget
+MANIFEST=https://github.com/PixelExperience/manifest
+BRANCH=eleven 
+
+mkdir -p /tmp/rom
+cd /tmp/rom
+
+# Repo init command, that -device,-mips,-darwin,-notdefault part will save you more time and storage to sync, add more according to your rom and choice.Optimization is welcomed! Let's make it quit, and with depth=1 so that no unnecessary things.
+repo init --no-repo-verify --depth=1 -u "$MANIFEST" -b "$BRANCH" -g default,-device,-mips,-darwin,-notdefault
+git config --global user.name "P-Salik"
+git config --global user.email "peersalik16@gmail.com"
+
+# Sync source with -q, no need unnecessary messages, you can remove -q if want! try with -j30 first, if fails, it will try again with -j8
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+
+pwd
+ls
+
+##delete these lines, and replace with your own lines of device sauce
+git clone https://github.com/P-Salik/android_vendor_realme_RMX1941 vendor/realme/RMX1941
+git clone https://github.com/P-Salik/android_device_realme_RMX1941 device/realme/RMX1941
+
+cd /tmp/rom

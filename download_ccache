@@ -1,0 +1,10 @@
+#!/bin/bash
+
+url=https://ghostmirror.hitesh920.workers.dev/0://ganja.tar.gz
+
+cd /tmp # Where to download cccahe
+time aria2c $url -x16 -s50
+echo "dl done"
+time tar xf ganja.tar.gz
+echo "unzip done"
+find ganja.tar.gz -delete
