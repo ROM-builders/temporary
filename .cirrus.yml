@@ -6,40 +6,12 @@ task:
     CIRRUS_WORKING_DIR: /tmp/$CIRRUS_REPO_NAME
   env_script:
     - env
-  clone_script:
-    - repo init --depth=1 -u https://github.com/ArrowOS/android_manifest.git -b arrow-11.0
   sync_script:
-    - rm -rf .repo/local_manifests
-    - git clone https://github.com/P-Salik/local_manifest --depth 1 -b main .repo/local_manifests
-    - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
-    - cd external/selinux
-    - wget https://github.com/PixelExperience/external_selinux/commit/9d6ebe89430ffe0aeeb156f572b2a810f9dc98cc.patch
-    - patch -p1 < *.patch
-    - cd ../..
-    - cd frameworks/base
-    - wget https://github.com/PixelExperience/frameworks_base/commit/37f5a323245b0fd6269752742a2eb7aa3cae24a7.patch
-    - patch -p1 < *.patch
-    - cd ../..
-    - cd frameworks/opt/net/wifi
-    - wget https://github.com/PixelExperience/frameworks_opt_net_wifi/commit/3bd2c14fbda9c079a4dc39ff4601ba54da589609.patch
-    - patch -p1 < *.patch
-    - cd ../../../..
-    - cd frameworks/opt/net/ims
-    - wget https://github.com/PixelExperience/frameworks_opt_net_ims/commit/661ae9749b5ea7959aa913f2264dc5e170c63a0a.patch
-    - patch -p1 < *.patch
-    - cd ../../../..
-
+    - rm -rf .repo/local_manifests || true
+    - bash sync_rom.sh
   build_script:
-    - . build/envsetup.sh
-    - lunch arrow_RMX1941-userdebug
-    - chmod -R 755 out/
-    - m bacon
+    - bash build_rom.sh
   ccache_stats_script:
     - ccache -s
-  upload_script: |
-    up() {
-      curl --upload-file $1 https://transfer.sh/$(basename $1); echo
-      # 14 days, 10 GB limit
-    }
-
-    up out/target/product/RMX1941/*.zip
+  upload_script:
+    - bash upload_rom.sh
