@@ -3,6 +3,7 @@ test_task:
     image: apon77/aosp:ccache
   test_script:
     - ./ccache -V
+    - which ccache
     - sleep 1m
 task:
   name: Build
