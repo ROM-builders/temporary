@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -exv
+
 # Upload Function
 up() {
       curl --upload-file $1 https://transfer.sh/$(basename $1); echo
