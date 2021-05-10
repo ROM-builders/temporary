@@ -69,7 +69,7 @@ else
     exit 1
 fi
 
-if [ $line_check == 14 ]
+if [ $line_check == 16 ]
 then
     echo "Line check Passed"
 else
