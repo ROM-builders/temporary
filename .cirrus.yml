@@ -1,6 +1,10 @@
 task:
   name: Build
   persistent_worker: {}
+  container:
+    image: apon77/aosp:latest
+    cpu: 8
+    memory: 24G
   env:
     USE_CCACHE: 1
     CIRRUS_WORKING_DIR: /tmp/$CIRRUS_REPO_NAME
