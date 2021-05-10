@@ -16,3 +16,8 @@ task:
     - ccache -V
     - which ccache
     - sudo whoami
+
+test_task:
+  container:
+    image: ubuntu:20.04
+  test_script: cat /etc/os*
