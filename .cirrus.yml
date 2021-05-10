@@ -7,6 +7,10 @@ task:
   name: Build
   depends_on:
     - test
+  env:
+    USE_CCACHE: 1
+    ROM_NAME: "grep init sync_rom.sh | cut -d / -f 4"
+  timeout_in: 4h
   persistent_worker:
     isolation:
       container:
@@ -14,10 +18,34 @@ task:
         cpu: 8
         memory: 40g
         volumes:
-          - /home/cirrus/roms:/tmp/roms
-          - /home/cirrus/.config/rclone:/home/ci/.config/rclone
-  check_script:
-    - ccache -V
-    - rclone lsd cirrus:
+          - /home/cirrus/roms:/home/ci
+          - /home/cirrus/.config:/home/ci/.config
+  build_script:
+    - mkdir -p ~/$(bash -c "$ROM_NAME")
+    - cd ~/$(bash -c "$ROM_NAME")
+    - rm -rf .repo/local_manifests
+    - bash $CIRRUS_WORKING_DIR/sync_rom.sh
     - sleep 2
 
+task:
+  name: Build
+  persistent_worker: {}
+  timeout_in: 4h
+  env:
+    USE_CCACHE: 1
+    ROM_NAME: "grep init sync_rom.sh | cut -d / -f 4"
+    PATH: "~/bin:$PATH"
+  sync_script:
+  build_script:
+    - ccache -z
+    - cd ~/$(bash -c "$ROM_NAME")
+    - bash $CIRRUS_WORKING_DIR/build_rom.sh
+  ccache_stats_script:
+    - ccache -s
+  upload_script:
+    - cd ~/$(bash -c "$ROM_NAME")
+    - bash $CIRRUS_WORKING_DIR/upload_rom.sh
+  remove_script:
+    - cd ~/$(bash -c "$ROM_NAME")
+    - rm -rf .repo/local_manifests
+    - rm -rf out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh | cut -d _ -f 2 | cut -d - -f 1)/*.zip
