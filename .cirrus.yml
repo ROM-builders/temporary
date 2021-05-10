@@ -14,5 +14,7 @@ task:
 
 test_task:
   container:
-    image: ubuntu:20.04
-  test_script: cat /etc/os*
+    image: apon77/aosp:latest
+  test_script:
+    - repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x
+    - repo sync vendor/aosp
