@@ -3,19 +3,14 @@ task:
   persistent_worker:
     isolation:
       container:
-        image: apon77/aosp:ccache
+        image: apon77/aosp:latest
         cpu: 8
         memory: 40g
         volumes:
           - /home/cirrus:/tmp/home
   check_script:
-    - whoami
-    - free -h
-    - nproc
-    - ls /tmp/home
-    - ccache -V
-    - which ccache
-    - sudo whoami
+    - repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x
+    - repo sync vendor/aosp
 
 test_task:
   container:
