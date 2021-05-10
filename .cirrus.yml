@@ -4,6 +4,7 @@ test_task:
   test_script:
     - ./ccache -V
     - which ccache
+    - bash test.sh
     - sleep 1
 task:
   name: Build
