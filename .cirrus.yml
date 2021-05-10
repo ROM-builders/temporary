@@ -1,6 +1,6 @@
 task:
   name: Build
-  persistent_worker: {}
+  persistent_worker:
   CIRRUS_CLONE_DEPTH: 1
   timeout_in: 4h
   isolation:
