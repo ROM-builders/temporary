@@ -1,7 +1,7 @@
 task:
   name: Build
   persistent_worker: {}
-  timeout_in: 4h
+  timeout_in: 2h
   env:
     USE_CCACHE: 1
     ROM_NAME: "grep init sync_rom.sh | cut -d / -f 4"
