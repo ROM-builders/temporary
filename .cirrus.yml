@@ -3,23 +3,25 @@ task:
   persistent_worker: {}
   env:
     USE_CCACHE: 1
-    ROM_NAME: "grep init sync_rom.sh | cut -d / -f 4"
-    PATH: "~/bin:$PATH"
+    CIRRUS_WORKING_DIR: /tmp/$CIRRUS_REPO_NAME
+  env_script:
+    - env
+  clone_script:
+    - repo init --depth=1 -u https://github.com/CherishOS/android_manifest.git -b eleven || true
   sync_script:
-    - mkdir -p ~/$(bash -c "$ROM_NAME")
-    - cd ~/$(bash -c "$ROM_NAME")
-    - rm -rf .repo/local_manifests
-    - bash $CIRRUS_WORKING_DIR/sync_rom.sh
+    - rm -rf .repo/local_manifests || true
+    - git clone https://github.com/sasukeuchiha-clan/Begonia --depth 1 -b CherishOS .repo/local_manifests
+    - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
   build_script:
-    - ccache -z
-    - cd ~/$(bash -c "$ROM_NAME")
-    - bash $CIRRUS_WORKING_DIR/build_rom.sh
+    - source build/envsetup.sh
+    - lunch cherish_begonia-userdebug
+    - mka bacon -j$(nproc --all)
   ccache_stats_script:
     - ccache -s
-  upload_script:
-    - cd ~/$(bash -c "$ROM_NAME")
-    - bash $CIRRUS_WORKING_DIR/upload_rom.sh
-  remove_script:
-    - cd ~/$(bash -c "$ROM_NAME")
-    - rm -rf .repo/local_manifests
-    - rm -rf out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh | cut -d _ -f 2 | cut -d - -f 1)/*.zip
+  upload_script: |
+    up() {
+      curl --upload-file $1 https://transfer.sh/$(basename $1); echo
+      # 14 days, 10 GB limit
+    }
+
+    up out/target/product/begonia/*.zip
