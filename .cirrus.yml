@@ -1,6 +1,7 @@
 task:
   name: Build
   persistent_worker: {}
+  timeout_in: 4h
   container:
     image: apon77/aosp:latest
     cpu: 4
