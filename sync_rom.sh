@@ -6,3 +6,4 @@ set -exv
 repo init -u git://github.com/crdroidandroid/android.git -b 11.0 --depth=1
 git clone https://github.com/boedhack/local_manifest.git -b 11.0 --depth=1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+
