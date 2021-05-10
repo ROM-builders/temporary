@@ -21,7 +21,7 @@ then
 else
     echo -e "\n\nFailed"
     echo "Looks like your repo init doesnt have depth=1 or you aren't using the provided script for building"
-    exit 0
+    exit 1
 fi
 
 if [ ${check2} == 1 ]
@@ -30,7 +30,7 @@ then
 else
     echo -e "\n\nFailed"
     echo "Looks like you arent doing repo init with groups (-g default,-device,-mips,-darwin,-notdefault), Please use the provided script with your rom changes"
-    exit 0
+    exit 1
 fi
 
 if [ ${check3} == 1 ]
@@ -39,7 +39,7 @@ then
 else
     echo -e "\n\nFailed"
     echo "Looks like you arent cloning local manifest with --depth 1, please correct it"
-    exit 0
+    exit 1
 fi
 
 if [ "$check4" == "$line4" ]
@@ -48,7 +48,7 @@ then
 else
     echo -e "\n\nFailed"
     echo "Looks like the repo sync command isn't similar to the one in the provided script... please correct this issue"
-    exit 0
+    exit 1
 fi
 
 if [ $rm_check == 0 ]
@@ -57,7 +57,7 @@ then
 else
     echo -e "\n\nFailed"
     echo "rm -rf isn't allowed in the script. Please do those in your local manifest"
-    exit 0
+    exit 1
 fi
 
 if [ $git_check == 1 ]
@@ -66,7 +66,7 @@ then
 else
     echo -e "\n\nFailed"
     echo "You probably are using more than one git clone statement in your script,or maybe you arent using any. Please fix this, there should be one and only one git clone statement"
-    exit 0
+    exit 1
 fi
 
 if [ $line_check == 14 ]
@@ -75,7 +75,7 @@ then
 else
     echo -e "\n\nFailed"
     echo "Looks like you have more than 14 lines in your script, please use the provided script with your rom bringup and dont add extra lines"
-    exit 0
+    exit 1
 fi
 
 
