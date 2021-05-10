@@ -24,6 +24,7 @@ task:
   build_script:
     - set -exv
     - rclone listremotes
+    - sleep 10m
     - mkdir -p ~/roms/$(bash -c "$ROM_NAME")
     - cd ~/roms/$(bash -c "$ROM_NAME")
     - rm -rf .repo/local_manifests
