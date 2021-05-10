@@ -1,4 +1,5 @@
 #!/bin/bash
+# Script by FrosT2k5
 
 init=$(sed -n '4p' < build_rom.sh)
 check1=$(echo $init | grep -n \ -\-depth=1 | cut -d ":" -f 1)
