@@ -1,19 +1,13 @@
 task:
   name: Build
   persistent_worker:
-  CIRRUS_CLONE_DEPTH: 1
-  timeout_in: 4h
-  isolation:
-    container:
-      image: apon77/aosp:ccache
-      cpu: 8
-      memory: 40g
-      volumes:
-        - /home/cirrus:/tmp/home
-  env:
-    USE_CCACHE: 1
-    ROM_NAME: "grep init sync_rom.sh | cut -d / -f 4"
-    PATH: "~/bin:$PATH"
+    isolation:
+      container:
+        image: apon77/aosp:ccache
+        cpu: 8
+        memory: 40g
+        volumes:
+          - /home/cirrus:/tmp/home
   check_script:
     - whoami
     - free -h
@@ -21,21 +15,3 @@ task:
     - ls /tmp
     - ccache -V
     - sleep 10m
-    
-  sync_script:
-    - mkdir -p ~/$(bash -c "$ROM_NAME")
-    - cd ~/$(bash -c "$ROM_NAME")
-    - rm -rf .repo/local_manifests
-    - bash $CIRRUS_WORKING_DIR/sync_rom.sh
-  build_script:
-    - ccache -z
-    - cd ~/$(bash -c "$ROM_NAME")
-    - bash $CIRRUS_WORKING_DIR/build_rom.sh
-  ccache_stats_script:
-    - ccache -s
-  upload_script:
-    - cd ~/$(bash -c "$ROM_NAME")
-    - bash $CIRRUS_WORKING_DIR/upload_rom.sh
-  remove_script:
-    - cd ~/$(bash -c "$ROM_NAME")
-    - rm -rf out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh | cut -d _ -f 2 | cut -d - -f 1)/*.zip
