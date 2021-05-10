@@ -1,20 +1,21 @@
-task:
-  name: Build
-  persistent_worker:
-    isolation:
-      container:
-        image: apon77/aosp:latest
-        cpu: 8
-        memory: 40g
-        volumes:
-          - /home/cirrus:/tmp/home
-  check_script:
-    - sleep 2
-
 test_task:
   container:
     image: apon77/aosp:ccache
   test_script:
-    - curl -LO https://transfer.sh/15lZvo/ccache
-    - chmod +x ccache
     - ./ccache -V
+    - sleep 1m
+task:
+  name: Build
+  depends_on:
+    - test
+  persistent_worker:
+    isolation:
+      container:
+        image: apon77/aosp:ccache
+        cpu: 8
+        memory: 40g
+        volumes:
+          - /home/cirrus/roms:/tmp/roms
+  check_script:
+    - sleep 2
+
