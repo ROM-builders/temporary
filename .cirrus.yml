@@ -12,6 +12,6 @@ task:
     - whoami
     - free -h
     - nproc
-    - ls /tmp
+    - ls /tmp/home
     - ccache -V
-    - sleep 10m
+    - which cccahe
