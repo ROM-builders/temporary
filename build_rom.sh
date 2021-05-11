@@ -1,9 +1,11 @@
 #!/bin/bash
 
-set -exv
+set -e
+set -x
 
-# build rom
-source build/envsetup.sh
-lunch derp_vayu-userdebug
-mka derp
+# build
+. build/envsetup.sh
+lunch aosp_RMX1941-userdebug
+chmod -R 660 out/
+mka bacon -j$(nproc --all)
 
