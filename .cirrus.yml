@@ -7,6 +7,7 @@ task:
   env_script:
     - env
   sync_script:
+    - rm -rf .repo/local_manifests || true
     - bash sync_rom.sh
   build_script:
     - bash build_rom.sh
