@@ -14,4 +14,8 @@ task:
       cpu: 7  #8 or less cpu for dummy build, 8 cpu for the final build, 8cpu highest for free accounts. Don't try to use more than 8cpu as free user, you may get blocked by ci.
       memory: 28G # So that we can have ram when needed, 32G highest
     build_script:
+      - df -h
+      - rm -rf /tmp/rom
+      - mkdir -p /tmp/rom
+      - cd /tmp/rom
       - bash build_rom.sh
