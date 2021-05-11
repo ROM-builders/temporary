@@ -4,6 +4,7 @@ set -exv
 
 # build rom
 source build/envsetup.sh
-lunch derp_vayu-userdebug
-mka derp
-
+lunch lineage_RMX2001-userdebug
+export SKIP_ABI_CHECKS=true
+export SKIP_API_CHECKS=true
+mka bacon
