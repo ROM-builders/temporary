@@ -25,7 +25,7 @@ task:
     - cd ~/roms/$(bash -c "$ROM_NAME")
     - export CCACHE_DIR=/home/ci/ccache/$(bash -c "$ROM_NAME")/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh | cut -d _ -f 2 | cut -d - -f 1)
     - ccache -z
-    - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep build/ $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1)
+    - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep build/ $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1)
     - bash -c "$command"
   ccache_stats_script:
     - set -exv
