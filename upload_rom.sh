@@ -8,4 +8,4 @@ up(){
 	# 14 days, 10 GB limit
 }
 
-up out/target/product/RMX2001/*UNOFFICIAL*.zip
+up out/target/product/RMX1941/*.zip
