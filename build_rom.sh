@@ -13,7 +13,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-export CIPHER_OFFICIAL=true
 export CIPHER_GAPPS=true
 lunch lineage_lavender-userdebug
 make bacon
@@ -25,3 +24,4 @@ up(){
 }
 
 up out/target/product/lavender/*.zip
+
