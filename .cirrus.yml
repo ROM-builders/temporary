@@ -6,4 +6,5 @@ task:
       cpu: 2
       memory: 8G
     sync_script:
+      - env
       - bash sync_rom.sh
