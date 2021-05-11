@@ -15,7 +15,7 @@ task:
       memory: 28G # So that we can have ram when needed, 32G highest
     build_script:
       - df -h
-      - rm -rf /tmp/rom
-      - mkdir -p /tmp/rom
+      - rm -rf /tmp/ci
+      - mkdir -p /tmp/ci
       - cd /tmp/rom
       - bash build_rom.sh
