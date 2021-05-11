@@ -1,10 +1,6 @@
 #!/bin/bash
-rm -rf /tmp/rom
-mkdir -p /tmp/rom
-cd tmp/rom
 
 df -h 
-
 
 repo init --depth=1 -u https://github.com/Project-Fluid/manifest.git -b fluid-11  || true
 
