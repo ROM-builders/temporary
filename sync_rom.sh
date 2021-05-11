@@ -3,7 +3,7 @@
 set -exv
 
 # sync rom
-repo init -u  git://github.com/AOSiP/platform_manifest.git -b eleven --depth=1
+repo init -u  git://github.com/crdroidandroid/android.git -b crdroid --depth=1
 
 
 
