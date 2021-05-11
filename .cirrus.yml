@@ -1,6 +1,7 @@
 task:
   name: Build
   timeout_in: 4h
+  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
   persistent_worker:
     isolation:
       container:
