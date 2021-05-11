@@ -5,7 +5,6 @@ set -x
 
 sudo apt install wget -y
 
-rm -rf .repo
 
 # sync rom
 repo init -u https://github.com/PixelExperience/manifest --depth=1 -b eleven
