@@ -3,4 +3,4 @@
 set -exv
 
 # Build
-./rom-build.sh sakura
+./rom-build.sh sakura -i
