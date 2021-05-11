@@ -1,5 +1,6 @@
 task:
   name: Build
+  timeout_in: 4h
   persistent_worker:
     isolation:
       container:
