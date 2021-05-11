@@ -1,11 +1,9 @@
 task:
   name: Fluid-OS
   persistent_worker: {}
-    env:
-      USE_CCACHE: 1
-      CIRRUS_WORKING_DIR: /tmp/$CIRRUS_REPO_NAME
   env_script:
-    - env
+    - USE_CCACHE: 1
+    - CIRRUS_WORKING_DIR: /tmp/$CIRRUS_REPO_NAME
   clone_script:
     - repo init --depth=1 -u https://github.com/Project-Fluid/manifest.git -b fluid-11  || true
   sync_script:
