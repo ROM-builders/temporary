@@ -1,22 +1,16 @@
-test_task:
-  container:
-    image: apon77/aosp:ccache
-  test_script:
-    - bash test.sh
 task:
   name: Build
   depends_on:
-    - test
   env:
     USE_CCACHE: 1
     ROM_NAME: "sed -n '4p' < $CIRRUS_WORKING_DIR/build_rom.sh | cut -d / -f 4"
-  timeout_in: 4h
+  timeout_in: 3h
   persistent_worker:
     isolation:
       container:
         image: apon77/aosp:ccache
-        cpu: 8
-        memory: 40g
+        cpu: 24
+        memory: 125g
         volumes:
           - /home/cirrus/roms:/home/ci/roms
           - /home/cirrus/ccache:/home/ci/ccache
