@@ -1,9 +1,14 @@
+env: # Environment variables to pass to all tasks
+    CIRRUS_CLONE_DEPTH: 1 # No need to clone with the whole history
+    CIRRUS_WORKING_DIR: "/tmp/ci" # Where to clone the aosp-builder repo
+
 task:
   name: Fluid-OS
-  persistent_worker: {}
-  env_script:
-    - USE_CCACHE: 1
-    - CIRRUS_WORKING_DIR: /tmp/$CIRRUS_REPO_NAME
+    timeout_in: 120m # Otherwise it will timeout at 60m automatically, 120m highest in free account
+    container:
+      image: apon77/aosp:latest # It has built-in setup environment + repo, aria2, rclone, pigz, username ci, and email ci@ci.ci [You can use your own docker image if you want, or you can use this one too!]
+      cpu: 8  #8 or less cpu for dummy build, 8 cpu for the final build, 8cpu highest for free accounts. Don't try to use more than 8cpu as free user, you may get blocked by ci.
+      memory: 32G # So that we can have ram when needed, 32G highest
   clone_script:
     - repo init --depth=1 -u https://github.com/Project-Fluid/manifest.git -b fluid-11  || true
   sync_script:
@@ -23,3 +28,7 @@ task:
     }
 
     up out/target/product/umi/*.zip
+
+
+
+
