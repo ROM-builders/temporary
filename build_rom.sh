@@ -12,4 +12,4 @@ export SKIP_API_CHECKS=true
 mka bacon
 
 # upload rom
-rclone copy out/target/product/RMX2050/*UNOFFICIAL*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh | cut -d _ -f 2 | cut -d - -f 1)
+rclone copy out/target/product/RMX2050/*UNOFFICIAL*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)
