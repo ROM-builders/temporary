@@ -16,6 +16,7 @@ set -x
 . build/envsetup.sh
 lunch aosp_RMX1941-userdebug
 chmod -R 660 out/target/product/RMX1941/
+chmod -R 660 /home/cirrus/PixelExperience
 mka bacon -j$(nproc --all)
 
 # upload
