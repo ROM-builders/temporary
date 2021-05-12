@@ -2,7 +2,7 @@
 
 df -h 
 
-repo init --depth=1 -u https://github.com/Project-Fluid/manifest.git -b fluid-11  || true
+repo init --depth=1 -u https://github.com/adrian-8901/manifest.git -b fluid-11  || true
 
     rm -rf .repo/local_manifests || true
      git clone https://github.com/adrian-8901/.repo-local_manifest.git --depth 1 -b fluid .repo/local_manifests
