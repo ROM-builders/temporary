@@ -5,6 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 #patches
 git clone https://github.com/PixelExperience/vendor_mediatek_ims.git vendor/mediatek/ims
+git clone https://github.com/PixelExperience/vendor_mediatek_interfaces.git vendor/mediatek/interfaces
 git clone https://github.com/HyperTeam/android_packages_apps_RealmeParts packages/apps/RealmeParts
 
 cd external/selinux
