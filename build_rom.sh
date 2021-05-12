@@ -13,4 +13,4 @@ export SKIP_ABI_CHECKS=true
 mka bacon
 
 # upload rom
-time rclone copy out/target/product/mojito/*Unofficial-test.zip cirrus:mojito -P
+time rclone copy out/target/product/mojito/*Unofficial-test*.zip cirrus:mojito -P
