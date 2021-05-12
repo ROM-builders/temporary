@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 set -e
@@ -14,7 +15,7 @@ set -x
 # build
 . build/envsetup.sh
 lunch aosp_RMX1941-userdebug
-#chmod -R 660 out/
+chmod -R 660 out/target/product/RMX1941/
 mka bacon -j$(nproc --all)
 
 # upload
