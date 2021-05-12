@@ -3,7 +3,7 @@
 set -e
 set -x
 
-sudo apt install wget -y
+#sudo apt install wget -y
 
 
 # sync rom
