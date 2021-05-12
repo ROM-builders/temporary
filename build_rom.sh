@@ -7,5 +7,5 @@ source build/envsetup.sh
 lunch corvus_mido-userdebug
 
 # Build Rom
-make bacon -j10
+mka corvus
 
