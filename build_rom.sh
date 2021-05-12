@@ -17,3 +17,5 @@ repo init --depth=1 -u https://github.com/adrian-8901/manifest.git -b fluid-11  
     }
 
     up out/target/product/umi/*.zip
+
+#
