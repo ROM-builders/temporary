@@ -1,12 +1,15 @@
 # sync rom
-repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 
+repo init -u https://github.com/Havoc-OS/android_manifest.git -b eleven
+git clone https://github.com/Hashimkp/local_manifests.git --depth=1 -b main .repo/local_manifests
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 # build rom
 source build/envsetup.sh
-lunch aosp_mido-user
-m aex
+lunch havoc_RMX1971-userdebug
+export SKIP_API_CHECKS=true
+export SKIP_ABI_CHECKS=true
+export ALLOW_MISSING_DEPENDENCIES=true
+brunch RMX1971
 
 # upload rom
-rclone copy out/target/product/mido/AospExtended*.zip cirrus:mido -P
+time rclone copy out/target/product/RMX1971/*.zip cirrus:RMX1971 -P
