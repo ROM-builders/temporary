@@ -6,11 +6,11 @@ git clone https://github.com/boedhack/local_manifest.git -b 11.0 --depth 1 .repo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch lineage_mojito-userdebug
 export SKIP_API_CHECKS=true
 export SKIP_ABI_CHECKS=true
 mka bacon
 
 # upload rom
-time rclone copy out/target/product/mojito/*Unofficial-test*.zip cirrus:mojito -P
+time rclone copy out/target/product/mojito/*.zip cirrus:mojito -P
