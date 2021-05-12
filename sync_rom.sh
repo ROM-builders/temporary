@@ -4,11 +4,6 @@ set -exv
 
 # sync rom
 repo init -u  git://github.com/AOSiP/platform_manifest.git -b eleven --depth=1
-
-
-
-
-
 git clone  https://github.com/flashokiller/mainfest_personal --depth=1  .repo/local_manifests -b master
 repo sync --force-sync --no-tags --no-clone-bundle
 
