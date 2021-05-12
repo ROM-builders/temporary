@@ -6,7 +6,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_daisy-user
+mka clean
 mka bacon
 
 # upload rom los needs *UNOFFICIAL-daisy
 rclone copy out/target/product/daisy/*UNOFFICIAL-daisy.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1) -P
+
+# Trigger zone
+# 12/05/21 20:23
