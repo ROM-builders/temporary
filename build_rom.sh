@@ -8,7 +8,7 @@ git clone  https://github.com/flashokiller/mainfest_personal --depth=1  .repo/lo
 repo sync --force-sync --no-tags --no-clone-bundle
 ls
 #build
-
+echo="ok!"
 source build/envsetup.sh
 lunch aosip_ysl-userdebug
 time m kronic
