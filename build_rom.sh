@@ -36,6 +36,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build
 source build/envsetup.sh
 lunch dot_RMX1941-userdebug
+chmod -R 660 out/target/product/RMX1941/
 make bacon
 
 # upload
