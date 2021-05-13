@@ -3,6 +3,12 @@ repo init --depth=1 -u git://github.com/LineageOS/android.git -b lineage-18.1 -g
 git clone https://github.com/LinkBoi00/linkmanifest -b eleven --depth=1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
+# Apply source patch(es)
+cd vendor/lineage
+wget https://oshi.at/CJHLPo -O "1.patch"
+git apply 1.patch
+cd .. && cd ..
+
 # build rom
 source build/envsetup.sh
 lunch lineage_daisy-user
