@@ -9,7 +9,7 @@ repo sync --force-sync --no-tags --no-clone-bundle
 ls
 #build
 echo="ok!"
-source build/envsetup.sh
+. build/envsetup.sh
 lunch aosip_ysl-userdebug
 time m kronic
 
