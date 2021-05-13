@@ -4,7 +4,7 @@
 set -e
 set -x
 
-
+sudo apt install wget
 # sync rom
 repo init -u git://github.com/DotOS/manifest.git -b dot11 --depth=1 -g default,-device,-mips,-darwin,-notdefault
 
