@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 set -e
@@ -11,7 +10,7 @@ repo init -u git://github.com/DotOS/manifest.git -b dot11 --depth=1 -g default,-
 
 git clone https://github.com/P-Salik/local_manifest --depth=1 -b main .repo/local_manifests
 
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # patches
 cd external/selinux
