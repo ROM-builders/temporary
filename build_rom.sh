@@ -19,9 +19,4 @@ chmod -R 660 out/target/product/RMX1941/
 mka bacon -j$(nproc --all)
 
 # upload
-up(){
-        curl --upload-file $1 https://transfer.sh/$(basename $1); echo
-        # 14 days, 10 GB limit
-}
-
-up out/target/product/RMX1941/*.zip
+rclone copy out/target/product/RMX1941/*.zip cirrus:RMX1941 -P
