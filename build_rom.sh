@@ -38,7 +38,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch dot_RMX1941-userdebug
 touch tracking_id.txt
-chmod a+w tracking_id.txt
 make bacon
 
 # upload
