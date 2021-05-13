@@ -31,11 +31,11 @@ cd ../../../..
 cd frameworks/opt/net/ims
 wget https://github.com/PixelExperience/frameworks_opt_net_ims/commit/661ae9749b5ea7959aa913f2264dc5e170c63a0a.patch
 patch -p1 < *.patch
+cd ../../../..
 
 # build
 source build/envsetup.sh
 lunch dot_RMX1941-userdebug
-#chmod -R 660 out/target/product/RMX1941/
 make bacon
 
 # upload
