@@ -6,7 +6,7 @@ set -exv
 repo init -u  git://github.com/AOSiP/platform_manifest.git -b eleven --depth=1 -g default,-device,-mips,-darwin,-notdefault
 git clone  https://github.com/flashokiller/mainfest_personal --depth=1  .repo/local_manifests -b master
 repo sync --force-sync --no-tags --no-clone-bundle
-
+ls
 #build
 
 source build/envsetup.sh
