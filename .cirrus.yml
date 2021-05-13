@@ -1,33 +1,53 @@
-test_task:
-  container:
-    image: apon77/aosp:ccache
-  test_script:
-    - bash test.sh
 task:
   name: Build
-  depends_on:
-    - test
-  env:
-    USE_CCACHE: 1
-    ROM_NAME: "sed -n '4p' < $CIRRUS_WORKING_DIR/build_rom.sh | cut -d / -f 4"
   timeout_in: 4h
+  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
   persistent_worker:
     isolation:
       container:
         image: apon77/aosp:ccache
-        cpu: 8
-        memory: 40g
+        cpu: 24
+        memory: 60g
         volumes:
           - /home/cirrus/roms:/home/ci/roms
           - /home/cirrus/ccache:/home/ci/ccache
           - /home/cirrus/.config:/home/ci/.config
-  build_script:
+  env:
+    ROM_NAME: "grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4"
+  sync_script:
     - set -exv
     - mkdir -p ~/roms/$(bash -c "$ROM_NAME")
     - cd ~/roms/$(bash -c "$ROM_NAME")
     - rm -rf .repo/local_manifests
-    - export CCACHE_DIR=/home/ci/ccache/$(bash -c "$ROM_NAME")/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh | cut -d _ -f 2 | cut -d - -f 1)
+    - find -name shallow.lock -delete
+    - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep build/ $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
+    - bash -c "$command"
+  build_script:
+    - set -exv
+    - cd ~/roms/$(bash -c "$ROM_NAME")
+    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)
+    - export CCACHE_DIR=/home/ci/ccache/$(bash -c "$ROM_NAME")/$device
+    - export CCACHE_EXEC=$(which ccache)
+    - export USE_CCACHE=1
+    - ccache -M 50G
     - ccache -z
-    - bash $CIRRUS_WORKING_DIR/build_rom.sh
+    - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep build/ $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1)
+    - bash -c "$command"
+  ccache_stats_script:
+    - set -exv
+    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)
+    - export CCACHE_DIR=/home/ci/ccache/$(bash -c "$ROM_NAME")/$device
     - ccache -s
-    - rm -rf out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh | cut -d _ -f 2 | cut -d - -f 1)
+  upload_script:
+    - set -exv
+    - cd ~/roms/$(bash -c "$ROM_NAME")
+    - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n 1)
+    - bash -c "$command"
+    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)
+    - dlink=$(basename out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)/*.zip)
+    - echo "Downlod link https://roms.cirrus-ci.workers.dev/0:/$device/$dlink"
+  remove_script:
+    - set -exv
+    - cd ~/roms/$(bash -c "$ROM_NAME")
+    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)
+    - rm -rf out/target/product/$device
