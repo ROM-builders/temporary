@@ -18,4 +18,4 @@ mka bacon -j64
 # upload rom
 time rclone copy out/target/product/umi/*.zip cirrus:Umi -P
 
-# 1 2
+# 1 2 3
