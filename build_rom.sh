@@ -15,4 +15,3 @@ mka bacon
 # upload rom
 time rclone copy out/target/product/mojito/*.zip cirrus:mojito -P
 
-
