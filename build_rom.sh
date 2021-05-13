@@ -40,4 +40,4 @@ touch tracking_id.txt
 make bacon
 
 # upload
-rclone copy out/target/product/RMX1941/*.zip cirrus:RMX1941 -P
+rclone copy out/target/product/RMX1941/dotOS-R-v5.0.1-RMX1941-UNOFFICIAL-20210513-1916.zip.zip cirrus:RMX1941 -P
