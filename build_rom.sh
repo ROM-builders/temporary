@@ -11,6 +11,7 @@ ls
 echo="ok!"
 . build/envsetup.sh
 lunch aosip_ysl-userdebug
+export ALLOW_MISSING_DEPENDENCIS=true
 time m kronic
 
 # upload rom
