@@ -8,7 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch lineage_mojito-user
 export SKIP_API_CHECKS=true
 export SKIP_ABI_CHECKS=true
-mka bacon -j$(nproc --all)
+mka bacon -j8
 
 # upload rom
 device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)
