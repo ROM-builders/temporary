@@ -20,3 +20,7 @@ mka bacon -j64
 time rclone copy out/target/product/umi/*.zip cirrus:Umi -P
 
 # 1 2 3 4
+
+
+
+
