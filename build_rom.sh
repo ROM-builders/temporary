@@ -9,6 +9,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 bash .repo/local_manifests/hal.sh
 ls 
 echo finished sync
+. build/envsetup.sh
 lunch fluid_umi-userdebug
 mka bacon -j$(nproc --all)
 ccache -s
