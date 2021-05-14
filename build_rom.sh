@@ -10,4 +10,4 @@ lunch aosip_ysl-user
 time m kronic
 
 # upload rom
-rclone copy out/target/product/ysl/AOSIP*.zip cirrus:ysl -P
+rclone copy out/target/product/ysl/AOSiP*.zip cirrus:ysl -P
