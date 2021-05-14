@@ -3,7 +3,6 @@
 set -e
 set -x
 
-
 # sync rom
 
 repo init -u git://github.com/LineageOS/android.git -b lineage-17.1 --depth=1 -g default,-device,-mips,-darwin,-notdefault
