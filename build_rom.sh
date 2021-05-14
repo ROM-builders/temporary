@@ -4,7 +4,7 @@ git clone https://github.com/boedhack/local_manifest.git -b 11.0 --depth=1 .repo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 
 
 # build rom
-suorce build/envsetup.sh
+. build/envsetup.sh
 lunch lineage_mojito-userdebug
 export SKIP_API_CHECKS=true
 export SKIP_ABI_CHECKS=true
