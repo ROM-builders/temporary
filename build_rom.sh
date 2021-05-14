@@ -10,6 +10,8 @@ repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-11.0 --dep
 
 git clone https://github.com/P-Salik/local_manifest --depth=1 -b main .repo/local_manifests
 
+rm -rf external/apache-commons-bcel
+
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j4
 
 # patches
