@@ -4,6 +4,11 @@ git clone https://github.com/Realme-G90T-Series/local_manifest.git --depth 1 -b 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 #patches
+git clone https://github.com/sarthakroy2002/clang-r353983c1 prebuilts/clang/host/linux-x86/clang-r353983c1
+git clone https://github.com/PixelExperience/vendor_mediatek_ims.git vendor/mediatek/ims
+git clone https://github.com/PixelExperience/vendor_mediatek_interfaces.git vendor/mediatek/interfaces
+git clone https://github.com/HyperTeam/android_packages_apps_RealmeParts packages/apps/RealmeParts
+
 cd external/selinux
 curl -L http://ix.io/2FhM > sasta.patch
 git am sasta.patch
