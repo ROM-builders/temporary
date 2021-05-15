@@ -13,7 +13,7 @@ task:
           - /home/cirrus/ccache:/home/ci/ccache
           - /home/cirrus/.config:/home/ci/.config
   env:
-    ROM_NAME: "grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4"
+    ROM_NAME: "lineage-16"
   sync_script:
     - set -exv
     - mkdir -p ~/roms/$(bash -c "$ROM_NAME")
