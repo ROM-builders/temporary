@@ -9,4 +9,4 @@ lunch lineage_RMX1805-userdebug
 mka bacon
 
 # upload rom
-rclone copy out/target/product/RMX1805/lineage*.zip cirrus:RMX1805 -P
+rclone copy out/target/product/RMX1805/lineage*RMX1805*.zip cirrus:RMX1805 -P
