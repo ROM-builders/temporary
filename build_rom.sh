@@ -9,4 +9,4 @@ lunch corvus_mido-userdebug
 mka corvus
 
 # upload rom
-rclone copy out/target/product/mido/Corvus-R*.zip cirrus:mido -P
+rclone copy out/target/product/mido/Corvus*.zip cirrus:mido -P
