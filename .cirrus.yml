@@ -21,6 +21,7 @@ task:
     - cd ~/roms/$(bash -c "$ROM_NAME")
     - rm -rf .repo/local_manifests
     - find -name shallow.lock -delete
+    - rm -r /home/ci/roms/.repo
     - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep build/ $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
     - bash -c "$command"
   build_script:
