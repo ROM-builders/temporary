@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 -u https://github.com/LineageOS/android -b lineage-18.1 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/baibhab34/local_manifest --depth 1 -b los .repo/local_manifests
+repo init -u https://github.com/PixelExperience/manifest -b eleven -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/Shazu-xD/local_manifest --depth 1 -b los .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_RMX1805-userdebug
-mka bacon
+lunch aosp_RMX1801-userdebug
+mka bacon -jx
 
 # upload rom
-rclone copy out/target/product/RMX1805/lineage*RMX1805.zip cirrus:RMX1805 -P
+rclone copy out/target/product/RMX1801/aosp*RMX1801.zip cirrus:RMX1801 -P
