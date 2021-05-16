@@ -8,5 +8,6 @@ source build/envsetup.sh
 lunch rr_tissot-userdebug
 make bacon
 
+
 # upload rom
 rclone copy out/target/product/tissot/RRQ*.zip cirrus:tissot -P
