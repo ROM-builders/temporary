@@ -1,4 +1,4 @@
-Pe rom test for Realme 2 pro
+Mido
 ==============================
 
 AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note 4(code name mido)
