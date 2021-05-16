@@ -15,5 +15,5 @@ cd ../..
 lunch aosp_RMX1941-userdebug
 mka bacon -j$(nproc --all)
 
-# upload
+# upload build
 rclone copy out/target/product/RMX1941/*UNOFFICIAL*.zip cirrus:RMX1941 -P
