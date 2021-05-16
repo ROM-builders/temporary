@@ -3,7 +3,7 @@ repo init -u https://github.com/PixelExperience/manifest -b eleven -g default,-d
 git clone https://github.com/Shazu-xD/local_manifest --depth 1 -b los .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom pe
 source build/envsetup.sh
 lunch aosp_RMX1801-userdebug
 mka bacon -jx
