@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch corvus_RMX1801-userdebug
-m aex
+make corvus
 
 # upload rom
 rclone copy out/target/product/RMX1801/corvus*.zip cirrus:RMX1801 -P
