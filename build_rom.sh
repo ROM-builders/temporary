@@ -12,7 +12,7 @@ echo finished sync
 # build rom
 source build/envsetup.sh
 lunch fluid_umi-userdebug
-mka bacon -j64
+mka bacon -j$(nproc -all)
 
 
 # upload rom
