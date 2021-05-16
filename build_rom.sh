@@ -1,12 +1,13 @@
 # sync rom
-repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo init -u https://github.com/Project-Xtended/manifest.git -b xr -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/GangsterPlayz1/android_.repo_local_manifests.git --depth 1 .repo/local_manifests
+repo sync --force-sync --no-tags --no-clone-bundle -jX
+
 
 # build rom
 source build/envsetup.sh
-lunch aosp_mido-user
-m aex
+lunch xtended_RMX1801-userdebug
+mka xtended
 
 # upload rom
-rclone copy out/target/product/mido/AospExtended*.zip cirrus:mido -P
+rclone copy out/target/product/RMX1801/xtended*.zip cirrus:RMX1801 -P
