@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch aosp_ysl-user
+lunch aosp_ysl-userdebug
 mka bacon 
 
 # upload rom
