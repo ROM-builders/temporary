@@ -1,13 +1,12 @@
 # sync rom 
-repo init -u git://github.com/TenX-OS/manifest_TenX -b eleven -g default,-device,-mips,-darwin,-notdefault
+    repo init -u https://github.com/CherishOS/android_manifest.git -b eleven   -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/Shazu-xD/local_manifest --depth 1 -b main.repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 
-# build rom pe
+# build rom 
 source build/envsetup.sh
-lunch aosp_RMX1801-userdebug
 brunch RMX1801
 
 # upload rom
-rclone copy out/target/product/RMX1801/aosp*RMX1801.zip cirrus:RMX1801 -P
+rclone copy out/target/product/RMX1801/*RMX1801.zip cirrus:RMX1801 -P
