@@ -4,8 +4,8 @@ git clone https://github.com/sushmit1/mainfest_personal.git --depth 1 -b master 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-export SELINUX_IGNORE_NEVERALLOWS=true
 source build/envsetup.sh
+export SELINUX_IGNORE_NEVERALLOWS=true
 lunch corvus_ysl-userdebug
 make corvus
 # upload rom
