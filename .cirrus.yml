@@ -45,8 +45,8 @@ task:
     - cd ~/roms/$(bash -c "$ROM_NAME")
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)
     - dlink=$(basename out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)/*.zip)
-    - engzip=$(ls out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)/*eng*.zip)
-    - otazip=$(ls out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)/*ota*.zip)
+    - engzip=$(ls out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)/*eng*.zip || true )
+    - otazip=$(ls out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)/*ota*.zip || true )
     - rm -rf $engzip $otazip
     - command=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
     - bash -c "$command"
