@@ -11,4 +11,4 @@ export SKIP_ABI_CHECKS=true
 mka bacon
 
 # upload rom
-rclone copy out/target/product/mojito/crDroidandroid*.zip cirrus:mojito -P
+rclone copy out/target/product/mojito/*.zip cirrus:mojito -P
