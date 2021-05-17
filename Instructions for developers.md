@@ -55,4 +55,3 @@ up out/target/product/mido/*.zip
 https://github.com/AliHasan7671/guides/commit/33361bb2c78af01426350ef21167d742f44481fd
 https://github.com/nathanchance/Android-Tools/blob/master/Guides/Building_AOSP.txt
 ##### 11. You can use this repository as a standard reference and edit things according to your device, ROM, and needs
-J
