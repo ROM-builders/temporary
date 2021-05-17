@@ -9,4 +9,4 @@ lunch aosp_mido-user
 m aex
 
 # upload rom
-rclone copy out/target/product/mido/AospExtended*.zip cirrus:mido -P
+rclone copy out/target/product/mido/*.zip cirrus:mido -P
