@@ -9,4 +9,4 @@ lunch aosp_ysl-user
 mka bacon 
 
 # upload rom
-rclone copy out/target/product/mido/Hycon*.zip cirrus:ysl -P
+rclone copy out/target/product/mido/*.zip cirrus:ysl -P
