@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch descendant_ysl-user
-mka descendant
+make descendant
 
 # upload rom
 rclone copy out/target/product/ysl/*.zip cirrus:ysl -P
