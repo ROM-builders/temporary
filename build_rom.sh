@@ -9,4 +9,4 @@ lunch corvus_ysl-userdebug
 make corvus
 
 # upload rom
-rclone copy out/target/product/ysl/2021*.zip cirrus:ysl -P
+rclone copy out/target/product/ysl/*2021*.zip cirrus:ysl -P
