@@ -10,8 +10,5 @@ export SKIP_API_CHECKS=true
 export SKIP_ABI_CHECKS=true
 mka bacon
 
-# Trrigered Zone
-#202118050230
-
 # upload rom
 rclone copy out/target/product/mojito/*.zip cirrus:mojito -P
