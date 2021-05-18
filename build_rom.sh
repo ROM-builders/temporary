@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-echo "BUILD_BROKEN_DUP_RULES := true" >> device/lge/rs988/BoardConfig.mk
+#echo "BUILD_BROKEN_DUP_RULES := true" >> device/lge/rs988/BoardConfig.mk
 brunch rs988
 
 # upload rom
