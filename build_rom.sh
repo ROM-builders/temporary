@@ -16,3 +16,4 @@ curl -sL https://git.io/file-transfer | sh
 ./transfer wet /home/ci/roms/Lineage-FE/out/target/product/RMX2050/*LineageFE*.zip
 rclone copy out/target/product/RMX2050/*LineageFE*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1) -P
 
+
