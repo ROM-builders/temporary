@@ -1,12 +1,13 @@
 # sync rom
-repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests
+repo init --depth=1 -u git://github.com/Corvus-R/android_manifest.git -b 11 -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/sushmit1/mainfest_personal.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
-lunch aosp_mido-user
-m aex
+. build/envsetup.sh
+export SELINUX_IGNORE_NEVERALLOWS=true
+lunch corvus_ysl-userdebug
+make corvus
 
 # upload rom
-rclone copy out/target/product/mido/*.zip cirrus:mido -P
+rclone copy out/target/product/ysl/*2021*.zip cirrus:ysl -P
