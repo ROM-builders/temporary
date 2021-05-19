@@ -7,5 +7,5 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 brunch rs988
 # upload rom
-rclone copy out/target/product/rs988/*zip cirrus:rs988/ -P
+rclone copy out/target/product/rs988/*OFFICIAL*.zip cirrus:rs988/ -P
 
