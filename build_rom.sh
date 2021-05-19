@@ -1,12 +1,17 @@
-# sync rom
-repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+#!/bin/bash
+# shellcheck disable=SC1091
 
-# build rom
+# Sync rom
+repo init --depth=1 -u https://github.com/Corvus-R/android_manifest.git -b 11
+git clone https://github.com/jrchintu/local_manifest.git -b corvus .repo/local_manifests
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j"$(nproc --all)"
+
+# Build rom
 source build/envsetup.sh
-lunch aosp_mido-user
-m aex
+lunch corvus_mido-user
+make corvus -j"$(nproc --all)"
 
-# upload rom
-rclone copy out/target/product/mido/*.zip cirrus:mido -P
+# Upload rom
+for LOOP in out/target/product/mido/*.zip; do
+	rclone copy "$LOOP" cirrus:mido -P
+done
