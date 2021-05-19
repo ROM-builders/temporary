@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 -u https://github.com/PixelBlaster-OS/manifest -b eleven -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/Shazu-xD/local_manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_RMX1801-userdebug
-mka bacon -jX
+lunch rr_RMX1801-userdebug
+mka bacon 
 
 # upload rom
-rclone copy out/target/product/RMX1801/Pixel*.zip cirrus:RMX1801 -P
+rclone copy out/target/product/RMX1801/RROS*.zip cirrus:RMX1801 -P
