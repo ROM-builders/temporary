@@ -1,19 +1,56 @@
-env: # Environment variables to pass to all tasks
-    CIRRUS_CLONE_DEPTH: 1 # No need to clone with the whole history
-    CIRRUS_WORKING_DIR: "/tmp/rom" # Where to clone the aosp-builder repo
-
-    # For rclone with google drive or any cloud! After first commit pushing, login to https://cirrus-ci.com , click top left corner 3 dot menu, click repository(yourname/aosp-builder) > Repository Settings > Secured Variables > enter content of ~/.config/rclone/rclone.conf (from pc where you setup rclone) > ENCRYPT, copy that ENCRYPTED hash
-    # ENCRYPTED variables is unique for every repository, so you cant use my one, create you rclone config https://rclone.org/drive/#making-your-own-client-id
-    rclone_config: "ENCRYPTED[59e11a908970675b768397a73dfc3e280916e7b80d2b2752466fae4c59211c4a9cd3c1259577f04acddc39d6f22d9e11]"
-
 task:
-    name: fluid # Project name
-    timeout_in: 120m # Otherwise it will timeout at 60m automatically, 120m highest in free account
-    container:
-      image: apon77/aosp:latest # It has built-in setup environment + repo, aria2, rclone, pigz, username ci, and email ci@ci.ci [You can use your own docker image if you want, or you can use this one too!]
-      cpu: 4  #8 or less cpu for dummy build, 8 cpu for the final build, 8cpu highest for free accounts. Don't try to use more than 8cpu as free user, you may get blocked by ci.
-      memory: 16G # So that we can have ram when needed, 32G highest
-    build_script:
-      - bash build_rom.sh
-
-# 1
+  name: Build
+  timeout_in: 4h
+  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
+  persistent_worker:
+    isolation:
+      container:
+        image: apon77/aosp:ccache
+        cpu: 24
+        memory: 60g
+        volumes:
+          - /home/cirrus/roms:/home/ci/roms
+          - /home/cirrus/ccache:/home/ci/ccache
+          - /home/cirrus/.config:/home/ci/.config
+  env:
+    ROM_NAME: "grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4"
+  sync_script:
+    - set -exv
+    - mkdir -p ~/roms/$(bash -c "$ROM_NAME")
+    - cd ~/roms/$(bash -c "$ROM_NAME")
+    - rm -rf .repo/local_manifests
+    - find -name shallow.lock -delete
+    - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep build/ $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
+    - bash -c "$command"
+  build_script:
+    - set -exv
+    - cd ~/roms/$(bash -c "$ROM_NAME")
+    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)
+    - export CCACHE_DIR=/home/ci/ccache/$(bash -c "$ROM_NAME")/$device
+    - export CCACHE_EXEC=$(which ccache)
+    - export USE_CCACHE=1
+    - ccache -M 50G
+    - ccache -z
+    - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep build/ $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1)
+    - bash -c "$command"
+  ccache_stats_script:
+    - set -exv
+    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)
+    - export CCACHE_DIR=/home/ci/ccache/$(bash -c "$ROM_NAME")/$device
+    - ccache -s
+  upload_script:
+    - set -exv
+    - cd ~/roms/$(bash -c "$ROM_NAME")
+    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)
+    - engzip=$(ls out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)/*eng*.zip || true )
+    - otazip=$(ls out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)/*ota*.zip || true )
+    - rm -rf $engzip $otazip
+    - dlink=$(basename out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)/*.zip)
+    - command=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
+    - bash -c "$command"
+    - echo "Downlod link https://roms.cirrus-ci.workers.dev/0:/$device/$dlink"
+  remove_script:
+    - set -exv
+    - cd ~/roms/$(bash -c "$ROM_NAME")
+    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)
+    - rm -rf out/target/product/$device
