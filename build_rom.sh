@@ -15,3 +15,4 @@ make corvus -j"$(nproc --all)"
 for LOOP in out/target/product/mido/*.zip; do
 	rclone copy "$LOOP" cirrus:mido -P
 done
+
