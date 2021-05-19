@@ -10,7 +10,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build
 source build/envsetup.sh
 lunch dot_RMX1941-userdebug
-export WITH_GAPPS=true
+export WITH_GAPPS=true  # gapps
 make bacon
 
 
