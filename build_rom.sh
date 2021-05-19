@@ -5,13 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch rs988
-rm -rf device/lge/msm8996-common
-git clone https://github.com/lighthouse-os-devices/android_device_lge_msm8996-common device/lge/msm8996-common
-cd vendor/lighthouse
-git fetch --unshallow
-git revert 574da0c96f066d73b7d36724fcfaa57e1e121864
-cd ../..
 brunch rs988
 # upload rom
 rclone copy out/target/product/rs988/*zip cirrus:rs988/ -P
