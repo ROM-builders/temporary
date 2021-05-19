@@ -1,12 +1,17 @@
 # sync rom
-repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests
+repo init --depth=1 -u https://github.com/ShapeShiftOS/android_manifest.git -b android_11 -g default,-device,-mips,-darwin,-notdefault
+
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+
+git clone https://github.com/ShapeShiftOS-Devices/device_xiaomi_violet.git device/xiaomi/violet --depth 1
+git clone https://github.com/ShapeShiftOS-Devices/vendor_xiaomi_violet.git vendor/xiaomi/violet --depth 1
+git clone https://github.com/ShapeShiftOS-Devices/kernel_xiaomi_violet.git kernel/xiaomi/violet --depth 1
+
 
 # build rom
 source build/envsetup.sh
-lunch aosp_mido-user
-m aex
+lunch ssos_violet-userdebug
+brunch violet
 
 # upload rom
-rclone copy out/target/product/mido/*.zip cirrus:mido -P
+rclone copy out/target/product/violet/*.zip cirrus:mido -P
