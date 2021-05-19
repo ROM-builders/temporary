@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch lineage_mojito-user
+lunch lineage_mojito-userdebug
 export SKIP_API_CHECKS=true
 export SKIP_ABI_CHECKS=true
 mka bacon
