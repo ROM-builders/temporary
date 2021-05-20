@@ -8,7 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 export USE_GAPPS = true
-lunch aosp_RMX1941-userdebug
+lunch nad_RMX1941-userdebug
 mka nad
 
 # upload rom
