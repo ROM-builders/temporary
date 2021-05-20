@@ -1,7 +1,9 @@
 # sync rom
-repo init --depth=1 -u https://github.com/PixelPlusUI/manifest.git -b eleven.x -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/Frachze97/local_manifests.git --depth 1 -b main .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo init --depth=1 -u https://github.com/PixelPlusUI/manifest -b eleven -g default,-device,-mips,-darwin,-notdefault
+
+git clone https://github.com/Fraschze97/local_manifest.git --depth 1 -b main .repo/local_manifests
+
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
 source build/envsetup.sh
