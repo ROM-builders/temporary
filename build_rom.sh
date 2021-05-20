@@ -14,4 +14,4 @@ mka bacon -j$(nproc --all)
 
 
 # upload rom
-rclone copy out/target/product/umi/Fluid.zip cirrus:umi -P
+rclone copy out/target/product/umi/*UNOFFICIAL*.zip cirrus:umi -P
