@@ -39,9 +39,8 @@ echo "patch done !"
 # build rom
 source build/envsetup.sh
 lunch nad_RMX1941-userdebug
-export USE_GAPPS=true
 export WITH_GAPPS=true
 mka nad
 
-# upload rom
-rclone copy out/target/product/RMX1941/*UNOFFICIAL*.zip cirrus:RMX1941 -P  
+# upload
+rclone copy out/target/product/RMX1941/*Unofficial*.zip cirrus:RMX1941 -P  
