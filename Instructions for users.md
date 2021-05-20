@@ -16,4 +16,3 @@
 ##### 9. Install magisk (only if you want to root your phone)
 ##### 10. Reboot to system
 ##### 11. Wait till phone gets ready to use.
-
