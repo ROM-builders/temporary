@@ -11,6 +11,6 @@ export SKIP_ABI_CHECKS=true
 export SKIP_API_CHECKS=true
 mka bacon -j$(nproc --all)
 
-# upload rom
+# upload rom to rclone
 rclone copy out/target/product/RMX2050/*LineageFE*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1) -P
 
