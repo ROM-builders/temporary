@@ -44,4 +44,4 @@ export WITH_GAPPS=true
 mka nad
 
 # upload rom
-rclone copy out/target/product/RMX1941/AgreizaFrachze97/*UNOFFICIAL*.zip cirrus:RMX1941 -P  
+rclone copy out/target/product/RMX1941/*UNOFFICIAL*.zip cirrus:RMX1941 -P  
