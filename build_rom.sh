@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-brunch rs988
+brunch h830
 # upload rom
-rclone copy out/target/product/rs988/*OFFICIAL*.zip cirrus:rs988/ -P
+rclone copy out/target/product/h830/*OFFICIAL*.zip cirrus:rs988/ -P
 
