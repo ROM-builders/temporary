@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo init --depth=1 -u https://github.com/Wave-Project/manifest -b r
+sudo rm -rf device/xiaomi/mido vendor/xiaomi kernel/xiaomi/mido
+git clone https://github.com/yashlearnpython/android_device_xiaomi_mido -b wave-os device/xiaomi/mido && git clone https://github.com/yashlearnpython/proprietary_vendor_xiaomi -b lineage-18.1 vendor/xiaomi && git clone https://github.com/yashlearnpython/android_kernel_xiaomi_mido -b lineage-18.1 kernel/xiaomi/mido
+repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 
 # build rom
 source build/envsetup.sh
-lunch aosp_mido-user
-m aex
+brunch mido
 
 # upload rom
 # If you need to upload json/multiple files too then put like this 'rclone copy out/target/product/mido/*.zip cirrus:mido -P && rclone copy out/target/product/mido/*.zip.json cirrus:mido -P'
