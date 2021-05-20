@@ -39,8 +39,8 @@ echo "patch done !"
 # build rom
 source build/envsetup.sh
 lunch nad_RMX1941-userdebug
-export USE_GAPPS = true
-export WITH_GAPPS = true
+export USE_GAPPS=true
+export WITH_GAPPS=true
 mka nad
 
 # upload rom
