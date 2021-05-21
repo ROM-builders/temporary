@@ -1,13 +1,17 @@
 # sync rom
-repo init --depth=1 -u https://github.com/ShapeShiftOS/android_manifest.git -b android_11 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/galanteria01/local_manifest.git --depth 1 .repo/local_manifests
+repo init --depth=1 -u git://github.com/lighthouse-os/manifest.git -b raft -g default,-device,-mips,-darwin,-notdefault
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+
+git clone https://github.com/lighthouse-os-devices/device_xiaomi_violet.git device/xiaomi/violet
+git clone https://github.com/lighthouse-os-devices/kernel_xiaomi_violet.git kernel/xiaomi/violet --depth 1
+git clone https://github.com/lighthouse-os-devices/vendor_xiaomi_violet.git vendor/xiaomi/violet --depth 1
+
 
 # build rom
 sudo apt update && sudo apt -y install cpio
 source build/envsetup.sh
-lunch ssos_violet-userdebug
-brunch violet
+lunch lighthouse_violet-userdebug
+mka lighthouse
 
 # upload rom
 # If you need to upload json/multiple files too then put like this 'rclone copy out/target/product/mido/*.zip cirrus:mido -P && rclone copy out/target/product/mido/*.zip.json cirrus:mido -P'
