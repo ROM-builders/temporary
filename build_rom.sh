@@ -9,7 +9,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 ls 
 echo finished sync
 . build/envsetup.sh
-lunch fluid_umi-userdebug
+lunch fluid_umi-user 
 mka bacon -j$(nproc --all)
 
 
