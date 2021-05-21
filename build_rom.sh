@@ -1,5 +1,5 @@
 # sync rom
-repo init -u https://github.com/NusantaraProject-ROM/android_manifest -b 11 --depth=1 -g default,-device,-mips,-darwin,-notdefault
+  repo init -u https://github.com/NusantaraProject-ROM/android_manifest -b 11 --depth=1 -g default,-device,-mips,-darwin,-notdefault
 
 git clone https://github.com/Fraschze97/local_manifest --depth=1 -b main .repo/local_manifests
 
