@@ -41,7 +41,7 @@ task:
   upload_script:
     - set -exv
     - cd ~/roms/$(bash -c "$ROM_NAME")
-    - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n 1)
+    - command=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
     - bash -c "$command"
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)
     - dlink=$(basename out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)/*.zip)
