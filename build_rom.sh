@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 sudo apt update && sudo apt -y install cpio
 source build/envsetup.sh
-lunch ssos_violet-user
+lunch ssos_violet-userdebug
 brunch violet
 
 # upload rom
