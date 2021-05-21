@@ -9,5 +9,3 @@ brunch rs988
 # upload rom
 # If you need to upload json/multiple files too then put like this 'rclone copy out/target/product/mido/*.zip cirrus:mido -P && rclone copy out/target/product/mido/*.zip.json cirrus:mido -P'
 rclone copy out/target/product/rs988/*OFFICIAL*.zip cirrus:rs988 -P
-
-
