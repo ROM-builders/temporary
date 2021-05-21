@@ -11,6 +11,7 @@ git clone https://github.com/lighthouse-os-devices/vendor_xiaomi_violet.git vend
 sudo apt update && sudo apt -y install cpio
 source build/envsetup.sh
 lunch lighthouse_violet-userdebug
+export BUILD_BROKEN_DUP_RULES=true
 mka lighthouse
 
 # upload rom
