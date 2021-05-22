@@ -8,4 +8,4 @@ source build/envsetup.sh
 brunch RMX1801
 
 # upload rom
-rclone copy out/target/product/RMX1801/*UNOFFICIAL*.zip cirrus:RMX1801 -P
+rclone copy out/target/product/RMX1801/Cherish*.zip cirrus:RMX1801 -P
