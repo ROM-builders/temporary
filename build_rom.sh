@@ -5,12 +5,14 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch havoc_mojito-user
+lunch havoc_mojito-userdebug
 export SKIP_ABI_CHECKS=true
 export SKIP_API_CHECKS=true
-brunch
+mka bacon -j$(nproc --all)
 
 # upload rom
 # If you need to upload json/multiple files too then put like this 'rclone copy out/target/product/mido/*.zip cirrus:mido -P && rclone copy out/target/product/mido/*.zip.json cirrus:mido -P'
-rclone copy out/target/product/mojito/*.zip cirrus:mojito -P
+rclone copy out/target/product/mojito/Havoc-OS*.zip cirrus:mojito -P
+
+
 
