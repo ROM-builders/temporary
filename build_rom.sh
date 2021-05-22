@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 -u git://github.com/ShapeShiftOS/manifest.git -b android_11 -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 -u https://github.com/ShapeShiftOS/manifest.git -b android_11 -g default,-device,-mips,-darwin,-notdefault
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 git clone https://github.com/ShapeShiftOS-Devices/device_xiaomi_violet device/xiaomi/violet --depth 1
@@ -7,6 +7,7 @@ git clone https://github.com/ShapeShiftOS-Devices/kernel_xiaomi_violet kernel/xi
 git clone https://github.com/ShapeShiftOS-Devices/vendor_xiaomi_violet vendor/xiaomi/violet --depth 1
 
 # build rom
+sudo apt update && sudo apt -y install cpio
 source build/envsetup.sh
 lunch ssos_violet-userdebug
 brunch violet
