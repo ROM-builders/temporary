@@ -20,7 +20,7 @@ task:
     - cd ~/roms/$(bash -c "$ROM_NAME")
     - rm -rf .repo/local_manifests
     - find -name shallow.lock -delete
-    - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep build/ $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
+    - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
     - bash -c "$command"
   build_script:
     - set -exv
@@ -52,5 +52,6 @@ task:
   remove_script:
     - set -exv
     - cd ~/roms/$(bash -c "$ROM_NAME")
+    - repo forall -c 'git checkout .' || true
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - rm -rf out/target/product/$device
