@@ -8,7 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch havoc_mojito-user
 export SKIP_ABI_CHECKS=true
 export SKIP_API_CHECKS=true
-mka bacon
+brunch
 
 # upload rom
 # If you need to upload json/multiple files too then put like this 'rclone copy out/target/product/mido/*.zip cirrus:mido -P && rclone copy out/target/product/mido/*.zip.json cirrus:mido -P'
