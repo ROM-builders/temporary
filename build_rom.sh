@@ -2,7 +2,7 @@
 repo init --depth=1 -u git://github.com/CipherOS/android_manifest.git -b eleven -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/sarthakroy2002/local_manifest.git --depth=1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-
+cd frameworks/base && curl -LO https://github.com/LineageOS/android_frameworks_base/commit/600d04c1e5822d3cadeb752b142a80553b424582.patch && git am *.patch && cd ../..
 # build rom
 source build/envsetup.sh
 lunch lineage_RMX2050-userdebug
