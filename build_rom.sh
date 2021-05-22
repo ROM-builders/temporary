@@ -5,9 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch havoc_mojito-userdebug
-export SKIP_ABI_CHECKS=true
-export SKIP_API_CHECKS=true
+brunch havoc_mojito-userdebug
 mka bacon -j$(nproc --all)
 
 # upload rom
