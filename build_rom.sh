@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch havoc_mojito-userdebug
+lunch havoc_mojito-user
 export SKIP_ABI_CHECKS=true
 export SKIP_API_CHECKS=true
 mka bacon
