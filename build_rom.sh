@@ -1,7 +1,12 @@
 # sync rom
 repo init --depth=1 -u https://github.com/PotatoProject/manifest -b dumaloo-release -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/galanteria01/local_manifest.git -b posp --depth 1 .repo/local_manifests 
+# git clone https://github.com/galanteria01/local_manifest.git -b posp --depth 1 .repo/local_manifests 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+
+git clone https://github.com/PotatoDevices/device_xiaomi_violet.git device/xiaomi/violet --depth 1
+git clone https://github.com/PotatoDevices/kernel_xiaomi_violet.git kernel/xiaomi/violet --depth 1
+git clone https://github.com/PotatoDevices/vendor_xiaomi_violet.git vendor/xiaomi/violet --depth 1
+git clone https://github.com/adi8900/vendor_xiaomi_dirac.git vendor/xiaomi/dirac --depth 1
 
 # build rom
 sudo apt update && sudo apt -y install cpio
