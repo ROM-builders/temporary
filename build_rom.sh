@@ -12,4 +12,4 @@ export USE_GAPPS=true
 mka nad
 
 # upload 
-rclone copy out/target/product/RMX1941/*UNOFFICIAL*.zip cirrus:RMX1941 -P  
+rclone copy out/target/product/RMX1941/*FR97-UNOFFICIAL*.zip cirrus:RMX1941 -P  
