@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch aosp_begonia-userdebug
+lunch aosp_surya-userdebug
 mka bacon
 
 # upload rom
