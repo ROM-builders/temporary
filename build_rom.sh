@@ -4,6 +4,7 @@ git clone https://github.com/galanteria01/local_manifest.git --depth 1 -b ssos .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+sudo apt update && sudo apt -y install cpio
 source build/envsetup.sh
 export BUILD_BROKEN_DUP_RULES=true
 lunch ssos_violet-userdebug
