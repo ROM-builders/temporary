@@ -11,6 +11,7 @@ lunch nad_RMX1941-userdebug
 export USE_GAPPS=true
 export DISABLE_DEXPREOPT=true
 export WITH_DEXPREOPT=false
+set ALLOW_MISSING_DEPENDENCIES=true
 mka nad
 
 # upload 
