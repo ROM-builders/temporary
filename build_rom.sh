@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 -u https://github.com/Havoc-OS/android_manifest.git -b eleven
-git clone https://github.com/Darkbreaker25/local_manifest --depth=1 -b Havoc .repo/local_manifest
+git clone https://github.com/Darkbreaker25/local_manifest --depth=1 -b Havoc .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # patches
