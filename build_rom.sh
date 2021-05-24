@@ -31,7 +31,8 @@ cd ../..
 export USE_GAPPS=true
 export DISABLE_DEXPREOPT=true
 export WITH_DEXPREOPT=false
-ALLOW_MISSING_DEPENDENCIES=true
+export SELINUX_IGNORE_NEVERALLOWS=true
+export ALLOW_MISSING_DEPENDENCIES=true
 lunch nad_RMX1941-userdebug
 mka nad
 
