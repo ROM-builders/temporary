@@ -26,7 +26,7 @@ cd ../..
 
 # build rom
 . build/envsetup.sh
-lunch havoc_RMX1945-userdebug
+lunch havoc_RMX1941-userdebug
 brunch RMX1941
 
 # upload rom
