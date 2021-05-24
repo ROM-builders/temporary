@@ -28,12 +28,11 @@ cd ../..
 
 # build
 . build/envsetup.sh
+lunch nad_RMX1941-userdebug
 export USE_GAPPS=true
 export DISABLE_DEXPREOPT=true
 export WITH_DEXPREOPT=false
 export SELINUX_IGNORE_NEVERALLOWS=true
-export ALLOW_MISSING_DEPENDENCIES=true
-lunch nad_RMX1941-userdebug
 mka nad
 
 # upload 
