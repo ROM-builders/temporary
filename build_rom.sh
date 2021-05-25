@@ -1,5 +1,3 @@
-#cleanup
-make clean && make clobber
 # sync rom
 repo init --depth=1 -u git://github.com/CipherOS/android_manifest.git -b eleven -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/RahulPalXDA/local_manifests.git --depth 1 -b main .repo/local_manifests
