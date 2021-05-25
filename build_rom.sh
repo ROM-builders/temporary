@@ -8,10 +8,6 @@ cd external/selinux
 curl -L http://ix.io/2FhM > sasta.patch
 git am sasta.patch
 cd -
-cd frameworks/av
-wget https://github.com/phhusson/platform_frameworks_av/commit/624cfc90b8bedb024f289772960f3cd7072fa940.patch
-patch -p1 < *.patch
-cd -
 
 # build rom
 source build/envsetup.sh
