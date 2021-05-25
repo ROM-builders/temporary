@@ -8,4 +8,4 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
  brunch RMX1941-userdebug
 
 # upload rom
-rclone copy out/target/product/RMX1941/*.zip cirrus:RMX1941 -P
+rclone copy out/target/product/RMX1941/*UNOFFICIAL*.zip cirrus:RMX1941 -P
