@@ -1,13 +1,9 @@
-AospExtended custom ROM for Redmi Note 4
+CipHer OS for asus max pro m1
 ==============================
 
-AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note 4(code name mido)
+[Cipher OS](https://cipheros.github.io/) [ROM](https://beebom.com/best-custom-roms-android-phones/) for [ASUS max pro m1](https://www.asus.com/ph/Mobile/Phones/All-series/ZenFone-Max-Pro-M1/) (codename: X00TD)
 
-[Features as video](https://www.youtube.com/watch?v=KuQ9jIVmOXY) or [Features as text](https://forum.xda-developers.com/t/rom-11-0-aospextended-rom-v8-0-unofficial-surya.4202905/)
-
-[Screenshots](https://t.me/Apon77Mido/5270) or [Video](https://www.youtube.com/watch?v=KuQ9jIVmOXY)
-
-Distributed [here](https://t.me/rn4downloads/4885)
+Distributed : [telegram](https://t.me/Zmpm1official) , [Cipher OS site](https://cipheros.github.io/Devices/)
 
 Estimated installation no.: 150-500
 
