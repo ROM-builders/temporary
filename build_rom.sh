@@ -6,7 +6,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch havoc_mojito-userdebug
-brunch
+export SKIP_API_CHECKS=true
+export SKIP_ABI_CHECKS=true
+brunch mojito
 #if you are a patch user (which is really not normal and not recommended), then must put like this, `m aex || repo forall -c 'git checkout .'
 
 # upload rom
