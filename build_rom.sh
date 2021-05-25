@@ -10,10 +10,10 @@ brunch
 #if you are a patch user (which is really not normal and not recommended), then must put like this, `m aex || repo forall -c 'git checkout .'
 
 # patcher
-cd vendor/havoc/build/soong
-curl -LO https://github.com/aslafy-z/android_vendor_lineage/commit/0e890665886445d9947e16efe204cd596603205f.patch
-patch -p1 < *.patch
-cd ../..
+#cd vendor/havoc/build/soong
+#curl -LO https://github.com/aslafy-z/android_vendor_lineage/commit/0e890665886445d9947e16efe204cd596603205f.patch
+#patch -p1 < *.patch
+#cd ../../../..
 
 # upload rom
 # If you need to upload json/multiple files too then put like this 'rclone copy out/target/product/mido/*.zip cirrus:mido -P && rclone copy out/target/product/mido/*.zip.json cirrus:mido -P'
