@@ -5,6 +5,8 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
 . build/envsetup.sh
+export CHERISH_MAINTAINER=Sundram 
+export CHERISH_NONGAPPS=true
  brunch RMX1941-userdebug
 
 # upload rom
