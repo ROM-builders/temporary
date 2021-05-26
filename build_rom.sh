@@ -9,11 +9,12 @@ lunch havoc_mojito-userdebug
 export SKIP_API_CHECKS=true
 export SKIP_ABI_CHECKS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
-brunch mojito
-#if you are a patch user (which is really not normal and not recommended), then must put like this, `m aex || repo forall -c 'git checkout .'
+#dont remove the \ , it helps patch users
+m init \
+	&& repo forall -c 'git checkout .' || repo forall -c 'git checkout'
 
 # upload rom
-# If you need to upload json/multiple files too then put like this 'rclone copy out/target/product/mido/*.zip cirrus:mido -P && rclone copy out/target/product/mido/*.zip.json cirrus:mido -P'
+# If you need to upload json/multiple files too then put like this
+#rclone copy out/target/product/mido/*.zip cirrus:mido -P
+#rclone copy out/target/product/mido/*.zip.json cirrus:mido -P'
 rclone copy out/target/product/mojito/*.zip cirrus:mojito -P
-
-    
