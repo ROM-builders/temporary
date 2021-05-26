@@ -4,7 +4,6 @@ git clone https://github.com/boedhack/local_manifest.git --depth=1 -b havoc .rep
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-<<<<<<< HEAD
 . build/envsetup.sh
 lunch havoc_mojito-userdebug
 export SKIP_API_CHECKS=true
