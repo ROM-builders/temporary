@@ -6,7 +6,7 @@ task:
   timeout_in: 30m
   container:
     image: apon77/aosp:cirrus
-    cpu: 1
+    cpu: 2
     memory: 4G
   test_script:
     - set -e
@@ -101,7 +101,7 @@ task:
   timeout_in: 2h
   container:
     image: apon77/aosp:cirrus
-    cpu: 1
+    cpu: 2
     memory: 4G
   test_script:
     - set -e
