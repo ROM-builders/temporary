@@ -21,3 +21,5 @@ then
 	echo Please dont use rm -rf inside script, use local manifest for this purpose
 	exit 1
 fi
+
+echo Test passed
