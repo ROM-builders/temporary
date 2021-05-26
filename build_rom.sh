@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch aosp_mido-user
 #dont remove the \ , it helps patch users
-m init \
+m aex \
 	&& repo forall -c 'git checkout .' || repo forall -c 'git checkout'
 
 # upload rom
