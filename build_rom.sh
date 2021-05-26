@@ -10,7 +10,7 @@ export SKIP_API_CHECKS=true
 export SKIP_ABI_CHECKS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 #dont remove the \ , it helps patch users
-m init \
+m aex \
 	&& repo forall -c 'git checkout .' || repo forall -c 'git checkout'
 
 # upload rom
