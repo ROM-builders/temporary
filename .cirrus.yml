@@ -1,7 +1,23 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
+
+task:
+  name: Test
+  timeout_in: 30m
+  container:
+    image: apon77/aosp:cirrus
+    cpu: 1
+    memory: 4G
+  test_script:
+    - set -e
+    - intake=$(sha1sum test.sh | cut -d ' ' -f 1)
+    - if [[ $intake != 6c2687fc56b34bd781a3431cab038a9287ab7932 ]]; then exit 1; fi
+    - bash test.sh
+
 task:
   name: Build
+  depends_on:
+    - Test
   timeout_in: 4h
   only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
   persistent_worker:
@@ -9,7 +25,7 @@ task:
       container:
         image: apon77/aosp:cirrus
         cpu: 24
-        memory: 60g
+        memory: 60G
         volumes:
           - /home/cirrus/roms:/home/cirrus/roms
           - /home/cirrus/.config:/home/cirrus/.config
@@ -77,3 +93,14 @@ task:
     - repo forall -c 'git checkout .' || true
     - rm -rf out/target/product/$device/*.zip
     - rm -rf out/target/product/$device/*.zip.md5sum
+
+task:
+  name: Post Build
+  timeout_in: 2h
+  container:
+    image: apon77/aosp:cirrus
+    cpu: 1
+    memory: 4G
+  test_script:
+    - set -e
+    - echo fine
