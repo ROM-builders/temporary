@@ -18,3 +18,4 @@ brunch mojito \
 #rclone copy out/target/product/mido/*.zip cirrus:mido -P
 #rclone copy out/target/product/mido/*.zip.json cirrus:mido -P'
 rclone copy out/target/product/mojito/*.zip cirrus:mojito -P
+  
