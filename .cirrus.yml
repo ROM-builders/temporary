@@ -13,6 +13,7 @@ task:
         volumes:
           - /home/cirrus/roms:/home/cirrus/roms
           - /home/cirrus/.config:/home/cirrus/.config
+
   sync_script:
     - set -exv
 
@@ -26,6 +27,7 @@ task:
     - find -name shallow.lock -delete
     - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
     - bash -c "$command"
+
   build_script:
     - set -exv
 
@@ -41,6 +43,7 @@ task:
     - ccache -z
     - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1)
     - bash -c "$command"
+
   ccache_stats_script:
     - set -exv
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
@@ -49,6 +52,7 @@ task:
 
     - export CCACHE_DIR=~/roms/$device-$rom_name-$username/ccache
     - ccache -s
+
   upload_script:
     - set -exv
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
@@ -63,3 +67,13 @@ task:
     - command=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
     - bash -c "$command"
     - echo "Downlod link https://roms.cirrus-ci.workers.dev/0:/$device/$dlink"
+
+  remove_script:
+    - set -exv
+    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
+    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - username=$(grep 'git clone' $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - cd ~/roms/$device-$rom_name-$username
+    - repo forall -c 'git checkout .' || true
+    - rm -rf out/target/product/$device/*.zip
+    - rm -rf out/target/product/$device/*.zip.md5sum
