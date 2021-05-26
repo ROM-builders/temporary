@@ -5,13 +5,12 @@ task:
   persistent_worker:
     isolation:
       container:
-        image: apon77/aosp:ccache
+        image: apon77/aosp:cirrus
         cpu: 24
         memory: 60g
         volumes:
-          - /home/cirrus/roms:/home/ci/roms
-          - /home/cirrus/ccache:/home/ci/ccache
-          - /home/cirrus/.config:/home/ci/.config
+          - /home/cirrus/roms:/home/cirrus/roms
+          - /home/cirrus/.config:/home/cirrus/.config
   env:
     ROM_NAME: "grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4"
   sync_script:
@@ -29,7 +28,7 @@ task:
     - export CCACHE_DIR=/home/ci/ccache/$(bash -c "$ROM_NAME")/$device
     - export CCACHE_EXEC=$(which ccache)
     - export USE_CCACHE=1
-    - ccache -M 50G
+    - ccache -M 10G
     - ccache -z
     - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep build/ $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1)
     - bash -c "$command"
