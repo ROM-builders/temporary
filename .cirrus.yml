@@ -1,3 +1,5 @@
+env:
+    CIRRUS_CLONE_DEPTH: 1
 task:
   name: Build
   timeout_in: 4h
@@ -5,38 +7,47 @@ task:
   persistent_worker:
     isolation:
       container:
-        image: apon77/aosp:ccache
+        image: apon77/aosp:cirrus
         cpu: 24
         memory: 60g
         volumes:
-          - /home/cirrus/roms:/home/ci/roms
-          - /home/cirrus/ccache:/home/ci/ccache
-          - /home/cirrus/.config:/home/ci/.config
-  env:
-    ROM_NAME: "grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4"
+          - /home/cirrus/roms:/home/cirrus/roms
+          - /home/cirrus/.config:/home/cirrus/.config
   sync_script:
     - set -exv
-    - mkdir -p ~/roms/$(bash -c "$ROM_NAME")
-    - cd ~/roms/$(bash -c "$ROM_NAME")
+
+    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
+    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - username=$(grep 'git clone' $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+
+    - mkdir -p ~/roms/$device-$rom_name-$username
+    - cd ~/roms/$device-$rom_name-$username
     - rm -rf .repo/local_manifests
     - find -name shallow.lock -delete
     - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
     - bash -c "$command"
   build_script:
     - set -exv
-    - cd ~/roms/$(bash -c "$ROM_NAME")
+
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-    - export CCACHE_DIR=/home/ci/ccache/$(bash -c "$ROM_NAME")/$device
+    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - username=$(grep 'git clone' $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+
+    - cd ~/roms/$device-$rom_name-$username
+    - export CCACHE_DIR=~/roms/$device-$rom_name-$username/ccache
     - export CCACHE_EXEC=$(which ccache)
     - export USE_CCACHE=1
-    - ccache -M 50G
+    - ccache -M 10G
     - ccache -z
     - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1)
     - bash -c "$command"
   ccache_stats_script:
     - set -exv
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-    - export CCACHE_DIR=/home/ci/ccache/$(bash -c "$ROM_NAME")/$device
+    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - username=$(grep 'git clone' $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+
+    - export CCACHE_DIR=~/roms/$device-$rom_name-$username/ccache
     - ccache -s
   upload_script:
     - set -exv
