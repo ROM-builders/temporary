@@ -6,9 +6,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_mido-user
-#dont remove the \ , it helps patch users
+# if you are a patch user, then dont remove the \ and next line , it helps patch users to get sync propely next time
 m aex \
-	&& repo forall -c 'git checkout .' || repo forall -c 'git checkout'
+	&& repo forall -c 'git checkout .' || repo forall -c 'git checkout .'
 
 # upload rom
 # If you need to upload json/multiple files too then put like this
