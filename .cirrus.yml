@@ -12,7 +12,7 @@ task:
     - set -e
     - intake=$(sha1sum test.sh | cut -d ' ' -f 1)
     - echo $intake
-    - if [[ $intake != 0389bc0b481b6fc06a16689753354f58777da0f7 ]]; then echo Please use test.sh file from main branch ; exit 1 ; fi
+    - if [[ $intake != 9c2f47bc49754212fe72f23fe6dbb1cd55118cdb ]]; then echo Please use test.sh file from main branch ; exit 1 ; fi
     - bash test.sh
 
 task:
