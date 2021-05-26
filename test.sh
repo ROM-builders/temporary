@@ -22,4 +22,10 @@ then
 	exit 1
 fi
 
+device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
+rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+username=$(grep 'git clone' $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+
+ls ~/roms/$device-$rom_name-$username/*/*/*/vendorsetup.sh > /dev/null 2>&1 && echo Please remove vendorsetup.sh from device tree, use local manifest for this purpose https://github.com/Apon77Lab/android_.repo_local_manifests/tree/tutorial || true
+
 echo Test passed
