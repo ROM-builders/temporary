@@ -58,6 +58,7 @@ task:
     - export USE_CCACHE=1
     - ccache -M 10G
     - ccache -z
+    - rm -rf */*/*/vendorsetup.sh
     - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v 'rclone copy')
     - bash -c "$command"
 
