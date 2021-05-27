@@ -1,5 +1,24 @@
+env:
+    CIRRUS_CLONE_DEPTH: 1
+
+task:
+  name: Test
+  timeout_in: 30m
+  container:
+    image: apon77/aosp:cirrus
+    cpu: 2
+    memory: 4G
+  test_script:
+    - set -e
+    - intake=$(sha1sum test.sh | cut -d ' ' -f 1)
+    - echo $intake
+    - if [[ $intake != 9c2f47bc49754212fe72f23fe6dbb1cd55118cdb ]]; then echo Please use test.sh file from main branch ; exit 1 ; fi
+    - bash test.sh
+
 task:
   name: Build
+  depends_on:
+    - Test
   timeout_in: 4h
   only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
   persistent_worker:
@@ -7,49 +26,84 @@ task:
       container:
         image: apon77/aosp:cirrus
         cpu: 24
-        memory: 60g
+        memory: 60G
         volumes:
           - /home/cirrus/roms:/home/cirrus/roms
           - /home/cirrus/.config:/home/cirrus/.config
-  env:
-    ROM_NAME: "grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4"
+
   sync_script:
     - set -exv
-    - mkdir -p ~/roms/$(bash -c "$ROM_NAME")
-    - cd ~/roms/$(bash -c "$ROM_NAME")
+
+    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
+    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - username=$(grep 'git clone' $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+
+    - mkdir -p ~/roms/$device-$rom_name-$username
+    - cd ~/roms/$device-$rom_name-$username
     - rm -rf .repo/local_manifests
     - find -name shallow.lock -delete
-    - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep build/ $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
+    - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
     - bash -c "$command"
+
   build_script:
     - set -exv
-    - cd ~/roms/$(bash -c "$ROM_NAME")
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)
-    - export CCACHE_DIR=/home/ci/ccache/$(bash -c "$ROM_NAME")/$device
+
+    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
+    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - username=$(grep 'git clone' $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+
+    - cd ~/roms/$device-$rom_name-$username
+    - export CCACHE_DIR=~/roms/$device-$rom_name-$username/ccache
     - export CCACHE_EXEC=$(which ccache)
     - export USE_CCACHE=1
     - ccache -M 10G
     - ccache -z
-    - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep build/ $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1)
+    - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v 'rclone copy')
     - bash -c "$command"
+
   ccache_stats_script:
     - set -exv
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)
-    - export CCACHE_DIR=/home/ci/ccache/$(bash -c "$ROM_NAME")/$device
+    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
+    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - username=$(grep 'git clone' $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+
+    - export CCACHE_DIR=~/roms/$device-$rom_name-$username/ccache
     - ccache -s
+
   upload_script:
     - set -exv
-    - cd ~/roms/$(bash -c "$ROM_NAME")
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)
+    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
+    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - username=$(grep 'git clone' $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+
+    - cd ~/roms/$device-$rom_name-$username
     - engzip=$(ls out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)/*eng*.zip || true )
-    - otazip=$(ls out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)/*ota*.zip || true )
+    - otazip=$(ls out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)/*-ota-*.zip || true )
     - rm -rf $engzip $otazip
     - dlink=$(basename out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)/*.zip)
     - command=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
     - bash -c "$command"
     - echo "Downlod link https://roms.cirrus-ci.workers.dev/0:/$device/$dlink"
+
   remove_script:
     - set -exv
-    - cd ~/roms/$(bash -c "$ROM_NAME")
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d _ -f 2 | cut -d - -f 1)
-    - rm -rf out/target/product/$device
+    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
+    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - username=$(grep 'git clone' $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - cd ~/roms/$device-$rom_name-$username
+    - repo forall -c 'git checkout .' || true
+    - rm -rf out/target/product/$device/*.zip
+    - rm -rf out/target/product/$device/*.zip.md5sum
+
+task:
+  name: Post Build
+  depends_on:
+    - Build
+  timeout_in: 2h
+  container:
+    image: apon77/aosp:cirrus
+    cpu: 2
+    memory: 4G
+  test_script:
+    - set -e
+    - echo fine
