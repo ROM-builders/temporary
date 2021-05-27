@@ -5,7 +5,6 @@ git clone https://github.com/Fraschze97/local_manifest.git --depth 1 -b nusantar
 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-
 # build rom
 source build/envsetup.sh
 lunch nad_RMX1941-userdebug
