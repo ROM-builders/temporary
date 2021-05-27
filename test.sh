@@ -28,4 +28,14 @@ username=$(grep 'git clone' $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 
 
 ls ~/roms/$device-$rom_name-$username/*/*/*/vendorsetup.sh > /dev/null 2>&1 && echo Please remove vendorsetup.sh from device tree, use local manifest for this purpose https://github.com/Apon77Lab/android_.repo_local_manifests/tree/tutorial || true
 
+if [ -z "$CIRRUS_PR" ]
+then
+	if [[ $CIRRUS_BRANCH != $device-$rom_name-$username ]]
+	then
+		echo "Please fix branch naming as device-rom_name-username. device=comes from lunch line (mido), rom_name=comes from repo init line (AospExtended), username=comes from git clone localmanifest's username(Apon77) i.e. branch name should be mido-AospExtended-Apon77"
+	fi
+else
+      true
+fi
+
 echo Test passed
