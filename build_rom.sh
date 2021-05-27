@@ -7,7 +7,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 . build/envsetup.sh
 export CHERISH_MAINTAINER=Sundram 
 export CHERISH_NONGAPPS=true
- brunch RMX1941-userdebug
+brunch RMX1941-userdebug
 
 # upload rom
 rclone copy out/target/product/RMX1941/*UNOFFICIAL*.zip cirrus:RMX1941 -P
