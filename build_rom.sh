@@ -9,4 +9,4 @@ lunch mido-userdebug
 make -j8 otapackage
 
 # upload rom
-rclone copy out/target/product/target/proton-aosp*.zip cirrus:mido -P
+rclone copy out/target/product/mido/proton-aosp*.zip cirrus:mido -P
