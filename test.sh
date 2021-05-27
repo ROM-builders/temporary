@@ -38,7 +38,4 @@ else
       true
 fi
 
-# upload rom
-rclone copy out/target/product/ysl/dotOS-R-v5.1-ysl-GAPPS-20210527-2305.zip cirrus:ysl -P
-
 echo Test passed
