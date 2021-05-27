@@ -11,4 +11,7 @@ export WITH_GAPPS=true
 make bacon
 
 # upload rom
-rclone copy out/target/product/ysl/*.zip cirrus:ysl -P
+rclone copy out/target/product/ysl/dotOS-R-v5.1-ysl-GAPPS*.zip cirrus:ysl -P
+
+# upload rom
+rclone copy out/target/product/ysl/dotOS-R-v5.1-ysl-OFFICIAL*.zip cirrus:ysl -P
