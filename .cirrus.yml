@@ -97,6 +97,7 @@ task:
 
 task:
   name: Post Build
+  skip_notifications: true
   depends_on:
     - Build
   timeout_in: 2h
