@@ -10,6 +10,7 @@ ls
 echo finished sync
 . build/envsetup.sh
 lunch fluid_umi-user 
+export ALLOW_MISSING_DEPENDENCIES=true
 mka bacon -j$(nproc --all)
 
 

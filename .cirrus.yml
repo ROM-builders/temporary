@@ -32,7 +32,7 @@ task:
     - ccache -M 50G
     - ccache -z
     - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep build/ $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1)
-    - export ALLOW_MISSING_DEPENDENICES = true
+    - export ALLOW_MISSING_DEPENDENICES=true
     - bash -c "$command"
   ccache_stats_script:
     - set -exv
