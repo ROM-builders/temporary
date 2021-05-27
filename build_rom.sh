@@ -1,4 +1,3 @@
-
 # sync rom
 repo init --depth=1 -u git://github.com/DotOS/manifest.git -b dot11 -g default,-device,-mips,-darwin,-notdefault
 
@@ -15,9 +14,8 @@ cd ../..
 # build
 source build/envsetup.sh
 lunch dot_RMX1941-userdebug
-export WITH_GAPPS=true  # gapps
-make bacon
-
+make bacon \
+	&& repo forall -c 'git checkout .' || repo forall -c 'git checkout .'
 
 # upload build
 rclone copy out/target/product/RMX1941/*UNOFFICIAL*.zip cirrus:RMX1941 -P
