@@ -1,8 +1,3 @@
-#!/bin/bash
-
-set -e
-set -x
-
 # sync rom
 repo init -u https://github.com/CherishOS/android_manifest.git -b eleven --depth=1 -g default,-device,-mips,-darwin,-notdefault
 
