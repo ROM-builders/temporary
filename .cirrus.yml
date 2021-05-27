@@ -10,7 +10,7 @@ task:
     memory: 4G
   test_script:
     - set -e
-    - intake=$(sha1sum test.sh | cut -d ' ' -f 1)
+    - intake=$(sha1sum test.sh | cut -d ' ' -f 1) || echo Please use test.sh file from main branch && exit 1
     - echo $intake
     - if [[ $intake != 9c2f47bc49754212fe72f23fe6dbb1cd55118cdb ]]; then echo Please use test.sh file from main branch ; exit 1 ; fi
     - bash test.sh
