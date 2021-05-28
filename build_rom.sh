@@ -10,8 +10,8 @@ source build/envsetup.sh
 lunch nad_RMX1941-userdebug
 export USE_GAPPS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
+export ALLOW_MISSING_DEPENDENCIES=true
 mka nad
-
 
 # upload rom
 rclone copy out/target/product/RMX1941/*.zip cirrus:RMX1941 -P
