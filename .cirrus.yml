@@ -10,6 +10,8 @@ task:
     image: apon77/aosp:cirrus
     cpu: 2
     memory: 4G
+  env_script:
+    - env
   test_script:
     - set -e
     - curl -Ls https://github.com/ROM-builders/temporary/raw/main/test.sh | bash
