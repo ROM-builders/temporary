@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch dot_ysl-user
-make bacon
 export WITH_GAPPS=true
 make bacon
 
@@ -14,4 +13,4 @@ make bacon
 rclone copy out/target/product/ysl/dotOS-R-v5.1-ysl-GAPPS*.zip cirrus:ysl -P
 
 # upload rom
-rclone copy out/target/product/ysl/dotOS-R-v5.1-ysl-OFFICIAL*.zip cirrus:ysl -P
+# rclone copy out/target/product/ysl/dotOS-R-v5.1-ysl-OFFICIAL*.zip cirrus:ysl -P
