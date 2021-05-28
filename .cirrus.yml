@@ -102,7 +102,7 @@ task:
     image: apon77/aosp:cirrus
     cpu: 2
     memory: 4G
-  test_script:
+  post_build_script:
     - set -e
     - echo fine
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
