@@ -1,5 +1,6 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
+    BUILD_HOSTNAME: "cirrus-ci.org"
 
 task:
   name: Test
