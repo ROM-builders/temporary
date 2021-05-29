@@ -44,7 +44,7 @@ then
 	if [[ $CIRRUS_CHANGE_MESSAGE != $device-$rom_name-* ]]
 	then
 		echo "Please use PR title/branch name like this device-Rom-Builder (Rom name must be matched from repo init line)"
-		exit 1
+		exit 0
 	fi
 else
 	if [[ $CIRRUS_BRANCH != $device-$rom_name-* ]]
