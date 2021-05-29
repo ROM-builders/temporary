@@ -23,14 +23,14 @@ then
 fi
 
 clean_check=$(grep ' clean' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $rm_check -gt 0 ]]
+if [[ $clean_check -gt 0 ]]
 then
 	echo Please dont use make clean. Server does make installclean by default, which is enough for most of the cases. 
 	exit 1
 fi
 
 clobber_check=$(grep ' clobber' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $rm_check -gt 0 ]]
+if [[ $clobber_check -gt 0 ]]
 then
 	echo Please dont use make clobber. Server does make installclean by default, which is enough for most of the cases. 
 	exit 1
