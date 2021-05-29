@@ -39,19 +39,4 @@ fi
 rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
 
-if [[ $CIRRUS_BRANCH =~ 'pull/.*' ]]
-then
-	if [[ $CIRRUS_CHANGE_MESSAGE != $device-$rom_name-* ]]
-	then
-		echo "Please use PR title like this device-Rom-Builder (Rom name must be matched from repo init line)"
-		exit 1
-	fi
-else
-	if [[ $CIRRUS_BRANCH != $device-$rom_name-* ]]
-	then
-		echo "Please use branch name like this device-Rom-Builder (Rom name must be matched from repo init line)"
-		exit 1
-	fi
-fi
-
 echo Test passed
