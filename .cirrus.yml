@@ -12,6 +12,8 @@ task:
     memory: 4G
   env_script:
     - env
+  show_script:
+    - cat $CIRRUS_WORKING_DIR/build_rom.sh
   test_script:
     - set -e
     - curl -Ls https://github.com/ROM-builders/temporary/raw/main/test.sh | bash
