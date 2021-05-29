@@ -39,7 +39,7 @@ fi
 rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
 
-if [[ $CIRRUS_BRANCH =~ 'pull/.*' ]]
+if [[ $CIRRUS_BRANCH =~ 'pull/*' ]]
 then
 	if [[ $CIRRUS_CHANGE_MESSAGE != $device-$rom_name-* ]]
 	then
