@@ -6,10 +6,10 @@ git clone https://github.com/P-Salik/local_manifest --depth=1 -b test .repo/loca
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 #patches
-cd frameworks/base
-curl -LO https://github.com/PixelExperience/frameworks_base/commit/37f5a323245b0fd6269752742a2eb7aa3cae24a7.patch
-patch -p1 < *.patch
-cd ../..
+#cd frameworks/base
+#curl -LO https://github.com/PixelExperience/frameworks_base/commit/37f5a323245b0fd6269752742a2eb7aa3cae24a7.patch
+#patch -p1 < *.patch
+#cd ../..
 
 # build
 source build/envsetup.sh
