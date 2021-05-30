@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b eleven-plus -g default,-device,-mips,-darwin,-notdefault
-git clone Radeon790/local_manifests --depth 1 -b r11 .repo/local_manifests
+git clone https://github.com/Radeon790/local_manifests.git --depth 1 -b r11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
