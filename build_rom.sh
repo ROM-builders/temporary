@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b eleven-plus -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/Lineage-FE/manifest.git -b lineage-18.1 -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/Radeon790/local_manifests.git --depth 1 -b r11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_RMX1831-userdebug
+lunch lineage_RMX1831-userdebug
 mka bacon 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
