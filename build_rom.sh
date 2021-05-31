@@ -9,6 +9,5 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch nad_RMX1941-userdebug
 mka nad
 
-
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
-rclone copy out/target/product/RMX1941/NusantaraProject*.zip cirrus:RMX1941 -P
+rclone copy out/target/product/RMX1941/*UNOFFICIAL*.zip cirrus:RMX1941 -P
