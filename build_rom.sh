@@ -5,12 +5,6 @@ git clone https://github.com/Fraschze97/local_manifest.git --depth 1 -b nusantar
 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# patches
-cd frameworks/opt/net/wifi
-curl -LO https://github.com/Fraschze97/android_frameworks_opt_net_wifi/commit/d53535f92adba2780cc77b5549a815b75d2e3b2a.patch
-patch -p1 < *.patch
-cd ../..
-
 . build/envsetup.sh
 lunch nad_RMX1941-userdebug
 mka nad
