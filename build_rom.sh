@@ -7,6 +7,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 . build/envsetup.sh
 lunch nad_RMX1941-userdebug
+export USE_GAPPS=true
+export SELINUX_IGNORE_NEVERALLOWS=true
 mka nad
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
