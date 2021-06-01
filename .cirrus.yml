@@ -9,7 +9,7 @@ task:
   timeout_in: 30m
   container:
     image: apon77/aosp:cirrus
-    cpu: .5
+    cpu: 2
     memory: 2G
   env_script:
     - env
