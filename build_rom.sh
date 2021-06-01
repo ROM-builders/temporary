@@ -8,5 +8,5 @@ source build/envsetup.sh
 lunch nezuko_RMX1805-userdebug
 mka bacon
 
-# upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
+# upload rom 
 rclone copy out/target/product/RMX1805/*UNOFFICIAL*.zip cirrus:RMX1805 -P
