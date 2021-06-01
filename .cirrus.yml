@@ -6,7 +6,7 @@ task:
   name: Test
   skip: $CIRRUS_BRANCH == 'main'
   only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
-  timeout_in: 5m
+  timeout_in: 30m
   container:
     image: apon77/aosp:cirrus
     cpu: .5
@@ -115,7 +115,7 @@ task:
   skip_notifications: true
   depends_on:
     - Build
-  timeout_in: 5m
+  timeout_in: 30m
   container:
     image: apon77/aosp:cirrus
     cpu: .5
