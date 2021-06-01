@@ -5,10 +5,13 @@ git clone https://github.com/Fraschze97/local_manifest --depth=1 -b nusantara .r
 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+# build rom
 . build/envsetup.sh
 lunch nad_RMX1941-userdebug
 export USE_GAPPS=true
+export TZ=Asia/Jakarta
 mka nad
+
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/RMX1941/*UNOFFICIAL*.zip cirrus:RMX1941 -P
