@@ -12,6 +12,5 @@ export USE_GAPPS=true
 export TZ=Asia/Jakarta
 mka nad
 
-
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/RMX1941/*UNOFFICIAL*.zip cirrus:RMX1941 -P
