@@ -9,5 +9,5 @@ lunch descendant_RMX1805-userdebug
 make descendant
 
 # upload rom 
-rclone copy out/target/product/RMX1805/*UNOFFICIAL*.zip cirrus:RMX1805 -P
+rclone copy out/target/product/RMX1805/*Community*.zip cirrus:RMX1805 -P
  
