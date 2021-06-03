@@ -9,7 +9,7 @@ lunch fluid_RMX1805-userdebug
 make bacon
 
 # upload rom 
-rclone copy out/target/product/RMX1805/*Unofficial*.zip cirrus:RMX1805 -P
+rclone copy out/target/product/RMX1805/*UNOFFICIAL*.zip cirrus:RMX1805 -P
  
       
    
