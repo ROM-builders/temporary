@@ -1,17 +1,18 @@
 # sync rom 
-repo init --depth=1 --no-repo-verify -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelExtended/manifest -b eleven -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/Abhinavftp/local_manifest.git --depth 1 -b los .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+# patch
+cd frameworks/native && curl -O https://github.com/phhusson/platform_frameworks_native/commit/cc94e422c0a8b2680e7f9cfc391b2b03a56da765.patch && patch -p1 < *.patch && cd ../..
+cd external/selinux && curl -O https://github.com/phhusson/platform_external_selinux/commit/38d614ec61d610459a7f8e3a243a3dab7a20d356.patch && patch -p1 < *.patch && cd ../..
 
 
 
 #build
 source build/envsetup.sh
 lunch aosp_RMX1805-userdebug
-export SKIP_API_CHECKS=true
-export SKIP_ABI_CHECKS=true
-export SELINUX_IGNORE_NEVERALLOWS=true
+
 export TZ=Asia/Jakarta #put before last build command
 m aex
  
