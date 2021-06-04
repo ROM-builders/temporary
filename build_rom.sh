@@ -3,11 +3,10 @@ repo init --depth=1 --no-repo-verify -u git://github.com/AospExtended/manifest.g
 git clone https://github.com/Abhinavftp/local_manifest.git --depth 1 -b los .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-
+#patch
 cd device/aosp/sepolicy/common/dynamic/ && rm -rf hal_aosp_smartcharge.te && cd ../../../../..
-# build romal_aosp_smartcharge.te
-# build rom
 
+#build
 source build/envsetup.sh
 lunch aosp_RMX1805-userdebug
 export TZ=Asia/Jakarta #put before last build command
