@@ -44,4 +44,12 @@ then
 	exit 1
 fi
 
+sync_check=$(grep 'repo sync' $CIRRUS_WORKING_DIR/build_rom.sh)
+sync_string="repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j"
+if [[ $sync_check != *$sync_string* ]]
+then
+	echo Please follow repo sync line of main branch.
+	exit 1
+fi
+
 echo Test passed
