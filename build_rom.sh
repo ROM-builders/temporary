@@ -5,6 +5,12 @@ git clone https://github.com/Fraschze97/local_manifest --depth=1 -b nusantara .r
 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+# patches
+cd frameworks/opt/net/wifi
+curl -LO https://github.com/wulan17/android_device_xiaomi_certus/commit/1b34da9addc5223f83b67972afff62b9ce49f9a3.patch
+patch -p1 < *.patch
+cd ../../../..
+
 # build rom
 . build/envsetup.sh
 lunch nad_RMX1941-userdebug
