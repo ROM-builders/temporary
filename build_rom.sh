@@ -10,15 +10,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch nad_RMX1941-userdebug
 export USE_GAPPS=true
 export TZ=Asia/Jakarta
-
-# metalava
-make_metalava(){
-	make sepolicy
-	make init
-	make booimage
-}
-
-make_metalava
 mka nad
 
 
