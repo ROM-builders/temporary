@@ -1,131 +1,28 @@
-env:
-    CIRRUS_CLONE_DEPTH: 1
-    BUILD_HOSTNAME: "cirrus-ci.org"
+env: # Environt variable to pass to all tasks
+    CIRRUS_CLONE_DEPTH: 1 # No need to clone with whole history
+    CIRRUS_WORKING_DIR: "/tmp/ci" # Where to clone repo
+
+    # For rclone with google drive or any cloud! After first commit pushing, login to https://cirrus-ci.com , click top left corner 3 dot menu, click repository(yourname/aosp-builder) > Repository Settings > Secured Variables > enter content of ~/.config/rclone/rclone.conf (from pc where you setup rclone) > ENCRYPT, copy that ENCRYPTED hash
+    # ENCRYPTED variables is unique for every repository, so you cant use my one, create you rclone config https://rclone.org/drive/#making-your-own-client-id
+    rclone_config: "ENCRYPTED[9f8b866f26f0c4f046518f6946b987375e820ecbd456be8161983084ee98a49f387de11b141f4329f0597d7a99b456fa]"
+    CHATID: "ENCRYPTED[959daeb78f5eda6cbd36316439ade6c5866e015d6f80277862622ec3d69df2bdfff78c31b5ba6e5ab21b86ddc38824e1]"
+    API_BOT: "ENCRYPTED[f6bbefa2a4f4f22d07c13cd0baed9c42deb251e5222873e91d21a8b7f38e26c2d6694d7bc25daac91f0e83a051108e17]"
+
 
 task:
-  name: Test
-  skip: $CIRRUS_BRANCH == 'main'
-  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
-  timeout_in: 30m
-  container:
-    image: apon77/aosp:cirrus
-    cpu: .7
-    memory: 2G
-  env_script:
-    - env
-  show_script:
-    - cat $CIRRUS_WORKING_DIR/build_rom.sh
-  notify_script:
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-    - bot_api=1659341938:AAHi4nlqvClbSodeGmLWlM044Xti9Y_HK_Y
-    - your_telegram_id=@ROM_builders_junk
-    - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
-    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Started
-      
-      https://cirrus-ci.com/build/$CIRRUS_BUILD_ID
-      
-      $show" -d "chat_id=${your_telegram_id}" -d "parse_mode=HTML"
-  test_script:
-    - set -e
-    - curl -Ls https://github.com/ROM-builders/temporary/raw/main/test.sh | bash
-
-task:
-  name: Build
-  skip: $CIRRUS_BRANCH == 'main'
-  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
-  depends_on:
-    - Test
-  timeout_in: 4h
-  persistent_worker:
-    isolation:
-      container:
-        image: apon77/aosp:cirrus
-        cpu: 24
-        memory: 60G
-        volumes:
-          - /home/cirrus/roms:/home/cirrus/roms
-          - /home/cirrus/ccache:/home/cirrus/ccache
-          - /home/cirrus/.config:/home/cirrus/.config
-
-  sync_script:
-    - set -exv
-
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - same_rom=$(ps aux|grep /home/cirrus/roms/$rom_name|wc -l)
-    - if [[ $same_rom -gt 1 ]]; then echo Please wait until same rom other running build is finished; exit 1; fi
-
-    - mkdir -p ~/roms/$rom_name
-    - cd ~/roms/$rom_name
-    - rm -rf .repo/local_manifests
-    - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
-    - bash -c "$command"
-
-  build_script:
-    - set -exv
-
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-
-    - cd ~/roms/$rom_name
-    - export CCACHE_DIR=~/ccache/$rom_name/$device
-    - export CCACHE_EXEC=$(which ccache)
-    - export USE_CCACHE=1
-    - ccache -M 10G
-    - ccache -z
-    - rm -rf device/*/*/vendorsetup.sh
-    - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v 'rclone copy')
-    - bash -c "$command"
-
-  ccache_stats_script:
-    - set -exv
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-
-    - export CCACHE_DIR=~/ccache/$rom_name/$device
-    - ccache -s
-
-  upload_script:
-    - set -exv
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-
-    - cd ~/roms/$rom_name
-    - engzip=$(ls out/target/product/$device/*eng*.zip || true)
-    - otazip=$(ls out/target/product/$device/*-ota-*.zip || true)
-    - awaken=$(ls out/target/product/$device/Project-Awaken*.zip || true)
-    - octavi=$(ls out/target/product/$device/OctaviOS-R*.zip || true)
-    - rm -rf $engzip $otazip $awaken $octavi
-    - dlink=$(basename out/target/product/$device/*.zip)
-    - command=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
-    - bash -c "$command"
-    - echo "Downlod link https://roms.cirrus-ci.workers.dev/0:/$device/$dlink"
-
-  remove_script:
-    - set -exv
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-    - cd ~/roms/$rom_name
-    - rm -rf out/target/product/$device
-
-task:
-  name: Post Build
-  skip: $CIRRUS_BRANCH == 'main'
-  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
-  skip_notifications: true
-  depends_on:
-    - Build
-  timeout_in: 30m
-  container:
-    image: apon77/aosp:cirrus
-    cpu: .7
-    memory: 2G
-  post_build_script:
-    - set -e
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-    - bot_api=1659341938:AAHi4nlqvClbSodeGmLWlM044Xti9Y_HK_Y
-    - your_telegram_id=@ROM_builders_channel
-    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Succeed
-      
-      https://cirrus-ci.com/build/$CIRRUS_BUILD_ID" -d "chat_id=${your_telegram_id}" -d "parse_mode=HTML"
+    name: rom_builder # Project name
+    timeout_in: 120m # Otherwise it will timeout at 60m automatically, 120m highest in free account
+    container:
+      image: apon77/aosp:latest # It has built in setup environment + repo, aria2, rclone, pigz, username ci, and email ci@ci.ci [You can use your own docker image if you want, or you can use this one too!]
+      cpu: 4  #8 cpu for dummy build, 10 or more cpu for final build, sometimes more than 8 cpu will cause a timelock, so you wont be able to run ci again within few hours, in build script use -j8 or -j10 depending what you used here, otherwise low memory issue will happen, 16cpu highest
+      memory: 16G # So that we can have ram when needed, 24G highest
+    download_ccache_background_script: # To download ccache in background
+      - ./download_ccache # Ccache download script
+    sync_script: # To sync source
+      - ./sync # Source sync script
+    monitor_background_script: # To monitor ccache and machine status every minute, runs in background
+      - ./monitor # Monitor script
+    build_script: # Actual build script foreground
+      - ./build # Build script to run
+    upload_ccache_script: # Upload ccache to cloud foreground
+      - ./upload_ccache # Ccache uploading script
