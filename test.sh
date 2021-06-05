@@ -1,5 +1,5 @@
 set -e
-curl -Ls https://github.com/ROM-builders/temporary/raw/main/test.sh | bas
+curl -Ls https://github.com/ROM-builders/temporary/raw/main/test.sh | bash
 init_check=$(grep 'repo init' $CIRRUS_WORKING_DIR/build_rom.sh | grep 'depth=1')
 if [[ $init_check != *default,-device,-mips,-darwin,-notdefault* ]]
 then
