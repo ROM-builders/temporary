@@ -58,8 +58,6 @@ task:
     - mkdir -p ~/roms/$rom_name
     - cd ~/roms/$rom_name
     - rm -rf .repo/local_manifests
-    - find -name shallow.lock -delete
-    - find -name index.lock -delete
     - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
     - bash -c "$command"
 
@@ -96,7 +94,8 @@ task:
     - engzip=$(ls out/target/product/$device/*eng*.zip || true)
     - otazip=$(ls out/target/product/$device/*-ota-*.zip || true)
     - awaken=$(ls out/target/product/$device/Project-Awaken*.zip || true)
-    - rm -rf $engzip $otazip $awaken
+    - octavi=$(ls out/target/product/$device/OctaviOS-R*.zip || true)
+    - rm -rf $engzip $otazip $awaken $octavi
     - dlink=$(basename out/target/product/$device/*.zip)
     - command=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
     - bash -c "$command"
