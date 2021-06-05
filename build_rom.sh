@@ -9,16 +9,19 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 cd frameworks/opt/net/wifi
 curl -LO https://github.com/wulan17/android_device_xiaomi_certus/commit/1b34da9addc5223f83b67972afff62b9ce49f9a3.patch
 patch -p1 < *.patch
+Skip this patch? [n]
 cd ../../../..
 
 cd frameworks/opt/net/wifi
 curl -LO https://github.com/wulan17/patches/commit/8e28743ebd7d05cedc25aa5b34e280d56d318d80.patch
 patch -p1 < *.patch
+Skip this patch? [n]
 cd ../../../..
 
 cd system/sepolicy
 curl -LO https://github.com/Arya1230/device_xiaomi-sdm660-common-4.19/commit/22e559d7fc38959a96f06f424c903918422a526a.patch 
 patch -p1 < *.patch
+Skip this patch? [n]
 cd ../..
 
 # build rom
