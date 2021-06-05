@@ -12,5 +12,3 @@ m otapackage
 rclone copy out/target/product/fajita/arrow*.zip cirrus:fajita -P
 
 
-# upload rom
-rclone copy out/target/product/fajita/AroowOS*.zip cirrus:fajita -P
