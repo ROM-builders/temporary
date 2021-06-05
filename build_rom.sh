@@ -3,12 +3,9 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest 
 git clone https://github.com/Abhinavftp/local_manifest.git --depth 1 -b los .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-#patch
-
-cd frameworks/native
-curl -LO
-https://github.com/Evolution-X/frameworks_native/pull/5/commits/a4b5f596fb6ad46d8f7be93b7ca50334b4e99c35.patch 
-&& patch -p1 < *.patch && cd ../..
+# patch
+cd frameworks/native && curl -O https://github.com/phhusson/platform_frameworks_native/commit/cc94e422c0a8b2680e7f9cfc391b2b03a56da765.patch && patch -p1 < *.patch && cd ../..
+cd external/selinux && curl -O https://github.com/phhusson/platform_external_selinux/commit/38d614ec61d610459a7f8e3a243a3dab7a20d356.patch && patch -p1 < *.patch && cd ../..
 
 #build
 . build/envsetup.sh
