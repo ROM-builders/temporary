@@ -16,6 +16,11 @@ curl -LO https://github.com/wulan17/patches/commit/8e28743ebd7d05cedc25aa5b34e28
 patch -p1 < *.patch
 cd ../../../..
 
+cd system/sepolicy
+curl -LO https://github.com/Arya1230/device_xiaomi-sdm660-common-4.19/commit/22e559d7fc38959a96f06f424c903918422a526a.patch 
+patch -p1 < *.patch
+cd ../..
+
 # build rom
 . build/envsetup.sh
 lunch nad_RMX1941-userdebug
