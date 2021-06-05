@@ -3,9 +3,11 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest 
 git clone https://github.com/Abhinavftp/local_manifest.git --depth 1 -b los .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# patch
-cd frameworks/native && curl -O
-https://github.com/CherishOS/android_frameworks_native/commit/1f63eeea82e8f746cd5ef5859087906a9d0cf2a5.patch 
+#patch
+
+cd frameworks/native
+curl -LO
+https://github.com/Evolution-X/frameworks_native/pull/5/commits/a4b5f596fb6ad46d8f7be93b7ca50334b4e99c35.patch 
 && patch -p1 < *.patch && cd ../..
 
 #build
