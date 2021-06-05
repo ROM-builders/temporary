@@ -117,8 +117,8 @@ task:
   timeout_in: 30m
   container:
     image: apon77/aosp:cirrus
-    cpu: .7
-    memory: 2G
+    cpu: .4
+    memory: 16G
   post_build_script:
     - set -e
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
