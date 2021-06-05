@@ -1,0 +1,12 @@
+#!/bin/bash
+
+mkdir -p /tmp/rom # Where to sync source
+cd /tmp/rom
+
+# Repo init command, that -device,-mips,-darwin,-notdefault part will save you more time and storage to sync, add more according to your rom and choice. Optimization is welcomed! Let's make it quit, and with depth=1 so that no unnecessary things.
+# I want to sync ssos source!
+repo init --depth=1 --no-repo-verify -u git://github.com/ArrowOS/android_manifest.git -b arrow-11.0 -g  default,-device,-mips,-darwin,-notdefault
+# Clone Local Manifest
+git clone https://github.com/androidgreek/local_manifest.git --depth=1 -b arrow .repo/local_manifests
+# Sync source with -q, no need unnecessary messages, you can remove -q if want! try with -j30 first, if fails, it will try again with -j8
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 8
