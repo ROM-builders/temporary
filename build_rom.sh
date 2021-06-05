@@ -9,7 +9,7 @@ cd external/selinux && curl -O https://github.com/phhusson/platform_external_sel
 
 #build
 . build/envsetup.sh
-lunch cherish_RMX1805-userdebug
+lunch bliss_RMX1805-userdebug
 export TZ=Asia/Jakarta #put before last build command
 blissify -f RMX1805
  
