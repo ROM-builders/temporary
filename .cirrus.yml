@@ -94,7 +94,8 @@ task:
     - engzip=$(ls out/target/product/$device/*eng*.zip || true)
     - otazip=$(ls out/target/product/$device/*-ota-*.zip || true)
     - awaken=$(ls out/target/product/$device/Project-Awaken*.zip || true)
-    - rm -rf $engzip $otazip $awaken
+    - octavi=$(ls out/target/product/$device/OctaviOS-R*.zip || true)
+    - rm -rf $engzip $otazip $awaken $octavi
     - dlink=$(basename out/target/product/$device/*.zip)
     - command=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
     - bash -c "$command"
