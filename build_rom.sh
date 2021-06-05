@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch arrow_fajita-user
+lunch arrow_fajita-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make carthage -j$(nproc --all)
 
