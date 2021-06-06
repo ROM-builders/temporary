@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lineage_Z00L_userdebug
+lunch lineage_Z00L-userdebug
 export TZ=Asia/Dhaka
 mka bacon -j$(nproc --all)
 
