@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_Z00L-userdebug
-export TZ=Asia/Kolkata
+export TZ=Asia/Dhaka
 mka bacon -j$(nproc --all)
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
