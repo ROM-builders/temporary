@@ -28,4 +28,4 @@ rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1
 
 
 
-
+https://github.com/dodyirawan85/android_device_realme_trinket/commits/derpfest-10-experimental?after=a9ba305fd883cc716a35b795f89de2dec212dfeb+69&branch=derpfest-10-experimental
