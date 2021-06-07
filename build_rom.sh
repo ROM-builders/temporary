@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch nad_RMX1941-userdebug
+lunch nad_RMX1941-user
 export SKIP_API_CHECKS=true
 export SKIP_ABI_CHECKS=true
 export USE_GAPPS=true
