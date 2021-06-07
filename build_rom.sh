@@ -3,6 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/NusantaraProject-ROM/
 git clone https://github.com/Fraschze97/local_manifest --depth=1 -b nusantara11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+
 # build rom
 . build/envsetup.sh
 lunch nad_RMX1941-userdebug
