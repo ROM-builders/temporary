@@ -8,12 +8,13 @@ repo init -u https://github.com/descendant-xi/manifests.git -b eleven-staging
  
 https://github.com/mukulsharma05175/frostmanifest.git --depth=1 -b derp .repo/local_manifests 
 
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+repo sync --force-sync --no-tags --no-clone-bundle -j$(nproc --all)
+ 
 
 
 # build rom
 source build/envsetup.sh
-lunch octavi_lavender-userdebug
+lunch descendant_lavender-userdebug
 make bacon
 
 # upload rom
