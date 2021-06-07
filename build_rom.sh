@@ -4,7 +4,7 @@ git clone https://github.com/mukulsharma05175/frostmanifest.git --depth 1 -b mas
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source source build/envsetup.sh
+. build/envsetup.sh
 lunch descendant_lavender-userdebug
 make bacon
 
