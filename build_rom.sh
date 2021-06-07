@@ -6,7 +6,7 @@ set -x
 # sync rom
 repo init -u https://github.com/descendant-xi/manifests.git -b eleven-staging
  
-https://github.com/mukulsharma05175/frostmanifest.git --depth=1 -b derp .repo/local_manifests 
+git clone https://github.com/mukulsharma05175/frostmanifest.git --depth=1 -b derp .repo/local_manifests 
 
 repo sync --force-sync --no-tags --no-clone-bundle -j$(nproc --all)
  
