@@ -4,8 +4,10 @@ set -e
 set -x
 
 # sync rom
-repo init --depth=1 -u git://github.com/Octavi-OS/android_manifest.git -b eleven
-git clone https://github.com/mukulsharma05175/frostmanifest.git --depth=1 -b derp .repo/local_manifests
+repo init -u https://github.com/descendant-xi/manifests.git -b eleven-staging
+ 
+https://github.com/mukulsharma05175/frostmanifest.git --depth=1 -b derp .repo/local_manifests 
+
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 
