@@ -4,7 +4,7 @@ set -e
 set -x
 
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/mukulsharma05175/frostmanifest.git -b eleven-staging -g default,-device,-mips,-darwin,-notdefault 
+repo init --depth=1 --no-repo-verify -u https://github.com/descendant-xi/manifests.git -b eleven-staging -g default,-device,-mips,-darwin,-notdefault -b eleven-staging -g default,-device,-mips,-darwin,-notdefault 
  
 git clone https://github.com/mukulsharma05175/frostmanifest.git --depth=1 -b derp .repo/local_manifests 
 
