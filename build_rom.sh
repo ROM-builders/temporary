@@ -4,9 +4,9 @@ git clone https://github.com/mukulsharma06175/frostmanifest/tree/Octiva-4.19 --d
 repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
 
 # build rom
-$ . build/envsetup.sh
-$ lunch octavi_lavender-userdebug
-$ brunch lavender
+ . build/envsetup.sh
+ lunch octavi_lavender-userdebug
+ brunch lavender
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
