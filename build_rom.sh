@@ -7,7 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 export SELINUX_IGNORE_NEVERALLOWS=true
 lunch nitrogen_platina-userdebug
-export ALLOW_MISSING_DEPENDENCIES=true
 export SKIP_API_CHECKS=true
 export SKIP_ABI_CHECKS=true
 export TZ=Asia/Jakarta #put before last build command
