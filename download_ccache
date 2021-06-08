@@ -1,0 +1,15 @@
+#!/bin/bash
+# Lets see machine specifications and environments
+df -h
+free -h
+nproc
+cat /etc/os*
+env
+
+# So, we get upto 59% build complete, and also got ccache uploaded, inspite of previous commit error (because i shared rclone_config content), ccache still got uploaded, and can be accessed from anywhere by this:- https://roms.apon77.workers.dev/ccache/ci3/ccache.tar.gz my drive index helped here! So, now lets use it to download ccache for 2nd build, and also collect ccache 2nd time too, becasue 59% is not enough to collect enough cccahe.
+url=https://roms.apon77.workers.dev/ccache/ci3/ccache.tar.gz # Where cccahe is located, use your ones, from where you want to download ccache!
+
+cd /tmp # Where to download cccahe
+time aria2c $url -x16 -s50 # Using aria2c for speed haha, ccache will be at /tmp/ccache.tar.gz since my file name is ccache.tar.gz
+time tar xf ccache.tar.gz  # Extract ccache so ci can use it
+rm -rf ccache.tar.gz # Remove unnecessary downloaded file, it will speed up the upload ccache process
