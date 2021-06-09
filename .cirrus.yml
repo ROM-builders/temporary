@@ -61,7 +61,7 @@ task:
     - rm -rf .repo/local_manifests
     - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
     - only_sync=$(grep 'repo sync' $CIRRUS_WORKING_DIR/build_rom.sh)
-    - bash -c "$command" || find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync" || repo forall -c 'git checkout .' && bash -c "$only_sync"
+    - bash -c "$command" || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync") || (repo forall -c 'git checkout .' && bash -c "$only_sync")
 
   build_script:
     - set -exv
