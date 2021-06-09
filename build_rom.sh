@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-18.1 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/iAboothahir/manifest.git --depth 1 -b lineage-18.1 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/NusantaraProject-ROM/android_manifest.git -b 11 -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/STRK-ND/local-manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom lineage
 source build/envsetup.sh
-lunch lineage_X00TD-userdebug
+lunch nad_X00TD-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
