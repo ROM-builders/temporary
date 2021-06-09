@@ -1,19 +1,23 @@
-AospExtended custom ROM for Redmi Note 4
-==============================
+Device Tree for Realme C2
+===========================================
 
+The Realme C2 is a budget range smartphone from Realme, announced in April 2019.
 
-AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note 4(code name mido)
+## Device specifications
 
-[Features as video](https://www.youtube.com/watch?v=KuQ9jIVmOXY) or [Features as text](https://forum.xda-developers.com/t/rom-11-0-aospextended-rom-v8-0-unofficial-surya.4202905/)
-
-[Screenshots](https://t.me/Apon77Mido/5270) or [Video](https://www.youtube.com/watch?v=KuQ9jIVmOXY)
-
-Distributed [here](https://t.me/rn4downloads/4885)
-
-Estimated installation no.: 150-500
-
-How to use this repository
--------------------
-
-* [Instructions if you want to develop AospExtended custom ROM as a developer](https://github.com/Apon77/mido-AospExtended-Apon77/blob/main/Instructions%20for%20developers.md)
-* [Instructions if you want to use AospExtended custom ROM in your device as a user](https://github.com/Apon77/mido-AospExtended-Apon77/blob/main/Instructions%20for%20users.md)
+Basic   | Spec Sheet
+-------:|:-------------------------
+OS	| Android 9.0 (pie)	
+CPU     | Octa-core 2.0 GHz Cortex-A53
+Chipset | Mediatek MT6762 Helio P22 (12 nm)
+GPU     | PowerVR GE8320
+Memory  | 2GB/3GB RAM
+Storage | 16GB/32GB
+MicroSD | up to 64 GB (dedicated slot)
+Battery | Non-removable Li-Ion 4000 mAh battery
+Resolution | 720 x 1560 pixels, 19.5:9 ratio (~282 ppi density)
+Camera (Rear)  | 13 MP, f/2.2, 1/3.1", 1.12µm, PDAF & 2 MP, f/2.4, (depth)
+Rear Camera Features | LED flash, HDR, panorama
+Video	| 1080p@30fps	
+Camera (Front)  | 5 MP, f/2.0, 1/5", 1.12µm
+Features| Accelerometer, proximity, compass	
