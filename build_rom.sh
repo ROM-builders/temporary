@@ -1,7 +1,7 @@
 # sync rom.  
 repo init --depth=1 --no-repo-verify -u https://github.com/exthmui/android.git -b exthm-11 -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/mukulsharma06175/frostmanifest --depth 1 -b derp .repo/local_manifests
-repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 #build rom
 source build/envsetup.sh
