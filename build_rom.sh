@@ -1,5 +1,6 @@
-# sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-OS/platform_manifest.git -b 11 -g default,-device,-mips,-darwin,-notdefault
+# sync rom.  
+repo init --depth=1 --no-repo-verify -u https://github.com/exthmui/android.git -b exthm-11 -g default,-device,-mips,-darwin,-notdefault
+
 git clone git@github.com:mukulsharma06175/frostmanifest.git --depth 1 -b Octiva-4.19 .repo/local_manifests
 repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
 
