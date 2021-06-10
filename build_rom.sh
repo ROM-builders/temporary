@@ -4,6 +4,7 @@ git clone https://github.com/STRK-ND/local-manifest.git --depth 1 -b main .repo/
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom lineage
+export ALLOW_MISSING_DEPENDENCIES=true
 source build/envsetup.sh
 lunch nad_X00TD-userdebug
 export TZ=Asia/Dhaka #put before last build command
