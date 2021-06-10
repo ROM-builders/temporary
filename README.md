@@ -1,8 +1,3 @@
-Device Tree for Realme C2
-===========================================
-
-The Realme C2 is a budget range smartphone from Realme, announced in April 2019.
-
 ## Device specifications
 
 Basic   | Spec Sheet
