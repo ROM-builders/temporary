@@ -5,7 +5,7 @@ repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --pru
 
 #build rom
 source build/envsetup.sh
-lunch octavi_lavender-userdebug
+lunch exthm_lavender-userdebug
 brunch lavender
 
 
