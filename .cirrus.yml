@@ -53,7 +53,7 @@ task:
   sync_script:
     - set -exv
 
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - rom_name=kernelpanic
     - same_rom=$(ps aux|grep /home/cirrus/roms/$rom_name|wc -l)
     - if [[ $same_rom -gt 1 ]]; then echo Please wait until same rom other running build is finished; exit 1; fi
 
@@ -67,7 +67,7 @@ task:
   build_script:
     - set -exv
 
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - rom_name=kernelpanic
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
 
     - cd ~/roms/$rom_name
@@ -82,7 +82,7 @@ task:
 
   ccache_stats_script:
     - set -exv
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - rom_name=kernelpanic
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
 
     - export CCACHE_DIR=~/ccache/$rom_name/$device
@@ -90,7 +90,7 @@ task:
 
   upload_script:
     - set -exv
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - rom_name=kernelpanic
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
 
     - cd ~/roms/$rom_name
@@ -106,7 +106,7 @@ task:
 
   remove_script:
     - set -exv
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - rom_name=kernelpanic
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - cd ~/roms/$rom_name
     - rm -rf out/target/product/$device
@@ -125,7 +125,7 @@ task:
     memory: 2G
   post_build_script:
     - set -e
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - rom_name=kernelpanic
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - your_telegram_id=@ROM_builders_channel
     - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Succeed
