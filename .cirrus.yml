@@ -52,6 +52,7 @@ task:
 
   sync_script:
     - set -exv
+
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - same_rom=$(ps aux|grep /home/cirrus/roms/$rom_name|wc -l)
     - if [[ $same_rom -gt 1 ]]; then echo Please wait until same rom other running build is finished; exit 1; fi
@@ -76,9 +77,6 @@ task:
     - ccache -M 10G
     - ccache -z
     - rm -rf device/*/*/vendorsetup.sh
-    - rm -rf out
-    - rm -rf device/realme
-    - rm -rf device/xiaomi
     - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v 'rclone copy')
     - bash -c "$command"
 
@@ -104,6 +102,7 @@ task:
     - dlink=$(basename out/target/product/$device/*.zip)
     - command=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
     - bash -c "$command"
+    - echo "Downlod link https://roms.cirrus-ci.workers.dev/0:/$device/$dlink"
 
   remove_script:
     - set -exv
