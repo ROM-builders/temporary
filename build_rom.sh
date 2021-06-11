@@ -1,11 +1,11 @@
 # sync rom
-repo init -q --no-repo-verify --depth=1 -u https://github.com/LineageOS/android.git -b lineage-18.1 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/KernelPanic-OpenSource/local_manifest.git --depth 1 -b main .repo/local_manifests
+repo init -q --no-repo-verify --depth=1 -u https://github.com/CherishOS/android_manifest.git -b eleven -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/KernelPanic-OpenSource/local_manifest.git --depth 1 -b cherish-11 .repo/local_manifests
 repo sync -v -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 # build rom
 source build/envsetup.sh
-lunch lineage_whyred-userdebug
+lunch cherish_whyred-userdebug
 export TZ=Asia/Ho_Chi_Minh #put before last build command
 mka bacon -j$(nproc --all)
 
