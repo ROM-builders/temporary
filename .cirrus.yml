@@ -30,6 +30,7 @@ task:
       $show" -d "chat_id=${your_telegram_id}" -d "parse_mode=HTML"
   test_script:
     - set -e
+    - rm -rf /home/cirrus/roms/CherishOS
     - curl -Ls https://github.com/KernelPanic-OpenSource/temporary/raw/whyred-LineageOS-dopaemon/test.sh | bash
 
 task:
