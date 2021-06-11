@@ -104,7 +104,6 @@ task:
     - dlink=$(basename out/target/product/$device/*.zip)
     - command=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
     - bash -c "$command"
-    - echo "Downlod link https://roms.cirrus-ci.workers.dev/0:/$device/$dlink"
 
   remove_script:
     - set -exv
