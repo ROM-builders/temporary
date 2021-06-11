@@ -1,6 +1,6 @@
 # sync rom.  
 repo init --depth=1 --no-repo-verify -u git://github.com/CipherOS/android_manifest.git -b eleven -g default,-device,-mips,-darwin,-notdefault
-git clone git@github.com:mukulsharma06175/frostmanifest.git --depth 1 -b derp .repo/local_manifests
+git clone https://github.com/mukulsharma06175/frostmanifest --depth 1 -b derp .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 #build rom
