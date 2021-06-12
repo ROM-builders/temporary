@@ -4,7 +4,7 @@ git clone https://github.com/D4rkKnight21/local-manifests.git --depth 1 -b los .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch lineage_platina-userdebug
 export SKIP_API_CHECK=true
 export SKIP_ABI_CHECK=true
