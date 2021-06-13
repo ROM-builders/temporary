@@ -7,7 +7,7 @@ repo sync -v -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sy
 source build/envsetup.sh
 export SKIP_ABI_CHECKS=true
 export TZ=Asia/Ho_Chi_Minh #put before last build command
-lunch whyred_nad-userdebug
+lunch nad_whyred-userdebug
 mka nad -j$(nproc --all)
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
