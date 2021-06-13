@@ -5,12 +5,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
+lunch komodo_platina-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export SKIP_API_CHECK=true
 export SKIP_ABI_CHECK=true
 export ALLOW_MISSING_DEPENDENCIES=true
-export TZ=Asia/Jakarta #put before
-lunch komodo_platina-userdebug
 export TZ=Asia/Jakarta #put before last build command
 masak komodo -j$(nproc --all)
 
