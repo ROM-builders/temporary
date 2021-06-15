@@ -22,6 +22,13 @@ then
 	exit 1
 fi
 
+mv_check=$(grep 'mv ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
+if [[ $mv_check -gt 0 ]]
+then
+	echo Please dont use mv inside script, use local manifest for this purpose.
+	exit 1
+fi
+
 clean_check=$(grep ' clean' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $clean_check -gt 0 ]]
 then
@@ -43,6 +50,19 @@ then
 	exit 1
 fi
 
+patch_check=$(grep 'patch ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
+if [[ $patch_check -gt 0 ]]
+then
+	echo Please dont use patch inside script, use local manifest for this purpose.
+	exit 1
+fi
+
+and_check=$(grep ' && ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
+if [[ $and_check -gt 0 ]]
+then
+	echo 'Please dont use && inside script, put that command in next line for this purpose.'
+	exit 1
+fi
 
 rclone_check=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
 rclone_string="rclone copy out/target/product/\$(grep unch \$CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:\$(grep unch \$CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P"
