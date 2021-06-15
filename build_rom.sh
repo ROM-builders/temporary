@@ -3,12 +3,6 @@ repo init --depth=1 --no-repo-verify -u https://github.com/NusantaraProject-ROM/
 git clone https://github.com/Fraschze97/local_manifest --depth=1 -b nusantara11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# patch
-cd external/selinux 
-curl -LO https://raw.githubusercontent.com/SamarV-121/android_vendor_extra/lineage-18.1/patches/external/selinux/0001-Revert-libsepol-Make-an-unknown-permission-an-error-.patch
-patch -p1 < *.patch
-cd ../..
-
 # build rom
 . build/envsetup.sh
 lunch nad_RMX1941-userdebug
