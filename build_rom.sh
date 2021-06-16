@@ -8,6 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch nad_RMX1941-userdebug
 export SKIP_API_CHECKS=true
 export SKIP_ABI_CHECKS=true
+export USE_GAPPS=true
 export TZ=Asia/Jakarta
 mka nad
 
