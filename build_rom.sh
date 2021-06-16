@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/CherishOS/android_manifest.git -b test -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/hungphan2001/local_manifests.git --depth 1 -b lavender .repo/local_manifests
+git clone https://github.com/mukulsharma06175/local_manifests.git --depth 1 -b lavender .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
