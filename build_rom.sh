@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch fluid_lavender-userdebug
+export TZ=Asia/Kolkata #put before last build command (setting timezone)
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
