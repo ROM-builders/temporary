@@ -6,7 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch descendant_jasmine_sprout-userdebug
-make bacon
+mka descendant
+
 export TZ=Asia/Dhaka #put before last build command
 
 
