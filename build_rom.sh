@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch aosp_lavender-userdebug
-export TZ=Asia/Kolkata #put this before last build comand
+export TZ=Asia/Kolkata #put this before last build comand(time zone)
 SELINUX_IGNORE_NEVERALLOWS=true
 mka bacon
 
