@@ -5,8 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch havoc_jasmine_sprout-userdebug
-mka havoc
+brunch
+
 export TZ=Asia/Dhaka #put before last build command
 
 
