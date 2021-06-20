@@ -4,6 +4,7 @@ git clone https://github.com/Prashant1873/manifest_personal.git --depth 1 -b caf
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+export ALLOW_MISSING_DEPENDENCIES=true
 source build/envsetup.sh
 brunch jasmine_sprout 
 
