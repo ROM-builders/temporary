@@ -1,12 +1,12 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Corvus-R/android_manifest.git -b 11 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/mukulsharma06175/frostmanifest.git --depth 1 -b corvus-test .repo/local_manifests
+git clone https://github.com/mukulsharma06175/frostmanifest.git --depth 1 -b Corvus .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
 lunch corvus_lavender-userdebug
-export TZ=Asia/Dhaka #put before last build command (Time zone)
+export TZ=Asia/kolkata #put before last build command (Time zone)
 export SELINUX_IGNORE_NEVERALLOWS=True
 export RAVEN_LAIR=BETA
 make corvus
