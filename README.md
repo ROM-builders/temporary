@@ -3,7 +3,8 @@ AospExtended custom ROM for Redmi Note 4
 
 AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note 4(code name mido)
 
-[Features as video](https://www.youtube.com/watch?v=KuQ9jIVmOXY) unofficial-surya.
+[Features as video](https://www.youtube.com/watch?v=KuQ9jIVmOXY) unofficial
+
 
 Distributed [here](https://t.me/rn4downloads/4885)
 
