@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Descendant-XI/manifests.git -b eleven-staging -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/Prashant1873/manifest_personal.git --depth 1 -b main .repo/local_manifests
+git clone https://github.com/Prashant1873/manifest_personal.git --depth 1 -b desc .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch descendant_jasmine_sprout-userdebug
 mka descendant
 
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Kolkata #put before last build command
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
