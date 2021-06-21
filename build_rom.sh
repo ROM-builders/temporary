@@ -7,8 +7,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch corvus_lavender-userdebug
 export TZ=Asia/Dhaka #put before last build command (Time zone)
-export SELINUX_IGNORE_NEVERALLOWS=true
-export RAVEN_LAIR=OFFICIAL
+export SELINUX_IGNORE_NEVERALLOWS=True
+export RAVEN_LAIR=BETA
 make corvus
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
