@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch corvus_lavender-userdebug
 export TZ=Asia/kolkata #put before last build command (Time)
-export SELINUX_IGNORE_NEVERALLOWS=True
+export SELINUX_IGNORE_NEVERALLOWS=true
 export RAVEN_LAIR=BETA
 make corvus
 
