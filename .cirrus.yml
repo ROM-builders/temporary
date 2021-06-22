@@ -1,6 +1,8 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
     BUILD_HOSTNAME: "cirrus-ci.org"
+    bot_api: "ENCRYPTED[b16032643ad0994cda4822c9d477956f434278d0f786f8e131b585aa4f8510a11f3cd9f6a66a63568d2cba1c4dde25b4]"
+
 
 task:
   name: Test
@@ -18,7 +20,6 @@ task:
   notify_script:
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-    - bot_api=1659341938:AAHi4nlqvClbSodeGmLWlM044Xti9Y_HK_Y
     - your_telegram_id=@ROM_builders_junk
     - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
     - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Started
@@ -53,13 +54,14 @@ task:
 
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - same_rom=$(ps aux|grep /home/cirrus/roms/$rom_name|wc -l)
-    - if [[ $same_rom -gt 0 ]]; then echo Please wait until same rom other running build is finished; exit 1; fi
+    - if [[ $same_rom -gt 1 ]]; then echo Please wait until same rom other running build is finished; exit 1; fi
 
     - mkdir -p ~/roms/$rom_name
     - cd ~/roms/$rom_name
     - rm -rf .repo/local_manifests
     - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
-    - bash -c "$command"
+    - only_sync=$(grep 'repo sync' $CIRRUS_WORKING_DIR/build_rom.sh)
+    - bash -c "$command" || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync") || (repo forall -c 'git checkout .' && bash -c "$only_sync")
 
   build_script:
     - set -exv
@@ -91,15 +93,16 @@ task:
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
 
     - cd ~/roms/$rom_name
-    - engzip=$(ls out/target/product/$device/*eng*.zip || true)
+    - engzip=$(ls out/target/product/$device/*-eng*.zip || true)
     - otazip=$(ls out/target/product/$device/*-ota-*.zip || true)
     - awaken=$(ls out/target/product/$device/Project-Awaken*.zip || true)
     - octavi=$(ls out/target/product/$device/OctaviOS-R*.zip || true)
-    - rm -rf $engzip $otazip $awaken $octavi
+    - p404=$(ls out/target/product/$device/?.*zip || true)
+    - rm -rf $engzip $otazip $awaken $octavi $p404
     - dlink=$(basename out/target/product/$device/*.zip)
     - command=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
     - bash -c "$command"
-    - echo "Downlod link https://roms.cirrus-ci.workers.dev/0:/$device/$dlink"
+    - echo "Download link https://roms.cirrus-ci.workers.dev/0:/$device/$dlink"
 
   remove_script:
     - set -exv
@@ -124,7 +127,6 @@ task:
     - set -e
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-    - bot_api=1659341938:AAHi4nlqvClbSodeGmLWlM044Xti9Y_HK_Y
     - your_telegram_id=@ROM_builders_channel
     - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Succeed
       
