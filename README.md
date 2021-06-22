@@ -1,4 +1,4 @@
-## Device specifications
+## Device specifications 
 
 Basic   | Spec Sheet
 -------:|:-------------------------
