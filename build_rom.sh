@@ -3,6 +3,10 @@ repo init --depth=1 --no-repo-verify -u https://github.com/descendant-xi/manifes
 git clone https://github.com/Radeon790/local_manifests.git --depth 1 -b r11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+# obb fix
+cd frameworks/native && git fetch https://github.com/phhusson/platform_frameworks_native android-11.0.0_r28-phh && git cherry-pick cc94e422c0a8b2680e7f9cfc391b2b03a56da765
+cd ../..
+
 # build rom
 source build/envsetup.sh
 lunch descendant_RMX1831-userdebug
