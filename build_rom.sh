@@ -1,14 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Corvus-R/android_manifest.git -b 11 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/mukulsharma06175/frostmanifest.git --depth 1 -b Corvus .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Corvus-Q/android_manifest.git -b 10 -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/mukulsharma06175/frostmanifest.git --depth 1 -b Octiva-4.4(test1) .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
-lunch corvus_lavender-userdebug
+lunch du_lavender-userdebug
 export TZ=Asia/kolkata #put before last build command (Time zone)
 export SELINUX_IGNORE_NEVERALLOWS=true
-export RAVEN_LAIR=BETA
 make corvus
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
