@@ -80,7 +80,7 @@ then
 	exit 1
 fi
 
-fetch_check=$(grep ' fetch ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
+fetch_check=$(grep 'git fetch ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $fetch_check -gt 0 ]]
 then
 	echo Please dont use fetch inside script, use local manifest for this purpose.
