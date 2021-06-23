@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch lighthouse_lavender-userdebug
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Dhaka #put before last build command (Time zone)
 mka lighthouse
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
