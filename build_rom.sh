@@ -5,6 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
+export ALLOW_MISSING_DEPENDENCIES=true
 lunch descendant_jasmine_sprout-userdebug
 mka descendant
 
