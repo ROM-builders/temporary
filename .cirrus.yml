@@ -54,7 +54,7 @@ task:
 
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - same_rom=$(ps aux|grep /home/cirrus/roms/$rom_name|wc -l)
-    - if [[ $same_rom -gt 1 ]]; then echo Please wait until same rom other running build is finished; exit 1; fi
+#    - if [[ $same_rom -gt 1 ]]; then echo Please wait until same rom other running build is finished; exit 1; fi
 
     - mkdir -p ~/roms/$rom_name
     - cd ~/roms/$rom_name
