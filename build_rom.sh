@@ -1,7 +1,7 @@
 # sync rom
-repo init -u https://github.com/SpiceOS/android.git -b 11 --depth=1 -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 -u https://github.com/SpiceOS/android.git -b 11 -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/Dreadwyrm/local_manifests --depth=1 -b master .repo/local_manifests
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
