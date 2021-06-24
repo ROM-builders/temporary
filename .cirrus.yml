@@ -54,7 +54,7 @@ task:
 
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - same_rom=$(ps aux|grep /home/cirrus/roms/$rom_name|wc -l)
-    - if [[ $same_rom -gt 0 ]]; then echo Please wait until same rom other running build is finished; exit 1; fi
+#    - if [[ $same_rom -gt 1 ]]; then echo Please wait until same rom other running build is finished; exit 1; fi
 
     - mkdir -p ~/roms/$rom_name
     - cd ~/roms/$rom_name
@@ -94,7 +94,7 @@ task:
 
     - cd ~/roms/$rom_name
     - engzip=$(ls out/target/product/$device/*-eng*.zip || true)
-    - otazip=$(ls out/target/product/$device/*-ota-*.zip || true)
+    - otazip=$(ls out/target/product/$device/*-ota-*.zip | grep -v "hentai" || true)
     - awaken=$(ls out/target/product/$device/Project-Awaken*.zip || true)
     - octavi=$(ls out/target/product/$device/OctaviOS-R*.zip || true)
     - p404=$(ls out/target/product/$device/?.*zip || true)
