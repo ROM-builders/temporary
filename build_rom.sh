@@ -3,11 +3,6 @@ repo init -u https://github.com/SpiceOS/android.git -b 11 --depth=1 -g default,-
 git clone https://github.com/Dreadwyrm/local_manifests --depth=1 -b main .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
-# patches
-cd frameworks/av
-git fetch https://github.com/Evolution-X/frameworks_av 1e49c16e071194dff66b7fdb24e41f2dc942c6b9 && git cherry-pick FETCH_HEAD
-git fetch https://github.com/Evolution-X/frameworks_av ae552c0fd8c7f9816dda3c81f9f00bc3c237e292 && git cherry-pick FETCH_HEAD
-
 # build rom
 . build/envsetup.sh
 breakfast ginkgo
