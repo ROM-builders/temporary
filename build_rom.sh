@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 -u https://github.com/SpiceOS/android.git -b 11
+repo init --depth=1 -u https://github.com/SpiceOS/android.git -b 11 -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/Dreadwyrm/local_manifests.git --depth 1 -b main .repo/local_manifests
 
 # patches
