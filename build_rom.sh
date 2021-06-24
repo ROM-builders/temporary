@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch nad_RMX1941-userdebug
-export USE_GAPPS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta
 mka nad
