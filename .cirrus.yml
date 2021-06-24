@@ -49,6 +49,8 @@ task:
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
 
+  show_script:
+    - cat $CIRRUS_WORKING_DIR/build_rom.sh
   sync_script:
     - set -exv
 
