@@ -49,12 +49,14 @@ task:
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
 
+  show_script:
+    - cat $CIRRUS_WORKING_DIR/build_rom.sh
   sync_script:
     - set -exv
 
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - same_rom=$(ps aux|grep /home/cirrus/roms/$rom_name|wc -l)
-    - if [[ $same_rom -gt 1 ]]; then echo Please wait until same rom other running build is finished; exit 1; fi
+#    - if [[ $same_rom -gt 1 ]]; then echo Please wait until same rom other running build is finished; exit 1; fi
 
     - mkdir -p ~/roms/$rom_name
     - cd ~/roms/$rom_name
@@ -75,7 +77,7 @@ task:
     - export USE_CCACHE=1
     - ccache -M 10G
     - ccache -z
-    - rm -rf device/*/*/vendorsetup.sh
+    - rm device/*/*/vendorsetup.sh 2>/dev/null && echo "Please don't use vendorsetup.sh file inside device tree." && exit 1 || true
     - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v 'rclone copy')
     - bash -c "$command"
 
@@ -93,8 +95,8 @@ task:
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
 
     - cd ~/roms/$rom_name
-    - engzip=$(ls out/target/product/$device/*eng*.zip || true)
-    - otazip=$(ls out/target/product/$device/*-ota-*.zip || true)
+    - engzip=$(ls out/target/product/$device/*-eng*.zip || true)
+    - otazip=$(ls out/target/product/$device/*-ota-*.zip | grep -v "hentai" || true)
     - awaken=$(ls out/target/product/$device/Project-Awaken*.zip || true)
     - octavi=$(ls out/target/product/$device/OctaviOS-R*.zip || true)
     - p404=$(ls out/target/product/$device/?.*zip || true)
