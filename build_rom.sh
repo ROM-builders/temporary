@@ -1,12 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/NezukoOS/manifest -b eleven -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/Prashant-1695/frostmanifest --depth 1 -b nezuko .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/ProtonAOSP/android_manifest -b rvc -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/Prashant-1695/frostmanifest --depth 1 -b protonaosp .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
-lunch nezuko_lavender-userdebug
+lunch protonaosp_lavender-userdebug
 export TZ=Asia/Dhaka #put before last build command
+export USE_GAPPS=true
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
