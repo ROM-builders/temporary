@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-breakfast ginkgo
+lunch_lineage_ginkgo-userdebug
 export TZ=Asia/Jakarta
 mka bacon
 
