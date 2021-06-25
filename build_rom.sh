@@ -1,6 +1,6 @@
 # sync rom
 repo init -u https://github.com/StatiXOS/android_manifest.git -b 11
-git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .repo/local_manifests
+git clone https://github.com/Anmoldh/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync --force-sync --no-clone-bundle --current-branch --no-tags -j$(nproc --all)
 
 # build rom
