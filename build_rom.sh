@@ -2,7 +2,7 @@
 repo init --depth=1 --no-repo-verify -u https://github.com/exthmui/android.git -b exthm-11 -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/Dreadwyrm/local_manifests --depth 1 -b exTHmUI-11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
- 
+
 # build rom
 . build/envsetup.sh
 lunch exthm_ginkgo-userdebug
