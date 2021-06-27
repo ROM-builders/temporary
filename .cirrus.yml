@@ -55,7 +55,7 @@ task:
     - set -exv
 
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - same_rom=$(ps aux|grep /home/cirrus/roms/$rom_name|wc -l)
+#    - same_rom=$(ps aux|grep /home/cirrus/roms/$rom_name|wc -l)
 #    - if [[ $same_rom -gt 1 ]]; then echo Please wait until same rom other running build is finished; exit 1; fi
 
     - mkdir -p ~/roms/$rom_name
@@ -63,7 +63,7 @@ task:
     - rm -rf .repo/local_manifests
     - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
     - only_sync=$(grep 'repo sync' $CIRRUS_WORKING_DIR/build_rom.sh)
-    - bash -c "$command" || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync") || (repo forall -c 'git checkout .' && bash -c "$only_sync")
+    - bash -c "$command" || (repo forall -c 'git checkout .' && bash -c "$only_sync") || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync") 
 
   build_script:
     - set -exv
@@ -77,7 +77,7 @@ task:
     - export USE_CCACHE=1
     - ccache -M 10G
     - ccache -z
-    - rm device/*/*/vendorsetup.sh 2>/dev/null && echo "Please don't use vendorsetup.sh file inside device tree." && exit 1 || true
+    - rm -rf device/*/*/vendorsetup.sh
     - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v 'rclone copy')
     - bash -c "$command"
 
