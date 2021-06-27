@@ -4,6 +4,9 @@ git clone https://github.com/Noob-214/local_manifest.git --depth 1 -b master .re
 #
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+
+git clone https://github.com/LineageOS/android_packages_resources_devicesettings --depth=1 packages/resources/devicesettings
+
 # build rom
 source build/envsetup.sh
 lunch aosp_ysl-userdebug
