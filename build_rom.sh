@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch exthm_lavender-userdebug
+export EXTHM_GAPPS=true
 export TZ=Asia/Jakarta
 mka bacon
 
