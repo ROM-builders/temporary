@@ -1,4 +1,4 @@
-repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b eleven -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Lineage-FE/manifest.git -b lineage-18.1 -g default,-device,-mips,-darwin,-notdefault
 
 git clone https://github.com/nhAsif/local_manifest.git --depth 1 -b main .repo/local_manifests
 
@@ -7,9 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 
 source build/envsetup.sh
-lunch cherish_rosy-userdebug
-export CHERISH_NONGAPPS=true
-export CHERISH_MAINTAINER=Captain Price
+lunch lineage_rosy-userdebug
 export TZ=Asia/Dhaka #put before last build command
 brunch rosy
 
