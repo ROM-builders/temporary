@@ -4,7 +4,6 @@ git clone https://github.com/shashank1436/local_manifest -b main .repo/local_man
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-export SELINUX_IGNORE_NEVERALLOWS=true
 source build/envsetup.sh
 lunch nezuko_mido-userdebug
 export TZ=Asia/Kolkata #put before last build command
