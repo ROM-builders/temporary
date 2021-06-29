@@ -4,7 +4,7 @@ git clone https://github.com/NganuCoeg/local_manifests --depth 1 -b RMX3171 .rep
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch dot_RMX3171-userdebug
 export TZ=Asia/Jakarta
 make bacon
