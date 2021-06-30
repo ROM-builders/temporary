@@ -80,4 +80,18 @@ then
 	exit 1
 fi
 
+fetch_check=$(grep 'git fetch ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
+if [[ $fetch_check -gt 0 ]]
+then
+	echo Please dont use fetch inside script, use local manifest for this purpose.
+	exit 1
+fi
+
+cd_check=$(grep "cd *" $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
+if [[ $cd_check -gt 0 ]]
+then
+	echo Please dont use cd inside script, use local manifest for this purpose.
+	exit 1
+fi
+
 echo Test passed
