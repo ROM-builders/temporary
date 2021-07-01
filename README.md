@@ -12,6 +12,7 @@ AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) f
 
 
 
+
 [Screenshots](https://t.me/Apon77Mido/5270) or [Video](https://www.youtube.com/watch?v=KuQ9jIVmOXY)
 
 
