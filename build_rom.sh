@@ -4,6 +4,7 @@ git clone https://github.com/Prashant1873/manifest_personal --depth=1 -b octavi 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+rm out/target/product/jasmine_sprout/*zip
 source build/envsetup.sh
 lunch octavi_jasmine_sprout-userdebug
 export TZ=Asia/Kolkata #put before last build command
