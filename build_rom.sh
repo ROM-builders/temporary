@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch syberia_whyred-userdebug
+lunch aosp_whyred-user
 export TZ=Asia/Dhaka #put before last build command
 export USE_GAPPS=true
 make syberia
