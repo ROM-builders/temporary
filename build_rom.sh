@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/CAF-Extended/manifest -b 11.0 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/D4rkKnight21/local_manifest --depth 1 -b cafex .repo/local_manifests
+git clone https://github.com/abidin17/local_manifest --depth 1 -b cafex .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
