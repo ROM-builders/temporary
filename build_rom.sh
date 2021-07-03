@@ -4,9 +4,9 @@ git clone https://github.com/satriojoyo/frostmanifest.git --depth 1 -b exthm .re
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch aosip_lavender-userdebug
-export TZ=Asia/Jakarta
+export TZ=Asia/Jakarta #put before last build commands
 time m kronic
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
