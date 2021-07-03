@@ -1,8 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/NezukoOS/manifest -b eleven -g default,-device,-mips,-darwin,-notdefault
-git clone --depth=1 https://github.com/brucetech627/device_xiaomi_sweet device/xiaomi/sweet
-git clone --depth=1 https://github.com/AdarshGrewal/vendor_xiaomi_sweet vendor/xiaomi/sweet
-git clone --depth=1 https://github.com/AdarshGrewal/kernel_xiaomi_sweet kernel/xiaomi/sweet
+git clone https://github.com/brucetech627/local_manifests --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
