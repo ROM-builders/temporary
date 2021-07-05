@@ -6,7 +6,7 @@
 
 ## Steps:
 ##### 1. Download latest ROM zip [file](https://t.me/rn4downloads/4885)
-##### 2. Download [Gapps](https://sourceforge.net/projects/flamegapps/files/arm64/android-11/BETA/2021-04-04/FlameGApps-11.0-basic-arm64-20210404-BETA.zip/download) file. Flamegapps basic is tested.
+##### 2. Download [Gapps](https://sourceforge.net/projects/flamegapps/files/arm64/android-11/BETA/2021-04-04/FlameGApps-11.0-basic-arm64-20210404-BETA.zip/download) file. Flamegapps basic is tested..
 ##### 3. Download [magisk](https://magiskmanager.com/) (if you want to root your phone)
 ##### 4. Go to twrp recovery by pressing power button and volume up button simultanously.
 ##### 5. Take backup from recovery (if you want to be on safe side)
