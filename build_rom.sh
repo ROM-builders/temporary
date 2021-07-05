@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/lighthouse-os/manifest.
 git clone https://github.com/mukulsharma06175/frostmanifest.git -b lighthouse .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
  
-# build rom
+# build rom 
 . build/envsetup.sh
 lunch lighthouse_lavender-userdebug
 export TZ=Asia/Kolkata #put before last build command (Time)
