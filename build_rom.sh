@@ -8,7 +8,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch lighthouse_lavender-userdebug
 export TZ=Asia/Kolkata #put before last build command (Time)
 export SELINUX_IGNORE_NEVERALLOWS=true
-export USE_GAPPS=true
 mka lighthouse
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
