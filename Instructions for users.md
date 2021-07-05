@@ -14,5 +14,5 @@
 ##### 7. Install the downloaded ROM zip file named AospExtended-v8.0-mido-***.zip
 ##### 8. Install the downloded Gapps file named FlameGApps-***.zip
 ##### 9. Install magisk (only if you want to root your phone)
-##### 10. Reboot to system
+##### 10. Reboot to system.
 ##### 11. Wait till phone gets ready to use.
