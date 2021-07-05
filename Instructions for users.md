@@ -1,7 +1,7 @@
 ## Requirements:
 ##### 1. Device (Redmi note 4)
 ##### 2. Unlock bootloader [text tutorial](https://forum.xda-developers.com/t/fastest-way-to-unlock-the-bootlader.3689116) or, [video tutorial](https://www.youtube.com/watch?v=6qDXirGFOpU&t=19s)
-##### 3. Custom recovery (twrp) installed in phone [text tutorial](https://www.miuithemez.com/2019/06/how-to-install-twrp-recovery-in-redmi-note-4.html) or, [video tutorial](https://www.youtube.com/watch?v=JcYeCzSfoDE)
+##### 3. Custom recovery installed in phone [text tutorial](https://www.miuithemez.com/2019/06/how-to-install-twrp-recovery-in-redmi-note-4.html) or, [video tutorial](https://www.youtube.com/watch?v=JcYeCzSfoDE)
 
 
 ## Steps:
