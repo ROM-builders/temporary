@@ -56,14 +56,8 @@ task:
 
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 
-#    - same_rom=$(ps aux|grep /home/cirrus/roms/$rom_name|wc -l)
-#    - if [[ $same_rom -gt 1 ]]; then echo Please wait until same rom other running build is finished; exit 1; fi
-
     - mkdir -p ~/roms/$rom_name
     - cd ~/roms/$rom_name
-
-    - ls same_rom_running && exit 1 || true
-    - touch same_rom_running
 
     - rm -rf .repo/local_manifests
     - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
@@ -85,12 +79,6 @@ task:
     - rm -rf device/*/*/vendorsetup.sh
     - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v 'rclone copy')
     - bash -c "$command"
-
-  always:
-    same_rom_script:
-      - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-      - cd ~/roms/$rom_name
-      - rm same_rom_running
 
   ccache_stats_script:
     - set -exv
