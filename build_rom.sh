@@ -10,4 +10,4 @@ export TZ=Asia/Dhaka #put before last build command
 make legion
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
-rclone copy out/target/product/miatoll/LegionOS*.zip cirrus:miatoll -P
+rclone copy out/target/product/miatoll/LegionOS-v3.11-miatoll-20210709-OFFICIAL-VANILLA.zip cirrus:miatoll -P
