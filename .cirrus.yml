@@ -9,10 +9,13 @@ task:
   skip: $CIRRUS_BRANCH == 'main'
   only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
   timeout_in: 30m
-  container:
-    image: archlinux:latest
-    cpu: .7
-    memory: 2G
+  persistent_worker:
+    isolation:
+      container:
+        image: apon77/aosp:cirrus
+        cpu: 2
+        memory: 4G
+
   env_script:
     - env
   show_script:
@@ -120,10 +123,13 @@ task:
   depends_on:
     - Build
   timeout_in: 30m
-  container:
-    image: archlinux:latest
-    cpu: .7
-    memory: 2G
+  persistent_worker:
+    isolation:
+      container:
+        image: apon77/aosp:cirrus
+        cpu: 2
+        memory: 4G
+
   post_build_script:
     - set -e
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
