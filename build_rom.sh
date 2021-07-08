@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/lighthouse-os/manifest.git -b raft -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/mukulsharma06175/frostmanifest.git -b lighthouse .repo/local_manifests
+git clone https://github.com/mukulsharma06175/frostmanifest.git -b Lighthouse_test .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
       
 # build rom 
