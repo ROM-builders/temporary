@@ -15,10 +15,10 @@ then
 	exit 1
 fi
 
-rm_check=$(grep 'rm -rf' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
+rm_check=$(grep 'rm ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $rm_check -gt 0 ]]
 then
-	echo Please dont use rm -rf inside script, use local manifest for this purpose.
+	echo Please dont use rm inside script, use local manifest for this purpose.
 	exit 1
 fi
 
