@@ -3,20 +3,28 @@ env:
     BUILD_HOSTNAME: "cirrus-ci.org"
     bot_api: "ENCRYPTED[b16032643ad0994cda4822c9d477956f434278d0f786f8e131b585aa4f8510a11f3cd9f6a66a63568d2cba1c4dde25b4]"
 
-
 task:
-  name: Test
+  name: Build
   skip: $CIRRUS_BRANCH == 'main'
   only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
-  timeout_in: 30m
-  container:
-    image: apon77/aosp:cirrus
-    cpu: .7
-    memory: 2G
+  timeout_in: 4h
+  persistent_worker:
+    isolation:
+      container:
+        image: apon77/aosp:cirrus
+        cpu: 24
+        memory: 120G
+        volumes:
+          - /home/cirrus/roms:/home/cirrus/roms
+          - /home/cirrus/ccache:/home/cirrus/ccache
+          - /home/cirrus/.config:/home/cirrus/.config
+
   env_script:
     - env
+
   show_script:
     - cat $CIRRUS_WORKING_DIR/build_rom.sh
+
   notify_script:
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
@@ -31,35 +39,14 @@ task:
     - set -e
     - curl -Ls https://github.com/ROM-builders/temporary/raw/main/test.sh | bash
 
-task:
-  name: Build
-  skip: $CIRRUS_BRANCH == 'main'
-  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
-  depends_on:
-    - Test
-  timeout_in: 4h
-  persistent_worker:
-    isolation:
-      container:
-        image: apon77/aosp:cirrus
-        cpu: 24
-        memory: 60G
-        volumes:
-          - /home/cirrus/roms:/home/cirrus/roms
-          - /home/cirrus/ccache:/home/cirrus/ccache
-          - /home/cirrus/.config:/home/cirrus/.config
-
-  show_script:
-    - cat $CIRRUS_WORKING_DIR/build_rom.sh
   sync_script:
     - set -exv
 
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-#    - same_rom=$(ps aux|grep /home/cirrus/roms/$rom_name|wc -l)
-#    - if [[ $same_rom -gt 1 ]]; then echo Please wait until same rom other running build is finished; exit 1; fi
 
     - mkdir -p ~/roms/$rom_name
     - cd ~/roms/$rom_name
+
     - rm -rf .repo/local_manifests
     - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
     - only_sync=$(grep 'repo sync' $CIRRUS_WORKING_DIR/build_rom.sh)
@@ -113,18 +100,6 @@ task:
     - cd ~/roms/$rom_name
     - rm -rf out/target/product/$device
 
-task:
-  name: Post Build
-  skip: $CIRRUS_BRANCH == 'main'
-  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
-  skip_notifications: true
-  depends_on:
-    - Build
-  timeout_in: 30m
-  container:
-    image: apon77/aosp:cirrus
-    cpu: .7
-    memory: 2G
   post_build_script:
     - set -e
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
