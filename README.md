@@ -8,3 +8,4 @@ LegionOS custom ROM for Poco M2 Pro (miatoll)
 Distributed [here](https://t.me/legionupdates)
 
 Estimated installation no.: 1000-1200
+
