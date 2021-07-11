@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/CipherOS/android_manifest.git -b eleven -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/Los-FE/manifest.git -b lineage-18.1 -g default,-device,-mips,-darwin,-notdefault
 
 git clone https://github.com/MinatiScape/local_manifest --depth=1 .repo/local_manifests
 
