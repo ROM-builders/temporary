@@ -5,10 +5,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch cherish_jasmine_sprout-userdebug
+lunch cherish_jasmine_sprout-eng
 export TZ=Asia/Kolkata 
+make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 # rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P 
-rclone copy out/target/product/jasmine_sprout/Cherish-OS-v2.7-20210708-2208-jasmine_sprout-OFFICIAL-GApps.zip cirrus:jasmine_sprout -P  
+rclone copy out/target/product/jasmine_sprout/*20210712*jasmine_sprout-OFFICIAL-GApps.zip cirrus:jasmine_sprout -P  
 
