@@ -3,9 +3,6 @@ repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -
 git clone https://github.com/kardebayan/local_manifests.git --depth 1 -b r11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# patch
-cd vendor/lineage && curl -L -o mypatch.patch https://github.com/LineageOS/android_vendor_lineage/commit/c86a1a81280e971f529b56dce70fc5f10b3ab709.patch && patch -R -p1 < *.patch
-
 # build rom
 source build/envsetup.sh
 lunch lineage_CPH1859-eng
