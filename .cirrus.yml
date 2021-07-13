@@ -10,7 +10,7 @@ task:
   only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
   timeout_in: 30m
   container:
-    image: apon77/aosp:cirrus
+    image: archlinux:latest
     cpu: .7
     memory: 2G
   env_script:
@@ -121,7 +121,7 @@ task:
     - Build
   timeout_in: 30m
   container:
-    image: apon77/aosp:cirrus
+    image: archlinux:latest
     cpu: .7
     memory: 2G
   post_build_script:
