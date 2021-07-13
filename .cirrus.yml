@@ -10,6 +10,8 @@ task:
   only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
   timeout_in: 30m
   persistent_worker:
+    labels:
+      name: AX61-2
     isolation:
       container:
         image: apon77/aosp:cirrus
@@ -42,6 +44,8 @@ task:
     - Test
   timeout_in: 4h
   persistent_worker:
+    labels:
+      name: AX61-1
     isolation:
       container:
         image: apon77/aosp:cirrus
@@ -124,6 +128,8 @@ task:
     - Build
   timeout_in: 30m
   persistent_worker:
+    labels:
+      name: AX61-2
     isolation:
       container:
         image: apon77/aosp:cirrus
