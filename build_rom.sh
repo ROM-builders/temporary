@@ -4,7 +4,7 @@ git clone https://github.com/yograjsingh-cmd/local_manifest.git --depth 1 -b mai
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch corvus_Z01R-userdebug
 export TZ=Asia/Kolkata #put before last build command (setting timezone)
 make corvus
