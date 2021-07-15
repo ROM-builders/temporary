@@ -5,6 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
+export WITH_GAPPS=true
 lunch legion_miatoll-userdebug
 export TZ=Asia/kolkata #put before last build command
 make legion
