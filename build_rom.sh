@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/styloxyash/manifest -b eleven -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-Pixelish/manifest -b eleven -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/styloxyash/local_manifests --depth 1 .repo/local_manifests -b pixlish
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
