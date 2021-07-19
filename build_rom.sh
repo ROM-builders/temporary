@@ -1,13 +1,8 @@
 #!/bin/bash
 # sync rom
 repo init --depth=1 -u git://github.com/CherishOS/android_manifest.git -b eleven -g default,-device,-mips,-darwin,-notdefault
+https://github.com/linuxmobile/Local-Manifests.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
-
-# Clone TREE
-git clone --depth=1 https://github.com/linuxmobile/android_device_xiaomi_chiron-common -b cherish-11 device/xiaomi/msm8998-common
-git clone --depth=1 https://github.com/linuxmobile/android_device_xiaomi_chiron -b cherish-11 device/xiaomi/chiron
-git clone --depth=1 https://github.com/linuxmobile/vendor-xiaomi -b cherish-11 vendor/xiaomi
-git clone --depth=1 https://github.com/linuxmobile/android_kernel_xiaomi_msm8998 -b cherish-11 kernel/xiaomi/msm8998
 
 # build rom
 source build/envsetup.sh
