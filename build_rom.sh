@@ -5,9 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-export SKIP_ABI_CHECKS=true
-export SKIP_API_CHECKS=true
-export ALLOW_MISSING_DEPENDENCIES=true
 lunch syberia_mojito-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta #put before last build command
