@@ -1,32 +1,12 @@
-#Making Directory
-mkdir y-cmd
-cd y-cmd
-
-#Initialising repo for rom [Can get from Project page on github]
-repo init -u https://github.com/Corvus-R/android_manifest.git -b 11
-
-#local_manifest
-git clone https://github.com/yograjsingh-cmd/local_manifest.git -b main .repo/local_manifests
-
-#Repo Sync
-repo sync -j$(nproc --all) --force-sync --no-tags --no-clone-bundle --prune
-
-#Cloning Device tree [make device tree compatible for your rom]
-#git clone https://github.com/yograjsingh-cmd/android_device_asus_Z01R-2.git -b derp device/asus/Z01R
-#cd device/asus/Z01R && git pull && cd ../../..
-
-#Cloning Kernel
-#git clone https://github.com/yograjsingh-cmd/kernel_z01r.git -b eleven kernel/asus/sdm845
-#cd kernel/asus/sdm845 && git pull && cd ../../..
-
-#Cloning Vendor
-#git clone https://github.com/yograjsingh-cmd/vendor_asus.git -b lineage-18.1 vendor/asus
-#cd vendor/asus && git pull && cd ../..
+# sync rom
+repo init --depth=1 --no-repo-verify -u https://github.com/Corvus-R/android_manifest.git -b 11 -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/yograjsingh-cmd/local_manifest.git --depth=1 -b main .repo/local_manifests
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch corvus_Z01R-userdebug
-export TZ=Asia/Kolkata #put before last build command (setting timezone)
+export TZ=Asia/Kolkata 
 make corvus
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
