@@ -1,24 +1,27 @@
-mkdir yograj-derp
-cd yograj-derp
+#Making Directory
+mkdir yograj
+cd yograj
 
 #Initialising repo for rom [Can get from Project page on github]
-repo init -u git://github.com/DerpFest-11/manifest.git -b 11
-repo sync --force-sync --no-tags --no-clone-bundle
+repo init -u https://github.com/Corvus-R/android_manifest.git -b 11
+
+#local_manifest
+git clone https://github.com/yograjsingh-cmd/local_manifest.git -b main .repo/local_manifests
+
+#Repo Sync
+repo sync -j$(nproc --all) --force-sync --no-tags --no-clone-bundle --prune
 
 #Cloning Device tree [make device tree compatible for your rom]
-#Taking my derp as example
-#rename derp_Z01R.mk to your desired rom name
-#Ex: havoc_Z01R.mk if building havoc
-git clone https://github.com/yograjsingh-cmd/android_device_asus_Z01R-2.git -b derp device/asus/Z01R
-cd device/asus/Z01R && git pull && cd ../../..
+#git clone https://github.com/yograjsingh-cmd/android_device_asus_Z01R-2.git -b derp device/asus/Z01R
+#cd device/asus/Z01R && git pull && cd ../../..
 
 #Cloning Kernel
-git clone https://github.com/yograjsingh-cmd/kernel_z01r.git -b eleven kernel/asus/sdm845
-cd kernel/asus/sdm845 && git pull && cd ../../..
+#git clone https://github.com/yograjsingh-cmd/kernel_z01r.git -b eleven kernel/asus/sdm845
+#cd kernel/asus/sdm845 && git pull && cd ../../..
 
 #Cloning Vendor
-git clone https://github.com/yograjsingh-cmd/vendor_asus.git -b lineage-18.1 vendor/asus
-cd vendor/asus && git pull && cd ../..
+#git clone https://github.com/yograjsingh-cmd/vendor_asus.git -b lineage-18.1 vendor/asus
+#cd vendor/asus && git pull && cd ../..
 
 # build rom
 . build/envsetup.sh
