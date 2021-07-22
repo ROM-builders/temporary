@@ -1,6 +1,6 @@
 #Making Directory
-mkdir yograj
-cd yograj
+mkdir y-cmd
+cd y-cmd
 
 #Initialising repo for rom [Can get from Project page on github]
 repo init -u https://github.com/Corvus-R/android_manifest.git -b 11
