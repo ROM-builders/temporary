@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Wave-Project/manifest.git -b r -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/Prashant1873/manifest_personal --depth 1 -b wave .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/RevengeOS/android_manifest -b r11.0 -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/Prashant1873/manifest_personal --depth 1 -b rev .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch wave_jasmine_sprout-userdebug
+lunch revengeos_jasmine_sprout-userdebug
 export TZ=Asia/Kolkata #put before last build command
 make bacon
 
