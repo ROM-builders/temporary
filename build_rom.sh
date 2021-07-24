@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch arrow_tiare-eng
+lunch arrow_tiare-userdebug
 export TZ=Asia/kolkata #put before last build command
 m bacon
 
