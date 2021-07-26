@@ -63,7 +63,7 @@ task:
     - set -exv
 
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-
+ 
     - mkdir -p ~/roms/$rom_name
     - cd ~/roms/$rom_name
 
