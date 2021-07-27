@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/NusantaraProject-ROM/android_manifest.git -b 10 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/xoo2001/local_manifest.git --depth 1 -b a6000 .repo/local_manifests 
+repo init --depth=1 --no-repo-verify -u https://github.com/NusantaraProject-ROM/android_manifest.git -b 11 -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/xoo2001/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
- 
+
 # build rom
 source build/envsetup.sh
-lunch nad_a6000-userdebug
+lunch nad_ido-userdebug
 export TZ=Asia/Jakarta
 mka nad
 
