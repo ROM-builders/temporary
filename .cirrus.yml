@@ -20,6 +20,6 @@ task:
     monitor_background_script: # To monitor ccache and machine status every minute, runs in background
       - ./monitor # Monitor script
     build_script: # Actual build script foreground
-      - ./build # Build script to run
+      - ./build_rom.sh # Build script to run
     upload_ccache_script: # Upload ccache to cloud foreground
       - ./upload_ccache # Ccache uploading script
