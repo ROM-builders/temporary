@@ -1,6 +1,6 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/aryankaran/Lineage-FE-manifest.git -b lineage-18.1 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/aryankaran/local_manifests.git --depth 1 -b Lineage_FE .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/Los-FE/manifest.git -b lineage-18.1 -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/aryankaran/local_manifests.git --depth 1 -b Lineage-FE .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
