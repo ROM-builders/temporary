@@ -1,0 +1,14 @@
+#!/bin/bash
+# Lets see machine specifications and environments
+df -h
+free -h
+nproc
+cat /etc/os*
+env
+
+url=https://sourceforge.net/projects/custom-roms-by-aryan-karan/files/Intex%20Cloud%20Q11/ccache/ccache_los14_25July_12am.tar.gz/download # Where cccahe is located, use your ones, from where you want to download ccache!
+
+cd /tmp # Where to download cccahe
+time aria2c $url -x16 -s50 # Using aria2c for speed haha, ccache will be at /tmp/ccache.tar.gz since my file name is ccache.tar.gz
+time tar xf ccache_los14_25July_12am.tar.gz  # Extract ccache so ci can use it
+rm -rf ccache_los14_25July_12am.tar.gz # Remove unnecessary downloaded file, it will speed up the upload ccache process
