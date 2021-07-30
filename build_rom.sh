@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch aosp_RMX1831-userdebug
 mka bacon 
 
