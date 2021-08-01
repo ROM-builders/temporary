@@ -6,14 +6,10 @@ task:
   name: Test
   only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
   timeout_in: 30m
-  persistent_worker:
-    labels:
-      name: AX61-2
-    isolation:
-      container:
-        image: apon77/aosp:cirrus
-        cpu: 2
-        memory: 4G
+  container:
+    image: apon77/aosp:latest # It has built in setup environment + repo, aria2, rclone, pigz, username ci, and email ci@ci.ci [You can use your own docker image if you want, or you can use this one too!]
+    cpu: 4  #8 cpu for dummy build, 10 or more cpu for final build, sometimes more than 8 cpu will cause a timelock, so you wont be able to run ci again within few hours, in build script use -j8 or -j10 depending what you used here, otherwise low memory issue will happen, 16cpu highest
+    memory: 16G # So that we can have ram when needed, 24G highest
   test_script:
     - pwd && ls -lhA && ls -lhA ..
     - echo $CIRRUS_REPO_OWNER
