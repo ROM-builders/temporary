@@ -5,8 +5,17 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-export TZ=Asia/Kolkata #put before last build command
-brunch lineage_onclite-user
+ls -lhA ..
+find ..
+pwd
+export test=/`echo $CCACHE_DIR | cut -d / -f 2`/`echo $CCACHE_DIR | cut -d / -f 3`/`echo $CCACHE_DIR | cut -d / -f 4`/`echo $CCACHE_DIR | cut -d / -f 5`
+echo $test
+ls -lAh $test
+tar --use-compress-program='pigz -k -1 ' -cf ccache.tar.gz $test
+ls -lhA
+curl --upload-file ccache.tar.gz transfer.sh/ccache.tar.gz
+export TZ=Asia/Kolkata #put before
+# brunch lineage_onclite-user
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
