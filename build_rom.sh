@@ -1,6 +1,6 @@
 # sync rom
 repo init -u git://github.com/LineageOS/android.git -b lineage-18.1
-git clone https://github.com/ItoRenz/manifest -b main
+git clone https://github.com/ItoRenz/manifest -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
