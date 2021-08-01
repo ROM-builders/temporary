@@ -1,5 +1,5 @@
-# sync rom
-repo init -u git://github.com/LineageOS/android.git -b lineage-18.1
+# sync romnotdefault
+repo init -u git://github.com/LineageOS/android.git -b lineage-18.1 -g default,-device,-mips,-darwin,-
 git clone https://github.com/ItoRenz/manifest -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
