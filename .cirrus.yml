@@ -1,12 +1,9 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
     BUILD_HOSTNAME: "cirrus-ci.org"
-    bot_api: "ENCRYPTED[b16032643ad0994cda4822c9d477956f434278d0f786f8e131b585aa4f8510a11f3cd9f6a66a63568d2cba1c4dde25b4]"
-
 
 task:
   name: Test
-  skip: $CIRRUS_BRANCH == 'main'
   only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
   timeout_in: 30m
   persistent_worker:
@@ -17,137 +14,7 @@ task:
         image: apon77/aosp:cirrus
         cpu: 2
         memory: 4G
-
-  env_script:
-    - env
-  show_script:
-    - cat $CIRRUS_WORKING_DIR/build_rom.sh
-  notify_script:
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-    - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
-    - your_telegram_id=@ROM_builders_junk
-    - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
-    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Started
-      
-      https://cirrus-ci.com/build/$CIRRUS_BUILD_ID
-      
-      $show" -d "chat_id=${your_telegram_id}" -d "parse_mode=HTML"
   test_script:
-    - set -e
-    - curl -Ls https://github.com/ROM-builders/temporary/raw/main/test.sh | bash
-
-task:
-  name: Build
-  skip: $CIRRUS_BRANCH == 'main'
-  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
-  depends_on:
-    - Test
-  timeout_in: 4h
-  persistent_worker:
-    labels:
-      name: AX61-1
-    isolation:
-      container:
-        image: apon77/aosp:cirrus
-        cpu: 24
-        memory: 60G
-        volumes:
-          - /home/cirrus/roms:/home/cirrus/roms
-          - /home/cirrus/ccache:/home/cirrus/ccache
-          - /home/cirrus/.config:/home/cirrus/.config
-
-  show_script:
-    - cat $CIRRUS_WORKING_DIR/build_rom.sh
-  sync_script:
-    - set -exv
-
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-
-    - mkdir -p ~/roms/$rom_name
-    - cd ~/roms/$rom_name
-
-    - rm -rf .repo/local_manifests
-    - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
-    - only_sync=$(grep 'repo sync' $CIRRUS_WORKING_DIR/build_rom.sh)
-    - bash -c "$command" || (repo forall -c 'git checkout .' && bash -c "$only_sync") || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync") 
-
-  build_script:
-    - set -exv
-
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-    - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
-
-    - cd ~/roms/$rom_name
-    - export CCACHE_DIR=~/ccache/$rom_name/$device
-    - export CCACHE_EXEC=$(which ccache)
-    - export USE_CCACHE=1
-    - ccache -M 10G
-    - ccache -z
-    - rm -rf device/*/*/vendorsetup.sh
-    - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v 'rclone copy')
-    - bash -c "$command"
-
-  ccache_stats_script:
-    - set -exv
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-    - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
-
-    - export CCACHE_DIR=~/ccache/$rom_name/$device
-    - ccache -s
-
-  upload_script:
-    - set -exv
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-    - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
-
-    - cd ~/roms/$rom_name
-    - engzip=$(ls out/target/product/$device/*-eng*.zip || true)
-    - otazip=$(ls out/target/product/$device/*-ota-*.zip | grep -v "hentai" | grep -v "evolution" || true)
-    - awaken=$(ls out/target/product/$device/Project-Awaken*.zip || true)
-    - octavi=$(ls out/target/product/$device/OctaviOS-R*.zip || true)
-    - p404=$(ls out/target/product/$device/?.*zip || true)
-    - rm -rf $engzip $otazip $awaken $octavi $p404
-    - dlink=$(basename out/target/product/$device/*.zip)
-    - command=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
-    - if [[ $device == jasmine_sprout ]]; then command="rclone copy out/target/product/jasmine_sprout/*zip cirrus:jasmine_sprout -P"; fi
-    - bash -c "$command"
-    - echo "Download link https://roms.cirrus-ci.workers.dev/0:/$device/$dlink"
-
-  remove_script:
-    - set -exv
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-    - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
-    - cd ~/roms/$rom_name
-    - rm -rf out/target/product/$device
-
-task:
-  name: Post Build
-  skip: $CIRRUS_BRANCH == 'main'
-  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
-  skip_notifications: true
-  depends_on:
-    - Build
-  timeout_in: 30m
-  persistent_worker:
-    labels:
-      name: AX61-2
-    isolation:
-      container:
-        image: apon77/aosp:cirrus
-        cpu: 2
-        memory: 4G
-
-  post_build_script:
-    - set -e
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-    - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
-    - your_telegram_id=@ROM_builders_channel
-    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Succeed
-      
-      https://cirrus-ci.com/build/$CIRRUS_BUILD_ID" -d "chat_id=${your_telegram_id}" -d "parse_mode=HTML"
+    - pwd && ls -lhA && ls -lhA ..
+    - echo $CIRRUS_REPO_OWNER
+    - echo $CIRRUS_WORKING_DIR
