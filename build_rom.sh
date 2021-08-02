@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/PixelExperience/manifest -b eleven-plus -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/Project-Awaken/android_manifest -b 11 -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/Radeon790/local_manifests.git --depth 1 -b r11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
 # build rom
 . build/envsetup.sh
-lunch aosp_RMX1831-userdebug
+lunch awaken_RMX1831-userdebug
 mka bacon 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
