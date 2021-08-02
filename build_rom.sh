@@ -10,4 +10,10 @@ export TZ=Asia/Kolkata #put before last build command
 mka blissify
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
-rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P 
+#rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P 
+rclone copy out/target/product/liber/boot.img cirrus:liber/bliss/2-8-21 -P 
+rclone copy out/target/product/liber/dtbo.img cirrus:liber/bliss/2-8-21 -P 
+rclone copy out/target/product/liber/system.img cirrus:liber/bliss/2-8-21 -P 
+rclone copy out/target/product/liber/product.img cirrus:liber/bliss/2-8-21 -P 
+rclone copy out/target/product/liber/vbmeta.img cirrus:liber/bliss/2-8-21 -P 
+rclone copy out/target/product/liber/vendor.img cirrus:liber/bliss/2-8-21 -P
