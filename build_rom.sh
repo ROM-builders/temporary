@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest.git -b eleven-plus -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/Th30utlaw/local_manifest.git --depth 1 -b aosp .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/exthmui/android.git -b exthm-11 -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/Th30utlaw/local_manifest.git --depth 1 -b exthm .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_olivewood-userdebug
+lunch exthm_olivewood-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
