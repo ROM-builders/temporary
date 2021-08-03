@@ -1,12 +1,12 @@
 # sync rom
 repo init --depth=1 -u git://github.com/NusantaraProject-ROM/android_manifest.git -b 10 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/ItoRenz/manifest.git --depth 1 -b main .repo/manifest
+git clone https://github.com/ItoRenz/manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch nad_rolex-userdebug
-export TZ=Asia/Indonesia #put before last build command
+export TZ=Asia/Jakarta#put before last build command
 mka nad
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
