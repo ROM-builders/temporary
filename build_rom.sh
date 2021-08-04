@@ -1,12 +1,12 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/DerpFest-11/manifest.git -b 11 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/mukulsharma06175/frostmanifest.git  --depth 1 -b derpfest .repo/local_manifests
+git clone https://github.com/yograjsingh-cmd/local_manifest.git -b derp .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
    
 # build rom
 . build/envsetup.sh
-lunch derp_lavender-userdebug
-export TZ=Asia/Dhaka #put before last build command
+lunch derp_Z01R-userdebug
+export TZ=Asia/kolkata #put before last build command
 mka derp
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
