@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch nad_X00T-eng
+lunch nad_X00T-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka derp
 
