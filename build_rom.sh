@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/DotOS/manifest.git -b dot11 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/linuxmobile/local_manifest --depth 1 -b dotos .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/CherishOS/android_manifest.git -b eleven -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/linuxmobile/local_manifest --depth 1 -b linuchin .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
 # build rom
 source build/envsetup.sh
-lunch dot_chiron-userdebug
+lunch cherish_chiron-userdebug
 export TZ=Asia/Dhaka 
 mka bacon -j$(nproc --all)
 
