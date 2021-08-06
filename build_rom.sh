@@ -4,6 +4,7 @@ git clone https://github.com/ayashaa/local-manifest.git --depth 1 -b master .rep
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+source device/xiaomi/ginkgo/setup-ginkgo.sh
 source build/envsetup.sh
 lunch nad_ginkgo-user
 export TZ=Asia/Jakarta #put before last build command
