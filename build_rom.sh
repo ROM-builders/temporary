@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 -u git://github.com/DotOS/manifest.git -b dot11
+repo init --depth=1 -u git://github.com/DotOS/manifest.git -b dot11 -g default,-device,-mips,-darwin,-notdefault
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
