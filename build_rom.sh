@@ -3,7 +3,6 @@ repo init --depth=1 -u git://github.com/DotOS/manifest.git -b dot11 -g default,-
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-cd project
 source build/envsetup.sh
 lunch dot_RMX2001-userdebug
 export TZ=Asia/Jakarta #put before last build command
