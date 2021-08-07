@@ -4,7 +4,6 @@ git clone https://github.com/ItoRenz/local_manifest.git --depth 1 -b main .repo/
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source device/xiaomi/rolex/setup.sh
 . build/envsetup.sh
 lunch cherish_rolex-userdebug
 export TZ=Asia/Jakarta
