@@ -1,12 +1,7 @@
 # sync rom
 repo init --depth=1 -u git://github.com/DotOS/manifest.git -b dot11 -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/Orangeskai/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-
-# gitclone all needed
-git clone https://github.com/Orangeskai/android_device_realme_RMX2001 -b DotOs --depth=1 device/realme/RMX2001
-git clone https://github.com/Orangeskai/android_kernel_realme_RMX2001 -b DotOs --depth=1 kernel/realme/RMX2001
-git clone https://github.com/Orangeskai/proprietary_vendor_realme -b Dotos --depth=1 vendor/realme
-git clone https://github.com/Orangeskai/android_device_realme_mt6785-common -b lineage-18.1-plus --depth=1 device/realme/mt6785-common
 
 # build rom
 source build/envsetup.sh
