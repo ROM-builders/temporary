@@ -5,6 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
+rm -rf vendor/dotfe/build/tools/roomservice.py
 lunch dot_ginkgo-user
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
