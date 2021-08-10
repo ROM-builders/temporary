@@ -3,12 +3,6 @@ repo init --depth=1 --no-repo-verify -u https://github.com/ResurrectionRemix/pla
 git clone https://github.com/zhantech/Local-Manifests.git --depth 1 -b rr-ginkgo .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# Hals
-rm -rf hardware/qcom-caf/sm8150/display && rm -rf hardware/qcom-caf/sm8150/media && rm -rf hardware/qcom-caf/sm8150/audio
-git clone https://github.com/DqrKn3Zz/android_hardware_qcom-caf_sm8150_audio -b trinket-q hardware/qcom-caf/sm8150/audio
-git clone https://github.com/DqrKn3Zz/android_hardware_qcom-caf_sm8150_media -b trinket-q hardware/qcom-caf/sm8150/media
-git clone https://github.com/DqrKn3Zz/android_hardware_qcom-caf_sm8150_display -b trinket-q hardware/qcom-caf/sm8150/display
-
 # DSB & Like Octavi
 cd packages/apps/Settings
 git fetch https://github.com/zhantech/Resurrection_packages_apps_Settings Q
