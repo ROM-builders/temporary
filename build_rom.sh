@@ -4,7 +4,6 @@ git clone https://github.com/rasenss/local_manifest.git --depth 1 -b master .rep
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-rm -rf vendor/dotfe/build/tools/roomservice.py
 source build/envsetup.sh
 lunch dot_ginkgo-user
 export TZ=Asia/Jakarta #put before last build command
