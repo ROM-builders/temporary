@@ -28,6 +28,12 @@ git fetch https://github.com/zhantech/android_vendor_resurrection Q
 git cherry-pick f2dc3b62c2c5e969671bdb4095f1a0295b16f7a0
 cd ../..
 
+# Kernel
+cd kernel/xiaomi/ginkgo
+git fetch https://github.com/zhantech/android_kernel_xiaomi_ginkgo sixteen-Q
+git cherry-pick ba912813e7cd5b961e309978ada4bfacdad279d9
+cd ../../..
+
 # Build Rom
 source build/envsetup.sh
 export KBUILD_BUILD_USER="ZHANtech"; export KBUILD_BUILD_HOST="gatotkaca"
