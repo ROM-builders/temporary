@@ -63,7 +63,7 @@ task:
   show_script:
     - cat $CIRRUS_WORKING_DIR/build_rom.sh
   sync_script:
-    - set -exv
+    - set -e
 
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
@@ -79,7 +79,7 @@ task:
     - bash -c "$command" || (repo forall -c 'git checkout .' && bash -c "$only_sync") || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync") 
 
   build_script:
-    - set -exv
+    - set -e
 
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
@@ -100,7 +100,7 @@ task:
     - bash -c "$command"
 
   ccache_stats_script:
-    - set -exv
+    - set -e
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
     - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-17.1 ]]; then rom_name=$rom_name-$branch_name ;fi ; fi
@@ -112,7 +112,7 @@ task:
     - ccache -s
 
   upload_script:
-    - set -exv
+    - set -e
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
     - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-17.1 ]]; then rom_name=$rom_name-$branch_name ;fi ; fi
@@ -134,7 +134,7 @@ task:
     - echo "Download link https://roms.cirrus-ci.workers.dev/0:/$device/$dlink"
 
   remove_script:
-    - set -exv
+    - set -e
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
     - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-17.1 ]]; then rom_name=$rom_name-$branch_name ;fi ; fi
