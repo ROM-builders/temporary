@@ -5,8 +5,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch aicp_daisy-user
+lunch aicp_daisy-userdebug
 export TZ=Asia/Dhaka #put before last build command
+export SELINUX_IGNORE_NEVERALLOWS=true
 brunch daisy
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
