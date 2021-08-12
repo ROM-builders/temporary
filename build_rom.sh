@@ -1,5 +1,5 @@
 # sync rom 
-repo init --depth=1 -u https://github.com/PixelPlusUI/manifest -b eleven -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 -u https://github.com/PixelPlusUI/manifest -b 11 -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/Orangeskai/local_manifest.git --depth 1 -b ppui .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
