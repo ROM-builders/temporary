@@ -10,6 +10,9 @@ if [[ $clone_check -gt 1 ]]; then echo Please use local manifest to clone trees 
 rm_check=$(grep 'rm ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $rm_check -gt 0 ]]; then echo Please dont use rm inside script, use local manifest for this purpose. ; exit 1 ; fi
 
+sudo_check=$(grep 'sudo ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
+if [[ $sudo_check -gt 0 ]]; then echo Please dont use sudo inside script. ; exit 1 ; fi
+
 mv_check=$(grep 'mv ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $mv_check -gt 0 ]]; then echo Please dont use mv inside script, use local manifest for this purpose. ; exit 1 ; fi
 
