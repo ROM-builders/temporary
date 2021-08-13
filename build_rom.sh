@@ -4,9 +4,9 @@ git clone https://github.com/LynzhX/local_manifest.git --depth 1 -b main .repo/l
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-export TZ=Asia/Jakarta #put before last build command
 export ALLOW_MISSING_DEPENDENCIES=true
 . build/envsetup.sh
+export TZ=Asia/Jakarta #put before last build command
 brunch RMX2001
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
