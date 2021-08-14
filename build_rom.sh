@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch styx_RMX1831-userdebug
+lunch styx_RMX1821-userdebug
 export ALLOW_MISSING_DEPENDENCIES = true #put before last build command
 m styx-ota
 
