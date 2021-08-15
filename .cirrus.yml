@@ -7,7 +7,7 @@ task:
   name: Test
   skip: $CIRRUS_BRANCH == 'main'
   only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
-  timeout_in: 30m
+  timeout_in: 2m
   persistent_worker:
     labels:
       name: AX61-2
@@ -144,7 +144,7 @@ task:
   skip_notifications: true
   depends_on:
     - Build
-  timeout_in: 30m
+  timeout_in: 2m
   persistent_worker:
     labels:
       name: AX61-2
