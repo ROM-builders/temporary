@@ -8,7 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch bootleg_tissot-userdebug
-mka bacon -j$(nproc --all)
+mka bacon -j8
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
