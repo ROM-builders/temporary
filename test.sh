@@ -19,6 +19,12 @@ if [[ $mv_check -gt 0 ]]; then echo Please dont use mv inside script, use local 
 clean_check=$(grep ' clean' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $clean_check -gt 0 ]]; then echo Please dont use make clean. Server does make installclean by default, which is enough for most of the cases. ; exit 1 ; fi
 
+bliss_check=$(grep blissify $CIRRUS_WORKING_DIR/build_rom.sh | grep '\-c' | wc -l)
+if [[ $bliss_check -gt 0 ]]; then echo Please dont use make clean flag. Server does make installclean by default, which is enough for most of the cases. ; exit 1 ; fi
+
+bliss_check=$(grep blissify $CIRRUS_WORKING_DIR/build_rom.sh | grep '\-d' | wc -l)
+if [[ $bliss_check -gt 0 ]]; then echo Please dont use make installclean flag. Server does make installclean by default, which is enough for most of the cases. ; exit 1 ; fi
+
 clobber_check=$(grep ' clobber' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $clobber_check -gt 0 ]]; then echo Please dont use make clobber. Server does make installclean by default, which is enough for most of the cases. ; exit 1 ; fi
 
