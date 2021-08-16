@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lighthouse_h850-user
-export SKIP_ABI_CHECKS=true
 mka lighthouse
 
 
