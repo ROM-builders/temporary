@@ -1,4 +1,4 @@
-# build 4
+# build 5
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/SuperiorOS/manifest.git -b eleven -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/indraadp/local_manifest --depth 1 -b superior .repo/local_manifests
