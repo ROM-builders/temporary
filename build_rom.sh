@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch nad_RMX1831-user
+lunch nad_RMX1831-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka nad
 
