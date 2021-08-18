@@ -3,10 +3,10 @@ repo init --depth=1 -u https://github.com/PixelPlusUI/manifest -b 11 -g default,
 git clone https://github.com/Orangeskai/local_manifest.git --depth 1 -b ppui .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom testing again 
+# build rom
 source build/envsetup.sh
 lunch aosp_RMX2001-userdebug
-export TZ=Asia/Jakarta #put before last build comman
+export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
