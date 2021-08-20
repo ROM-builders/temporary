@@ -1,57 +1,135 @@
-## Steps:
-##### 1. Find your device tree, kernel tree, and vendor tree. I found [here](https://github.com/zeelog/). You can find your device tree, common tree, kernel tree mostly in [LineageOS](https://github.com/LineageOS/). You can find vendor tree mostly in [here](https://gitlab.com/the-muppets/proprietary_vendor_xiaomi) or, [here](https://github.com/TheMuppets). If your device is very new, or no development done before, then you may need to create your own device tree. Which is another subject to learn.
-##### 2. Make device tree of Redmi Note 4 compatible with AospExtended by [bringup commit](https://github.com/Apon77/aex/commit/7b64c1c6cc477ea44e50664e4e9c6739ffcd7054)
-##### 3. Initialize the AospExtended Source
+This is a **reference** guide for newbies (by a newbie) but I expect you already know basics of Linux and Git. I will keep this guide easy to understand by using simple terms. So let us begin.
 
-`repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x`
+# Things you will need
+- A good PC/server
+- Build environment ready setup
+- ROM sources
+- Device Sources
 
-##### 4. Change repository of AospExtended if needed by removing and reclonig them, or by using [local manifest](https://forum.xda-developers.com/t/learn-about-the-repo-tool-manifests-and-local-manifests-and-5-important-tips.2329228/).
+## Required system/server
+You would need a good Linux system with good internet speed. You can also build on other operating systems but Linux is the best choice, so I will go with Linux for this guide.
 
-You can also clone device tree, common device tree, kernel tree, vendor tree by local manifist too.
+If you don't have a good PC, get a server, Google, Microsoft, Digital Ocean, etc. provide trials to test their services. Go get a trial on any of these, Google would be the best choice here.
 
-`git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests`
+Make a server with around 300 GB storage (at least 250 GB for one ROM + 50 ccache), 16 GB minimum RAM and 8 cores of vCPUs. You can create a more powerful server but Google offers up to 8 cores in the free trial. Choose Ubuntu 18.04 as OS or the latest one, at the time of writing this guide 18.04 is the latest LTS, sooooo.
 
-##### 5. Sync the source.
+## Getting ready build environment
+After creating your server, it is time to set up the environment. Akhil Narang has made our life easy with his scripts, head over to [https://github.com/akhilnarang/scripts](https://github.com/akhilnarang/scripts "https://github.com/akhilnarang/scripts") and execute an appropriate script.
 
-`repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8`
+In our example I chose Ubuntu and here I have made a one-run script to get set up ready by using Akhilnarag's scripts :3
+But before you proceed, I will recommend you to open a tmux session so if SSH connection is lost, we don't lose our progress and mess up things.
 
-##### 6. Clone device tree, common device tree (if exists), kernel tree and vendor tree for Redmi Note 4 to specific folder. Where to clone trees is told inside BoardConfig.mk file.
+Opening a tmux session is easy, just run command "tmux", and if you lost your connect, connect to the server again and run "tmux attach". It will attach you to the session we created. You can create separate sessions but to keep this guide newbie-friendly, do as it is :D
 
-We need to clone device tree in device/xiaomi/mido said in [here](https://github.com/Apon77/aex/blob/aex/BoardConfig.mk#L17).
+Okay so now get your setup ready by executing the following:
 
-We need to clone kernel tree in kernel/xiaomi/mido said in [here](https://github.com/Apon77/aex/blob/aex/BoardConfig.mk#L48).
+`wget https://raw.githubusercontent.com/AliHasan7671/scripts/master/setup.sh && bash setup.sh`
 
-We need to clone vendor tree in vendor/xiaomi said in [here](https://github.com/Apon77/aex/blob/aex/BoardConfig.mk#L167).
+It will install all required packages including Git, repo etc. It will also setup ccache with 50 GB limit. Now we have our setup ready.
 
-We don't need to clone common device tree, because not said anywhere in [Boardconfig.mk](https://github.com/Apon77/aex/blob/aex/BoardConfig.mk)
+## ROM sources
+Now we need sources of the ROM which we want to compile. For this guide, I will go with AOSiP. AOSiP sources can be found here https://github.com/AOSiP.
 
-```
-git clone -b aex https://github.com/Apon77/aex device/xiaomi/mido --depth=1
-git clone -b aex https://github.com/Apon77/aexk kernel/xiaomi/mido --depth=1
-git clone -b aex https://github.com/Apon77/aexv vendor/xiaomi --depth=1
-```
+Make a directory for the ROM and cd to it, for example:
+`mkdir ~/aosip && cd ~/aosip`
 
-If you used local manifest to clone these trees, you must skip cloning these trees in this step.
+Now it is time to sync ROM sources, you can find manifest of the ROM easily by looking over its GitHub. AOSiP has it here 
+https://github.com/AOSiP/platform_manifest, we can also append .git to the URL, see below.
 
-##### 7. Run the build commands for building AospExtended
+The common way to initialize and sync is:
 
-```
-source build/envsetup.sh
-lunch aosp_mido-user
-m aex -j$(nproc --all)
-```
+`repo init -u URL-OF-MANIFEST -b BRANCH-NAME`
 
-##### 8. Upload the output zip file (AospExtended-8.0-mido*.zip) to a safe place
-```
-up(){
-	curl --upload-file $1 https://transfer.sh/$(basename $1); echo
-	# 14 days, 10 GB limit
-}
+`repo sync -f --force-sync --no-tags --no-clone-bundle`
 
-up out/target/product/mido/*.zip
-```
-##### 9. All these steps should be inside build_rom.sh script like [this](https://github.com/Apon77/mido-AospExtended-Apon77/blob/main/build_rom.sh).
-##### 10. If you want to update you device, kernel or vendor trees and learn more how to build ROMS and modify it according to your need, please check these links and search in google for more information.
-https://github.com/AliHasan7671/guides/commit/33361bb2c78af01426350ef21167d742f44481fd
-https://github.com/nathanchance/Android-Tools/blob/master/Guides/Building_AOSP.txt
-##### 11. You can use this repository as a standard reference and edit things according to your device, ROM, and needs
+So for AOSiP we need to do:
+
+`repo init -u git://github.com/AOSiP/platform_manifest.git -b pie`
+
+and then start syncing with below command
+
+`repo sync -f --force-sync --no-tags --no-clone-bundle`
+
+Wait for sometime as it needs to download a huge amount of data. All depends on your internet speed, in our example server it would take around 30 minutes to sync.
+
+## Device Sources
+Once you are done syncing ROM sources, it is time to get device sources like Device tree, Kernel source, and vendor etc. Some devices also have common trees.
+
+It is on you to find which stuff do you need, an easy way is to check lineage tree of your device, there you will get dependencies file containing all required things.
+
+Clone everything in an appropriate directory, the common way to clone any repo is:
+
+`git clone URL-OF-REPO -b BRANCH-NAME path/to/clone/at`
+
+Device tree is cloned at "device/brand/device-code-name. Kernel, vendor and common tree(if any) paths can be found in BoardConfig.mk of your device tree. Here I will take mido as an example, let us clone required things for it.
+
+`git clone https://github.com/AliHasan7671/android_device_xiaomi_mido -b pie device/xiaomi/mido`
+
+Now in BoardConfig.mk I can see that my kernel should be at **kernel/xiaomi/msm853** and vendor should be at **vendor/xiaomi**
+
+Cloning vendor
+
+`git clone https://github.com/AliHasan7671/proprietary_vendor_xiaomi -b pie vendor/xiaomi`
+
+Cloning kernel
+
+`git clone https://github.com/AliHasan7671/android_kernel_xiaomi_msm8953 -b pie kernel/xiaomi/msm8953`
+
+## Modifying tree for ROM
+Now we are done cloning mido sources. We need to change our device tree for AOSiP. Let me show you how to do it, you can do the same for most of the ROMs.
+
+Few ROMs need extra changing but this guide is for newbies soooo!
+
+I will change directory to device i.e., cd device/xiaomi/mido. There I will find some device make file, if you are getting your tree from lineage, it would be lineage.mk. Few ROMs uses like conename_romname.mk
+
+Here I need to rename lineage.mk to aosip.mk and then modify few lines inside it. See below
+
+`mv lineage.mk mido.mk`
+
+It will rename our file, now I will open it in nano for editing:
+
+`nano aosip.mk`
+
+Now here at this point, you will see a line which calling some common lineage stuff:
+
+`$(call inherit-product, vendor/lineage/config/common_full_phone.mk)`
+
+We need to change that this to call our target ROM common stuff, check ROMs vendor and you will find it. For AOSiP and most of the ROMs it is same, we just need to change that lineage to ROM name, see below:
+
+`$(call inherit-product, vendor/aosip/config/common_full_phone.mk)`
+
+As you can see I replaced lineage with aosip. Now we need to change product name. You will this line in the same file:
+
+`PRODUCT_NAME := lineage_mido`
+
+We need to replace lineage with our target ROM i.e., AOSiP, so:
+
+`PRODUCT_NAME := aosip_mido`
+
+Now save it and exit by executing CTRL+X
+
+Now edit AndroidProducts.mk and replace makefile with our newly created one. So I will change lineage.mk to aosip_mido.mk
+That is it, our basic things are done for the device, it is time to compile ROM. yayyyy
+
+## Compiling ROM
+Change directory to ROM sources i.e., cd ~/aosip and execute the following to source:
+
+`source build/envsetup.sh`
+
+Now lunch our device with preferred build variant, userdebug is good to go.
+
+`lunch aosip_mido-userdebug`
+
+Now we need to execute our final compiling command, it depends on the ROM which one it uses, most of the ROMs have brunch so doing brunch mido will start compiling the ROM, but AOSiP doesn't support, it supports mka so we will execute:
+
+`time mka kronic`
+
+Now our compilation will start, it will take around 150 minutes on our created instance :D If everything goes fine you will your ROM.zip at **out/target/product/mido**.
+
+If you face any issue, contact your device maintainers for help :) Just spam them for help :3 Most of them are very **NOOB** and reply nicely.
+
+So it was a **reference** guide for newbies by a newbie, take it as a reference only because things are different for every device and every ROM. I hope it helped you!
+
+
+
+**Credit:** [https://github.com/AliHasan7671](https://github.com/AliHasan7671 "https://github.com/AliHasan7671")
