@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Project-Fluid/manifest.git -b fluid-11 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/Jamesgosling2004/local_manifest.git --depth 1 -b main .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo init -u https://github.com/Evolution-X/manifest -b elle -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/rk134/local_manifests.git --depth 1 -b master .repo/local_manifests
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune
 
 # build rom
 source build/envsetup.sh
-lunch fluid_RMX1821-userdebug
+lunch evolution-x_vince-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
