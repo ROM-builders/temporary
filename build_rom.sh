@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ProjectRadiant/manifest -b eleven -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Wave-Project/manifest -b r -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/rk134/local_manifests.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch radiant_vince-userdebug
+lunch wave_vince-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
