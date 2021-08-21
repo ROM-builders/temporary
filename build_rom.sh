@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch xd_vince-userdebug
+lunch xdroid_vince-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka xd
 #./rom-build.sh vince -t userdebug
