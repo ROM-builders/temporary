@@ -4,8 +4,10 @@ git clone https://github.com/rk134/local_manifests.git --depth 1 -b master .repo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
-lunch wave_vince-userdebug
+. build/envsetup.sh
+export ALLOW_MISSING_DEPENDENCIES=TRUE
+lunch vince-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
