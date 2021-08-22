@@ -1,14 +1,14 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u hhttps://github.com/xdroid-CAF/xd_manifest -b eleven -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/ConquerOS/manifest.git -b eleven -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/rk134/local_manifests.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
-# build rom
-. build/envsetup.sh
-lunch xdroid_vince-userdebug
+# build roms
+source build/envsetup.sh
+lunch conquer_vince-userdebug
 export TZ=Asia/Dhaka #put before last build command
-make xd
+make carthage
 #./rom-build.sh vince -t userdebug
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
