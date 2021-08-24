@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -
 git clone https://github.com/sarthakroy2002/local_manifest --depth 1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build  rom
 source build/envsetup.sh
 lunch lineage_RMX2020-userdebug
 export TZ=Asia/Dhaka #put before last build command
