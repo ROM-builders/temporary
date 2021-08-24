@@ -51,6 +51,9 @@ if [[ $fetch_check -gt 0 ]]; then echo Please dont use fetch inside script, use 
 cd_check=$(grep "cd *" $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $cd_check -gt 0 ]]; then echo Please dont use cd inside script, use local manifest for this purpose.; exit 1; fi
 
+or_check=$(grep "||" $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
+if [[ $or_check -gt 0 ]]; then echo Please dont use or operator inside script; exit 1; fi
+
 rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-17.1 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
