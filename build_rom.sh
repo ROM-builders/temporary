@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/bananadroid/android_man
 git clone https://github.com/ImFlynnn/local_manifest.git --depth 1 -b banana .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc)
 
-# build rom
+# build rom 
 . build/envsetup.sh
 lunch banana_RMX2001-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
