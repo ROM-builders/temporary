@@ -1,5 +1,5 @@
 # sync rom
-rm -rf HyconOS
+
 repo init --depth=1 --no-repo-verify -u git://github.com/HyconOS/manifest.git -b eleven -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/kryptoniteX/Local-Manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
