@@ -1,7 +1,7 @@
-repo init --depth=1 --no-repo-verify -u git://github.com/FlokoROM/manifesto.git -b 11.0 -g default,-device,-mips,-darwin,-notdefault
+repo init -u https://github.com/PixelOS-Pixelish/manifest -b eleven-plus --depth=1 --no-repo-verify -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/kanup4m/local_manifest --depth 1 -b main .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || repo sync -j32 -c --no-clone-bundle --no-tags
-
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+ 
 # build rom
 source build/envsetup.sh
 lunch floko_r5x-userdebug
