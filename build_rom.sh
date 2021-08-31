@@ -5,7 +5,7 @@ git clone https://github.com/kryptoniteX/local_manifest.git --depth 1 -b raphael
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch revengeos_raphael-userdebug
 export ALLOW_MISSING_DEPENDENCIES=TRUE
 make bacon
