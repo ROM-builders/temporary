@@ -10,4 +10,5 @@ lunch aosp_raphael-userdebug
 export ALLOW_MISSING_DEPENDENCIES=TRUE #put before last build command
 make bacon
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
-rclone copy out/target/product/raphael/*.zip cirrus:raphael -P && rclone copy out/target/product/raphael/*.zip.json cirrus:raphael -P
+rclone copy out/target/product/raphael/*.zip cirrus:raphael -P
+rclone copy out/target/product/raphael/*.zip.json cirrus:raphael -P
