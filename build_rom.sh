@@ -3,6 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-OS/platform_ma
 git clone https://github.com/kanup4m/local_manifest.git -b wave .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+
 # build rom
 source build/envsetup.sh
 lunch octavi_r5x-userdebug
