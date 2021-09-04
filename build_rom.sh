@@ -9,10 +9,6 @@ lunch aosp_tulip-user
 export TZ=Asia/Kolkata #put before last build command
 mka bacon -j$(nproc --all)
 python3 OTA/support/ota.py
-PinCredible
-tulip
-Redmi Note 6 pro
-google.com
 zip -r OTA.zip OTA
 curl --upload-file OTA.zip transfer.sh/OTA.zip
 
