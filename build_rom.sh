@@ -15,7 +15,6 @@ mka bacon -j$(nproc --all)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
 
 #official stuff
-git clone https://github.com/PixelExtended/OTA
 python3 OTA/support/ota.py
 PinCredible
 tulip
