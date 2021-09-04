@@ -5,6 +5,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
+export PEX_MAINTAINER="Aryan"
+export PEX_BUILD_TYPE=OFFICIAL
+make clobber
 lunch aosp_miatoll-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
