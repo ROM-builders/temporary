@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 export TARGET_FLOS=true
-export WITH_GMS=true
 lunch lineage_r5x-userdebug
 export TZ=Asia/Jakarta
 make bacon
