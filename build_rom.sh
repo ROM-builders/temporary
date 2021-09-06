@@ -1,10 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/ForkLineageOS/android.git -b lineage-18.1 -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/CipherOS/android_manifest.git -b eleven -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/kanup4m/local_manifest.git -b los .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
+export TARGET_FLOS=true
+export WITH_GMS=true
 lunch lineage_r5x-userdebug
 export TZ=Asia/Jakarta
 make bacon
