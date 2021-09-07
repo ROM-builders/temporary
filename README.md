@@ -21,4 +21,4 @@ g
 Fix safety nhj
 
 fix kernel issue
-trying changes with local amnife
+trying changes with local amnif
