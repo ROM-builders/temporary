@@ -20,5 +20,5 @@ Okk Fixed agai
 g
 Fix safety nhj
 
-fix kernel issue
+fix kernel issu
 trying changes with local amnif
