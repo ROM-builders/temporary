@@ -6,10 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_X00TD-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
-export LINEAGE_VERSION_APPEND_TIME_OF_DAY=true
-export SKIP_ABI_CHECKS=true
-export SKIP_API_CHECKS=true
+export TZ=Asia/Kolkata #put before last build command
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
