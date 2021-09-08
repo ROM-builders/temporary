@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lineage-X00TD-userdebug
+lunch lineage_X00TD-userdebug
 export TZ=Asia/Dhaka #put before last build command
 chroot
 brunch bacon
