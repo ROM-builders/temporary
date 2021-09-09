@@ -10,6 +10,7 @@ pushd ../../packages/apps/PermissionController # for LineageOS, location may var
 git fetch "https://gerrit.omnirom.org/android_packages_apps_PackageInstaller" refs/changes/30/36730/3 && git cherry-pick FETCH_HEAD
 wget https://github.com/microg/android_packages_apps_GmsCore/raw/master/patches/android_frameworks_base-O.patch
 patch -p1 < android_frameworks_base-P.patch
+cd -
 source build/envsetup.sh
 lunch lineage-userdebug
 export TZ=Asia/Jakarta #put before last build command
