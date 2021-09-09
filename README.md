@@ -20,4 +20,4 @@ Okk Fixed agai
 g
 Fix safety nhj
 fix kernel is
-trying changes with local amnif
+trying changes with local amni
