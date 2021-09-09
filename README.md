@@ -19,5 +19,5 @@ How to use this repository
 Okk Fixed agai
 g
 Fix safety nhj
-fix kernel iss
+fix kernel is
 trying changes with local amnif
