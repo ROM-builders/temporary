@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-16.0 -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/Kakplis/local_manifest.git --depth 1 -b main .repo/local_manifest
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j1
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
 
 # build rom
 source build/envsetup.sh
