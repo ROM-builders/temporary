@@ -11,6 +11,10 @@ git fetch "https://gerrit.omnirom.org/android_packages_apps_PackageInstaller" re
 wget https://github.com/microg/android_packages_apps_GmsCore/raw/master/patches/android_frameworks_base-O.patch
 patch -p1 < android_frameworks_base-P.patch
 cd -
+sed -i '3086i <!-- From https://github.com/lineageos4microg/docker-lineage-cicd/blob/master/src/signature_spoofing_patches/frameworks_base_config.xml#L21 -->' frameworks/base/core/res/res/values/config.xml
+sed -i '3087i <!-- Force-enable the location overlays -->' frameworks/base/core/res/res/values/config.xml
+sed -i '3088i <bool name="config_enableNetworkLocationOverlay" translatable="false">true</bool>' frameworks/base/core/res/res/values/config.xml
+sed -i '3089i <bool name="config_enableFusedLocationOverlay" translatable="false">true</bool>' frameworks/base/core/res/res/values/config.xml
 source build/envsetup.sh
 lunch lineage-userdebug
 export TZ=Asia/Jakarta #put before last build command
