@@ -4,7 +4,6 @@ git clone https://github.com/dimas-ady/local_manifest.git --depth 1 -b lineage-1
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-bash device/asus/X00TD/extract-files.sh
 source build/envsetup.sh
 lunch lineage-userdebug
 export TZ=Asia/Jakarta #put before last build command
