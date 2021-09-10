@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 #build_rom
 . build/envsetup.sh
-lunch evolution_olives-userdebug
+lunch evolution_olivewood-userdebug
 export TZ=Asia/Dhaka #put before last build comm
 mka evolution
 
