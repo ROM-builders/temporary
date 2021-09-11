@@ -8,8 +8,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch rr_tulip-userdebug
 export TZ=America/Brazil #put before last build command
-export TARGET_KERNEL_CONFIG := mystic-tulip-oldcam_defconfig
-export TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm660
+export TARGET_KERNEL_CONFIG=mystic-tulip-oldcam_defconfig
+export TARGET_KERNEL_SOURCE=kernel/xiaomi/sdm660
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
