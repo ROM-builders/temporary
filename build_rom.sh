@@ -2,7 +2,7 @@
 repo init --depth=1 --no-repo-verify -u git://github.com/DerpFest-11/manifest.git -b 11 -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .repo/local_manifests
 repo init --depth=1 --no-repo-verify -u https://github.com/Colt-Enigma/platform_manifest -b c11 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/mangaters12/local_manifest.git --depth 1 -b main .repo/local_manifests
+git clone https://github.com/mangaters12/android_device_xiaomi_lavender-2.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
