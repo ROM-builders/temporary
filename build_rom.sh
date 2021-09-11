@@ -1,6 +1,6 @@
 # sync rom
 repo init -q --no-repo-verify --depth=1 -u https://github.com/LineageOS/android.git -b lineage-18.1 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/KernelPanic-OpenSource/local_manifest.git --depth 1 -b main .repo/local_manifests
+git clone https://github.com/halium-exynos/local_manifest.git --depth 1 -b lineage-17.1 .repo/local_manifests
 repo sync -v -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 # build rom
