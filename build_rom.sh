@@ -14,7 +14,7 @@ lunch lineage_vince-user
 
 export TZ=Asia/Dhaka #put before last build command
 
-mka derp
+mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 
