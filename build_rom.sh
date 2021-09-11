@@ -1,8 +1,8 @@
 # sync rom
 
-repo init --depth=1 --no-repo-verify -u git://github.com/ProjectSakura/android.git -b 11 -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-OS/platform_manifest.git -b maintainers -g default,-device,-mips,-darwin,-notdefault
 
-git clone https://github.com/B07123/local_manifest --depth 1 -b sakura .repo/local_manifests
+git clone https://github.com/B07123/local_manifest_RMX1851_octavi --depth 1 -b master .repo/local_manifests
 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -10,11 +10,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 source build/envsetup.sh
 
-lunch lineage_vince-user
+brunch octavi_RMX1851-userdebug
 
 export TZ=Asia/Dhaka #put before last build command
 
-mka bacon
+#mka derp
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 
