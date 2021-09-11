@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-make installclean
+make clean
 lunch rr_tulip-userdebug
 export TZ=America/Brazil #put before last build command
 export TARGET_KERNEL_CONFIG=mystic-tulip-oldcam_defconfig
