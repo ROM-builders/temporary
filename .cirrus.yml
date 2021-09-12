@@ -13,7 +13,7 @@ task:
       name: AX61-2
     isolation:
       container:
-        image: apon77/aosp:cirrus
+        image: brock5555/recovery
         cpu: 2
         memory: 4G
 
