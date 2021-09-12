@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/exthmui/android.git -b exthm-11 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/N4veenNK/local_manifest.git --depth=1 -b exthmui .repo/local_manifests
+git clone https://github.com/N4veenNK/local_manifests.git --depth=1 -b exthmui .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
