@@ -6,6 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom syberia
 
 source build/envsetup.sh
+# permission
+chmod +x device/asus/X00TD/audio_patch.sh
 
 lunch aosp_X00TD-userdebug
 export TZ=Asia/Dhaka #put before last build command
