@@ -4,6 +4,7 @@ git clone https://github.com/dimas-ady/local_manifest.git --depth 1 -b lineage-1
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+apt install openjdk-8-jre -y
 apt install openjdk-8-jdk -y
 source build/envsetup.sh
 export TZ=Asia/Jakarta #put before last build command
