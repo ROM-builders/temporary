@@ -37,6 +37,9 @@ if [[ $patch_check -gt 0 ]]; then echo Please dont use patch inside script, use 
 and_check=$(grep ' && ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $and_check -gt 0 ]]; then echo 'Please dont use && inside script, put that command in next line for this purpose.'; exit 1; fi
 
+and_check2=$(grep ' & ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
+if [[ $and_check2 -gt 0 ]]; then echo 'Please dont use & inside script.'; exit 1; fi
+
 rclone_check=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
 rclone_string="rclone copy out/target/product/\$(grep unch \$CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:\$(grep unch \$CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P"
 if [[ $rclone_check != *$rclone_string* ]]; then echo Please follow rclone copy line of main branch.; exit 1; fi
