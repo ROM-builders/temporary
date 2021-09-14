@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ShapeShiftOS/android_manifest -b android_11 -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/SumonSN/Local-Manifests.git --depth 1 -b RMX3171 .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 
 # build rom
 source build/envsetup.sh
