@@ -73,10 +73,10 @@ if [[ $BRANCH == *pull/* ]]; then
 cd /tmp/cirrus-ci-build
 PR_NUM=$(echo $BRANCH|awk -F '/' '{print $2}')
 AUTHOR=$(gh pr view $PR_NUM|grep author| awk '{print $2}')
-for value in ajitlenka30
+for value in ajitlenka30 wHo-EM-i
 do
     if [[ $AUTHOR == $value ]]; then
-        echo Please check \#pr instruction in telegram group.; exit 1; fi
+    echo Please check pr instruction in telegram group.; exit 1; fi
 done
 
 echo Test passed
