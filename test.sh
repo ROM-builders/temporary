@@ -69,4 +69,15 @@ grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasm
 
 if [[ $BRANCH != *pull/* ]]; then if [[ $BRANCH != $device-$rom_name-* ]]; then echo Please use proper branch naming described in push group.; exit 1; fi; fi
 
+if [[ $BRANCH == *pull/* ]]; then
+cd /tmp/cirrus-ci-build
+PR_NUM=$(echo $BRANCH|awk -F '/' '{print $2}')
+AUTHOR=$(gh pr view $PR_NUM|grep author| awk '{print $2}')
+for value in ajitlenka30 basic-general ZunayedDihan Badroel07 N4veenNK
+do
+    if [[ $AUTHOR == $value ]]; then
+    echo Please check \#pr instruction in telegram group.; exit 1; fi
+done
+fi
+
 echo Test passed
