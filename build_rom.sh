@@ -1,13 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/BiancaProject/android.git -b 11 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/N4veenNK/Local-Manifests.git --depth=1 -b bianca .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Project-LegionOS/manifest.git -b 11 -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/N4veenNK/Local-Manifests.git --depth=1 -b legion .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
-lunch bianca_X00T-userdebug
+. build/envsetup.sh
+lunch legion_X00TD-userdebug
 export TZ=Aexportsia/Kolkata #put before last build command
-mka dudu
+make legion
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
