@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/CherishOS/android_manifest.git -b eleven -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/CherishOS/android_manifest.git -b test -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/ajitlenka30/local_manifest --depth 1 -b 11.2 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch cherish_tissot-userdebug
+lunch cherish_tissot-user
 export TZ=Asia/Dhaka #put before last build command
 mka bacon -j$(nproc --all)
 
