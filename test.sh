@@ -37,6 +37,9 @@ if [[ $patch_check -gt 0 ]]; then echo Please dont use patch inside script, use 
 and_check=$(grep ' && ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $and_check -gt 0 ]]; then echo 'Please dont use && inside script, put that command in next line for this purpose.'; exit 1; fi
 
+and_check2=$(grep ' & ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
+if [[ $and_check2 -gt 0 ]]; then echo 'Please dont use & inside script.'; exit 1; fi
+
 rclone_check=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
 rclone_string="rclone copy out/target/product/\$(grep unch \$CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:\$(grep unch \$CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P"
 if [[ $rclone_check != *$rclone_string* ]]; then echo Please follow rclone copy line of main branch.; exit 1; fi
@@ -58,9 +61,23 @@ rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-17.1 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-15.1 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-16.1 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
+if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-16.0 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
+if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-15.0 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
 device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
 grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
 
 if [[ $BRANCH != *pull/* ]]; then if [[ $BRANCH != $device-$rom_name-* ]]; then echo Please use proper branch naming described in push group.; exit 1; fi; fi
+
+if [[ $BRANCH == *pull/* ]]; then
+cd /tmp/cirrus-ci-build
+PR_NUM=$(echo $BRANCH|awk -F '/' '{print $2}')
+AUTHOR=$(gh pr view $PR_NUM|grep author| awk '{print $2}')
+for value in ajitlenka30 basic-general ZunayedDihan Badroel07 N4veenNK
+do
+    if [[ $AUTHOR == $value ]]; then
+    echo Please check \#pr instruction in telegram group.; exit 1; fi
+done
+fi
 
 echo Test passed
