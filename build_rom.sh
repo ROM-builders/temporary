@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch cherish_tissot-user
+lunch cherish_tissot-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon -j$(nproc --all)
 
