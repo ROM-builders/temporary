@@ -6,9 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_juice-userdebug
-export SKIP_API_CHECKS=true
-export SKIP_ABI_CHECKS=true
-export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta
 make bacon
 
