@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build
 source build/envsetup.sh
-lunch lineage_tiare-userdebug
+lunch lineage_tiare-user
 export TZ=Asia/Kolkata #put before last build command
 mka bacon -j$(nproc --all)
 
