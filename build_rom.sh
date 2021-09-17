@@ -3,7 +3,6 @@ repo init --depth=1 --no-repo-verify -u git://https://github.com/DotOS/manifest.
 git clone https://github.com/SumonSN/Local_manifest.git --depth 1 -b RMX3171 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-
 # build rom
 source build/envsetup.sh
 lunch dot_RMX3171-userdebug
