@@ -3,6 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/hentaiOS/platform_man
 git clone https://github.com/deadline646/local_manifest.git --depth 1 -b HentaiOS .repo/local_manifests # update local_manifest.xml
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+# try
 # build rom
 source build/envsetup.sh
 lunch hentai_juice-userdebug
