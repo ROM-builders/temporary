@@ -15,5 +15,3 @@ mka bacon -j$(nproc --all)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
 # Lets get build datetime (UTC) for pushing OTA
 cat out/target/product/tiare/system/build.prop | grep "ro.build.date.utc"
-# Upload Recovery Image
-rclone copy out/target/product/tiare/*recovery*.img cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
