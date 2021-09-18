@@ -1,5 +1,5 @@
 # sync rom
-repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q
+repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/Xeesan/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync --force-sync --no-clone-bundle
 
