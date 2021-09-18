@@ -5,6 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
+1
+3
 lunch rr_beryllium-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
