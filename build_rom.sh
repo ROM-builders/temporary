@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest.git -b eleven -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/a7imranjha/local_manifest -depth 1 -b main .repo/local_manifests
+git clone https://github.com/a7imranjha/local_manifest --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
