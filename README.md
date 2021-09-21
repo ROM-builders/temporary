@@ -1,7 +1,7 @@
-AospExtended custom ROM for Redmi Note 4
+ProjectRadiant Custom ROM for LG V30 ThinQ
 ==============================
 
-AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note 4(code name mido)
+Project Radiant [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for LG V30 ThinQ(code name joan)
 
 [Features as video](https://www.youtube.com/watch?v=KuQ9jIVmOXY) or [Features as text](https://forum.xda-developers.com/t/rom-11-0-aospextended-rom-v8-0-unofficial-surya.4202905/)
 
