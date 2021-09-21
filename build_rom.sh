@@ -5,6 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
+export DOT_OFFICIAL=true
+export WITH_GAPPS=true
 lunch dot_fajita-user
 export TZ=Asia/Dhaka #put before last build command
 mka derp
