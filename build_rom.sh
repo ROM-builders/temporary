@@ -9,7 +9,7 @@ lunch aosp_merlinx-user
 export TZ=Asia/Kolkata #put before last build command
 mka bacon -j$(nproc --all)
 
-#OTA Json Generate
+#OTA Json Generate#
 python3 OTA/support/ota.py
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
