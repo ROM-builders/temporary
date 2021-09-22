@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/AOSPK/manifest.git -b e
 git clone https://github.com/ECr34T1v3/android_.repo_local_manifests.git --depth 1 -b beyond0-aospk .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom.
+# build rom
 . build/envsetup.sh
 lunch aosp_beyond0lte-userdebug
 export TZ=Asia/Dhaka #put before last build command
