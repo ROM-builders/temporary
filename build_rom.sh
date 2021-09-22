@@ -2,7 +2,7 @@
 repo init --depth=1 --no-repo-verify -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/STRK-ND/local-manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) 
-.
+
 # build rom
 source build/envsetup.sh
 lunch aosp_X00TD-userdebug
