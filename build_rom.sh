@@ -1,5 +1,5 @@
 # sync rom
-repo init -u git://github.com/DotOS/manifest.git -b dot11
+repo init --depth=1 --no-repo-verify -u git://github.com/DotOS/manifest.git -b dot11 -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/SevralT/local_manifest.git -b main .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
