@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -
 git clone https://github.com/Micromax-E6746/local_manifests.git --depth 1 -b test1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom run
 source build/envsetup.sh
 lunch lineage_e6746-userdebug
 export TZ=Asia/Kolkata
