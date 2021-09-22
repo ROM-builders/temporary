@@ -4,7 +4,7 @@ git clone https://github.com/a7imranjha/local_manifest.git --depth 1 -b main .re
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch lineage_olivewood-user
 export TZ=Asia/Karachi #put before last build command
 mka bacon
