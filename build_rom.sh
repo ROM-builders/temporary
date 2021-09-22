@@ -5,7 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch arrow_olivewood-userdebug
+lunch arrow_olivewood-user
+export WITH_GAPPS=true
 export TZ=Asia/Karachi #put before last build command
 m bacon
 
