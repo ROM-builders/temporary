@@ -4,6 +4,7 @@ git clone https://github.com/Micromax-E6746/local_manifests.git --depth 1 -b tes
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom run
+#use updated parition sizes
 source build/envsetup.sh
 lunch lineage_e6746-userdebug
 export TZ=Asia/Kolkata
