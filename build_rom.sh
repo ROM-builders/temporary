@@ -8,8 +8,8 @@ source build/envsetup.sh
 lunch lineage_e6746-userdebug
 export TZ=Asia/Kolkata
 export LC_ALL=C
-export SKIP_ABI_CHECKS=true
-export SKIP_API_CHECKS=true
+#export SKIP_ABI_CHECKS=true
+#export SKIP_API_CHECKS=true
 export _JAVA_OPTIONS="-Xms2048m -Xmx4096m"
 mka bacon
 
