@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b elle -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/Ravithakral/local_manifest --depth 1 -b master .repo/local_manifests
+# git clone https://github.com/Ravithakral/local_manifest --depth 1 -b master .repo/local_manifests/evolution_manifest.xml
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
