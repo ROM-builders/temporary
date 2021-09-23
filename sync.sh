@@ -11,6 +11,5 @@ command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep 'build/envsetup
 only_sync=$(grep 'repo sync' $CIRRUS_WORKING_DIR/build_rom.sh)
 (bash -c "$command" | tee sync.txt) || (grep '^fatal: remove-project element specifies non-existent project' sync.txt && exit 1) || \
 (grep 'uncommitted changes are present.$' sync.txt | awk -F ': ' '{print $2}' > uncommited.txt \
-&& while IFS= read -r line; do rm -rf "$line/.git"; done < uncommited.txt && exit 1)  || \
+&& while IFS= read -r line; do rm -rf "$line"; done < uncommited.txt && exit 1)  || \
 (repo forall -c 'git checkout .' && bash -c "$only_sync") || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync")
-rm -rf sync.txt
