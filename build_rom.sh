@@ -8,10 +8,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch lineage_e6746-userdebug
 export TZ=Asia/Kolkata
-export LC_ALL=C
-#export SKIP_ABI_CHECKS=true
-#export SKIP_API_CHECKS=true
-export _JAVA_OPTIONS="-Xms2048m -Xmx4096m"
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
