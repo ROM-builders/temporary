@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
  . build/envsetup.sh
-lunch lineage_<olivewood>-userdebug
+lunch lineage_olivewood-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
