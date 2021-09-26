@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch p404 _Z01R-userdebug
+lunch p404_Z01R-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Kolkata 
 make bacon
