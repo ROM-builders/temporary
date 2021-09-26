@@ -5,7 +5,19 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch derp_vayu-user
+
+my_target="derp_vayu-user"
+lunch $my_target
+
+bproduct=$(get_build_var TARGET_PRODUCT)
+bvariant=$(get_build_var TARGET_BUILD_VARIANT)
+btarget="${bproduct}-${bvariant}"
+
+echo $my_target
+echo $btarget
+
+if [[ ${btarget} == ${my_target} ]]; then echo "Config looks fine and build can continue..."; else echo "Mismatch"; exit 1; fi
+
 export TZ=Asia/Dhaka #put before last build command
 mka derp
 
