@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/DotOS/manifest.git -b dot11 default,-device,-mips,-darwin,-notdefault
+repo init -u https://github.com/AOSPK/manifest -b eleven --depth=1 -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/MhmmdAmier/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch dot_ugglite-userdebug
+lunch aosp_ulysse-userdebug
 export TZ=Asia/Jakarta #put before last build command
 make bacon
 
