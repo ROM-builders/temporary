@@ -4,7 +4,7 @@ git clone https://github.com/cbendot/Local-Manifests.git --depth 1 -b main .repo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch rr_X00TD-userdebug
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
