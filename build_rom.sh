@@ -6,8 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 #  lbuild rom
 . build/envsetup.sh
 lunch rr_citrus-userdebug
-export KBUILD_BUILD_USER="deadline646"; export KBUILD_BUILD_HOST="none"
-export TZ=Asia/Kolkata #put before last build command
+export KBUILD_BUILD_USER="deadline646"; export KBUILD_BUILD_HOST="root"
+export TZ=Asia/Kolkata
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
