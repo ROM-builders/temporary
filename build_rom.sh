@@ -1,6 +1,6 @@
 # Sync ROM
-repo init --depth=1 --no-repo-verify -u https://github.com/Project-Fluid/manifest.git -b fluid-11 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/deadline646/local_manifest.git --depth 1 -b FluidOS .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/Project-Fluid/manifest.git -b fluid-11 -g default,-device,-mips,-darwin,-notdefault
+git clone git://github.com/deadline646/local_manifest.git --depth 1 -b FluidOS .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # Build ROM
