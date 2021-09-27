@@ -4,9 +4,9 @@ git clone https://github.com/deadline646/local_manifest.git --depth 1 -b FluidOS
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # Build ROM
-. build/envsetup.sh
+source build/envsetup.sh
 lunch fluid_juice-userdebug
-export TZ=Asia/Dhaka
+export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
 # Upload ROM
