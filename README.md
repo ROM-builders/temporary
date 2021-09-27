@@ -10,6 +10,9 @@ Main dotOS features:
 * Face Unlock
 * Always up-to-date
 
+Telegram channel: [Click me!](https://t.me/sevralt_updates)
+Telegram group: [Click me!](https://t.me/sevralt_chat)
+
 How to install?
 ==============================
 
