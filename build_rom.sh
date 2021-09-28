@@ -11,8 +11,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch cherish_Z01R-userdebug
-export SKIP_ABI_CHECKS=true
-export WITH_GMS:=true
+#export SKIP_ABI_CHECKS=true
 export TZ=Asia/Kolkata #put before last build command
 brunch cherish_Z01R-userdebug
 
