@@ -7,7 +7,7 @@ repo sync --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$
 . build/env*
 lunch spark_pine-userdebug
 
-export TZ=Asia/Kolkata #put before last build command
+export TZ=Asia/Mumbai #put before last build command
 mka spark -j$(nproc --all)
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
