@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/CherishOS/android_manifest.git -b eleven -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/RishikRastogi/Local-Manifests.git --depth 1 -b master .repo/local_manifests
+git clone https://github.com/RishikRastogi/local_mainfest.git --depth 1 -b cherish .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 # git clone https://github.com/syberia-project/platform_hardware_qcom_media.git --depth=1 -b 11.0-caf-sdm845 hardware/qcom-caf/sdm845/media
 # git clone https://github.com/syberia-project/platform_hardware_qcom_audio.git --depth=1 -b 11.0-caf-sdm845 hardware/qcom-caf/sdm845/audio
