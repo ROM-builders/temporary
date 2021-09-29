@@ -5,7 +5,7 @@ repo sync -j$(nproc --all) --force-sync --no-tags --no-clone-bundle
 
 # build rom
 . build/envsetup.sh
-lunch du_j7veltw-userdebug
+lunch du_j7velte-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make corvus
 
