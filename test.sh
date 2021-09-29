@@ -75,7 +75,7 @@ if [[ $BRANCH == *pull/* ]]; then
 cd /tmp/cirrus-ci-build
 PR_NUM=$(echo $BRANCH|awk -F '/' '{print $2}')
 AUTHOR=$(gh pr view $PR_NUM|grep author| awk '{print $2}')
-for value in ajitlenka30 basic-general ZunayedDihan Badroel07 Ravithakral SumonSN SevralT yograjsingh-cmd nit-in
+for value in ajitlenka30 basic-general ZunayedDihan Badroel07 Ravithakral SumonSN SevralT yograjsingh-cmd nit-in sanjeevstunner
 do
     if [[ $AUTHOR == $value ]]; then
     echo Please check \#pr instruction in telegram group.; exit 1; fi
