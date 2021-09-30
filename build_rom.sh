@@ -6,7 +6,7 @@ repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --pru
 # build rom
 . build/envsetup.sh
 lunch octavi_pine-userdebug
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Kolkata #put before last build command
 brunch pine
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
