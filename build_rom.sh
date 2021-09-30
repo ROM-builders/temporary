@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-OS/platform_manifest.git -b 11 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/atharv2951/local_manifest --depth 1 -b main .repo/local_manifests
+git clone https://github.com/atharv2951/local_manifest --depth 1 -b octavi .repo/local_manifests
 repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
 
 # build rom
