@@ -1,5 +1,6 @@
 # sync rom
 repo init -u https://github.com/hentaiOS/platform_manifest -b Rika
+git clone https://github.com/log1cs/local-manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
