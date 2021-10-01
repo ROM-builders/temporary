@@ -1,7 +1,7 @@
 # sync rom
-repo init -u git://github.com/hentaiOS/platform_manifest -b Rika
+repo init -u git://github.com/hentaiOS/platform_manifest -b Rika -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/log1cs/local-manifest.git --depth 1 -b main .repo/local_manifests
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
