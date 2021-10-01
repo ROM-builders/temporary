@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch havoc_tulip-userdebug
+lunch aosp_arm64-eng
 export TZ=Asia/Dhaka #put before last build command
 brunch
 
