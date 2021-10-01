@@ -9,7 +9,7 @@ git clone https://github.com/log1cs/local-manifest.git --depth 1 -b main .repo/l
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
-source . build/envsetup.sh
+. build/envsetup.sh
 lunch hentai_judyln-userdebug
 export TZ=Asia/HoChiMinh #put before last build command
 make otapackage -j4
