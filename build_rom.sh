@@ -6,8 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch xdroid_rova-userdebug
-export TZ=Asia/Jakarta
-export KBUILD_USERNAME=ItoRenz
+export TZ=Asia/HoChiMinh
+export KBUILD_USERNAME=pingmado
 make xd
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
