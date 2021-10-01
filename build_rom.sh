@@ -11,7 +11,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 # build rom
 source . build/envsetup.sh
 lunch hentai_judyln-userdebug
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/HoChiMinh #put before last build command
 make otapackage -j4
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
