@@ -4,7 +4,7 @@ git clone https://github.com/delmontaro/local_manifest.git --depth 1 -b main .re
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/env*
+. build/envsetup.sh
 lunch spark_ulysse-userdebug
 export TZ=Asia/Jakarta #put before last build command
 mka spark -j$(nproc --all)
