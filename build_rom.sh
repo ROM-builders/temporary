@@ -4,9 +4,9 @@ git clone https://github.com/ping2109/local_manifest.git --depth 1 -b lineage-18
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
-lunch lineage_rova-userdebug
-export TZ=Asia/Kolkata #put before last build command
+. build/envsetup.sh
+# lunch lineage_rova-userdebug
+export TZ=Asia/HoChiMinh #put before last build command
 brunch rova
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
