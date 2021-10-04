@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/Evolution-X/manifest.gi
 git clone https://github.com/Kneba/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build roms
+# build
 source build/envsetup.sh
 lunch evolution_X00TD-userdebug
 export TZ=Asia/Jakarta #put before last build command
