@@ -1,11 +1,11 @@
 # sync rom
-repo init -u https://github.com/CherishOS/android_manifest.git -b eleven -g default,-device,-mips,-darwin,-notdefault
+repo init -u https://github.com/ProjectRadiant/manifest -b eleven -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/sakhiofsakshi/local_manifest.git --depth 1 -b main .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
 source build/envsetup.sh
-lunch cherish_alioth-user
+lunch radiant_alioth-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon 
 
