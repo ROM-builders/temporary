@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://android.googlesource.com/platfor
 git clone https://GitHub.com/flashokillerify/manifest_pine --depth 1 -b A12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom...😓
 source build/envsetup.sh
 lunch aosp_pine-userdebug
 export TZ=Asia/Kolkata #put before last build command
