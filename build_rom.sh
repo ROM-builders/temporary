@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch xdroid_rova-userdebug
+lunch xdroid_rolex-userdebug
 export TZ=Asia/HoChiMinh
 export KBUILD_USERNAME=pingmado
 make xd
