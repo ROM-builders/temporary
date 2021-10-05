@@ -4,7 +4,7 @@ git clone https://github.com/deadline646/local_manifest.git --depth 1 -b AOSP .r
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # Build ROM
-source build/envsetup.sh
+. build/envsetup.sh
 lunch aosp_juice-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
