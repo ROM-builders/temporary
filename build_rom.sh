@@ -6,7 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch arrow_dandelion-userdebug
-export TZ=Asia/Dhaka #put before last build command
+export ALLOW_MISSING_DEPENDENCIES=true
+export TZ=Asia/Singapore #put before last build command
 m otapackage
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
