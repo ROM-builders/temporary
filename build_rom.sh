@@ -3,7 +3,7 @@ repo init --depth=1 -u https://github.com/ini23/manifest.git -b dot11 -g default
 git clone https://github.com/ini23/local_manifest.git --depth 1 -b dotos .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build   
+# build
 source build/envsetup.sh
 lunch dot_whyred-userdebug
 make bacon
