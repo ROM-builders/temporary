@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/xdroid-CAF/xd_manifest 
 git clone https://github.com/fajar4561/local_manifest.git --depth 1 -b xdroid .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom (skrip)
+# build
 source build/envsetup.sh
 lunch xdroid_X00TD-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
