@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch lineage_ulysse-userdebug
-export TZ=Asia/Jakarta #put_before_last_build_command
+export TZ=Asia/Jakarta #put_before last build command
 mka bacon -j$(nproc --all) 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
