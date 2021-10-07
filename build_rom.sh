@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch xdroid_X00TD-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
-export TZ=Asia/Jakarta setelan waktu 
+export TZ=Asia/Jakarta setelan waktu (i'll try to ......)
 make xd
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
