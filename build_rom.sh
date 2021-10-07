@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build
 source build/envsetup.sh
 lunch dot_whyred-userdebug
+export TZ=Asia/Jakarta
 make bacon
 
 # upload rom
