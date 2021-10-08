@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/ResurrectionRemix/platf
 git clone https://github.com/Kendras056/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build
+# build rom
 source build/envsetup.sh
 lunch rr_X00TD-userdebug 
 export TZ=Asia/Jakarta #put before last build command
