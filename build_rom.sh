@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/DotOS/manifest -b dot
 git clone https://github.com/ini23/local_manifest.git --depth 1 -b dotos .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build
+# build rom
 source build/envsetup.sh
 lunch dot_whyred-userdebug
 export TZ=Asia/Jakarta 
