@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/DotOS/manifest.git -b dot11 -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/DPSLEGEND/local_mainfest.git --depth 1 -b master .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
 source build/envsetup.sh
