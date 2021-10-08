@@ -1,12 +1,12 @@
-# Sync ROM
-repo init --depth=1 --no-repo-verify -u git://github.com/AOSPMinimal/platform_manifest.git -b aosp-12 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/offsetc666/local_manifest.git --depth 1 -b AOSP .repo/local_manifests
+# sync rom
+repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-19.0 -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/offsetc666/local_manifest.git --depth 1 -b lineage-19.0 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# Build ROM
+# build rom
 . build/envsetup.sh
-lunch aosp_juice-userdebug
-export TZ=Asia/Dhaka #put before last build command
+lunch lineage_juice-userdebug
+export TZ=Asia/Dhaka
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
