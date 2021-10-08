@@ -1,11 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://android.googlesource.com/platform/manifest -b android-12.0.0_r2 -g default,-device,-mips,-darwin,-notdefault
-git clone https://GitHub.com/flashokillerify/manifest_pine --depth 1 -b A12 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-19.0
+-g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/flashokillerify/manifest_pine --depth 1 -b A12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom....
 source build/envsetup.sh
-lunch aosp_pine-userdebug
+lunch lineage_pine-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
