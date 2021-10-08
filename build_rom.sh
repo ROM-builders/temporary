@@ -4,7 +4,7 @@ git clone https://github.com/deadline646/local_manifest.git --depth 1 -b lineage
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch lineage_juice-userdebug
 export TZ=Asia/Dhaka
 make bacon
