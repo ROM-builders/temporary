@@ -1,13 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-18.1 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/fazrul1994/local_manifest.git --depth 1 .repo/local_manifest
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-
+repo init -u https://github.com/Evolution-X/manifest -b elle -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/fazrul1994/local_manifest.git --depth 1 .repo/local_manifests
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 # build rom
 . build/envsetup.sh
-lunch lineage_poplar-userdebug
+lunch evolution_poplar-userdebug
 export TZ=Asia/Jakarta #put before last build commandd
-make -j8 bacon
+mka evolution
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
