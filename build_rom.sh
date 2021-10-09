@@ -4,7 +4,7 @@ git clone https://github.com/hsx02/Local-Manifests.git --depth 1 -b spark-11 .re
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/env*
+
 lunch spark_pine-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
