@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/yaap/manifest.git -b eleven -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/Evolution-X/manifest.git -b snow -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/xootkama/Local-Manifests.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch yaap_X00TD.mk
+lunch evolution_RMX1851.mk
 export TZ=Asia/Kolkata #put before last build command
 make bacon
 
