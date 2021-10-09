@@ -1,13 +1,12 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/DotOS/manifest.git -b dot11 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/hsx02/Local-Manifests.git --depth 1 -b dot-11 .repo/local_manifests
+git clone https://github.com/hsx02/Local-Manifests.git --depth 1 -b dot-11_4x .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch dot_pine-userdebug
-export WITH_GAPPS=true
-export SELINUX_IGNORE_NEVERALLOWS=true
+sed -i '/qti-telephony-common.jar/d' vendor/xiaomi/santoni/santoni-vendor.mk
+lunch dot_santoni-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
