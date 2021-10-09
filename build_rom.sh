@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch nad_pine-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
+export USE_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
 mka nad
 
