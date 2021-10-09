@@ -6,7 +6,7 @@ repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --pru
 
 # build rom
 source build/envsetup.sh
-lunch octavi merlin-userdebug
+lunch octavi_$merlin-userdebug
 brunch Merlin
 export TZ=Asia/Dhaka #put before last build command
 mka derp
