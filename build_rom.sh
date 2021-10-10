@@ -1,8 +1,8 @@
 # sync rom
 
-repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-OS/platform_manifest.git -b 11 -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Project-Fluid/manifest.git -b fluid-12 -g default,-device,-mips,-darwin,-notdefault
 
-git clone https://github.com/DPSLEGEND/local_manifest.git --depth 1 -b master .repo/local_manifests
+git clone https://github.com/rehanalt501/local_mainfest.git --depth 1 -b main .repo/local_manifests
 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -10,11 +10,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 source build/envsetup.sh
 
-lunch octavi_RMX3171-user
+lunch fluid_RMX3171-user
 
 export TZ=Asia/Dhaka #put before last build command
 
-brunch RMX3171
+mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 
