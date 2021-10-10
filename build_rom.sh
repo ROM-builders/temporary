@@ -5,7 +5,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 # build rom
 . build/envsetup.sh
 lunch evolution_poplar-userdebug
-export TZ=Asia/Jakarta #put before last build commandd
+export TZ=Asia/Jakarta #put before last build command
 mka evolution
 
 
