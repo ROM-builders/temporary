@@ -1,6 +1,6 @@
 # sync rom
 
-repo init --depth=1 --no-repo-verify -u git://github.com/DotOS/manifest.git -b dot11 -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-OS/platform_manifest.git -b 11 -g default,-device,-mips,-darwin,-notdefault
 
 git clone https://github.com/DPSLEGEND/local_manifest.git --depth 1 -b master .repo/local_manifests
 
@@ -10,11 +10,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 source build/envsetup.sh
 
-lunch dot_RMX3171-user
+lunch octavi_RMX3171-user
 
 export TZ=Asia/Dhaka #put before last build command
 
-make bacon
+brunch RMX3171
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 
