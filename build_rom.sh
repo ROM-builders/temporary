@@ -1,7 +1,7 @@
 
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/CyberTechWorld/android_manifest.git -b 11 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/CyberTechWorld/local_manifest.git --depth 1 -b main .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/CyberTechWorld/android_manifest.git -b 11 -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/CyberTechWorld/Local-Manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
