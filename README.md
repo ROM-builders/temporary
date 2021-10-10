@@ -1,15 +1,15 @@
-AospExtended custom ROM for Redmi Note 4
+LineageOS custom ROM for Samsung Galaxy J6
 ==============================
 
-AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note 4(code name mido)
+LineageOS [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Samsung Galaxy J6(code name j6lte)
 
-[Features as video](https://www.youtube.com/watch?v=KuQ9jIVmOXY) or [Features as text](https://forum.xda-developers.com/t/rom-11-0-aospextended-rom-v8-0-unofficial-surya.4202905/)
+[Features as video](https://www.youtube.com/watch?v=ddLNYqQVw_Q) or [Features as text](https://www.xda-developers.com/lineageos-18-1/)
 
 [Screenshots](https://t.me/Apon77Mido/5270) or [Video](https://www.youtube.com/watch?v=KuQ9jIVmOXY)
 
-Distributed [here](https://t.me/rn4downloads/4885)
+Distributed [here (soon xda thread)]()
 
-Estimated installation no.: 150-500
+Estimated installation no.: 100-250
 
 How to use this repository
 -------------------
