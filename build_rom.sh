@@ -1,5 +1,5 @@
 # sync rom
-repo init -u https://github.com/Evolution-X/manifest -b elle -g default,-device,-mips,-darwin,-notdefault
+repo init -u https://github.com/Evolution-X/manifest.git -b elle -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/fazrul1994/local_manifest.git --depth 1 .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 # build rom
