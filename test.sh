@@ -16,6 +16,12 @@ if [[ $sudo_check -gt 0 ]]; then echo Please dont use sudo inside script.; exit 
 mv_check=$(grep 'mv ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $mv_check -gt 0 ]]; then echo Please dont use mv inside script, use local manifest for this purpose.; exit 1; fi
 
+sed_check=$(grep 'sed ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
+if [[ $sed_check -gt 0 ]]; then echo Please dont use sed inside script, use local manifest for this purpose.; exit 1; fi
+
+tee_check=$(grep 'tee ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
+if [[ $tee_check -gt 0 ]]; then echo Please dont use tee inside script, its not needed at all..; exit 1; fi
+
 clean_check=$(grep ' clean' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $clean_check -gt 0 ]]; then echo Please dont use make clean. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
 
@@ -76,7 +82,7 @@ if [[ $BRANCH == *pull/* ]]; then
 cd /tmp/cirrus-ci-build
 PR_NUM=$(echo $BRANCH|awk -F '/' '{print $2}')
 AUTHOR=$(gh pr view $PR_NUM|grep author| awk '{print $2}')
-for value in ajitlenka30 basic-general ZunayedDihan Badroel07 Ravithakral SumonSN SevralT yograjsingh-cmd nit-in sanjeevstunner
+for value in ajitlenka30 basic-general ZunayedDihan Badroel07 Ravithakral SumonSN SevralT yograjsingh-cmd nit-in Sanjeev stunner ini23 
 do
     if [[ $AUTHOR == $value ]]; then
     echo Please check \#pr instruction in telegram group.; exit 1; fi
