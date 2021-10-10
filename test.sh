@@ -68,6 +68,8 @@ branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print 
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-17.1 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-15.1 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-19.0 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+if [[ $rom_name == ArrowOS ]]; then if [[ $branch_name == arrow-12.0 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+if [[ $rom_name == Project-Fluid ]]; then if [[ $branch_name == fluid-12 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-16.1 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-16.0 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-15.0 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
@@ -82,7 +84,7 @@ if [[ $BRANCH == *pull/* ]]; then
 cd /tmp/cirrus-ci-build
 PR_NUM=$(echo $BRANCH|awk -F '/' '{print $2}')
 AUTHOR=$(gh pr view $PR_NUM|grep author| awk '{print $2}')
-for value in ajitlenka30 basic-general ZunayedDihan Badroel07 Ravithakral SumonSN SevralT yograjsingh-cmd nit-in Sanjeev stunner ini23 
+for value in ajitlenka30 basic-general ZunayedDihan Badroel07 Ravithakral SumonSN SevralT yograjsingh-cmd nit-in Sanjeev stunner ini23 CyberTechWorld
 do
     if [[ $AUTHOR == $value ]]; then
     echo Please check \#pr instruction in telegram group.; exit 1; fi
