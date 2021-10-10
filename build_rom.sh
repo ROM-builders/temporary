@@ -5,10 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build
 source build/envsetup.sh
-
 lunch lineage_X00TD-userdebug
 export TZ=Asia/Jakarta 
-
 mka bacon
 
 
