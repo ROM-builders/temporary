@@ -4,7 +4,7 @@ git clone https://github.com/Pro-xIx/Local-Manifests.git --depth 1 -b dot-11_4x 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+source 
 sed -i '/qti-telephony-common.jar/d' vendor/xiaomi/santoni/santoni-vendor.mk
 lunch dot_santoni-userdebug
 export TZ=Asia/Dhaka #put before last build command
