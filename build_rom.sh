@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build
 source build/envsetup.sh
-lunch du_X00TD-userdebug
+lunch du_X00T-userdebug
 export TZ=Asia/Jakarta 
 make corvus
 
