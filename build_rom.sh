@@ -2,7 +2,11 @@
 repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-17.1 -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/iAboothahir/manifest.git --depth 1 -b lineage-17.1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-
+wget https://raw.githubusercontent.com/iAboothahir/20-20/master/patches/001-fix_error1.patch
+mv 001-fix_error1.patch device/Asus/X00TD
+cd device/Asus/X00TD
+patch -p1 < 001-fix_error1.patch
+cd -
 # build rom lineage
 
 source build/envsetup.sh
