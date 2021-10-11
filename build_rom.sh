@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch arrow_ulova-userdebug
+lunch arrow_ulysse-userdebug
 export TZ=Asia/Kuala_Lumpur #put before last build command
 m bacon
 
