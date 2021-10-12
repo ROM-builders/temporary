@@ -1,4 +1,4 @@
-# sync rom
+# sync
 repo init --depth=1 --no-repo-verify -u git://github.com/Corvus-Q/android_manifest.git -b 10 -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/Kneba/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
