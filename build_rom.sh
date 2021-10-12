@@ -4,7 +4,7 @@ git clone https://github.com/braindedboi/local_manifests.git --depth 1 -b evo .r
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch evolution_RMX3171-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka evolution
