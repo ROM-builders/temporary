@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch yaap-RMX1851-userdebug
+lunch yaap_RMX1851-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka evolution
 
