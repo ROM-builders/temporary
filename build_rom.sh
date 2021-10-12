@@ -1,11 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Evolution-X/manifest -b elle -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/yaap/manifest.git -b eleven
+ -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/xootkama/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
-lunch evolution_RMX1851-userdebug
+lunch yaap-RMX1851-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka evolution
 
