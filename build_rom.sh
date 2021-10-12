@@ -1,4 +1,4 @@
-# sync rom
+# sync rom#
 repo init -u https://github.com/PixysOS/manifest -b eleven
 git clone https://github.com/Akash23q2/local_manifest --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
