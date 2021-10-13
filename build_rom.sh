@@ -6,10 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch banana_vayu-userdebug
-export TZ=Asia/Jakarta #put before last build command
 export ALLOW_MISSING_DEPENDENCIES=true
-export KBUILD_BUILD_USER=delmontaro
-export KBUILD_BUILD_HOST=SanderSonia
+export TZ=Asia/Jakarta #put before last build command
 make banana
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
