@@ -41,14 +41,12 @@ task:
       $show" -d "chat_id=${your_telegram_id}" -d "parse_mode=HTML"
   test_script:
     - set -e
-    - curl -Ls https://github.com/ROM-builders/temporary/raw/main/test.sh | bash
+    - curl -Ls https://github.com/00p513-dev/temporary/raw/main/test.sh | bash
 
 task:
   name: Build
   skip: $CIRRUS_BRANCH == 'main'
   only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
-  depends_on:
-    - Test
   timeout_in: 4h
   persistent_worker:
     labels:
@@ -67,7 +65,7 @@ task:
     - cat $CIRRUS_WORKING_DIR/build_rom.sh
   test_script:
     - set -e
-    - curl -Ls https://github.com/ROM-builders/temporary/raw/main/test.sh | bash
+    - curl -Ls https://github.com/00p513-dev/temporary/raw/main/test.sh | bash
   sync_script:
     - set -e
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
