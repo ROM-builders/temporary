@@ -1,12 +1,17 @@
 # sync rom
-repo init -u https://github.com/Evolution-X/manifest.git -b elle -g default,-device,-mips,-darwin,-notdefault
+repo init -u git://github.com/LineageOS/android.git -b lineage-18.1 -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/fazrul1994/local_manifest.git --depth 1 .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+
+#Extract vendor blobs
+cd device/sony/poplar
+./extract-files.sh
+
 # build rom
-. build/envsetup.sh
-lunch evolution_poplar-userdebug
+source build/envsetup.sh
+lunch lineage_poplar-userdebug
 export TZ=Asia/Jakarta #put before last build command
-mka evolution
+make -j8 bacon
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
