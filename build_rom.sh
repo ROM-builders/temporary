@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b eleven -g default,-device,-mips,-darwin,-notdefault
-
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+rm -rf hardware/qcom-caf/msm8996/a* && rm -rf hardware/qcom-caf/msm8996/d* && rm -rf hardware/qcom-caf/msm8996/m* && cd hardware/qcom-caf/msm8996 && git clone https://github.com/PixelExperience/hardware_qcom-caf_msm8996-r_audio audio && git clone https://github.com/PixelExperience/hardware_qcom-caf_msm8996-r_display display && git clone https://github.com/PixelExperience/hardware_qcom-caf_msm8996-r_media media && cd ../../../
 
 # build rom
 source build/envsetup.sh
