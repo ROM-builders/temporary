@@ -3,10 +3,6 @@ repo init -u git://github.com/LineageOS/android.git -b lineage-18.1 -g default,-
 git clone https://github.com/fazrul1994/local_manifest.git --depth 1 .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
-#Extract vendor blobs
-cd device/sony/poplar
-./extract-files.sh
-
 # build rom
 source build/envsetup.sh
 lunch lineage_poplar-userdebug
