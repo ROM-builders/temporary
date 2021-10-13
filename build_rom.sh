@@ -3,6 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/crdroidandroid/android.
 git clone https://github.com/kanup4m/local_manifest.git -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+
 # build rom
 source build/envsetup.sh
 lunch lineage_r5x-userdebug
