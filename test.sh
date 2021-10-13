@@ -70,6 +70,7 @@ if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-15.1 ]]; the
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-19.0 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
 if [[ $rom_name == ArrowOS ]]; then if [[ $branch_name == arrow-12.0 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
 if [[ $rom_name == Project-Fluid ]]; then if [[ $branch_name == fluid-12 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+if [[ $rom_name == CipherOS ]]; then if [[ $branch_name == twelve ]]; then rom_name=$rom_name-$branch_name; fi ;fi
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-16.1 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-16.0 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-15.0 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
@@ -93,7 +94,7 @@ fi
 
 if [[ $CIRRUS_USER_PERMISSION == write ]]; then
 if [ -z "$CIRRUS_PR" ]; then echo fine; else
-echo You are push user. Please follow pinned message in push group.; exit 1
+echo You are push user. Don\'t do pr and please follow pinned message in push group.; exit 1
 fi
 fi
 
