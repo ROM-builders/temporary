@@ -1,4 +1,4 @@
-# sync rom
+# sync DotOs
 repo init --depth=1 --no-repo-verify -u git://github.com/DotOS/manifest.git -b dot11 -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/Jaxer159/manifests --depth 1 -b DotOs_temporary .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
