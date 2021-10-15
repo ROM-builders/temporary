@@ -2,10 +2,11 @@
 repo init --depth=1 --no-repo-verify -u https://github.com/Wave-Project/manifest -b r -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/indi121/local_manifests.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+
 # build rom
 source build/envsetup.sh
 lunch wave_whyred-user
-export TZ=Asia/Kathmandu #put before last build command
+export TZ=Asia/Dhaka #put before last build command
 export SKIP_API_CHECKS=true
 brunch whyred
 
