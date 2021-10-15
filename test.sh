@@ -76,6 +76,7 @@ if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-16.0 ]]; the
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-15.0 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
 if [[ $rom_name == NusantaraProject-ROM ]]; then if [[ $branch_name == '10' ]]; then echo Only NusantaraProject-ROM a11 is supported.; exit 1; fi ;fi
 if [[ $rom_name == ArrowOS ]]; then if [[ $branch_name == 'arrow-10.0' ]]; then echo Only ArrowOS a11 and a12 is supported.; exit 1; fi ;fi
+if [[ $rom_name == Project-LegionOS ]]; then if [[ $branch_name == '12' ]]; then echo Only ArrowOS a11 and a12 is supported.; exit 1; fi ;fi
 device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
 grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
 
