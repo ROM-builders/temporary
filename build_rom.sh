@@ -1,9 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest.git -b eleven-plus -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/sanjeevstunner/Manifest.git --depth 1 -b vendor_from_source_gitlab .repo/local_manifests
+git clone https://github.com/sanjeevstunner/Manifest.git --depth 1 -b aosp_default .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-
-#commit 5
 
 # build rom
 source build/envsetup.sh
