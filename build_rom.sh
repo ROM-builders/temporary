@@ -1,15 +1,13 @@
 # sync rom (Sinkron kode Sumber Rom)
-repo init --depth=1 --no-repo-verify -u git://github.com/xdroidsp/xd_manifest.git -b xd.xii -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/fajar4561/local_manifest.git --depth 1 -b xdroid .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/NusantaraProject-ROM/android_manifest -b 11 -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/fajar4561/local_manifest.git --depth 1 -b nd .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build
 source build/envsetup.sh
-lunch xdroid_X00TD-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
-export ALLOW_MISSING_DEPENDENCIES=true
+lunch nad_X00TD-userdebug
 export TZ=Asia/Jakarta
-make xd
+mka nad
 
 
 
