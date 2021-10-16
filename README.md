@@ -1,4 +1,4 @@
-Nusantara For A6020
+Lineage For A6020
 ==============================
 Nusantara [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Lenovo Vibe K5(code name A6020)
 
