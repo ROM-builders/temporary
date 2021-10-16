@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch aosp_RMX1851-userdebug
+lunch voltage_RMX1851-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka yaap
 
