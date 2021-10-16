@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixelBlaster-OS/manif
 git clone https://github.com/braindedboi/local_manifests.git --depth 1 -b blaster .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
-# build rom
+# build
 source build/envsetup.sh
 lunch aosp_RMX3171-userdebug
 export TZ=Asia/Kolkata #put before last build command
