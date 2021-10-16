@@ -1,11 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git@github.com:Evolution-X/manifest.git -b elle -g default,-device,-mips,-darwin,-notdefault
-mkdir -p .repo/kernel/xiaomi
-mkdir -p .repo/device/xiaomi
-git clone https://github.com/mikairyuu/kernel_xiaomi_sm7250 --depth 1 -b skizo .repo/kernel/xiaomi/sm7250
-git clone https://github.com/mikairyuu/android_device_xiaomi_sm7250-common --depth 1 .repo/device/xiaomi/sm7250-common
-git clone https://github.com/mikairyuu/android_device_xiaomi_monet-oss --depth 1 .repo/device/xiaomi/monet
-git clone https://gitlab.com/mikairyuu/android-vendor-xiaomi-sm7250 --depth 1 .repo/vendor/xiaomi
+git clone https://github.com/mikairyuu/local_manifest --depth 1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
