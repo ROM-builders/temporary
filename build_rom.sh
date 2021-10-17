@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch dot_RMX3171-user
+lunch dot_RMX3171-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
