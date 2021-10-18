@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch xd_rosy-userdebug
+lunch xdroid_rosy-userdebug
 export TZ=Asia/Jakarta #put before last build command
 mka xd
 
