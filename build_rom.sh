@@ -1,7 +1,8 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-17.1 -g default,-device,-mips,-darwin,-notdefault
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 git clone https://github.com/horoidrom/local_manifest.git --depth 1
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+
 
 # build rom
 source build/envsetup.sh
