@@ -1,11 +1,11 @@
 
-repo init --depth=1 --no-repo-verify -u https://github.com/RevengeOS/android_manifest -b r11.0 -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Kang-OS-R/android_manifest -b eleven -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/Dev0786s/local-manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch revengeos_merlinx-userdebug
+lunch kangos_merlinx-userdebug
 export TZ=Asia/Dhaka #put before last build comman
 make bacon
 
