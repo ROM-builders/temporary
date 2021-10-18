@@ -75,6 +75,8 @@ if [[ $rom_name == ProjectRadiant ]]; then if [[ $branch_name == twelve ]]; then
 if [[ $rom_name == Project-Awaken ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi ;fi
 if [[ $rom_name == Octavi-OS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi ;fi
 if [[ $rom_name == Project-LegionOS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+if [[ $rom_name == ShapeShiftOS ]]; then if [[ $branch_name == 'android_12' ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+if [[ $rom_name == lighthouse-os ]]; then if [[ $branch_name == 'sailboat' ]]; then rom_name=$rom_name-$branch_name; fi ;fi
 
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-16.1 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-16.0 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
