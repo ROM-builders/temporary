@@ -1,9 +1,9 @@
-# sync rom
+# sync
 repo init --depth=1 --no-repo-verify -u git://github.com/DotOS/manifest.git -b dot11 -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/HoleDroid/local_manifests.git --depth 1 -b dos .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build
 source build/envsetup.sh
 lunch dot_X00T-userdebug
 export TZ=Asia/Jakarta #put before last build command
