@@ -1,4 +1,4 @@
-AospExtended custom ROM for Redmi Note 5
+AospExtended custom ROM for Redmi Note 9
 ==============================
 
 AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note 4(code name mido)
