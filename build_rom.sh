@@ -6,6 +6,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch kangos_merlinx-userdebug
+SHIP_LAWNCHAIR := true
+USE_GAPPS := true
+SHIP_LAWNCHAIR := true
 export TZ=Asia/Dhaka #put before last build comman
 make bacon
 
