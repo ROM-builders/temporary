@@ -4,6 +4,7 @@ git clone https://github.com/AnGgIt88/local_manifest.git --depth 1 -b derpfest-e
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+# 20-10-2021
 source build/envsetup.sh
 lunch derp_rosy-user
 export TZ=Asia/Jakarta #put before last build command
