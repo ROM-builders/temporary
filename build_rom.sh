@@ -7,8 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch palladium_rosy-userdebug
 export TZ=Asia/Jakarta #put before last build command
-export KBUILD_BUILD_USER=AnGgIt86 # Change with your own name or else.
-export KBUILD_BUILD_HOST=Finix-project # Change with your own hostname.
 mka palladium
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
