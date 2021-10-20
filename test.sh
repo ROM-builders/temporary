@@ -57,6 +57,9 @@ if [[ $sync_check != *$sync_string* ]]; then echo Please follow repo sync line o
 fetch_check=$(grep 'git fetch ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $fetch_check -gt 0 ]]; then echo Please dont use fetch inside script, use local manifest for this purpose.; exit 1; fi
 
+pick_check=$(grep 'repopick ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
+if [[ $pick_check -gt 0 ]]; then echo Please dont use repopick inside script, use local manifest for this purpose.; exit 1; fi
+
 cd_check=$(grep "cd *" $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $cd_check -gt 0 ]]; then echo Please dont use cd inside script, use local manifest for this purpose.; exit 1; fi
 
