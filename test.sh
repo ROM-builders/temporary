@@ -2,7 +2,7 @@
 set -e
 
 init_check=$(grep 'repo init' $CIRRUS_WORKING_DIR/build_rom.sh | grep 'depth=1')
-if [[ $init_check != *default,-device,-mips,-darwin,-notdefault* ]]; then echo Please use --depth=1 and -g default,-device,-mips,-darwin,-notdefault tags in repo init line.; exit 1; fi
+if [[ $init_check != *default,-mips,-darwin,-notdefault* ]]; then echo Please use --depth=1 and -g default,-mips,-darwin,-notdefault tags in repo init line.; exit 1; fi
 
 clone_check=$(grep 'git clone' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $clone_check -gt 1 ]]; then echo Please use local manifest to clone trees and other repositories, we dont allow git clone to clone trees.; exit 1; fi
@@ -71,12 +71,18 @@ if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-19.0 ]]; the
 if [[ $rom_name == ArrowOS ]]; then if [[ $branch_name == arrow-12.0 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
 if [[ $rom_name == Project-Fluid ]]; then if [[ $branch_name == fluid-12 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
 if [[ $rom_name == CipherOS ]]; then if [[ $branch_name == twelve ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+if [[ $rom_name == ProjectRadiant ]]; then if [[ $branch_name == twelve ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+if [[ $rom_name == Project-Awaken ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+if [[ $rom_name == Octavi-OS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+if [[ $rom_name == Project-LegionOS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+if [[ $rom_name == ShapeShiftOS ]]; then if [[ $branch_name == 'android_12' ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+if [[ $rom_name == lighthouse-os ]]; then if [[ $branch_name == 'sailboat' ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-16.1 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-16.0 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-15.0 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
 if [[ $rom_name == NusantaraProject-ROM ]]; then if [[ $branch_name == '10' ]]; then rom_name=$rom_name-$branch_name; fi ;fi
 if [[ $rom_name == ArrowOS ]]; then if [[ $branch_name == 'arrow-10.0' ]]; then echo Only ArrowOS a11 and a12 is supported.; exit 1; fi ;fi
-if [[ $rom_name == Project-LegionOS ]]; then if [[ $branch_name == '12' ]]; then echo Only ArrowOS a11 and a12 is supported.; exit 1; fi ;fi
 device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
 grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
 
