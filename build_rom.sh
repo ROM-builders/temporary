@@ -1,13 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/lighthouse-os/manifest.git -b raft -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Project-LegionOS/manifest.git -b 11 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Dev786s/local-manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
-lunch lighthouse_merlinx-userdebug
+lunch legion_merlinx-userdebug
 export TZ=Asia/Dhaka #put before last build comman
-mka lighthouse
+make legion
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
