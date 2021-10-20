@@ -8,7 +8,7 @@ Nusantara [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for 
 
 Distributed [here](https://t.me/rn4downloads/4885)
 
-Estimated installation no.: 1-50
+Estimated installation no.: 1-89
 
 How to use this repository
 
