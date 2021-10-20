@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # 20-10-2021
 source build/envsetup.sh
 lunch derp_rosy-user
-export TZ=Asia/Jakarta #put before last build command
+export TZ=Asia/Jakarta
 mka derp
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
