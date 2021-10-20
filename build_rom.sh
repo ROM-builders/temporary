@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch lighthouse_merlinx-userdebug
-export TZ=Asia/Dhaka #put before last build comma
+export TZ=Asia/Dhaka #put before last build command
 make lighthouse
 
 
