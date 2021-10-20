@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/xdroid-CAF/xd_manifest.git -b eleven -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/xdroid-CAF/xd_manifest.git -b eleven -g default,-mips,-darwin,-notdefault
 git clone https://github.com/mobxCode/local_manifest --depth 1 -b XD .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
