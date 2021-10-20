@@ -4,7 +4,7 @@ git clone https://github.com/abhigyan16/local_manifests --depth 1 -b aicp .repo/
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch fluid_sakura-user
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
