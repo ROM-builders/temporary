@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch dandelion_aosp-userdebug
+lunch aosp_dandelion-userdebug
 export TZ=Asia/Kuala Lumpur #put before last build command
 mka bacon -j
 
