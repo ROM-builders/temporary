@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch cipher_RMX3171-userdebug
+lunch cipher_RMX3171-eng
 export TZ=Asia/Dhaka #put before last build command
 make bacon -j$(nproc --all)
 
