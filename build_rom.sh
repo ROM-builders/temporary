@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 # 21-10-2021
 source build/envsetup.sh
-lunch derp_rosy-user
+lunch derp_rosy-userdebug
 export TZ=Asia/Jakarta
 mka derp
 
