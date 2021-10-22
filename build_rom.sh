@@ -1,9 +1,9 @@
-# sync rom
+# sync rom source
 repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b fire -g default,-mips,-darwin,-notdefault
 git clone https://github.com/AnGgIt86/local_manifest.git --depth=1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom source
 source build/envsetup.sh
 lunch spark_rosy-userdebug
 export TZ=Asia/Jakarta #put before last build command
