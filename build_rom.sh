@@ -1,4 +1,4 @@
-# sync rom
+# sync
 repo init --depth=1 --no-repo-verify -u git://github.com/Spark-Rom/manifest.git -b fire -g default,-mips,-darwin,-notdefault
 git clone https://github.com/AnGgIt86/local_manifest.git --depth=1 -b eleven .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
