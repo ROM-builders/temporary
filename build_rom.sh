@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch aosp-merlinx_userdebug
+lunch aosp_merlinx-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon 
 
