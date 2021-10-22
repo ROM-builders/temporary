@@ -5,6 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
+export SELINUX_IGNORE_NEVERALLOWS=true
 lunch arrow_pine-userdebug
 export TZ=Asia/Dhaka #put before last build commanda
 m bacon
