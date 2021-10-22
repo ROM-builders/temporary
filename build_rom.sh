@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch arrow_merlinx-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build commad
 m bacon
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
