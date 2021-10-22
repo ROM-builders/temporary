@@ -9,7 +9,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch aosp_merlinx-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
-export TZ=Asia/Dhaka #put before last build commands
+export TZ=Asia/Dhaka #put before last build command
 mka bacon 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
