@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build
 source build/envsetup.sh
 lunch du_X00TD-userdebug
+export SKIP_ABI_CHECKS=true
 export TZ=Asia/Jakarta #put before last build command
 make corvus
 
