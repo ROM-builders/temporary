@@ -7,7 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch lighthouse_merlinx-eng
 export ALLOW_MISSING_DEPENDENCIES=true 
- 
 export BUILD_BROKEN_DUP_RULES=true
 export TZ=Asia/Dhaka #put before last build command
 make lighthouse
