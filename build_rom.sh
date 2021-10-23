@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch lighthouse_merlinx-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
+
 export TZ=Asia/Dhaka #put before last build commands
 make lighthouse
 
