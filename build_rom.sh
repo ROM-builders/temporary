@@ -1,5 +1,7 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b eleven-plus -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/CesiumOS-org/manifest.git -b eleven  -g default,-mips,-darwin,-notdefault
+
+
 
 
 git clone https://github.com/Dev786s/local-manifest.git --depth 1 -b main .repo/local_manifests
@@ -7,9 +9,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch aosp_merlinx-user
+lunch cesium_merlinx-user
 export ALLOW_MISSING_DEPENDENCIES=true 
-export BUILD_BROKEN_DUP_RULES=true
+export BUILD_BROKEN_DUP_RULES=true 
+export KBUILD_BUILD_USER=DEV786s
+export KBUILD_BUILD_HOST=Cesium-Os
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
