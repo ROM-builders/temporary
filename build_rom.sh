@@ -8,7 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch lighthouse_merlinx-eng
 export ALLOW_MISSING_DEPENDENCIES=true 
 export BUILD_BROKEN_DUP_RULES=true
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Dhaka #put before last build commands
 make lighthouse
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
