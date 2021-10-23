@@ -10,7 +10,7 @@ Distributed [here](https://t.me/rn4downloads/4885)
 
 Estimated installation no.: 150-50
 
-How to use this sites
+How to use this site
 -------------------
 
 * [Instructions if you want to develop AospExtended custom ROM as a developer](https://github.com/Apon77/mido-AospExtended-Apon77/blob/main/Instructions%20for%20developers.md)
