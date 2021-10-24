@@ -11,7 +11,7 @@ export BUILD_BROKEN_DUP_RULES=true
 export SKIP_ABI_CHECKS=true
 
 export SKIP_API_CHECKS=true
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Dhaka #put before last build comman
 make lighthouse
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
