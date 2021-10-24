@@ -31,6 +31,11 @@ task:
     - if [[ $rom_name == Project-Fluid ]]; then if [[ $branch_name == fluid-12 ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - if [[ $rom_name == CipherOS ]]; then if [[ $branch_name == twelve ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - if [[ $rom_name == Project-LegionOS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == Project-Awaken ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == Octavi-OS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == ProjectRadiant ]]; then if [[ $branch_name == 'twelve' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == lighthouse-os ]]; then if [[ $branch_name == 'sailboat' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == ShapeShiftOS ]]; then if [[ $branch_name == 'android_12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
     - your_telegram_id=@ROM_builders_junk
@@ -80,6 +85,11 @@ task:
     - if [[ $rom_name == Project-Fluid ]]; then if [[ $branch_name == fluid-12 ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - if [[ $rom_name == CipherOS ]]; then if [[ $branch_name == twelve ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - if [[ $rom_name == Project-LegionOS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == Project-Awaken ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == Octavi-OS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == ProjectRadiant ]]; then if [[ $branch_name == 'twelve' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == lighthouse-os ]]; then if [[ $branch_name == 'sailboat' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == ShapeShiftOS ]]; then if [[ $branch_name == 'android_12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - mkdir -p ~/roms/$rom_name
     - cd ~/roms/$rom_name
     - rm -rf .repo/local_manifests
@@ -99,6 +109,11 @@ task:
     - if [[ $rom_name == Project-Fluid ]]; then if [[ $branch_name == fluid-12 ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - if [[ $rom_name == CipherOS ]]; then if [[ $branch_name == twelve ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - if [[ $rom_name == Project-LegionOS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == Project-Awaken ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == Octavi-OS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == ProjectRadiant ]]; then if [[ $branch_name == 'twelve' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == lighthouse-os ]]; then if [[ $branch_name == 'sailboat' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == ShapeShiftOS ]]; then if [[ $branch_name == 'android_12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
     - cd ~/roms/$rom_name
@@ -122,6 +137,11 @@ task:
     - if [[ $rom_name == Project-Fluid ]]; then if [[ $branch_name == fluid-12 ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - if [[ $rom_name == CipherOS ]]; then if [[ $branch_name == twelve ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - if [[ $rom_name == Project-LegionOS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == Project-Awaken ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == Octavi-OS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == ProjectRadiant ]]; then if [[ $branch_name == 'twelve' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == lighthouse-os ]]; then if [[ $branch_name == 'sailboat' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == ShapeShiftOS ]]; then if [[ $branch_name == 'android_12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
     - export CCACHE_DIR=~/ccache/$rom_name/$device
@@ -138,6 +158,11 @@ task:
     - if [[ $rom_name == Project-Fluid ]]; then if [[ $branch_name == fluid-12 ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - if [[ $rom_name == CipherOS ]]; then if [[ $branch_name == twelve ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - if [[ $rom_name == Project-LegionOS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == Project-Awaken ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == Octavi-OS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == ProjectRadiant ]]; then if [[ $branch_name == 'twelve' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == lighthouse-os ]]; then if [[ $branch_name == 'sailboat' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == ShapeShiftOS ]]; then if [[ $branch_name == 'android_12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
     - cd ~/roms/$rom_name
@@ -164,6 +189,11 @@ task:
     - if [[ $rom_name == Project-Fluid ]]; then if [[ $branch_name == fluid-12 ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - if [[ $rom_name == CipherOS ]]; then if [[ $branch_name == twelve ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - if [[ $rom_name == Project-LegionOS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == Project-Awaken ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == Octavi-OS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == ProjectRadiant ]]; then if [[ $branch_name == 'twelve' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == lighthouse-os ]]; then if [[ $branch_name == 'sailboat' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == ShapeShiftOS ]]; then if [[ $branch_name == 'android_12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
     - cd ~/roms/$rom_name
@@ -197,6 +227,11 @@ task:
     - if [[ $rom_name == Project-Fluid ]]; then if [[ $branch_name == fluid-12 ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - if [[ $rom_name == CipherOS ]]; then if [[ $branch_name == twelve ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - if [[ $rom_name == Project-LegionOS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == Project-Awaken ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == Octavi-OS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == ProjectRadiant ]]; then if [[ $branch_name == 'twelve' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == lighthouse-os ]]; then if [[ $branch_name == 'sailboat' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+    - if [[ $rom_name == ShapeShiftOS ]]; then if [[ $branch_name == 'android_12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
     - your_telegram_id=@ROM_builders_channel
