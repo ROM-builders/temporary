@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Project-Fluid/manifest.git -b fluid-11 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/PotatoProject/manifest -b dumaloo-release -g default,-mips,-darwin,-notdefault
 git clone https://github.com/abhigyan16/local_manifests --depth 1 -b aicp .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
-lunch fluid_sakura-user
+lunch potato_sakura-user
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
