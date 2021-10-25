@@ -8,7 +8,7 @@ ArrowOS [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Le
 
 Distributed [here](https://t.me/rn4downloads/4885)
 
-Estimated installation no.: 1-89
+Estimated installation no.: 1-23
 
 How to use this repository
 
