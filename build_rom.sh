@@ -1,5 +1,5 @@
 # sync rom
-repo init -u https://github.com/PixelBlaster-OS/manifest -b eleven --depth=1
+repo init --depth=1 --no-repo-verify -u git://github.com/PixelBlaster-OS/manifest -b eleven -g default,-mips,-darwin,-notdefault
 git clone https://github.com/nekoshirro/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
