@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/DerpFest-11/manifest.git -b 11 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/ProjectRadiant/manifest -b 11 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Hunter-commits/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch derp_mido-user
+lunch radiant_mido-user
 export TZ=Asia/Dhaka #put before last build command
 mka derp
 
