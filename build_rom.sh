@@ -3,8 +3,8 @@ repo init --depth=1 --no-repo-verify -u git://github.com/ProjectRadiant/manifest
 git clone https://github.com/N4veenNK/local-manifest.git --depth 1 -b radiant .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-#  build rom
-source build/envsetup.sh
+# build rom
+. build/envsetup.sh
 lunch radiant_X00TD-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon 
