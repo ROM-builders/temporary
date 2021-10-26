@@ -8,6 +8,7 @@ source build/envsetup.sh
 lunch lineage_vince-eng
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
+export TARGET_FLOS=true
 make bacon
 
 
