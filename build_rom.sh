@@ -9,7 +9,7 @@ lunch lineage_vince-eng
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
 export TARGET_FLOS=true
-make bacon
+mka bacon
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
