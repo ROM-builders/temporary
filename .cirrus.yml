@@ -120,25 +120,25 @@ task:
     - cd ~/roms/$rom_name
     - cd device
     - mkdir -p asus
-	- cd /asus
+    - cd /asus
     - git clone https://github.com/jhonnytech90/device_asus_A001D -b main
     - mv device_asus_A001D A001D
-	- cd ~/roms/$rom_name
+    - cd ~/roms/$rom_name
     - cd vendor
     - mkdir -p asus
-	- cd /asus
+    - cd /asus
     - git clone https://github.com/jhonnytech90/vendor_asus_A001D -b main
     - mv vendor_asus_A001D A001D
-	- cd ~/roms/$rom_name
+    - cd ~/roms/$rom_name
     - cd kernel
     - mkdir -p asus
-	- cd /asus
+    - cd /asus
     - git clone https://github.com/jhonnytech90/kernel_asus_A001D -b main
     - mv kernel_asus_A001D A001D
-	- cd ~/roms/$rom_name
+    - cd ~/roms/$rom_name
     - cd kernel
     - mkdir -p asus
-	- cd /asus/A001D
+    - cd /asus/A001D
     - git clone https://github.com/jhonnytech90/kernel_asus_A001D -b main
     - mv kernel_asus_A001D msm-3.18
     - export CCACHE_DIR=~/ccache/$rom_name/$device
