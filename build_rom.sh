@@ -1,6 +1,6 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/PixelBlaster-OS/manifest -b eleven -g default,-mips,-darwin,-notdefault
-git clone -u git://github.com/PixelBlaster-OS/manifest -b eleven --depth 1 -b master .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/Palladium-OS/platform_manifest.git -b 12 -g default,-mips,-darwin,-notdefault
+git clone -u git://github.com/Palladium-OS/platform_manifest.git -b 12 --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
