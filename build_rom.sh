@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manif
 git clone https://github.com/Jaxer159/manifests --depth 1 -b pe_temporary .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build pe
+# build rom
 . build/envsetup.sh
 lunch aosp_olives-user
 export TZ=Asia/Dhaka #put before last build command
