@@ -9,7 +9,7 @@ lunch aosp_merlinx-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true 
 export BUILD_BROKEN_DUP_RULES=true 
 
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Dhaka #put before last build comman
 m aex
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
