@@ -3,8 +3,8 @@ git config --global user.name nekoshirro
 git config --global user.email ais.muzakky@gmail.com
 repo init --depth=1 --no-repo-verify -u https://github.com/PixelBlaster-OS/manifest -b eleven -g default,-mips,-darwin,-notdefault
 git clone https://github.com/nekoshirro/local_manifest.git --depth 1 -b main .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j1 --fail-fast
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags -j1 --fail-fast
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
 source build/envsetup.sh
