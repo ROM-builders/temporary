@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch dot_juice-userdebug
 export TZ=Asia/Jakarta #put before last build command
-make dot -j$(nproc --all)
+make bacon -j$(nproc --all)
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
