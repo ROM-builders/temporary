@@ -7,7 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch yaap_RMX1851-userdebug
 export ALLOW_MISSING_DEPENDENCIES=TRUE
-export SELINUX_IGNORE_NEVERALLOWS=TRUE
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
