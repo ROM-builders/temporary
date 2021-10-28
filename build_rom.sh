@@ -8,10 +8,6 @@ source build/envsetup.sh
 lunch xdroid_X01BD-userdebug
 export BUILD_USERNAME=aesx
 export BUILD_HOSTNAME=ubuntu
-export SKIP_ABI_CHECKS=true
-export SKIP_API_CHECKS=true
-export SELINUX_IGNORE_NEVERALLOWS=true
-export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta
 make xd
 
