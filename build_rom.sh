@@ -1,9 +1,9 @@
-# sync rom
+# sync roms
 repo init --depth=1 --no-repo-verify -u git://github.com/Evolution-X/manifest.git -b elle -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Kneba/local_manifests.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build roms
 source build/envsetup.sh
 lunch evolution_X00TD-userdebug
 export TZ=Asia/Jakarta #put before last build command
