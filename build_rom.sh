@@ -4,7 +4,6 @@ git clone https://github.com/MiSrA665/Local-Manifest.git --depth 1 -b main .repo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-cd /exthm
 . build/envsetup.sh
 lunch exthm_mido-userdebug
 export SKIP_ABI_CHECKS=true
