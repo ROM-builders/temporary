@@ -4,13 +4,14 @@ git clone https://github.com/MiSrA665/Local-Manifest.git --depth 1 -b main .repo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
-lunch exthm_mido-testkeys
+cd /exthm
+. build/envsetup.sh
+lunch exthm_mido-userdebug
 export SKIP_ABI_CHECKS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TEMPORARY_DISABLE_PATH_RESTRICTIONS=true
 export TZ=Asia/Jakarta #put before last build command
-make bacon
+mka bacon
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
