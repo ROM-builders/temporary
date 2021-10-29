@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch derp_whyred-user
+lunch ssos_whyred-user
 export TZ=Asia/Dhaka #put before last build command
 mka ssos
 
