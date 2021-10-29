@@ -12,7 +12,7 @@ source build/envsetup.sh
 lunch aosp_rosy-userdebug
 export TZ=Asia/Jakarta
 export ALLOW_MISSING_DEPENDENCIES=true
-export LOCALVERSION=-ArcaneOS
+export LOCALVERSION="-ArcaneOS"
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
