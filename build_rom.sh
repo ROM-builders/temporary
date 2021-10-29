@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
-sudo ln -sf /usr/bin/python2 /usr/bin/python
 lunch lineage_PLE-userdebug
 export TZ=Asia/Kolkata #put before last build command
 brunch PLE
