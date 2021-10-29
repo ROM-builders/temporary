@@ -1,11 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Octavi-OS/platform_manifest.git -b 12 -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/Octavi-OS/platform_manifest.git -b 12 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/MiDoNaSR545/mainfest_personal.git --depth 1 -b octavi .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch octavi_ysl-userdebug
+export TZ=Asia/Kuala Lumpur #put before last build command
 brunch ysl
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
