@@ -12,7 +12,6 @@ Estimated installation no.: 1-69
 
 How to use this repository
 
-
 -------------------
 
 * [Instructions if you want to develop AospExtended custom ROM as a developer](https://github.com/Apon77/mido-AospExtended-Apon77/blob/main/Instructions%20for%20developers.md)
