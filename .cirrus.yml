@@ -14,8 +14,8 @@ task:
     isolation:
       container:
         image: apon77/aosp:cirrus
-        cpu: 2
-        memory: 4G
+        cpu: 8
+        memory: 32G
 
   env_script:
     - env
@@ -55,7 +55,7 @@ task:
   only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
   depends_on:
     - Test
-  timeout_in: 4h
+  timeout_in: 2h
   persistent_worker:
     labels:
       name: AX61-1
@@ -213,8 +213,8 @@ task:
     isolation:
       container:
         image: apon77/aosp:cirrus
-        cpu: 2
-        memory: 4G
+        cpu: 8
+        memory: 32G
 
   post_build_script:
     - set -e
