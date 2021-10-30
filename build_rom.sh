@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_X00TD-userdebug
+export RELAX_USES_LIBRARY_CHECK=true
 export PRODUCT_BROKEN_VERIFY_USES_LIBRARIES=true
 export WITH_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
