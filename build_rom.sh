@@ -1,7 +1,7 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/ShapeShiftOS/android.git -b android_11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo init --depth=1 --no-repo-verify -u git://github.com/DotOS/manifest.git -b dot11 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Krishdeokate/local_manifest --depth 1 -b main .repo/local_manifests
+repo sync -c --no-clone-bundle --httpsno-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
