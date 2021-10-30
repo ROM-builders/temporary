@@ -1,11 +1,11 @@
 # sync rom
-repo init —depth=1 --no-repo-verify -u git://github.com/crdroidandroid/android.git -b 11.0 -g default,-mips,-darwin,-notdefault
-git clone —depth=1 https://github.com/Gotam919/local_manifest -b main .repo/local_manifests
+repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-11.0 -g default,-mips,-darwin,-notdefault
+git clone —depth=1 https://github.com/Gotam919/local_manifest -b main .repo/local_manifest
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_RMX1941-userdebug
+lunch arrow_RMX1941-userdebug
 export TZ=Asia/Dhaka #put before last build command
 brunch RMX1941
 
