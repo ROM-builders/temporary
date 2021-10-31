@@ -1,7 +1,13 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ProjectRadiant/manifest -b eleven -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Hunter-commits/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+
+# remove hal
+rm -rf hardware/qcom-caf/msm8996/display &&  rm -rf hardware/qcom-caf/msm8996/audio && rm -rf hardware/qcom-caf/msm8996/media
+
+# clone manifest
+git clone https://github.com/Hunter-commits/local_manifest.git --depth 1 -b main .repo/local_manifests
+repo sync -m local_manifest.xml
 
 # build rom
 source build/envsetup.sh
