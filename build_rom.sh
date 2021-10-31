@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch yaap_RMX1851-userdebug
+lunch yaap_RMX1851-user
 export ALLOW_MISSING_DEPENDENCIES=TRUE
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
