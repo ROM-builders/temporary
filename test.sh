@@ -7,9 +7,6 @@ if [[ $init_check != *default,-mips,-darwin,-notdefault* ]]; then echo Please us
 clone_check=$(grep 'git clone' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $clone_check -gt 1 ]]; then echo Please use local manifest to clone trees and other repositories, we dont allow git clone to clone trees.; exit 1; fi
 
-rm_check=$(grep 'rm ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $rm_check -gt 0 ]]; then echo Please dont use rm inside script, use local manifest for this purpose.; exit 1; fi
-
 sudo_check=$(grep 'sudo ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $sudo_check -gt 0 ]]; then echo Please dont use sudo inside script.; exit 1; fi
 
