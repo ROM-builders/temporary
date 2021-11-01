@@ -1,16 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/WeebProjekt/platform_manifest -b cheese -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q -g default,-mips,-darwin,-notdefault
 git clone https://github.com/ArkanMuhammad1986/Local_Manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch weeb_mido-userdebug
-export SKIP_ABI_CHECKS=true
-export SELINUX_IGNORE_NEVERALLOWS=true
-export TEMPORARY_DISABLE_PATH_RESTRICTIONS=true
+lunch rr_mido-user
 export TZ=Asia/Jakarta #put before last build command
-make weeb-prod -j$(nproc --all)
+mka bacon
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
