@@ -1,12 +1,11 @@
 # sync rom 
-repo init --depth=1 --no-repo-verify -u git:///github.com/PixelBlaster-OS/manifest -b eleven -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-18.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/RAAVANDK/local_manifest.git --depth 1 -b main .repo/local_manifest
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -j8
 
 # build rom
 . build/envsetup.sh
 lunch aosp_merlinx-userdebug
-export ALLOW_MISSING_DEPENDENCIES=true 
 
 
 export TZ=Asia/Kolkata #put before last build command
