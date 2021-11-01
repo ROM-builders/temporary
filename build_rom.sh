@@ -6,8 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch octavi_vayu-user
-export WITH_GAPPS=true
 export ALLOW_MISSING_DEPENDENCIES=true
+export WITH_GAPPS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Singapore #put before last build command
 brunch vayu
