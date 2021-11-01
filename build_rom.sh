@@ -5,7 +5,6 @@ repo sync -j8
 
 # build rom
 . build/envsetup.sh
-lunch aosp_merlinx-userdebug
 
 
 export TZ=Asia/Kolkata #put before last build command
