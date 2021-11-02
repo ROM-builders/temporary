@@ -4,8 +4,8 @@ git clone https://github.com/ArkanMuhammad1986/Local_Manifest.git --depth 1 -b m
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
-lunch rr_mido-user
+. build/envsetup.sh
+lunch rr_mido-userdebug
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
