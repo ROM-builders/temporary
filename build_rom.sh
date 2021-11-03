@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 
 . build/envsetup.sh
-lunch amy_merlinx-eng
+lunch amy_merlinx-user
 export TZ=Asia/kolkata 
 make bacon
 
