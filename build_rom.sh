@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lineage_m01q-eng 
+lunch lineage_m01q-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
