@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch arrow_RMX1941-userdebug
+lunch arrow_aqua-userdebug
 export TZ=Asia/Dhaka #put before last build command
 m bacon
 
