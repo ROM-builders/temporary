@@ -1,7 +1,7 @@
 # Copyright (c) 2021, The Linux Foundation. All rights reserved.
 # Thankz to @Apon77
 
-# Date 4-Nov-2021
+# Date 04-Nov-2021 15:81
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Corvus-R/android_manifest.git -b 11 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/AnGgIt86/local_manifest.git --depth=1 -b corvus-11 .repo/local_manifests
