@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/DotOS/manifest.git -b d
 git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b dot .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build ro
 source build/envsetup.sh
 lunch dot_whyred-user
 export TZ=Asia/Dhaka #put before last build command
