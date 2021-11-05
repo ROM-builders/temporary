@@ -4,13 +4,11 @@ git clone https://github.com/fajar4561/local_manifest.git --depth 1 -b fluid .re
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
-
 # build rom
 source build/envsetup.sh
 lunch fluid_X00TD-userdebug
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
-
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
