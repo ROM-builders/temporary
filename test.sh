@@ -10,6 +10,10 @@ if [[ $clone_check -gt 1 ]]; then echo Please use local manifest to clone trees 
 rm_check=$(grep 'rm ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $rm_check -gt 0 ]]; then echo Please dont use rm inside script, use local manifest for this purpose.; exit 1; fi
 
+command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v 'rclone copy')
+j_check=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v 'rclone copy' | grep '\-j' | wc -l)
+if [[ $j_check -gt 0 ]]; then echo Please dont specify j value in make line.; exit 1; fi
+
 sudo_check=$(grep 'sudo ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $sudo_check -gt 0 ]]; then echo Please dont use sudo inside script.; exit 1; fi
 
