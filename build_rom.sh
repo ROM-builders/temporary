@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/DotOS/manifest.git -b dot11 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/P-404/android_manifest.git -b rippa -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Ruega/local_manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch dot_X00TD-userdebug
+lunch p404_X00TD-userdebug
 export TZ=Asia/Jakarta #put before last build command
 make bacon
 
