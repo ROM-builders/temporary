@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/CipherOS/android_manifest.git -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/sarthakroy2002/local_manifest -b rui2-oss --depth 1 .repo/local_manifests
+git clone https://github.com/Realme-G70-Series/local_manifest -b rmui2 --depth 1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch cipher_RMX2020-eng
+lunch cipher_RMX2020-userdebug
 export TZ=Asia/Dhaka #put before last  build command
 export SKIP_ABI_CHECKS=true
 export SKIP_API_CHECKS=true
