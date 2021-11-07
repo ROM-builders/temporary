@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/WeebProjekt/platform_
 git clone https://github.com/mobxCode/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build roms
+# build rom
 source build/envsetup.sh
 lunch weeb_juice-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
