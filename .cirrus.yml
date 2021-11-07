@@ -92,6 +92,9 @@ task:
     - if [[ $rom_name == ShapeShiftOS ]]; then if [[ $branch_name == 'android_12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
     - mkdir -p ~/roms/$rom_name
     - cd ~/roms/$rom_name
+    - mkdir -p ~/bin || echo "Ok bin folder exists"
+    - curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+    - chmod a+x ~/bin/repo && export PATH="~/bin:$PATH"
     - rm -rf .repo
     - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
     - only_sync=$(grep 'repo sync' $CIRRUS_WORKING_DIR/build_rom.sh)
