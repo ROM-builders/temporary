@@ -1,12 +1,13 @@
 # sync rom 
 repo init --depth=1 --no-repo-verify -u https://github.com/PixysOS/manifest -b eleven -g default,-mips,-darwin,-notdefault
 git clone https://github.com/RAAVANDK/Local-Manifests.git --depth 1 -b RAAVANDK .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
 # build rom
 
 . build/envsetup.sh
 lunch pixys_merlinx-user
 export TZ=Asia/kolkata 
+export TARGET_FORCE_OTA_PACKAGE := false
 m pixys
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
