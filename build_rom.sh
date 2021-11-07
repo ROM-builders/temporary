@@ -1,6 +1,6 @@
 # Finix Projects 2021
 # Thanks to @Apon77
-# 07-Nov-2021 17:49
+# 07-Nov-2021 21:07
 
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Project-Elixir/manifest -b snow -g default,-mips,-darwin,-notdefault
