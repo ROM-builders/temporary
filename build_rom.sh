@@ -1,6 +1,7 @@
 # Finix Projects 2021
 # Thanks to @Apon77
-# 07-Nov-2021 14:49
+# 07-Nov-2021 17:49
+
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Project-Elixir/manifest -b snow -g default,-mips,-darwin,-notdefault
 git clone https://github.com/AnGgIt88/local_manifest.git --depth=1 -b twelve .repo/local_manifests
