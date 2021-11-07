@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-17.1 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/VoltageOS/manifest -b 12 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/atharv2951/local_manifest --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
-lunch lineage_PLE-userdebug
+lunch voltage_pine-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
