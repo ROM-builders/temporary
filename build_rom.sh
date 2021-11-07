@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Havoc-OS/android_manifest.git -b eleven -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Project-Fluid/manifest.git -b fluid-11 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Gotam919/local_manifest.git --depth=1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch havoc_aqua-userdebug
+lunch fluid_aqua-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true 
 export TZ=Asia/Dhaka #put before last build command
 m bacon
