@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch aosp_A6020-userdebug
+lunch arrow_A6020-userdebug
 export KBUILD_BUILD_USER=Ibratabian17
 export TZ=Asia/Jakarta #put before last build command
 m bacon
