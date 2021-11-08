@@ -1,5 +1,4 @@
-#!/bin/bash
-
+# 9-Nov-2021
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b fire -g default,-mips,-darwin,-notdefault
 git clone https://github.com/AnGgIt88/local_manifest.git --depth=1 -b spark .repo/local_manifests
