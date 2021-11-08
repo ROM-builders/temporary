@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch dot_whyred-userdebug
+lunch dot_juice-userdebug
 export TZ=Asia/Jakarta 
 make bacon
 
