@@ -4,6 +4,7 @@ git clone https://github.com/WinSSitaly/Local_Manifest.git --depth 1 -b main .re
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+# 2021 11 08
 source build/envsetup.sh
 brunch i9105p
 #export TZ=Asia/Dhaka #put before last build command
