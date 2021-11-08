@@ -1,6 +1,4 @@
 #!/bin/bash
-# Finix Projects 2021
-# Thanks to @Apon77
 
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b fire -g default,-mips,-darwin,-notdefault
