@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # 2021 11 08
 source build/envsetup.sh
 brunch i9105p
-#export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Dhaka #put before last build command
 #mka i9105p
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
