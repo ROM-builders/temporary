@@ -1,7 +1,7 @@
 # sync rom
 repo init -u https://github.com/PixelExtended/manifest -b ace -g default,-mips,-darwin,-notdefault
-git clone https://github.com/cloudprject/local_manifests .repo/local_manifests --depth=1 
-repo sync --force-sync --no-tags --no-clone-bundle
+git clone https://github.com/cloudprject/local_manifests --depth=1 .repo/local_manifests 
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
