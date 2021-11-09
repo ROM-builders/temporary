@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch aosp_mido-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
-export TZ=Asia/Tokyo #put before last build command
+export TZ=Asia/Jakarta #put before last build command
 m aex
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
