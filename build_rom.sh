@@ -1,5 +1,5 @@
 # sync rom
-repo init -u https://github.com/PixelExtended/manifest -b ace 
+repo init -u https://github.com/PixelExtended/manifest -b ace -g default,-mips,-darwin,-notdefault
 git clone https://github.com/cloudprject/local_manifests --depth=1 
 repo sync --force-sync --no-tags --no-clone-bundle
 
