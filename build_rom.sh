@@ -8,6 +8,7 @@ source build/envsetup.sh
 lunch lineage_X00TD-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export SKIP_API_CHECKS=true
+export TARGET_FLOS=true
 export TZ=Asia/Tokyo #put before last build
 make bacon
 
