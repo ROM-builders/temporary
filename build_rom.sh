@@ -4,7 +4,7 @@
 # Date 10-Nov-2021 05:50
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-mips,-darwin,-notdefault
-git clone https://github.com/AnGgIt86/local_manifest.git --depth=1 -b aex-11 .repo/local_manifests
+git clone https://github.com/AnGgIt86/local_manifest.git --depth=1 -b Aex-11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
