@@ -1,6 +1,6 @@
 # Finix Projects 2021
 # Thanks to @Apon77
-# 07-Nov-2021 21:07
+# 10-Nov-2021 08:55
 
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Project-Elixir/manifest -b snow -g default,-mips,-darwin,-notdefault
@@ -12,7 +12,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch aosp_rosy-userdebug
 export TZ=Asia/Jakarta
 export ALLOW_MISSING_DEPENDENCIES=true
-export CONFIG_LOCALVERSION="-Elixir"
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
