@@ -8,6 +8,7 @@ source build/envsetup.sh
 lunch nad_X00TD-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export SKIP_API_CHECKS=true
+export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta #put before last build command
 mka nad
 
