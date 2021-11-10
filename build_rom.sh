@@ -1,11 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Project-Fluid/manifest.git -b fluid-11 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/ArkanMuhammad1986/Local_Manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch rr_mido-userdebug
+lunch fluid_mido-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/London #put before last build command
 mka bacon
