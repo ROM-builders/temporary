@@ -1,12 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-11.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/RAAVANDK/local_manifests.git --depth=1 -b main .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b eleven -g default,-mips,-darwin,-notdefault
+git clone https://github.com/RAAVANDK/local-manifests.git --depth=1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch arrow_merlinx-userdebug
-export ALLOW_MISSING_DEPENDENCIES=true 
+lunch aosp_merlinx-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
