@@ -3,7 +3,6 @@ repo init --depth=1 --no-repo-verify -u https://github.com/WeebProject/platform_
 git clone https://github.com/ArkanMuhammad1986/Local_Manifest.git --depth 1 -b WeebProject .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-
 # build rom
 source build/envsetup.sh
 lunch weeb_mido-userdebug
