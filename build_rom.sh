@@ -4,6 +4,7 @@ git clone https://github.com/fajar4561/local_manifest.git --depth 1 -b carbon .r
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
+
 # build rom
 source build/envsetup.sh
 lunch carbon_X00TD-userdebug
