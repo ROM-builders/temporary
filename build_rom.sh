@@ -7,6 +7,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch aosp_merlinx-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
+export BUILD_BROKEN_DUP_RULES=true
+
 export TZ=Asia/Kolkata
 mka bacon
 
