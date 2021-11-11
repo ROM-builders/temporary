@@ -4,7 +4,7 @@ git clone https://github.com/ArkanMuhammad1986/Local_Manifest.git --depth 1 -b F
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch fluid_mido-userdebug
 export SKIP_ABI_CHECKS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
