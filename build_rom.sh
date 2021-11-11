@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/DotOS/manifest.git -b dot11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/indi121/local_manifests.git --depth 1 -b dotos .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/ShapeShiftOS/android_manifest.git -b android_11 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/indi121/local_manifests.git --depth 1 -b ssos .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build 
 source build/envsetup.sh
-lunch dot_whyred-user
+lunch ssos_whyred-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
