@@ -3,10 +3,10 @@ repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -
 git clone https://github.com/WalkingDead3/manifest.git --depth 1 -b lineage-17.1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-#build rom
+# build rom
 source build/envsetup.sh
 lunch lineage_citrus-userdebug
-export KBUILD_BUILD_USER="WalkingDead :3"
+export KBUILD_BUILD_USER="WalkingDead"
 export KBUILD_BUILD_HOST="WalkingCI"
 export TZ=Europe/Samara
 make bacon
