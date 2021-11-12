@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch lineage_citrus-userdebug
 export KBUILD_BUILD_USER="WalkingDead"
-export KBUILD_BUILD_HOST="DeadPastor"
+export KBUILD_BUILD_HOST="Dead3Pastor"
 export TZ=Europe/Samara
 make bacon
 
