@@ -1,13 +1,14 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/ResurrectionRemix/platform_manifest.git -b Q -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/deadline646/local_manifest.git --depth 1 -b RR .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-17.1 -g default,-device,-mips,-darwin,-notdefault
+git clone https://github.com/WalkingDead3/manifest.git --depth 1 -b lineage-17.1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 #  lbuild rom
 source build/envsetup.sh
-lunch rr_citrus-userdebug
-export KBUILD_BUILD_USER="deadline646"; export KBUILD_BUILD_HOST="root"
-export TZ=Asia/Kolkata
+lunch lineage_citrus-userdebug
+export KBUILD_BUILD_USER="WalkingDead :3"
+export KBUILD_BUILD_HOST="WalkingCI"
+export TZ=Europe/Samara
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
