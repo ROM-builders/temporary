@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/NusantaraProject-ROM/android_manifest -b 11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/ArkanMuhammad1986/Local_Manifest.git --depth 1 -b HyconOS .repo/local_manifests
+git clone https://github.com/ArkanMuhammad1986/Local_Manifest.git --depth 1 -b 11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
