@@ -8,6 +8,7 @@ source build/envsetup.sh
 lunch aosp_juice-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
+export WITH_GAPPS=true
 export TZ=Asia/Jakarta #put before last build command
 m aex
 
