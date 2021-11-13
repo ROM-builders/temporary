@@ -4,12 +4,6 @@ git clone https://github.com/inferno964/local_manifest.git --depth 1 -b master .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-cd system 
-rm -rf sepolicy
-git clone https://github.com/sohamxda7/platform_system_sepolicy sepolicy
-cd
-rm -rf device/qcom/sepolicy-legacy-um
-git clone https://github.com/sohamxda7/device_qcom_sepolicy-legacy-um device/qcom/sepolicy-legacy-um
 . build/envsetup.sh
 lunch aosp_lavender-userdebug
 mka bacon
