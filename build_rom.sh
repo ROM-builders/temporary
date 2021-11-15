@@ -1,7 +1,7 @@
 # Copyright (c) 2021, The Linux Foundation. All rights reserved.
 # Thankz to @Apon77
 
-# Date 14-Nov-2021
+# Date 15-Nov-2021
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-mips,-darwin,-notdefault
 git clone https://github.com/AnGgIt86/local_manifest.git --depth=1 -b Aex-11 .repo/local_manifests
