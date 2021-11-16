@@ -4,7 +4,7 @@ git clone https://github.com/mobxprjkt/local_manifest.git --depth 1 -b main .rep
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
-# build roms
+# build rom
 source build/envsetup.sh
 lunch aosp_juice-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
