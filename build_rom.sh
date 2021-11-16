@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ArcaneOS/Arcane_manifest -b R -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Hunter-commits/local_manifest.git --depth 1 -b Arcane .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelBlaster-OS/manifest -b 12 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Hunter-commits/local_manifest.git --depth 1 -b PixelBlaster .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch aosp_mido-userdebug
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
