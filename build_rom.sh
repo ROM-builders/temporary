@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lineage_gemini-user
+lunch lineage_gemini-userdebug
 export TZ=Europe/Moscow #put before last build command
 mka bacon
 
