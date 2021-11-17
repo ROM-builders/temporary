@@ -7,7 +7,6 @@ AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) f
 [Screenshots](https://t.me/Apon77Mido/5270) r [Video](https://www.youtube.com/watch?v=KuQ9jIVmOXY)
 
 Distributed [here](https://t.me/rn4download/485)
-
 Estimated installation no.: 150-5
 How to use this repository
 --------------
