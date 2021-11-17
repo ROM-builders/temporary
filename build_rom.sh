@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q -g default,-mips,-darwin,-notdefault
-git clone https://github.com/indi121/local_manifests.git --depth 1 -b rr-vince .repo/local_manifests
+git clone https://github.com/indi121/local_manifests.git --depth 1 -b rr .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build 
 source build/envsetup.sh
-lunch rr_vince-user
+lunch rr_whyred-user
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
