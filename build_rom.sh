@@ -3,6 +3,8 @@ repo init --depth=1 --no-repo-verify -u git://github.com/ShapeShiftOS/android_ma
 git clone https://github.com/itsaniketdubey/local-manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+#1 
+
 # build rom
 source build/envsetup.sh
 lunch ssos_beryllium-userdebug
