@@ -3,15 +3,9 @@ repo init -u https://github.com/Komodo-OS-Rom/manifest -b ten
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-
-# Set up environment
-$ . build/envsetup.sh
-
-# Choose a target
-$ lunch komodo_certus-userdebug
-
-# Build the code
-$ masak komodo -jX
+ build/envsetup.sh
+ lunch komodo_certus-userdebug
+ masak komodo -jX
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
