@@ -5,8 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch voltage_lavender-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
+lunch voltage_lavender-user
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
