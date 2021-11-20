@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b eleven -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b eleven-plus -g default,-mips,-darwin,-notdefault
 
 
 git clone https://github.com/Faisalhossainerfan/local_manifest.git .repo/local_manifests
