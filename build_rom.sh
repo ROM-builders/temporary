@@ -8,10 +8,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch lineage_i9105p-userdebug
 update-alternatives --list java
-make sepolicy
-make bootimage
-make init
-mmma ./packages/apps/Bluetooth
+#make sepolicy
+#make bootimage
+#make init
+#mmma ./packages/apps/Bluetooth
 
 #export TZ=Asia/Dhaka #put before last build command
 #mka bacon
