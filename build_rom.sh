@@ -1,4 +1,4 @@
-   repo init -u https://github.com/Havoc-OS/android_manifest.git -b ten
+repo init -u https://github.com/Havoc-OS/android_manifest.git -b ten
 git clone https://github.com/qwertyuiii-code/local-manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
