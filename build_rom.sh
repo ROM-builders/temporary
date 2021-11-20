@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch komodo_certus-userdebug
-export TZ=Europe/Moscow
+export TZ=Europe/Ekaterinburg
 masak komodo
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
