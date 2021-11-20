@@ -1,6 +1,10 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b eleven -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Faisalhossainerfan/local_manifest.git -b eleven .repo/local_manifests
+git clone -b 11.0 https://github.com/Jabiyeff-Project/device-santoni device/xiaomi/santoni
+
+git clone -b 11.0 https://github.com/Jabiyeff-Project/vendor-santoni vendor/xiaomi
+
+git clone -b 11.0 https://github.com/Jabiyeff-Project/kernel-santoni kernel/xiaomi/msm8937
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
