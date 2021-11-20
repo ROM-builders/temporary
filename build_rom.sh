@@ -7,10 +7,12 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # 2021 11 20 fix repo lineage-15.1
 source build/envsetup.sh
 lunch lineage_i9105p-userdebug
+make sepolicy
+make bootimage
+make init
 mmma ./packages/apps/Bluetooth
 
 #export TZ=Asia/Dhaka #put before last build command
 #mka bacon
-
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
