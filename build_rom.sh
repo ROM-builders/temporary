@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch nad_mido-userdebug
+lunch nad_mido-user
 export TZ=Asia/Jakarta #put before last build command
 mka nad
 
