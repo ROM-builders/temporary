@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # 2021 11 20 fix repo lineage-15.1
 source build/envsetup.sh
 lunch lineage_i9105p-userdebug
+update-alternatives --list java
 make sepolicy
 make bootimage
 make init
