@@ -7,7 +7,6 @@ git clone https://github.com/Faisalhossainerfan/local_manifest.git --depth 1 -b 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-
 . build/envsetup.sh
 lunch aosp_santoni-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
