@@ -14,7 +14,6 @@ lunch aosp_santoni-userdebug
 
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Dhaka #put before last build command
-
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
