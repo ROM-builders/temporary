@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch cipher_RMX2001-userdebug
 export TZ=Asia/Dhaka #put before last build command
-mka bacon -j$(nproc --all)
+mka bacon
 export TARGET_FACE_UNLOCK_SUPPORTED=true
 export TARGET_USES_BLUR=true
 export SKIP_ABI_CHECKS=true
