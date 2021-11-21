@@ -1,4 +1,3 @@
- lines (11 sloc)  808 Bytes
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/CipherOS/android_manifest.git -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/DPSLEGEND/local_manifest.git --depth 1 -b cipher .repo/local_manifests
