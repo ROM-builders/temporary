@@ -5,8 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch fluid_mido-user
-export SELINUX_IGNORE_NEVERALLOWS=true
+lunch fluid_mido-userdebug
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
