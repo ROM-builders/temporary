@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest.git -b snow -g default,-mips,-darwin,-notdefault
+repo init -u https://github.com/Evolution-X/manifest.git -b snow Evo
 git clone https://github.com/naeem000/local_manifest.git --depth 1 -b 11 .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
