@@ -1,5 +1,6 @@
 # sync rom
 repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 12.x
+git clone https://github.com/naeem000/local_manifest.git --depth 1 -b 11 .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
