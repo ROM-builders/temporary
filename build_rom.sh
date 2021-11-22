@@ -1,15 +1,15 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b eleven-plus -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/ShapeShiftOS/android_manifest.git -b android_11 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/mobxCode/local_manifest.git --depth 1 -b pixel .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
 # build roms
 source build/envsetup.sh
-lunch aosp_juice-userdebug
+lunch ssos_juice-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta #put before last build command
-mka bacon
+make bacon
 
 
 # Time = 12:35 WIB
