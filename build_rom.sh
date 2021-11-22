@@ -12,8 +12,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch aosp_rosy-userdebug
 export TZ=Asia/Jakarta
 export ALLOW_MISSING_DEPENDENCIES=true
-export BUILD_USERNAME=xiaomi
-export BUILD_HOSTNAME=finix-project
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
