@@ -1,7 +1,7 @@
 # Copyright (c) 2021, The Linux Foundation. All rights reserved.
 # Thankz to @Apon77
+# Date 23-Nov-2021 01:07
 
-# Date 09-Nov-2021 10:40
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ArcaneOS/Arcane_manifest -b R -g default,-mips,-darwin,-notdefault
 git clone https://github.com/AnGgIt86/local_manifest.git --depth=1 -b eleven .repo/local_manifests
@@ -12,7 +12,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch aosp_rosy-userdebug
 export TZ=Asia/Jakarta
 export ALLOW_MISSING_DEPENDENCIES=true
-export CONFIG_LOCALVERSION="-ArcaneOS"
+export BUILD_USERNAME=xiaomi
+export BUILD_HOSTNAME=finix-project
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
