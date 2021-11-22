@@ -1,16 +1,16 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/WeebProject/platform_manifest -b sushi -g default,-mips,-darwin,-notdefault
-git clone https://github.com/ArkanMuhammad1986/Local_Manifest.git --depth 1 -b WeebProjekt .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b elle -g default,-mips,-darwin,-notdefault
+git clone https://github.com/ArkanMuhammad1986/Local_Manifest.git --depth 1 -b Evox .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
-lunch weeb_mido-userdebug
+. build/envsetup.sh
+lunch evolution_mido-userdebug
 export SKIP_ABI_CHECKS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Jakarta #put before last build command
-make weeb-prod
+mka evolution
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
