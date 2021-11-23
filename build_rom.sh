@@ -1,11 +1,12 @@
 # sync rom
-repo init --depth=1 -u https://github.com/Project-Elixir/manifest -b snow -g default,-mips,-darwin,-notdefault
+repo init --depth=1 -u repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-12.0
+ -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Gotam919/local_manifest.git --depth=1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch elixir_aqua-userdebug
+lunch arrow_RMX1941-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true 
 export TZ=Asia/Dhaka #put before last build command
 mka bacon 
