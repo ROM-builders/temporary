@@ -8,13 +8,12 @@ git clone https://github.com/AnGgIt86/local_manifest.git --depth=1 -b eleven .re
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch aosp_rosy-userdebug
 export TZ=Asia/Jakarta
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_USERNAME=xiaomi
 export BUILD_HOSTNAME=finix-project
-export SKIP_ABI_CHECKS=true
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
