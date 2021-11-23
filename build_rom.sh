@@ -1,15 +1,15 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/WeebProjekt/platform_manifest -b reborn -g default,-mips,-darwin,-notdefault
-git clone https://github.com/mobxprjkt/local_manifest.git --depth 1 -b pe .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelExtended/manifest -b ace -g default,-mips,-darwin,-notdefault
+git clone https://github.com/mobxprjkt/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
 # build roms
 source build/envsetup.sh
-lunch weeb_juice-userdebug
+lunch aosp_juice-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta #put before last build command
-make weeb-prod
+mka bacon
 
 
 
