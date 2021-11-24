@@ -1,18 +1,18 @@
 # sync rom
 
-repo init --depth=1 --no-repo-verify -u https://github.com/ShapeShiftOS/android_manifest.git -b android_12 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/phoenix-1708/local_manifest.git --depth=1 -b ssos12 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b snow -g default,-mips,-darwin,-notdefault
+git clone https://github.com/phoenix-1708/local_manifest.git --depth=1 -b evox12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 
 source build/envsetup.sh
-lunch ssos_sweet-userdebug
+lunch evolution_sweet-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export SKIP_ABI_CHECKS=true
 export SKIP_API_CHECKS=true
 export TZ=Asia/Dhaka #put before last build command
-make bacon
+mka evolution
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
