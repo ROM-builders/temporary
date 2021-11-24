@@ -4,7 +4,7 @@ git clone https://github.com/blurzyy/local_manifest.git --depth 1 -b main .repo/
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 git clone https://github.com/LineageOS/android_hardware_xiaomi.git --depth 1 -b lineage-18.1 .repo/local_manifests
 
-# build rom
+# build rom 
 source build/envsetup.sh
 lunch aosp_mojito-userdebug
 mka bacon -j8
