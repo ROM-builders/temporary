@@ -1,6 +1,6 @@
 # Copyright (c) 2021, The Linux Foundation. All rights reserved.
 # Thankz to @Apon77
-# Date 23-Nov-2021 19:05
+# Date 24-Nov-2021 19:05
 
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ArcaneOS/Arcane_manifest -b R -g default,-mips,-darwin,-notdefault
