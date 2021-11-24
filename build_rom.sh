@@ -1,6 +1,6 @@
 # Copyright (c) 2021, The Linux Foundation. All rights reserved.
 # Thankz to @Apon77
-# Date 24-Nov-2021 16:40
+# Date 25-Nov-2021 04:05
 
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-mips,-darwin,-notdefault
