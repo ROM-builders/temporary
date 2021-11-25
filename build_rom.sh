@@ -1,18 +1,18 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ShapeShiftOS/android_manifest.git -b android_11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/mobxCode/local_manifest.git --depth 1 -b pixel .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/AospExtended/manifest.git -b 11.x -g default,-mips,-darwin,-notdefault
+git clone https://github.com/mobxCode/local_manifest.git --depth 1 -b aex .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
 # build roms
 source build/envsetup.sh
-lunch ssos_juice-userdebug
+lunch aosp_juice-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta #put before last build command
-make bacon
+m aex
 
 
-# Time = 13:10 WIB
+# Time = 10:53 WIB
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
