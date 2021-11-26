@@ -1,7 +1,6 @@
 # sync rom
 repo init -u https://github.com/PixelExperience/manifest -b twelve
-https://github.com/xenxynon/local_manifest/blob/main/local_manifest.xmlrepo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-
+https://github.com/xenxynon/manifest/blob/main/local_manifest.xml
 # build rom
 source build/envsetup.sh
 lunch aosp_lavender-user
