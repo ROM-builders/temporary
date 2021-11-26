@@ -1,6 +1,6 @@
 #sync rom
-repo init -u https://github.com/PixelExperience/manifest -b twelve
-git clone https://github.com/PixelExperience/manifest/blob/twelve/default.xml
+repo init -u https://github.com/xenxynon/manifest/blob/main/local_manifest.xml
+git clone https://github.com/xenxynon/manifest/blob/main/local_manifest.xml
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
