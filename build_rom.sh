@@ -1,5 +1,5 @@
 # sync rom
-repo init https://github.com/LineageOS/android/blob/lineage-18.1/default.xml
+sudo repo init https://github.com/LineageOS/android/blob/lineage-18.1/default.xml
 git clone https://github.com/xenxynon/manifest/blob/main/local_manifest.xml
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
