@@ -4,7 +4,7 @@ https://github.com/xenxynon/local_manifest/blob/main/local_manifest.xmlrepo sync
 
 # build rom
 source build/envsetup.sh
-lunch derp_lavender-user
+lunch aosp_lavender-user
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
