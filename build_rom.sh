@@ -7,12 +7,14 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build roms
 source build/envsetup.sh
 lunch aosp_juice-userdebug
+export BUILD_USERNAME=mobxprojekt
+export BUILD_HOSTNAME=RANDOMBUILD
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta #put before last build command
 m aex
 
 
-# Time = 08:45 WIB
+# Time = 12:47 WIB
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
