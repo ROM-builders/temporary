@@ -1,4 +1,4 @@
-#repo sync
+#sync rom
 repo init -u https://github.com/PixelExperience/manifest -b twelve
 git clone https://github.com/PixelExperience/manifest/blob/twelve/default.xml
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
