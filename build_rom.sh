@@ -1,11 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b eleven -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b eleven-plus -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Tiktodz/local_manifest.git --depth 1 -b pe .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch aosp_X00TD-userdebug
+export BUILD_USERNAME=tiktodz
+export BUILD_HOSTNAME=android-build
 export TZ=Asia/Jakarta
 mka bacon
 
