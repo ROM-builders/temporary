@@ -6,7 +6,7 @@ cd ..
 
 
 curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-chmod a+x ~/bin/
+chmod a+x /bin/
 
 
 sudo repo init -u https://github.com/PixelExperience/manifest -b eleven-plus
