@@ -1,6 +1,8 @@
 # sync rom
-gitclone https://github.com/LineageOS/android/blob/lineage-18.1/default.xml
-gitclone https://github.com/xenxynon/manifest/blob/main/local_manifest.xml
+repo init https://github.com/LineageOS/android/blob/lineage-18.1/default.xml
+git clone https://github.com/xenxynon/manifest/blob/main/local_manifest.xml
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+
 # build rom
 source build/envsetup.sh
 lunch aosp_lavender-user
