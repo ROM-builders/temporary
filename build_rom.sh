@@ -1,5 +1,5 @@
 # sync rom
-repo init -u https://github.com/PixelExperience/manifest -b twelve
+https://github.com/LineageOS/android/blob/lineage-18.1/snippets/lineage.xml
 https://github.com/xenxynon/manifest/blob/main/local_manifest.xml
 # build rom
 source build/envsetup.sh
