@@ -4,9 +4,9 @@ git clone https://github.com/Faisalhossainerfan/local_manifest.git --depth 1 -b 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-sed -i '/qti-telephony-common.jar/d' vendor/xiaomi/santoni/santoni-vendor.mk
 . build/envsetup.sh
 lunch aosp_santoni-userdebug
+export sed -i '/qti-telephony-common.jar/d' vendor/xiaomi/santoni/santoni-vendor.mk
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
