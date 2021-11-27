@@ -1,5 +1,6 @@
-#sync rom
-repo init -u https://github.com/xenxynon/manifest/blob/main/local_manifest.xml --depth 1 -b 11 .repo/local_manifests
+#sync rom 
+repo init --depth=1 --no-repo-verify https://github.com/PixelExperience/gerrit_manifest/blob/master/manifest.xml--depth 1 -b 11 .repo/local_manifests
+git clone https://github.com/xenxynon/manifest/blob/main/local_manifest.xml --depth 1 -b 11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
