@@ -1,5 +1,6 @@
 #sync rom 
-repo init --depth=1 --no-repo-verify https://github.com/PixelExperience/gerrit_manifest/blob/master/manifest.xml--depth 1 -b 11 .repo/local_manifests
+repo init --depth 1 -b 11 .repo/local_manifests --depth=1 and -g default,-mips,-darwin,-notdefault tags in repo init line.
+
 git clone https://github.com/xenxynon/manifest/blob/main/local_manifest.xml --depth 1 -b 11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
