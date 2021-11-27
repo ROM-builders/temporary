@@ -1,6 +1,6 @@
 # Copyright (c) 2021, The Linux Foundation. All rights reserved.
 # Thankz to @Apon77
-# Date 27-Nov-2021 02:45
+# Date 28-Nov-2021 05:05
 
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-mips,-darwin,-notdefault
@@ -11,8 +11,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch aosp_rosy-userdebug
 export TZ=Asia/Jakarta
-export BUILD_USERNAME=xiaomi
-export BUILD_HOSTNAME=finix-project
+export BUILD_USERNAME=finix-project
+export BUILD_HOSTNAME=xiaomi
 m aex
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
