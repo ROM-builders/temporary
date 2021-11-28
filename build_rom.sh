@@ -1,7 +1,7 @@
 # sync rom
 repo init -u git://github.com/aex-tmp/manifest.git -b 12.x
 https://github.com/Abhishek001konni/local_manifest --depth 1 -b main 
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
 source build/envsetup.sh
