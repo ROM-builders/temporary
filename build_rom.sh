@@ -3,10 +3,9 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-OS/platform_ma
 git clone https://github.com/AbrarNoob/local_manifest.git --depth 1 -b oct .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-
 # build rom
 source build/envsetup.sh
-lunch octavi_lavender-userdebug
+lunch octavi_lavender-user
 export TZ=Asia/Dhaka #put before last build command
 brunch lavender
 
