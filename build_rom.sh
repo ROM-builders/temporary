@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/PotatoProject/manifest.git -b frico-release -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/ProtonAOSP/android_manifest.git -b sc -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Nightlouv/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch potato_vayu-userdebug
+lunch vayu-userdebug
 export TZ=Asia/Dhaka #put before last build command
 brunch vayu
 
