@@ -5,8 +5,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch superior_vayu-user
-export ALLOW_MISSING_DEPENDENCIES=true
+lunch superior_vayu-eng
+export BUILD_WITH_GAPPS=true
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
