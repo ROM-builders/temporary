@@ -5,8 +5,10 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
 source build/envsetup.sh
-lunch derp_vayu-user
-export TZ=Asia/Dhaka #put before last build command
+sudo mkdir /mnt/ccache
+
+lunch
+
 mka derp
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
