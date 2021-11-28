@@ -5,7 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh 
-export HAVOC_BUILD_TYPE=Official
 lunch havoc_tulip-userdebug
 export WITH_GAPPS=false
 brunch tulip
