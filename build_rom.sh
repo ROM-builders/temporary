@@ -4,8 +4,9 @@ git clone https://github.com/naeem000/local_manifest.git --depth 1 -b master .re
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch evolution_jasmine_sprout-userdebug
+export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Dhaka #put before last build command
 mka evolution
 
