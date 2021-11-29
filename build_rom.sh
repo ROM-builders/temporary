@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b twelve --depth=1, -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b twelve --depth=1, -g default,-device,-mips,-darwin,-notdefault tags
 mv .repo/local_manifests /tmp/
 git clone https://github.com/Kudakenai/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
