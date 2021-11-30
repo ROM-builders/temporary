@@ -1,15 +1,15 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-17.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Kendras056/local_manifests.git --depth 1 -b los .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/Candyroms/candy.git -b c11 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Kendras056/local_manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) 
 
 # build rom
 source build/envsetup.sh
-lunch lineage_X00T-userdebug
+lunch candy_X00TD-userdebug
 export BUILD_USERNAME=tiktodz
 export BUILD_HOSTNAME=android-build
 export TZ=Asia/Jakarta
-mka bacon
+make candy
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
