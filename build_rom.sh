@@ -4,6 +4,8 @@ git clone https://github.com/IceBreaker2451/local_manifest --depth 1 -b aospa .r
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+source build/envsetup.sh
+lunch aospa_tulip-userdebug
 export TZ=Asia/Kolkata #put before last build command
 ./rom-build.sh tulip
 
