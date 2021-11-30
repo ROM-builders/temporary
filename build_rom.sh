@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 -u git://github.com/lighthouse-os/manifest.git -b sailboat -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Stealth1226/local_manifest --depth 1 -b sailboat .repo/local_manifests
+git clone https://github.com/Stealth1226/local_manifest --depth 1 -b sailboat-x2 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lighthouse_rs988-eng
+lunch lighthouse_X2-eng
 make lighthouse
 
 
