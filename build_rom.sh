@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth 1 -u https://github.com/Havoc-OS/android_manifest.git -b eleven
 git clone https://github.com/AkhilmsAchu/local_manifest.git --depth 1 -b main .repo/local_manifests
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+repo sync -c -j8 --force-sync --no-clone-bundle --no-tags
 
 # build rom
 . build/envsetup.sh 
