@@ -1,12 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Havoc-OS/android_manifest.git -b eleven -g default,-mips,-darwin,-notdefault
+repo init --depth 1 -u https://github.com/Havoc-OS/android_manifest.git -b eleven
 git clone https://github.com/AkhilmsAchu/local_manifest.git --depth 1 -b main .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
 . build/envsetup.sh 
 lunch havoc_tulip-userdebug
-export WITH_GAPPS=false
 brunch tulip
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
