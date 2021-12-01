@@ -7,7 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch ssos_juice-userdebug
 export BUILD_USERNAME=mobxprojekt
-export BUILD_HOSTNAME=RANDOMBUILD
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta #put before last build command
 make bacon
