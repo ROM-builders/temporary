@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git: //github.com/LineageOS/android.git -b lineage-18.1 -b 11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/haxiswillow/local_manifest/blob/main/local_manifest.xml --depth 1 -b master .repo/local_manifests
+git clone https://github.com/haxiswillow/local_manifest/blob/main/local_manifest.xml --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch derp_vayu-user
+lunch lineage_lava-user
 export TZ=Asia/Dhaka #put before last build command
 mka derp
 
