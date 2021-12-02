@@ -1,6 +1,6 @@
 # sync rom
 repo init -u https://github.com/ShapeShiftOS/android_manifest.git -b android_12
-git clone https://github.com/BasharatKar/local_manifest.git -b main .repo/local_manifests
+git clone https://github.com/BasharatKar/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 
 # build rom
