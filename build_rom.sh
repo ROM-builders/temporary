@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch cherish_mido-userdebug
 export SKIP_ABI_CHECKS=true
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
