@@ -6,7 +6,7 @@ git clone https://github.com/Sachin9822/local_manifest.git --depth 1 -b main .re
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch lineage_jfltexx_userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka derp
