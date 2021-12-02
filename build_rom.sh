@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-brunch lineage_jfltexx_userdebug
+lunch lineage_jfltexx_userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka derp
 
