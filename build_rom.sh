@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-15.1 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://android.googlesource.com/platform/manifest -b 7786868 -g default,-mips,-darwin,-notdefault
 
 git clone https://github.com/Sachin9822/local_manifest.git --depth 1 -b main .repo/local_manifests
 
@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch lineage_tissot-userdebug
+lunch aosp_marlin-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
