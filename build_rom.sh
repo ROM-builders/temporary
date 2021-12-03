@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://android.googlesource.com/platform/manifest -b 7786868 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://android.googlesource.com/platform/manifest -b android-security-9.0.0_r74 -g default,-mips,-darwin,-notdefault
 
 git clone https://github.com/Sachin9822/local_manifest.git --depth 1 -b main .repo/local_manifests
 
