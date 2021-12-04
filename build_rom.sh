@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b spark -g default,-mips,-darwin,-notdefault
 git clone https://github.com/CarlJohnson65/local_manifest.git --depth 1 -b main .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 -j1 --fail-fast
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 
 
 # build rom
 source build/envsetup.sh
@@ -10,7 +10,6 @@ export SKIP_API_CHECKS=true
 export RELAX_USES_LIBRARY_CHECK=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export SKIP_ABI_CHECKS=true
-export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Dhaka #put before last build command
 mka spark
 
