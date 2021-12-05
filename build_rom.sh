@@ -6,6 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch ssos_X00TD-userdebug
+export SKIP_API_CHECKS=true
+export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_USERNAME=tiktodz
 export BUILD_HOSTNAME=android-build
 export TZ=Asia/Tokyo
