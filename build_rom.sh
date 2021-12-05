@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch ssos_X00TD-userdebug
 export BUILD_USERNAME=tiktodz
 export BUILD_HOSTNAME=android-build
-export TZ=Asia/Jakarta
+export TZ=Asia/Tokyo
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
