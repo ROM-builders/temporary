@@ -24,6 +24,9 @@ if [[ $j_check -gt 0 ]]; then echo Please dont specify j value in make line.; ex
 sudo_check=$(grep 'sudo ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $sudo_check -gt 0 ]]; then echo Please dont use sudo inside script.; exit 1; fi
 
+mmma_check=$(grep 'mmma ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
+if [[ $mmma_check -gt 0 ]]; then echo Please dont use mmma inside script.; exit 1; fi
+
 mv_check=$(grep 'mv ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $mv_check -gt 0 ]]; then echo Please dont use mv inside script, use local manifest for this purpose.; exit 1; fi
 
