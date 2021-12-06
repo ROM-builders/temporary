@@ -1,20 +1,20 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/AospExtended/manifest.git -b 11.x -g default,-mips,-darwin,-notdefault
-git clone https://github.com/mobxCode/local_manifest.git --depth 1 -b AEX-11.x .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/CipherOS/android_manifest.git -b eleven -g default,-mips,-darwin,-notdefault
+git clone https://github.com/mobxCode/local_manifest.git --depth 1 -b cipher .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
 # build roms
 source build/envsetup.sh
-lunch aosp_juice-userdebug
+lunch lineage_juice-userdebug
 export BUILD_USERNAME=mobxprojekt
 export BUILD_HOSTNAME=RANDOMBUILD
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta #put before last build command
-m aex
+mka bacon
 
 
-# Time = 07:54 WIB
+# Time = 00:38 WIB
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
