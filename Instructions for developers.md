@@ -2,7 +2,6 @@
 ##### 1. Find your device tree, kernel tree, and vendor tree. I found [here](https://github.com/zeelog/). You can find your device tree, common tree, kernel tree mostly in [LineageOS](https://github.com/LineageOS/). You can find vendor tree mostly in [here](https://gitlab.com/the-muppets/proprietary_vendor_xiaomi) or, [here](https://github.com/TheMuppets). If your device is very new, or no development done before, then you may need to create your own device tree. Which is another subject to learn.
 ##### 2. Make device tree of Redmi Note 4 compatible with AospExtended by [bringup commit](https://github.com/Apon77/aex/commit/7b64c1c6cc477ea44e50664e4e9c6739ffcd7054)
 ##### 3. Initialize the AospExtended Source
-
 `repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x`
 
 ##### 4. Change repository of AospExtended if needed by removing and reclonig them, or by using [local manifest](https://forum.xda-developers.com/t/learn-about-the-repo-tool-manifests-and-local-manifests-and-5-important-tips.2329228/).
