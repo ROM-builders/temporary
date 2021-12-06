@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/exthmui/android.git -b exthm-11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Faisalhossainerfan/local_manifest.git --depth 1 -b main .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b twelve -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Faisalhossainerfan/local_manifest-1.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
-lunch exthm_santoni-userdebug
+lunch aosp_santoni-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
