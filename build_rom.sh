@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch derp_X00TD-userdebug
 export BUILD_USERNAME=venom
 export BUILD_HOSTNAME=android-build
-export TZ=Asia/Jakarta
+export TZ=Asia/Tokyo
 mka derp
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
