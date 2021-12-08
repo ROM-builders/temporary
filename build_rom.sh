@@ -10,7 +10,7 @@ export BUILD_USER=cyb3rgod0
 export BUILD_HOST=fsociety
 export BUILD_USERNAME=cyb3rgod0
 export BUILD_HOSTNAME=fsociety
-export TZ=Asia/Kolkatta #put before last build command
+export TZ=Asia/Kolkata #put before last build command
 m aex
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
