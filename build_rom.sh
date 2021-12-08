@@ -10,6 +10,7 @@ export BUILD_USER=cyb3rgod0
 export BUILD_HOST=fsociety
 export BUILD_USERNAME=cyb3rgod0
 export BUILD_HOSTNAME=fsociety
+export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Kolkata #put before last build command
 m aex
 
