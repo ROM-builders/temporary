@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/elytraOS/manifest.git -b skylight -g default,-mips,-darwin,-notdefault
-git clone https://github.com/exynos7870shrp/local_manifest -b pine-s .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u repo init --depth=1 --no-repo-verify -u https://github.com/VoltageOS/manifest -b 12 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Atharv2951-Roms/Local-Manifests -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
-lunch elytra_pine-userdebug
+lunch voltage_pine-userdebug
 export ALLOW_MISSING_DEPENDENCES=true
 export TZ=Asia/Mumbai #put before last build command
 brunch pine
