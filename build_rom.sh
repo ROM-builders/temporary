@@ -3,9 +3,10 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest 
 git clone https://github.com/Razorito/manifest.git --depth=1 -b evo12-vayu .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom 
+# build rom
 . build/envsetup.sh
 lunch vayu-user
+export WITH_GAPPS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Jakarta #put before last build command
