@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch awaken_X00TD-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_USERNAME=venom
-export BUILD_HOSTNAME=android-build
+export BUILD_HOSTNAME=carnage
 export TZ=Asia/Jakarta
 make bacon
 
