@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch awaken_X00TD-userdebug
+export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_USERNAME=venom
 export BUILD_HOSTNAME=android-build
 export TZ=Asia/Jakarta
