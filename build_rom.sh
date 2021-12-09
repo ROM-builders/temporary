@@ -10,7 +10,7 @@ export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_USERNAME=superman
 export BUILD_HOSTNAME=over-project
-export TZ=Asia/Bangkok
+export TZ=Asia/Tokyo
 make xd
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
