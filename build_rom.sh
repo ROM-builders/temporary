@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b eleven -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/syberia-project/manifest.git -b 12.0 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/mobxCode/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -7,15 +7,15 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build roms
 source build/envsetup.sh
 lunch cherish_juice-userdebug
-#export SKIP_ABI_CHECKS=true
+export SKIP_ABI_CHECKS=true
 export BUILD_USERNAME=mobxprojekt
 export BUILD_HOSTNAME=RANDOMBUILD
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta #put before last build command
-mka bacon
+make bacon
 
 
-# Time = 00:38 WIB
+# Time = 00:08 WIB
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
