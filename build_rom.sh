@@ -11,6 +11,7 @@ lunch lineage_beryllium-userdebug
 export TARGET_FLOS=true
 export WITH_GMS=true
 export TZ=Asia/Dhaka #put before last build command
+export BUILD_HOSTNAME=hades
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
