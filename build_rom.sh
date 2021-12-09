@@ -11,10 +11,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch aosp_rosy-userdebug
 export TZ=Asia/Jakarta
-export BUILD_USER=xiaomi
-export BUILD_HOST=finix-project
+export BUILD_USER=finix
+export BUILD_HOST=rosy
 export BUILD_USERNAME=finix
-export BUILD_HOSTNAME=xiaomi
+export BUILD_HOSTNAME=rosy
 m aex
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
