@@ -9,7 +9,7 @@ Lineage [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Re
 
 Distributed [here](https://t.me/rn4downloads/4885)
 
-Estimated installation no.: 120-500
+Estimated installation no.: 10-500
 
 How to use this repository
 -------------------
