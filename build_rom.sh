@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b twelve -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b eleven -g default,-mips,-darwin,-notdefault
 git clone https://github.com/akshat942/local_manifest/blob/caf-11/local_manifest.xml --depth 1 -b caf-11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_miatoll-userdebug
+lunch aosp_rosemary-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
