@@ -26,7 +26,7 @@ We don't need to clone common device tree, because not said anywhere in [Boardco
 
 ```
 git clone -b aex https://github.com/Apon77/aex device/xiaomi/mido --depth=1
-git clone -b aex https://github.com/Apon77/aexk kernel/xiaomi/mido --depth=1
+git clone -b aex htps://github.com/Apon77/aexk kernel/xiaomi/mido --depth=1
 git clone -b aex https://github.com/Apon77/aexv vendor/xiaomi --depth=1
 ```
 
