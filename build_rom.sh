@@ -6,11 +6,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build
 source build/envsetup.sh
 lunch xdroid_X00TD-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
-export BUILD_USERNAME=superman
-export BUILD_HOSTNAME=over-project
-export TZ=Asia/Tokyo
+export BUILD_USERNAME=ruega
+export BUILD_HOSTNAME=pornosotros
+export TZ=Asia/Tokyo #put before last build command
 make xd
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
