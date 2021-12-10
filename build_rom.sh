@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build roms
 source build/envsetup.sh
-lunch cherish_juice-userdebug
+lunch syberia_juice-userdebug
 export SKIP_ABI_CHECKS=true
 export BUILD_USERNAME=mobxprojekt
 export BUILD_HOSTNAME=RANDOMBUILD
