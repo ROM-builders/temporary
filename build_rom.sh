@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 export WITH_GAPPS=true
-lunch lighthouse_X2-eng
+lunch lighthouse_X2-userdebug
 make lighthouse
 
 
