@@ -11,9 +11,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch aosp_rosy-userdebug
 export TZ=Asia/Jakarta
-export ALLOW_MISSING_DEPENDENCIES=true
-export BUILD_USERNAME=xiaomi
-export BUILD_HOSTNAME=finix-project
+export BUILD_USER=finix
+export BUILD_HOST=rosy
+export BUILD_USERNAME=finix
+export BUILD_HOSTNAME=rosy
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
