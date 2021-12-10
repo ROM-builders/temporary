@@ -9,7 +9,7 @@ lunch xdroid_X00TD-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_USERNAME=ruega
 export BUILD_HOSTNAME=pornosotros
-export TZ=Asia/Tokyo
+export TZ=Asia/Bangkok
 make xd
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
