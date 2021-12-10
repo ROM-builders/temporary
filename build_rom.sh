@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build
 source build/envsetup.sh
 lunch xdroid_X00TD-userdebug
-export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_USERNAME=ruega
 export BUILD_HOSTNAME=pornosotros
 export TZ=Asia/Bangkok
