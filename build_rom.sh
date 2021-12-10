@@ -15,7 +15,7 @@ export TZ=Asia/Jakarta #put before last build command
 make bacon
 
 
-# Time = 00:08 WIB
+# Time = 15:29 WIB
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
