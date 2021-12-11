@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch corvus_X00TD-userdebug
 export RAVEN_LAIR=Unofficial
-export TZ=Asia/Bangkok #put before last build command
+export TZ=Asia/Tokyo #put before last build command
 make corvus
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
