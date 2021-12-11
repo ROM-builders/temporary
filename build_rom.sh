@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch corvus_X00TD-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
+export ALLOW_MISSING_DEPENDENCIES=true
 export SKIP_ABI_CHECKS=true
 export RAVEN_LAIR=Unofficial
 export TZ=Asia/Bangkok #put before last build command
