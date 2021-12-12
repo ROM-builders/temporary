@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # Clone device source
 git clone https://github.com/bluecrossdev/device_google_crosshatch -b 12.x device/google/crosshatch
 git clone https://github.com/bluecrossdev/device_google_crosshatch-sepolicy device/google/crosshatch-sepolicy
-git clone https://github.com/bluecrossdev/vendor_google vendor/gpx --depth=11
+git clone https://github.com/bluecrossdev/vendor_google vendor/gpx --depth=1
 mkdir vendor/google
 mv vendor/gpx/* vendor/google/
 git clone https://github.com/HotDogfinba11/kernel_google_msm-4.9 --depth=1 kernel/google/bluecross
