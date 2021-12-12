@@ -1,17 +1,10 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/bluecrossdev/manifest -b 12.x -g default,-mips,-darwin,-notdefault
+git clone https://github.com/bluecrossdev/local_manifest .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# Clone device source
-git clone https://github.com/bluecrossdev/device_google_crosshatch -b 12.x device/google/crosshatch
-git clone https://github.com/bluecrossdev/device_google_crosshatch-sepolicy device/google/crosshatch-sepolicy
-git clone https://github.com/bluecrossdev/vendor_google vendor/gpx --depth=1
-mkdir vendor/google
+# Move vendor blobs
 mv vendor/gpx/* vendor/google/
-git clone https://github.com/HotDogfinba11/kernel_google_msm-4.9 --depth=1 kernel/google/bluecross
-rm -rf device/aosp/sepolicy
-git clone https://github.com/herobuxx/device_custom_sepolicy device/aosp/sepolicy
-git clone https://github.com/ProtonAOSP/android_packages_apps_ElmyraService packages/apps/ElmyraService -b sc
 
 # Set timezone
 export TZ=Asia/Jakarta
