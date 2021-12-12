@@ -5,8 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
  
 # build rom 
 source build/envsetup.sh
-ALLOW_MISSING_DEPENDENCIES=true
 lunch aosp_tissot-userdebug
+ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon 
 
