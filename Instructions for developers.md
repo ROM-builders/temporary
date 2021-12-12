@@ -8,6 +8,7 @@
 
 You can also clone device tree, common device tree, kernel tree, vendor tree by local manifist too.
 
+
 `git clone https://github.com/Apon77Lab/android_.repo_local_manifests.git --depth 1 -b aex .repo/local_manifests`
 
 ##### 5. Sync the source.
