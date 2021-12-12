@@ -1,13 +1,29 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/DerpFest-11/manifest.git -b 11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/Octavi-OS/platform_manifest.git -b 12 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/bluecrossdev/local_manifest .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
-source build/envsetup.sh
-lunch derp_vayu-user
-export TZ=Asia/Dhaka #put before last build command
-mka derp
+# Move vendor blobs
+mv vendor/gpx/* vendor/google/
 
-# upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
+# Set timezone
+export TZ=Asia/Jakarta
+
+# Extra build flags
+export WITH_GAPPS=true
+
+# Build for Pixel 3
+source build/envsetup.sh
+lunch octavi_blueline-user
+mka bacon
+
+# Upload for Pixel 3
+rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
+
+# Build for Pixel 3 XL
+source build/envsetup.sh
+lunch octavi_crosshatch-user
+mka bacon
+
+# Upload for Pixel 3 XL
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
