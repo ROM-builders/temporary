@@ -24,7 +24,6 @@ We need to clone kernel tree in kernel/xiaomi/mido said in [here](https://github
 We need to clone vendor tree in vendor/xiaomi said in [here](https://github.com/Apon77/aex/blob/aex/BoardConfig.mk#L167).
 
 We don't need to clone common device tree, because not said anywhere in [Boardconfig.mk](https://github.com/Apon77/aex/blob/aex/BoardConfig.mk)
-
 ```
 git clone -b aex https://github.com/Apon77/aex device/xiaomi/mido --depth=1
 git clone -b aex htps://github.com/Apon77/aexk kernel/xiaomi/mido --depth=1
