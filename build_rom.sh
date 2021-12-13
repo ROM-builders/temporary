@@ -8,6 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch cherish_mido-userdebug
 export SKIP_ABI_CHECKS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
+export WITH_GAPPS=true
 export TZ=Asia/HoChiMinh #put before last build command
 mka bacon
 
