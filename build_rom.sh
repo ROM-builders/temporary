@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lineage_X00TD-user
+lunch lineage_X00TD-eng
 export TZ=Asia/Bangkok #put before last build command
 mka bacon
 
