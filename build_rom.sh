@@ -11,6 +11,7 @@ export SELINUX_IGNORE_NEVERALLOWS=true
 export WITH_GMS := true
 export TARGET_GAPPS_ARCH=arm64
 export IS_PHONE=true
+export LC_ALL=C
 export TZ=Asia/HoChiMinh #put before last build command
 mka bacon
 
