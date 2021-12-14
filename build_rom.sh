@@ -1,12 +1,12 @@
-repo init -depth=1 --no-repo-verify -u https://github.com/BootleggersROM/manifest.git -b queso -g default,-mips,-darwin,-notdefault
+repo init -depth=1 --no-repo-verify -u repo init -u https://github.com/Project-Awaken/android_manifest -b 12 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/qwertyuiii-code/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
 # build rom
 source build/envsetup.sh
-lunch bootleg_certus-userdebug
-mka bacon
+lunch awaken_certus-userdebug
+make bacon
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
