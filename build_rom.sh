@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch lineage_A6020-userdebug
 export KBUILD_BUILD_USER=Ibratabian17
+export KBUILD_BUILD_HOST=Ibratabian17
 export TZ=Asia/Jakarta #put before last build command
 croot
 brunch A6020
