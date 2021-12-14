@@ -4,9 +4,11 @@ git clone https://github.com/yesidev/Local-Manifests.git --depth 1 -b spark .rep
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/env*
+source build/envsetup.sh
 lunch spark_pine-user
 export SELINUX_IGNORE_NEVERALLOWS=true
+export RELAX_USES_LIBRARY_CHECK=true
+export SKIP_ABI_CHECKS=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
