@@ -8,7 +8,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch cherish_mido-userdebug
 export SKIP_ABI_CHECKS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
-export USE_GAPPS=true && export TARGET_GAPPS_ARCH=arm64 && export IS_PHONE=true
+export USE_GAPPS=true
+export TARGET_GAPPS_ARCH=arm64
+export IS_PHONE=true
 export TZ=Asia/HoChiMinh #put before last build command
 mka bacon
 
