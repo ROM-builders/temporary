@@ -14,6 +14,6 @@ export BUILD_USERNAME=cirrus-ci
 mka bacon
 
 # get buildate for OTA pushing
-cat out/target/product/tiare/system/system/build.prop | grep "ro.build.date.utc"
+cat out/target/product/tiare/system/build.prop | grep "ro.build.date.utc"
 # Upload Build
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
