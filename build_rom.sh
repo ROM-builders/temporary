@@ -10,7 +10,9 @@ export KBUILD_BUILD_USER=Ibratabian17
 export KBUILD_BUILD_HOST=Ibratabian17
 export TZ=Asia/Jakarta #put before last build command
 croot
-KBUILD_BUILD_USER=Ibratabian17 KBUILD_BUILD_HOST=A6020 && brunch A6020
+KBUILD_BUILD_USER=Ibratabian17
+KBUILD_BUILD_HOST=A6020
+brunch A6020
 
 #13
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
