@@ -1,16 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/ProjectRadiant/manifest.git -b eleven -g default,-mips,-darwin,-notdefault
-git clone https://github.com/ping2109/local_manifest.git --depth 1 -b radiant .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/Project-Fluid/manifest.git -b fluid-11 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/ping2109/local_manifest.git --depth 1 -b fluid-mido .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
-lunch radiant_mido-user
+. build/envsetup.sh
+lunch fluid_mido-userdebug
 export SKIP_ABI_CHECKS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
-# export USE_GAPPS=true
-# export TARGET_GAPPS_ARCH=arm64
-# export IS_PHONE=true
 export TZ=Asia/HoChiMinh #put before last build command
 mka bacon
 
