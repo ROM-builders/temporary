@@ -6,12 +6,12 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom arroew
 source build/envsetup.sh
 lunch lineage_A6020-userdebug
-export KBUILD_BUILD_USER=Ibratabian17
-export KBUILD_BUILD_HOST=Ibratabian17
+export KBUILD_BUILD_USER="Ibratabian17"
+export KBUILD_BUILD_HOST="Hiper"
 export TZ=Asia/Jakarta #put before last build command
 croot
-KBUILD_BUILD_USER=Ibratabian17
-KBUILD_BUILD_HOST=A6020
+KBUILD_BUILD_USER="Ibratabian17"
+KBUILD_BUILD_HOST="Hiper"
 brunch A6020
 
 #13
