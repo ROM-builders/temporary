@@ -1,9 +1,9 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest.git -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/PixelOS-Devices/local_manifests.git --depth 1 -b twelve-plain .repo/local_manifests
+git clone https://github.com/PixelOS-Devices/local_manifests.git --depth 1 -b backup .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom 
+# build rom
 source build/envsetup.sh
 lunch aosp_ginkgo-user
 export TZ=Asia/Dhaka #put before last build command
