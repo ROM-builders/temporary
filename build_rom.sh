@@ -3,8 +3,6 @@ repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android -b 
 git clone https://github.com/00p513-dev/local_manifests/ -b lineage-17.1-sargo --depth 1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-git clone https://github.com/TheMuppets/proprietary_vendor_google -b lineage-17.1 vendor/google --depth=1
-
 # build rom
 source build/envsetup.sh
 lunch lineage_sargo-userdebug || echo
