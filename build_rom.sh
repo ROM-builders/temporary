@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android -b lineage-17.1 -g default,-mips,-darwin,-notdefault
-#git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .repo/local_manifests
+git clone https://github.com/00p513-dev/local_manifests/ -b lineage-17.1-sargo --depth 1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 git clone https://github.com/TheMuppets/proprietary_vendor_google -b lineage-17.1 vendor/google --depth=1
