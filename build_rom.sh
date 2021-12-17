@@ -4,7 +4,7 @@ git clone https://github.com/ping2109/local_manifest.git --depth 1 -b evox-mido 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # Build Rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch evolution_mido-eng
 export SKIP_ABI_CHECKS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
