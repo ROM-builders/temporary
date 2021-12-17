@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/Project-LegionOS/manife
 git clone https://github.com/lynnnnzx/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom 
 source build/envsetup.sh
 lunch legion_juice-userdebug
 export TZ=Asia/Jakarta
