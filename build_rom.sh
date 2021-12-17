@@ -6,8 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch radiant_mido-user
-export SKIP_ABI_CHECKS=true
-export SELINUX_IGNORE_NEVERALLOWS=true
+# export SKIP_ABI_CHECKS=true
+# export SELINUX_IGNORE_NEVERALLOWS=true
 # export USE_GAPPS=true
 # export TARGET_GAPPS_ARCH=arm64
 # export IS_PHONE=true
