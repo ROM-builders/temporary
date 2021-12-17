@@ -5,7 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lineage_sargo-userdebug || echo
 lunch lineage_sargo-userdebug
 export TZ=Asia/Dhaka #put before last build command
 m bacon
