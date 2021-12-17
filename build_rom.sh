@@ -1,7 +1,7 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ArcanaOS/project_manifest -b S -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Asyanx/local_manifests --depth 1 -b main .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
 source build/envsetup.sh
