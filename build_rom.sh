@@ -10,7 +10,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 source build/envsetup.sh
 
-lunch aosp_mido-userdebug
+lunch awaken_mido-userdebug
 
 export SKIP_ABI_CHECKS=true
 
