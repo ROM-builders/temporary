@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch nad_ginkgo-userdebug
 export SKIP_ABI_CHECKS=true
 export ALLOW_MISSING_DEPENDENCIES=true
-export BUILD_USERNAME=ramadhani
+export BUILD_USERNAME=hitcblazer
 export BUILD_HOSTNAME=hitchblazer
 export TZ=Asia/Jakarta
 mka nad
