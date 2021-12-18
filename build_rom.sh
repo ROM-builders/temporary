@@ -8,8 +8,11 @@ source build/envsetup.sh
 lunch nad_ginkgo-userdebug
 export SKIP_ABI_CHECKS=true
 export ALLOW_MISSING_DEPENDENCIES=true
+export BUILD_USER=ramdhani
+export BUILD_HOST=nad
 export BUILD_USERNAME=ramdhani
 export BUILD_HOSTNAME=nad
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Jakarta
 mka nad
 
