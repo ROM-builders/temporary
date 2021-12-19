@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch lineage_vince-userdebug
 export TARGET_FLOS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
-export TZ=Asia/Dhaka #put before las build command
+export TZ=Asia/Dhaka #put before las build comman
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
