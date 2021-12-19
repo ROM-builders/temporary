@@ -11,6 +11,7 @@ export SKIP_ABI_CHECKS=true
 export SKIP_API_CHECKS=true
 export BUILD_HOSTNAME=sarthakroy2002
 export BUILD_USERNAME=neolit
+export CIPHER_OFFICIAL=true
 mka bacon
 
 
