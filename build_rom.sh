@@ -10,8 +10,8 @@ export KBUILD_BUILD_USER="Ibratabian17"
 export KBUILD_BUILD_HOST="Hiper"
 export TZ=Asia/Jakarta #put before last build command
 croot
-KBUILD_BUILD_USER="Ibratabian17"
-KBUILD_BUILD_HOST="Hiper"
+LINUX_COMPILE_BY="Ibratabian17"
+LINUX_COMPILE_HOST="Hiper"
 brunch A6020
 
 #14 Update Sourcw
