@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch nad_ginkgo-userdebug
 export BUILD_USER=hitch
-export BUILD_HOST=hitch
+export BUILD_HOST=blazer
 export TZ=Asia/Jakarta
 export ALLOW_MISSING_DEPENDENCIES=true
 mka nad
