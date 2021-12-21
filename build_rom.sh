@@ -5,7 +5,7 @@ repo sync -c -j8 --force-sync --no-clone-bundle --no-tags
 
 # build rom
 . build/envsetup.sh
-lunch xtended_device-userdebug
+lunch xtended_j7elte-userdebug
 export TZ=Asia/Dhaka
 make xtended
 
