@@ -1,16 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Spark-Rom/manifest -b spark -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Aknx77/local_manifest.git --depth 1 -b a12 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/Havoc-OS/android_manifest.git -b eleven -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Aknx77/local_manifest.git --depth 1 -b Havoc .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch spark_vince-eng
-export TZ=Asia/Dhaka #put before las build comman
-export BUILD_USER=finix
-export BUILD_HOST=vince
-export BUILD_USERNAME=finix
-export BUILD_HOSTNAME=vince
+lunch havoc_vince-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
+export TZ=Asia/Dhaka#put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
