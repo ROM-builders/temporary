@@ -1,15 +1,17 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/ForkLineageOS/android.git -b lineage-18.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Aknx77/local_manifest.git --depth 1 -b common .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/Spark-Rom/manifest -b spark -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Aknx77/local_manifest.git --depth 1 -b a12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_vince-userdebug
-export TARGET_FLOS=true
-export SELINUX_IGNORE_NEVERALLOWS=true
+lunch spark_vince-eng
 export TZ=Asia/Dhaka #put before las build comman
-make bacon
+export BUILD_USER=finix
+export BUILD_HOST=vince
+export BUILD_USERNAME=finix
+export BUILD_HOSTNAME=vince
+mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
