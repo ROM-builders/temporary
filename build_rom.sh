@@ -6,10 +6,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_mido-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
-# export SKIP_ABI_CHECKS=true
-# export RELAX_USES_LIBRARY_CHECK=true
+export SKIP_ABI_CHECKS=true
 export ALLOW_MISSING_DEPENDENCIES=true
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+export SELINUX_IGNORE_NEVERALLOWS=true
+export BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES=true
 export TZ=Asia/HoChiMinh #put before last build command
 m aex
 
