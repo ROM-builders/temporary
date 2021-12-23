@@ -8,8 +8,6 @@ source build/envsetup.sh
 lunch aosp_olives-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
-export SELINUX_IGNORE_NEVERALLOWS=true
-export BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
