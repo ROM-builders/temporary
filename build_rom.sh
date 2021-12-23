@@ -1,12 +1,12 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/Spark-Rom/manifest.git -b fire -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Tiktodz/local_manifest.git --depth 1 -b sos .repo/local_manifests
+git clone https://github.com/ArkanMuhammad1986/local_manifest.git --depth 1 -b spark .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch spark_X00TD-userdebug
-export BUILD_USERNAME=tiktodz
+lunch spark_mido-userdebug
+export BUILD_USERNAME=k-fear
 export BUILD_HOSTNAME=electro-wizard
 export TZ=Asia/Jakarta #put before last build command
 mka spark
