@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/aex-tmp/manifest.git -b 12.x -g default,-mips,-darwin,-notdefault
-git clone https://github.com/imannig/local_manifest.git --depth 1 -b aex-12 .repo/local_manifests
+git clone https://github.com/imannig/local_manifest.git --depth 1 -b aex12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
