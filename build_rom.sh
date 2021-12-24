@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/Komodo-OS/manifest -b 1
 git clone https://github.com/WisnuArdhi28/local_manifests.git --depth 1 -b a12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom1
+# build rom2
 source build/envsetup.sh
 lunch komodo_ginkgo-userdebug
 export TZ=Asia/Jakarta #put before last build command
