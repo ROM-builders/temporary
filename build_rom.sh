@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-17.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/aslenofarid/local_manifest.git --depth 1 -b lineage-17.1 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/P-404/platform_manifest -b rippa -g default,-mips,-darwin,-notdefault
+git clone https://github.com/aslenofarid/local_manifest.git --depth 1 -b p404 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_X00TD-userdebug
+lunch p404_X00TD-userdebug
 export TZ=Asia/Jakarata #put before last build command
 make bacon
 
