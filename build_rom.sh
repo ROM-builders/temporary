@@ -6,6 +6,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch xtended_mido-userdebug
+export PRODUCT_OUT
+export HOST_OUT
+export PRODUCT_OUT
+export HOST_OUT_TESTCASES
+export PRODUCT_OUT_TESTCASES
 export TZ=Asia/Jakarta #put before last build command
 make xtended
 mka bacon
