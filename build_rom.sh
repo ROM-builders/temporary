@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Project-Xtended/manifest.git -b xs -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Project-Xtended/manifest.git -b xs -g default,-mips,-darwin,-notdefault
 git clone https://github.com/ArkanMuhammad1986/Local-Manifests.git --depth 1 -b xtended .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch xtended_mido-userdebug
 export TZ=Asia/Jakarta
-make xtended -j$(nproc --all)
+make xtended
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
