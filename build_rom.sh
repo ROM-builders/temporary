@@ -1,6 +1,6 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b spark -g default,-mips,-darwin,-notdefault
-git clone https://github.com/RasyidAlKautsar/local_manifest.git --depth 1 -b Damn .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b fire -g default,-mips,-darwin,-notdefault
+git clone https://github.com/K-fear/local_manifest.git --depth 1 -b Damn .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
@@ -8,7 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch spark_mido-userdebug
 export SKIP_ABI_CHECKS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
