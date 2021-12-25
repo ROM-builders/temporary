@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 git://github.com/ProjectStreak/platform_manifest -b twelve --no-repo-verify -u  -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/ProjectStreak/platform_manifest -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/WisnuArdhi28/local_manifests.git --depth 1 -b a12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch komodo_ginkgo-userdebug
+lunch streak_ginkgo-userdebug
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
