@@ -1,11 +1,13 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-OS/platform_manifest.git -b 12 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/RasyidAlKautsar/local_manifest.git --depth 1 -b Fuck .repo/local_manifests
+git clone https://github.com/RasyidAlKautsar/local_manifest.git --depth 1 -b test-12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
 lunch octavi_mido-userdebug
+export RELAX_USES_LIBRARY_CHECK=true
+export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export SKIP_ABI_CHECKS=true
 export TZ=Asia/Jakarta #put before last build command
