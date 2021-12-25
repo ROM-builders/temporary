@@ -1,12 +1,11 @@
-repo init -depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b twelve -g default,-mips,-darwin,-notdefault
+repo init -depth=1 --no-repo-verify -u git://github.com/crdroidandroid/android.git -b 12.0 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/qwertyuiii-code/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
 # build rom
 . build/envsetup.sh
-lunch aosp_certus-userdebug
-mka bacon
+brunch certus
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line
