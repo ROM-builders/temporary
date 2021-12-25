@@ -3,8 +3,9 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-OS/platform_ma
 git clone https://github.com/Kitsunejasutin/local_manifest.git --depth 1 -b octavi-12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom 
 source build/envsetup.sh
+export OCTAVI_BUILD_TYPE=OFFICIAL
 lunch octavi_ginkgo-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
