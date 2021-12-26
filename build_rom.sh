@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixelExtended/manifes
 git clone https://github.com/jaltod/local_manifest --depth=1 -b slash .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom 
+# build rom
 . build/envsetup.sh
 lunch aosp_vayu-userdebug
 export TZ=Asia/Jakarta #put before last build command
