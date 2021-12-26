@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom 
 source build/envsetup.sh
 export OCTAVI_BUILD_TYPE=OFFICIAL
+export SELINUX_IGNORE_NEVERALLOWS=true
 lunch octavi_ginkgo-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
