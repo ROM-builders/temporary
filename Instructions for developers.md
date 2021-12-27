@@ -15,6 +15,7 @@ You can also clone device tree, common device tree, kernel tree, vendor tree by 
 
 `repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8`
 
+
 ##### 6. Clone device tree, common device tree (if exists), kernel tree and vendor tree for Redmi Note 4 to specific folder. Where to clone trees is told inside BoardConfig.mk file.
 
 We need to clone device tree in device/xiaomi/mido said in [here](https://github.com/Apon77/aex/blob/aex/BoardConfig.mk#L17).
