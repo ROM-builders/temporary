@@ -6,8 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch cherish_ginkgo-userdebug
-export BUILD_USERNAME=Zebbbs
-export BUILD_HOSTNAME=Zebbbs
+export BUILD_USERNAME=SupraGeter
+export BUILD_HOSTNAME=SupraGetee
 export TZ=Asia/Jakarta
 export ALLOW_MISSING_DEPENDENCIES=true
 brunch ginkgo
