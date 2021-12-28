@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch octavi_mido-userdebug
+lunch octavi_mido-user
 export SKIP_ABI_CHECKS=true
 export TZ=Asia/Jakarta #put before last build command
 brunch mido
