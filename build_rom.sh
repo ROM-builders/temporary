@@ -1,14 +1,14 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/P-404/android_manifest.git -b rippa -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/projectarcana-aosp/manifest.git -b 12.x -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Kendras056/local_manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) 
 
 # build roms
 source build/envsetup.sh
-lunch p404_X00TD-userdebug
+lunch aosp_X00TD-userdebug
 export BUILD_USERNAME=venom
 export BUILD_HOSTNAME=android-build
-export TZ=Asia/Tokyo
+export TZ=Asia/Bangkok
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
