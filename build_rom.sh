@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch octavi_pine-userdebug
 #Remove gapps, this is only for testing
-export WITH_GAPPS=true
+#export WITH_GAPPS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
