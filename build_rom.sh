@@ -7,9 +7,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch lineage_A6020-userdebug
 export BUILD_USER="Ibratabian17"
-export BUILD_HOST="Hiper"
+export BUILD_HOST="EmerlSyc"
+export BUILD_USERNAME="Ibratabian17"
+export BUILD_HOSTNAME="EmerlSyc"
 export LINUX_COMPILE_BY="Ibratabian17"
-export LINUX_COMPILE_HOST="Hiper"
+export LINUX_COMPILE_HOST="EmerlSyc"
 export TZ=Asia/Jakarta #put before last build command
 croot
 brunch A6020
