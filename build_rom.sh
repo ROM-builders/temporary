@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/Fusion-OS/android_manif
 git clone https://github.com/Kendras056/local_manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
-# build roms
+# build rom
 source build/envsetup.sh
 lunch fuse_X00TD-userdebug
 export BUILD_USERNAME=venom
