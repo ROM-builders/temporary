@@ -1,14 +1,12 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ProjectStreak/platform_manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Enprytna/local_manifests --depth 1 -b streak .repo/local_manifests
+git clone https://github.com/AbrarNoob/local_manifest --depth 1 -b st .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
-lunch streak_ginkgo-userdebug
+source build/envsetup.sh
+lunch streak_lavender-userdebug
 export TZ=Asia/Jakarta #put before last build command
-export BUILD_USERNAME=endi
-export BUILD_HOSTNAME=enprytna
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
