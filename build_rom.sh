@@ -11,6 +11,7 @@ export BUILD_USER=finix
 export BUILD_HOST=rosy
 export BUILD_USERNAME=finix
 export BUILD_HOSTNAME=rosy
+export ALLOW_MISSING_DEPENDENCIES=true
 brunch rosy
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
