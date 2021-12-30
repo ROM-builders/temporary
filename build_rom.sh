@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Fusion-OS/android_manifest.git -b twelve -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/Project-Heavens/android_manifest.git -b 11 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Kendras056/local_manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 # build roms
 source build/envsetup.sh
-lunch fuse_X00TD-userdebug
+lunch heavens_X00TD-userdebug
 export BUILD_USERNAME=venom
 export BUILD_HOSTNAME=android-build
 export TZ=Asia/Bangkok
