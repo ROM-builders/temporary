@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch cherish_joan-user
+lunch havoc_joan-user
 export TZ=Asia/Karachi #put before last build command
 brunch joan
 
