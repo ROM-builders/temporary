@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest.git -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/PixelOS-Devices/local_manifests.git --depth 1 -b ulysse-s .repo/local_manifests
+git clone https://github.com/danyscape/local_manifests.git --depth 1 -b twelve-mi8937 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_mi8937-userdebug
+lunch aosp_mi8937-user
 export TZ=Asia/Kuala Lumpur #put before last build command
 make bacon
 
