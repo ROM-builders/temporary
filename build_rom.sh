@@ -1,11 +1,14 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/Evolution-X/manifest -b snow -g default,-mips,-darwin,-notdefault
-git clone https://github.com/lynnnnzx/local_manifest.git --depth 1 -b main .repo/local_manifests
+git clone https://github.com/lynnnnzx/local_manifest.git --depth 1 -b twelve-evox .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom 
 source build/envsetup.sh
 lunch evolution_juice-userdebug
+export BUILD_USERNAME=lynx
+export KBUILD_BUILD_USER=LynZx
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Jakarta
 mka evolution
 
