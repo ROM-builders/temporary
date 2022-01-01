@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/StatiXOS/android_manifest.git -b sc  -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Fr0ztyy43/begonia-nowy/blob/main/lcoal_manifest --depth 1 -b main .repo/local_manifests
+git clone https://github.com/Fr0ztyy43/begonia-nowy/blob/main/local_manifest --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
