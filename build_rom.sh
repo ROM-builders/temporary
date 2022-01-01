@@ -9,8 +9,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch lineage_tiare-user
 export TZ=Asia/Kolkata #put before last build command
-export BUILD_HOSTNAME=techyminati
-export BUILD_USERNAME=cirrus-ci
+export BUILD_USERNAME=techyminati
+export BUILD_HOSTNAME=cirrus-ci
 mka bacon
 
 # get buildate for OTA pushing
