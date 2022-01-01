@@ -7,8 +7,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch octavi_rosy-userdebug
 export TZ=Asia/Jakarta
-export BUILD_USER=finix
-export BUILD_HOST=rosy
+export KBUILD_USER=finix
+export KBUILD_HOST=rosy
 export BUILD_USERNAME=finix
 export BUILD_HOSTNAME=rosy
 export ALLOW_MISSING_DEPENDENCIES=true
