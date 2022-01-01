@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch nad_X00TD-userdebug
+export BUILD_USERNAME=tiktod
 export TZ=Asia/Bangkok #put before last build command
 mka nad
 
