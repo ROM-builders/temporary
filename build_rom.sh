@@ -7,9 +7,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch havoc_joan-user
 export BUILD_USER=ShahzebQureshi
-export BUILD_HOST=Bhai-putar
+export BUILD_HOST=cirrus-ci
 export BUILD_USERNAME=ShahzebQureshi
-export BUILD_HOSTNAME=Bhai-putar
+export BUILD_HOSTNAME=cirrus-ci
 export TZ=Asia/Karachi #put before last build command
 mka evolution
 
