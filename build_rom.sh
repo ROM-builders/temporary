@@ -10,7 +10,6 @@ export BUILD_USERNAME=ramaa
 export BUILD_HOSTNAME=ramaa
 export TZ=Asia/Jakarta
 export ALLOW_MISSING_DEPENDENCIES=true
-export SELINUX_IGNORE_NEVERALLOWS=true
 mka komodo
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
