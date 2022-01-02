@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build
 source build/envsetup.sh
-lunch lineage_tiare-user
+lunch lineage_tiare-userdebug
 export TZ=Asia/Kolkata #put before last build command
 export BUILD_USERNAME=techyminati
 export BUILD_HOSTNAME=cirrus-ci
