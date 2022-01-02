@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch bacon-user
+lunch lineage_bacon-userdebug
 export TZ=America/Pacific #put before last build command
 mka bacon
 
