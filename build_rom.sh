@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch evolution_juice-user
+lunch evolution_juice-userdebug
 export BUILD_USERNAME=lynx
 export KBUILD_BUILD_USER=LynZx
 export KBUILD_BUILD_HOST=Cirrus-CI
