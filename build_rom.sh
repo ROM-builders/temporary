@@ -10,7 +10,7 @@ export BUILD_USER=ShahzebQureshi
 export BUILD_HOST=cirrus-ci
 export BUILD_USERNAME=ShahzebQureshi
 export BUILD_HOSTNAME=cirrus-ci
-lunch evolution_joan-user
+lunch evolution_joan-userdebug
 export TZ=Asia/Karachi #put before last build command
 mka bacon
 
