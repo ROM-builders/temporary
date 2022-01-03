@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/Octavi-OS/platform_mani
 git clone https://github.com/HoleDroid/local_manifests.git --depth 1 -b dos .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build roms
 source build/envsetup.sh
 lunch octavi_X00TD-userdebug
 export TZ=Asia/Bangkok #put before last build command
