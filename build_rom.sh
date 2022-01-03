@@ -6,8 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch komodo_ginkgo-userdebug
-export BUILD_USERNAME=rama
-export BUILD_HOSTNAME=rama
+export BUILD_USERNAME=Ramadhani
+export BUILD_HOSTNAME=Ramadhani
 export TZ=Asia/Jakarta
 export ALLOW_MISSING_DEPENDENCIES=true
 mka komodo
