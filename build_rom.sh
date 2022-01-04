@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/Project-Elixir/manifest
 git clone https://github.com/laleeroy/local_manifest.git --depth 1 -b mi8937 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build ro m
+# build rom
 source build/envsetup.sh
 lunch aosp_mi8937-userdebug
 export TZ=Asia/Manila #put before last build command
