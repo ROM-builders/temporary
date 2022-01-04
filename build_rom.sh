@@ -7,7 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch evolution_juice-userdebug
 export BUILD_USERNAME=lynx
-export BUILD_HOSTNAME=Cirrus-CI
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Jakarta
 mka evolution
