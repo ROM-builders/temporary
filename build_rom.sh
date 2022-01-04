@@ -6,6 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_juice-userdebug
+export BUILD_USERNAME=cyb3rgod0
+export BUILD_HOSTNAME=fsociety
 export TZ=Asia/Kolkata #put before last build command
 make bacon
 
