@@ -4,11 +4,8 @@ git clone https://github.com/jhonnytech90/local_manifest.git --depth 1 -b main .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 source build/envsetup.sh
-lunch cafex_lavender-userdebug
+lunch cafex_A001D-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
-export TZ=Asia/Kolkata
-export KBUILD_BUILD_USER=wHoEMi
-export KBUILD_BUILD_HOST=ehtesham
 m cafex
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
