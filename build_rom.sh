@@ -1,7 +1,7 @@
 # sync rom
 repo init -u https://github.com/AOSPA/manifest -b sapphire
 git clone https://github.com/HimanishM25/local_manifest.git --depth 1 -b master .repo/local_manifests
-repo sync -c --no-clone-bundle --current-branch --no-tags 
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
 # build rom
