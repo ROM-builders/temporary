@@ -5,9 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch spark_pine-userdebug
+lunch spark_pine-user
 export WITH_GAPPS=true
-export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
