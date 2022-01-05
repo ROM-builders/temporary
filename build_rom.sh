@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch bliss_pine-userdebug
 #FOR TESTING
-export ALLOW_MISSING_DEPENDENCIES=true 
+#export ALLOW_MISSING_DEPENDENCIES=true 
 #FOR TESTING
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
