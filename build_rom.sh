@@ -1,16 +1,15 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/ping2109/local_manifest.git --depth 1 -b cherish-bery .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-OS/platform_manifest.git -b 12 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/ping2109/local_manifest.git --depth 1 -b octavi-bery .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
-lunch cherish_beryllium-userdebug
+lunch octavi_beryllium-userdebug
 export SKIP_ABI_CHECKS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/HoChiMinh #put before last build command
-export BUILD_HOSTNAME=yourasianmom
-mka bacon
+brunch beryllium
 
 
 
