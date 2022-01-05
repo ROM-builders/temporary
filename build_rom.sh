@@ -6,8 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_ginkgo-userdebug
-export BUILD_USERNAME=Ramadhani
-export BUILD_HOSTNAME=Rama
+export BUILD_USERNAME=hitch
+export BUILD_HOSTNAME=blazerr
 export TZ=Asia/Jakarta
 export ALLOW_MISSING_DEPENDENCIES=true
 m aex
