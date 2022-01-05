@@ -5,6 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 
 # build rom
+source build/envsetup.sh
+lunch aospa_laurel_sprout
 export TZ=Asia/India #put before last build command
 ./rom-build.sh laurel_sprout
 
