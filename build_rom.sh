@@ -7,8 +7,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch lineage_X00TD-userdebug
 export BUILD_USERNAME=tiktodz
-export BUILD_HOSTNAME=nobody
-export TZ=Asia/Jakarta #put before last build command
+export BUILD_HOSTNAME=nobody-build
+export TZ=Asia/Bangkok #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
