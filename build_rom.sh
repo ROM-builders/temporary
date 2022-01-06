@@ -6,6 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch octavi_tulip-userdebug
+export WITH_GAPPS=true
+export TARGET_GAPPS_ARCH=arm64
 export TZ=Asia/Dhaka #put before last build command
 brunch tulip
 
