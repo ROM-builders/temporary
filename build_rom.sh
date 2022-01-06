@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/exthmui/android.git -b exthm-11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/lynnnnzx/local_manifest.git --depth 1 -b main .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/ProjectSakura/android.git -b 11 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/lynnnnzx/local_manifest.git --depth 1 -b sakura .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
-lunch exthm_juice-userdebug
+lunch lineage_juice-userdebug
 export BUILD_USERNAME=lynx
 export TZ=Asia/Jakarta
 mka bacon
