@@ -12,7 +12,6 @@ export KBUILD_HOST=user
 export BUILD_USERNAME=rosy
 export BUILD_HOSTNAME=user
 export SELINUX_IGNORE_NEVERALLOWS=true
-export WITH_GAPPS=true
 brunch rosy
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
