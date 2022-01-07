@@ -7,8 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch octavi_rosy-userdebug
 export TZ=Asia/Jakarta #put before last build command
-export KBUILD_USER=rosy
-export KBUILD_HOST=user
 export BUILD_USERNAME=rosy
 export BUILD_HOSTNAME=user
 export SELINUX_IGNORE_NEVERALLOWS=true
