@@ -1,5 +1,5 @@
 # sync rom
-repo init -u git://github.com/AospExtended/manifest.git -b 11.x
+repo init --depth=1 --no-repo-verify -u git://github.com/AospExtended/manifest.git -b 11.x
 git clone https://github.com/matheucomth/local_manifest --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
