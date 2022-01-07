@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://codeaurora.org/platform/manifest.git -b release -m LA.UM.9.6.2.c25-01800-89xx.0.xml -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/crdroidandroid/android.git -b 11.0 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Guilherme2041/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_A001D-userdebug
+lunch lineage_A001D-userdebug
 export TZ=America/Sao_Paulo
 mka bacon -j8
 
