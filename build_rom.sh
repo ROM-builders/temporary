@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch octavi_rosy-userdebug
 export TZ=Asia/Jakarta #put before last build command
 export BUILD_USERNAME=rosy
-export BUILD_HOSTNAME=user
+export BUILD_HOSTNAME=NFS86
 export SELINUX_IGNORE_NEVERALLOWS=true
 brunch rosy
 
