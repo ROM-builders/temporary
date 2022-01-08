@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch vince-userdebug
 export KBUILD_BUILD_USER="android"
 export KBUILD_BUILD_HOST="localhost"
-export SELINUX_IGNORE_NEVERALLOWS=true
+#export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
