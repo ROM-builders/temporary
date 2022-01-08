@@ -1,12 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u  git://github.com/projectarcana-aosp/manifest -b 12.x -g default,-mips,-darwin,-notdefault
-git clone https://github.com/laleeroy/local_manifest.git --depth 1 -b mi8937 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u  git://github.com/Evolution-X/manifest -b snow -g default,-mips,-darwin,-notdefault
+git clone https://github.com/laleeroy/local_manifest.git --depth 1 -b alioth .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch aosp_mi8937-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Manila #put before last build command
 make bacon
 
