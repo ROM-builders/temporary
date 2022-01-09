@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch cherish_ginkgo-userdebug
 export BUILD_USERNAME=Rama
-export BUILD_HOSTNAME=FiveTeen
+export BUILD_HOSTNAME=CirrusCI
 export TZ=Asia/Jakarta
 export ALLOW_MISSING_DEPENDENCIES=true
 mka cherish
