@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch vince-userdebug
+lunch vince-user
 export KBUILD_BUILD_USER="android"
 export KBUILD_BUILD_HOST="localhost"
 #export SELINUX_IGNORE_NEVERALLOWS=true
