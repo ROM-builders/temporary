@@ -12,6 +12,10 @@ source build/envsetup.sh
 export TZ=Asia/Jakarta #put before last build command
 croot
 lunch arrow_A6020-userdebug
+BUILD_USER="Ibratabian17"
+BUILD_HOST="EmerlSyc"
+BUILD_USERNAME="Ibratabian17"
+BUILD_HOSTNAME="EmerlSyc"
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
