@@ -4,13 +4,9 @@ git clone https://gitlab.com/cherishos_lava/local_manifest.git --depth 1 -b a12 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-export SELINUX_IGNORE_NEVERALLOWS_ON_USER=true
 source build/envsetup.sh
-export SELINUX_IGNORE_NEVERALLOWS_ON_USER=true
-lunch cherish_lava-user
-export SELINUX_IGNORE_NEVERALLOWS_ON_USER=true
+lunch cherish_lava-userdebug
 export TZ=Asia/Dhaka #put before last build command
-export SELINUX_IGNORE_NEVERALLOWS_ON_USER=true
 mka derp
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
