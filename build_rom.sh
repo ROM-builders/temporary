@@ -4,6 +4,8 @@ git clone https://github.com/ibraaltabian17/local_manifest.git --depth 1 -b arro
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom Arrow
+export BUILD_USERNAME="Ibratabian17"
+export BUILD_HOSTNAME="EmerlSyc"
 BUILD_USER="Ibratabian17"
 BUILD_HOST="EmerlSyc"
 BUILD_USERNAME="Ibratabian17"
@@ -12,6 +14,8 @@ source build/envsetup.sh
 export TZ=Asia/Jakarta #put before last build command
 croot
 lunch arrow_A6020-userdebug
+export BUILD_USERNAME="Ibratabian17"
+export BUILD_HOSTNAME="EmerlSyc"
 BUILD_USER="Ibratabian17"
 BUILD_HOST="EmerlSyc"
 BUILD_USERNAME="Ibratabian17"
