@@ -50,8 +50,6 @@ task:
   name: Build
   skip: $CIRRUS_BRANCH == 'main'
   only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
-  depends_on:
-    - Test
   timeout_in: 4h
   persistent_worker:
     labels:
