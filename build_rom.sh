@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch lineage_A001D-userdebug
+lunch lineage_A001D-userdebug #PUTT
 export TZ=America/Sao_Paulo
 mka bacon
 
