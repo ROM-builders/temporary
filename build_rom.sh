@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch corvus_sweet-userdebug
 export TZ=Asia/Dhaka #put before last build commands
-make corvu
+make corvus
 
 
 export 
