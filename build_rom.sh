@@ -6,8 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch cherish_ginkgo-userdebug
-export BUILD_USERNAME=Rama
-export BUILD_HOSTNAME=Not4You
+export BUILD_USERNAME=Zipp
+export BUILD_HOSTNAME=ZephyrusROG
 export TZ=Asia/Jakarta
 export ALLOW_MISSING_DEPENDENCIES=true
 brunch ginkgo
