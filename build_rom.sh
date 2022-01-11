@@ -8,6 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch legion_juice-userdebug
 export BUILD_USERNAME=lynx
 export SELINUX_IGNORE_NEVERALLOWS=true
+export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta
 make legion
 
