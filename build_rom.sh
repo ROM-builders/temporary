@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch cafex_A001D-userdebug
-export TZ=America/Sao_Paulo
+export TZ=America/Sao_Paulo #upgrade
 m cafex
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
