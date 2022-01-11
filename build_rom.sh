@@ -1,4 +1,4 @@
-# sync rom
+# sync rom.
 repo init --depth=1 --no-repo-verify -u https://github.com/Project-Fluid/manifest.git -b fluid-12 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/flashokillerify/Local-Manifests/blob/ --depth 1 -b fluid-12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
