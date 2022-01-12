@@ -1,12 +1,12 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest.git -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/sanjeevstunner/Manifest.git --depth 1 -b vayu_aosp .repo/local_manifests
+git clone https://github.com/sanjeevstunner/Manifest.git --depth 1 -b temp .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom 
 source build/envsetup.sh
 lunch aosp_vayu-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
+# export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
