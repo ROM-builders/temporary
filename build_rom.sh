@@ -1,9 +1,9 @@
-# sync rom
+# sync roms
 repo init --depth=1 --no-repo-verify -u https://github.com/Fusion-OS/android_manifest -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/HoleDroid/local_manifests.git --depth 1 -b dos .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build roms
 source build/envsetup.sh
 lunch fuse_X00TD-userdebug
 export TZ=Asia/Tokyo #put before last build command
