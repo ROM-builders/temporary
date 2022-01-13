@@ -5,8 +5,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch aosp_santoni-user
+lunch aosp_santoni-userdebug
+export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Dhaka #put before last build command
+export BUILD_USERNAME=nabil
+export BUILD_HOSTNAME=project-entire
 m rohie
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
