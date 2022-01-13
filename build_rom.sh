@@ -6,7 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build roms
 source build/envsetup.sh
 lunch cipher_X00TD-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
+export SKIP_ABI_CHECKS=true
+export SKIP_API_CHECKS=true
 export TZ=Asia/Bangkok #put before last build command
 make bacon
 
