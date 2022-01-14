@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Project-Elixir/manifest -b snow -g default,-mips,-darwin,-notdefault
-git clone https://github.com/dlwlrma123/local_manifest --depth 1 -b SDM439 .repo/local_manifests
+git clone https://github.com/vytska69/Local-Manifests --depth 1 -b elixir .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom...
 source build/envsetup.sh
-lunch aosp_vayu-user
+lunch aosp_pine-user
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
