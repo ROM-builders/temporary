@@ -9,6 +9,7 @@ lunch aosp_rosy-userdebug
 export TZ=Asia/Jakarta
 export BUILD_USERNAME=rosy
 export BUILD_HOSTNAME=user
+export WITH_GAPPS := true
 make bacon
 
 # upload rom
