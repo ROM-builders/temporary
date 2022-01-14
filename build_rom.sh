@@ -4,7 +4,7 @@ git clone https://github.com/lynnnnzx/local_manifest.git --depth 1 -b twelve-ppu
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+. build/envsetup.sh 
 lunch aosp_juice-userdebug
 export BUILD_USERNAME=lynx
 export KBUILD_BUILD_USER=LynZx
