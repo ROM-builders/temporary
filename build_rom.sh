@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Project-Elixir/manife
 git clone https://github.com/nohaxrobot/Local-Manifests --depth 1 -b elixir .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom....
+# build rom.......
 source build/envsetup.sh
 lunch aosp_pine-user
 export TZ=Asia/Kolkata #put before last build command
