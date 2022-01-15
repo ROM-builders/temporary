@@ -6,8 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch xtended_ginkgo-userdebug
-export BUILD_USERNAME=Zephyrus
-export BUILD_HOSTNAME=Zephyrus
+export BUILD_USERNAME=Nezha 哪吒
+export BUILD_HOSTNAME=Ram ×͜×
 export TZ=Asia/Jakarta
 export ALLOW_MISSING_DEPENDENCIES=true
 make xtended
