@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manif
 git clone https://github.com/danyscape/local_manifests.git --depth 1 -b twelve-mi8937 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom 
+# build rom
 source build/envsetup.sh
 lunch aosp_mi8937-userdebug
 export TZ=Asia/Kuala Lumpur #put before last build command
