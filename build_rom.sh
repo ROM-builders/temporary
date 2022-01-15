@@ -9,6 +9,7 @@ lunch superior_juice-userdebug
 export BUILD_USERNAME=lynx
 export KBUILD_BUILD_USER=LynZx
 export KBUILD_BUILD_HOST=Cirrus-CI
+export BUILD_WITH_GAPPS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Jakarta
 make bacon
