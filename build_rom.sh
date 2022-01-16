@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch sytx_moon-user
+lunch sytx_moon-userdebug
 export TZ=Asia/Dhaka #put before last build command
 m sytx-ota
 
