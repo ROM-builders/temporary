@@ -1,13 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ProjectRadiant/manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/GhostMaster69-dev/local_manifest --depth 1 -b radiant-12 .repo/local_manifests
+git clone https://github.com/hsx02/Local-Manifests.git --depth 1 -b rdn-12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch vince-userdebug
-export KBUILD_BUILD_USER="radiant"
-export KBUILD_BUILD_HOST="localhost"
+lunch radiant_pine-userdebug
 export SELINUX_IGNORE_NEVERALLOWS="true"
 export TZ="Asia/Dhaka" #put before last build command
 mka bacon
