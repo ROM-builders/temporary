@@ -1,14 +1,16 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/ping2109/local_manifest.git --depth 1 -b cherish-davinci .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-19.0 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/ping2109/local_manifest.git --depth 1 -b lineage-davinci .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch lineage_davinci-userdebug
+export TZ=Asia/HoChiMinh #   put before last build command
 export SKIP_ABI_CHECKS=true
 export ALLOW_MISSING_DEPEDENCIES=true
-export TZ=Asia/HoChiMinh #put before last build command
+export BUILD_HOSTNAME=ping2109
+export BUILD_USERNAME=urmom
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
