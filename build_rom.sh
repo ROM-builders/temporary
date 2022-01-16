@@ -9,8 +9,6 @@ lunch lineage_davinci-userdebug
 export TZ=Asia/HoChiMinh #   put before last build command
 export SKIP_ABI_CHECKS=true
 export ALLOW_MISSING_DEPEDENCIES=true
-export BUILD_HOSTNAME=ping2109
-export BUILD_USERNAME=urmom
 mka bacon
 
 
