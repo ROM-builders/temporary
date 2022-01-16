@@ -9,7 +9,6 @@ lunch conquer_santoni-userdebug
 export TZ=Asia/Dhaka #put before last build command
 export BUILD_USERNAME=nabil
 export BUILD_HOSTNAME=project-entire
-
 make carthage
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
