@@ -6,8 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch octavi_ginkgo-userdebug
-export BUILD_USERNAME=Nezha 哪吒
-export BUILD_HOSTNAME=RamJR×͜×
+export BUILD_USERNAME=Chirra×͜×
+export BUILD_HOSTNAME=NotYou×͜×
 export TZ=Asia/Jakarta
 export ALLOW_MISSING_DEPENDENCIES=true
 brunch ginkgo
