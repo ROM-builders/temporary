@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch voltage_selene-userdebug
-export TZ=Asia/Kolkata #put before last build command
+export TZ=Asia/Dehradun #put before last build command
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export WITH_GAPPS=true
