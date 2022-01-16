@@ -24,18 +24,15 @@ task:
   notify_script:
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
-    - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-17.1 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-15.1 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-19.0 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == ArrowOS ]]; then if [[ $branch_name == arrow-12.0 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Project-Fluid ]]; then if [[ $branch_name == fluid-12 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == CipherOS ]]; then if [[ $branch_name == twelve ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Project-LegionOS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Project-Awaken ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Octavi-OS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == ProjectRadiant ]]; then if [[ $branch_name == 'twelve' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == lighthouse-os ]]; then if [[ $branch_name == 'sailboat' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == ShapeShiftOS ]]; then if [[ $branch_name == 'android_12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+
+    - for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve" "Spark-Rom spark" "PixelExtended snow" "Corvus-R 12" "crdroidandroid 12.0" "AospExtended 12.x" "NusantaraProject-ROM 12"
+
+    - do
+    - item1=$(echo $item | awk -F ' ' '{print $1}')
+    - item2=$(echo $item | awk -F ' ' '{print $2}')
+    - if [[ $rom_name == $item1 ]]; then if [[ $branch_name == $item2 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+    - done
+
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
     - your_telegram_id=@ROM_builders_junk
@@ -78,18 +75,15 @@ task:
     - set -e
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
-    - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-17.1 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-15.1 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-19.0 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == ArrowOS ]]; then if [[ $branch_name == arrow-12.0 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Project-Fluid ]]; then if [[ $branch_name == fluid-12 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == CipherOS ]]; then if [[ $branch_name == twelve ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Project-LegionOS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Project-Awaken ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Octavi-OS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == ProjectRadiant ]]; then if [[ $branch_name == 'twelve' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == lighthouse-os ]]; then if [[ $branch_name == 'sailboat' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == ShapeShiftOS ]]; then if [[ $branch_name == 'android_12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+
+    - for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve" "Spark-Rom spark" "PixelExtended snow" "Corvus-R 12" "crdroidandroid 12.0" "AospExtended 12.x" "NusantaraProject-ROM 12"
+
+    - do
+    - item1=$(echo $item | awk -F ' ' '{print $1}')
+    - item2=$(echo $item | awk -F ' ' '{print $2}')
+    - if [[ $rom_name == $item1 ]]; then if [[ $branch_name == $item2 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+    - done
+
     - mkdir -p ~/roms/$rom_name
     - cd ~/roms/$rom_name
     - rm -rf .repo/local_manifests
@@ -102,18 +96,15 @@ task:
     - set -e
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
-    - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-17.1 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-15.1 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-19.0 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == ArrowOS ]]; then if [[ $branch_name == arrow-12.0 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Project-Fluid ]]; then if [[ $branch_name == fluid-12 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == CipherOS ]]; then if [[ $branch_name == twelve ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Project-LegionOS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Project-Awaken ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Octavi-OS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == ProjectRadiant ]]; then if [[ $branch_name == 'twelve' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == lighthouse-os ]]; then if [[ $branch_name == 'sailboat' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == ShapeShiftOS ]]; then if [[ $branch_name == 'android_12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+
+    - for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve" "Spark-Rom spark" "PixelExtended snow" "Corvus-R 12" "crdroidandroid 12.0" "AospExtended 12.x" "NusantaraProject-ROM 12"
+
+    - do
+    - item1=$(echo $item | awk -F ' ' '{print $1}')
+    - item2=$(echo $item | awk -F ' ' '{print $2}')
+    - if [[ $rom_name == $item1 ]]; then if [[ $branch_name == $item2 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+    - done
+
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
     - cd ~/roms/$rom_name
@@ -122,7 +113,7 @@ task:
     - export USE_CCACHE=1
     - ccache -M 8G
     - ccache -z
-    - ls device/*/*/vendorsetup.sh && echo "Please remove vendorsetup.sh file from device tree, use local manifest for cloning and removing repositories." && exit 1 || true
+    - ls device/*/*/vendorsetup.sh | grep -v generic && echo "Please remove vendorsetup.sh file from device tree, use local manifest for cloning and removing repositories." && exit 1 || true
     - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v 'rclone copy')
     - bash -c "$command"
 
@@ -130,18 +121,15 @@ task:
     - set -e
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
-    - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-17.1 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-15.1 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-19.0 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == ArrowOS ]]; then if [[ $branch_name == arrow-12.0 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Project-Fluid ]]; then if [[ $branch_name == fluid-12 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == CipherOS ]]; then if [[ $branch_name == twelve ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Project-LegionOS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Project-Awaken ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Octavi-OS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == ProjectRadiant ]]; then if [[ $branch_name == 'twelve' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == lighthouse-os ]]; then if [[ $branch_name == 'sailboat' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == ShapeShiftOS ]]; then if [[ $branch_name == 'android_12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+
+    - for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve" "Spark-Rom spark" "PixelExtended snow" "Corvus-R 12" "crdroidandroid 12.0" "AospExtended 12.x" "NusantaraProject-ROM 12"
+
+    - do
+    - item1=$(echo $item | awk -F ' ' '{print $1}')
+    - item2=$(echo $item | awk -F ' ' '{print $2}')
+    - if [[ $rom_name == $item1 ]]; then if [[ $branch_name == $item2 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+    - done
+
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
     - export CCACHE_DIR=~/ccache/$rom_name/$device
@@ -151,18 +139,15 @@ task:
     - set -e
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
-    - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-17.1 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-15.1 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-19.0 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == ArrowOS ]]; then if [[ $branch_name == arrow-12.0 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Project-Fluid ]]; then if [[ $branch_name == fluid-12 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == CipherOS ]]; then if [[ $branch_name == twelve ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Project-LegionOS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Project-Awaken ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Octavi-OS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == ProjectRadiant ]]; then if [[ $branch_name == 'twelve' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == lighthouse-os ]]; then if [[ $branch_name == 'sailboat' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == ShapeShiftOS ]]; then if [[ $branch_name == 'android_12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+
+    - for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve" "Spark-Rom spark" "PixelExtended snow" "Corvus-R 12" "crdroidandroid 12.0" "AospExtended 12.x" "NusantaraProject-ROM 12"
+
+    - do
+    - item1=$(echo $item | awk -F ' ' '{print $1}')
+    - item2=$(echo $item | awk -F ' ' '{print $2}')
+    - if [[ $rom_name == $item1 ]]; then if [[ $branch_name == $item2 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+    - done
+
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
     - cd ~/roms/$rom_name
@@ -182,18 +167,15 @@ task:
     - set -e
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
-    - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-17.1 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-15.1 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-19.0 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == ArrowOS ]]; then if [[ $branch_name == arrow-12.0 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Project-Fluid ]]; then if [[ $branch_name == fluid-12 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == CipherOS ]]; then if [[ $branch_name == twelve ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Project-LegionOS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Project-Awaken ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Octavi-OS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == ProjectRadiant ]]; then if [[ $branch_name == 'twelve' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == lighthouse-os ]]; then if [[ $branch_name == 'sailboat' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == ShapeShiftOS ]]; then if [[ $branch_name == 'android_12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+
+    - for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve" "Spark-Rom spark" "PixelExtended snow" "Corvus-R 12" "crdroidandroid 12.0" "AospExtended 12.x" "NusantaraProject-ROM 12"
+
+    - do
+    - item1=$(echo $item | awk -F ' ' '{print $1}')
+    - item2=$(echo $item | awk -F ' ' '{print $2}')
+    - if [[ $rom_name == $item1 ]]; then if [[ $branch_name == $item2 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+    - done
+
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
     - cd ~/roms/$rom_name
@@ -220,18 +202,15 @@ task:
     - set -e
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
-    - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-17.1 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-15.1 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-19.0 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == ArrowOS ]]; then if [[ $branch_name == arrow-12.0 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Project-Fluid ]]; then if [[ $branch_name == fluid-12 ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == CipherOS ]]; then if [[ $branch_name == twelve ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Project-LegionOS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Project-Awaken ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == Octavi-OS ]]; then if [[ $branch_name == '12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == ProjectRadiant ]]; then if [[ $branch_name == 'twelve' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == lighthouse-os ]]; then if [[ $branch_name == 'sailboat' ]]; then rom_name=$rom_name-$branch_name; fi; fi
-    - if [[ $rom_name == ShapeShiftOS ]]; then if [[ $branch_name == 'android_12' ]]; then rom_name=$rom_name-$branch_name; fi; fi
+
+    - for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve" "Spark-Rom spark" "PixelExtended snow" "Corvus-R 12" "crdroidandroid 12.0" "AospExtended 12.x" "NusantaraProject-ROM 12"
+
+    - do
+    - item1=$(echo $item | awk -F ' ' '{print $1}')
+    - item2=$(echo $item | awk -F ' ' '{print $2}')
+    - if [[ $rom_name == $item1 ]]; then if [[ $branch_name == $item2 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+    - done
+
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
     - your_telegram_id=@ROM_builders_channel
