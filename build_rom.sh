@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Project-Fluid/manifes
 git clone https://github.com/Jaxer159/manifests --depth 1 -b fluid_11_temporary_juice .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build fluid
 . build/envsetup.sh
 lunch fluid_juice-userdebug
 export TZ=Asia/Dhaka #put before last build command
