@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch spark_mido-userdebug
-export SPARK_BUILD_TYPE=OFFICIAL
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
