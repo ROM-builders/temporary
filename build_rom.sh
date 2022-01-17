@@ -5,7 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-export WITH_GAPPS=true
 lunch aosp_perseus-userdebug
 export TZ=Asia/Bangkok #put before last build command
 make bacon
