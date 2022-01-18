@@ -9,6 +9,7 @@ lunch octavi_rosy-userdebug
 export TZ=Asia/Jakarta #put before last build command
 export BUILD_USERNAME=rosy
 export BUILD_HOSTNAME=NFS86
+export WITH_GAPPS=true
 brunch rosy
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
