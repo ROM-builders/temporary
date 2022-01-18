@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest.git -b snow -g default,-mips,-darwin,-notdefault
-git clone https://github.com/fiqri19102002/local_manifest.git --depth 1 -b master .repo/local_manifests
+git clone https://github.com/fiqri19102002/local_manifest.git --depth 1 -b whyred .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch evolution_ginkgo-userdebug
+lunch evolution_whyred-userdebug
 export TZ=Asia/Jakarta #put before last build command
 export BUILD_USERNAME=fiqri
 export BUILD_HOSTNAME=cirrusci
