@@ -4,6 +4,8 @@ git clone https://github.com/Zkyz7/local_manifest.git --depth 1 -b main .repo/lo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+wget -q  https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/master/clang-r437112b.tar.gz -O "clang-r437112b.tar.gz"
+tar -xf clang-r437112b.tar.gz -C prebuilts/clang/host/linux-x86/clang-r437112b
 echo "zkyz7@shogun" > kernel/xiaomi/vayu/.builderdata
 source build/envsetup.sh
 lunch evolution_vayu-userdebug
