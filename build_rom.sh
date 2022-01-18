@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/env*
-lunch soark_X01BD-userdebug
+lunch spark_X01BD-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon 
 
