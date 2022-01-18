@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 wget -q  https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/master/clang-r437112b.tar.gz -O "clang-r437112b.tar.gz"
 tar -xf clang-r437112b.tar.gz -C prebuilts/clang/host/linux-x86/clang-r437112b
-echo "elizabethangelalorenza@gengkapak" > kernel/xiaomi/vayu/.builderdata
 source build/envsetup.sh
 lunch evolution_vayu-userdebug
 export TZ=Asia/Dhaka #put before last build command
