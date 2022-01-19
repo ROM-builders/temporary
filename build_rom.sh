@@ -4,7 +4,7 @@ git clone https://github.com/sayooxx/local_manifest.git --depth 1 -b main .repo/
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+source build/envsetup.s
 lunch aosp_sweet-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
