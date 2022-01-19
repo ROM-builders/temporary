@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/DerpFest-11/manifest.gi
 git clone https://github.com/raidenkkj/local_manifest --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch conquer_A001D-userdebug
 export TZ=America/Sao_Paulo
 mka derp
