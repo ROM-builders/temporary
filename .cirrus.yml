@@ -13,7 +13,7 @@ task:
       name: AX61-2
     isolation:
       container:
-        image: apon77/aosp:cirrus
+        image: ghcr.io/sushrut1101/docker:latest
         cpu: 2
         memory: 4G
 
