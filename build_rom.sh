@@ -1,7 +1,7 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u -g default git://github.com/ConquerOS/manifest.git -b eleven
+repo init --depth=1 --no-repo-verify -u git://github.com/ConquerOS/manifest.git -b eleven -g default,-mips,-darwin,-notdefault
 git clone https://github.com/raidenkkj/local_manifest.git --depth 1 -b main .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 # build rom
 . build/envsetup.sh
 lunch conquer_A001D-userdebug
