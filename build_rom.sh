@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/ArrowOS/android_manifest -b arrow-12.0 -g default,-mips,-darwin,-notdefault
+repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-12.0
 git clone https://github.com/01soni247/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
