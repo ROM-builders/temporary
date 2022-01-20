@@ -1,6 +1,6 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/PixelPlusUI-SnowCone/manifest -g default,-mips,-darwin,-notdefault
-git clone https://git@github.com:SwitU7Ronald/local_manifest.git --depth 1 -b main .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/PixelPlusUI-SnowCone/manifest.git -g default,-mips,-darwin,-notdefault
+git clone https://github.com/SwitU7Ronald/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
