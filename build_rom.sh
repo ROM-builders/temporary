@@ -7,6 +7,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch arrow_lava-userdebug
 export TZ=Asia/Jakarta #put before last build command
+export ALLOW_MISSING_DEPENDENCIES=true
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 m bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
