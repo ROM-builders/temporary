@@ -6,7 +6,7 @@ env:
 task:
   name: Test
   skip: $CIRRUS_BRANCH == 'main'
-  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
+  only_if: $CIRRUS_REPO_OWNER == 'stupid-kid-af'
   timeout_in: 2m
   persistent_worker:
     labels:
@@ -49,7 +49,7 @@ task:
 task:
   name: Build
   skip: $CIRRUS_BRANCH == 'main'
-  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
+  only_if: $CIRRUS_REPO_OWNER == 'stupid-kid-af'
   depends_on:
     - Test
   timeout_in: 4h
@@ -184,7 +184,7 @@ task:
 task:
   name: Post Build
   skip: $CIRRUS_BRANCH == 'main'
-  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
+  only_if: $CIRRUS_REPO_OWNER == 'stupid-kid-af'
   skip_notifications: true
   depends_on:
     - Build
