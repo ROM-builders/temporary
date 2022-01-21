@@ -8,7 +8,14 @@ task:
 
   only_if: $CIRRUS_REPO_OWNER == 'stupid-kid-af'
   timeout_in: 2m
-
+persistent_worker:
+    labels:
+      name: AX61-2
+    isolation:
+      container:
+        image: apon77/aosp:cirrus
+        cpu: 2
+        memory: 4G
   env_script:
     - env
   show_script:
