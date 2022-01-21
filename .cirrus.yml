@@ -5,7 +5,7 @@ env:
 
 task:
   name: Test
-  skip: $CIRRUS_BRANCH == 'main'
+
   only_if: $CIRRUS_REPO_OWNER == 'stupid-kid-af'
   timeout_in: 2m
   persistent_worker:
@@ -48,7 +48,7 @@ task:
 
 task:
   name: Build
-  skip: $CIRRUS_BRANCH == 'main'
+
   only_if: $CIRRUS_REPO_OWNER == 'stupid-kid-af'
   depends_on:
     - Test
@@ -183,7 +183,7 @@ task:
 
 task:
   name: Post Build
-  skip: $CIRRUS_BRANCH == 'main'
+
   only_if: $CIRRUS_REPO_OWNER == 'stupid-kid-af'
   skip_notifications: true
   depends_on:
