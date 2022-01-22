@@ -5,7 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-sed -i '/qti-telephony-common.jar/d' vendor/xiaomi/santoni/santoni-vendor.mk
 lunch octavi_santoni-userdebug
 export OFFICIAL_BUILD=true
 export TZ=Asia/Dhaka #put before last build command
