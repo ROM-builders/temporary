@@ -9,10 +9,8 @@ lunch nad_X00TD-userdebug
 export TZ=Asia/Jakarta #put before last build command
 export BUILD_USERNAME=GeForce-RTX
 export BUILD_HOSTNAME=android_build
-export SKIP_ABI_CHECKS= true
-export SKIP_API_CHECKS= true
-export BUILD_BROKEN_DUP_RULES := true
 export SELINUX_IGNORE_NEVERALLOWS := true
+export WITH_GAPPS := true
 make nad
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
