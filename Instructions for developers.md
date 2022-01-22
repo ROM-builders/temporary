@@ -5,6 +5,7 @@
 
 `repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 11.x`
 
+
 ##### 4. Change repository of AospExtended if needed by removing and reclonig them, or by using [local manifest](https://forum.xda-developers.com/t/learn-about-the-repo-tool-manifests-and-local-manifests-and-5-important-tips.2329228/).
 
 You can also clone device tree, common device tree, kernel tree, vendor tree by local manifist too.
