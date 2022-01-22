@@ -4,10 +4,10 @@ git clone https://github.com/kuudaaa/local_manifest.git --depth 1 -b main .repo/
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch aosp_vayu-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
-export TZ=Europe/Madrid #put before last build command
+export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
