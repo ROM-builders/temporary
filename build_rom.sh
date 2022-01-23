@@ -1,13 +1,13 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://https://github.com/Project-Awaken/android_manifest.git -b 11 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Project-Awaken/android_manifest.git --depth 1 -b master .repo/local_manifests
-repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch awaken-fagita-ace120ms
 export TZ=Asia/Dhaka #put before last build command
-make bacon -j$(nproc --all)
+mka awaken
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
