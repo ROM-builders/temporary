@@ -17,7 +17,7 @@ rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1
 cd out/target/product/m20lte
 OUTPUT="evolution*m20lte*.zip"
 FILENAME=$(ls $OUTPUT)
-curl -sL https://git.io/file-transfer | sudo bash
+curl -sL https://git.io/file-transfer | bash
 ./transfer wet $FILENAME
 cd -
 exit 0
