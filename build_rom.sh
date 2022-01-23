@@ -7,6 +7,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch evolution_m20lte-userdebug
 export TZ=Asia/Kolkata #put before last build command
+export ALLOW_MISSING_DEPENDENCIES=true #Sorry to use, but it is a workaroud to fix errors related to lineage dependencies that isn't needed for AOSP.
+export SKIP_ABI_CHECKS=true
 mka evolution
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
