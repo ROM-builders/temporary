@@ -1,12 +1,10 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Evolution-X/manifest.git -b snow -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Sushrut1101-ROMs/local_manifests.git --depth=1 .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
+repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest.git -b snow -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Sushrut1101-ROMs/Local-Manifests.git --depth 1 -b master .repo/local_manifests
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-export SKIP_ABI_CHECKS=true
-export ALLOW_MISSING_DEPENDENCIES=true # Sorry to use this, but it being used to skip lineage specific errors (for hardware_samsung repo)
 lunch evolution_m20lte-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka evolution
