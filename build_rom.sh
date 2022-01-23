@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b elle -g default,-mips,-darwin,-notdefault
-git clone https://github.com/imannig/local_manifest.git --depth 1 -b evox .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u  https://github.com/CipherOS/android_manifest -b twelve -g default,-mips,-darwin,-notdefault
+git clone https://github.com/stupid-kid-af/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch evolution_juice-userdebug
+lunch cipher_juice-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka evolution
 
