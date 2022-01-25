@@ -1,7 +1,7 @@
 # sync rom
 repo init -u https://github.com/Octavi-OS/platform_manifest.git -b 11 --depth=1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/mrastrange/local_manifest.git --depth 1 -b main .repo/local_manifests
-repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 # build rom
 source build/envsetup.sh
 lunch octavi_RMX1941-userdebug
