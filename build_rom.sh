@@ -1,11 +1,10 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ForkLineageOS/android.git -b lineage-18.1 -g default,-mips,-darwin,-notdefault
+repo init -u https://github.com/Octavi-OS/platform_manifest.git -b 11 --depth=1
 git clone https://github.com/mrastrange/local_manifest.git --depth 1 -b main .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-
+repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
 # build rom
 source build/envsetup.sh
-lunch lineage_RMX1941-userdebug
+lunch octavi_RMX1941-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
