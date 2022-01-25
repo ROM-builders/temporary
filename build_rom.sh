@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch aosp_vayu-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Europe/Madrid #put before last build command
 mka bacon
 
