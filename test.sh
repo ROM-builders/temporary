@@ -101,7 +101,7 @@ if [[ $rom_name == ArrowOS ]]; then if [[ $branch_name == 'arrow-10.0' ]]; then 
 device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
 grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
 
-if [[ $BRANCH != *pull/* ]]; then if [[ $BRANCH != $device-$rom_name-* ]]; then echo Please use proper branch naming described in push group.$device; exit 1; fi; fi
+if [[ $BRANCH != *pull/* ]]; then if [[ $BRANCH != $device-$rom_name-* ]]; then echo Please use proper branch naming described in push group.; fi; fi
 
 if [[ $BRANCH == *pull/* ]]; then
 cd /tmp/cirrus-ci-build
