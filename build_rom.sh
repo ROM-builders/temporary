@@ -8,6 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch conquer_selene-userdebug
 export ALLOW_MISSING_DEPENDENCES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
+export WITH_GAPPS=true
 export TZ=Asia/Mumbai #put before last build command
 make carthage
 
