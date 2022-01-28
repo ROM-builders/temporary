@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch radiant_X00TD-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
-export TZ=Asia/Jakarta #put before last build command
+export TZ=Asia/Bangkok #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
