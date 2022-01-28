@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 #source build/envsetup.sh
 #lunch aosp_X00TD-userdebug
-export TZ=Asia/Kolkata # put before last build command
+export TZ=Asia/Kolkata #put before last build command
 ./rom-build.sh X00TD
 #mka bacon
 
