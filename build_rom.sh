@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/ForkLineageOS/android.git -b lineage-18.1 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/ForkLineageOS/android.git -b lineage-18.1 -g default,-mips,-darwin,-notdefaul
 git clone https://github.com/raidenkkj/local_manifest --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
