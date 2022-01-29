@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Project-Xtended/manifest.git -b xs -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/Project-Elixir/manifest -b snow -g default,-mips,-darwin,-notdefault
 git clone https://github.com/EvilAnsh/local-manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch xtended_santoni-userdebug
+lunch aosp_santoni-userdebug
 export TZ=Asia/Mumbai #put before last build command
 make xtended
 
