@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 breakfast X00TD
 export BUILD_USERNAME=aslenofarid
+export BUILD_HOSTNAME=android_build
 export TZ=Asia/Jakarta #put before last build command
 croot
 brunch X00TD
