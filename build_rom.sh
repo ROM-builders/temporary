@@ -1,7 +1,7 @@
 # sync rom
-repo init --depth=1 --no-clone-bundle --current-branch --no-tags --no-repo-verify -u git://github.com/AOSPA/manifest.git -b sapphire -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/AOSPA/manifest.git -b sapphire -g default,-mips,-darwin,-notdefault
 git clone https://github.com/wanderlusttt/local_manifest.git --depth=1 -b sapphire .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -c --no-clone-bundle --no-tags --current-branch --prune --force-sync -j8
 
 # build rom
 #source build/envsetup.sh
