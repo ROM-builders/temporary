@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/PotatoProject/manifest -b frico-release -g default,-mips,-darwin,-notdefault
-git clone https://github.com/iamnabilzaman/local_manifest12.git --depth 1 -b posp .repo/local_manifests
+git clone https://github.com/iamnabilzaman/local_manifest12.git -b posp --depth 1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
