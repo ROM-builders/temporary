@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 #source build/envsetup.sh
 #lunch aosp_X00TD-userdebug
 export TZ=Asia/Kolkata #put before last build command
-ln -s vendor/aospa/build.sh build.sh
+ln -sf vendor/aospa/build.sh build.sh
 ./build.sh X00TD
 #mka bacon
 
