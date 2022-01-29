@@ -6,6 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch havoc_begonia-userdebug
+export WITHGAPPS=true
+export TARGETGAPPS_ARCH=arm64
 export TZ=Asia/Dhaka #put before last build command
 brunch begonia
 
