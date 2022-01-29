@@ -8,6 +8,7 @@ source build/envsetup.sh
 lunch potato_santoni-userdebug
 export BUILD_USERNAME=nabil
 export BUILD_HOSTNAME=project-entire
+export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Dhaka #put before last build command
 brunch santoni
 
