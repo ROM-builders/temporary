@@ -7,7 +7,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 #source build/envsetup.sh
 #lunch aosp_X00TD-userdebug
 export TZ=Asia/Kolkata #put before last build command
-./vendor/aospa/build.sh X00TD
+ln -s vendor/aospa/build.sh build.sh
+./build.sh X00TD
 #mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
