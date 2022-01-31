@@ -1,14 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/The-RAVEN-OS/manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone  --depth 1 https://github.com/AtarvNegi2951/local_manifest .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b spark -g default,-mips,-darwin,-notdefault
+git clone  --depth 1 https://github.com/AtarvNegi2951/local_manifest -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_selene-userdebug
+lunch spark_selene-userdebug
 export TZ=Asia/Mumbai #put before last build command
-export ALLOW_MISSING_DEPENDENCIES=true
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+export SELINUX_IGNORE_NEVERALLOWS=true
 
 # Build
 mka bacon
