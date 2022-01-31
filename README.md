@@ -1,4 +1,4 @@
-CipherOS custom ROM Xiaomi Raphael
+CipherOS Custom ROM Xiaomi Raphael
 ==================================
 
 AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note 4(code name mido)
