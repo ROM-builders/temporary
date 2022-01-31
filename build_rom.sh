@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-18.1 default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-OS/platform_manifest.git -b 12 default,-mips,-darwin,-notdefault
 git clone https://github.com/mido/Local-Manifest.git --depth 1 -b main .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
 
 # build rom
 source build/envsetup.sh
-lunch derp_vayu-user
+lunch derp_dld-user
 export TZ=Asia/Dhaka #put before last build command
 mka derp
 
