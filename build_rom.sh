@@ -1,6 +1,6 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-OS/platform_manifest.git -b 12 default,-mips,-darwin,-notdefault
-git clone https://github.com/mido/Local-Manifest.git --depth 1 -b main .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-18.1 default,-mips,-darwin,-notdefault
+git clone https://github.com/mido/Local-Manifest2.git --depth 1 -b main .repo/local_manifests2
 repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
 
 # build rom
