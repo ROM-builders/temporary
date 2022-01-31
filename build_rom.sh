@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch arrow_A001D-userdebug
+lunch lineage_A001D-userdebug
 export TZ=America/Sao_Paulo
 export TARGET_FLOS=true
 make bacon
