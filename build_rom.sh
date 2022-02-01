@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch Crdroid j7elte-user
+Brunch j7elte-user
 export TZ=Asia/Dhaka
 make Crdroid
 
