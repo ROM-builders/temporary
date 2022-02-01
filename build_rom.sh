@@ -1,12 +1,12 @@
 # sync rom
 repo init -u https://github.com/syberia-project/manifest.git -b 12.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/cakdoelnan/local_manifests.git --depth 1 -b evox .repo/local_manifests
+git clone https://github.com/cakdoelnan/local_manifest.git --depth 1 -b evox .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch Zuk_X00R-user
-export TZ=Asia/Bogor #put before last build command
+export TZ=Asia/Dhaka #put before last build command
 mka Zuk
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
