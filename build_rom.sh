@@ -5,7 +5,7 @@ git clone https://github.com/ashwani02c2/local_manifest.git --depth 1 -b main .r
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-.build/envsetup.sh
+source build/envsetup.sh
 brunch j7elte-user
 
 
