@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch arrow_garden-userdebug
+lunch lineage_garden-userdebug
 export TZ=Asia/Kuala Lumpur #put before last build command
 m bacon
 
