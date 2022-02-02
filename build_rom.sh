@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch crdroid_j7elte-user
+export TZ=Asia/Dhaka #put before last build command
 brunch j7elte
 
 
