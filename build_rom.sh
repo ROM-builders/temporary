@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/crdroidandroid/android.git -b 10.0 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Jeremito1/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
-lunch aosp_garden-userdebug
+lunch lineage_garden-userdebug
 export TZ=Asia/Kuala Lumpur #put before last build command
 m bacon
 
