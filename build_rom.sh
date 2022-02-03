@@ -6,8 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch xdroid_X00TD-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
-export BUILD_USER=queen
 export TZ=Asia/Bangkok #put before last build command
 make xd
 
