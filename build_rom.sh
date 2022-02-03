@@ -5,7 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch xtended_j7elte-userdebug
 export TZ=Asia/Dhaka
 brunch j7elte
 
