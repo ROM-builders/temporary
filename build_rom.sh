@@ -1,6 +1,6 @@
 # sync rom
 
-git clone https://github.com/onkarsinghsahil/local_manifest.git --depth 1 -b master .repo/local_manifests
+git clone https://github.com/onkarsinghsahil/local-manifest.git --depth 1 -b master .repo/local_manifest
 
 
 # Initialize local repository
