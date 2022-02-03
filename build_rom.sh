@@ -1,12 +1,13 @@
 
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 11.0 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Havoc-OS/android_manifest.git -b 11.0 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/ashwani02c2/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
 export TZ=Asia/Dhaka #put before last build command
+lunch j7elte-user
 brunch j7elte
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
