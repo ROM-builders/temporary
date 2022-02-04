@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ProjectRadiant/manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/DPSLEGEND/local_mainfest.git --depth 1 -b Radiant .repo/local_manifests
+git clone https://github.com/DPSLEGEND/local_mainfest.git --depth 1 -b radiant .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
