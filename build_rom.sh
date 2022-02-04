@@ -1,4 +1,4 @@
- sync rom
+#sync rom
 
 git clone https://github.com/onkarsinghsahil/local-manifest.git --depth 1 -b master .repo/local_manifest
 
