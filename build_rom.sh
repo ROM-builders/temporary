@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch aosp_olivewood-userdebug
+lunch aosp_beryllium-eng
 export TZ=Asia/Dhaka #put before last build command
 make bacon -j24
 
