@@ -7,7 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 .build/envsetup.sh
 export TZ=Asia/Dhaka #put before last build command
-lunch havoc_j7elte-user
 brunch j7elte
 
 
