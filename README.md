@@ -1,4 +1,4 @@
-AospExtended custom ROM for Redmi Note 4
+AospExtended custom ROM for Redmi K20 Pro
 ===============================
 
 AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note 4(code name mido)
