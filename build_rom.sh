@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/AospExtended/manifest.git -b 11.x -g default,-mips,-darwin,-notdefault
-git clone https://github.com/dangi-del/local-Manifest.git --depth 1 -b aex .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b twelve -g default,-mips,-darwin,-notdefault
+git clone httphttps://github.com/dangi-del/local_manifest.git --depth 1 -b cherish-12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
-lunch aosp_mido-user
+. build/envsetup.sh
+lunch Cherish_mido-userdebug
 export TZ=Asia/india #put before last build command
 mka aex
 
