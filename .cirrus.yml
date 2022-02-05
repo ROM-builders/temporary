@@ -89,7 +89,21 @@ task:
     - rm -rf .repo/local_manifests
     - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
     - only_sync=$(grep 'repo sync' $CIRRUS_WORKING_DIR/build_rom.sh)
-    - (bash -c "$command" | tee sync.txt) || (grep '^fatal: remove-project element specifies non-existent project' sync.txt && exit 1) || (repo forall -c 'git checkout .' && bash -c "$only_sync") || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync")
+    - (bash -c "$command" | tee sync.txt) || true
+    
+    - a=$(grep 'Cannot remove project' sync.txt || true)
+    - b=$(grep "^fatal: remove-project element specifies non-existent project" sync.txt || true)
+    - if [[ $a == *'Cannot remove project'* ]]
+    - then
+    - a=$(echo $a | cut -d ':' -f2)
+    - rm -rf $a
+    - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+    - elif [[ $b == *'remove-project element specifies non-existent'* ]]
+    - then exit 1
+    - else
+    - (repo forall -c 'git checkout .' && bash -c "$only_sync") || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync")
+    - fi
+    
     - rm -rf sync.txt
 
   build_script:
