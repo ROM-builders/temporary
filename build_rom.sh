@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth=1 -u git@github.com:CrystalOS-Temp/manifest.git -b A12 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/MadmoudRMX2020/local_manifest.git --depth 1 -b main .repo/local_manifests
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tag
 rm -rf system/core
 git clone git@github.com:CrystalOS-Temp/system_core system/core
 
