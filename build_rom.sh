@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/ProjectRadiant/manife
 git clone https://github.com/Azure-007/local_manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom - fix
+# build rom
 source build/envsetup.sh
 lunch radiant_raphael-userdebug
 export TZ=Asia/Dhaka #put before last build command
