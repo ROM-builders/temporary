@@ -4,6 +4,7 @@ git clone https://github.com/MadmoudRMX2020/local_manifest.git --depth 1 -b main
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+
 source build/envsetup.sh
 lunch rr_$RMX2020-userdebug
 export TZ=Asia/Dhaka #put before last build command
