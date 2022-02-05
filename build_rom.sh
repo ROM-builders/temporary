@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/NusantaraProject-ROM/android_manifest -b 11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Luffy-droid/local_manifests.git --depth 1 -b master .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/NusantaraProject-ROM/android_manifest -b eleven -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Luffy-droid/local_manifests.git --depth 1 -b Nad-11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
-lunch xiaomi_gemini-user
+. build/envsetup.sh
+lunch aosp_lmi-userdebug
 export TZ=Asia/Indonesia #put before last build command
 mka derp
 
