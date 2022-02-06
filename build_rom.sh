@@ -5,7 +5,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags -j8
 
 # build rom [7]
 source build/envsetup.sh
-lunch weeb_$device-userdebug
+lunch weeb_RMX2185-userdebug
 make weeb-prod -j$(nproc --all)
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
