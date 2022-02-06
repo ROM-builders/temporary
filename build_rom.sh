@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Swamoy14/android_manifest.git -b PR10 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/Swamoy14/android_manifest.git -b PR10 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Dhanzu28/local_manifest.git --depth 1 -b PR10 .repo/local_manifests
 repo sync -j$( nproc --all ) --force-sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
