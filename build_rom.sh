@@ -5,7 +5,7 @@ repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all) -j8
 
 # build rom [7]
 . build/envsetup.sh
-  lunch nad_RMX2185-buildtype
+  lunch nad_<RMX2185>-buildtype
   mka nad
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
