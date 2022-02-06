@@ -93,6 +93,7 @@ task:
     
     - a=$(grep 'Cannot remove project' sync.txt || true)
     - b=$(grep "^fatal: remove-project element specifies non-existent project" sync.txt || true)
+    - c=$(grep 'repo sync has finished' sync.txt || true)
     - if [[ $a == *'Cannot remove project'* ]]
     - then
     - a=$(echo $a | cut -d ':' -f2)
@@ -100,6 +101,8 @@ task:
     - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
     - elif [[ $b == *'remove-project element specifies non-existent'* ]]
     - then exit 1
+    - elif [[ $c == *'repo sync has finished'* ]]
+    - then true
     - else
     - (repo forall -c 'git checkout .' && bash -c "$only_sync") || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync")
     - fi
