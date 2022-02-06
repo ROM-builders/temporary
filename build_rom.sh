@@ -4,7 +4,7 @@ git clone https://github.com/AkhilmsAchu/local_manifest.git --depth 1 -b main .r
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh 
+source build/envsetup.sh
 export HAVOC_BUILD_TYPE=Official
 lunch havoc_tulip-userdebug
 brunch tulip
