@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunchxtended_mido-userdebug
+lunch xtended_mido-userdebug
 export TZ=Asia/Jakarta #put before last build command
 make xtended
 
