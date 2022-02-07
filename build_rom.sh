@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/ResurrectionRemix/platform_manifest.git -b Q -g default,-mips,-darwin,-notdefault
-git clone https://github.com/BASSTANISHK9/local_manifest/blob/0af4a8cfbfb3eb50775ee5994e93827a79597217/local_manifest.xml --depth 1 -b master .repo/local_manifests
+git clone https://github.com/BASSTANISHK9/local_manifest/blob/0af4a8cfbfb3eb50775ee5994e93827a79597217/local_manifest.xml --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
