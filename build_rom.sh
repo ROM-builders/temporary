@@ -1,13 +1,13 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/NusantaraProject-ROM/android_manifest.git -b 11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Tiktodz/local_manifest.git --depth 1 -b nad .repo/local_manifests
+git clone https://github.com/Dhanzu28/local_manifest.git --depth 1 -b nad .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch nad_X00TD-userdebug
-export BUILD_USERNAME=tiktod
-export TZ=Asia/Bangkok #put before last build command
+lunch nad_X00T-userdebug
+export BUILD_USERNAME=mikaaaa29
+export TZ=Asia/Jakarta #put before last build command
 mka nad
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
