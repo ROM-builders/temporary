@@ -1,14 +1,14 @@
 # sync roms
 repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-18.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Tiktodz/local_manifest.git --depth 1 -b main .repo/local_manifests
+git clone https://github.com/Dhanzu28/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build roms
 source build/envsetup.sh
-lunch lineage_X00TD-userdebug
-export BUILD_USERNAME=tiktod
-export BUILD_HOSTNAME=terport
-export TZ=Asia/Bangkok #put before last build command
+lunch lineage_X00T-userdebug
+export BUILD_USERNAME=dhanzu
+export BUILD_HOSTNAME=mikaaaayu
+export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
