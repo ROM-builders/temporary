@@ -1,9 +1,9 @@
-# sync roms
+# sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Bootleggers-BrokenLab/manifest -b sambun -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Ruega/local_manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build roms
+# build rom
 source build/envsetup.sh
 lunch bootleg_X00TD-userdebug
 export TZ=Asia/Bangkok #put before last build command
