@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch nad_j7elte-userdebug
+rm -rf hardware/ril/libril
 export TZ=Asia/Dhaka #put before last build command
 mka nad
 
