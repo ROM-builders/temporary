@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch xd_selene-userdebug
 export WITH_GAPPS=true
-export TZ=Asia/Kolkata #put before last build command
+export TZ=Asia/Dehradun #put before last build command
 
 # Build
 mka xd
