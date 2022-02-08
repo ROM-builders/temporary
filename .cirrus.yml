@@ -69,7 +69,7 @@ task:
   show_script:
     - cat $CIRRUS_WORKING_DIR/build_rom.sh
   test_script:
-    - set -e
+    - set -exv
     - curl -Ls https://github.com/ROM-builders/temporary/raw/main/test.sh | bash
   sync_script:
     - set -e
