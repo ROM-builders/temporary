@@ -11,6 +11,7 @@ export ALLOW_MISSING_DEPEDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES=true
+export TARGET_NO_KERNEL=true
 export TZ=Asia/HoChiMinh #put before last build command
 make bacon
 
