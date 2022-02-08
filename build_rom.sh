@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/xdroidsp/xd_manifest -b twelve -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b twelve -g default,-mips,-darwin,-notdefaultrepo init --depth=1 --no-repo-verify -u git://https://github.com/xdroidsp/xd_manifest -b twelve -b twelve -g default,-mips,-darwin,-notdefault
 git clone --depth=1 https://github.com/AtarvNegi2951/local_manifest -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
