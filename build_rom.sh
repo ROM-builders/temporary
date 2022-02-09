@@ -9,7 +9,8 @@ lunch lineage_RMX2061-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPEDENCIES=true
 export SKIP_ABI_CHECKS=true
-export TZ=Asia/PH #put before last build command
+export SKIP_API_CHECKS=true
+export TZ=Asia/Manila #put before last build command
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
