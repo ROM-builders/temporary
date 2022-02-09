@@ -91,10 +91,12 @@ task:
     - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
     - only_sync=$(grep 'repo sync' $CIRRUS_WORKING_DIR/build_rom.sh)
     - bash -c "$command" || true
-    
-    - a=$(curl -s https://api.cirrus-ci.com/v1/task/$CIRRUS_TASK_ID/logs/sync.log | grep 'Cannot remove project' -m1|| true)
-    - b=$(curl -s https://api.cirrus-ci.com/v1/task/$CIRRUS_TASK_ID/logs/sync.log | grep "^fatal: remove-project element specifies non-existent project" -m1 || true)
-    - c=$(curl -s https://api.cirrus-ci.com/v1/task/$CIRRUS_TASK_ID/logs/sync.log | grep 'repo sync has finished' -m1 || true)
+
+    - curl -sO https://api.cirrus-ci.com/v1/task/$CIRRUS_TASK_ID/logs/sync.log
+    - sed $(expr $(grep 'Cannot remove project' sync.txt -m1 -n | cut -d : -f1) - 1)q sync.log > sync.txt
+    - a=$(grep 'Cannot remove project' sync.txt -m1|| true)
+    - b=$(grep "^fatal: remove-project element specifies non-existent project" sync.txt -m1 || true)
+    - c=$(grep 'repo sync has finished' sync.txt -m1 || true)
     - if [[ $a == *'Cannot remove project'* ]]
     - then
     - a=$(echo $a | cut -d ':' -f2)
