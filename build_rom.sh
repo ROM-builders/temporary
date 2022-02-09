@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lineage_i9100-user
+lunch lineage_i9100-eng
 export SKIP_ABI_CHECKS=true
 export ALLOW_MISSING_DEPEDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
