@@ -1,15 +1,16 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-19.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/kqeez/android_.repo_local_manifests --depth 1 -b master .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/SuperiorOS/manifest.git -b twelve -g default,-mips,-darwin,-notdefault
+git clone https://github.com/kqeez/local_manifest --depth 1 -b rmx2020 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_RMX2061-userdebug
+lunch superior_RMX2020-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPEDENCIES=true
 export SKIP_ABI_CHECKS=true
-export TZ=Asia/PH #put before last build command
+export SKIP_API_CHECKS=true
+export TZ=Asia/Manila #put before last build command
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
