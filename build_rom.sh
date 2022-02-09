@@ -8,6 +8,7 @@ source build/envsetup.sh
 lunch xdroid_santoni-userdebug
 export BUILD_USERNAME=nabil
 export BUILD_HOSTNAME=project-entire
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 export TZ=Asia/Dhaka #put before last build command
 make xd
 
