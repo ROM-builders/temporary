@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-19.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/kqeez/android_.repo_local_manifests --depth 1 -b master .repo/local_manifests
+git clone https://github.com/kqeez/local_manifest --depth 1 -b rmx2020 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_RMX2061-userdebug
+lunch lineage_RMX2020-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPEDENCIES=true
 export SKIP_ABI_CHECKS=true
