@@ -25,7 +25,7 @@ task:
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
 
-    - for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve" 
+    - for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve" "Spark-Rom spark" "PixelExtended snow" "Corvus-R 12" "crdroidandroid 12.0" "AospExtended 12.x" "NusantaraProject-ROM 12"
 
     - do
     - item1=$(echo $item | awk -F ' ' '{print $1}')
@@ -35,6 +35,7 @@ task:
 
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
+    - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
     - your_telegram_id=@ROM_builders_junk
     - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
     - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Started
@@ -72,11 +73,11 @@ task:
     - set -e
     - curl -Ls https://github.com/ROM-builders/temporary/raw/main/test.sh | bash
   sync_script:
-    - set -e
+    - set -exv
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
 
-    - for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve"
+    - for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve" "Spark-Rom spark" "PixelExtended snow" "Corvus-R 12" "crdroidandroid 12.0" "AospExtended 12.x" "NusantaraProject-ROM 12"
 
     - do
     - item1=$(echo $item | awk -F ' ' '{print $1}')
@@ -89,7 +90,26 @@ task:
     - rm -rf .repo/local_manifests
     - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
     - only_sync=$(grep 'repo sync' $CIRRUS_WORKING_DIR/build_rom.sh)
-    - (bash -c "$command" | tee sync.txt) || (grep '^fatal: remove-project element specifies non-existent project' sync.txt && exit 1) || (repo forall -c 'git checkout .' && bash -c "$only_sync") || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync")
+    - bash -c "$command" || true
+
+    - curl -sO https://api.cirrus-ci.com/v1/task/$CIRRUS_TASK_ID/logs/sync.log
+    - sed $(expr $(grep 'Cannot remove project' sync.txt -m1 -n | cut -d : -f1) - 1)q sync.log > sync.txt
+    - a=$(grep 'Cannot remove project' sync.txt -m1|| true)
+    - b=$(grep "^fatal: remove-project element specifies non-existent project" sync.txt -m1 || true)
+    - c=$(grep 'repo sync has finished' sync.txt -m1 || true)
+    - if [[ $a == *'Cannot remove project'* ]]
+    - then
+    - a=$(echo $a | cut -d ':' -f2)
+    - rm -rf $a
+    - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+    - elif [[ $b == *'remove-project element specifies non-existent'* ]]
+    - then exit 1
+    - elif [[ $c == *'repo sync has finished'* ]]
+    - then true
+    - else
+    - (repo forall -c 'git checkout .' && bash -c "$only_sync") || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync")
+    - fi
+    
     - rm -rf sync.txt
 
   build_script:
@@ -97,7 +117,7 @@ task:
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
 
-    - for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve"
+    - for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve" "Spark-Rom spark" "PixelExtended snow" "Corvus-R 12" "crdroidandroid 12.0" "AospExtended 12.x" "NusantaraProject-ROM 12"
 
     - do
     - item1=$(echo $item | awk -F ' ' '{print $1}')
@@ -107,6 +127,7 @@ task:
 
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
+    - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
     - cd ~/roms/$rom_name
     - export CCACHE_DIR=~/ccache/$rom_name/$device
     - export CCACHE_EXEC=$(which ccache)
@@ -122,7 +143,7 @@ task:
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
 
-    - for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve"
+    - for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve" "Spark-Rom spark" "PixelExtended snow" "Corvus-R 12" "crdroidandroid 12.0" "AospExtended 12.x" "NusantaraProject-ROM 12"
 
     - do
     - item1=$(echo $item | awk -F ' ' '{print $1}')
@@ -132,6 +153,7 @@ task:
 
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
+    - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
     - export CCACHE_DIR=~/ccache/$rom_name/$device
     - ccache -s
 
@@ -140,7 +162,7 @@ task:
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
 
-    - for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve"
+    - for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve" "Spark-Rom spark" "PixelExtended snow" "Corvus-R 12" "crdroidandroid 12.0" "AospExtended 12.x" "NusantaraProject-ROM 12"
 
     - do
     - item1=$(echo $item | awk -F ' ' '{print $1}')
@@ -150,6 +172,7 @@ task:
 
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
+    - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
     - cd ~/roms/$rom_name
     - engzip=$(ls out/target/product/$device/*-eng*.zip || true)
     - otazip=$(ls out/target/product/$device/*-ota-*.zip | grep -v "hentai" | grep -v "evolution" || true)
@@ -160,6 +183,7 @@ task:
     - dlink=$(basename out/target/product/$device/*.zip)
     - command=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
     - if [[ $device == jasmine_sprout ]]; then command="rclone copy out/target/product/jasmine_sprout/*zip cirrus:jasmine_sprout -P"; fi
+    - if [[ $device == laurel_sprout ]]; then command="rclone copy out/target/product/laurel_sprout/*zip cirrus:laurel_sprout -P"; fi
     - bash -c "$command"
     - echo "Download link https://roms.cirrus-ci.workers.dev/0:/$device/$dlink"
 
@@ -168,7 +192,7 @@ task:
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
 
-    - for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve"
+    - for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve" "Spark-Rom spark" "PixelExtended snow" "Corvus-R 12" "crdroidandroid 12.0" "AospExtended 12.x" "NusantaraProject-ROM 12"
 
     - do
     - item1=$(echo $item | awk -F ' ' '{print $1}')
@@ -178,6 +202,7 @@ task:
 
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
+    - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
     - cd ~/roms/$rom_name
     - rm -rf out/target/product/$device
 
@@ -203,7 +228,7 @@ task:
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
 
-    - for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve"
+    - for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve" "Spark-Rom spark" "PixelExtended snow" "Corvus-R 12" "crdroidandroid 12.0" "AospExtended 12.x" "NusantaraProject-ROM 12"
 
     - do
     - item1=$(echo $item | awk -F ' ' '{print $1}')
@@ -213,6 +238,7 @@ task:
 
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
+    - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
     - your_telegram_id=@ROM_builders_channel
     - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Succeed
       
