@@ -1,11 +1,11 @@
 # sync rom
-repo init -u git://github.com/DerpFest-11/manifest.git -b 11 -g default,-mips,-darwin,-notdefault
+repo init -u git://github.com/DerpFest-11/manifest.git -b 11
 git clone https://github.com/Neutralxs/local_manifest --depth 1 .repo/local_manifests
-repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all) -j8
+repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 
 # build rom [7]
 . build/envsetup.sh
-lunch derp_hotdog-RMX2185
+lunch derp_RMX2185-user
 mka derp
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
