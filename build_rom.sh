@@ -4,7 +4,7 @@ git clone https://github.com/BadClients/local_manifest.git --depth 1 -b main .re
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
-build/envsetup.sh
+source build/envsetup.sh
 lunch xdroid_$devicecodename-userdebug
 make xd -j$(nproc --all)
 
