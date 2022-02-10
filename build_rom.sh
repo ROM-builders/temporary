@@ -8,7 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch aosp_selene-userdebug
 export WITH_GAPPS=true
-export TZ=Asia/Kolkata #put before last build command
+export TZ=Asia/Mumbai #put before last build command
 
 # Bacon
 mka bacon
