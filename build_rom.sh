@@ -6,6 +6,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_ulysse-userdebug
+export WITH_GAPPS=true
+export KBUILD_BUILD_USER=leeroy
+export KBUILD_BUILD_HOST=nyenkins
 export TZ=Asia/Manila #put before last build command
 make bacon
 
