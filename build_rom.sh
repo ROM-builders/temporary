@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch aosp_surya-userdebug
+lunch xdroid_surya-userdebug
 export TZ=Asia/jakarta #put before last build command
 make xd 
 
