@@ -104,6 +104,7 @@ grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasm
 grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
 
 if [[ $BRANCH != *pull/* ]]; then if [[ $BRANCH != $device-$rom_name-* ]]; then echo Please use proper branch naming described in push group.; exit 1; fi; fi
+if [[ $device == 'copy' ]]; then echo "Please use lunch or brunch command with device codename after . build/envsetup.sh" ; exit 1; fi
 
 if [[ $BRANCH == *pull/* ]]; then
 cd /tmp/cirrus-ci-build
