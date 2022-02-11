@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-blissify options vayu
+lunch bliss_vayu
 export TZ=Asia/Kolkata #put before last build command
 blissify -g vayu
 
