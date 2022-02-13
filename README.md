@@ -1,7 +1,5 @@
-CipherOS Custom ROM Xiaomi Raphael
-==================================
-
-CipherOS Raphael
+Custom ROM Xiaomi Raphael
+=================================
 
 Estimated installation no.: 150-500
 
