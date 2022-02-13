@@ -1,7 +1,7 @@
 # sync rom
 repo init -u https://github.com/The-RAVEN-OS/manifest -b twelve
-git clone https://github.com/NexusHacker/local_manifest.git --depth 1 -b master .repo/local_manifest
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+git clone https://github.com/NexusHacker/local_manifests.git --depth 1 -b master .repo/local_manifests
+repo sync -c -j8(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
 source build/envsetup.sh
