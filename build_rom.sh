@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/Evolution-X/manifest.git -b snow -g default,-mips,-darwin,-notdefault
-git clone https://github.com/hsx02/Local-Manifests.git --depth 1 -b aex-11 .repo/local_manifests
+git clone https://github.com/hsx02/Local-Manifests.git --depth 1 -b evox-12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
