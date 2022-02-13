@@ -1,5 +1,5 @@
 # sync rom
-git://github.com/ForkLineageOS/android.git -b lineage-18.1
+repo init -u git://github.com/ForkLineageOS/android.git -b lineage-18.1
 git clone https://github.com/S4MUR411/local_manifest.git --depth 1 -b main .repo/local_manifest
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
