@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/projectarcana-aosp/ma
 git clone https://github.com/Azure-007/local_manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom final build
 source build/envsetup.sh
 lunch aosp_raphael-userdebug 
 export SELINUX_IGNORE_NEVERALLOWS=true
