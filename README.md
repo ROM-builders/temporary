@@ -1,4 +1,4 @@
-Custom ROM Xiaomi Raphael
+Xiaomi Raphael
 =================================
 
 Estimated installation no.: 150-500
