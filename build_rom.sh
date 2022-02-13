@@ -5,6 +5,8 @@ repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune 
 
 # build rom
 source build/envsetup.sh
+export TARGET_FLOS=true
+export WITH_GMS=true
 lunch lineage_laurel_sprout-userdebug
 make bacon -j$(nproc --all)
 export TZ=Asia/Dhaka
