@@ -1,15 +1,14 @@
 # sync rom
-repo init -u git://github.com/ForkLineageOS/android.git -b lineage-18.1
+repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest.git -b eleven -g default,-mips,-darwin,-notdefault
 git clone https://github.com/S4MUR411/local_manifest.git --depth 1 -b main .repo/local_manifests
-repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
-export TARGET_FLOS=true
-export WITH_GMS=true
-lunch lineage_laurel_sprout-userdebug
-make bacon -j$(nproc --all)
+. build/envsetup.sh
+lunch aosp_laurel_sprout-userdebug
+export SKIP_ABI_CHECKS=true
 export TZ=Asia/Dhaka
+mka bacon
 
 # upload rom
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
