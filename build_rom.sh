@@ -4,7 +4,7 @@ git clone https://github.com/NexusHacker/local_manifests.git --depth 1 -b master
 repo sync -c -j8(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch aosp_RMX1851-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
