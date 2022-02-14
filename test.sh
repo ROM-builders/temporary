@@ -14,6 +14,7 @@ if [[ $rm_check -gt 0 ]]; then echo Please dont use rm inside script, use local 
 url=https://$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 3-5 | cut -d ' ' -f 1)
 r_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 name_check=$(curl -Ls $url 2>&1 | grep 'repo init' | grep $r_name | wc -l)
+if [[ $r_name == "Havoc-OS" ]]; then name_check=1; fi
 if [[ $name_check == 0 ]]; then echo Please use init line url from rom manifest, its case sensitive. Also follow the format of build_rom.sh file of temporary repo main branch.; exit 1; fi
 
 command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v 'rclone copy')
@@ -86,7 +87,7 @@ rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
 
 #need to change total 8 times
-for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve" "Spark-Rom spark" "PixelExtended snow" "Corvus-R 12" "crdroidandroid 12.0" "AospExtended 12.x"
+for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve" "Spark-Rom spark" "PixelExtended snow" "Corvus-R 12" "crdroidandroid 12.0" "AospExtended 12.x" "NusantaraProject-ROM 12"
 do
 item1=$(echo $item | awk -F ' ' '{print $1}')
 item2=$(echo $item | awk -F ' ' '{print $2}')
@@ -97,18 +98,19 @@ if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-16.1 ]]; the
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-16.0 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-15.0 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == cm-14.1 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
-if [[ $rom_name == NusantaraProject-ROM ]]; then if [[ $branch_name != '11' ]]; then echo Only NusantaraProject-ROM a11 is supported.; exit 1; fi ;fi
 if [[ $rom_name == ArrowOS ]]; then if [[ $branch_name == 'arrow-10.0' ]]; then echo Only ArrowOS a11 and a12 is supported.; exit 1; fi ;fi
 device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
 grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
+grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
 
 if [[ $BRANCH != *pull/* ]]; then if [[ $BRANCH != $device-$rom_name-* ]]; then echo Please use proper branch naming described in push group.; exit 1; fi; fi
+if [[ $device == 'copy' ]]; then echo "Please use lunch or brunch command with device codename after . build/envsetup.sh" ; exit 1; fi
 
 if [[ $BRANCH == *pull/* ]]; then
 cd /tmp/cirrus-ci-build
 PR_NUM=$(echo $BRANCH|awk -F '/' '{print $2}')
 AUTHOR=$(gh pr view $PR_NUM|grep author| awk '{print $2}')
-for value in ajitlenka30 basic-general ZunayedDihan Badroel07 Ravithakral SumonSN SevralT yograjsingh-cmd nit-in Sanjeev stunner ini23 CyberTechWorld horoid ishakumari772 atharv2951 Lite120
+for value in ajitlenka30 basic-general ZunayedDihan Badroel07 Ravithakral SumonSN SevralT yograjsingh-cmd nit-in Sanjeev stunner ini23 CyberTechWorld horoid ishakumari772 atharv2951 Lite120 anant-goel 01soni247 fakeriz
 do
     if [[ $AUTHOR == $value ]]; then
     echo Please check \#pr instruction in telegram group.; exit 1; fi
