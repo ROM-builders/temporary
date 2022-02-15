@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch aosp_sweet-userdebug
 export RELAX_USES_LIBRARY_CHECK=true
-export PRODUCT_BROKEN_VERIFY_USES_LIBRARIES=true
+export SELINUX_IGNORE_NEVERALLOWS=true
 export GAPPS_BUILD=true
 export TZ=Asia/Dhaka #put before last build command
 m aex
