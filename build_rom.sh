@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch spark_tulip-userdebug
 export WITH_GAPPS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
-export TZ=Asia/Dhaka #put before last build command
+export TZ=America/Sao_Paulo #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
