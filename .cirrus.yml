@@ -20,6 +20,8 @@ task:
 
   env_script:
     - env
+    - set -exv
+    - bash -c "$twelve"
   show_script:
     - cat $CIRRUS_WORKING_DIR/build_rom.sh
   notify_script:
