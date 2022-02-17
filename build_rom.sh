@@ -4,8 +4,8 @@ git clone https://github.com/neonmicky/local_manifest.git --depth 1 -b sapphire 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-#source build/envsetup.sh
-#lunch derp_vayu-userdebug
+source build/envsetup.sh
+lunch aospa_tissot-userdebug
 export TZ=Asia/Dhaka #put before last build command
 ./rom-build.sh tissot
 
