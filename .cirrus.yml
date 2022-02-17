@@ -110,7 +110,8 @@ task:
     - elif [[ $c == *'repo sync has finished'* ]]
     - then true
     - else
-    - (repo forall -c 'git checkout .' && bash -c "$only_sync") || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync")
+    #- (repo forall -c 'git checkout .' && bash -c "$only_sync") || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync")
+    - exit 1
     - fi
     
     - rm -rf sync.log
