@@ -1,6 +1,6 @@
 # sync rom
-repo init --no-repo-verify -u https://github.com/projectarcana-aosp/manifest.git -b 12.x -g default,-mips,-darwin,-notdefault
-git clone https://github.com/monu70152/local_manifest.git -b master .repo/local_manifests
+repo init -u https://github.com/projectarcana-aosp/manifest -b 12.x
+git clone https://github.com/monu70152/local_manifest.git -b master
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
