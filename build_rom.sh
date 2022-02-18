@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/VoltageOS/manifest -b 12 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/xenxynon/manifest.git --depth=1 -b sup .repo/local_manifests
+git clone https://github.com/xenxynon/manifest.git --depth=1 -b volt .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
