@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/syberia-project/manif
 git clone https://github.com/lynnnnzx/local_manifest.git --depth 1 -b syberia .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom 
 source build/envsetup.sh
 lunch syberia_juice-userdebug
 export BUILD_USERNAME=lynx
