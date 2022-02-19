@@ -1,15 +1,13 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-12.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/vickycena1/local_manifest.git --depth 1 -b main .repo/local_manifests
+git clone https://github.com/fsoc137y777/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
-lunch arrow_juice-eng
+. build/envsetup.sh
+lunch arrow_juice-userdebug
 export BUILD_USERNAME=cyb3rgod0
 export BUILD_HOSTNAME=fsociety
-export KBUILD_BUILD_USER=cyb3rgod0
-export KBUILD_BUILD_HOST=fsociety
 export TZ=Asia/Kolkata #put before last build commandz
 m bacon
 
