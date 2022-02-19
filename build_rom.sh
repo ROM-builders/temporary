@@ -5,10 +5,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch xdroid_taimen-userdebug
+lunch xdroid_taimen-eng
 #export WITH_GAPPS=true
 #export TARGET_GAPPS_ARCH=arm64
-#export SELINUX_IGNORE_NEVERALLOWS=true
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Jakarta #put before last build command
 make xd
 
