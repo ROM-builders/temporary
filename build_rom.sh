@@ -4,7 +4,7 @@ git clone https://github.com/OmarAlCoptan/local_manifest.git --depth 1 -b main .
 repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch ssos_lavender-userdebug
 make bacon
 
