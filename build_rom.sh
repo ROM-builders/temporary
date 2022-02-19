@@ -6,7 +6,7 @@ repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune 
 # build rom
 . build/envsetup.sh
 lunch ssos_lavender-userdebug
-make bacon
+make bacon -j$(nproc --all)
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
