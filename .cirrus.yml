@@ -96,6 +96,7 @@ task:
     - a=$(grep 'Cannot remove project' sync.log -m1|| true)
     - b=$(grep "^fatal: remove-project element specifies non-existent project" sync.log -m1 || true)
     - c=$(grep 'repo sync has finished' sync.log -m1 || true)
+    - d=$(grep 'Failing repos:' sync.log -n -m1 || true)
     - if [[ $a == *'Cannot remove project'* ]]
     - then
     - a=$(echo $a | cut -d ':' -f2)
@@ -105,8 +106,15 @@ task:
     - then exit 1
     - elif [[ $c == *'repo sync has finished'* ]]
     - then true
+    - elif [[ $d == *'Failing repos:'* ]]
+    - then
+    - d=$(expr $(grep 'Failing repos:' sync.log -n -m 1| cut -d ':' -f1) + 1)
+    - d2=$(expr $(grep 'Try re-running' sync.log -n -m1 | cut -d ':' -f1) - 1 )
+    - rm -rf $(head -n $d2 sync.log | tail -n +$d)
+    - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
     - else
-    - (repo forall -c 'git checkout .' && bash -c "$only_sync") || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync")
+    #- (repo forall -c 'git checkout .' && bash -c "$only_sync") || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync")
+    - exit 1
     - fi
     
     - rm -rf sync.log
