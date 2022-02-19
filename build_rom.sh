@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixysOS/manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Alchemist-xD/local_manifests.git --depth 1 -b main .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/projectarcana-aosp/manifest -b 12.x -g default,-mips,-darwin,-notdefault
+git clone https://github.com/XCode219/local_manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom final build
 source build/envsetup.sh
-lunch pixys_raphael-userdebug
-export ALLOW_MISSING_DEPENDENCIES=true
+lunch aosp_raphael-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
