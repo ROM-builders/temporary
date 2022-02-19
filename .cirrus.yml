@@ -108,8 +108,9 @@ task:
     - then true
     - elif [[ $d == *'Failing repos:'* ]]
     - then
-    - d=$(grep 'Failing repos:' sync.log -n -m 1| cut -d ':' -f1)
-    - rm -rf $(tail -n +$d sync.log )
+    - d=$(expr $(grep 'Failing repos:' sync.log -n -m 1| cut -d ':' -f1) + 1)
+    - d2=$(expr $(grep 'Try re-running' sync.log -n -m1 | cut -d ':' -f1) - 1 )
+    - rm -rf $(head -n $d2 sync.log | tail -n +$d)
     - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
     - else
     #- (repo forall -c 'git checkout .' && bash -c "$only_sync") || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync")
