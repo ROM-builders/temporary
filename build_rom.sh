@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch awwaken_phoenix-userdebug
+lunch awaken_phoenix-userdebug
  #put before last build command
 make bacon -j$(nproc --all)
 
