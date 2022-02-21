@@ -102,6 +102,8 @@ task:
     - then
     - a=$(echo $a | cut -d ':' -f2)
     - rm -rf $a
+    - rm -rf .repo/project-objects/$a.git
+    - rm -rf .repo/projects/$a.git
     - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
     - elif [[ $b == *'remove-project element specifies non-existent'* ]]
     - then exit 1
@@ -111,11 +113,23 @@ task:
     - then
     - d=$(expr $(grep 'Failing repos:' sync.log -n -m 1| cut -d ':' -f1) + 1)
     - d2=$(expr $(grep 'Try re-running' sync.log -n -m1 | cut -d ':' -f1) - 1 )
-    - rm -rf $(head -n $d2 sync.log | tail -n +$d)
+    - fail_paths=$(head -n $d2 sync.log | tail -n +$d)
+    - for path in $fail_paths
+    - do
+    - rm -rf $path
+    - rm -rf .repo/project-objects/$path.git
+    - rm -rf .repo/projects/$path.git
+    - done
     - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
     - elif [[ $e == *'fatal: Unable'* ]]
     - then
-    - rm -rf $(grep 'fatal: Unable' sync.log | cut -d ':' -f2 | cut -d "'" -f2)
+    - fail_paths=$(grep 'fatal: Unable' sync.log | cut -d ':' -f2 | cut -d "'" -f2)
+    - for path in $fail_paths
+    - do
+    - rm -rf $path
+    - rm -rf .repo/project-objects/$path.git
+    - rm -rf .repo/projects/$path.git
+    - done
     - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
     - else
     #- (repo forall -c 'git checkout .' && bash -c "$only_sync") || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync")
