@@ -1,13 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-oss/xd_manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/DenastySS/local_manifest.git --depth 1 -b xdroid .repo/local_manifests
+git clone https://github.com/DenastySS/local_manifest --depth 1 -b xdroid .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch xdroid_taimen-eng
-#export WITH_GAPPS=true
-#export TARGET_GAPPS_ARCH=arm64
+lunch xdroid_taimen-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Jakarta #put before last build command
 make xd
