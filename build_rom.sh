@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch aosp_lavender-user
+export PEX_BUILD_TYPE=OFFICIAL
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
