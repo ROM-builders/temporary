@@ -8,6 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch arrow_juice-userdebug
 export BUILD_USERNAME=cyb3rgod0
 export BUILD_HOSTNAME=fsociety
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Kolkata
 m bacon
 
