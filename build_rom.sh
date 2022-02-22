@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-export BUILD_HOSTNAME=ded_bo1
+export BUILD_HOSTNAME=ok_ano0s
 export BUILD_USERNAME=cArN4gE
 lunch cipher_RMX1941-userdebug
 export TZ=Asia/Kolkata #put before last build command
