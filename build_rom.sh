@@ -8,7 +8,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch aosp_juice-userdebug
 export BUILD_USERNAME=lynx
 export BUILD_HOSTNAME=cirrus-ci
-export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Jakarta
 mka bacon
 
