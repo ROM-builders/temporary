@@ -1,6 +1,6 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Spark-Rom/manifest.git -b spark -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Pyxis-Community/android_manifest.git --depth 1 -b spark-12 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/Octavi-OS/platform_manifest.git -b 12 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Pyxis-Community/android_manifest.git --depth 1 -b octavi-12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
