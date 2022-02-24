@@ -1,12 +1,17 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/DerpFest-11/manifest.git -b 11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-17.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/grindklast/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch derp_vayu-user
-export TZ=Asia/Dhaka #put before last build command
+
+lunch lineage_vince-userdebug
+export TZ=Asia/Jakarta #put before last build command
+mka api-stubs-docs
+mka hiddenapi-lists-docs
+mka system-api-stubs-docs
+mka test-api-stubs-docs
 mka derp
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
