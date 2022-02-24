@@ -4,7 +4,7 @@ git clone https://github.com/matheucomth/local_manifest --depth 1 -b aosp .repo/
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch cherish_tulip-userdebug
 export TZ=America/Sao_Paulo #update localmanifest
 mka bacon
