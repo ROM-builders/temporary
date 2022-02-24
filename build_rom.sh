@@ -1,14 +1,14 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-oss/xd_manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/iamnabilzaman/local_manifest12.git -b xdroid --depth 1 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-OS/platform_manifest.git -b 12 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/iamnabilzaman/local_manifest12.git -b octavi --depth 1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch xdroid_santoni-userdebug
 export BUILD_USERNAME=nabil
-export BUILD_HOSTNAME=project-entire
 export TZ=Asia/Dhaka #put before last build command
+
 make xd 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
