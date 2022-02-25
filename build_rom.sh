@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch aosp_pine-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
+export PEX_BUILD_TYPE=OFFICIAL
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
