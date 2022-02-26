@@ -8,7 +8,6 @@ source build/envsetup.sh
 lunch lineage_X00TD-userdebug
 export BUILD_USERNAME=aslenofarid
 export TZ=Asia/Jakarta #put before last build command
-croot
 brunch X00TD
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
