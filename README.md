@@ -2,7 +2,8 @@ PixelOS for x3 pro
 ==============================
 
 PixelOS [Custom ROM](https://pixelos.vercel.app/) for Poco X3 pro (code name Vayu)
-[Screenshots] (blob:https://web.whatsapp.com/25a15bd4-595e-4687-b172-a533fd809eba) 
+[Screenshots] (https://user-images.githubusercontent.com/72628804/155852235-22735466-fa03-48d4-aa55-5248be8a203b.jpg)
+
 
 
 Estimated installation no.: 10-40 
