@@ -1,4 +1,4 @@
-AospExtended custom ROM for Redmi Note 4
+PixelOS for x3 pro
 ==============================
 
 PixelOS [Custom ROM](https://pixelos.vercel.app/) for Poco X3 pro (code name Vayu)
@@ -7,3 +7,4 @@ PixelOS [Custom ROM](https://pixelos.vercel.app/) for Poco X3 pro (code name Vay
 
 Estimated installation no.: 10-40 
 
+i would provide an easy guide but currently i dunno any
