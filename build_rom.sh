@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/PixelOS-Pixelish/manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Zainullahorg/Manifest --depth 1 -b vayu_pixelos .repo/local_manifests
+git clone https://github.com/zainullahk/Manifest-1 --depth 1 -b vayu_pixelos .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j4
 
 # build rom
