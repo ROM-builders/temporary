@@ -7,7 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch aosp_X00TD-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
-export RELAX_USES_LIBRARY_CHECK=true
 export TZ=Asia/Kolkata #put before last build command🎉
 make bacon
 
