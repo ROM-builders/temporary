@@ -5,6 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
+rm -rf /home/cirrus/roms/ArrowOS-arrow-12/hardware/qcom-caf/sdm660/display audio media
+git clone https://github.com/sweetcock69/hardware_qcom_display -b arrow hardware/qcom-caf/sdm660/display && git clone https://github.com/sweetcock69/hardware_qcom_media -b arrow hardware/qcom-caf/sdm660/media && git clone https://github.com/sweetcock69/hardware_qcom_audio -b arrow hardware/qcom-caf/sdm660/audio
 lunch arrow_X00T-userdebug
 export TZ=America/Los_Angeles #put before last build command
 m otapackage
