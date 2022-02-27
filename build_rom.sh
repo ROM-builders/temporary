@@ -8,6 +8,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch arrow_juice-userdebug
 export BUILD_USERNAME=cyb3rgod0
 export BUILD_HOSTNAME=fsociety
+export KBUILD_BUILD_USER=cyb3rgod0
+export KBUILD_BUILD_HOST=fsociety
 export TZ=Asia/Kolkata #put before last build commandz
 m bacon
 
