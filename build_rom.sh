@@ -7,9 +7,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch arrow_juice-userdebug
 export BUILD_USERNAME=vicky
-export BUILD_HOSTNAME=fsociety
+export BUILD_HOSTNAME=cyb3rgod0
 export KBUILD_BUILD_USER=vicky
-export KBUILD_BUILD_HOST=fsociety
+export KBUILD_BUILD_HOST=cyb3rgod0
 export TZ=Asia/Kolkata #put before last build commandz
 m bacon
 #1
