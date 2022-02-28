@@ -1,8 +1,6 @@
 # sync rom
 
-repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b twelve
-
--g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b twelve -g default,-mips,-darwin,-notdefault
 
 git clone https://github.com/Snowman2409/local-manifest --depth 1 -b twelve.repo/local_manifests
 
