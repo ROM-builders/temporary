@@ -4,9 +4,8 @@ repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifes
 
 git clone https://github.com/Snowman2409/local-manifest --depth 1 -b twelve.repo/local_manifests
 
-repo sync -c -j $(nproc --all) --force-sync --no-clone-bundle --no-tags
- Set -e 
-curl -Ls https://github.com/ROM-builders/temporary/raw/main/test.sh | bash
+repo sync -c $(nproc --all) --force-sync --no-clone-bundle --no-tags
+ 
 # build rom
 
 # Build the code
