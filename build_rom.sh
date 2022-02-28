@@ -10,14 +10,6 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
 
-# Set up environment
-
-$ . build/envsetup.sh
-
-# Choose a target
-
-$ lunch aosp_$device-userdebug
-
 # Build the code
 
 $ . build/envsetup.sh
