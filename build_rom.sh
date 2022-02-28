@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch octavi_santoni-userdebug
 export SKIP_ABI_CHECKS=true
+export SELINUX_IGNORE_NEVERALLOWS=true
 export BUILD_USERNAME=nabil
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
