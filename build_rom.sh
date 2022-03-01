@@ -2,8 +2,6 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-OS/platform_ma
 git clone https://github.com/Octavi-OS-GSI/treble_manifest.git --depth 1 -b 12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 || exit 2
 
-cd device/phh/treble && bash generate.sh octavi && cd ../../../
-
 # build rom
 . build/envsetup.sh
 lunch treble_arm64_bgN-userdebug
