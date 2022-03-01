@@ -1,3 +1,6 @@
+#!/bin/bash
+
+set-e+set-x
 # sync rom
 
 repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b twelve -g default,-mips,-darwin,-notdefault
