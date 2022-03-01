@@ -10,7 +10,7 @@ export BUILD_USERNAME=vicky
 export BUILD_HOSTNAME=cyb3rgod0
 export KBUILD_BUILD_USER=vicky
 export KBUILD_BUILD_HOST=cyb3rgod0
-export TZ=Asia/Kolkata #put before last build commandz
+export TZ=Asia/Kolkata #put before last build command
 m bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
