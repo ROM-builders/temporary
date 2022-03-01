@@ -5,7 +5,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch aosp_juice-userdebug
+lunch aosp_juice-user
+export BUILD_USERNAME=imannig
+export BUILD_HOSTNAME=cirrus-kontol
 export TZ=Asia/Jakarta #put before last build command
 mka bacon 
 
