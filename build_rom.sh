@@ -10,8 +10,6 @@ lunch treble_arm64_bgN-userdebug
 export TZ=Asia/Karachi # Put before last build command
 mka systemimage
 
-mv out/target/product/phhgsi_arm64_ab/system.img out/target/product/phhgsi_arm64_ab/OctaviOS-v3.4-arm64_bgN-$(TZ='Asia/Karachi' date "+%Y%m%d").img
-
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
-rclone copy out/target/product/phhgsi*/OctaviOS*.img cirrus:OctaviOS-GSI -P
+rclone copy out/target/product/phhgsi*/system.img cirrus:OctaviOS-GSI -P
 
