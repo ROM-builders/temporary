@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/DotOS/manifest.git -b
 git clone https://github.com/XCode219/local_manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom final build #
+# build rom final build
 source build/envsetup.sh
 lunch dot_raphael-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
