@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ArcaneOS/Arcane_manifest -b R -g default,-mips,-darwin,-notdefault
-git clone https://github.com/HoleDroid/local_manifests.git --depth 1 -b flos .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android -b lineage-17.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/HoleDroid/local_manifests.git --depth 1 -b dos .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_X00TD-userdebug
+lunch lineage_X00T-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Tokyo #put before last build command
 mka bacon
