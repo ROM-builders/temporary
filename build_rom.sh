@@ -1,4 +1,4 @@
-# sync rom
+# syncing rom
 repo init -u https://github.com/Havoc-OS/android_manifest.git -b eleven
 git clone https://github.com/SnowQueenGit/local-manifests.git --depth 1 -b master .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
