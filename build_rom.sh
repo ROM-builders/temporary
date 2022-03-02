@@ -6,6 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build roms
 source build/envsetup.sh
 lunch aosp_X00TD-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
+export BUILD_USERNAME=tiktod
 export TZ=Asia/Bangkok #put before last build command
 mka bacon
 
