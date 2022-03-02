@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch bliss_tulip-userdebug
+export BLISS_BUILDTYPE=OFFICIAL
 export TZ=America/Sao_Paulo #update localmanifest
 blissify -g tulip
 
