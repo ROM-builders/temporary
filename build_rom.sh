@@ -4,9 +4,8 @@ git clone https://github.com/Snowman2409/local-manifest --depth=1 -b main .repo/
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 # build rom
 source build/envsetup.sh
-lunch evolution_$device-userdebug
-export TZ=Asia/Kolkata #put before last build command
-export WITH_GMS=true
+lunch evolution_lavender-userdebug
+
 mka evolution
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
