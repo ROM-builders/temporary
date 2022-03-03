@@ -1,13 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ArcaneOS/Arcane_manifest.git -b R -g default,-mips,-darwin,-notdefault
-# git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .repo/local_manifests
+git clone https://github.com/felapr1804/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-
-# Add Device Dependencies
-git clone https://github.com/felapr1804/android_device_xiaomi_raphael.git -b eleven device/xiaomi/raphael
-git clone https://github.com/Evolution-X-Devices/vendor_xiaomi_raphael.git -b elle vendor/xiaomi/raphael
-git clone https://github.com/Alchemist-xD/android_kernel_xiaomi_raphael.git kernel/xiaomi/raphael
-
 
 # build rom
 source build/envsetup.sh
