@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch spark_mido-user
+export BUILD_HOSTNAME=RasyidAlKautsar
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
