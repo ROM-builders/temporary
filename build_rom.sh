@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_a505f-userdebug
+export BUILD_BROKEN_DUP_RULES=true
 export TZ=Asia/Manila #put before last build command
 mka bacon
 
