@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/DerpFest-11/manifest.git -b 11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo init -u https://github.com/StatiXOS/android_manifest.git -b 10 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/00p513-dev/local_manifests/raw/lineage-17.1/channel.xml .repo/local_manifests
+repo sync --force-sync --no-clone-bundle --current-branch --no-tags -j2
 
 # build rom
 source build/envsetup.sh
-lunch derp_vayu-user
+lunch lineage_channel-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka derp
 
