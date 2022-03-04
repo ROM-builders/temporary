@@ -1,5 +1,5 @@
 # sync rom
-repo init -u https://github.com/StatiXOS/android_manifest.git -b 10 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 -u https://github.com/StatiXOS/android_manifest.git -b 10 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/00p513-dev/local_manifests/raw/lineage-17.1/channel.xml .repo/local_manifests
 repo sync --force-sync --no-clone-bundle --current-branch --no-tags -j2
 
