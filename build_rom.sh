@@ -1,7 +1,7 @@
 # sync rom
-repo init -u https://github.com/ShapeShiftOS/android_manifest -b android_12
+repo init -u https://github.com/PixysOS/manifest -b eleven
 git clone https://github.com/Neutralxs/local_manifest --depth 1 .repo/local_manifests
-repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune
+repo sync  --force-sync --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune
 
 # build rom [7]
 . build/envsetup.sh
