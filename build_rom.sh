@@ -3,12 +3,12 @@ repo init --depth=1 --no-repo-verify -u https://github.com/projectarcana-aosp/ma
 git clone https://github.com/iaiaian1/local-manifests.git --depth 1 -b Arcana-mi439 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-#4
+#5
 
 # build rom
 source build/envsetup.sh
 lunch aosp_mi439-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
+# export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
