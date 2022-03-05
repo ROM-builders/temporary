@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch cherish_mido-userdebug
 export BUILD_HOSTNAME=RasyidAlKautsar
+export CHERISH_VANILLA=true
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
