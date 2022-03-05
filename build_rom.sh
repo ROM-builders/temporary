@@ -4,7 +4,7 @@ git clone https://github.com/Snowman2409/local-manifest --depth=1 -b main .repo/
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 # build rom
 source build/envsetup.sh
-lunch aosp_device-userdebug
+lunch aosp_lavender-userdebug
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 mka bacon
 
