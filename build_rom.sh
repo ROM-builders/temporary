@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_device-userdebug
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES =true
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
