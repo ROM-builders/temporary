@@ -1,7 +1,7 @@
 # sync rom
 repo init -u https://github.com/PixysOS/manifest -b eleven
 git clone https://github.com/Neutralxs/local_manifest --depth 1 .repo/local_manifests
-repo sync  --force-sync --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune
+repo sync  --force-sync --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune -g default,-mips,-darwin,-notdefault
 
 # build rom [7]
 . build/envsetup.sh
