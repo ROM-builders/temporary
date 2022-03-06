@@ -5,8 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch cherish_santoni-userdebug
-BUILD_HOSTNAME=EvilAnsh 
+lunch cherish_santoni-userdebug 
 export TZ=Asia/Mumbai #put before last build command
 mka bacon 
 
