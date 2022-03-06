@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch cherish_tulip-userdebug
+lunch cherish_tulip-user
 export TZ=America/Sao_Paulo #update localmanifest
 mka bacon
 
