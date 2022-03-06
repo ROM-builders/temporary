@@ -5,10 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-export BUILD_BROKEN_DUP_RULES=true
-export BUILD_BROKEN_PREBUILT_ELF_FILES=true
-export BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES=true
-
 lunch treble_arm64_bgN-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka systemimage
