@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch cherish_X00TD-userdebug
+export RELAX_USES_LIBRARY_CHECK=true
 export BUILD_USERNAME=tiktod
 export TZ=Asia/Hanoi #put before last build command
 mka bacon
