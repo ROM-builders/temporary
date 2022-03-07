@@ -6,6 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch arrow_X00T-userdebug
+export BUILD_USERNAME=sweetcock69
+export BUILD_HOSTNAME=sweetcock69
 export TZ=America/Los_Angeles #put before last build command
 m bacon
 
