@@ -1,6 +1,6 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git@github.com:Spark-Rom/manifest.git -b spark -g default,-mips,-darwin,-notdefault
-git clone https://github.com/MudabbirulSaad/r5x-Tree-Manifest.git --depth 1 -b spark .repo/local_manifests
+repo init -u https://github.com/Spark-Rom/manifest.git -b spark
+git clone https://github.com/MudabbirulSaad/r5x-Tree-Manifest.git --depth 1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
