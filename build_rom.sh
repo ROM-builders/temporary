@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch aosp_tulip-user
+lunch aosp_tulip-userdebug
 export TZ=America/Sao_Paulo #update localmanifest
 m aex
 
