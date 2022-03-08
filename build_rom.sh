@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch nad_maple_dsds-userdebug
-#export USE_GAPPS=true
+export USE_GAPPS=true
 export TZ=Asia/Jakarta #put before last build command
 make nad
 
