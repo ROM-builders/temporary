@@ -9,6 +9,7 @@ lunch cipher_X00TD-userdebug
 export SKIP_ABI_CHECKS=true
 export SKIP_API_CHECKS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
+export BUILD_USERNAME=tiktod
 export TZ=Asia/Bangkok #put before last build command
 make bacon
 
