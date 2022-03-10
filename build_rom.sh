@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch aosp_mi439-userdebug 
+lunch aosp_mi439-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
