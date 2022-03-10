@@ -9,6 +9,7 @@ lunch lineage_j7xelte-userdebug
 export SKIP_ABI_CHECKS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
+export TARGET_NO_KERNEL=true
 export TZ=Asia/HoChiMinh #put before last build command
 make bacon
 
