@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/xdroid-oss/xd_manifest 
 git clone https://github.com/Anky-AD/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom Lunch
+# build rom Lunchs
 source build/envsetup.sh
 lunch xdroid_phoenix-userdebug
 export TZ=Asia/Dhaka #put before last build command
