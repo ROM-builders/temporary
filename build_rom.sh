@@ -5,10 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch lineage_j7xelte-userdebug
-export SKIP_ABI_CHECKS=true
+lunch lineage_j7xelte-eng
 export ALLOW_MISSING_DEPENDENCIES=true
-export SELINUX_IGNORE_NEVERALLOWS=true
 export TARGET_NO_KERNEL=true
 export TZ=Asia/HoChiMinh #put before last build command
 make bacon
