@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/ForkLineageOS/android.git -b lineage-19.0 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/AospExtended/manifest.git -b 12.x -g default,-mips,-darwin,-notdefault
 git clone https://github.com/onkarsinghsahil/local-manifest.git --depth 1 -b Flos .repo/local_manifest
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_mido-userdebug
+lunch aosp_device_mido-userdebug
 export TZ=Asia/Mumbai #put before last build command
 mka bacon
 
