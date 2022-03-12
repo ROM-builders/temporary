@@ -104,8 +104,6 @@ task:
     - then
     - a=$(echo $a | cut -d ':' -f2 | tr -d ' ')
     - rm -rf $a
-    - rm -rf .repo/project-objects/$a.git
-    - rm -rf .repo/projects/$a.git
     - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
     - elif [[ $b == *'remove-project element specifies non-existent'* ]]
     - then exit 1
