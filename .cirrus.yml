@@ -102,7 +102,7 @@ task:
     - e=$(grep 'fatal: Unable' sync.log || true)
     - if [[ $a == *'Cannot remove project'* ]]
     - then
-    - a=$(echo $a | cut -d ':' -f2)
+    - a=$(echo $a | cut -d ':' -f2 | tr -d ' ')
     - rm -rf $a
     - rm -rf .repo/project-objects/$a.git
     - rm -rf .repo/projects/$a.git
