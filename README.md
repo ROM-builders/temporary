@@ -1,4 +1,4 @@
-Havoc OS for MI 8937 devices
+Havoc OS for Redmi 4A
 ==============================
 
 AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note 4(code name mido)
