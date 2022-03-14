@@ -1,10 +1,10 @@
 # sync rom
-repo init -u https://github.com/PixelOS-and-Not-So-Pixel/manifest
-git clone https://github.com/Orion-Kernel/local_manifest.git --depth 1 -b main .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-and-Not-So-Pixel/manifest
+git clone https://github.com/Orion-Kernel/local_manifest.git --depth 1 -b 11 .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch aosp_miatoll-userdebug
 export TZ=Asia/kolkata #put before last build command
 mka bacon 
