@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ProjectRadiant/manifest -b twelve-L -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/AzurE-007/manifest -b twelve-L -g default,-mips,-darwin,-notdefault
 git clone https://github.com/AzurE-007/local_manifests.git --depth 1 -b radiant .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
