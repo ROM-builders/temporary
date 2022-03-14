@@ -4,7 +4,7 @@ git clone https://github.com/xenxynon/manifest.git --depth=1 -b xd .repo/local_m
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. b*/e*
+. build/envsetup.sh 
 lunch xdroid_lavender-user
 export TZ=Asia/Kolkata #put before last build command
 make xd
