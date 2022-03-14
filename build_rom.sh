@@ -4,7 +4,7 @@ git clone https://github.com/Orion-Kernel/local_manifest.git --depth 1 -b main .
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch aosp_miatoll-userdebug
 export TZ=Asia/kolkata #put before last build command
 mka bacon 
