@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-and-Not-So-Pixel/manifest
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-and-Not-So-Pixel/manifest -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Orion-Kernel/local_manifest.git --depth 1 -b 11 .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
