@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/DotOS/manifest.git -b dot11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Akash23q2/local_manifest --depth 1 -b master .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/crdroidandroid/android.git -b 12.0 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/walternewtz/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch dot_merlinx-user
+lunch crdroid_beryllium-user
 export TZ=Asia/Dhaka #put before last build command
 Make bacon
 
