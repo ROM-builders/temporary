@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/Project-Fluid/manifest.git -b fluid-12 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Yurika-Projects/Local-Manifests.git --depth 1 -b master .repo/local_manifests
+git clone https://github.com/Yurika-Projects/Local-Manifests.git --depth 1 -b fluid .repo/local_manifests
 repo sync --force-sync --no-tags --no-clone-bundle -j$(nproc --all)
 
 # build rom
