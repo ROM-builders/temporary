@@ -7,7 +7,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 export TZ=Asia/Kolkata
 export KBUILD_BUILD_USER=aryan
-export KBUILD_BUILD_HOST=Aryan-HP-G7-notebook
+export KBUILD_BUILD_HOST=aryan-HP-G7-notebook
+export BUILD_USERNAME=aryan
+export BUILD_HOSTNAME=aryan-HP-G7-notebook-PC
 brunch havoc_rolex-user
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
