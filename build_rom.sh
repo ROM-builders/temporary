@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch evolution_mido-userdebug
 export SKIP_ABI_CHECKS=true
+export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Delhi #put before last build command
 mka evolution
 
