@@ -6,6 +6,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 # build rom
 source build/envsetup.sh
 lunch havoc_mido-user
+export SKIP_ABI_CHECKS=true
 export TZ=Asia/Delhi #put before last build command
 brunch
 
