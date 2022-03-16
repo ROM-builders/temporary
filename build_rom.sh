@@ -5,8 +5,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch nad_vince-buildtype
+lunch nad_vince-userdebug
 export TZ=Asia/Jakarta #put before last build command
+export KBUILD_BUILD_USER=RAYDENFLY
+export KBUILD_BUILD_HOST=Yurika
 mka nad
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
