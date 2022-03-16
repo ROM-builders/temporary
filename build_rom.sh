@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/AOSP-Krypton/manifest.git -b A12 default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/CipherOS/android_manifest.git -b twelve-L default,-mips,-darwin,-notdefault
 git clone https://github.com/Anky-AD/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom and lunch
 source build/envsetup.sh
-lunch krypton_phoenix-userdebug
+lunch cipher_phoenix-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
