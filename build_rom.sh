@@ -1,7 +1,3 @@
-#bin
-mkdir -p ~/bin
-mkdir -p ~/havoc
-
 # sync rom
 repo init -u https://github.com/Havoc-OS/android_manifest.git -b twelve
 git clone https://github.com/NRanjan-17/local_manifest.git --depth 1 -b main .repo/local_manifests
