@@ -1,11 +1,15 @@
+#bin
+mkdir -p ~/bin
+mkdir -p ~/havoc
+
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Havoc-OS/android_manifest.git -b twelve -g default,-device,-mips,-darwin,-notdefault
+repo init -u https://github.com/Havoc-OS/android_manifest.git -b twelve
 git clone https://github.com/NRanjan-17/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
 source build/envsetup.sh
-lunch aosp_mido-userdebug
+lunch havoc_mido-userdebug
 export SKIP_ABI_CHECKS=true
 export TZ=Asia/Delhi #put before last build command
 brunch
