@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch exthm_[您的设备代号]-userdebug
+lunch exthm_vince-userdebug
 export TZ=Asia/Tokyo #put before last build command
 mka bacon
 
