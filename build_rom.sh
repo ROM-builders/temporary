@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch fluid_device-userdebug
+lunch fluid_vince-userdebug
 export TZ=Asia/Tokyo #put before last build command
 mka bacon
 
