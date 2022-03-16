@@ -1,15 +1,14 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b snow -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/NRanjan-17/Android-Building.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
-lunch evolution_mido-userdebug
+lunch aosp_mido-userdebug
 export SKIP_ABI_CHECKS=true
-export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Delhi #put before last build command
-mka evolution
+mka bacon
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
