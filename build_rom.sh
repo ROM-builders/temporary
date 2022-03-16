@@ -4,7 +4,7 @@ git clone https://github.com/NRanjan-17/Android-Building.git --depth 1 -b main .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch aosp_mido-userdebug
 export SKIP_ABI_CHECKS=true
 export TZ=Asia/Delhi #put before last build command
