@@ -1,7 +1,6 @@
 # sync rom
-#repo init --depth=1 --no-repo-verify -u https://github.com/Havoc-OS/android_manifest -b twelve -g default,-mips,-darwin,-notdefault
-repo init --depth=1 --no-repo-verify -u https://github.com/aryankaran/android_manifest -b twelve -g default,-mips,-darwin,-notdefault
-#git clone https://github.com/aryankaran/local_manifests-1 --depth 1 -b havoc-12 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Havoc-OS/android_manifest -b twelve -g default,-mips,-darwin,-notdefault
+git clone https://github.com/aryankaran/local_manifests-1 --depth 1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
