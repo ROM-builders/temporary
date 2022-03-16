@@ -9,8 +9,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
 source build/envsetup.sh
-lunch havoc_mido-userdebug
-export SKIP_ABI_CHECKS=true
+lunch havoc_mido-user
 export TZ=Asia/Delhi #put before last build command
 brunch
 
