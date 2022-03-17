@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch lineage_X00T-userdebug
 export BUILD_USERNAME=tiktod
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Tokyo #put before last build command
 mka bacon
 
