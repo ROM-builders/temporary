@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/projectarcana-aosp/ma
 git clone https://github.com/DarkMine/local_manifest.git --depth 1 -b 12.0 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build  rom
 source build/envsetup.sh
 lunch aosp_tissot-userdebug
 export TZ=Asia/Kolkata #put before last build command
