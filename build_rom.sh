@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 -u git://github.com/conquerOS/manifest.git -b twelve -g default,-mips,-darwin,-notdefault
+repo init --depth=1 -u https://github.com/conquerOS/manifest.git -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Ritvik6969/manifest.git --depth 1 -b ConquerOS .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
