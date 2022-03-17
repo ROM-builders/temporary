@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom 
 source build/envsetup.sh
-lunch aospa_tissot-userdebug
+lunch aospa_tissot-eng
 export TZ=Asia/Dhaka #put before last build command
 ./rom-build.sh tissot
 
