@@ -4,7 +4,7 @@ git clone https://github.com/onkarsinghsahil/local-manifest.git --depth 1 -b evo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch evolution_mido-userdebug
 export SKIP_ABI_CHECKS=true
 export TZ=Asia/Dhaka #put before last build command
