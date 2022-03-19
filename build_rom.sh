@@ -1,6 +1,6 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/PixelExperience/manifest -b eleven-plus -g default,-mips,-darwin,-notdefault
-git clone https://github.com/akshat942/local_manifest/blob/caf-11/local_manifest.xml --depth 1 -b caf-11 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u repo init -u git://github.com/PixelExperience/manifest.git -b eleven-plus -g default,-mips,-darwin,-notdefault
+git clone https://github.com/akshat942/local_manifest.git --depth 1 -b caf-11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
