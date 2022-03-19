@@ -8,6 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch evolution_mido-userdebug
 export TZ=Asia/Delhi #put before last build command
 BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
+BUILD_BROKEN_DUP_RULES := true
 mka evolution
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
