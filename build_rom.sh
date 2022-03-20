@@ -4,7 +4,7 @@ git clone https://github.com/AzurE-007/local_manifests.git --depth 1 -b cipher .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-export ALLOW_MISSING_DEPENDENCIES=tru
+export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 source build/envsetup.sh
 lunch cipher_raphael-userdebug
