@@ -5,6 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 
 # build rom
+export ALLOW_MISSING_DEPENDENCIES=true
+export SELINUX_IGNORE_NEVERALLOWS=true
 source build/envsetup.sh
 lunch ssos_RMX2020-eng
 export TZ=Asia/Dhaka #put before last build command
