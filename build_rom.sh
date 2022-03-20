@@ -1,11 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/syberia-project/manifest.git -b 12.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/iamnabilzaman/local_manifest12 --depth 1 -b syberia .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/CipherOS/android_manifest.git -b twelve-L -g default,-mips,-darwin,-notdefault
+git clone https://github.com/iamnabilzaman/local_manifest12 --depth 1 -b cipher-L .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch syberia_santoni-userdebug
+lunch cipher_santoni-userdebug
+export BUILD_USERNAME=nabil
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
