@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch lavender_octavi-userdebug
 export WITH_GAPPS=true
 export TZ=Africa/Egypt #put before last build command
-brunch octavi
+brunch lavender
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
