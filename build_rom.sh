@@ -1,13 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExtended/manifest.git -b snow -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/ShapeShiftOS/android_manifest.git -b android_12 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/MadmoudRMX2020/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_$RMX2020-userdebug
+lunch ssos_RMX2020-eng
 export TZ=Asia/Dhaka #put before last build command
-mka bacon
+make bacon
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
