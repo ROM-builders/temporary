@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch bliss_tulip-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
-export BUILD_BROKEN_DUP_RULES=true
+export BLISS_BUILDTYPE=OFFICIAL
 export TZ=America/Sao_Paulo #update localmanifest
 blissify -g tulip
 
