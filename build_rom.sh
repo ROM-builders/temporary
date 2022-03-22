@@ -1,8 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/CalyxOS/platform_manifest.git -b android10 -g default,-mips,-darwin,-notdefault
-git clone -b aex https://github.com/SunnyRaj84348/android_device_xiaomi_riva device/xiaomi/riva --depth=1
-git clone -b aex https://github.com/SunnyRaj84348/android_kernel_xiaomi_msm8917 kernel/xiaomi/riva --depth=1
-git clone -b aex https://github.com/SunnyRaj84348/android_vendor_xiaomi vendor/xiaomi --depth=1
+git clone https://github.com/alifianazhar/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
