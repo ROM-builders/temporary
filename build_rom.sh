@@ -5,8 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch xiaomi_mido-userdebug
-BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
+lunch aosp_mido-userdebug
 export TZ=Asia/Delhi #put before last build command
 mka bacon
 
