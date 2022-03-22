@@ -7,7 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch aosp_mido-userdebug
 export BUILD_USERNAME=onkarsinghsahil
-
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
