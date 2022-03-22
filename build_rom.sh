@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/projectarcana-aosp/manifest.git -b 12.X -g default,-mips,-darwin,-notdefault
-git clone https://github.com/nyannmu/local_manifests --depth 1 -b master .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/CipherOS/android_manifest.git -b twelve-L -g default,-mips,-darwin,-notdefault
+git clone https://github.com/nyannmu/local_manifests --depth 1 -b cipher .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_perseus-userdebug
+lunch cipher_perseus-userdebug
 export TZ=Asia/Bangkok #put before last build command
 make bacon
 
