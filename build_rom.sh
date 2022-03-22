@@ -7,7 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch octavi_lavender-userdebug
 export WITH_GAPPS=true
-export SELINUX_IGNORE_NEVERALLOWS := true
 export SKIP_ABI_CHECKS=true
 export TZ=Africa/Egypt #put before last build command
 brunch lavender
