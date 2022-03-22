@@ -3,11 +3,12 @@ repo init --depth=1 --no-repo-verify -u https://github.com/projectarcana-aosp/ma
 git clone https://github.com/monu70152/local_manifest.git --depth 1 -b arcana .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-#17
+#18
 # build rom 
 source build/envsetup.sh
 lunch aosp_X00TD-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
+export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Kolkata #put before last build commad
 make bacon
 
