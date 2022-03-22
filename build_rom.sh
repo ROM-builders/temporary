@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/NRanjan-17/local_manifest.git --depth 1 -b PE-12 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-Pixelish/manifest -b twelve -g default,-mips,-darwin,-notdefault
+git clone https://github.com/NRanjan-17/local_manifest.git --depth 1 -b Pixel-OS-mido .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_mido-userdebug
+lunch aosp_mido-user
 export TZ=Asia/Delhi #put before last build command
 mka bacon
 
