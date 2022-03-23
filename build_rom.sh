@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -uhttps://gitlab.com/CalyxOS/platform_manifest -b android10 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://gitlab.com/CalyxOS/platform_manifest -b android10 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/alifianazhar/Local-Manifests --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
