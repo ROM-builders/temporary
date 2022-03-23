@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/AOSPK/manifest -b twe
 git clone https://github.com/Abhi2354/local_manifest.git --depth 1 -b aospk .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom 
 source build/envsetup.sh
 lunch aosp_olives-userdebug
 export TZ=Asia/Dhaka #put before last build command
