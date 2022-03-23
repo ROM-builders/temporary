@@ -6,7 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch octavi_lavender-userdebug
-export SELINUX_IGNORE_NEVERALLOWS := true
+export SELINUX_IGNORE_NEVERALLOWS=true
+export SKIP_ABI_CHECKS=true
 export TZ=Asia/Dhaka #put before last build command
 brunch lavender
 
