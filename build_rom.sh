@@ -1,11 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android -b lineage-19.1 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/ProjectSakura/android -b 12 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/rushiranpise/local_manifest --depth 1 -b los .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch lineage_chef-userdebug
+export SAKURA_BUILD_ZIP_TYPE=GAPPS
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 #1
