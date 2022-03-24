@@ -1,13 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/CipherOS/android_manifest.git -b twelve-L -g default,-mips,-darwin,-notdefault
-git clone https://github.com/AzurE-007/local_manifests.git --depth 1 -b cipher .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/AOSPA/manifest -b sapphire -g default,-mips,-darwin,-notdefault
+git clone https://github.com/AzurE-007/local_manifests.git --depth 1 -b sapphire .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom #
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 source build/envsetup.sh
-lunch cipher_raphael-userdebug
+./rom-build.sh raphael
 export TZ=Asia/Delhi #put before last build command
 make bacon
 
