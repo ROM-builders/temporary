@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch arrow_mido-userdebug
 export ARROW_GAPPS=true
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export TZ=Asia/Delhi #put before last build command
 m bacon
 
