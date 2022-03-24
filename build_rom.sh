@@ -6,8 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_mido-userdebug
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
-export BUILD_BROKEN_DUP_RULES=true
 export TZ=Asia/Delhi #put before last build command
 make bacon
 
