@@ -3,6 +3,8 @@ repo init --depth=1 --no-repo-verify -u https://github.com/CipherOS/android_mani
 git clone https://github.com/nyannmu/local_manifests --depth 1 -b cipher .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+# goodbye qti
+
 # build rom
 source build/envsetup.sh
 lunch cipher_perseus-userdebug
