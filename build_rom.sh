@@ -1,8 +1,8 @@
-# Repo init
+# repo init
 repo init --depth=1 --no-repo-verify -u https://github.com/projectarcana-aosp/manifest.git -b 12.x-cleanup -g default,-mips,-darwin,-notdefault
-# Local Manifest
+# local manifest
 git clone https://github.com/monu70152/local_manifest.git --depth 1 -b arcana .repo/local_manifests
-# Real Sync
+# real sync
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 #3
