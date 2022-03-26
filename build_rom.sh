@@ -1,6 +1,6 @@
 # sync rom
 
-repo init --depth=1 --no-repo-verify -u https://github.com/projectarcana-aosp/manifest -b 12.x -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/projectarcana-aosp/manifest -b 12.X -g default,-mips,-darwin,-notdefault
 
 git clone https://github.com/laleeroy/local_manifest.git --depth 1 -b ulysse .repo/local_manifests
 
