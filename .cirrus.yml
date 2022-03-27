@@ -100,6 +100,8 @@ task:
     - c=$(grep 'repo sync has finished' sync.log -m1 || true)
     - d=$(grep 'Failing repos:' sync.log -n -m1 || true)
     - e=$(grep 'fatal: Unable' sync.log || true)
+    - f=$(grep 'error.GitError' sync.log || true)
+    - g=$(grep 'error: Cannot checkout' sync.log || true)
     - if [[ $a == *'Cannot remove project'* ]]
     - then
     - a=$(echo $a | cut -d ':' -f2 | tr -d ' ')
@@ -117,7 +119,8 @@ task:
     - for path in $fail_paths
     - do
     - rm -rf $path
-    - rm -rf .repo/project-objects/$path.git
+    - aa=$(echo $path|awk -F '/' '{print $NF}')
+    - rm -rf .repo/project-objects/*$aa.git
     - rm -rf .repo/projects/$path.git
     - done
     - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
@@ -127,8 +130,23 @@ task:
     - for path in $fail_paths
     - do
     - rm -rf $path
+    - aa=$(echo $path|awk -F '/' '{print $NF}')
+    - rm -rf .repo/project-objects/*$aa.git
     - rm -rf .repo/project-objects/$path.git
     - rm -rf .repo/projects/$path.git
+    - done
+    - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+    - elif [[ $f == *'error.GitError'* ]]
+    - then
+    - rm -rf $(grep 'error.GitError' sync.log | cut -d ' ' -f2)
+    - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+    - elif [[ $g == *'error: Cannot checkout'* ]]
+    - then
+    - echo hi
+    - coerr=$(grep 'error: Cannot checkout' sync.log | cut -d ' ' -f 4| tr -d ':')
+    - for i in $coerr
+    - do
+    - rm -rf .repo/project-objects/$i.git
     - done
     - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
     - else
@@ -203,8 +221,8 @@ task:
     - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
     - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
     - cd ~/roms/$rom_name
-    - engzip=$(ls out/target/product/$device/*-eng*.zip || true)
-    - otazip=$(ls out/target/product/$device/*-ota-*.zip | grep -v "hentai" | grep -v "evolution" || true)
+    - engzip=$(ls out/target/product/$device/*-eng*.zip | grep -v "retrofit" || true)
+    - otazip=$(ls out/target/product/$device/*-ota-*.zip | grep -v "hentai" | grep -v "evolution" | grep -v "retrofit" || true)
     - awaken=$(ls out/target/product/$device/Project-Awaken*.zip || true)
     - octavi=$(ls out/target/product/$device/OctaviOS-R*.zip || true)
     - p404=$(ls out/target/product/$device/?.*zip || true)
