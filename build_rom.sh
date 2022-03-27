@@ -1,11 +1,15 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b twelve-plus -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/rushiranpise/local_manifest.git --depth 1 -b pe12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch aosp_chef-userdebug
+export KBUILD_BUILD_USER=rushiranpise
+export KBUILD_BUILD_HOST=rushiranpise
+export BUILD_USERNAME=rushiranpise
+export BUILD_HOSTNAME=rushiranpise
 export TZ=Asia/Kolkata #put before last build command
 mka otapackage
 
