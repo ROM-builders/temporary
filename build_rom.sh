@@ -7,9 +7,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch aospa_raphael-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true 
 export SELINUX_IGNORE_NEVERALLOWS=TRUE
 export TZ=Asia/Dhaka #put before last build command
+ln -sf vendor/aospa/build.sh build.sh
 ./rom-build.sh raphael
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
