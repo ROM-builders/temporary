@@ -5,7 +5,7 @@ git clone https://github.com/SmallPP420/WSP_sproutLocalMan.git --depth 1 -b main
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-#attempt 9
+#attempt 10
 source build/envsetup.sh
 lunch lineage_WSP_sprout-user
 export TZ=Asia/Dhaka #put before last build command
