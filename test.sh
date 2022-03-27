@@ -94,7 +94,7 @@ for item in "LineageOS lineage-15.1" "LineageOS lineage-17.1" "LineageOS lineage
 do
 item1=$(echo $item | awk -F ' ' '{print $1}')
 item2=$(echo $item | awk -F ' ' '{print $2}')
-if [[ $rom_name == $item1 ]]; then if [[ $branch_name == $item2 ]]; then rom_name=$rom_name-$branch_name; else exit 1; fi ; else exit 1; fi
+if [[ $rom_name == $item1 ]]; then if [[ $branch_name == $item2 ]]; then rom_name=$rom_name-$branch_name; else true; fi ; else true; fi
 done
 
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-16.1 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
