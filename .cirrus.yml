@@ -127,7 +127,7 @@ task:
     - for path in $fail_paths
     - do
     - rm -rf $path
-    - aa=$(echo $a|awk -F '/' '{print $NF}')
+    - rm -rf .repo/project-objects/$path.git
     - rm -rf .repo/projects/$path.git
     - done
     - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
