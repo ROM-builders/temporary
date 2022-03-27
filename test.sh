@@ -90,11 +90,11 @@ rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
 
 #need to change total 8 times
-for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.1" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve-L" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat_L1" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve-one" "Spark-Rom spark" "PixelExtended snow" "Corvus-R 12" "crdroidandroid 12.0" "AospExtended 12.x" "NusantaraProject-ROM 12" "ProjectSakura 12" "ForkLineageOS lineage-19.0"
+for item in "LineageOS lineage-15.1" "LineageOS lineage-17.1" "LineageOS lineage-18.1" "LineageOS lineage-19.1" "ArrowOS arrow-11.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve-L" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat_L1" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "PixelExperience twelve-plus" "CherishOS twelve-one" "Spark-Rom spark" "PixelExtended snow" "Corvus-R 12" "crdroidandroid 11.0" "crdroidandroid 12.0" "AospExtended 12.x" "NusantaraProject-ROM 12" "ProjectSakura 12" "ForkLineageOS lineage-19.0" "AOSPA sapphire" "AOSPK twelve" "BlissRoms arcadia" "Bootleggers-BrokenLab sambun" "CarbonROM cr-9.0" "conquerOS twelve" "Evolution-X elle" "Fusion-OS twelve" "Havoc-OS eleven" "Komodo-OS 12" "PixelOS-Pixelish twelve" "PixelPlusUI-SnowCone snowcone" "projectarcana-aosp 12.x" "ProjectBlaze 12.1" "Project-Elixir snow" "ProjectStreak twelve" "The-RAVEN-OS twelve" "VoltageOS 12" "yaap twelve" "ResurrectionRemix Q"
 do
 item1=$(echo $item | awk -F ' ' '{print $1}')
 item2=$(echo $item | awk -F ' ' '{print $2}')
-if [[ $rom_name == $item1 ]]; then if [[ $branch_name == $item2 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
+if [[ $rom_name == $item1 ]]; then if [[ $branch_name == $item2 ]]; then rom_name=$rom_name-$branch_name; else true; fi ; else true; fi
 done
 
 if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-16.1 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
