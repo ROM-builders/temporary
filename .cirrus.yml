@@ -101,6 +101,7 @@ task:
     - d=$(grep 'Failing repos:' sync.log -n -m1 || true)
     - e=$(grep 'fatal: Unable' sync.log || true)
     - f=$(grep 'error.GitError' sync.log || true)
+    - g=$(grep 'error: Cannot checkout' sync.log || true)
     - if [[ $a == *'Cannot remove project'* ]]
     - then
     - a=$(echo $a | cut -d ':' -f2 | tr -d ' ')
@@ -138,6 +139,15 @@ task:
     - elif [[ $f == *'error.GitError'* ]]
     - then
     - rm -rf $(grep 'error.GitError' sync.log | cut -d ' ' -f2)
+    - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+    - elif [[ $g == *'error: Cannot checkout'* ]]
+    - then
+    - echo hi
+    - coerr=$(grep 'error: Cannot checkout' sync.log | cut -d ' ' -f 4| tr -d ':')
+    - for i in $coerr
+    - do
+    - rm -rf .repo/project-objects/$i.git
+    - done
     - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
     - else
     #- (repo forall -c 'git checkout .' && bash -c "$only_sync") || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync")
