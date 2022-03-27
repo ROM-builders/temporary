@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ProjectSakura/android.git -b 12 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Dev786s/local-manifest.git --depth 1 -b main .repo/local_manifests
-repo sync --current-branch --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune -j `nproc`
+repo sync -c --current-branch --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
