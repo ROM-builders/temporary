@@ -88,20 +88,9 @@ if [[ $or_check -gt 0 ]]; then echo Please dont use or operator inside script; e
 
 rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
-
-#need to change total 8 times
-for item in "LineageOS lineage-15.1" "LineageOS lineage-17.1" "LineageOS lineage-18.1" "LineageOS lineage-19.1" "ArrowOS arrow-11.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve-L" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat_L1" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "PixelExperience twelve-plus" "CherishOS twelve-one" "Spark-Rom spark" "PixelExtended snow" "Corvus-R 12" "crdroidandroid 11.0" "crdroidandroid 12.0" "AospExtended 12.x" "NusantaraProject-ROM 12" "ProjectSakura 12" "ForkLineageOS lineage-19.0" "AOSPA sapphire" "AOSPK twelve" "BlissRoms arcadia" "Bootleggers-BrokenLab sambun" "CarbonROM cr-9.0" "conquerOS twelve" "Evolution-X elle" "Fusion-OS twelve" "Havoc-OS eleven" "Komodo-OS 12" "PixelOS-Pixelish twelve" "PixelPlusUI-SnowCone snowcone" "projectarcana-aosp 12.x" "ProjectBlaze 12.1" "Project-Elixir snow" "ProjectStreak twelve" "The-RAVEN-OS twelve" "VoltageOS 12" "yaap twelve" "ResurrectionRemix Q"
-do
-item1=$(echo $item | awk -F ' ' '{print $1}')
-item2=$(echo $item | awk -F ' ' '{print $2}')
-if [[ $rom_name == $item1 ]]; then if [[ $branch_name == $item2 ]]; then rom_name=$rom_name-$branch_name; else true; fi ; else true; fi
-done
-
-if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-16.1 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
-if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-16.0 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
-if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-15.0 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
-if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == cm-14.1 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
-if [[ $rom_name == ArrowOS ]]; then if [[ $branch_name == 'arrow-10.0' ]]; then echo Only ArrowOS a11 and a12 is supported.; exit 1; fi ;fi
+rom_name=$rom_name-$branch_name
+supported_roms=' AOSPA-sapphire AospExtended-12.x AOSPK-twelve ArrowOS-arrow-11.0 ArrowOS-arrow-12.0 BlissRoms-arcadia Bootleggers-BrokenLab-sambun CarbonROM-cr-9.0 CherishOS-twelve-one CipherOS-twelve-L conquerOS-twelve Corvus-R-12 crdroidandroid-11.0 crdroidandroid-12.0 crdroidandroid-12.1 Evolution-X-elle Evolution-X-snow ForkLineageOS-lineage-19.0 Fusion-OS-twelve Havoc-OS-eleven Komodo-OS-12 lighthouse-os-sailboat_L1 LineageOS-lineage-15.1 LineageOS-lineage-17.1 LineageOS-lineage-18.1 LineageOS-lineage-19.1 NusantaraProject-ROM-12 Octavi-OS-12 PixelExperience-twelve PixelExperience-twelve-plus PixelExtended-snow PixelOS-Pixelish-twelve PixelPlusUI-SnowCone-snowcone PotatoProject-frico-release projectarcana-aosp-12.x Project-Awaken-12 ProjectBlaze-12.1 Project-Elixir-snow Project-Fluid-fluid-12 Project-LegionOS-12 ProjectRadiant-twelve ProjectSakura-12 ProjectStreak-twelve ResurrectionRemix-Q ShapeShiftOS-android_12 Spark-Rom-spark StyxProject-S The-RAVEN-OS-twelve VoltageOS-12 yaap-twelve '
+if [[ $supported_roms != *" rom_name "* ]]; then echo Not supported rom or branch.; fi
 device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
 grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
 grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
