@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch arrow_mido-userdebug
-export ARROW_GAPPS=true
+export ARROW_GAPPS=false
 export TZ=Asia/Delhi #put before last build command
 m bacon
 
