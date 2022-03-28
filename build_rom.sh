@@ -4,6 +4,7 @@ git clone https://github.com/Stalick/local-manifest.git --depth 1 -b octavi-12 .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+export SKIP_ABI_CHECKS=true
 source build/envsetup.sh
 lunch octavi_joan-userdebug
 brunch joan
