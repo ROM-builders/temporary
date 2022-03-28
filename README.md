@@ -1,4 +1,4 @@
-Octavi OS custom ROM for Redmi Note 
+Octavi OS custom ROM for Redmi
 ==============================
 
 [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Note 4(code name mido)
