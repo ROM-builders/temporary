@@ -96,7 +96,7 @@ supported_roms = ['AOSPA-sapphire', 'AospExtended-12.x', 'AOSPK-twelve', 'ArrowO
 
 rom_name = os.environ['rom_name']
 if rom_name not in supported_roms:
-        print("Not supported rom or branch. You can build only supported rom-branch combo. check in test.sh file for supported rom-branch combo.")
+        print('Not supported rom or branch. You can build only supported rom-branch combo. check in test.sh file for supported rom-branch combo.')
 	exit(1)
 "
 device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
