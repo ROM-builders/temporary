@@ -1,13 +1,18 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/DerpFest-11/manifest.git -b 11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-19.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/victor4cris/local_manifest --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+kernel/samsung/a50-common/usr/magisk/update_magisk.sh
 
 # build rom
 source build/envsetup.sh
-lunch derp_vayu-user
-export TZ=Asia/Dhaka #put before last build command
-mka derp
+lunch lineage_a505fn-userdebug
+export KBUILD_BUILD_USER=v1ct0r
+export KBUILD_BUILD_HOST=v1ct0r
+export BUILD_USERNAME=v1ct0r
+export BUILD_HOSTNAME=v1ct0r
+export TZ=Asia/Kolkata #put before last build command
+brunch a505fn
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
