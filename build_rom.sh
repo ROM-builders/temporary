@@ -9,7 +9,6 @@ lunch lineage_a505fn-userdebug
 export KBUILD_BUILD_USER=v1ct0r
 export KBUILD_BUILD_HOST=v1ct0r
 export BUILD_USERNAME=v1ct0r
-export BUILD_HOSTNAME=v1ct0r
 export TZ=Asia/Kolkata #put before last build command
 brunch a505fn
 
