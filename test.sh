@@ -106,10 +106,6 @@ PR_NUM=$(echo $BRANCH|awk -F '/' '{print $2}')
 AUTHOR=$(gh pr view $PR_NUM|grep author| awk '{print $2}')
 for value in vicenteicc2008 random2907 RioChanY ajitlenka30 basic-general ZunayedDihan Badroel07 Ravithakral SumonSN SevralT yograjsingh-cmd nit-in Sanjeev stunner ini23 CyberTechWorld horoid ishakumari772 atharv2951 Lite120 anant-goel 01soni247 fakeriz
 do
-    if [[ $AUTHOR == $value ]]; then
-    echo Please check \#pr instruction in telegram group.; exit 1; fi
-done
-fi
 
 if [[ $CIRRUS_USER_PERMISSION == write ]]; then
 if [ -z "$CIRRUS_PR" ]; then echo fine; else
