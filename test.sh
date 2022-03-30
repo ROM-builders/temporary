@@ -111,7 +111,6 @@ do
     echo Please check \#pr instruction in telegram group.; exit 1; fi
 done
 fi
-
 if [[ $CIRRUS_USER_PERMISSION == write ]]; then
 if [ -z "$CIRRUS_PR" ]; then echo fine; else
 echo You are push user. Don\'t do pr and please follow pinned message in push group.; exit 1
