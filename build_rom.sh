@@ -2,6 +2,13 @@
 repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-19.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/victor4cris/local_manifest --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+
+# keystore stuff
+cd system/security;
+git apply ../../device/samsung/a50-common/Keystore.patch;
+cd -
+
+# kernel stuff
 kernel/samsung/a50-common/usr/magisk/update_magisk.sh
 
 # build rom
