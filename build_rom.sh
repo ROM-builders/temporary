@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 git clone https://github.com/akhilnarang/scripts --depth 1
 cd scripts
 bash setup/android_build_env.sh
-lunch lighthouse_mi439-userdebug
+lunch lighthouse_mi439-user
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
 make lighthouse
