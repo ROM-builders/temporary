@@ -4,8 +4,8 @@ git clone https://github.com/leonidofsparta/local_manifest.git --depth 1 -b mast
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
-lunch octavi-12.0-userdebug
+source build/envsetup.sh 
+lunch octavi-12.0
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
