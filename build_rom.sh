@@ -6,6 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build roms
 source build/envsetup.sh
 lunch blaze_X00TD-userdebug
+export WITH_GAPPS=true
+export BUILD_USERNAME=siren
 export TZ=Asia/Tokyo #put before last build command
 brunch X00TD
 
