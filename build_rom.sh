@@ -5,6 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
+lunch havoc_j7elte-eng
+ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Dhaka
 brunch havoc_j7elte-eng
 
