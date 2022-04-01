@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch radiant_mido-userdebug
 export SKIP_ABI_CHECKS= true
 export WITH_GAPPS= false
-export SELINUX_IGNORE_NEVERALLOW
+export SELINUX_IGNORE_NEVERALLOW= true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon 
 
