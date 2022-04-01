@@ -6,7 +6,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch radiant_mido-userdebug
+export SKIP_ABI_CHECKS= true
 export WITH_GAPPS= false
+export 
 export TZ=Asia/Dhaka #put before last build command
 mka bacon 
 
