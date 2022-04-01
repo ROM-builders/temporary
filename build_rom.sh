@@ -4,7 +4,7 @@ git clone https://github.com/victor4cris/local_manifest --depth 1 -b crDroid .re
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch lineage_a505fn-userdebug
 export KBUILD_BUILD_USER=v1ct0r
 export KBUILD_BUILD_HOST=v1ct0r
