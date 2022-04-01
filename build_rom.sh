@@ -5,7 +5,7 @@ repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all) --optimiz
 
 # build rom
 source build/envsetup.sh
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Dhaka  #put before last build command
 blissify bliss_miatoll-userdebug
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
