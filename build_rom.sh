@@ -4,7 +4,6 @@ git clone https://github.com/SwapnilVicky/local_manifest.git --depth 1 -b 11 .re
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-export TARGET_NO_RECOVERY=true
 source build/envsetup.sh
 lunch lineage_miatoll-userdebug
 export TZ=Asia/kolkata #put before last build command
