@@ -1,4 +1,4 @@
-# sync romrepo init --depth=1 --no-repo-verify -u git://github.com/DerpFest-11/manifest.git -b 11 -g default,-mips,-darwin,-notdefault
+# sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-11.0
 git clone https://github.com/Adi-sdm/device_realme_RMX1941 device/realme/RMX1941 && git clone https://github.com/Realme-C2/android_vendor_realme_RMX1941 -b eleven vendor/realme/RMX1941
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
