@@ -3,6 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest
 git clone https://github.com/god-goku/local-manifest --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+#2
 # build rom
 . build/envsetup.sh
 lunch blaze_X00TD-userdebug
