@@ -4,13 +4,9 @@ git clone https://github.com/w1zzylvayustuff/local_manifest.git --depth 1 -b mai
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch spark_vayu-userdebug
-export KBUILD_BUILD_USER=w1zz
-export KBUILD_BUILD_HOST=w1zzyl
-export BUILD_USERNAME=w1zz
-export BUILD_HOSTNAME=w1zzyl
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Europe/Madrid #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
