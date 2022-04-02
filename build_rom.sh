@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh 
-lunch octavi-mi439-userdebug
+lunch octavi_mi439-userdebug
 export TZ=Asia/Dhaka #put before last build command
 brunch mi439
 
