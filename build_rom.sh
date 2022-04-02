@@ -1,8 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-11.0 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Adi-sdm/local_manifest --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-git clone https://github.com/Adi-sdm/device_realme_RMX1941 device/realme/RMX1941
-git clone https://github.com/Adi-sdm/android_vendor_realme_RMX1941 -b eleven vendor/realme/RMX1941
 wget https://github.com/Realme-C2/patches/raw/main/mt6765.sh
 chmod +x mt6765.sh
 ./mt6765.sh
