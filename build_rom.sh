@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manif
 git clone https://github.com/ibraaltabian17/local_manifest.git --depth 1 -b proton .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom arow
+# build rom arow beryllium
 source build/envsetup.sh
 lunch arrow_beryllium-userdebug
 BUILD_USER="Ibratabian17"
