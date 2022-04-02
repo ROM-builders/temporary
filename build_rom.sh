@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom arow
 source build/envsetup.sh
-lunch aosp_beryllium-userdebug
+lunch arrow_beryllium-userdebug
 BUILD_USER="Ibratabian17"
 BUILD_HOST="Prjktla"
 BUILD_USERNAME="Ibratabian17"
