@@ -1,12 +1,10 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-11.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Adi-sdm/local_manifest --depth 1 -b master .repo/local_manifests
+git clone https://github.com/Adi-sdm/local_manifest --depth=1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-wget https://github.com/Realme-C2/patches/raw/main/mt6765.sh
-chmod +x mt6765.sh
-./mt6765.sh
+
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch arrow_RMX1941-userdebug
 export TZ=Asia/Dhaka #put before last build command
 m bacon
