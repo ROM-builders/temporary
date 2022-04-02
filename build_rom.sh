@@ -6,7 +6,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch xdroid_X01BD-user
-export TZ=Asia/Jakarta #put before last build command 1
+export BUILD_USERNAME=xyrish
+export BUILD_HOSTNAME=irishprjkt
+export KBUILD_BUILD_USER=xyrish
+export KBUILD_BUILD_USER=irishprjkt
+export TZ=Asia/Jakarta #put before last build command
 make xd
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
