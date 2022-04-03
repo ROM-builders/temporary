@@ -7,8 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch octavi_lavender-userdebug
-export WITH_GAPPS=true
-export SKIP_ABI_CHECKS=true
 export TZ=Africa/Egypt #put before last build command
 brunch lavender
 
