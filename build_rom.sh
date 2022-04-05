@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-brunch
+lunch havoc_ali-userdebug
 export TZ=America/Sao_Paulo
 mka bacon
 
