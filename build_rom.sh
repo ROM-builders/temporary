@@ -10,9 +10,9 @@ export KBUILD_BUILD_USER=rushiranpise
 export KBUILD_BUILD_HOST=rushiranpise
 export BUILD_USERNAME=rushiranpise
 export BUILD_HOSTNAME=rushiranpise
-export CUSTOM_BUILD_TYPE := OFFICIAL
-export PPUI_MAINTAINER := rushiranpise
-export IS_PHONE := true
+export CUSTOM_BUILD_TYPE=OFFICIAL
+export PPUI_MAINTAINER=rushiranpise
+export IS_PHONE=true
 export TZ=Asia/Kolkata #put before last build command
 mka otapackage
 
