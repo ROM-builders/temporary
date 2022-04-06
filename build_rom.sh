@@ -5,8 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch xdroid_alioth-user
-export KBUILD_BUILD_VERSION=Eut-V1
+lunch xdroid_alioth-userdebug
 export TZ=Asia/Manila #put before last build command
 make xd
 
