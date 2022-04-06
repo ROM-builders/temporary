@@ -8,6 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_lavender-userdebug
+export BUILD_BROKEN_REQUIRED_MODULES=true
 export TZ=Africa/Egypt #put before last build command
 mka bacon
 
