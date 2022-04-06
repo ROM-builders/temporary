@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch cherish_mido-user
+export CHERISH_VANILLA=true
 export BUILD_HOSTNAME=RasyidAlKautsar
 export BUILD_USERNAME=RasyidAlKautsar
 export TZ=Asia/Jakarta #put before last build command
