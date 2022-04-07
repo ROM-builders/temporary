@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lighthouse_ulysse-userdebug
-export TZ=Asia/Jakarta #put before last build command
+export TZ=Asia/Jakarta
 make lighthouse
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
