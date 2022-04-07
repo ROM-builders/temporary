@@ -4,7 +4,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch havoc_X01AD-user
+lunch havoc_X01AD-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
