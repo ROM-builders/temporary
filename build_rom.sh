@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixysOS/manifest -b t
 git clone https://github.com/XCode219/local_manifests.git --depth 1 -b pixys .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom #
+# build rom
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 source build/envsetup.sh
