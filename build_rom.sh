@@ -1,12 +1,14 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-18.1 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/P-404/platform_manifest -b shinka -g default,-mips,-darwin,-notdefault
 git clone https://github.com/arnabpal2006/local_manifest.git --depth 1 -b LAVENDER .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_lavender-userdebug
+lunch p404_lavender-userdebug
 export TZ=Asia/Kolkata #put before last build command
+export BUILD_USERNAME=arnabpal2006
+export BUILD_HOSTNAME=P-404
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
