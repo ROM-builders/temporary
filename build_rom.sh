@@ -5,10 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch p404_lavender-userdebug
+lunch lineage_lavender-userdebug
 export TZ=Asia/Kolkata #put before last build command
-export BUILD_USERNAME=arnabpal2006
-export BUILD_HOSTNAME=P-404
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
