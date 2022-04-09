@@ -3,9 +3,6 @@ repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manif
 git clone https://github.com/jeno1712/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 rm -rf hardware/qcom-caf/msm8996
-git clone https://github.com/LineageOS/android_hardware_qcom_display.git -b lineage-19.0-caf-msm8996 hardware/qcom-caf/msm8996/display
-git clone https://github.com/LineageOS/android_hardware_qcom_audio.git -b lineage-19.0-caf-msm8996 hardware/qcom-caf/msm8996/audio
-git clone https://github.com/LineageOS/android_hardware_qcom_media.git -b lineage-19.0-caf-msm8996 hardware/qcom-caf/msm8996/media
 
 #build rom
 source build/envsetup.sh
