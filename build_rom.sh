@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch awaken_ginkgo-userdebug
+lunch awaken_ginkgo-user
 export TZ=Asia/Jakarta #put before last build command
 awaken -g ginkgo 
 
