@@ -4,7 +4,6 @@ git clone https://github.com/jeno1712/local_manifest.git --depth 1 -b main .repo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 #build rom
-rm -rf hardware/qcom-caf/msm8996-R
 source build/envsetup.sh
 lunch arrow_X01AD-userdebug
 export TZ=Asia/Kolkata #put before last build command
