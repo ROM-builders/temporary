@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b
 git clone https://github.com/SheikhFaisal713/local_manifest.git --depth 1 -b RMX1851 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom 
 source build/envsetup.sh
 lunch spark_RMX1851-userdebug
 export TZ=Asia/Kolkata #put before last build command
