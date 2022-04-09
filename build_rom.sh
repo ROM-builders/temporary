@@ -1,9 +1,9 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/PixysOS/manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/AzureHelper/local_manifests.git --depth 1 -b pixys .repo/local_manifests
+git clone https://github.com/AzureHelper/local_manifests.git --depth 1 -b pixys-wip .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom [1]
+# build rom [2]
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 source build/envsetup.sh
