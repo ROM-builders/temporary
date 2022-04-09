@@ -1,3 +1,7 @@
+ulysse-projectarcana-aosp-12.x Started
+
+https://cirrus-ci.com/build/5632956524920832
+
 # sync rom
 
 repo init --depth=1 --no-repo-verify -u https://github.com/projectarcana-aosp/manifest -b 12.x -g default,-mips,-darwin,-notdefault
