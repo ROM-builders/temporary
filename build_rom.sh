@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_vayu-userdebug
+export WITH_GAPPS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
