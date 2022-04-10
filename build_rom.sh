@@ -1,13 +1,17 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/DerpFest-11/manifest.git -b 11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 12.x
+git clone https://github.com/anht3889/android_device_lge_sm8150-common -b aosp device/lge/sm8150-common
+git clone https://github.com/anht3889/android_device_lge_flash-common -b aosp device/lge/flash-common
+git clone https://github.com/anht3889/android_device_lge_flashlmdd -b aosp device/lge/flashlmdd
+git clone https://github.com/anht3889/android_device_lge_common -b aosp device/lge/common
+git clone https://github.com/anht3889/proprietary_vendor_lge -b aosp vendor/lge
+git clone https://github.com/anht3889/android_kernel_lge_sm8150_new -b aosp kernel/lge/sm8150
+git clone https://github.com/anht3889/android_hardware_lge -b aosp hardware/lge
 
 # build rom
 source build/envsetup.sh
-lunch derp_vayu-user
-export TZ=Asia/Dhaka #put before last build command
-mka derp
+lunch aosp_flashlmdd-userdebug
+m aex -j$(nproc --all) | tee log.txt
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
