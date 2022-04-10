@@ -12,6 +12,7 @@ git clone https://github.com/anht3889/android_hardware_lge -b aosp hardware/lge
 # build rom
 source build/envsetup.sh
 lunch aosp_flashlmdd-userdebug
+export TZ=Asia/Ho_Chi_Minh
 m aex -j$(nproc --all)
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
