@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b twelve-plus -g default,-mips,-darwin,-notdefault
-git clone https://github.com/rushiranpise/local_manifest.git --depth 1 -b pe12 .repo/local_manifests
+git clone https://github.com/rushiranpise/local_manifest.git --depth 1 -b plus .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
@@ -17,4 +17,4 @@ mka otapackage
 # rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
 rclone copy out/target/product/chef/*.zip cirrus:chef/peplus -P
 
-# 1
+# 2
