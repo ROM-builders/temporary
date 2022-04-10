@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/Havoc-OS/android_manifest.git -b eleven -g default,-mips,-darwin,-notdefault
-git clone https://github.com/VitorGSC/local_manifest.git --depth 1 -b main .repo/local_manifest
+git clone https://github.com/VitorGSC/local_manifest.git --depth 1 -b aosp .repo/local_manifest
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
