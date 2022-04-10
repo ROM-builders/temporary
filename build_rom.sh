@@ -1,13 +1,7 @@
 # sync rom
 repo init --depth=1 -u git://github.com/AospExtended/manifest.git -b 12.x
+git clone https://github.com/dunggvn/local_manifest.git --depth 1 -b aosp .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
-git clone https://github.com/anht3889/android_device_lge_sm8150-common -b aosp device/lge/sm8150-common
-git clone https://github.com/anht3889/android_device_lge_flash-common -b aosp device/lge/flash-common
-git clone https://github.com/anht3889/android_device_lge_flashlmdd -b aosp device/lge/flashlmdd
-git clone https://github.com/anht3889/android_device_lge_common -b aosp device/lge/common
-git clone https://github.com/anht3889/proprietary_vendor_lge -b aosp vendor/lge
-git clone https://github.com/anht3889/android_kernel_lge_sm8150_new -b aosp kernel/lge/sm8150
-git clone https://github.com/anht3889/android_hardware_lge -b aosp hardware/lge
 
 # build rom
 source build/envsetup.sh
