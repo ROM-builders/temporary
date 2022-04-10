@@ -186,7 +186,8 @@ task:
     - awaken=$(ls out/target/product/$device/Project-Awaken*.zip || true)
     - octavi=$(ls out/target/product/$device/OctaviOS-R*.zip || true)
     - p404=$(ls out/target/product/$device/?.*zip || true)
-    - rm -rf $engzip $otazip $awaken $octavi $p404
+    - cipher=$(ls out/target/product/$device/CipherOS-*-OTA-*.zip || true)
+    - rm -rf $engzip $otazip $awaken $octavi $p404 $cipher
     - dlink=$(basename out/target/product/$device/*.zip)
     - command=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
     - if [[ $device == jasmine_sprout ]]; then command="rclone copy out/target/product/jasmine_sprout/*zip cirrus:jasmine_sprout -P"; fi
