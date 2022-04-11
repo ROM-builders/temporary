@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Havoc-OS/android_manifest.git -b eleven -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/ArrowOS/android_manifest.git -b arrow-11.0 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/VitorGSC/local_manifest.git --depth 1 -b aosp .repo/local_manifest
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch havoc_ali-userdebug
+lunch arrow_ali-userdebug
 export TZ=America/Sao_Paulo
 mka bacon
 
