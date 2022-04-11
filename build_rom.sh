@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch cherish_maple_dsds-userdebug
+lunch cherish_maple_dsds-user
 export BUILD_HOSTNAME=znxt
 export BUILD_USERNAME=znxt
 #export CHERISH_VANILLA=true
