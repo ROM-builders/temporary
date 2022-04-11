@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch X01AD-user
+lunch X01AD-userdebug
 export TZ=Asia/Kolkata #put before last build command
 brunch X01AD
 
