@@ -5,9 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-export KBUILD_BUILD_USER=v1ct0r
-export KBUILD_BUILD_HOST=v1ct0r
-export BUILD_USERNAME=v1ct0r
 export TZ=Asia/Kolkata #put before last build command
 brunch a505fn
 
