@@ -6,6 +6,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_judyln-userdebug
+export KBUILD_BUILD_USER=Cramx25
+export KBUILD_BUILD_HOST=Cramx25
+export BUILD_HOSTNAME=Cramx25
 export BUILD_USERNAME=Cramx25
 export TZ=Asia/Manila #put before last build command
 mka bacon
