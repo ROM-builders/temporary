@@ -6,6 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch blaze_vayu-userdebug
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+export WITH_GAPPS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
 brunch vayu
