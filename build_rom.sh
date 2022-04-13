@@ -1,6 +1,6 @@
 # sync rom
 repo init -u https://github.com/crdroidandroid/android.git -b 12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/hemlo69/local_manifest --depth 1 -b main .repo/local_manifest
+git clone https://github.com/hemlo69/local_manifest --depth 1 -b main .repo/local_manifests
 repo sync
 
 # build rom
