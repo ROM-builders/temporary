@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<manifest>
-<project path="device/lge/judyln" name="Cramx25/android_device_lge_judyln.git" remote="github" revision="Lineage-17.1" />
-<project path="vendor/lge" name="EmanuelCN/proprietary_vendor_lge.git" remote="github" revision="ten" />
-</manifest>
