@@ -1,4 +1,4 @@
-AospExtended custom ROM for Red
+AospExtended custom ROM for 
 ==============================
 
 AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note 4(code name mido)
