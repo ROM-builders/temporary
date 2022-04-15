@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_miatoll-userdebug
+export WITH_GMS=true
 export TZ=Asia/kolkata #put before last build command
 make bacon
 
