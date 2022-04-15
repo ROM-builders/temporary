@@ -10,7 +10,7 @@ source build/envsetup.sh
 lunch aosp_lavender-userdebug
 export BUILD_BROKEN_REQUIRED_MODULES=true
 export TZ=Africa/Egypt #put before last build command
-mka bacon
+mka bacon 
 
  
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
