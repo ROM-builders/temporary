@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch xdroid_whyred-userdebug
+lunch xdroid_whyred-user
 export TZ=Asia/Kolkata #put before last build command
 export WITH_GAPPS=true
 mka xd 
