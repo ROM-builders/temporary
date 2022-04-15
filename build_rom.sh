@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/android_manifest -b 12.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/vn-ncvinh/local_manifest.git --depth 1 -b awaken .repo/local_manifests
-repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j
 
 # build rom
 source build/envsetup.sh
