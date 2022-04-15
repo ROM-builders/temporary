@@ -1,9 +1,9 @@
-# sync roms
+# sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest.git -b 12.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Tiktodz/local_manifest.git --depth 1 -b blaze .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build roms
+# build rom
 source build/envsetup.sh
 lunch blaze_X00TD-userdebug
 export WITH_GAPPS=true
