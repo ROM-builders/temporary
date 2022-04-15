@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/AospExtended/manifest.git -b 12.x default,-mips,-darwin,-notdefault
-git clone https://github.com/Ultron12bot/local_manifiest.git --depth 1 -b master .repo/local_manifests
+git clone https://github.com/Ultron12bot/local_manifiest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aops_device_X01AD-userdebug
+lunch aops_X01AD-userdebug
 export TZ=Asia/Kolkata #put before last build command
 m aex
 
