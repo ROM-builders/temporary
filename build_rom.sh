@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PotatoProject/manifes
 git clone https://github.com/alternoegraha/local_manifest.git --depth 1 -b experimentation2 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom [1]
 . build/envsetup.sh
 lunch potato_garden-userdebug
 export TZ=Asia/Jakarta #put before last build command
