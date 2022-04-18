@@ -6,6 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_flashlmdd-userdebug
+export WITH_GAPPS=true
+export TARGET_GAPPS_ARCH=arm64
 export TZ=Asia/Ho_Chi_Minh #put before last build command
 mka bacon
 
