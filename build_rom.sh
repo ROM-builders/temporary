@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_X01AD-eng
-mka bootimage
 export TZ=Asia/Kolkata #put before last build command
 m aex
 
