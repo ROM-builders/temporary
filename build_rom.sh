@@ -8,7 +8,6 @@ source build/envsetup.sh
 lunch lineage_mi439-userdebug
 export TARGET_FLOS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
-export WITH_GMS=true
 export TZ=Asia/Jakarta #put before last build command
 brunch mi439
 
