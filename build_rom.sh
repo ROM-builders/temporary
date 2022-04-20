@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b twelve-one -g default,-mips,-darwin,-notdefault
-git clone https://github.com/ping2109/local_manifest.git -b cherish-spes .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+git clone https://github.com/ping2109/local_manifest.git -b cherish-spes .repo/local_manifests
 
 # build rom
 source build/envsetup.sh
