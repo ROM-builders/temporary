@@ -1,11 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/DerpFest-11/manifest.git -b 11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest -b 12.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/anyinglulu1/local_manifest --depth 1 -b Arcana-Whyred .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch derp_vayu-user
+lunch blaze_whyred-userdebug
+export SELINUX_IGNORE_NEVERALLOWS= true
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES= true
 export TZ=Asia/Dhaka #put before last build command
 mka derp
 
