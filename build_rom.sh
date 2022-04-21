@@ -5,8 +5,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
+export WITH_GAPPS=true
 lunch aosp_vayu-user
-export TZ=Europe/Andorra #put before last build command
+export TZ=Europe/Madrid #put before last build command
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
