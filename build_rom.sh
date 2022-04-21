@@ -9,6 +9,7 @@ lunch vince-user
 #export WITH_GAPPS=true
 #export TARGET_GAPPS_ARCH=arm64
 #export SELINUX_IGNORE_NEVERALLOWS=true
+export TARGET_BUILD_LAWNCHAIR=false
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
