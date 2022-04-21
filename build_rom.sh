@@ -1,14 +1,14 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/PixelPlusUI-SnowCone/manifest -b snowcone-12.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/j0ok34n/local_manifests.git --depth 1 -b aosp .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j4
 
 # build rom
-source build/envsetup.sh
-lunch aosp_flashlmdd-userdebug
 export WITH_GAPPS=true
 export TARGET_GAPPS_ARCH=arm64
 export TZ=Asia/Ho_Chi_Minh #put before last build command
+source build/envsetup.sh
+lunch aosp_flashlmdd-userdebug
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
