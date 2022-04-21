@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest.git -b 12.1
+repo init --depth=1 -g default,-mips,-darwin,-notdefault--no-repo-verify -u https://github.com/ProjectBlaze/manifest.git -b 12.1
 git clone  https://github.com/PrajwalGoli/Hello-world --depth 1 -b main .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune
 
