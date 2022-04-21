@@ -7,7 +7,7 @@ repo sync -c -j$(nproc --all) --force-sync --optimized-fetch --no-tags --no-clon
 source build/envsetup.sh
 lunch blaze_lavender-userdebug
 export WITH_GMS=true
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Dhaka #put before last build command 
 brunch lavender
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
