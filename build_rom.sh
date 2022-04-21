@@ -7,7 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch pixys_mido-userdebug
 export TZ=Asia/Delhi #put before last build command
-export BUILD_MISSING_DEPENDENCIES=true
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
