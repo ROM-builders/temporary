@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch pixys_mido-userdebug
 export TZ=Asia/Delhi #put before last build command
+10export BUILD_BROKEN_DUP_RULES=true
 make pixys
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
