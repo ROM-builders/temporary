@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch styx_mojito-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
-export styx_variant := ok
+export styx_variant= true 
 export TZ=Asia/Dhaka #put before last build command
 m styx-ota
 
