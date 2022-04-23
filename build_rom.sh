@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch evolution_onclite-userdebug
+lunch evolution_onclite-user
 export TZ=Europe/Madrid #put before last build command
 mka evolution
 
