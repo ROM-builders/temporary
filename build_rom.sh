@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch pixys_mojito-user
+export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_WITH_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
 make pixys
