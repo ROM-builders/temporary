@@ -3,11 +3,10 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixysOS/manifest -b t
 git clone https://github.com/onkarsinghsahil/local_manifest.git --depth 1 -b pix .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom [3]
+# build rom
 source build/envsetup.sh
 lunch pixys_mido-userdebug
-export 
-export TZ=Asia/Delhi #put before last build command
+export TZ=Asia/punjab #put before last build command
 make pixys
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
