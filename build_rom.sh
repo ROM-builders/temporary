@@ -4,7 +4,7 @@ git clone https://github.com/Lite-120/local_manifests.git --depth 1 -b main .rep
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch havoc_vince-userdebug
 export TZ=Asia/Dhaka #put before last build command
 brunch vince
