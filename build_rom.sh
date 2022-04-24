@@ -1,11 +1,11 @@
 # sync roms
 repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-CAF/xd_manifest -b eleven -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Tiktodz/local_manifest.git --depth 1 -b xd .repo/local_manifests
+git clone https://github.com/onkarsinghsahil/local_manifest.git --depth 1 -b xdroid .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build roms
 source build/envsetup.sh
-lunch xdroid_X00TD-userdebug
+lunch xdroid_mido-userdebug
 export TZ=Asia/Bangkok #put before last build command
 make xd
 
