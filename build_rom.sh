@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build roms
 source build/envsetup.sh
 lunch yaap_X00TD-user
-export BUILD_USERNAME=todz
+export BUILD_USERNAME=teguh
 export TZ=Asia/Jakarta #put before last build command
 m yaap
 
