@@ -6,9 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom [3]
 source build/envsetup.sh
 lunch pixys_mido-userdebug
-export ALLOW_MISSING_DEPENDENCIES=true
-export BUILD_WITH_GAPPS=true
-export SELINUX_IGNORE_NEVERALLOWS=true
+export 
 export TZ=Asia/Delhi #put before last build command
 make pixys
 
