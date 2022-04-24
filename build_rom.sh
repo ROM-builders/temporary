@@ -5,7 +5,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-export USE_CCACHE=1 && ccache -M 25G && export CONFIG_STATE_NOTIFIER=y && export SELINUX_IGNORE_NEVERALLOWS=true
+export USE_CCACHE=1
+ccache -M 50G
+export CONFIG_STATE_NOTIFIER=y
+export SELINUX_IGNORE_NEVERALLOWS=true
 lunch aosp_X01AD-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
