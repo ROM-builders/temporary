@@ -5,7 +5,8 @@ repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune 
 
 # build rom
 . build/envsetup.sh
-lunch swift_r5x-user
+lunch swift_r5x-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Kolkata #put before last build command
 mka swift
 
