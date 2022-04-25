@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/android_manifest -b 12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/SupFlashS/local_manifest.git --depth 1 -b awaken .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/ProtonAOSP/android_manifest -b sc-v2 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/SupFlashS/local_manifest.git --depth 1 -b proton .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom 
 source build/envsetup.sh
-lunch awaken_lava-userdebug
+lunch proton_lava-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export ALLOW_MISSING_DEPENDENCIES=true
