@@ -6,7 +6,7 @@ repo sync -c -j$(nproc --all) --force-sync --optimized-fetch --no-tags --no-clon
 # build rom
 . build/envsetup.sh
 lunch blaze_r5x-userdebug
-SELINUX_IGNORE_NEVERALLOWS=true
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Kolkata #put before last build command
 brunch r5x
 
