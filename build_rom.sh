@@ -4,7 +4,7 @@ git clone https://github.com/JaswantTeja/local_manifest.git --depth 1 -b Swift .
 repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all);
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch swift_r5x-user
 export TZ=Asia/Kolkata #put before last build command
 mka swift
