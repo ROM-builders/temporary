@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Project-Awaken/android_manifest.git -b 12.1 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/android_manifest.git -b 12.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/JaswantTeja/local_manifest.git --depth 1 -b master .repo/local_manifest
 repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 
