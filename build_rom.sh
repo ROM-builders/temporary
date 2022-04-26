@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/NusantaraProject-ROM/android_manifest -b 11 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Firmansyah2503/local_manifest.git --depth 1 -b master .repo/local_manifests
-  repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all)
+repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all)
 
 # build rom
 source build/envsetup.sh
