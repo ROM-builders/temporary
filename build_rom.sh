@@ -10,6 +10,7 @@ ccache -M 50G
 export CONFIG_STATE_NOTIFIER=y
 export SELINUX_IGNORE_NEVERALLOWS=true
 lunch corvus_X01AD-userdebug
+ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Dhaka #put before last build command
 make corvus
 
