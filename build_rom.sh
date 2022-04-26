@@ -1,11 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/conquerOS/manifest.git -b twelve -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/ConquerOS/manifest.git -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/ritvik-ch/local_manifest.git --depth 1 -b conquer-12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch conquer_vince-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Kolkata #put before last build command
 make carthage
 
