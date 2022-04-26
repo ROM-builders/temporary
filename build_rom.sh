@@ -8,6 +8,7 @@ source build/envsetup.sh
 lunch streak_r5x-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export WITH_GAPPS=true
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
