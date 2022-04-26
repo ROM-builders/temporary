@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ProjectStreak/platform_manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/AbrarNoob/local_manifest --depth 1 -b st .repo/local_manifests
+git clone https://github.com/onkarsinghsahil/local_manifest --depth 1 -b streak .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch streak_lavender-userdebug
+lunch streak_mido-userdebug
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
