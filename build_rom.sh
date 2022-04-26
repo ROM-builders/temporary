@@ -1,13 +1,13 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ConquerOS/manifest.git -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Tiktodz/local_manifest.git --depth 1 -b conquer .repo/local_manifests
+git clone https://github.com/ritvik-ch/local_manifest.git --depth 1 -b conquer-12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch conquer_X00TD-userdebug
-export BUILD_USERNAME=todz
-export TZ=Asia/Tokyo #put before last build command
+lunch conquer_vince-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
+export TZ=Asia/Kolkata #put before last build command
 make carthage
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
