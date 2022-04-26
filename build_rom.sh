@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lighthouse_vince-use
+lunch lighthouse_vince-user
 export SKIP_ABI_CHECKS=true
 export TZ=Asia/Kolkata
 make lighthouse
