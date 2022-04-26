@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/AospExtended/manifest
 git clone https://github.com/Lafactorial/local_manifest.git --depth 1 -b AEX .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build  rom
 source build/envsetup.sh
 lunch aosp_tissot-userdebug
 export TZ=Asia/Dhaka #put before last build command
