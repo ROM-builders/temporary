@@ -8,6 +8,7 @@ source build/envsetup.sh
 lunch awaken_r5x-user
 export SELINUX_IGNORE_NEVERALLOWS=true
 export WITH_GAPPS=true
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export TZ=Asia/Kolkata #put before last build command
 make bacon
 
