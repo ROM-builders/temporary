@@ -8,7 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch arrow_vince-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export SKIP_ABI_CHECKS=true
-export TZ=Asia/Kolkata #time
+export TZ=Asia/Kolkata 
 m bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
