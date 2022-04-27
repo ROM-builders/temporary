@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch lighthouse_vince-user
 export SKIP_ABI_CHECKS=true
-export TZ=Asia/Kolkata
+export TZ=Asia/Kolkata #timezone
 make lighthouse
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
