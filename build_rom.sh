@@ -1,12 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/projectarcana-aosp/manifest -b 12.x -g default,-mips,-darwin,-notdefault
-git clone https://github.com/makhk/local_manifest.git --depth 1 -b arcana .repo/local_manifests
+git clone https://github.com/makhk/local_manifest.git --depth 1 -b arc .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_sweet-userdebug
-export RELAX_USES_LIBRARY_CHECK=true
+lunch aosp_lavender-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
