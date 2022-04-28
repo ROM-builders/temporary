@@ -3,11 +3,12 @@ repo init --depth=1 --no-repo-verify -u https://github.com/AOSPA/manifest -b sap
 git clone https://github.com/Azure-Helper/local_manifests.git --depth 1 -b aospa .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom [5]
+# build rom [6]
 source build/envsetup.sh
 lunch aospa_raphael-eng
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
+export SKIP_ABI_CHECKS=true
 export TZ=Asia/Dhaka #put before last build command
 ./rom-build.sh raphael -t eng
 
