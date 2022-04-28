@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manif
 git clone https://github.com/monu70152/local_manifest1.git --depth 1 -b veux .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-#2
+#3
 # build rom 
 source build/envsetup.sh
 lunch aosp_veux-userdebug
