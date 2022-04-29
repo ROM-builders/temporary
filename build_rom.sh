@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch lighthouse_vince-user
 export SKIP_ABI_CHECKS=true
 export WITH_GAPPS=true
-export TZ=Asia/Kolkata #timezone
+export TZ=Asia/Kolkata
 make lighthouse
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
