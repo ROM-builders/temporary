@@ -5,8 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch X00TD-user
-export TZ=Asia/Jakarta #put before last build command
+lunch octavi_X00TD-userdebug
+export TZ=Europe/Brussles #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
