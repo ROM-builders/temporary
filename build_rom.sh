@@ -6,6 +6,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch evolution_onclite-userdebug
+export KBUILD_BUILD_USER=w1zzyl
+export KBUILD_BUILD_HOST=Ryzen
+export BUILD_USERNAME=w1zzyl
+export BUILD_HOSTNAME=Ryzen
 export TZ=Europe/Madrid #put before last build command
 mka evolution
 
