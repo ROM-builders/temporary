@@ -6,10 +6,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch vince-user
-#export WITH_GAPPS=true
-#export TARGET_GAPPS_ARCH=arm64
+export WITH_GAPPS=true
+export TARGET_GAPPS_ARCH=arm64
 #export SELINUX_IGNORE_NEVERALLOWS=true
-export TARGET_BUILD_LAWNCHAIR=false
+#export TARGET_BUILD_LAWNCHAIR=false
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
