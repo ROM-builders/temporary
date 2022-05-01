@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-OS/platform_ma
 git clone https://github.com/Kendras056/local_manifests.git --depth 1 -b 12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build roms
 source build/envsetup.sh
 lunch octavi_X00TD-userdebug
 export BUILD_USERNAME=siren
