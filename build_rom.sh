@@ -7,7 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch nad_X00T-userdebug
 export BUILD_USERNAME=mika1zumi
-export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Tokyo #put before last build command
 make nad
 
