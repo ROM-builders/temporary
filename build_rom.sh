@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch cherish_maple-user
 export BUILD_HOSTNAME=znxt
 export BUILD_USERNAME=znxt
-#export CHERISH_VANILLA=true
+export CHERISH_VANILLA=true
 export TZ=Asia/Jakarta #put before last build command
 brunch maple
  
