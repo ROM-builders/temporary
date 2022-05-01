@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Project-Awaken/android_manifest.git -b 12.1 -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/android_manifest.git -b 12.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/kreioroscape/local_manifest.git --depth 1 -b Aosp .repo/local_manifest
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
