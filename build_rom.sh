@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build roms
 source build/envsetup.sh
 lunch nad_X00T-userdebug
-export BUILD_USERNAME=mika1zumi
+export BUILD_USERNAME=mika1zumii
 export TZ=Asia/Tokyo #put before last build command
 make nad
 
