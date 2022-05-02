@@ -18,4 +18,4 @@ mka otapackage
 rclone copy out/target/product/chef/*.zip cirrus:chef/cherish -P
 rclone copy out/target/product/chef/boot.img cirrus:chef/cherish -P
 
-# 4
+# 5
