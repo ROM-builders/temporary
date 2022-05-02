@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch octavi_X00TD-userdebug
 export BUILD_USERNAME=siren
-export ALLOW_MISSING_DEPENDENCIES=true
+export SKIP_ABI_CHECKS=true
 export TZ=Europe/Brussels #put before last build command
 brunch X00TD
 
