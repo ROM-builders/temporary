@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch potato_whyred-user
 export TZ=Asia/Dhaka #timezone
-export WITH_GMS=true
+export WITH_GMS=true #hello there
 brunch whyred
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
