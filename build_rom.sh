@@ -1,14 +1,14 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-19.1 11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/aslenofarid/local_manifest.git --depth 1 -b lineage-19.1 .repo/local_manifests
+git clone https://github.com/ritvik-ch/local_manifest.git --depth 1 -b lineage .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_X00TD-userdebug
-export BUILD_USERNAME=aslenofarid
-export TZ=Asia/Jakarta #put before last build command
-brunch X00TD
+lunch lineage_vince-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true 
+export TZ=Asia/Kolkata #put before last build command
+brunch vince
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
