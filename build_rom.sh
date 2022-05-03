@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/android_manifest -b 12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/JaswantTeja/local_manifest.git -b awaken .repo/local_manifests
+git clone https://github.com/JaswantTeja/r5x-Tree-Manifest.git -b awaken .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch awaken_r5x-userdebug
+lunch derp_r5x-user
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
