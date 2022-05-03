@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch fluid_X00TD-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Shanghai #put this before last build command
 mka bacon
 
