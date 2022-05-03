@@ -1,12 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/aex-tmp/manifest.git -b 12.x -g default,-mips,-darwin,-notdefault
-git clone https://github.com/harshhaareddy/local-manifest.git --depth 1 -b aex .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/aex-tmp/manifest.git -b 12.1.x -g default,-mips,-darwin,-notdefault
+git clone https://github.com/nohaxrobot/Local-Manifests --depth 1 -b elixir repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_X00TD-userdebug
-export RELAX_USES_LIBRARY_CHECK=true
+lunch aosp_pine-userdebug
 export PRODUCT_BROKEN_VERIFY_USES_LIBRARIES=true
 export WITH_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
