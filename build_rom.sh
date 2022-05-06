@@ -1,6 +1,6 @@
 # sync rom
 
-repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 11.0 11 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelPlusUI-SnowCone/manifest -b 12.1 11 -g default,-mips,-darwin,-notdefault
 
 git clone https://github.com/Krishdangi/local_manifests/ --depth 1 -b main .repo/local_manifests
 
