@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom 1
 source build/envsetup.sh
 lunch evolution_chef-userdebug
+export SKIP_ABI_CHECKS=true
 export TZ=Asia/Dhaka #put before last build command
 mka otapackage
 
