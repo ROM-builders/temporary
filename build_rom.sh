@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch aosp-X01AD-eng
+lunch aosp_X01AD-eng
 export WITH_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
 m aex
