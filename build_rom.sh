@@ -1,11 +1,15 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/AospExtended/manifest.git -b 12.x -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/AospExtended/manifest.git -b 12.1.x -g default,-mips,-darwin,-notdefault
 git clone https://github.com/makhk/local_manifest.git --depth 1 -b aex-test .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch aosp_sweet-userdebug
+export KBUILD_BUILD_USER=makhk
+export KBUILD_BUILD_HOST=makhk
+export BUILD_USERNAME=makhk
+export BUILD_HOSTNAME=makhk
 export RELAX_USES_LIBRARY_CHECK=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export GAPPS_BUILD=true
