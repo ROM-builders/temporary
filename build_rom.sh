@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch rr_X00TD-userdebug
 export BUILD_USERNAME=tiktod
-export TZ=Asia/Tokyo #put before last build command
+export TZ=Asia/Shanghai #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
