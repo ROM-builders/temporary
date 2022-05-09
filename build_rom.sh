@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/ArrowOS/android_manifes
 git clone https://github.com/santoshhh000/local_manifest.git --depth 1 -b arrow11-begonia .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom 
+# build rom
 source build/envsetup.sh
 lunch arrow_begonia-userdebug
 export TZ=Asia/Dhaka #put before last build command
