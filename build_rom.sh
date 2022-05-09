@@ -5,7 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch aosp_vince-userdebug
+lunch aosp_vince-user
+export WITH_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
 m aex
 
