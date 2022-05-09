@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b spark -g default,-mips,-darwin,-notdefault
-git clone https://github.com/matheucomth/local_manifest --depth 1 -b spark .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-Pixelish/manifest -b twelve -g default,-mips,-darwin,-notdefault
+git clone https://github.com/matheucomth/local_manifest --depth 1 -b PixelOS .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch spark_tulip-userdebug
+lunch aosp_twolip-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export RELAX_USES_LIBRARY_CHECK=true
