@@ -1,28 +1,22 @@
 # sync rom
 
-repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b 12.1 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/lighthouse-os/manifest.git -b sailboat_L1 -g default,-mips,-darwin,-notdefault
 
 git clone https://github.com/Lynx041/local_manifest.git --depth 1 -b ulysse .repo/local_manifests
 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
- 
-
 # build rom
 
-. build/envsetup.sh
+source build/envsetup.sh
 
-lunch cherish_ulysse-userdebug
-
-#export WITH_GAPPS=true
-
-export SELINUX_IGNORE_NEVERALLOWS=true
+lunch lighthouse_ulysse-user
 
 export TZ=Asia/Dhaka #put before last build command
 
-brunch ulysse
+make lighthouse
 
- 
+     
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 
