@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch bliss_gram-userdebug
+lunch bliss_gram-eng
 export TZ=Asia/Dhaka #put before last build command
 blissify -v gram
 
