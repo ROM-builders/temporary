@@ -12,7 +12,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 . build/envsetup.sh
 
-lunch blaze_ulysse-userdebug
+lunch cherish_ulysse-userdebug
 
 #export WITH_GAPPS=true
 
