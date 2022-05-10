@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch aosp_chef-eng
+lunch aosp_chef-userdebug
 export KBUILD_BUILD_USER=rushiranpise
 export KBUILD_BUILD_HOST=rushiranpise
 export BUILD_USERNAME=rushiranpise
@@ -13,7 +13,6 @@ export BUILD_HOSTNAME=rushiranpise
 export CUSTOM_BUILD_TYPE=OFFICIAL
 export PPUI_MAINTAINER=rushiranpise
 export IS_PHONE=true
-export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Kolkata #put before last build command
 mka otapackage
 
