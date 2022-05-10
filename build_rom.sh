@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build
 source build/envsetup.sh
+export CIPHER_OFFICIAL=true
 lunch cipher_tiare-userdebug
 export TZ=Asia/Kolkata #put before last build command
 export BUILD_USERNAME=techyminati
