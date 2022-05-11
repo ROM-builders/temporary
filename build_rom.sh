@@ -1,14 +1,13 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Corvus-R/android_manifest.git -b 12-test -g default,-mips,-darwin,-notdefault
-git clone https://github.com/STRK-ND/local-manifest.git --depth 1 -b corvus .repo/local_manifests
+git clone https://github.com/clhexx00tlab/local_manifest.git --depth 1 -b x00t_corvus .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) 
 
 # build rom
 source build/envsetup.sh
-lunch corvus_X00TD-userdebug
+lunch corvus_X00T-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export SKIP_ABI_CHECKS=true
-export USE_GAPPS=true
 make corvus
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
