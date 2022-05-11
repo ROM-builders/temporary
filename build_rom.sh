@@ -5,12 +5,12 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lineage_mi439-userdebug
+lunch lineage_Mi439-userdebug
 export TARGET_FLOS=true
 export WITH_GMS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Jakarta #put before last build command
-brunch mi439
+brunch Mi439
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
