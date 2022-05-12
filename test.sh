@@ -101,6 +101,9 @@ if [[ $BRANCH != *pull/* ]]; then if [[ $BRANCH != $device-$rom_name-* ]]; then 
 if [[ $device == 'copy' ]]; then echo "Please use lunch or brunch command with device codename after . build/envsetup.sh" ; exit 1; fi
 
 if [[ $BRANCH == *pull/* ]]; then
+
+if [[ $CIRRUS_COMMIT_MESSAGE != $device-$rom_name-* ]]; then echo Please use proper PR label described in telegram group.; exit 1; fi
+
 cd /tmp/cirrus-ci-build
 PR_NUM=$(echo $BRANCH|awk -F '/' '{print $2}')
 AUTHOR=$(gh pr view $PR_NUM|grep author| awk '{print $2}')
