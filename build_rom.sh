@@ -1,14 +1,12 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ForkLineageOS/android -b lineage-19.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/makhk/local_manifest.git --depth 1 -b flos .repo/local_manifests
+git clone https://github.com/makhk/local_manifest.git --depth 1 -b flos-test .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_sweet-user
+lunch lineage_sweet-userdebug
 export WITH_GMS=false
-export RELAX_USES_LIBRARY_CHECK=true
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
