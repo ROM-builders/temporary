@@ -1,13 +1,13 @@
 # sync roms
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-Pixelish/manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Tiktodz/local_manifest.git --depth 1 -b xr .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b twelve-plus -g default,-mips,-darwin,-notdefault
+git clone https://github.com/mika1zumi/local_manifest.git --depth 1 -b xr .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build roms
 source build/envsetup.sh
-lunch aosp_X00TD-userdebug
+lunch aosp_X00T-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
-export BUILD_USERNAME=tiktod
+export BUILD_USERNAME=mikapejukw
 export TZ=Asia/Bangkok #put before last build command
 mka bacon
 
