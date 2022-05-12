@@ -1,14 +1,14 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-OS/platform_manifest.git -b 12 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Kendras056/local_manifests.git --depth 1 -b 12 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-18.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Kendras056/local_manifests.git --depth 1 -b eleven .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch octavi_X00TD-userdebug
-export BUILD_USERNAME=siren
-export SKIP_ABI_CHECKS=true
+breakfast lineage_X00TD-userdebug
+export BUILD_USERNAME=morbius
 export TZ=Europe/Brussels #put before last build command
+croot
 brunch X00TD
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
