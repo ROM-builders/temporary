@@ -5,8 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom 
 source build/envsetup.sh
-lunch lineage_vince-eng
-export SELINUX_IGNORE_NEVERALLOWS=true
+lunch lineage_vince-user
 export TZ=Asia/Dhaka #put before last build command
 brunch vince
 
