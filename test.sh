@@ -102,7 +102,12 @@ if [[ $rom_name == ArrowOS ]]; then if [[ $branch_name == 'arrow-10.0' ]]; then 
 device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
 grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
 
-if [[ $BRANCH != *pull/* ]]; then if [[ $BRANCH != $device-$rom_name-* ]]; then echo Please use proper branch naming described in push group.; exit 1; fi; fi
+if [[ $BRANCH != *pull/* ]]; then 
+if [[ $BRANCH != $device-$rom_name-* ]]; then echo Please use proper branch naming described in push group.; exit 1; fi; 
+CIRRUS_COMMIT_MESSAGE
+if [[ $CIRRUS_COMMIT_MESSAGE == "Update build_rom.sh" ]]; then echo Please use proper commit message.; exit 1; fi; 
+fi
+
 if [[ $device == 'copy' ]]; then echo "Please use lunch or brunch command with device codename after . build/envsetup.sh" ; exit 1; fi
 
 if [[ $BRANCH == *pull/* ]]; then
