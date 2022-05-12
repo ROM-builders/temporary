@@ -98,8 +98,7 @@ grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laure
 grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
 
 if [[ $BRANCH != *pull/* ]]; then 
-if [[ $BRANCH != $device-$rom_name-* ]]; then echo Please use proper branch naming described in push group.; exit 1; fi; 
-CIRRUS_COMMIT_MESSAGE
+if [[ $BRANCH != $device-$rom_name-* ]]; then echo Please use proper branch naming described in push group.; exit 1; fi;
 if [[ $CIRRUS_COMMIT_MESSAGE == "Update build_rom.sh" ]]; then echo Please use proper commit message.; exit 1; fi; 
 fi
 
