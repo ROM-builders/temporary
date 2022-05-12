@@ -6,8 +6,21 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 export TZ=Asia/Kolkata #put before last build command
+lunch aosp_beyond0lte-userdebug
+make bacon
+lunch aosp_beyond1lte-userdebug
+make bacon
 lunch aosp_beyond2lte-userdebug
 make bacon
+lunch aosp_beyondx-userdebug
+make bacon
+lunch aosp_d1-userdebug
+make bacon
+lunch aosp_d2s-userdebug
+make bacon
+lunch aosp_d2x-userdebug
+make bacon
+
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
