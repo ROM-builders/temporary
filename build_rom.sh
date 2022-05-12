@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch spark_mido-user
-export SPARK_BUILD_TYPE=OFFICIAL
+export SPARK_BUILD_TYPE=MONTHLY
 export BUILD_HOSTNAME=RasyidAlKautsar
 export BUILD_USERNAME=RasyidAlKautsar
 export TZ=Asia/Jakarta #put before last build command
