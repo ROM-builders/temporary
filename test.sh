@@ -88,29 +88,26 @@ if [[ $or_check -gt 0 ]]; then echo Please dont use or operator inside script; e
 
 rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
+rom_name=$rom_name-$branch_name
+supported_roms=' AOSPA-sapphire AospExtended-12.1.x AOSPK-twelve ArrowOS-arrow-11.0 ArrowOS-arrow-12.1 BlissRoms-arcadia-next Bootleggers-BrokenLab-sambun CarbonROM-cr-9.0 CherishOS-twelve-one CipherOS-twelve-L ConquerOS-twelve Corvus-R-12-test crdroidandroid-11.0 crdroidandroid-12.1 DotOS-dot12.1 Evolution-X-elle Evolution-X-snow Fork-Krypton-A12 ForkLineageOS-lineage-19.1 Fusion-OS-twelve Havoc-OS-eleven Komodo-OS-12.2 lighthouse-os-sailboat_L1 LineageOS-lineage-15.1 LineageOS-lineage-17.1 LineageOS-lineage-18.1 LineageOS-lineage-19.1 NusantaraProject-ROM-12 Octavi-OS-12 P-404-shinka PixelExperience-twelve PixelExperience-twelve-plus PixelExtended-snow PixelOS-Pixelish-twelve PixelPlusUI-SnowCone-snowcone-12.1 PixysOS-twelve PotatoProject-frico_mr1-release projectarcana-aosp-12.x Project-Awaken-12.1 ProjectBlaze-12.1 Project-Elixir-snow Project-Fluid-fluid-12 Project-LegionOS-12 ProjectRadiant-twelve ProjectSakura-12 ProjectStreak-twelve.one ResurrectionRemix-Q ShapeShiftOS-android_12 Spark-Rom-spark StyxProject-S syberia-project-12.1 The-RAVEN-OS-twelve VoltageOS-12l xdroid-oss-twelve yaap-twelve '
+if [[ $supported_roms != *" $rom_name "* ]]; then echo Not supported rom or branch.; exit 1; fi
 
-#need to change total 8 times
-for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.1" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve-L" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat_L1" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve-one" "Spark-Rom spark" "PixelExtended snow" "Corvus-R 12" "crdroidandroid 12.0" "AospExtended 12.x" "NusantaraProject-ROM 12" "ProjectSakura 12" "ForkLineageOS lineage-19.0"
-do
-item1=$(echo $item | awk -F ' ' '{print $1}')
-item2=$(echo $item | awk -F ' ' '{print $2}')
-if [[ $rom_name == $item1 ]]; then if [[ $branch_name == $item2 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
-done
-
-if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-16.1 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
-if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-16.0 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
-if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-15.0 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
-if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == cm-14.1 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
-if [[ $rom_name == ArrowOS ]]; then if [[ $branch_name == 'arrow-10.0' ]]; then echo Only ArrowOS a11 and a12 is supported.; exit 1; fi ;fi
 device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
 grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
 grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
 grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
 
-if [[ $BRANCH != *pull/* ]]; then if [[ $BRANCH != $device-$rom_name-* ]]; then echo Please use proper branch naming described in push group.; exit 1; fi; fi
+if [[ $BRANCH != *pull/* ]]; then 
+if [[ $BRANCH != $device-$rom_name-* ]]; then echo Please use proper branch naming described in push group.; exit 1; fi; 
+if [[ $CIRRUS_COMMIT_MESSAGE == "Update build_rom.sh" ]]; then echo Please use proper commit message.; exit 1; fi; 
+fi
+
 if [[ $device == 'copy' ]]; then echo "Please use lunch or brunch command with device codename after . build/envsetup.sh" ; exit 1; fi
 
 if [[ $BRANCH == *pull/* ]]; then
+
+if [[ $CIRRUS_COMMIT_MESSAGE != $device-$rom_name-* ]]; then echo Please use proper PR label described in telegram group.; exit 1; fi
+
 cd /tmp/cirrus-ci-build
 PR_NUM=$(echo $BRANCH|awk -F '/' '{print $2}')
 AUTHOR=$(gh pr view $PR_NUM|grep author| awk '{print $2}')
