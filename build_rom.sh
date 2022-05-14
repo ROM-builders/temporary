@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/DotOS/manifest.git -b dot12.1 -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/DotOS/manifest.git -b dot12.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/ritvik-ch/local_manifest.git --depth 1 -b Dot-12.x .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
