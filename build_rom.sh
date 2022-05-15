@@ -5,9 +5,13 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom 2
 source build/envsetup.sh
-lunch evolution_chef-eng
+lunch evolution_chef-userdebug
 export TARGET_USES_MINI_GAPPS=true
-export TZ=Asia/Dhaka #put before last build command
+export KBUILD_BUILD_USER=rushiranpise
+export KBUILD_BUILD_HOST=rushiranpise
+export BUILD_USERNAME=rushiranpise
+export BUILD_HOSTNAME=rushiranpise
+export TZ=Asia/Kolkata #put before last build command
 mka evolution
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
