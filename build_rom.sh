@@ -1,12 +1,12 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest.git -b 12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/OmarAlCoptan/local_manifest.git --depth 1 -b blaze-test .repo/local_manifests
+git clone https://github.com/OmarAlCoptan/local_manifest.git --depth 1 -b blaze .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
    
 # build rom
 source build/envsetup.sh
 lunch blaze_lavender-userdebug
-export WITH_GAPPS=true
+#export WITH_GAPPS=true
 export TZ=Africa/Egypt #put before last build command
 brunch lavender        
  
