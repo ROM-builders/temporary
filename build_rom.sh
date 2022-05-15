@@ -5,12 +5,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom [27]
 source build/envsetup.sh
-lunch aospa_raphael-eng
-export ALLOW_MISSING_DEPENDENCIES=true
-export SELINUX_IGNORE_NEVERALLOWS=true
-export SKIP_ABI_CHECKS=true
+lunch aospa_raphael-userdebug
 export TZ=Asia/Dhaka #put before last build command
-./rom-build.sh raphael -t eng
+./rom-build.sh raphael -t userdebug
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
