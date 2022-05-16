@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 11.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/blazey66/local_manifest.git --depth 1 -b crd .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u  https://github.com/AICP/platform_manifest.git -b r11.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/blazey66/local_manifest.git --depth 1 -b aicp .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom 
 source build/envsetup.sh
-lunch lineage_mi439-userdebug
+lunch aicp_mi439-userdebug
 export TZ=Asia/Dhaka #put before last build command
 brunch mi439
 
