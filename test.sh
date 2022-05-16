@@ -86,7 +86,7 @@ if [[ $cd_check -gt 0 ]]; then echo Please dont use cd inside script, use local 
 or_check=$(grep "||" $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $or_check -gt 0 ]]; then echo Please dont use or operator inside script; exit 1; fi
 
-lunch_check=$(grep "unch" $CIRRUS_WORKING_DIR/build_rom.sh | grep -v 'rclone' | wc -l)
+lunch_check=$(grep "lunch" $CIRRUS_WORKING_DIR/build_rom.sh | grep -v 'rclone' | wc -l)
 if [[ $lunch_check -gt 1 ]]; then echo Please build for one device at a time.; exit 1; fi
 
 rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
