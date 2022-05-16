@@ -4,7 +4,6 @@ git clone https://github.com/tedomi2705/local_manifest.git --depth=1 -b snow .re
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
-
 # build rom
 source build/envsetup.sh
 lunch evolution_tulip-user
