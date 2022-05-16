@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch cherish_alioth-userdebug
+lunch awaken_alioth-userdebug
 export TZ=Asia/Dhaka
 export BUILD_USERNAME=alioth
 export BUILD_HOSTNAME=userdebug
