@@ -1,12 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/VoltageOS/manifest -b 12l -g default,-mips,-darwin,-notdefault
-git clone https://github.com/AbrarNoob/local_manifest.git --depth 1 -b voltage .repo/local_manifests
+git clone https://github.com/official-mocha/local_manifest.git --depth 1 -b voltage .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-
 
 # build rom
 source build/envsetup.sh
-lunch voltage_alioth-userdebug
+lunch voltage_tulip-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
