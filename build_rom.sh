@@ -1,12 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest.git -b snow -g default,-mips,-darwin,-notdefault
-git clone https://github.com/laleeroy/local_manifest.git --depth 1 -b alioth-Evo .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b snow -g default,-mips,-darwin,-notdefault
+git clone https://github.com/mika1zumi/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
-lunch evolution_alioth-user
-export TZ=Asia/Manila #put before last build command
+source build/envsetup.sh
+lunch evolution_X00T-userdebug
+export TARGET_USES_MINI_GAPPS=true
+export TZ=Asia/Tokyo #put before last build command
 mka evolution
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
