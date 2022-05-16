@@ -5,11 +5,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
+lunch blaze_rosy-userdebug
 export TZ=Asia/Jakarta
 export USE_NFSparts=true
 export NFS_BUILD_VARIANT=normal
 export NFS_ADD_GCAMGO=true
-lunch blaze_rosy-userdebug
 brunch rosy
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
