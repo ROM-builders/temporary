@@ -5,8 +5,8 @@ repo sync -c -j$(nproc --all) --force-sync --optimized-fetch --no-tags --no-clon
 
 # build rom
 source build/envsetup.sh
-lunch blaze_miatoll-userdebug
 export WITH_GAPPS=true
+lunch blaze_miatoll-userdebug
 export TZ=Asia/Dhaka #put before last build command
 brunch miatoll
 
