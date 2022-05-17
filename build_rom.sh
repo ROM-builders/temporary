@@ -1,13 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-Pixelish/manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/victor4cris/local_manifest --depth 1 -b S10 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 12.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/no-leaks-inside/local_manifest --depth 1 -b crDroid-S .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
 export TZ=Asia/Kolkata #put before last build command
-lunch aosp_beyond1lte-userdebug
-make bacon
+brunch beyond1lte
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
