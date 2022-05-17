@@ -1,6 +1,6 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/syberia-project/manifest.git -b 12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/matheucomth/local_manifest.git --depth 1 -b syberia .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/DotOS/manifest.git -b dot12.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/matheucomth/local_manifest.git --depth 1 -b dot .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
@@ -8,7 +8,7 @@ source build/envsetup.sh
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export RELAX_USES_LIBRARY_CHECK=true
-lunch syberia_tulip-userdebug
+lunch dot_tulip-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
