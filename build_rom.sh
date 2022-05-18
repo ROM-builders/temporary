@@ -4,7 +4,7 @@ git clone https://github.com/SupFlashS/local_manifest.git --depth 1 .repo/local_
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom 
-. build/envsetup.sh
+source build/envsetup.sh
 lunch arrow_lava-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export WITH_GAPPS=true
