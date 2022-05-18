@@ -1,11 +1,12 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest.git -b spark -g default,-mips,-darwin,-notdefault
-git clone https://github.com/ImPrashantt/local_manifest.git --depth 1 -b spark .repo/local_manifests
+git clone https://github.com/clhexx00tlab/local_manifest.git --depth 1 -b x00t_spark .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
-lunch spark_lavender-userdebug
+lunch spark_X00T-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
