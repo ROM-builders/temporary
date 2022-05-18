@@ -1,7 +1,7 @@
 # sync rom
 repo init -u https://github.com/ProjectBlaze/manifest.git -b 12.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/SKORPION29/local_manifest.git --depth 1 -b main .repo/local_manifests
-repo sync -c -j$(nproc --all) --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune
+repo sync -c -j8 --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune
 
 # build rom
 source build/envsetup.sh
