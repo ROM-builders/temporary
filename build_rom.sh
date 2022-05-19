@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch cipher_vayu-user
-export WITH_GAPPS=true
+export CIPHER_GAPPS=true
 export CIPHER_MAINTAINER=clhexftw
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
