@@ -7,8 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch arrow_lava-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
-export WITH_GAPPS=true
-export TARGET_GAPPS_ARCH=arm64
+export ARROW_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
 m bacon
 
