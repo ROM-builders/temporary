@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch lineage_lavender-userdebug
 export TARGET_FLOS=true
-#export WITH_GMS=true
+export WITH_GMS=true
 export TZ=Asia/Kolkata #put before last build command
 make bacon
 
