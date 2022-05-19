@@ -4,7 +4,7 @@ git clone https://github.com/Kendras056/local_manifests.git --depth 1 -b 12.1 .r
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch syberia_X00TD-userdebug
 export BUILD_USERNAME=morbius
 export TZ=Europe/Moscow #put before last build command
