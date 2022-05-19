@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch syberia_X00TD-eng
+lunch syberia_X00TD-userdebug
 export BUILD_USERNAME=morbius
 export TZ=Europe/Moscow #put before last build command
 mka bacon
