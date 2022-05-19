@@ -30,3 +30,4 @@ rclone copy out/target/product/mi439/mi439.json cirrus:mi439 -P
 
 
 
+
