@@ -1,5 +1,3 @@
-
-
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/android_manifest -b 12.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/IshanDeyA12/local_manifest --depth 1 -b awaken .repo/local_manifests
