@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch nad_X00TD-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
+export BUILD_USERNAME=gerrit
 export TZ=Asia/Shanghai #put before last build command
 make nad
 
