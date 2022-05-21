@@ -1,11 +1,12 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/AospExtended/manifest.git -b 12.1.x -g default,-mips,-darwin,-notdefault
-git clone https://github.com/romgharti/local_manifest.git --depth 1 -b aex-12.0 .repo/local_manifests
+git clone https://github.com/clhexvayulab/local_manifest.git --depth 1 -b vayu_aex .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_mojito-user
+lunch aosp_vayu-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
 # export WITH_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
 m aex
