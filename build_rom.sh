@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch corvus_X00T-userdebug
+lunch corvus_X00T-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export SKIP_ABI_CHECKS=true
 make corvus
