@@ -8,6 +8,8 @@ source build/envsetup.sh
 lunch vince-user
 export RELAX_USES_LIBRARY_CHECK=true
 export SKIP_ABI_CHECKS=true
+export BUILD_WITH_GAPPS=true
+#export BUILD_WITH_PIXEL_GAPPS=true
 export TZ=Asia/Kolkata #put before last build command
 m bacon
 
