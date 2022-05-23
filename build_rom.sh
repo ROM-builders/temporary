@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b twelve-one -g default,-mips,-darwin,-notdefault
-git clone https://github.com/blazey66/local_manifest.git --depth 1 -b cherish .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git@github.com:AOSP-Krypton/manifest.git -b A12 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/blazey66/local_manifest.git --depth 1 -b kosp .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch cherish_olivewood-user
+lunch krypton_olivewood-user
 export TZ=Asia/Dhaka #put before last build command
 brunch olivewood
 
