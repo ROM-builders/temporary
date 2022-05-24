@@ -6,9 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aospa_tulip-userdebug
-export BOARD_VENDOR := xiaomi
-export BOARD_USES_QCOM_HARDWARE := true
-export TARGET_BOARD_PLATFORM := sdm660
 export TZ=Asia/Kolkata #put before last build command
 ./rom-build.sh tulip
 
