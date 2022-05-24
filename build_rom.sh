@@ -8,6 +8,7 @@ source build/envsetup.sh
 lunch corvus_mido-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true 
 export WITH_GAPPS=true
+export SKIP_ABI_CHECKS=true
 export TZ=Asia/Dhaka #put before last build command
 make corvus
 
