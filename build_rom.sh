@@ -6,8 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_X00T-userdebug
-export BUILD_USERNAME=mika1zumi
-export BUILD_HOSTNAME=mika1zumi
+export BUILD_USERNAME=axolotl
+export BUILD_HOSTNAME=axolotl
 export TARGET_USES_MINI_GAPPS := true
 export TARGET_INCLUDE_LIVE_WALLPAPERS := false
 export TZ=Asia/Makassar #put before last build command
