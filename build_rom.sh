@@ -4,7 +4,7 @@ git clone https://github.com/imsurajxd/local_manifest --depth=1 -b xDroid .repo/
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-Source=. build/envsetup.sh
+source=. build/envsetup.sh
 lunch xdroid_lavender-userdebug
 export TZ=Asia/Kolkata #put before last build command
 make xd -j$(nproc --all)
