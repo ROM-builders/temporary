@@ -5,8 +5,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch corvus_joan-userdebug
-lunch corvus_joan-userdebug
+for i in {1..2}
+do
+  lunch corvus_joan-userdebug
+done
 make corvus
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
