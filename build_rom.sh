@@ -3,13 +3,10 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Corvus-R/android_mani
 git clone https://github.com/Stalick/local-manifest.git --depth 1 -b corvus .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-test() {
-    lunch corvus_joan-userdebug
-}
-
 # build rom
 source build/envsetup.sh
-for i in {1..2}; do test; done
+lunch corvus_joan-userdebug
+lunch corvus_joan-userdebug
 make corvus
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
