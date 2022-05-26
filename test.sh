@@ -86,8 +86,7 @@ if [[ $cd_check -gt 0 ]]; then echo Please dont use cd inside script, use local 
 or_check=$(grep "||" $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $or_check -gt 0 ]]; then echo Please dont use or operator inside script; exit 1; fi
 
-lunch_check=$(grep "unch" $CIRRUS_WORKING_DIR/build_rom.sh | grep -v 'rclone' | wc -l)
-if [[ $lunch_check -gt 1 ]]; then echo Please build for one device at a time.; exit 1; fi
+
 
 rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
@@ -112,6 +111,11 @@ if [[ $device == 'Mi439' ]]; then echo "Please use device codename mi439 also cr
 if [[ $BRANCH == *pull/* ]]; then
 
 if [[ $CIRRUS_COMMIT_MESSAGE != $device-$rom_name-* ]]; then echo Please use proper PR label described in telegram group.; exit 1; fi
+
+lunch_check=$(grep "unch" $CIRRUS_WORKING_DIR/build_rom.sh | grep -v 'rclone' | wc -l)
+if [[ $rom_name != 'Corvus-R-12-test' ]]; then
+if [[ $lunch_check -gt 1 ]]; then echo Please build for one device at a time.; exit 1; fi
+fi
 
 cd /tmp/cirrus-ci-build
 PR_NUM=$(echo $BRANCH|awk -F '/' '{print $2}')
