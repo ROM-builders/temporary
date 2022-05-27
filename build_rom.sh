@@ -1,13 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ShapeShiftOS/android_manifest.git -b android_11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/ping2109/local_manifest.git --depth 1 -b ssos-rova .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/ProjectRadiant/manifest -b twelve -g default,-mips,-darwin,-notdefault
+git clone https://github.com/ping2109/local_manifest.git --depth 1 -b radiant-rova .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch ssos_rova-user
+lunch radiant_rova-user
 export TZ=Asia/Ho_Chi_Minh
-make bacon
+mka bacon
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
