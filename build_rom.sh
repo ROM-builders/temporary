@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom [7]
 source build/envsetup.sh
 lunch aospa_raphael-eng
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export TZ=Asia/Dhaka #put before last build command
 ./rom-build.sh raphael -t eng
 
