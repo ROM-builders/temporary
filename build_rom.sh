@@ -1,14 +1,14 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest -b 12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/j0ok34n/local_manifests.git --depth 1 -b balze .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo init -u https://github.com/ProjectBlaze/manifest.git -b 12.1
+git clone https://github.com/j0ok34n/local_manifests.git --depth 1 -b blaze .repo/local_manifests
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j4
 
 # build rom
-source build/envsetup.sh
-lunch balze_flashlmdd-userdebug
 export WITH_GAPPS=true
 export TARGET_GAPPS_ARCH=arm64
-export TZ=Asia/Ho_Chi_Minh #put before last build command
+export TZ=Asia/Ho_Chi_Minh
+source build/envsetup.sh
+lunch blaze_flashlmdd-userdebug
 make bacon
 
 
