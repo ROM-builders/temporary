@@ -5,9 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch vince-user
-export TZ=Asia/Kolkata #put before last build command
-export GAPPS_BUILD=true
 launch vince user -g
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
