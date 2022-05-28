@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b twelve-one -g default,-mips,-darwin,-notdefault
-git clone https://gitlab.com/68orkun/local_manifest.git --depth 1 -b A12 .repo/local_manifests
+git clone https://gitlab.com/68orkun/local_manifest.git --depth 1 -b M12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch cherish_lava-userdebug
+lunch cherish_merlinx-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
