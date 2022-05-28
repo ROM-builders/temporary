@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch dot_Z01R-user
+lunch dot_Z01R-userdebug
 export TZ=Asia/Kolkata 
 make bacon
 
