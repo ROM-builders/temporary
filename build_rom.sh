@@ -5,10 +5,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch lineage_spes-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
+lunch lineage_spes-user
 export TARGET_FLOS=true
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+export TARGET_BOOT_ANIMATION_RES=1080
+export TARGET_SUPPORTS_QUICK_TAP=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
