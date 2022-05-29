@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch p404_whyred-userdebug
+lunch p404_whyred-eng
 export TZ=Asia/Dhaka #put before last build command
 export WITH_GAPPS=true #oof i am a fucking nuuu
 make bacon
