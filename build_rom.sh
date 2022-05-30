@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch vince-user
+lunch superior_vince-user
 export RELAX_USES_LIBRARY_CHECK=true
 export SKIP_ABI_CHECKS=true
 export TZ=Asia/Kolkata #put before last build command
