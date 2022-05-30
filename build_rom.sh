@@ -1,11 +1,12 @@
 # sync rom
 repo init -u https://github.com/yaap/manifest.git -b twelve
-git clone https://github.com/amritoj2/local_manifest.git --depth 1 -b main .repo/local_manifests
+git clone https://github.com/amritoj2/local_manifest.git --depth 1 -b main .repo/local_manifest
 repo sync -j$(nproc --all) --no-tags --no-clone-bundle --current-branch
 
 # build rom
 source build/envsetup.sh
 lunch r5x_device-user
+TARGET_BUILD_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
 m yaap
 
