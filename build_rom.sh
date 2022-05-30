@@ -1,4 +1,4 @@
-# sync rom
+# sync pe
 repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Jaxer159/manifests --depth 1 -b pe_12_temporary_juice .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
