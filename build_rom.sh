@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch dot_vince-userdebug
-export TZ=Asia/Delhi
+export TZ=Asia/Delhi #tz
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
