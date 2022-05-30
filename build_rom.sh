@@ -1,12 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/AOSPK/manifest -b twelve -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest -b 12.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/putraaxyzo/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
+export WITH_GAPPS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
-lunch aosp_juice-userdebug
+lunch blaze_juice-userdebug
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
