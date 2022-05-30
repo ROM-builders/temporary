@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch evolution_beyond2lte-user
+lunch evolution_beyond0lte-user
 export TZ=Asia/Kolkata #put before last build command
 mka evolution
 
