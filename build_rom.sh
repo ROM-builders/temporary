@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch spark_X00T-userdebug
+export BUILD_USERNAME=axololtl
 export TZ=Asia/Makassar #put before last build command
 mka bacon
 
