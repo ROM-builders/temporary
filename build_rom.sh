@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest.git -b 12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Lynx041/local_manifest.git --depth 1 -b ulysse .repo/local_manifests
+git clone https://github.com/Iris0411/local_manifest.git --depth 1 -b ulysse .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
  
 # build rom
