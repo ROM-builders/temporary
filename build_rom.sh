@@ -4,8 +4,8 @@ git clone https://github.com/zacky46/local_manifest --depth 1 -b main .repo/loca
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
-lunch voltage_whyred-user
+. build/envsetup.sh
+lunch voltage_whyred-userdebug
 export TZ=Asia/Jakarta #put before last build command
 brunch whyred
 
