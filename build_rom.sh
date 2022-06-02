@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-oss/xd_manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/datnerdguy/local_manifest --depth 1 -b 12-4.19 .repo/local_manifests
+git clone https://github.com/hsx02/Local-Manifests.git --depth 1 -b xd-spes .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch xdroid_whyred-user
+lunch xdroid_spes-user
 export TZ=Asia/Kolkata #put before last build command ###
 mka xd
 
