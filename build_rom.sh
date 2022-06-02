@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch lineage_spes-user
 export TARGET_FLOS=true
+export WITH_GMS=true
 export TARGET_BOOT_ANIMATION_RES=1080
 export TARGET_SUPPORTS_QUICK_TAP=true
 export TZ=Asia/Dhaka #put before last build command
