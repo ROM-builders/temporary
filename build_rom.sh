@@ -1,11 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelBlaster-OS/manifest -b 12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/matheucomth/local_manifest.git --depth 1 -b PixelOS .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/AospExtended/manifest.git -b 12.1.x -g default,-mips,-darwin,-notdefault
+git clone https://github.com/matheucomth/local_manifest.git --depth 1 -b aex .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch aosp_tulip-userdebug
+export WITH_GMS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export RELAX_USES_LIBRARY_CHECK=true
