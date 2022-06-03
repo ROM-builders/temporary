@@ -14,7 +14,7 @@ export TZ=Asia/Jakarta #put before last build command
 croot
 export BUILD_USER="Ibratabian17"
 export BUILD_HOST="Prjktla"
-mka bacon
+m aex
 
 #14 Update Sourcw
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
