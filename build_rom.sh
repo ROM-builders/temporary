@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest.git -b 12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/matheucomth/local_manifest.git --depth 1 -b PixelOS .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/AOSPK/manifest -b twelve -g default,-mips,-darwin,-notdefault
+git clone https://github.com/matheucomth/local_manifest.git --depth 1 -b syberia .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch blaze_tulip-userdebug
+lunch aosp_tulip-userdebug
 export WITH_GMS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
