@@ -4,7 +4,7 @@ git clone https://github.com/amritoj2/local_manifest.git --depth 1 -b main .repo
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
-build/envsetup.sh
+. build/envsetup.sh
 lunch aosp_$r5x-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
