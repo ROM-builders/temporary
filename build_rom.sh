@@ -9,7 +9,7 @@ lunch evolution_X00TD-userdebug
 export TARGET_GAPPS_ARCH := arm64
 export TARGET_USES_MINI_GAPPS := true
 export TARGET_INCLUDE_LIVE_WALLPAPERS := false
-export TZ=Asia/Tokyo #put before last build command
+export TZ=Asia/Jakarta #put before last build command
 mka evolution
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
