@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch ssos_vayu-userdebug
+lunch ssos_tissot-userdebug
 export TZ=Asia/Kolkata #put before last build command
 make bacon
 
