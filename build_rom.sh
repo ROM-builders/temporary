@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest.git -b spark -g default,-mips,-darwin,-notdefault
-git clone https://github.com/hsx02/Local-Manifests.git --depth 1 -b spark-spes .repo/local_manifests
+git clone https://github.com/hsx02/Local-Manifests.git --depth 1 -b spark-mi439 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch spark_spes-user
+lunch spark_Mi439-userdebug
 export TZ=Asia/Shanghai #put before last build command
 mka bacon
 
