@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch corvus_device-userdebug
+lunch corvus_r5x-userdebug
 export TZ=Asia/Kolkata #put before last build command
 make corvus
 
