@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/syberia-project/manifest.git -b 12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Kendras056/local_manifests.git --depth 1 -b 12.1 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-17.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Kendras056/local_manifests.git --depth 1 -b 8 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch syberia_X00TD-userdebug
-export BUILD_USERNAME=morbius
+lunch lineage_X00T-userdebug
+export BUILD_USERNAME=gerrit
 export TZ=Europe/Moscow #put before last build command
 mka bacon
 
