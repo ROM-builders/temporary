@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify repo init -u git://github.com/projectarcana-aosp/manifest -b 12.x -g default,-mips,-darwin,-notdefault
-git clone https://github.com/WolfAURman/local_manifest.git --depth 1 -b Arcane12.1-mt6768 .repo/local_manifests
+repo init --depth=1 --no-repo-verify repo init -u git://github.com/LineageOS/android.git -b lineage-19.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/WolfAURman/local_manifest.git --depth 1 -b los19.1-mt6768PHQ .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_lava-userdebug
+lunch lineage_lava-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka # put before last build command
 make bacon
