@@ -4,6 +4,7 @@ git clone https://github.com/JaswantTeja/r5x-Tree-Manifest.git -b corvus .repo/l
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+export USE_GAPPS=true
 . build/envsetup.sh
 lunch corvus_r5x-userdebug
 export TZ=Asia/Kolkata #put before last build command
