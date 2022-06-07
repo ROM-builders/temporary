@@ -7,7 +7,9 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 . build/envsetup.sh
 breakfast spes
 lunch aosp_spes-user
-rm ./hardware/google/pixel/kernel_headers/Android.bp
+rm -rf hardware/xiaomi/hidl/powershare/Android.bp
+rm -rf hardware/xiaomi/hidl/touch/Android.bp
+rm -rf hardware/google/pixel/kernel_headers/Android.bp
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
