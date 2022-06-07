@@ -5,6 +5,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
+export KBUILD_BUILD_USER=Ritvik
+export KBUILD_BUILD_HOST=ritvik
+export BUILD_USERNAME=Ritvik
+export BUILD_HOSTNAME=ritvik
 export SELINUX_IGNORE_NEVERALLOWS=true 
 export TZ=Asia/Delhi
 brunch voltage_vince-userdebug
