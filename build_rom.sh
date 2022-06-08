@@ -15,7 +15,7 @@ git clone https://github.com/CipherOS/android_frameworks_opt_net_ims -b twelve-L
 source build/envsetup.sh
 lunch kscope_lava-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
-export TZ=Asia/Tokyo #put before last build command
+export TZ=Asia/Tokyo 
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
