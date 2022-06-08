@@ -6,6 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch evolution_X00TD-userdebug
+export TARGET_SUPPORTS_QUICK_TAP := true
+export TARGET_SUPPORTS_GOOGLE_RECORDER := false
 export TARGET_USES_MINI_GAPPS := true
 export TARGET_INCLUDE_LIVE_WALLPAPERS := false
 export TZ=Asia/Tokyo #put before last build command
