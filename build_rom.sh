@@ -5,8 +5,12 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
  
 # build rom
 source build/envsetup.sh
-lunch voltage_vayu-user
-#export SELINUX_IGNORE_NEVERALLOWS=true
+lunch voltage_vayu-userdebug
+export KBUILD_BUILD_USER=clhexftw
+export KBUILD_BUILD_HOST=clhexftw
+export BUILD_USERNAME=clhexftw
+export BUILD_HOSTNAME=clhexftw
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
