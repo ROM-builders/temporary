@@ -3,7 +3,6 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest 
 git clone https://github.com/L4FeeR/local_manifest.git --depth=1 -b snow .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# initial built
 # noob built
 # build rom
 source build/envsetup.sh
