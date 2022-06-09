@@ -8,7 +8,7 @@ source build/envsetup.sh
 
 lunch superior_spes-user
 
-# Retry
+# Retry fixed
 
 export TZ=Asia/Dhaka #put before last build command
 m bacon
