@@ -9,7 +9,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch evolution_tulip-user
 export BUILD_USERNAME=L4FeeR
-export BUILD_HOSTNAME=L4FeeR
+export BUILD_HOSTNAME=Linux
 export TZ=Asia/Dhaka #put before last build command
 mka evolution
 
