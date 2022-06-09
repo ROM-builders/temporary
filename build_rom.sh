@@ -7,9 +7,12 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch lineage_X00TD-userdebug
 export KBUILD_BUILD_USER=ben863
-export KBUILD_BUILD_HOST=cirrus-ci.com
+export KBUILD_BUILD_HOST=cirrus-ci.org
 export BUILD_USERNAME=ben863
 export SELINUX_IGNORE_NEVERALLOWS=true
+export ALLOW_MISSING_DEPENDENCIES=true
+export SKIP_ABI_CHECKS=true
+export SKIP_API_CHECKS=true
 export TZ=Asia/Jakarta #put before last build command
 brunch X00TD
 
