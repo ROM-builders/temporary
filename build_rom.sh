@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/P-Salik/local_manifest.git --depth 1 -b arrow .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/CipherOS/android_manifest.git -b twelve-L -g default,-mips,-darwin,-notdefault
+git clone https://github.com/P-Salik/local_manifest.git --depth 1 -b cipher .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
-lunch arrow_RMX1941-userdebug
+lunch cipher_RMX1941-userdebug
 export TZ=Asia/Kolkata #put before last build command
 m bacon
 
