@@ -4,6 +4,7 @@ git clone https://github.com/matheucomth/local_manifest.git --depth 1 -b PixelOS
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build roms
+. build/envsetup.sh
 lunch aosp_tulip-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
