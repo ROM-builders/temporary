@@ -6,10 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build from [5]
 source build/envsetup.sh
 lunch aospa_raphael-eng
-export KBUILD_BUILD_USER=azure
-export KBUILD_BUILD_HOST=azure
-export BUILD_USERNAME=azure
-export BUILD_HOSTNAME=azure
 export TZ=Asia/Delhi #put before last build command
 ./rom-build.sh raphael -t eng
 
