@@ -5,7 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-fetchrepos lavender
 export TZ=Asia/Kolkata #put before last build command
 launch lavender user -cjbg -i lavender_release_incremental -o lavender --build-both-targets
 
