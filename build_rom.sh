@@ -4,7 +4,7 @@ git clone  https://github.com/PrajwalGoli/Hello-world --depth 1 -b main .repo/lo
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
-. build/envsetup.sh
+. build/envsetup.sh 
 lunch superior_lavender-userdebug
 m bacon
 
