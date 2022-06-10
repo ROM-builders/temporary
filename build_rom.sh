@@ -4,6 +4,7 @@ git clone https://github.com/AbrarNoob/local_manifest --depth 1 -b blaze .repo/l
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
+
 # build rom
 source build/envsetup.sh
 export WITH_GAPPS=true
