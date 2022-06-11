@@ -11,7 +11,7 @@ export TARGET_INCLUDE_STOCK_ARCORE := false
 export TARGET_INCLUDE_LIVE_WALLPAPERS := false
 export TARGET_SUPPORTS_QUICK_TAP := true
 export TARGET_USES_MINI_GAPPS := true
-export TZ=Asia/Jakarta #put before last build command
+export TZ=Asia/Makassar #put before last build command
 mka derp
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
