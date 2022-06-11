@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch proton_spes-userdebug
+lunch aosp_spes-userdebug
 export TZ=Asia/Ho_Chi_Minh
 make bacon
 
