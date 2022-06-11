@@ -6,6 +6,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 # build rom
 . build/envsetup.sh 
 lunch superior_lavender-userdebug
+export TZ=Asia/Dhaka #put before last build command
 m bacon
 
 
