@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/DotOS/manifest.git -b dot12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/vytska69/Local-Manifests.git --depth 1 -b octavi-vayu .repo/local_manifests
+git clone https://github.com/hsx02/Local-Manifests.git --depth 1 -b dot-spes .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch dot_vayu-userdebug
+lunch dot_spes-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
