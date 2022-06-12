@@ -6,12 +6,12 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 brunch rice_X00TD-userdebug
-RICE_MAINTAINER := SKetU
-WITH_GAPPS := false
-TARGET_ENABLE_BLUR := true
-TARGET_HAS_UDFPS := false
-TARGET_SUPPORTS_QUICK_TAP := false
-TARGET_FACE_UNLOCK_SUPPORTED := true
+export RICE_MAINTAINER := SKetU
+export WITH_GAPPS := false
+export TARGET_ENABLE_BLUR := true
+export TARGET_HAS_UDFPS := false
+export TARGET_SUPPORTS_QUICK_TAP := false
+export TARGET_FACE_UNLOCK_SUPPORTED := true
 export TZ=Asia/Kolkata #put before last build command
 mka rice
 
