@@ -13,7 +13,7 @@ export TARGET_HAS_UDFPS := false
 export TARGET_SUPPORTS_QUICK_TAP := false
 export TARGET_FACE_UNLOCK_SUPPORTED := true
 export TZ=Asia/Kolkata #put before last build command
-mka rice
+mka riceing
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
