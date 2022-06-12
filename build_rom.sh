@@ -2,7 +2,7 @@
 repo init --depth=1 --no-repo-verify -u https://github.com/VoltageOS/manifest -b 12l -g default,-mips,-darwin,-notdefault
 git clone https://github.com/clhexvayulab/local_manifest.git --depth 1 -b vayu_voltage .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
- 
+  
 # build rom
 source build/envsetup.sh
 lunch voltage_vayu-userdebug
@@ -10,7 +10,7 @@ export KBUILD_BUILD_USER=clhexftw
 export KBUILD_BUILD_HOST=clhexftw
 export BUILD_USERNAME=clhexftw
 export BUILD_HOSTNAME=clhexftw
-export SELINUX_IGNORE_NEVERALLOWS=true
+#export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
 make bacon
  
