@@ -4,10 +4,6 @@ git clone https://github.com/VR-HoangLong/LocalManifests.git --depth 1 -b master
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-cd device/phh/treble
-bash generate.sh dot.mk
-cd ../../..
-
 source build/envsetup.sh
 lunch treble_arm64_bvN-userdebug
 export TZ=Asia/Ho_Chi_Minh #put before last build command
