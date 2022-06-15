@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/CipherOS/android_manifest.git -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/FireStar69/local_manifest.git --depth 1 -b cipher-12.0 .repo/local_manifests
+git clone https://github.com/Aknx77/local_manifest.git --depth 1 -b cipher-12.0 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
