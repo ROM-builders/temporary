@@ -5,6 +5,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
+export KBUILD_BUILD_USER=datnerdguy
+export KBUILD_BUILD_HOST=datnerdguy
+export BUILD_USERNAME=datnerdguy
+export BUILD_HOSTNAME=datnerdguy
 lunch xdroid_whyred-user
 export TZ=Asia/Kolkata #put before last buil co
 mka xd
