@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch xdroid_whyred-user
-export TZ=Asia/Kolkata #put before last buil com
+export TZ=Asia/Kolkata #put before last buil co
 mka xd
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
