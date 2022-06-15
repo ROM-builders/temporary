@@ -1,6 +1,6 @@
 # sync rom
 repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-12.1
-git clone https://github.com/chunchuun/local_manifest.git --depth 1 -b main .repo/local_manifest
+git clone https://github.com/chunchuun/local_manifest.git --depth 1 -b main local_manifest
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
