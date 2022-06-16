@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch awaken_spes-userdebug
+lunch awaken_spes-eng
 export TZ=Asia/Ho_Chi_Minh
 make bacon
 
