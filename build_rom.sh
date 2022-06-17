@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --force-sync --no-clone-bundle --no-tags -j8
 
 # build rom
 . build/envsetup.sh
-lunch aosp_vayu-userdebug
+lunch aosp_raphael-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
