@@ -1,6 +1,6 @@
 # sync rom
 repo init -u https://github.com/VoidUI/manifest -b aosp-12.1
-git clone https://github.com/Pranav-Talmale/local_manifest_raphael_voidui.git --depth 1 -b main .repo/local_manifests
+git clone https://github.com/Pranav-Talmale/local_manifest_raphael_voidui.git -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --force-sync --no-clone-bundle --no-tags -j8
 
 # build rom
