@@ -3,7 +3,7 @@ repo init -u https://github.com/VoidUI/manifest -b aosp-12.1
 git clone https://github.com/Pranav-Talmale/local_manifest_raphael_voidui.git --depth 1 -b main .repo/local_manifests
 repo sync -c -j$(nproc --all) --no-clone-bundle --force-sync --no-clone-bundle --no-tags
 
-# build rom
+## build rom
 . build/envsetup.sh
 lunch aosp_raphael-userdebug
 export TZ=Asia/Dhaka #put before last build command
