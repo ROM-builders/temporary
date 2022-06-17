@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch awaken_spes-user
 export SKIP_ABI_CHECKS=true
 export ALLOW_MISSING_DEPENDENCIES=true
-export SELINUX_IGNORE_NEVERALLOWS=true
+# export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Ho_Chi_Minh
 make bacon
 
