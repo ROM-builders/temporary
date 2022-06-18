@@ -5,8 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch superior_vince-user
-#export BUILD_WITH_GAPPS=true
+lunch superior_vince
+export BUILD_WITH_GAPPS=true
 export TZ=Asia/Kolkata #put before last build command
 m bacon
 
