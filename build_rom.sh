@@ -5,6 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
+export WITH_GAPPS=true
 lunch spark_tulip-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
