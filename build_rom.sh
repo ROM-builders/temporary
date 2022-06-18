@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch dot_laurel_sprout-user
 export RELAX_USES_LIBRARY_CHECK=true
+
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
