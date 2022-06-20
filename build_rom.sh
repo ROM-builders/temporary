@@ -3,6 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/ForkLineageOS/android
 git clone https://github.com/S8M1T/local_manifest.git --depth 1 -b RMX3031 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+
 # build rom
 source build/envsetup.sh
 lunch lineage_RMX3031-userdebug
