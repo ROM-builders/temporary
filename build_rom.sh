@@ -6,8 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch lineage_r5x-userdebug
-export With_GAPPS=true
+lunch lineage_r5x-user
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
