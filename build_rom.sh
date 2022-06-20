@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixysOS/manifest -b twelve -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/PixysOS/manifest.git -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Grom-exe/local_manifest.git --depth 1 -b PixysOS12.1-mt6768PHQ .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
