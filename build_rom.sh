@@ -6,6 +6,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch evolution_mido-userdebug
+export KBUILD_BUILD_USER=hyper
+export KBUILD_BUILD_HOST=hyper
+export BUILD_USERNAME=hyper
+export BUILD_HOSTNAME=hyper
 export TZ=Asia/Delhi #put before last build command
 mka evolution
 
