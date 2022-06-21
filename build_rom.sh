@@ -10,7 +10,7 @@ export KBUILD_BUILD_HOST=datnerdguy
 export BUILD_USERNAME=datnerdguy
 export BUILD_HOSTNAME=datnerdguy
 lunch xdroid_whyred-user
-export TZ=Asia/Kolkata #nuke ao
+export TZ=Asia/Kolkata #nuke a
 mka xd
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
