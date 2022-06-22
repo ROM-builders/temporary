@@ -5,8 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch spark_spes-user
-export WITH_GAPPS=true
+lunch spark_spes-userdebug
 export TZ=Asia/Shanghai #put before last build command
 mka bacon
 
