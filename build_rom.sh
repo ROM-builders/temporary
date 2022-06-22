@@ -10,7 +10,6 @@ export KBUILD_BUILD_USER=hyper
 export KBUILD_BUILD_HOST=hyper
 export BUILD_USERNAME=hyper
 export BUILD_HOSTNAME=hyper
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 export TZ=Asia/Delhi #put before last build command
 mka evolution
 
