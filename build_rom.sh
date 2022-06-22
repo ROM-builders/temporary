@@ -4,7 +4,7 @@ git clone https://github.com/tegardoni250/local_manifest --depth 1 -b master .re
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch lineage_garden-userdebug
 export TZ=Asia/Jakarta #put before last build command
 m bacon
