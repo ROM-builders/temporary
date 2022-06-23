@@ -10,7 +10,7 @@ export BUILD_USERNAME=nobody
 export BUILD_HOSTNAME=android-build
 export KBUILD_BUILD_USER=nobody
 export KBUILD_BUILD_HOST=android-build
-export TZ=Asia/Jakarta #put before last build command
+export TZ=Asia/Jakarta
 make xd
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
