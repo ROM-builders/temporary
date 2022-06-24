@@ -10,6 +10,8 @@ export BUILD_USERNAME=nobody
 export BUILD_HOSTNAME=android-build
 export KBUILD_BUILD_USER=nobody
 export KBUILD_BUILD_HOST=android-build
+export LLVM=1
+export LLVM_IAS=1
 export TZ=Asia/Jakarta # time
 make xd
 
