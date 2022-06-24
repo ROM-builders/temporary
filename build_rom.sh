@@ -1,11 +1,10 @@
 # sync rom
-repo init -u https://github.com/DotOS/manifest.git -b dot12.1
-repo sync
+repo init -u https://github.com/AospExtended/manifest.git -b 12.1.x
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
 source build/envsetup.sh
-lunch dot_miatoll-userdebug
-export CURRENT_BUILD_TYPE=gapps
+lunch aosp_miatoll-userdebug
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
