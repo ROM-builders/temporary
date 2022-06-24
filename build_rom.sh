@@ -2,7 +2,7 @@
 repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-19.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/SwapnilVicky/local_manifest.git --depth 1 -b LOS .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-beryllium-lineageos-12.1-Orion-Kernel
+
 
 # build rom
 source build/envsetup.sh
