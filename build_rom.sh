@@ -4,7 +4,7 @@ git clone https://github.com/L4FeeR/local_manifest.git --depth=1 -b main .repo/l
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # noob build.
-# build rom..
+# build rom.
 source build/envsetup.sh
 lunch evolution_tulip-user
 export BUILD_USERNAME=L4FeeR
