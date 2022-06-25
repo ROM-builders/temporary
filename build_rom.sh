@@ -5,7 +5,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
+export CURRENT_BUILD_TYPE=gapps
 lunch aosp_miatoll-userdebug
+export CURRENT_BUILD_TYPE=gapps
 m aex
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
