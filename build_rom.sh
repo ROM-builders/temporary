@@ -5,6 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
+export BUILD_HOSTNAME=xtra_sharif
 export TZ=Asia/Delhi #put before last build command
 brunch lavender
 
