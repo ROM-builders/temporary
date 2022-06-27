@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-export BUILD_HOSTNAME=xianjing
+export BUILD_HOSTNAME=axololtl
 export TZ=Asia/Delhi #put before last build command
 brunch X00TD
 
