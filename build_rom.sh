@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch lineage_RMX3031-userdebug
+lunch lineage_RMX3360-userdebug
 export TZ=Asia/Kolkata #put before last build command
 make bacon
 
