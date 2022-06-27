@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch bliss_begonia-userdebug
-export BUILD_USERNAME=ryuKiuzha
+export BUILD_USERNAME=nobody
 export BUILD_HOSTNAME=android-build
 export KBUILD_BUILD_USER=nobody
 export KBUILD_BUILD_HOST=android-build
