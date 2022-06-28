@@ -7,11 +7,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch xdroid_X00T-userdebug
 export TARGET_GAPPS_ARCH := arm64
-export TARGET_USES_MINI_GAPPS := true
 export TARGET_SUPPORTS_QUICK_TAP := true
 export TARGET_INCLUDE_LIVE_WALLPAPERS := false
 export TARGET_SUPPORTS_GOOGLE_RECORDER := true
-export TZ=Asia/Jakarta #put before last build command
+export TZ=Asia/Makassar #put before last build command
 make xd
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
