@@ -8,6 +8,7 @@ source build/envsetup.sh
 lunch lineage_lavender-userdebug
 export TARGET_FLOS=true
 export WITH_GMS=true
+export BUILD_BROKEN_DUP_SYSPROP=true
 export TZ=Asia/Kolkata #put before last build command
 make bacon
 
