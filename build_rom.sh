@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_vayu-userdebug
+export WITH_GMS=true
 export TZ=America/Mexico_City #put before last build command
 make bacon
 
