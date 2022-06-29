@@ -4,7 +4,7 @@ git clone https://github.com/parkerpet/local_manifest --depth 1 -b main .repo/lo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch cipher_CPH1859-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
