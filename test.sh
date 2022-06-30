@@ -1,15 +1,79 @@
 #!/bin/bash
 set -e
 
-init_check=$(grep 'repo init' $CIRRUS_WORKING_DIR/build_rom.sh | grep 'depth=1')
-if [[ $init_check != *default,-mips,-darwin,-notdefault* ]]; then echo Please use --depth=1 and -g default,-mips,-darwin,-notdefault tags in repo init line.; exit 1; fi
+echo "Checking clone-depth..."
+if [[ -n $(grep "repo init" $CIRRUS_WORKING_DIR/build_rom.sh | grep "depth=1") ]]; then echo "Using clone depth as 1"; else echo "Please use '--depth=1' in the repo init line" && exit 1; fi
 
+echo "Checking if 'default,-mips,-darwin,-notdefault' is present..."
+if [[ -n $(grep "repo init" $CIRRUS_WORKING_DIR/build_rom.sh | grep "default,-mips,-darwin,-notdefault") ]]; then echo "'default,-mips,-darwin,-notdefault' are present in the repo init line"; else echo "Please use 'default,-mips,-darwin,-notdefault' in the repo init line" && exit 1; fi
 
-clone_check=$(grep 'git clone' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $clone_check -gt 1 ]]; then echo Please use local manifest to clone trees and other repositories, we dont allow git clone to clone trees.; exit 1; fi
+echo "Checking if 'git clone' is used except for cloning local_manifest..."
+if [[ -n $(grep "git clone" $CIRRUS_WORKING_DIR/build_rom.sh | grep ".repo/" $CIRRUS_WORKING_DIR/build_rom.sh) ]] && [[ $(grep "git clone" $CIRRUS_WORKING_DIR/build_rom.sh -wc) > 1 ]]; then echo "'git clone' is used for cloning other repos" && exit 1; else echo "'git clone' is used only for cloning local_manifest"; fi
 
-rm_check=$(grep 'rm ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $rm_check -gt 0 ]]; then echo Please dont use rm inside script, use local manifest for this purpose.; exit 1; fi
+echo "Checking if 'rm ' is used in build_rom.sh..."
+if [[ -n $(grep "rm " $CIRRUS_WORKING_DIR/build_rom.sh) ]]; then echo "Please dont use 'rm' inside script, use local manifest for this purpose." && exit 1; else echo "'rm ' is not used in build_rom.sh"; fi
+
+echo "Checking if 'sudo ' is used in build_rom.sh..."
+if [[ -n $(grep "sudo " $CIRRUS_WORKING_DIR/build_rom.sh) ]]; then echo "Please dont use 'sudo' inside script." && exit 1; else echo "'sudo ' is not used in build_rom.sh"; fi
+
+echo "Checking if 'repo forall ' is used in build_rom.sh..."
+if [[ -n $(grep "repo forall " $CIRRUS_WORKING_DIR/build_rom.sh) ]]; then echo "Please dont use 'repo forall' inside script." && exit 1; else echo "'repo forall ' is not used in build_rom.sh"; fi
+
+echo "Checking if 'curl ' is used in build_rom.sh..."
+if [[ -n $(grep "curl " $CIRRUS_WORKING_DIR/build_rom.sh) ]]; then echo "Please dont use 'curl' inside script." && exit 1; else echo "'curl ' is not used in build_rom.sh"; fi
+
+echo "Checking if 'mmma ' is used in build_rom.sh..."
+if [[ -n $(grep "mmma " $CIRRUS_WORKING_DIR/build_rom.sh) ]]; then echo "Please dont use 'mmma' inside script." && exit 1; else echo "'mmma ' is not used in build_rom.sh"; fi
+
+echo "Checking if 'mv ' is used in build_rom.sh..."
+if [[ -n $(grep "mv " $CIRRUS_WORKING_DIR/build_rom.sh) ]]; then echo "Please dont use 'mv' inside script, use local manifest for this purpose." && exit 1; else echo "'mv ' is not used in build_rom.sh"; fi
+
+echo "Checking if 'sed ' is used in build_rom.sh..."
+if [[ -n $(grep "sed " $CIRRUS_WORKING_DIR/build_rom.sh) ]]; then echo "Please dont use 'sed' inside script, use local manifest for this purpose." && exit 1; else echo "'sed ' is not used in build_rom.sh"; fi
+
+echo "Checking if 'tee ' is used in build_rom.sh..."
+if [[ -n $(grep "tee " $CIRRUS_WORKING_DIR/build_rom.sh) ]]; then echo "Please dont use 'tee' inside script, its is not needed at all." && exit 1; else echo "'tee ' is not used in build_rom.sh"; fi
+
+echo "Checking if ' clean' is used in build_rom.sh..."
+if [[ -n $(grep " clean" $CIRRUS_WORKING_DIR/build_rom.sh) ]]; then echo "Please dont use make clean. Server does make installclean by default, which is enough for most of the cases." && exit 1; else echo "'make clean' is not used in build_rom.sh"; fi
+
+echo "Checking if ' clobber' is used in build_rom.sh..."
+if [[ -n $(grep " clobber" $CIRRUS_WORKING_DIR/build_rom.sh) ]]; then echo "Please dont use make clobber. Server does make installclean by default, which is enough for most of the cases." && exit 1; else echo "'make clobber' is not used in build_rom.sh"; fi
+
+echo "Checking if ' installclean' is used in build_rom.sh..."
+if [[ -n $(grep " installclean" $CIRRUS_WORKING_DIR/build_rom.sh) ]]; then echo "Please dont use make installclean. Server does make installclean by default, which is enough for most of the cases." && exit 1; else echo "'make installclean' is not used in build_rom.sh"; fi
+
+echo "Checking if 'blissify' is used in build_rom.sh..."
+if [[ -n $(grep "blissify" $CIRRUS_WORKING_DIR/build_rom.sh) ]]; then echo "Please dont use make clean / make installclean flag. Server does make installclean by default, which is enough for most of the cases." && exit 1; else echo "'blissify' is not used in build_rom.sh"; fi
+
+echo "Checking if 'patch ' is used in build_rom.sh..."
+if [[ -n $(grep "patch " $CIRRUS_WORKING_DIR/build_rom.sh) ]]; then echo "Please dont use 'patch ' inside script, use local manifest for this purpose." && exit 1; else echo "'patch ' is not used in build_rom.sh"; fi
+
+echo "Checking if ' && ' is used in build_rom.sh..."
+if [[ -n $(grep " && " $CIRRUS_WORKING_DIR/build_rom.sh) ]]; then echo "Please dont use ' && ' inside script, put that command in next line for this purpose." && exit 1; else echo "' && ' is not used in build_rom.sh"; fi
+
+echo "Checking if ' & ' is used in build_rom.sh..."
+if [[ -n $(grep " & " $CIRRUS_WORKING_DIR/build_rom.sh) ]]; then echo "Please dont use ' & ' inside script, put that command in next line for this purpose." && exit 1; else echo "' & ' is not used in build_rom.sh"; fi
+
+echo "Checking if 'git fetch ' is used in build_rom.sh..."
+if [[ -n $(grep "git fetch " $CIRRUS_WORKING_DIR/build_rom.sh) ]]; then echo "Please dont use 'git fetch ' inside script, use local manifest for this purpose." && exit 1; else echo "'git fetch ' is not used in build_rom.sh"; fi
+
+echo "Checking if 'repopick ' is used in build_rom.sh..."
+if [[ -n $(grep "repopick " $CIRRUS_WORKING_DIR/build_rom.sh) ]]; then echo "Please dont use 'repopick ' inside script, use local manifest for this purpose." && exit 1; else echo "'repopick ' is not used in build_rom.sh"; fi
+
+echo "Checking if 'cd *' is used in build_rom.sh..."
+if [[ -n $(grep "cd *" $CIRRUS_WORKING_DIR/build_rom.sh) ]]; then echo "Please dont use 'cd *' inside script, use local manifest for this purpose." && exit 1; else echo "'cd *' is not used in build_rom.sh"; fi
+
+echo "Checking if '||' is used in build_rom.sh..."
+if [[ -n $(grep "||" $CIRRUS_WORKING_DIR/build_rom.sh) ]]; then echo "Please dont use 'or' operator inside script." && exit 1; else echo "||*' is not used in build_rom.sh"; fi
+
+sync_check=$(grep 'repo sync' $CIRRUS_WORKING_DIR/build_rom.sh)
+sync_string="repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j"
+if [[ $sync_check != *$sync_string* ]]; then echo Please follow repo sync line of main branch.; exit 1; fi
+
+rclone_check=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
+rclone_string="rclone copy out/target/product/\$(grep unch \$CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:\$(grep unch \$CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P"
+if [[ $rclone_check != *$rclone_string* ]]; then echo Please follow rclone copy line of main branch.; exit 1; fi
 
 url=https://$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 3-5 | cut -d ' ' -f 1)
 r_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
@@ -20,73 +84,6 @@ if [[ $name_check == 0 ]]; then echo Please use init line url from rom manifest,
 command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v 'rclone copy')
 j_check=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v 'rclone copy' | grep '\-j' | wc -l)
 if [[ $j_check -gt 0 ]]; then echo Please dont specify j value in make line.; exit 1; fi
-
-sudo_check=$(grep 'sudo ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $sudo_check -gt 0 ]]; then echo Please dont use sudo inside script.; exit 1; fi
-
-forall_check=$(grep 'repo forall ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $forall_check -gt 0 ]]; then echo Please dont use repo forall inside script.; exit 1; fi
-
-curl_check=$(grep 'curl ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $curl_check -gt 0 ]]; then echo Please dont use curl inside script.; exit 1; fi
-
-mmma_check=$(grep 'mmma ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $mmma_check -gt 0 ]]; then echo Please dont use mmma inside script.; exit 1; fi
-
-mv_check=$(grep 'mv ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $mv_check -gt 0 ]]; then echo Please dont use mv inside script, use local manifest for this purpose.; exit 1; fi
-
-sed_check=$(grep 'sed ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $sed_check -gt 0 ]]; then echo Please dont use sed inside script, use local manifest for this purpose.; exit 1; fi
-
-tee_check=$(grep 'tee ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $tee_check -gt 0 ]]; then echo Please dont use tee inside script, its not needed at all..; exit 1; fi
-
-clean_check=$(grep ' clean' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $clean_check -gt 0 ]]; then echo Please dont use make clean. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
-
-bliss_check=$(grep blissify $CIRRUS_WORKING_DIR/build_rom.sh | grep '\-c' | wc -l)
-if [[ $bliss_check -gt 0 ]]; then echo Please dont use make clean flag. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
-
-bliss_check=$(grep blissify $CIRRUS_WORKING_DIR/build_rom.sh | grep '\-d' | wc -l)
-if [[ $bliss_check -gt 0 ]]; then echo Please dont use make installclean flag. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
-
-clobber_check=$(grep ' clobber' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $clobber_check -gt 0 ]]; then echo Please dont use make clobber. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
-
-installclean_check=$(grep ' installclean' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $installclean_check -gt 0 ]]; then echo Please dont use make installclean. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
-
-patch_check=$(grep 'patch ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $patch_check -gt 0 ]]; then echo Please dont use patch inside script, use local manifest for this purpose.; exit 1; fi
-
-and_check=$(grep ' && ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $and_check -gt 0 ]]; then echo 'Please dont use && inside script, put that command in next line for this purpose.'; exit 1; fi
-
-and_check2=$(grep ' & ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $and_check2 -gt 0 ]]; then echo 'Please dont use & inside script.'; exit 1; fi
-
-rclone_check=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
-rclone_string="rclone copy out/target/product/\$(grep unch \$CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:\$(grep unch \$CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P"
-if [[ $rclone_check != *$rclone_string* ]]; then echo Please follow rclone copy line of main branch.; exit 1; fi
-
-sync_check=$(grep 'repo sync' $CIRRUS_WORKING_DIR/build_rom.sh)
-sync_string="repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j"
-if [[ $sync_check != *$sync_string* ]]; then echo Please follow repo sync line of main branch.; exit 1; fi
-
-fetch_check=$(grep 'git fetch ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $fetch_check -gt 0 ]]; then echo Please dont use fetch inside script, use local manifest for this purpose.; exit 1; fi
-
-pick_check=$(grep 'repopick ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $pick_check -gt 0 ]]; then echo Please dont use repopick inside script, use local manifest for this purpose.; exit 1; fi
-
-cd_check=$(grep "cd *" $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $cd_check -gt 0 ]]; then echo Please dont use cd inside script, use local manifest for this purpose.; exit 1; fi
-
-or_check=$(grep "||" $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $or_check -gt 0 ]]; then echo Please dont use or operator inside script; exit 1; fi
-
-
 
 rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
