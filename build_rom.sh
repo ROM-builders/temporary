@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/ForkLineageOS/android
 git clone https://github.com/anandhan07/local_manifest.git --depth 1 -b lineage-19.1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom [4]
+# build rom [5]
 source build/envsetup.sh
 lunch lineage_vince-user
 export TARGET_FLOS=true
