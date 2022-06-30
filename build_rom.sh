@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/CipherOS/android_manifest.git -b twelve-L -g default,-mips,-darwin,-notdefault
-git clone https://github.com/rahulkhatri137/local_manifest --depth 1 -b main .repo/local_manifests
+git clone https://github.com/rahulkhatri137/local_manifest --depth 1 -b o .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom 5
 . build/envsetup.sh
-lunch cipher_CPH1859-userdebug
+lunch lineage_CPH1859-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
