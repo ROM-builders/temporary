@@ -5,6 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
+export WITH_GAPPS=true
+export P404_BUILDTYPE=GAPPS
 lunch p404_lavender-user
 export TZ=Asia/Dhaka #put before last build command
 make bacon
