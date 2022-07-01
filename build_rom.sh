@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git
 git clone https://github.com/rahulkhatri137/local_manifest --depth 1 -b o .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom 2
 source build/envsetup.sh
 lunch lineage_CPH1859-userdebug
 export TZ=Asia/Kolkata #put before last build command
