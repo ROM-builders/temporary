@@ -3,10 +3,6 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest.
 git clone https://github.com/VitorGSC/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# Fix video
-cd hardware/qcom-caf/msm8996 && rm -rf display &&  rm -rf audio && rm -rf media && cd ../../..  
-git clone https://github.com/AospExtended/platform_hardware_qcom_audio -b 12.x-caf-msm8996 hardware/qcom-caf/msm8996/audio && git clone https://github.com/AospExtended/platform_hardware_qcom_display -b 12.x-caf-msm8996 hardware/qcom-caf/msm8996/display && git clone https://github.com/AospExtended/platform_hardware_qcom_media -b 12.x-caf-msm8996 hardware/qcom-caf/msm8996/media
-
 # fix source for old moto devices
 
 cd frameworks/native
