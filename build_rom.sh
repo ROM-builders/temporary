@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-wget https://raw.githubusercontent.com/j0ok34n/android_packages_apps_Settings/12.1/res/values/awaken_strings.xml -O packages/apps/Settings/res/values/awaken_strings.xml
+perl -pe 's/Unofficial Maintainer/"Công Vĩnh"/g' packages/apps/Settings/res/values/awaken_strings.xml > packages/apps/Settings/res/values/awaken_strings.xml
 export TZ=Asia/Ho_Chi_Minh
 lunch awaken_flashlmdd-userdebug
 make bacon
