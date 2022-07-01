@@ -9,6 +9,6 @@ wget https://raw.githubusercontent.com/j0ok34n/android_packages_apps_Settings/12
 export TZ=Asia/Ho_Chi_Minh
 lunch awaken_flashlmdd-userdebug
 make bacon
-# re-run
+# re-run 2
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
