@@ -1,4 +1,4 @@
-AospExtended custom ROM for Redmi
+Corvus custom ROM for Redmi
 ==============================
 
 AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note(code name mido)
