@@ -5,6 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 lunch xdroid_CPH1859-userdebug
 export TZ=Asia/Kolkata #put before last build command
 make xd
