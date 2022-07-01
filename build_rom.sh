@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
   
 # build rom
 . build/envsetup.sh
-lunch arrow_X00TD-userdebug
+lunch arrow_X00TD-eng
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ARROW_GAPPS=true
 export TZ=Asia/Kolkata #put before last build command
