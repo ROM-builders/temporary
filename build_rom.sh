@@ -1,9 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/CipherOS/android_manifest.git -b twelve-L -g default,-mips,-darwin,-notdefault
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-rm -rf vendor/qcom/opensource/commonsys/system/bt
-rm -rf vendor/qcom/opensource/commonsys/bluetooth_ext
-rm -rf vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
 git clone https://github.com/ryuKizuha/local_manifests.git --depth 1 -b master .repo/local_manifests
 
 # build rom
