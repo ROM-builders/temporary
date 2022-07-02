@@ -9,7 +9,14 @@ lunch lineage_spes-user
 export TARGET_FLOS=true
 export WITH_GMS=true
 export TARGET_BOOT_ANIMATION_RES=1080
+export TARGET_FACE_UNLOCK_SUPPORTED=true
 export TARGET_SUPPORTS_QUICK_TAP=true
+export TARGET_INCLUDE_LIVE_WALLPAPERS=true
+export TARGET_SUPPORTS_GOOGLE_RECORDER=true
+export TARGET_SUPPORTS_CALL_RECORDING=true
+export TARGET_SUPPORTS_NEXT_GEN_ASSISTANT=true
+export TARGET_INCLUDE_STOCK_ARCORE=true
+export TARGET_SUPPORTS_BLUR=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
