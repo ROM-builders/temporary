@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/STRK-ND/local-manifest.git --depth 1 -b arrow .repo/local_manifests
+git clone https://github.com/onkarsinghsahil/local_manifest.git --depth 1 -b arrow .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) 
 
 # build rom
 . build/envsetup.sh
-lunch arrow_X00TD-userdebug
+lunch arrow_mido-userdebug
 export ARROW_GAPPS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export SKIP_ABI_CHECKS=true
