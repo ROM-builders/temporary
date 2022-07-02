@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch corvus_lava-userdebug
-lunch corvus_lava-userdebug
 export SKIP_ABI_CHECKS=true
 make corvus
 
