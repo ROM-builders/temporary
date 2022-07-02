@@ -1,12 +1,13 @@
 # sync rom
-repo init -u https://github.com/Corvus-R/android_manifest.git -b 12-test -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Grom-exe/local-manifest.git --depth 1 -b lutisnus .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Corvus-R/android_manifest.git -b 12-test -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Grom-exe/android_manifest.git --depth 1 -b lutisnus .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch corvus_lava-userdebug
-export TZ=Asia/Dhaka #put before last build command
+lunch corvus_lava-userdebug
+export SKIP_ABI_CHECKS=true
 make corvus
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
