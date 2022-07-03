@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch corvus_begonia-userdebug
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export BUILD_USERNAME=ryuKizuha
 export TZ=Asia/Jakarta
 make corvus
