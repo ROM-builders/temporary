@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch pixys_mojito-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
-# export BUILD_WITH_GAPPS=true
+export BUILD_WITH_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
 make pixys
 
