@@ -8,6 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch corvus_begonia-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+export SKIP_ABI_CHECKS=true
 export BUILD_USERNAME=ryuKizuha
 export TZ=Asia/Jakarta
 make corvus
