@@ -86,13 +86,12 @@ if [[ $cd_check -gt 0 ]]; then echo Please dont use cd inside script, use local 
 or_check=$(grep "||" $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $or_check -gt 0 ]]; then echo Please dont use or operator inside script; exit 1; fi
 
-lunch_check=$(grep "unch" $CIRRUS_WORKING_DIR/build_rom.sh | grep -v 'rclone' | wc -l)
-if [[ $lunch_check -gt 1 ]]; then echo Please build for one device at a time.; exit 1; fi
+
 
 rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
 rom_name=$rom_name-$branch_name
-supported_roms=' AOSPA-sapphire AospExtended-12.1.x AOSPK-twelve ArrowOS-arrow-11.0 ArrowOS-arrow-12.1 BlissRoms-arcadia-next Bootleggers-BrokenLab-sambun CarbonROM-cr-9.0 CherishOS-twelve-one CipherOS-twelve-L ConquerOS-twelve Corvus-R-12-test crdroidandroid-11.0 crdroidandroid-12.1 DotOS-dot12.1 Evolution-X-elle Evolution-X-snow Fork-Krypton-A12 ForkLineageOS-lineage-19.1 Fusion-OS-twelve Havoc-OS-eleven Komodo-OS-12.2 lighthouse-os-sailboat_L1 LineageOS-lineage-15.1 LineageOS-lineage-17.1 LineageOS-lineage-18.1 LineageOS-lineage-19.1 NusantaraProject-ROM-12 Octavi-OS-12 P-404-shinka PixelExperience-twelve PixelExperience-twelve-plus PixelExtended-snow PixelOS-Pixelish-twelve PixelPlusUI-SnowCone-snowcone-12.1 PixysOS-twelve PotatoProject-frico_mr1-release projectarcana-aosp-12.x Project-Awaken-12.1 ProjectBlaze-12.1 Project-Elixir-snow Project-Fluid-fluid-12 Project-LegionOS-12 ProjectRadiant-twelve ProjectSakura-12 ProjectStreak-twelve.one ResurrectionRemix-Q ShapeShiftOS-android_12 Spark-Rom-spark SuperiorOS-twelvedotone StyxProject-S syberia-project-12.1 The-RAVEN-OS-twelve VoltageOS-12l xdroid-oss-twelve yaap-twelve '
+supported_roms=' AICP-s12.1 AOSPA-sapphire AospExtended-12.1.x AOSPK-twelve ArrowOS-arrow-12.1 BlissRoms-arcadia-next Bootleggers-BrokenLab-sambun CarbonROM-cr-9.0 CherishOS-twelve-one CipherOS-twelve-L ConquerOS-twelve Corvus-R-12-test crdroidandroid-11.0 crdroidandroid-12.1 DotOS-dot12.1 Evolution-X-elle Evolution-X-snow Fork-Krypton-A12 ForkLineageOS-lineage-19.1 Fusion-OS-twelve Havoc-OS-eleven Komodo-OS-12.1 lighthouse-os-sailboat_L1 LineageOS-lineage-17.1 LineageOS-lineage-18.1 LineageOS-lineage-19.1 P-404-shinka PixelExperience-twelve PixelExperience-twelve-plus PixelExtended-snow PixelOS-Pixelish-twelve PixysOS-twelve PotatoProject-frico_mr1-release projectarcana-aosp-12.x Project-Awaken-12.1 ProjectBlaze-12.1 Project-Fluid-fluid-12.1 ProjectRadiant-twelve ProjectStreak-twelve.one ResurrectionRemix-Q ShapeShiftOS-android_12 Spark-Rom-spark SuperiorOS-twelvedotone StagOS-s12.1 StyxProject-S syberia-project-12.1 The-RAVEN-OS-twelve VoltageOS-12l xdroid-oss-twelve yaap-twelve '
 if [[ $supported_roms != *" $rom_name "* ]]; then echo Not supported rom or branch.; exit 1; fi
 
 device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
@@ -107,15 +106,21 @@ if [[ $CIRRUS_COMMIT_MESSAGE == "Update build_rom.sh" ]]; then echo Please use p
 fi
 
 if [[ $device == 'copy' ]]; then echo "Please use lunch or brunch command with device codename after . build/envsetup.sh" ; exit 1; fi
+if [[ $device == 'mi439' ]]; then echo "Please use device codename Mi439 also create your dt with this device code name." ; exit 1; fi
 
 if [[ $BRANCH == *pull/* ]]; then
 
 if [[ $CIRRUS_COMMIT_MESSAGE != $device-$rom_name-* ]]; then echo Please use proper PR label described in telegram group.; exit 1; fi
 
+lunch_check=$(grep "unch" $CIRRUS_WORKING_DIR/build_rom.sh | grep -v 'rclone' | wc -l)
+if [[ $rom_name != 'Corvus-R-12-test' ]]; then
+if [[ $lunch_check -gt 1 ]]; then echo Please build for one device at a time.; exit 1; fi
+fi
+
 cd /tmp/cirrus-ci-build
 PR_NUM=$(echo $BRANCH|awk -F '/' '{print $2}')
 AUTHOR=$(gh pr view $PR_NUM|grep author| awk '{print $2}')
-for value in vicenteicc2008 random2907 RioChanY ajitlenka30 basic-general ZunayedDihan Badroel07 Ravithakral SumonSN SevralT yograjsingh-cmd nit-in Sanjeev stunner ini23 CyberTechWorld horoid ishakumari772 atharv2951 Lite120 anant-goel 01soni247 fakeriz
+for value in vicenteicc2008 random2907 RioChanY ajitlenka30 basic-general ZunayedDihan Badroel07 Ravithakral SumonSN SevralT yograjsingh-cmd nit-in Sanjeev stunner ini23 CyberTechWorld horoid ishakumari772 atharv2951 Lite120 anant-goel 01soni247 fakeriz Krtonia
 do
     if [[ $AUTHOR == $value ]]; then
     echo Please check \#pr instruction in telegram group.; exit 1; fi
