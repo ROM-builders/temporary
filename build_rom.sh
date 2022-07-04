@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch cipher_begonia-userdebug
-export SKIP_ABI_CHECKS=true
 export TZ=Asia/Jakarta
 mka bacon
 
