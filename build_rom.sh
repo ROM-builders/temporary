@@ -4,6 +4,22 @@ git clone https://github.com/GADGETNiK/local_manifest.git --depth 1 -b main .rep
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+rm -rf hardware/qcom-caf/msm8998/audio
+rm -rf hardware/qcom-caf/msm8998/display
+rm -rf hardware/qcom-caf/msm8998/media
+rm -rf hardware/qcom-caf/sm8250/audio
+rm -rf hardware/qcom-caf/sm8250/display
+rm -rf hardware/qcom-caf/sm8250/media
+rm -rf packages/resources/devicesettings
+#
+rm -rf .repo/projects/hardware/qcom-caf/msm8998/audio.git
+rm -rf .repo/projects/hardware/qcom-caf/msm8998/display.git
+rm -rf .repo/projects/hardware/qcom-caf/msm8998/media.git
+#
+rm -rf .repo/projects/hardware/qcom-caf/sm8250/audio.git
+rm -rf .repo/projects/hardware/qcom-caf/sm8250/display.git
+rm -rf .repo/projects/hardware/qcom-caf/sm8250/media.git
+rm -rf .repo/projects/packages/resources/devicesettings.git
 source build/envsetup.sh
 lunch lineage_onclite-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
