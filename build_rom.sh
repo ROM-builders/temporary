@@ -7,7 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-export SELINUX_IGNORE_NEVERALLOWS=true
 lunch fuse_beryllium-userdebug
 export TZ=Asia/Dhaka
 export BUILD_HOSTNAME=PaperBoy #put before last build command
