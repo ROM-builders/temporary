@@ -10,6 +10,7 @@ export SKIP_ABI_CHECKS=true
 export SKIP_BOOTJAR_CHECKS=true
 export BUILD_USERNAME=beryllium
 export BUILD_HOSTNAME=user
+export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Delhi #put before last build command
 make bacon
 
