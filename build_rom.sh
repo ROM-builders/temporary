@@ -6,6 +6,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch cipher_begonia-userdebug
+export BUILD_USERNAME=ryuKizuha
+export BUILD_HOSTNAME=android-builder
+export KBUILD_BUILD_USER=ryuKizuha
+export KBUILD_BUILD_HOST=android-builder
 export TZ=Asia/Jakarta
 mka bacon
 
