@@ -6,11 +6,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_beryllium-user
-export TZ=Asia/Delhi #put before last build command
 export SKIP_ABI_CHECKS=true
 export SKIP_BOOTJAR_CHECKS=true
 export BUILD_USERNAME=beryllium
 export BUILD_HOSTNAME=user
+export TZ=Asia/Delhi #put before last build command
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
