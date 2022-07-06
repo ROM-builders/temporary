@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-CAF/xd_manifest -b twelve -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-oss/xd_manifest.git -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/acastillorobles77/local_manifest.git --depth 1 -b xdroid-12.x-vayu .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
