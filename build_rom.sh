@@ -6,11 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_beryllium-user
-export SKIP_ABI_CHECKS=true
-export SKIP_BOOTJAR_CHECKS=true
-export BUILD_USERNAME=beryllium
-export BUILD_HOSTNAME=user
-export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Delhi #put before last build command
 make bacon
 
