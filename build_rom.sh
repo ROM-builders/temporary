@@ -12,7 +12,7 @@ export TARGET_INCLUDE_STOCK_ARCORE := false
 export TARGET_INCLUDE_LIVE_WALLPAPERS := false
 export TARGET_SUPPORTS_GOOGLE_RECORDER := false
 export TARGET_SUPPORTS_QUICK_TAP := true
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
