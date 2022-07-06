@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch spark_X00T-userdebug
+export WITH_GAPPS := true
 export TARGET_USES_MINI_GAPPS := true
 export TARGET_GAPPS_ARCH := arm64
 export TARGET_INCLUDE_STOCK_ARCORE := false
