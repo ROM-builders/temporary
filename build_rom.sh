@@ -3,10 +3,9 @@ repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git
 git clone https://github.com/wanderlusttt/local_manifest.git --depth 1 -b lineage-18.1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom - Fix manifest
+# build rom - Retry build
 source build/envsetup.sh
 export TZ=Asia/Dhaka #put before last build command
-export TARGET_FLOS=true
 export LINEAGE_VERSION_APPEND_TIME_OF_DAY=true
 export LINEAGE_BUILDTYPE=TEST
 brunch X00TD
