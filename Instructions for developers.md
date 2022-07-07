@@ -1,9 +1,11 @@
 ## Steps:
-##### 1. Find your device tree, kernel tree, and vendor tree. I made [here](https://github.com/nekoshirro/). You can find your device tree, common tr>##### 2. Make device tree of Redmi Note 9 Pro compatible with AOSP (for example, Evolution X) [bringup commit](https://github.com/nekoshirro/platform>##### 3. Initialize the Evolution X Source
+##### 1. Find your device tree, kernel tree, and vendor tree. I made [here](https://github.com/nekoshirro/). You can find your device tree, common tree, and vendor tree.
+##### 2. Make device tree of Redmi Note 9 Pro compatible with AOSP (for example, Evolution X) [bringup commit](https://github.com/nekoshirro/platform_device_xiaomi_joyeuse/commit/fa0098a8de27ac2381fc95875cde73e9cbe4328e)
+##### 3. Initialize the Evolution X Source
 
 `repo init --depth=1 -u https://github.com/Evolution-X/manifest -b snow`
 
-##### 4. Change repository of Evolution X if needed by removing and reclonig them, or by using [local manifest](https://forum.xda-developers.com/t/le>
+##### 4. Change repository of Evolution X if needed by removing and reclonig them, or by using [local manifest](https://forum.xda-developers.com/t/learn-about-the-repo-tool-manifests-and-local-manifests-and-5-important-tips.2329228/)
 
 You can also clone device tree, common device tree, kernel tree, vendor tree by local manifist too.
 
@@ -15,15 +17,15 @@ You can also clone device tree, common device tree, kernel tree, vendor tree by 
 
 ##### 6. Clone device tree, common device tree (if exists), kernel tree and vendor tree for Redmi Note 9 Pro to specific folder. Where to clone trees>
 
-We need to clone device tree in device/xiaomi/joyeuse said in [here](https://github.com/nekoshirro/platform_device_xiaomi_joyeuse/blob/twelve/BoardCo>
+We need to clone device tree in device/xiaomi/joyeuse said in [here](https://github.com/nekoshirro/platform_device_xiaomi_joyeuse/blob/evox-12/BoardConfig.mk#L13)
 
-We need to clone common tree in device/xiaomi/sm6250-common said in [here](https://github.com/nekoshirro/platform_device_xiaomi_sm6250-common/blob/tw>
+We need to clone common tree in device/xiaomi/sm6250-common said in [here](https://github.com/nekoshirro/platform_device_xiaomi_sm6250-common/blob/evox-12/BoardConfigCommon.mk#L7)
 
-We need to clone kernel tree in kernel/xiaomi/sm6250 said in [here](https://github.com/nekoshirro/platform_device_xiaomi_sm6250-common/blob/twelve/Bo>
+We need to clone kernel tree in kernel/xiaomi/sm6250 said in [here](https://github.com/nekoshirro/platform_device_xiaomi_sm6250-common/blob/evox-12/BoardConfigCommon.mk#L90)
 
-We need to clone spesific vendor tree in vendor/xiaomi/joyeuse said in [here](https://github.com/nekoshirro/platform_device_xiaomi_joyeuse/blob/twelv>
+We need to clone spesific vendor tree in vendor/xiaomi/joyeuse said in [here](https://github.com/nekoshirro/platform_device_xiaomi_joyeuse/blob/evox-12/BoardConfig.mk#L11)
 
-We need to clone common vendor tree in vendor/xiaomi/sm6250-common said in [here](https://github.com/nekoshirro/platform_device_xiaomi_sm6250-common/>
+We need to clone common vendor tree in vendor/xiaomi/sm6250-common said in [here](https://github.com/nekoshirro/platform_device_xiaomi_sm6250-common/blob/evox-12/BoardConfigCommon.mk#L236)
 
 ```
 git clone -b evox-12 https://github.com/nekoshirro/platform_device_xiaomi_joyeuse device/xiaomi/joyeuse --depth=1
@@ -53,6 +55,6 @@ up(){
 up out/target/product/joyeuse/*.zip
 ```
 ##### 9. All these steps should be inside build_rom.sh script like [this](https://github.com/nekoshirro/ROM-Builders_CI/blob/main/build_rom.sh).
-##### 10. If you want to update you device, kernel or vendor trees and learn more how to build ROMS and modify it according to your need, please chec>
+##### 10. If you want to update you device, kernel or vendor trees and learn more how to build ROMS and modify it according to your need, please check before build
 https://github.com/AliHasan7671/guides/commit/33361bb2c78af01426350ef21167d742f44481fd
 ##### 11. You can use this repository as a standard reference and edit things according to your device, ROM, and needs
