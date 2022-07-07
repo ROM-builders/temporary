@@ -9,7 +9,6 @@ lunch lineage_beryllium-user
 export SKIP_ABI_CHECKS=true
 export SKIP_BOOTJAR_CHECKS=true
 export TZ=Asia/Delhi #put before last build command
-#
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
