@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch xdroid_X00TD-userdebug
 export TZ=Asia/Jakarta
-export BUILD_USERNAME=haikalluthfi
+export BUILD_USERNAME=marinkitagawa
 mka xd
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
