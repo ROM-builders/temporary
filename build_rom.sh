@@ -5,10 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-export KBUILD_BUILD_USER=xtra_sharif
-export KBUILD_BUILD_HOST=xtra_sharif
-export BUILD_USERNAME=xtra_sharif
-export BUILD_HOSTNAME=xtra_sharif
 export TZ=Asia/Delhi #put before last build command
 brunch lavender
 
