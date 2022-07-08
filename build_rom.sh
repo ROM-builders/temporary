@@ -5,11 +5,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch p404_lavender-userdebug
-export BOARD_HAVE_IR=true
+lunch p404_lavender-user
 export WITH_GAPPS=true
 export TZ=Asia/Kolkata #put before last build command
-make bacon
+./rom-build.sh
 
 # 29
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
