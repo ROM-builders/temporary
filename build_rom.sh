@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch xdroid_X00TD-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Jakarta
-export BUILD_USERNAME=Chizuru+
+export BUILD_USERNAME=chizuru
 mka xd
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
