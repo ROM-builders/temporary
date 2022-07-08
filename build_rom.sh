@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/xdroid-oss/xd_manifest -b twelve -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-oss/xd_manifest -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/chikafujiwara45/Local-Manifests.git --depth 1 -b xdroid .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch xdroid_X00TD-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Jakarta
-export BUILD_USERNAME=chizuru
+export BUILD_USERNAME=kasumi
 mka xd
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
