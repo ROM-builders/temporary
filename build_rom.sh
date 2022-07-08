@@ -1,12 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b snow -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Ultron12bot/local_manifest.git --depth 1 -b EvoX .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b elle -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Ultron12bot/local_manifest.git --depth 1 -b Evo-A11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch evolution_X01AD-userdebug
-export TARGET_USES_MINI_GAPPS=true
 export TZ=Asia/Kolkata #put before last build command
 mka evolution
 
