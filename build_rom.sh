@@ -8,6 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch xdroid_begonia-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export BUILD_USERNAME=ryuKizuha
+export KBUILD_USERNAME=ryuKizuha
 export TZ=Asia/Jakarta
 make xd
 
