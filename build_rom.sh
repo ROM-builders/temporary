@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch xdroid_X00TD-userdebug
 export TZ=Asia/Jakarta
-export BUILD_USERNAME=kasumi
+export BUILD_USERNAME=miku
 export SELINUX_IGNORE_NEVERALLOWS=true
 mka xd
 
