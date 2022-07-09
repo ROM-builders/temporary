@@ -14,6 +14,7 @@ if [[ $rm_check -gt 0 ]]; then echo Please dont use rm inside script, use local 
 url=https://$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 3-5 | cut -d ' ' -f 1)
 r_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 name_check=$(curl -Ls $url 2>&1 | grep 'repo init' | grep $r_name | wc -l)
+if [[ $r_name == "Havoc-OS" ]]; then name_check=1; fi
 if [[ $name_check == 0 ]]; then echo Please use init line url from rom manifest, its case sensitive. Also follow the format of build_rom.sh file of temporary repo main branch.; exit 1; fi
 
 command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v 'rclone copy')
@@ -25,6 +26,9 @@ if [[ $sudo_check -gt 0 ]]; then echo Please dont use sudo inside script.; exit 
 
 forall_check=$(grep 'repo forall ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $forall_check -gt 0 ]]; then echo Please dont use repo forall inside script.; exit 1; fi
+
+curl_check=$(grep 'curl ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
+if [[ $curl_check -gt 0 ]]; then echo Please dont use curl inside script.; exit 1; fi
 
 mmma_check=$(grep 'mmma ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $mmma_check -gt 0 ]]; then echo Please dont use mmma inside script.; exit 1; fi
@@ -82,32 +86,41 @@ if [[ $cd_check -gt 0 ]]; then echo Please dont use cd inside script, use local 
 or_check=$(grep "||" $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $or_check -gt 0 ]]; then echo Please dont use or operator inside script; exit 1; fi
 
+
+
 rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
+rom_name=$rom_name-$branch_name
+supported_roms=' AICP-s12.1 AOSPA-sapphire AospExtended-12.1.x AOSPK-twelve ArrowOS-arrow-12.1 BlissRoms-arcadia-next Bootleggers-BrokenLab-sambun CarbonROM-cr-9.0 CherishOS-twelve-one CipherOS-twelve-L ConquerOS-twelve Corvus-R-12-test crdroidandroid-11.0 crdroidandroid-12.1 DotOS-dot12.1 Evolution-X-elle Evolution-X-snow Fork-Krypton-A12 ForkLineageOS-lineage-19.1 Fusion-OS-twelve Havoc-OS-eleven Komodo-OS-12.1 lighthouse-os-sailboat_L1 LineageOS-lineage-17.1 LineageOS-lineage-18.1 LineageOS-lineage-19.1 P-404-shinka PixelExperience-twelve PixelExperience-twelve-plus PixelExtended-snow PixelOS-Pixelish-twelve PixysOS-twelve PotatoProject-frico_mr1-release projectarcana-aosp-12.x Project-Awaken-12.1 ProjectBlaze-12.1 Project-Fluid-fluid-12.1 ProjectRadiant-twelve ProjectStreak-twelve.one ResurrectionRemix-Q ShapeShiftOS-android_12 Spark-Rom-spark SuperiorOS-twelvedotone StagOS-s12.1 StyxProject-S syberia-project-12.1 The-RAVEN-OS-twelve VoltageOS-12l xdroid-oss-twelve yaap-twelve '
+if [[ $supported_roms != *" $rom_name "* ]]; then echo Not supported rom or branch.; exit 1; fi
 
-#need to change total 8 times
-for item in "LineageOS lineage-17.1" "LineageOS lineage-15.1" "LineageOS lineage-19.0" "ArrowOS arrow-12.0" "Project-Fluid fluid-12" "CipherOS twelve" "ProjectRadiant twelve" "Project-Awaken 12" "Octavi-OS 12" "Project-LegionOS 12" "ShapeShiftOS android_12" "lighthouse-os sailboat" "Evolution-X snow" "PotatoProject frico-release" "StyxProject S" "PixelExperience twelve" "CherishOS twelve" "Spark-Rom spark" "PixelExtended snow" "Corvus-R 12" "crdroidandroid 12.0" "AospExtended 12.x" "NusantaraProject-ROM 12"
-do
-item1=$(echo $item | awk -F ' ' '{print $1}')
-item2=$(echo $item | awk -F ' ' '{print $2}')
-if [[ $rom_name == $item1 ]]; then if [[ $branch_name == $item2 ]]; then rom_name=$rom_name-$branch_name; fi ;fi
-done
-
-if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-16.1 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
-if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-16.0 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
-if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == lineage-15.0 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
-if [[ $rom_name == LineageOS ]]; then if [[ $branch_name == cm-14.1 ]]; then echo Only lineage-18.1, 17.1 and 15.1 is supported.; exit 1; fi ;fi
-if [[ $rom_name == ArrowOS ]]; then if [[ $branch_name == 'arrow-10.0' ]]; then echo Only ArrowOS a11 and a12 is supported.; exit 1; fi ;fi
 device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
 grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
+grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
+grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
+grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
 
-if [[ $BRANCH != *pull/* ]]; then if [[ $BRANCH != $device-$rom_name-* ]]; then echo Please use proper branch naming described in push group.; exit 1; fi; fi
+if [[ $BRANCH != *pull/* ]]; then 
+if [[ $BRANCH != $device-$rom_name-* ]]; then echo Please use proper branch naming described in push group.; exit 1; fi; 
+if [[ $CIRRUS_COMMIT_MESSAGE == "Update build_rom.sh" ]]; then echo Please use proper commit message.; exit 1; fi; 
+fi
+
+if [[ $device == 'copy' ]]; then echo "Please use lunch or brunch command with device codename after . build/envsetup.sh" ; exit 1; fi
+if [[ $device == 'mi439' ]]; then echo "Please use device codename Mi439 also create your dt with this device code name." ; exit 1; fi
 
 if [[ $BRANCH == *pull/* ]]; then
+
+if [[ $CIRRUS_COMMIT_MESSAGE != $device-$rom_name-* ]]; then echo Please use proper PR label described in telegram group.; exit 1; fi
+
+lunch_check=$(grep "unch" $CIRRUS_WORKING_DIR/build_rom.sh | grep -v 'rclone' | wc -l)
+if [[ $rom_name != 'Corvus-R-12-test' ]]; then
+if [[ $lunch_check -gt 1 ]]; then echo Please build for one device at a time.; exit 1; fi
+fi
+
 cd /tmp/cirrus-ci-build
 PR_NUM=$(echo $BRANCH|awk -F '/' '{print $2}')
 AUTHOR=$(gh pr view $PR_NUM|grep author| awk '{print $2}')
-for value in ajitlenka30 basic-general ZunayedDihan Badroel07 Ravithakral SumonSN SevralT yograjsingh-cmd nit-in Sanjeev stunner ini23 CyberTechWorld horoid ishakumari772 atharv2951 Lite120 anant-goel
+for value in vicenteicc2008 random2907 RioChanY ajitlenka30 basic-general ZunayedDihan Badroel07 Ravithakral SumonSN SevralT yograjsingh-cmd nit-in Sanjeev stunner ini23 CyberTechWorld horoid ishakumari772 atharv2951 Lite120 anant-goel 01soni247 fakeriz Krtonia
 do
     if [[ $AUTHOR == $value ]]; then
     echo Please check \#pr instruction in telegram group.; exit 1; fi
