@@ -1,10 +1,14 @@
-# sync rom fixed
+# sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 11.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Jeremito1/local_manifest.git --depth 1 -b cerredroi-once .repo/local_manifests
+git clone https://github.com/Jeremito1/local_manifest.git --depth 1 -b cerredroionce-vndk30 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
+export KBUILD_BUILD_USER=Jere77
+export KBUILD_BUILD_HOST=Jere77
+export BUILD_USERNAME=Jere77
+export BUILD_HOSTNAME=Jere77
 lunch lineage_garden-userdebug
 export TZ=Asia/Jakarta #put before last build command
 m bacon
