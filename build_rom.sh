@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch aosp_X00TD-userdebug
 export TZ=Asia/Jakarta
-export BUILD_USERNAME=kitagawa
+export BUILD_USERNAME=kasumi
 export SELINUX_IGNORE_NEVERALLOWS=true
 mka bacon
 
