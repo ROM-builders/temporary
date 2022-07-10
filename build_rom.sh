@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 export WITH_GAPPS=true
 lunch blaze_r5x-userdebug
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Dhaka #put before the last build command
 brunch r5x
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
