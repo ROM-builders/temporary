@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/android_manifest.git -b 12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/ad1tyas1ngh/local_manifest --depth 1 -b S .repo/local_manifests
+git clone https://github.com/hsx02/Local-Manifests.git --depth 1 -b awk-spes .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch awaken_r2p-userdebug
+lunch awaken_spes-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
