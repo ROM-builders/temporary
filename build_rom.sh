@@ -9,6 +9,8 @@ lunch aosp_X00TD-userdebug
 export TZ=Asia/Jakarta
 export BUILD_USERNAME=Chizuru
 export SELINUX_IGNORE_NEVERALLOWS=true
+export ALLOW_MISSING_DEPENDENCIES=true
+export RELAX_USES_LIBRARY_CHECK=true
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
