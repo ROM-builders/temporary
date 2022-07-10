@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b cm-12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Meghthedev/local_mainfest_neo5 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 12.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/realme-mt6771-devs/local_manifest .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch cm_neo5-userdebug
+lunch lineage_CPH1859-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
