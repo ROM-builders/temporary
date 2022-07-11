@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest.git -b 12.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/kann-on/local_manifest.git --depth 1 -b main .repo/local_manifests
-repo sync -c -j8 --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune 
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
