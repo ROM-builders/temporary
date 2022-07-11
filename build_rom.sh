@@ -13,7 +13,7 @@ export TARGET_INCLUDE_STOCK_ARCORE := false
 export TARGET_INCLUDE_LIVE_WALLPAPERS := false
 export TARGET_SUPPORTS_GOOGLE_RECORDER := false
 export BUILD_BROKEN_DUP_RULES := true
-export TZ=Asia/Jakarta #put before last build command
+export TZ=Asia/Makassar #put before last build command
 make xd
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
