@@ -4,7 +4,6 @@ git clone https://github.com/JaswantTeja/local_manifest.git --depth 1 -b blaze .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-rm -rf hardware/xiaomi
 . build/envsetup.sh
 lunch blaze_r5x-userdebug
 export TZ=Asia/Kolkata #put before the last build command
