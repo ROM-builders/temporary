@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch p404_lavender-user
 export WITH_GAPPS=true
 export TZ=Asia/Kolkata #put before last build command
-./rom-build.sh
+. rom-build.sh
 
 # 33
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
