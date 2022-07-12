@@ -1,10 +1,12 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest -b 12.1 -g default,-mips,-darwin,-notdefault
-# git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .repo/local_manifests
+git clone https://github.com/lambada-vayu-lab/local_manifest --depth 1 -b blaze .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
+export WITH_GAPPS=true
+export ARROW_GAPPS=true # TODO: nuke that check
 export TZ=Europe/Warsaw #put before last build command
 brunch vayu
 
