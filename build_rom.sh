@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch awaken_spes-userdebug
-export USE_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
