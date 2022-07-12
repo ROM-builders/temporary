@@ -5,7 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch blaze_vayu-userdebug
 export TZ=Europe/Warsaw #put before last build command
 brunch vayu
 
