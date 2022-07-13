@@ -5,6 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
+lunch havoc_vayu-userdebug
 export TZ=America/Mexico_City #put before last build command
 brunch
 
