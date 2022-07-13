@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-export WITH_GAPPS=true
+# export WITH_GAPPS=true
 export ARROW_GAPPS=true # TODO: nuke that check
 export TZ=Europe/Warsaw #put before last build command
 brunch vayu
