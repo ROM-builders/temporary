@@ -4,8 +4,8 @@ git clone https://github.com/dikiawan-9/Local-Manifests.git --depth 1 -b Build-C
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
-lunch blaze_lavender-userdebug
+$ . build/envsetup.sh
+$ lunch blaze_lavender-userdebug
 export TZ=Asia/Jakarta
 export BUILD_USERNAME=dikiawan
 export SELINUX_IGNORE_NEVERALLOWS=true
