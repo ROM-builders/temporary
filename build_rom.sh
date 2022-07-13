@@ -9,8 +9,6 @@ lunch blaze_lavender-userdebug
 export TZ=Asia/Jakarta
 export BUILD_USERNAME=dikiawan
 export SELINUX_IGNORE_NEVERALLOWS=true
-$ . build/envsetup.sh
-$ lunch blaze_$device-userdebug
 $ brunch lavender
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
