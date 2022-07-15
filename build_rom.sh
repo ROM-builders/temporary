@@ -7,9 +7,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch pixys_mido-userdebug
 export KBUILD_BUILD_USER=hyper
-export KBUILD_BUILD_HOST=hyper
+export KBUILD_BUILD_HOST=17
 export BUILD_USERNAME=hyper
-export BUILD_HOSTNAME=hyper
+export BUILD_HOSTNAME=17
 export TZ=Asia/Delhi #put before last build command
 make pixys
 
