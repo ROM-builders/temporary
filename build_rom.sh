@@ -5,6 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
+export WITH_GAPPS=true
 export KBUILD_BUILD_USER=xenxynon 
 export KBUILD_BUILD_HOST=xenxynon 
 export BUILD_USERNAME=xenxynon
