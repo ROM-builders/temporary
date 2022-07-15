@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
-lunch aosp_evert-userdebug
+lunch aosp_evert
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
