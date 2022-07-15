@@ -10,8 +10,8 @@ export KBUILD_BUILD_HOST=xenxynon
 export BUILD_USERNAME=xenxynon
 export BUILD_HOSTNAME=xenxynon
 lunch fuse_lavender-user
-export WITH_GAPPS=true
 export TZ=Asia/Kolkata #put before last build command
+export WITH_GAPPS=true
 make fuse-prod
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
