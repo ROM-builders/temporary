@@ -3,10 +3,10 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Komodo-OS/manifest -b
 git clone https://github.com/official-mocha/local_manifest.git --depth 1 -b komodo .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-
 # build rom
 . build/envsetup.sh
 lunch komodo_tulip-userdebug
+export BUILD_BROKEN_VINTF_PRODUCT_COPY_FILES=true
 export TZ=Asia/Dhaka #put before last build command
 mka komodo
 
