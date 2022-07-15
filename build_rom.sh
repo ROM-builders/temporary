@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch lineage_X00TD-userdebug
 export ARGET_SUPPORTS_QUICK_TAP := true
 export TARGET_INCLUDE_STOCK_ARCORE := false
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Jakarta #put before last build command
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
