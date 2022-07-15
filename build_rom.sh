@@ -6,8 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_X00TD-userdebug
-export ARGET_SUPPORTS_QUICK_TAP := true
-export TARGET_INCLUDE_STOCK_ARCORE := false
 export TZ=Asia/Jakarta #put before last build command
 make bacon
 
