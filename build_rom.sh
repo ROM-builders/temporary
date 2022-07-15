@@ -4,7 +4,7 @@ git clone https://github.com/megumin775/Local-Manifests.git --depth 1 -b komodo-
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build
-source build/envsetup.sh
+build/envsetup.sh
 lunch komodo_X00TD-userdebug
 export TZ=Asia/Jakarta
 export BUILD_USER=chunchunmaru
