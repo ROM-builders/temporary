@@ -5,7 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-export WITH_GMS=true
 lunch lineage_lavender-userdebug
 export TZ=Asia/Kolkata #put before last build command
 make bacon
