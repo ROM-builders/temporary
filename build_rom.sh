@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest -b twelve -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest -b 12.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Aflaungos/local_manifest --depth 1 -b Project-Blaze .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
-lunch blaze_$device-userdebug
+lunch blaze_evert-userdebug
 export TZ=Asia/Kolkata #put before last build command
 brunch evert
 
