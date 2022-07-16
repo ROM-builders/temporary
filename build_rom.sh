@@ -6,6 +6,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch spark_begonia-userdebug
+export KBUILD_BUILD_USER=don.boruza
+export KBUILD_BUILD_HOST=prototypeGHOST
+export BUILD_USERNAME=don.boruza
+export BUILD_HOSTNAME=prototypeGHOST
+
 export TZ=Asia/Jakarta
 mka bacon
 
