@@ -10,7 +10,6 @@ export KBUILD_BUILD_USER=don.boruza
 export KBUILD_BUILD_HOST=prototypeGHOST
 export BUILD_USERNAME=don.boruza
 export BUILD_HOSTNAME=prototypeGHOST
-
 export TZ=Asia/Jakarta
 mka bacon
 
