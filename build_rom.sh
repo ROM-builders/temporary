@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/Fusion-O
 git clone https://github.com/sajidshahriar72543/local_manifest.git --depth 1 -b fuse .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-#16
+#17
 
 # build rom
 source build/envsetup.sh
