@@ -4,7 +4,7 @@ git clone https://github.com/Sanji12335/local-manifest-.git 1 -b main .repo/loca
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch blaze_RMX1801-userdebug
 export TZ=Asia/Dhaka #put before last build command
 brunch RMX1801
