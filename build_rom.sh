@@ -6,8 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch fluid_begonia-userdebug
-export KBUILD_BUILD_USER=don.boruza
-export KBUILD_BUILD_HOST=prototypeGHOST
 export BUILD_USERNAME=don.boruza
 export BUILD_HOSTNAME=prototypeGHOST
 export TZ=Asia/Jakarta #put before last build command
