@@ -9,6 +9,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch blaze_evert-userdebug
 export TZ=Asia/Dhaka
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 export KBUILD_BUILD_USER=PaperBoy
 export BUILD_HOSTNAME=PaperBoy #put before last build command
 make bacon
