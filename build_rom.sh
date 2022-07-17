@@ -5,6 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
+export ALLOW_MISSING_DEPENDENCIES=true
 lunch blaze_RMX1801-userdebug
 export TZ=Asia/Dhaka #put before last build command
 brunch RMX1801
