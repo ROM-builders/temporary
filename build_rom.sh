@@ -1,12 +1,16 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b spark -g default,-mips,-darwin,-notdefault
-git clone https://github.com/donboruza/local_manifests.git --depth 1 -b main .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Project-Fluid/manifest -b fluid-12.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/donboruza/local_manifests.git --depth 1 -b fluid .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
-lunch spark_begonia-userdebug
-export TZ=Asia/Dhaka #put before last build command
+. build/envsetup.sh
+lunch fluid_begonia-userdebug
+export KBUILD_BUILD_USER=don.boruza
+export KBUILD_BUILD_HOST=prototypeGHOST
+export BUILD_USERNAME=don.boruza
+export BUILD_HOSTNAME=prototypeGHOST
+export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
