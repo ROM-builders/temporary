@@ -3,6 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/androi
 git clone https://github.com/Amritorock/local_manifest.git --depth 1 -b LineageOS .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+
 # build rom
 . build/envsetup.sh
 export WITH_GMS=true
