@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch p404_vayu-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 #export ALLOW_MISSING_DEPENDENCIES=true
-#export WITH_GAPPS=true
+export WITH_GAPPS=true
 export TZ=Asia/Kolkata #put before last build command
 make bacon
   
