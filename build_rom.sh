@@ -20,6 +20,7 @@ ccache -M 50G
 croot
 mka bacon -j$(nproc --all)
 cd $OUT
+rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
 pwd
 ls $OUT
 ls /*
