@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest.git -b eleven-plus -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest.git -b twelve-plus -g default,-device,-mips,-darwin,-notdefault
 git clone https://github.com/maluueu/local_manifest.git --depth 1 -b vangogh .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch aosp_vangogh-user
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Shanghai #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
