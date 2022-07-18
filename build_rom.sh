@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 -u https://github.com/PixelExperience/manifest.git -b twelve-plus -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 -u https://github.com/PixelExperience/manifest.git -b twelve-plus -g default,-mips,-darwin,-notdefault
 git clone https://github.com/maluueu/local_manifest.git --depth 1 -b vangogh .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
