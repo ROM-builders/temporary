@@ -1,13 +1,25 @@
-# sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/DerpFest-11/manifest.git -b 11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-
-# build rom
+cd ~/
+git clone https://github.com/akhilnarang/scripts
+cd scripts
+./setup/android_build_env.sh
+mkdir -p ~/bin
+mkdir -p ~/android/pe
+curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+chmod a+x ~/bin/repo
+git config --global user.email "81231195+LittleChest@users.noreply.github.com"
+git config --global user.name "LittleChest"
+cd ~/android/pe
+repo init -u https://github.com/PixelExperience/manifest -b twelve-plus
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
+cd ~/android/pe
 source build/envsetup.sh
-lunch derp_vayu-user
-export TZ=Asia/Dhaka #put before last build command
-mka derp
-
-# upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
-rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
+lunch aosp_vangogh-userdebug
+export USE_CCACHE=1
+export CCACHE_EXEC=/usr/bin/ccache
+ccache -M 50G
+croot
+mka bacon -j$(nproc --all)
+cd $OUT
+pwd
+ls $OUT
+ls /*
