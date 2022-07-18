@@ -1,26 +1,14 @@
-cd ~/
-git clone https://github.com/akhilnarang/scripts
-cd scripts
-./setup/android_build_env.sh
-mkdir -p ~/bin
-mkdir -p ~/android/pe
-curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
-chmod a+x ~/bin/repo
-git config --global user.email "81231195+LittleChest@users.noreply.github.com"
-git config --global user.name "LittleChest"
-cd ~/android/pe
-repo init -u https://github.com/PixelExperience/manifest -b twelve-plus
+# sync rom
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b twelve-plus -g default,-mips,-darwin,-notdefault
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
-cd ~/android/pe
+
+# build rom
 source build/envsetup.sh
 lunch aosp_vangogh-userdebug
-export USE_CCACHE=1
-export CCACHE_EXEC=/usr/bin/ccache
-ccache -M 50G
+export TZ=Asia/Shanghai #put before last build command
 croot
 mka bacon -j$(nproc --all)
-cd $OUT
+
+# upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
-pwd
-ls $OUT
-ls /*
+rclone copy out/target/product/vangogh/*.zip.json cirrus:vangogh -P
