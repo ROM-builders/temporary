@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Fusion-OS/android_man
 git clone https://github.com/megumin775/Local-Manifests.git --depth 1 -b Fusion-OS .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build 
+# build rom
 . build/envsetup.sh
 lunch fuse_X00TD-userdebug
 export TZ=Asia/Jakarta
