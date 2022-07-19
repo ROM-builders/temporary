@@ -4,7 +4,7 @@ git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch evolution_redmi8-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka evolution
