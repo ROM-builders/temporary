@@ -4,7 +4,7 @@ git clone https://github.com/raidenkkj/local_manifest --depth 1 -b master .repo/
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch lineage_A001D-userdebug
 export TZ=America/Sao_Paulo
 mka bacon
