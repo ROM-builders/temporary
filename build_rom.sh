@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch evolution_redmi8-userdebug
+lunch evolution_mi439-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka evolution
 
