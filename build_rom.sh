@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
-lunch xdroid_CPH1859-userdebug
+lunch xdroid_CPH1859-user
 export TZ=Asia/Kolkata #put before last build command
 make xd
 
