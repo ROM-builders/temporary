@@ -8,6 +8,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch lineage_begonia-userdebug
 export BUILD_USERNAME=don.boruza
 export BUILD_HOSTNAME=prototypeGHOST
+export KBUILD_BUILD_USER=bourza
+export KBUILD_BUILD_HOST=prototypeGhost
 export TZ=Asia/Jakarta
 mka bacon
 
