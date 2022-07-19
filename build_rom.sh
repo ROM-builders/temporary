@@ -5,8 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-export WITH_GMS=true
 lunch lineage_r5x-userdebug
+export WITH_GMS=true
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
