@@ -1,13 +1,14 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Amritorock/local_manifest.git --depth 1 -b LineageOS .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b spark -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Amritorock/local_manifest.git --depth 1 -b spark .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
 
 # build rom
-. build/envsetup.sh
-lunch lineage_r5x-userdebug
+. build/env*
+lunch spark_r5x-userdebug
+export WITH_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
