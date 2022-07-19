@@ -4,9 +4,6 @@ git clone https://github.com/arkmark99/local_manifest.git --depth 1 -b main .rep
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-git clone https://github.com/Meghthedev/clang-r353983c1.git prebuilts/clang/host/linux-x86/clang-r353983c1
-&&
-cd frameworks/base && wget https://raw.githubusercontent.com/sarthakroy2002/random-stuff/main/Patches/Fix-brightness-slider-curve-for-some-devices-a12l.patch && patch -p1 < *.patch && cd -
 source build/envsetup.sh
 brunch cherish_CPH1859-userdebug 
 export TZ=Asia/Dhaka #put before last build command
