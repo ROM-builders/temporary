@@ -10,9 +10,6 @@ export TZ=Asia/Jakarta
 export BUILD_USER=hklknz
 export BUILD_HOST=cloud
 export BUILD_USERNAME=honoka
-export SELINUX_IGNORE_NEVERALLOWS=true
-export ALLOW_MISSING_DEPENDENCIES=true
-export RELAX_USES_LIBRARY_CHECK=true
 mka komodo
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
