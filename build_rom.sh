@@ -4,7 +4,7 @@ git clone https://github.com/aslenofarid/local_manifest.git --depth 1 -b lineage
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j4
 
 # build rom
-make clobber
+make clean
 source build/envsetup.sh
 breakfast X00TD
 export BUILD_USERNAME=aslenofarid
