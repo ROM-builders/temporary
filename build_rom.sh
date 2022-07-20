@@ -1,8 +1,7 @@
 # sync rom
 repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q
 git clone https://github.com/Headache01/local_manifest.git --depth 1 -b main .repo/local_manifests
-repo sync  --force-sync --no-clone-bundle -j$(nproc --all)
-
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 # build rom
 source build/envsetup.sh
 lunch rr_GM8_sprout-userdebug
