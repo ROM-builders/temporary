@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/PixysOS/manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Meghthedev/local_manifest .repo/local_manifestsn -b Pixys
+git clone https://github.com/Meghthedev/local_manifest .repo/local_manifests -b Pixys
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
  # build rom
