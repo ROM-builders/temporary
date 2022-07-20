@@ -1,13 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/VoidUI/manifest -b aosp-12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Aflaungos/local_manifest.git --depth 1 -b VoidUI .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/ProjectBlaze/manifest -b 12.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Aflaungos/local_manifest.git --depth 1 -b Project-Blaze .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 #17
 
 # build rom
 source build/envsetup.sh
-lunch aosp_evert-userdebug
+lunch blaze_evert-userdebug
 export TZ=Asia/Dhaka
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 export KBUILD_BUILD_USER=PaperBoy
