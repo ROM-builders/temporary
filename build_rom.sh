@@ -3,6 +3,8 @@ repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_man
 git clone https://github.com/arkmark99/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+# new
+
 # build rom
 source build/envsetup.sh
 brunch cherish_CPH1859-userdebug 
