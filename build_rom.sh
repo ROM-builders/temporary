@@ -1,13 +1,13 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/clhexftw/local_manifest.git --depth 1 -b main .repo/local_manifests
+git clone https://github.com/clhexx00tlab/local_manifest --depth 1 -b X00T_arrow .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
    
 # build rom
 . build/envsetup.sh
-lunch arrow_vayu-userdebug
+lunch arrow_X00T-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
-export ARROW_GAPPS=true
+#export ARROW_GAPPS=true
 export TZ=Asia/Kolkata #put before last build command
 m bacon
      
