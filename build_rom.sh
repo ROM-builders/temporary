@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-oss/xd_manifes
 git clone https://github.com/rahulkhatri137/local_manifest --depth 1 -b s .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom 2
 . build/envsetup.sh
 export WITH_GAPPS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
