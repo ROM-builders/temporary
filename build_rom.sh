@@ -4,7 +4,7 @@ git clone https://github.com/mizdrake7/local_manifest.git --depth 1 -b cherish .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Kolkata #put before last build command
 brunch r5x
