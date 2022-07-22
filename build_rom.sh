@@ -5,6 +5,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
+export KBUILD_BUILD_USER=Onkar
+export KBUILD_BUILD_HOST=17
+export BUILD_USERNAME=Onkar
+export BUILD_HOSTNAME=17
 export TZ=Asia/Dhaka #put before last build command
 brunch voltage_mido-userdebug
 
