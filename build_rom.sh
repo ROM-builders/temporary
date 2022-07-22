@@ -3,6 +3,8 @@ repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/ProjectB
 git clone https://github.com/Aflaungos/local_manifest.git --depth 1 -b Project-Blaze .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+#17
+
 # build rom
 source build/envsetup.sh
 lunch blaze_evert-userdebug
