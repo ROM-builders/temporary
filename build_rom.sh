@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch derpfest_mi439-user \
+lunch derpfest_mi439-user
 export TZ=Asia/Tamilnadu #put before last build command
 mka derp
 
