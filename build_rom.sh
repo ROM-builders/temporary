@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/RiceDroid/android -b 
 git clone https://github.com/rahulkhatri137/local_manifest --depth 1 -b lb .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom 2
 . build/envsetup.sh
 lunch lineage_CPH1859-userdebug
 export TZ=Asia/Kolkata #put before last build command
