@@ -4,7 +4,7 @@ git clone https://github.com/Sri19944/local_manifest.git--depth 1 -b main .repo/
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch derp_mi439-user
 export TZ=Asia/Dhaka #put before last build command
 mka derp
