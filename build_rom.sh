@@ -1,10 +1,12 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/RiceDroid/android -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/rahulkhatri137/local_manifest --depth 1 -b lb .repo/local_manifests
+git clone https://github.com/rahulkhatri137/local_manifest --depth 1 -b riced .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom 2
+# build rom
 . build/envsetup.sh
+export SELINUX_IGNORE_NEVERALLOWS=true
+export ALLOW_MISSING_DEPENDENCIES=true
 lunch lineage_CPH1859-userdebug
 export TZ=Asia/Kolkata #put before last build command
 make bacon
