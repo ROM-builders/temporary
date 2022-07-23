@@ -6,9 +6,9 @@ repo sync -j$(nproc --all) --force-sync --no-tags --no-clone-bundle
 # Set up environment
 . build/envsetup.sh
 
-# Choose a target
+# Choose target
 lunch corvus_miatoll-userdebug
-
+	export TZ=Asia/Dhaka #put before last build command
 # Build the ROM
 make corvus
 
