@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch aospa_lavender-user
-export TZ=Asia/Kolkata #put before last build command
+export TZ=Asia/Kolkata # put before last build command
 ./rom-build.sh lavender -t user -v beta -s keys
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
