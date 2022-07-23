@@ -4,8 +4,7 @@ git clone https://github.com/AbrarNoob/local_manifest -b fluid --depth 1 -b mast
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
-TARGET_INCLUDE_GAPPS := true
+. build/envsetup.sh
 lunch fluid_alioth-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
