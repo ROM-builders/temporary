@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch lineage_begonia-userdebug
+export BUILD_USERNAME=don.boruza
 export TZ=Asia/Jakarta
 mka bacon
 
