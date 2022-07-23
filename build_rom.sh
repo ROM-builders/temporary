@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch lineage_vince-user
 export TARGET_FLOS=true
-export WITH_GMS=true
+export WITH_GMS=false
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
