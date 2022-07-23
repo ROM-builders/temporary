@@ -7,7 +7,7 @@ repo sync -j$(nproc --all) --force-sync --no-tags --no-clone-bundle
 . build/envsetup.sh
 
 # Choose a target
-lunch corvus_device-userdebug
+lunch corvus_miatoll-userdebug
 
 # Build the ROM
 make corvus
