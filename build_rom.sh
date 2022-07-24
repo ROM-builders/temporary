@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch lineage_RMX3360-userdebug
 export TARGET_FLOS=true
+export WITH_GMS=true
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
