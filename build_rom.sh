@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch lineage_begonia-userdebug
 export BUILD_USERNAME=don.boruza
+export BUILD_HOSTNAME=prototype
 export TZ=Asia/Jakarta
 mka bacon
 
