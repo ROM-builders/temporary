@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch awaken_guacamoleb-userdebug
+export USE_GAPPS=true
 export KBUILD_BUILD_USER=w1zzyl
 export KBUILD_BUILD_HOST=Ryzen
 export BUILD_USERNAME=w1zzyl
