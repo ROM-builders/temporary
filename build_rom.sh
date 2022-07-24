@@ -1,12 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-Pixelish/manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/r9lab/local_manifest.git --depth 1 -b pos .repo/local_manifests
+git clone https://gitlab.com/R9Lab/Manifest.git --depth 1 -b PixelOSOS-12.1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch aosp_lava-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Dhaka #put before last build command
