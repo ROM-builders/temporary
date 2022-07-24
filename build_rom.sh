@@ -7,7 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch lineage_monet-user
 export SKIP_ABI_CHECKS=true
-export WITH_GMS=true
 export TZ=Asia/Chongqing #put before last build command
 make bacon
 
