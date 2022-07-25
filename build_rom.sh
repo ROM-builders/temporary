@@ -1,4 +1,4 @@
-repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b twelve-one -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b test -g default,-mips,-darwin,-notdefault
 git clone https://github.com/mizdrake7/local_manifest.git --depth 1 -b cherish .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -6,6 +6,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch cherish_r5x-userdebug
+export KBUILD_BUILD_USER=MAdMiZ
+export KBUILD_BUILD_HOST=MAdMiZ
+export BUILD_USERNAME=MAdMiZ
+export BUILD_HOSTNAME=MAdMiZ
+CHERISH_VANILLA := true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Kolkata #put before last build command
 make bacon
