@@ -1,15 +1,13 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b spark -g default,-mips,-darwin,-notdefault
-git clone https://github.com/donboruza/local_manifests.git --depth 1 -b main .repo/local_manifests
+git clone https://github.com/donboruza/local_manifests.git --depth 1 -b spark .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch spark_begonia-userdebug
-export KBUILD_BUILD_USER=don.boruza
-export KBUILD_BUILD_HOST=prototypeGHOST
 export BUILD_USERNAME=don.boruza
-export BUILD_HOSTNAME=prototypeGHOST
+export BUILD_HOSTNAME=prototype
 export TZ=Asia/Jakarta
 mka bacon
 
