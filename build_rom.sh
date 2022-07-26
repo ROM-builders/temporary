@@ -1,11 +1,12 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Project-Elixir/manifest -b snow -g default,-mips,-darwin,-notdefault
-git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b Elixir .repo/local_manifests
+git clone https://github.com/Progcker/local_manifest --depth 1 -b Elixir .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
 lunch aosp_CPH1859-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Kolkata #put before last build command
 mka bacon -jX
 
