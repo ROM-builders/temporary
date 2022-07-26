@@ -1,9 +1,9 @@
-# sync rom
+# sync rom 
 repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b twelve-plus -g default,-mips,-darwin,-notdefault
 git clone https://github.com/leiniercs/android_manifest_garden_pixelexperience.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom 
 source build/envsetup.sh
 lunch aosp_garden-user
 export TZ=UTC #put before last build command
