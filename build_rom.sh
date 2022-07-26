@@ -1,10 +1,10 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/SuperiorOS/manifest.git -b twelvedotone -g default,-mips,-darwin,-notdefault
-git clone https://github.com/rahulkhatri137/local_manifest --depth 1 -b main .repo/local_manifests
+git clone https://github.com/progcker/local_manifest --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom 2
-. build/envsetup.sh
+source build/envsetup.sh
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 lunch superior_CPH1859-userdebug
