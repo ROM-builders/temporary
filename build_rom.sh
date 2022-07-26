@@ -5,9 +5,14 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom 2
 source build/envsetup.sh
+lunch superior_CPH1859-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
-lunch superior_CPH1859-userdebug
+export BUILD_WITH_GAPPS=true
+#export TARGET_SUPPORTS_NEXT_GEN_ASSISTANT=true
+#export TARGET_SUPPORTS_GOOGLE_RECORDER=true
+export TZ=Asia/Kolkata #put before last build command
+m bacon
 export TZ=Asia/Kolkata #put before last build command
 m bacon
 
