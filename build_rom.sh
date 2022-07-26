@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch p404_$devicecodename-userdebug
+lunch p404_CPH1859-userdebug
 #export SELINUX_IGNORE_NEVERALLOWS=true
 #export TZ=Asia/Kolkata #put before last build command
 make bacon
