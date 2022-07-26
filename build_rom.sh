@@ -4,6 +4,10 @@ git clone https://github.com/alternoegraha/local_manifest.git --depth 1 -b linea
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+export KBUILD_BUILD_USER=alternoegraha
+export KBUILD_BUILD_HOST=cringe
+export BUILD_USERNAME=alternoegraha
+export BUILD_HOSTNAME=cringe
 . build/envsetup.sh
 lunch lineage_garden-userdebug
 export TZ=Asia/Jakarta #put before last build command
