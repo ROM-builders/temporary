@@ -5,9 +5,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 export KBUILD_BUILD_USER=alternoegraha
-export KBUILD_BUILD_HOST=cringe
+export KBUILD_BUILD_HOST=cringelord
 export BUILD_USERNAME=alternoegraha
-export BUILD_HOSTNAME=cringe
+export BUILD_HOSTNAME=cringelord
 . build/envsetup.sh
 lunch havoc_garden-userdebug
 export TZ=Asia/Jakarta #put before last build command
