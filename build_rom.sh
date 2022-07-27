@@ -1,6 +1,6 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-19.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/alternoegraha/local_manifest.git --depth 1 -b lineage19_vndk30 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Havoc-OS/android_manifest.git -b twelve -g default,-mips,-darwin,-notdefault
+git clone https://github.com/alternoegraha/local_manifest.git --depth 1 -b havoc5_vndk30 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
@@ -9,7 +9,7 @@ export KBUILD_BUILD_HOST=cringe
 export BUILD_USERNAME=alternoegraha
 export BUILD_HOSTNAME=cringe
 . build/envsetup.sh
-lunch lineage_garden-userdebug
+lunch havoc_garden-userdebug
 export TZ=Asia/Jakarta #put before last build command
 m bacon
 
