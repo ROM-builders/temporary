@@ -10,7 +10,7 @@ export KBUILD_BUILD_USER=MAdMiZ
 export KBUILD_BUILD_HOST=MAdMiZ
 export BUILD_USERNAME=MAdMiZ
 export BUILD_HOSTNAME=MAdMiZ
-CHERISH_VANILLA := true
+export CHERISH_VANILLA=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Kolkata #put before last build command
 make bacon
