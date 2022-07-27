@@ -5,8 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch fluid_r5x-userdebug
-export BUILD_USERNAME=mizdrake7
-export BUILD_HOSTNAME=mizdrake7
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
