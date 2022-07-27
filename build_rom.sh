@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch evolution_mi439-userdebug
+lunch evolution_Mi439-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka evolution
 
