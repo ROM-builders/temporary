@@ -7,6 +7,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch fluid_r5x-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
+export KBUILD_BUILD_USER=MAdMiZ
+export KBUILD_BUILD_HOST=MAdMiZ
+export BUILD_USERNAME=MAdMiZ
+export BUILD_HOSTNAME=MAdMiZ
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
