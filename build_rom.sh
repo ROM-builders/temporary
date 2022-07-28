@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-export TZ=Asia/Jakarta #put before last build command
+export TZ=Asia/Jakarta
 export KBUILD_BUILD_USER=rosy
 export KBUILD_BUILD_HOST=nfsproject
 export BUILD_USERNAME=rosy
