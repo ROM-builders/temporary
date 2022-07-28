@@ -1,13 +1,3 @@
-@@ -3,7 +3,6 @@ repo init --depth=1 and -g default,-mips,-darwin,-notdefault https://github.com/Project-Fluid/manifest.git
-git clone https://github.com/qsharp501/local_manifest --depth 1 -b fluid .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-
-
-# build rom
-. build/envsetup.sh
-lunch fluid_alioth-userdebug
-
-
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/Project-Fluid/manifest.git -b fluid-12.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/qsharp501/local_manifest.git --depth 1 -b master .repo/local_manifests
