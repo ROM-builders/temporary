@@ -39,7 +39,7 @@ task:
       $show" -d "chat_id=${your_telegram_id}" -d "parse_mode=HTML"
   test_script:
     - set -e
-    - curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/test.sh | bash
+    - curl -Ls https://raw.githubusercontent.com/RahifM/temporary/mido-LineageOS-lineage-14.1-rahifm/test.sh | bash
 
 task:
   name: Build
