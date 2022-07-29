@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom 2
 . build/envsetup.sh
 export SELINUX_IGNORE_NEVERALLOWS=true
-export ALLOW_MISSING_DEPENDENCIES=true
 lunch lineage_CPH1859-userdebug
 export TZ=Asia/Kolkata #put before last build command
 make bacon
