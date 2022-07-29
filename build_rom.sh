@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch evolution_Mi439-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Delhi #put before last build command
 mka evolution
 
