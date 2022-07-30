@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 SELINUX_IGNORE_NEVERALLOWS=true
-export WITH_GMS=true
 export TZ=Asia/Delhi #put before last build command
 brunch potato_CPH1859-userdebug
 
