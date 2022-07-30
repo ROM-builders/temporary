@@ -1,15 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/AospExtended/manifest.git -b 12.1.x -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify --no-use-superproject -u https://github.com/AospExtended/manifest.git -b 12.1.x -g default,-mips,-darwin,-notdefault
 git clone https://github.com/mobxCode/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
-source build/envsetup.sh
+# build roms
+. build/envsetup.sh
 lunch aosp_chime-userdebug
 export TZ=Asia/Jakarta
-export SELINUX_IGNORE_NEVERALLOWS=true
-export ALLOW_MISSING_DEPENDENCIES=true
-export WITH_GAPPS=true
 m aex
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
