@@ -4,7 +4,7 @@ git clone https://github.com/progcker/local_manifest --depth 1 -b blaze .repo/lo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 #build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch blaze_CPH1859
 export TZ=Asia/Kolkata
 brunch CPH1859
