@@ -4,10 +4,11 @@ git clone https://github.com/progcker/local_manifest --depth 1 -b blaze .repo/lo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 #build rom
-source build/envsetup.sh
+. build/envsetup.sh
+export ALLOW_MISSING_DEPENDENCIES=true
 lunch blaze_CPH1859-userdebug
 export TZ=Asia/Kolkata
-brunch CPH1859
+make bacon
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
