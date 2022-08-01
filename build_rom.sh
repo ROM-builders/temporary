@@ -5,7 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch potato_X00TD-user
+lunch potato_X00TD-userdebug
+export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta #put before last build command
 brunch X00TD
 
