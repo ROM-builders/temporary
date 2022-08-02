@@ -8,7 +8,6 @@ source build/envsetup.sh
 lunch p404_CPH1859-userdebug
 export WITH_GAPPS=true
 export TZ=Asia/Delhi #put before last 
-export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 make bacon
 
