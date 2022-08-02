@@ -4,7 +4,7 @@ git clone https://github.com/dikiawan-9/Local-Manifests.git --depth 1 -b Build .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh;
+source build/envsetup.sh
 lunch potato_lavender_userdebug
 export TZ=Asia/Jakarta
 export BUILD_USERNAME=dikiawan
