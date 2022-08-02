@@ -1,12 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/PotatoProject/manifest.git -b frico_mr1-release -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Kneba/local_manifests.git --depth 1 -b master .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j4
 
 # build rom
 source build/envsetup.sh
 lunch potato_X00TD-userdebug
-export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta #put before last build command
 brunch X00TD
 
