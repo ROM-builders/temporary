@@ -1,5 +1,5 @@
 # sync rom
-repo init -u https://github.com/PotatoProject/manifest -b frico_mr1-release;
+repo init -u https://github.com/PotatoProject/manifest -b frico_mr1-release
 git clone https://github.com/dikiawan-9/Local-Manifests.git --depth 1 -b Build .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
