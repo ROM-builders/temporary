@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch cherish_r5x-userdebug
-export CHERISH_VANILLA=true to
+export CHERISH_VANILLA=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export KBUILD_BUILD_USER=MAdMiZ
 export KBUILD_BUILD_HOST=MAdMiZ
