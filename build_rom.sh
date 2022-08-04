@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest.git -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/PixelOS-Devices/local_manifests.git --depth 1 -b ginkgo-ci .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/bananadroid/android_manifest.git -b 12 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Ryz-XD/local_manifest.git --depth 1 -b master .repo/ginkgo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_ginkgo-user
+lunch banana_ginkgo-userdebug
 export TZ=Asia/Jakarta #put before last build command
 make bacon 
 
