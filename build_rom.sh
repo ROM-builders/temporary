@@ -5,10 +5,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 #build rom
 . build/envsetup.sh
+#export WITH_GAPPS=true
 #export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 lunch blaze_CPH1859-userdebug
-export TZ=Asia/Delhi #put before last 
+export TZ=Asia/Kolkata #put before last 
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
