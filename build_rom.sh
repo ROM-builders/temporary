@@ -1,4 +1,4 @@
-#  sync rom
+# sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-18.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .uselessxdd/
 wget -O - https://raw.githubusercontent.com/waydroid/android_vendor_waydroid/lineage-18.1/manifest_scripts/generate-manifest.sh | bash
