@@ -9,6 +9,7 @@ source build/envsetup.sh
 apply-waydroid-patches
 lunch lineage_waydroid_arm64-userdebug
 export TZ=Asia/Dhaka #put before last build command
+# build/envsetup.sh this before build!
 make systemimage --jobs 8
 make vendorimage --jobs 8
 
