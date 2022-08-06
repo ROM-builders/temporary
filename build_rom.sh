@@ -3,7 +3,6 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Project-Kaleidoscope/
 git clone https://github.com/Amritorock/local_manifest.git --depth 1 -b kscope .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-
 # build rom
 . build/envsetup.sh
 lunch kscope_r5x-userdebug
