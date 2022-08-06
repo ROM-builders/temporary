@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch aosp_vangogh-user
 export TZ=Asia/Shanghai
-export BUILD_USERNAME=littlechest
+export BUILD_USERNAME=LittleChest
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
