@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch lineage_r5x-userdebug
+lunch lineage_ugglite-userdebug
 export TZ=Asia/Kolkata #put before the last build command
 m bacon
 
