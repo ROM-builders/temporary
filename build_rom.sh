@@ -8,6 +8,7 @@ source build/envsetup.sh
 lunch aosp_vangogh-user
 export TZ=Asia/Shanghai
 export BUILD_USERNAME=LittleChest
+export BUILD_HOST=Cirrus-CI
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
