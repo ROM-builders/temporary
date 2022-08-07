@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 breakfast X00TD
+export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_USERNAME=aslenofarid
 export TZ=Asia/Jakarta #put before last build command
 brunch X00TD
