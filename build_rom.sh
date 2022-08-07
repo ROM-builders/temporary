@@ -6,10 +6,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom 
 source build/envsetup.sh
 export WITH_GAPPS=true
-export KBUILD_BUILD_USER=onkar
-export KBUILD_BUILD_HOST=17
-export BUILD_USERNAME=onkar
-export BUILD_HOSTNAME=17
+export KBUILD_BUILD_USER=Dragon
+export KBUILD_BUILD_HOST=81
+export BUILD_USERNAME=Dragon
+export BUILD_HOSTNAME=81
 export TZ=Asia/Dhaka #put before last build command
 brunch voltage_veux-userdebug
 
