@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest.git -b spark -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Dragon-1237/local_manifest.git --depth 1 -b veux-spark .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/VoltageOS/manifest -b 12l -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Dragon-1237/local_manifest.git --depth 1 -b veux-voltage .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom 
 source build/envsetup.sh
-lunch spark_veux-userdebug
+lunch voltage_veux-userdebug
 export WITH_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
