@@ -5,10 +5,13 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom 
 source build/envsetup.sh
-lunch voltage_veux-userdebug
 export WITH_GAPPS=true
+export KBUILD_BUILD_USER=onkar
+export KBUILD_BUILD_HOST=17
+export BUILD_USERNAME=onkar
+export BUILD_HOSTNAME=17
 export TZ=Asia/Dhaka #put before last build command
-mka bacon
+brunch voltage_veux-userdebug
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
