@@ -1,8 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-18.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .uselessxdd/
-git clone https://github.com/Justxd22/waydroid_a11_lineageos/ a11line/
-cat a11line/manifest.sh | bash
+git clone https://github.com/justxd22/Local-Manifests.git --depth 1 -b master .uselessxdd/
+cat .uselessxdd/manifest.sh | bash
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
