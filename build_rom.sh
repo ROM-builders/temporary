@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/VoltageOS/manifest -b
 git clone https://github.com/Dragon-1237/local_manifest.git --depth 1 -b veux-voltage .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom 
+# build rom
 source build/envsetup.sh
 export WITH_GAPPS=true
 export KBUILD_BUILD_USER=Dragon
