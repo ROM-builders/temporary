@@ -5,10 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # Set up environment
 . build/envsetup.sh
-
-# Choose target
 lunch corvus_miatoll-userdebug
-	export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Dhaka #put before last build command
 # Build the ROM
 make corvus
 
