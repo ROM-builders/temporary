@@ -7,6 +7,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch dot_olives-userdebug
 export WITH_GAPPS=true
+export KBUILD_BUILD_USER=Anant
+export KBUILD_BUILD_HOST=81
+export BUILD_USERNAME=BusyAnant
+export BUILD_HOSTNAME=81
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
