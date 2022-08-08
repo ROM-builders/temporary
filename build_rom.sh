@@ -3,13 +3,13 @@ repo init --depth=1 --no-repo-verify -u https://github.com/DotOS/manifest.git -b
 git clone https://github.com/dtyghc/local_manifest.git --depth 1 -b dotos .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom 
 source build/envsetup.sh
 lunch dot_olives-userdebug
 export WITH_GAPPS=true
 export KBUILD_BUILD_USER=Anant
 export KBUILD_BUILD_HOST=81
-export BUILD_USERNAME=BusyAnant
+export BUILD_USERNAME=Anant_1
 export BUILD_HOSTNAME=81
 export TZ=Asia/Dhaka #put before last build command
 make bacon
