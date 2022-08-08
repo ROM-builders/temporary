@@ -1,6 +1,6 @@
 # sync rom
 repo init -u https://github.com/Corvus-R/android_manifest.git -b 12-test
-git clone https://github.com/Crypt045/local_manifest/tree/main --depth 1 -b master .repo/local_manifests
+git clone https://github.com/Crypt045/local_manifest/tree/main --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
