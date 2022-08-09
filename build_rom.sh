@@ -5,7 +5,6 @@ git clone https://github.com/RahifM/proprietary_vendor_xiaomi -b lineage-16.0 --
 
 # build rom
 source build/envsetup.sh
-#lunch lineage_beryllium-userdebug
 export TZ=Asia/Dhaka #put before last build command
 brunch beryllium
 
