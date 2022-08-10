@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch fluid_merlin-userdebug
+lunch fluid_merlinx-userdebug
 export TZ=Europe/Bucharest #put before last build command
 mka bacon
 
