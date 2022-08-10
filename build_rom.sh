@@ -3,12 +3,10 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixysOS/manifest -b t
 git clone https://github.com/Azure-Helper/local_manifests.git --depth 1 -b pixys .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom [25]
+# build rom
 source build/envsetup.sh
-lunch pixys_raphael-eng
-export BUILD_WITH_GAPPS=true
-export SELINUX_IGNORE_NEVERALLOWS=true
-export TZ=Asia/Delhi #put before last build command
+lunch pixys_raphael-userdebug
+export TZ=Asia/Kolkata #put before last build command
 make pixys
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
