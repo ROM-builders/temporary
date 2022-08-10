@@ -7,13 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
-export WITH_GMS=false
-export SUSHI_BOOTANIMATION=1080
-export TARGET_BUILD_GRAPHENEOS_CAMERA=false
-export TARGET_ENABLE_BLUR=false
-export TARGET_HAS_UDFPS=false
-export TARGET_SUPPORTS_QUICK_TAP=true
-export TARGET_FACE_UNLOCK_SUPPORTED=true
 export TZ=Asia/Makassar #put before last build command
 brunch RMX1801
 
