@@ -1,12 +1,12 @@
 # sync rom
-repo init -u https://github.com/Project-Fluid/manifest.git -b fluid-12.1 default,-mips,-darwin,-notdefault
+repo init -u https://github.com/StyxProject/android -b S -g default,-mips,-darwin,-notdefault
 git clone https://github.com/abhishekhembrom08/local_manifest.git --depth 1 -b master .repo/local_manifests
-repo sync --force-sync --no-tags --no-clone-bundle -j$(nproc --all)
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch fluid_ginkgo-userdebug
-export TZ=Asia/Dhaka #put before last build command
+lunch ginkgo-userdebug
+export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
