@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/RiceDroid/android -b 
 git clone https://github.com/Tiktodz/local_manifest.git --depth 1 -b rice .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build roms
+# build rom
 . build/envsetup.sh
 lunch lineage_X00TD-userdebug
 export TZ=Asia/Makassar #put before last build command
