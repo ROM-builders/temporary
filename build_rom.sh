@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/RiceDroid/android -b 
 git clone https://github.com/raidenkkj/local_manifest.git --depth 1 -b ricedroid-mithorium .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build roms
+# build rom
 source build/envsetup.sh
 lunch lineage_Mi439-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
