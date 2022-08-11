@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 rm -rf hardware/samsung
-git clone https://github.com/Galaxya50/android_hardware_samsung -b android-12.0 ./hardware/samsung
+mv hardware/samsung2 hardware/samsung
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Ho_Chi_Minh #put before last build command
