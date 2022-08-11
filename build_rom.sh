@@ -4,8 +4,6 @@ git clone https://github.com/ping2109/local_manifest.git --depth 1 -b evox-a50 .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-rm -rf hardware/samsung
-mv hardware/samsung2 hardware/samsung
 . build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Ho_Chi_Minh #put before last build command
