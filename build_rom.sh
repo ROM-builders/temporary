@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch conquer_lavender-userdebug
 export TZ=Asia/Jakarta
-export BUILD_USERNAME=dikiawan-9
+export BUILD_USERNAME=dikiawan
 export SELINUX_IGNORE_NEVERALLOWS=true
 make carthage
 
