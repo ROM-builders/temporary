@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest
 git clone https://github.com/JaswantTeja/local_manifest.git --depth 1 -b blaze .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build roms
 . build/envsetup.sh
 export WITH_GAPPS=true
 lunch blaze_r5x-userdebug
