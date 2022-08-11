@@ -4,7 +4,7 @@ git clone https://github.com/progcker/mlocal_manifest.git --depth 1 -b blaze .re
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 #build rom
-. build/envsetup.sh
+source build/envsetup.sh
 export WITH_GAPPS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
