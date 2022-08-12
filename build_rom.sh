@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom 4.19 tree kntl
 source build/envsetup.sh
-lunch xdroid_X01BD-userdebug
+lunch xdroid_X01BD-user
 export BUILD_USERNAME=nobody
 export BUILD_HOSTNAME=android-build
 export KBUILD_BUILD_USER=nobody
