@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch conquer_lavender-user
+lunch conquer_lavender-userdebug
 export TZ=Asia/bangkok #put before last build command
 make carthage
 
