@@ -1,11 +1,11 @@
 # sync rom
-repo init -u https://github.com/StyxProject/android -b S -g default,-mips,-darwin,-notdefault
+repo init -u repo init -u https://github.com/CipherOS/android_manifest.git -b twelve-L -g default,-mips,-darwin,-notdefault
 git clone https://github.com/abhishekhembrom08/local_manifest.git --depth 1 -b master .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 
 # build rom
-source build/envsetup.sh
-lunch ginkgo-userdebug
+. build/envsetup.sh
+lunch cipher_ginkgo-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
