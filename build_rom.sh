@@ -1,14 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest.git -b 12.1 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-Pixelish/manifest -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/progcker/mlocal_manifest.git --depth 1 -b blaze .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 #build rom
-source build/envsetup.sh
-export WITH_GAPPS=true
+. build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
-lunch blaze_CPH1859-userdebug
+lunch aosp_CPH1859-userdebug
 export TZ=Asia/Kolkata #put before last 
 mka bacon
 
