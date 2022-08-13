@@ -4,12 +4,14 @@ git clone https://github.com/progcker/mlocal_manifest.git --depth 1 -b pix .repo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 #build rom
-. build/envsetup.sh
+# build rom
+source build/envsetup.sh
+lunch derp_CPH1859-userdebug
+export BUILD_WITH_GAPPS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
-lunch aosp_CPH1859-userdebug
-export TZ=Asia/Kolkata #put before last 
-make bacon
+export TZ=Asia/Kolkata #put before last build command
+mka derp
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
