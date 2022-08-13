@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # Set up environment
 . build/envsetup.sh
-brunch
+brunch miatoll
 export TZ=Asia/Dhaka #put before last build command
 # Build the ROM
 mka bacon
