@@ -1,10 +1,9 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-Pixelish/manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/progcker/mlocal_manifest.git --depth 1 -b pix .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/DerpFest-12/manifest.git -b 12.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/progcker/mlocal_manifest.git --depth 1 -b derp .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 #build rom
-# build rom
 source build/envsetup.sh
 lunch derp_CPH1859-userdebug
 export BUILD_WITH_GAPPS=true
