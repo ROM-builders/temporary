@@ -5,7 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch lineage_RMX1801-userdebug
 export TZ=Asia/Makassar #put before last build command
 brunch RMX1801
 
