@@ -5,8 +5,7 @@ git clone https://github.com/RahifM/proprietary_vendor_xiaomi -b lineage-16.0 --
 
 # build rom
 virtualenv -p python2 ~/python
-cd ~
-. python/bin/activate
+./python/bin/activate
 source build/envsetup.sh
 export TZ=Asia/Dhaka #put before last build command
 brunch beryllium
