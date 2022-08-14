@@ -4,8 +4,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 git clone https://github.com/RahifM/proprietary_vendor_xiaomi -b lineage-16.0 --depth=1 vendor/xiaomi
 
 # build rom
+apt-get install virtualenv -y
 virtualenv -p python2 ~/python
-./python/bin/activate
+. ~/python/bin/activate
+python --version
 source build/envsetup.sh
 export TZ=Asia/Dhaka #put before last build command
 brunch beryllium
