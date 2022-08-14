@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch lineage_vangogh-userdebug
+lunch lineage_vangogh-userdebug 
 export SKIP_ABI_CHECKS=true
 export TZ=Asia/Chongqing #put before last build command 
 make bacon
