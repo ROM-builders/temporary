@@ -6,9 +6,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_mido-userdebug
-export KBUILD_BUILD_USER=hyper
+export KBUILD_BUILD_USER=HyperPower
 export KBUILD_BUILD_HOST=17
-export BUILD_USERNAME=hyper
+export BUILD_USERNAME=HyperPower
 export BUILD_HOSTNAME=17
 export TZ=Asia/Delhi #put before last build command
 mka bacon
