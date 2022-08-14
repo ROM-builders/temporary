@@ -1,11 +1,11 @@
 # sync rom
 repo init -u https://github.com/DerpFest-12/manifest.git -b 12.1 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/Apitpr0/local_manifests.git --depth 1 -b master .repo/local_manifests/derp_mi8937.xml
+git clone https://github.com/Apitpr0/local_manifests.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch derp_device-debug
+lunch derp_mi8937-userdebug
 export TZ=Asia/Kuala_Lumpur #put before last build command
 mka derp 
 
