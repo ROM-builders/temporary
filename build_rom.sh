@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b cm-14.1
+repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b cm-14.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/albinsraj2022/local-manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
