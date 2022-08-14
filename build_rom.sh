@@ -5,7 +5,7 @@ git clone https://github.com/RahifM/proprietary_vendor_xiaomi -b lineage-16.0 --
 
 # build rom
 python --version
-rm -rf /usr/bin/python
+mv /usr/bin/python $HOME
 ln -s /usr/bin/python2.7 /usr/bin/python
 python --version
 source build/envsetup.sh
