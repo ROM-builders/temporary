@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Sakura-Revived/android -b 10 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/lineageos/android -b lineage-17.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/batuhantrkgl/android_manifest_samsung_j7xelte --depth 1 -b ProjectSakura .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
