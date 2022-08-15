@@ -1,11 +1,11 @@
 # sync rom
-repo init -u https://github.com/Project-Fluid/manifest.git -b fluid-12.1 -g default,-mips,-darwin,-notdefault
+repo init -u https://github.com/Fusion-OS/android_manifest -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/abhishekhembrom08/local_manifest.git --depth 1 -b master .repo/local_manifests
-repo sync --force-sync --no-tags --no-clone-bundle -j$(nproc --all)
+repo sync --current-branch --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune -j$(nproc --all)
 
 # build rom
 source build/envsetup.sh
-lunch fluid_ginkgo-userdebug
+lunch fuse_ginkgo-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
