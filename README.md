@@ -1,4 +1,4 @@
-AospExtended custom ROM for Redmi Note
+AospExtended custom ROM for Redmi Not
 ==============================
 
 AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for LG
