@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch lineage_begonia-user
 export TZ=Asia/Dhaka #put before last build command
 export BUILD_USERNAME=Fr0ztyy43
-export BUILD_HOSTNAME=initial_build
+
 mka derp
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
