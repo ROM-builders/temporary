@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch derp_tissot-userdebug
-#export BUILD_WITH_GAPPS=true
 export TZ=Asia/Kathmandu #put before last build command
 mka derp
 
