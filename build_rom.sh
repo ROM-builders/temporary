@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch p404_r5x-user
 export ALLOW_MISSING_DEPENDENCIES=true
-export TZ=Asia/Kolkata #put before last build command
+export TZ=Asia/Kolkata #put before last build commands
 make bacon
 
 # 1
