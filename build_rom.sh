@@ -3,9 +3,10 @@ repo init --depth=1 --no-repo-verify -u https://github.com/DerpFest-12/manifest.
 git clone https://github.com/Lafactorial/local_manifest.git --depth 1 -b Derp .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build  rom
 source build/envsetup.sh
 lunch derp_tissot-userdebug
+#export BUILD_WITH_GAPPS=true
 export TZ=Asia/Kathmandu #put before last build command
 mka derp
 
