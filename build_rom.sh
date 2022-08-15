@@ -4,7 +4,7 @@ git clone https://github.com/abhishekhembrom08/local_manifest.git --depth 1 -b m
 repo sync --force-sync --no-tags --no-clone-bundle -j$(nproc --all)
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch fluid_ginkgo-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
