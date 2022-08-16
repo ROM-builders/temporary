@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lineage_begonia-user
+lunch spark_begonia-userdebug
 export TZ=Asia/Dhaka #put before last build command
 export BUILD_USERNAME=Fr0ztyy43
 
