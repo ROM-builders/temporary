@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/test.sh | bash
 
 init_check=$(grep 'repo init' $CIRRUS_WORKING_DIR/build_rom.sh | grep 'depth=1')
 if [[ $init_check != *default,-mips,-darwin,-notdefault* ]]; then echo Please use --depth=1 and -g default,-mips,-darwin,-notdefault tags in repo init line.; exit 1; fi
@@ -71,7 +72,7 @@ rclone_string="rclone copy out/target/product/\$(grep unch \$CIRRUS_WORKING_DIR/
 if [[ $rclone_check != *$rclone_string* ]]; then echo Please follow rclone copy line of main branch.; exit 1; fi
 
 sync_check=$(grep 'repo sync' $CIRRUS_WORKING_DIR/build_rom.sh)
-sync_string="repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j"
+sync_string="repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync"
 if [[ $sync_check != *$sync_string* ]]; then echo Please follow repo sync line of main branch.; exit 1; fi
 
 fetch_check=$(grep 'git fetch ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
