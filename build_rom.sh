@@ -9,4 +9,4 @@ lunch xdroid_whyred-userdebug
 make xd 
 
 set -e
-curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/test.sh | bash
+
