@@ -9,7 +9,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
 # build rom
 . build/envsetup.sh
 lunch xdroid_whyred-userdebug
-make xd -j$(nproc --all)
+make xd 
 
 # upload rom
 up(){
