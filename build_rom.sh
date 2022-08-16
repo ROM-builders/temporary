@@ -1,7 +1,7 @@
 # sync rom
 repo init -u https://github.com/Fusion-OS/android_manifest -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/abhishekhembrom08/local_manifest.git --depth 1 -b master .repo/local_manifests
-repo sync
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 rm -rf hardware/xiaomi
