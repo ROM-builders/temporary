@@ -16,7 +16,7 @@ task:
     - repo init --depth=1 -u repo init -u https://github.com/xdroid-oss/xd_manifest -b twelve || true
   sync_script:
     - rm -rf .repo/local_manifests || true
-    - git clone https://github.com/Sohang85/Local_Manifest.git --depth 1 -b main .repo/local_manifests
+    - git clone https://github.com/Sohang85/Local_Manifest.git --depth 1 -b whyred-xdroid .repo/local_manifests
     - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
   build_script:
     - . build/envsetup.sh
