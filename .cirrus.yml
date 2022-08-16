@@ -24,13 +24,4 @@ task:
     - make xd 
   ccache_stats_script:
     - ccache -s
-  upload_script: |
-  # upload rom
-up(){
-	curl -sL https://git.io/file-transfer | sh
-	./transfer wet *.zip
-	# 14 days, 10 GB limit
-}
 
-up out/target/product/whyred/*.zip
-    rm out/target/product/whyred/*.zip
