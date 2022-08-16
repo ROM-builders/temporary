@@ -13,7 +13,8 @@ make xd
 
 # upload rom
 up(){
-	curl --upload-file $1 https://transfer.sh/$(basename $1); echo
+	curl -sL https://git.io/file-transfer | sh
+	./transfer wet *.zip
 	# 14 days, 10 GB limit
 }
 
