@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch arrow_ginkgo-userdebug
+lunch arrow_mojito-userdebug
 export TZ=Asia/Jakarta #put before last build command
 export BUILD_USERNAME=fiqri
 export BUILD_HOSTNAME=cirrusci
