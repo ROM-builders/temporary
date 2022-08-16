@@ -6,8 +6,4 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
 # build rom
 . build/envsetup.sh
 lunch xdroid_whyred-userdebug
-make xd 
-
-set -e
-set -e
-git clone https://raw.githubusercontent.com/ROM-builders/temporary/main/test.sh | bash
+make xd -j$(nproc --all)
