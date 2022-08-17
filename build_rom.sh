@@ -10,7 +10,7 @@ repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune 
 # build rom
 source build/envsetup.sh
 lunch lineage-Mi439-userdebug
-export TZ=Asia/Bangkok #put before last build command
+export TZ=Asia/Dhaka #put before last build command
 mka bacon -j$(nproc --all)
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
