@@ -8,6 +8,7 @@ source build/envsetup.sh
 lunch spark_begonia-userdebug
 export TZ=Asia/Dhaka #put before last build command
 export BUILD_USERNAME=Fr0ztyy43
+export BUILD_HOSTNAME=initial_build
 
 mka derp
 
