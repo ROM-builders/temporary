@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
 # build rom
 . build/envsetup.sh
 lunch xdroid_whyred-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
