@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b
 git clone https://github.com/Fr0ztyy43/local_manifests.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build ro
 source build/envsetup.sh
 lunch spark_begonia-userdebug
 export TZ=Asia/Dhaka #put before last build command
