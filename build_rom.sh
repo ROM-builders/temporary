@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch evolution_X01AD-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
-export TARGET_USES_MINI_GAPPS := true
+export TARGET_USES_MINI_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
 mka evolution 
 
