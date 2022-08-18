@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/AOSPA/manifest -b sapphire -g default,-mips,-darwin,-notdefault
-git clone https://github.com/back-up-git/local_manifests.git --depth 1 -b sapphire-ext .repo/local_manifests
+git clone https://github.com/back-up-git/local_manifests.git --depth 1 -b sapphire .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom [1]
@@ -10,7 +10,7 @@ export KBUILD_BUILD_USER=azure
 export KBUILD_BUILD_HOST=azure
 export BUILD_USERNAME=azure
 export BUILD_HOSTNAME=azure
-export TZ=Asia/Delhi # put before last build command
+export TZ=Asia/Kolkata # put before last build command
 ./rom-build.sh raphael -t userdebug -v beta
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
