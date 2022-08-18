@@ -1,14 +1,13 @@
 # sync rom
-repo init -u https://github.com/Fusion-OS/android_manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/abhishekhembrom08/local_manifest.git --depth 1 -b master .repo/local_manifests
+repo init -u https://github.com/CherishOS/android_manifest.git -b eleven -g default,-mips,-darwin,-notdefault
+git clone https://github.com/abhishekhembrom08/manifest_local.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-rm -rf hardware/xiaomi
-rm -rf vendor/nxp
 source build/envsetup.sh
 export USE_CCACHE=1 && ccache -M 50G && export CONFIG_STATE_NOTIFIER=y && export SELINUX_IGNORE_NEVERALLOWS=true
-lunch fuse_ginkgo-userdebug
+lunch cherish_RMX1805-userdebug
+export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
