@@ -5,7 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-export USE_CCACHE=1 && ccache -M 50G && export CONFIG_STATE_NOTIFIER=y && export SELINUX_IGNORE_NEVERALLOWS=true
 lunch cherish_RMX1805-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
