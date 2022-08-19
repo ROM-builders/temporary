@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git
 git clone https://github.com/Fr0ztyy43/local_manifests.git --depth 1 -b los18.1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build ro
+# build rom
 source build/envsetup.sh
 lunch lineage_begonia-userdebug
 export TZ=Asia/Dhaka #put before last build command
