@@ -6,9 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch carbon_RMX1805-userdebug
-export USE_CCACHE=1 && ccache -M 50G
-export CONFIG_STATE_NOTIFIER=y
-export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
