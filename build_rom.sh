@@ -5,6 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
+export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_USER=ShahzebQureshi
 export BUILD_HOST=cirrus-ci
 export BUILD_USERNAME=ShahzebQureshi
