@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/RiceDroid/android -b twelve -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-Pixelish/manifest -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/progcker/local_manifest --depth 1 -b riced .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
 export SELINUX_IGNORE_NEVERALLOWS=true
-lunch lineage_CPH1859-userdebug
+lunch aosp_CPH1859-userdebug
 export TZ=Asia/Kolkata #put before last build command
 make bacon
 
