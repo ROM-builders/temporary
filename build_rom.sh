@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch corvus_olives-userdebug
+lunch corvus_olives-userdebug
 export WITH_GAPPS=true
 export KBUILD_BUILD_USER=Anant
 export KBUILD_BUILD_HOST=81
