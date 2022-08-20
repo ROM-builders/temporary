@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/CherishOS/android_manifest.git -b twelve-one -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git:https://github.com/Evolution-X/manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Hansraj76/local-manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-brunch cherish_RMX1851-userdebug
+mka evolution
 export TZ=Asia/Dhaka #put before last build command
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
