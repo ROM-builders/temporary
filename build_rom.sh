@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Project-Fluid/manifest -b fluid-12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Sensei205/local_manifest --depth 1 -b fluid-12.1 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 11.0 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Sensei205/local_manifest.git --depth=1 -b crdroid-11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
-lunch fluid_onclite-userdebug
+source build/envsetup.sh
+lunch lineage_onclite-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
