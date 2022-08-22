@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lineage_dandelion-user
+lunch lineage_dandelion-userdebug
 export TZ=UTC #put before last build command
 mka bacon
 
