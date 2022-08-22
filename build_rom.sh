@@ -5,8 +5,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-brunch aosp_CPH1859-userdebug
-export TZ=Asia/Kolkata #put before last build 
+lunch havoc_CPH1859-userdebug
+export TZ=Asia/Dhaka #put before last build command
+mka bacon
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
