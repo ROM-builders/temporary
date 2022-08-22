@@ -1,13 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/CarbonROM/android.git -b cr-9.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/abhishekhembrom08/manifest_local.git --depth 1 -b master .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b elle -g default,-mips,-darwin,-notdefault
+git clone https://github.com/abhishekhembrom08/manifest_local.git --depth 1 -b evo .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 export SELINUX_IGNORE_NEVERALLOWS=true
 ALLOW_MISSING_DEPENDENCIES=true
-lunch carbon_RMX1805-userdebug
+lunch aosp_RMX1805-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
