@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b spark -g default,-mips,-darwin,-notdefault
-git clone https://github.com/DineshMSDian/local_manifest --depth 1 -b Spark .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Corvus-R/android_manifest.git -b 12-test -g default,-mips,-darwin,-notdefault
+git clone https://github.com/DineshMSDian/local_manifest --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch spark_santoni-userdebug
+lunch corvus_santoni-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
