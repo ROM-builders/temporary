@@ -1,8 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/RiceDroid/android -b twelve -g default,-mips,-darwin,-notdefault
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 git clone https://github.com/kiritami/local_manifest.git --depth 1 -b main .repo/local_manifests
-repo sync
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
