@@ -3,7 +3,7 @@ repo init --depth=1 -u https://github.com/ConquerOS/manifest.git -b twelve -g de
 git clone https://github.com/donboruza/local_manifests.git --depth 1 -b sweet-conquer .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build roms
+# build rom
 source build/envsetup.sh
 lunch conquer_sweet-userdebug
 export BUILD_USERNAME=don.boruza
