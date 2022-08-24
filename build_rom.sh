@@ -5,7 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-make clobber
 lunch lineage_a10s-userdebug
 export TZ=Asia/Ho_Chi_Minh #put before last build command
 export WITH_SU=false
