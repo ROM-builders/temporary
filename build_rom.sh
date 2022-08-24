@@ -8,6 +8,7 @@ source build/envsetup.sh
 lunch lineage_a10s-userdebug
 export TZ=Asia/Ho_Chi_Minh #put before last build command
 export WITH_SU=false
+
 export WITH_GMS=false
 mka bacon
 
