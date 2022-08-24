@@ -9,9 +9,9 @@ lunch aicp_juice-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_DUP_RULES=true
-export TZ=Asia/Jakarta #put before last build command
 export BUILD_USERNAME="darknius"
 export BUILD_HOSTNAME="darx-labs"
+export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
