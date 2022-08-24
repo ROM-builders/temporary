@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch derp_lavender-userdebug
+lunch derp_lavender-user
 export TZ=Asia/Kolkata
 export KBUILDBUILDUSER=xenxynon 
 export KBUILDBUILDHOST=xenxynon 
