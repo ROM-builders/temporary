@@ -4,9 +4,8 @@ git clone https://github.com/Uxtrom/local_manifests.git --depth 1 -b rice-12.1 .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch lineage_bitra-userdebug
-export TZ=Asia/Dhaka #put before last build command
 brunch bitra
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
