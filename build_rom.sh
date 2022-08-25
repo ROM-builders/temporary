@@ -5,7 +5,7 @@ git clone https://github.com/newuserbtw/local_manifest.git --depth 1 -b main .re
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 # build rom
 . build/envsetup.sh
-lunch yapp_Mi439-userdebug
+lunch yaap_Mi439-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
 m yapp
