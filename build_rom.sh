@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/CipherOS/android_manifest.git -b twelve-L -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -uhttps://github.com/Project-Fluid/manifest -b fluid-12.1  -g default,-mips,-darwin,-notdefault
 git clone https://github.com/ShahzebQureshi/local_manifest --depth 1 -b fluid .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -10,7 +10,7 @@ export BUILD_USER=ShahzebQureshi
 export BUILD_HOST=cirrus-ci
 export BUILD_USERNAME=ShahzebQureshi
 export BUILD_HOSTNAME=cirrus-ci
-lunch cipher_joan-userdebug
+lunch fluid_joan-userdebug
 export TZ=Asia/Karachi #put before last build command
 mka bacon
 
