@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch arrow_X00TD-userdebug
-export TZ=Asia/Makassar #put before last build command
+export TZ=Asia/Tokyo #put before last build command
 m bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
