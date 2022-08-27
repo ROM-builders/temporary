@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git:// github.com/CipherOS/android_manifest.git -b twelve-L-g default,-mips,-darwin,-notdefaults
+repo init --depth=1 --no-repo-verify -u git://github.com/CipherOS/android_manifest.git -b twelve-L -g default,-mips,-darwin,-notdefault
 git clone https://github.com/xack21/local_manifest.git--depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
