@@ -2,7 +2,7 @@
 repo init --depth=1 --no-repo-verify -u https://github.com/SuperiorOS/manifest.git -b twelvedotone -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Wasik-Fahim10/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
-
+ 
 # build rom
 source build/envsetup.sh
 lunch superior_raphael-userdebug
