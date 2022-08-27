@@ -1,13 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android -b lineage-19.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/abhishekhembrom08/manifest_local.git --depth 1 -b evo12 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Bootleggers-BrokenLab/manifest -b sambunimbo -g default,-mips,-darwin,-notdefault
+git clone https://github.com/abhishekhembrom08/manifest_local.git --depth 1 -b rova .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-export SELINUX_IGNORE_NEVERALLOWS=true
-#ALLOW_MISSING_DEPENDENCIES=true
-lunch lineage_RMX1805-userdebug
+#export SELINUX_IGNORE_NEVERALLOWS=true
+#export ALLOW_MISSING_DEPENDENCIES=true
+lunch bootleg_rova-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
