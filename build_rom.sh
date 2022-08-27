@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 export SELINUX_IGNORE_NEVERALLOWS=true
-ALLOW_MISSING_DEPENDENCIES=true
+#ALLOW_MISSING_DEPENDENCIES=true
 lunch lineage_RMX1805-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
