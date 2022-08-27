@@ -1,12 +1,21 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 12.1 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/RiceDroid/android -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/rushiranpise/local_manifest --depth 1 -b crdroid .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch lineage_chef-userdebug
-export TZ=Asia/Dhaka #put before last build command
+export RICE_MAINTAINER=rushi24
+export RICE_CHIPSET=sdm660
+export WITH_GMS=false
+export RICE_OFFICIAL=true
+export SUSHI_BOOTANIMATION=1080
+export TARGET_BUILD_GRAPHENEOS_CAMERA=true
+export TARGET_ENABLE_BLUR=true
+export TARGET_SUPPORTS_QUICK_TAP=true
+export TARGET_FACE_UNLOCK_SUPPORTED=true
+export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
