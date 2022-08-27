@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch evoluton_Mi439-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
-export TZ=Asia/Kolkata #put before last build command
+export TZ=Asia/Delhi #put before last build command
 mka evolution
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
