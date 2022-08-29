@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
  . build/envsetup.sh
-lunch lineage_lava-userdebug
+lunch lineage_merlinx-userdebug
 export TARGET_KERNEL_CLANG_VERSION=proton
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
