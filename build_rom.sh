@@ -2,8 +2,6 @@ repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android -b 
 git clone https://github.com/sweervin/local_manifest --depth 1 -b 18.1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-
-
 . build/envsetup.sh
 lunch lineage_laurel_sprout-user
 export TZ=Asia/Dhaka
