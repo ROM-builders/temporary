@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch blaze_X00TD-userdebug
 export WITH_GAPPS := true
 export TARGET_INCLUDE_LIVE_WALLPAPERS := false
-export TZ=Asia/Jakarta #put before last build command
+export TZ=Asia/Tokyo #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
