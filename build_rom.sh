@@ -12,5 +12,6 @@ brunch j7elte
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 sha256sum out/target/product/j7elte/*
-zip out/target/product/j7elte/lineage-18.1-20220831-recovery-j7elte.img.zip out/target/product/j7elte/recovery.img
+git clone https://github.com/exynos7580-dev/lineage_OTA.git
+bash lineage_OTA/scripts/recovery-j7elte.sh
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
