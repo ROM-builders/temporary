@@ -1,18 +1,24 @@
-AospExtended custom ROM for Redmi Note 4
-==============================
+# Build Script for Redmi miatoll devices (codenamed _curtana/excalibur/joyeuse/gram_)
 
-AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note 4(code name mido)
 
-[Features as video](https://www.youtube.com/watch?v=KuQ9jIVmOXY) or [Features as text](https://forum.xda-developers.com/t/rom-11-0-aospextended-rom-v8-0-unofficial-surya.4202905/)
+## Device specifications
 
-[Screenshots](https://t.me/Apon77Mido/5270) or [Video](https://www.youtube.com/watch?v=KuQ9jIVmOXY)
+| Device                  | Redmi miatoll (Note 9S/Pro/Pro Max/POCO M2 Pro)             |
+| ----------------------- | :---------------------------------------------------------- |
+| SoC                     | Qualcomm SM7125 Snapdragon 720G                             |
+| CPU                     | Octa-core (2x2.3 GHz Kryo 465 Gold & 6x1.8 GHz Kryo 465 Silver) |
+| GPU                     | Adreno 618                                                  |
+| Memory                  | 4GB / 6GB RAM                                               |
+| Shipped Android version | 10 (MIUI 11)                                                |
+| Storage                 | 64/128GB                                                    |
+| MicroSD                 | MicroSDXC                                                   |
+| Battery                 | Non-removable Li-Po 5020 mAh                                |
+| Display                 | 1080 x 2400 pixels, 20:9 ratio, 6.67 inches, IPS LCD (~395 ppi density)                              |
 
-Distributed [here](https://t.me/rn4downloads/4885)
+## Device image
 
-Estimated installation no.: 150-500
+![Redmi Note 9S](https://camo.githubusercontent.com/ffd6c3fbdcb8e4cc6ed9ad884b32a9d5009d307a8bae29e760019f8457e8fcf5/68747470733a2f2f63646e2d66696c65732e6b696d6f76696c2e636f6d2f64656661756c742f303030342f33362f7468756d625f3333353731385f64656661756c745f6269672e6a706567 "Redmi Note 9S")
 
-How to use this repository
--------------------
-
-* [Instructions if you want to develop AospExtended custom ROM as a developer](https://github.com/Apon77/mido-AospExtended-Apon77/blob/main/Instructions%20for%20developers.md)
-* [Instructions if you want to use AospExtended custom ROM in your device as a user](https://github.com/Apon77/mido-AospExtended-Apon77/blob/main/Instructions%20for%20users.md)
+---
+## Kernel sources
+[Miatoll_sm6250](https://github.com/Klozz/android_kernel_xiaomi_sm6250)
