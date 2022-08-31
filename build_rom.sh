@@ -10,7 +10,9 @@ export TZ=Europe/Istanbul #put before last build command
 croot
 brunch j7elte
 
-# upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
+# check sha256sums and upload recovery.img
 sha256sum out/target/product/j7elte/*
 bash .repo/local_manifests/recovery-j7elte.sh
+
+# upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
