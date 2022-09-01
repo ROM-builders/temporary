@@ -6,9 +6,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_rosy-userdebug
-export KBUILD_BUILD_USER=rosy
+export KBUILD_BUILD_USER=a3project
 export KBUILD_BUILD_HOST=a3project
-export BUILD_USERNAME=rosy
+export BUILD_USERNAME=a3project
 export BUILD_HOSTNAME=a3project
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
