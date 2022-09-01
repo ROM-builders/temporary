@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch bliss_onclite-userdebug
+export BLISS_BUILD_VARIANT=vanilla
 export TZ=Asia/Dhaka #put before last build command
 blissify -v onclite
 
