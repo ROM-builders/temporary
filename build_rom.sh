@@ -12,5 +12,5 @@ brunch j7elte
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 zip out/target/product/j7elte/lineage-18.1-20220902-recovery.zip out/target/product/j7elte/recovery.img
-rclone copy out/target/product/j7elte/lineage-18.1-20220902-UNOFFICIAL-j7elte.zip cirrus:j7elte -P
-rclone copy out/target/product/j7elte/lineage-18.1-20220902-recovery.zip cirrus:j7elte -P
+rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/lineage-18.1-20220902-UNOFFICIAL-j7elte.zip $(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1):j7elte -P
+rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/lineage-18.1-20220902-recovery.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
