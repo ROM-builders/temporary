@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/RiceDroid/android -b 
 git clone https://github.com/ItzHecker404/local_manifest.git -b main  --depth 1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom 
 source build/envsetup.sh
 lunch lineage_miatoll-userdebug
 export TZ=Asia/Kolkata #put before last build command
