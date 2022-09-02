@@ -7,7 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch lineage_X00TD-userdebug
 export WITH_GMS=true
-export BUILD_USERNAME=wizard
 export TZ=Asia/Shanghai #put before last build command
 make bacon
 
