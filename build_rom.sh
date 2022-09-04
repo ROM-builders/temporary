@@ -3,9 +3,10 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Project-Kaleidoscope/
 git clone https://github.com/Fr0ztyy43/local_manifests.git --depth 1 -b kscope .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build romm
+# build rom
 source build/envsetup.sh
 lunch kscope_begonia-userdebug
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
