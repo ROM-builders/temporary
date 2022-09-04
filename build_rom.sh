@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/RiceDroid/android -b twelve -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/projectarcana-aosp/manifest -b 12.x -g default,-mips,-darwin,-notdefault
 git clone https://github.com/ItzHecker404/local_manifest.git -b main  --depth 1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom 
 source build/envsetup.sh
-lunch lineage_miatoll-userdebug
+lunch aosp_miatoll-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
