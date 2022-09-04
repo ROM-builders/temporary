@@ -1,15 +1,15 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b twelve-plus -g default,-mips,-darwin,-notdefault
-git clone https://github.com/NRanjan-17/local_manifest.git --depth 1 -b Pixel-Experience-12 .repo/local_manifests
+git clone https://github.com/onkarsinghsahil/local_manifest.git --depth 1 -b pe .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch aosp_mido-userdebug
-export KBUILD_BUILD_USER=HyperPower
-export KBUILD_BUILD_HOST=17
-export BUILD_USERNAME=HyperPower
-export BUILD_HOSTNAME=17
+export KBUILD_BUILD_USER=Sahil
+export KBUILD_BUILD_HOST=Sahil
+export BUILD_USERNAME=Sahil
+export BUILD_HOSTNAME=Sahil
 export TZ=Asia/Delhi #put before last build command
 mka bacon
 
