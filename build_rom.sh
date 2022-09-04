@@ -4,6 +4,7 @@ git clone https://github.com/exynos7580-dev/local_manifests.git --depth 1 -b Q .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+export ALLOW_MISSING_DEPENDENCIES=true
 . build/envsetup.sh
 lunch rr_j7elte-userdebug
 export TZ=Europe/Istanbul #put before last build command
