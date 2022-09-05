@@ -1,13 +1,13 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/sajidshahriar72543/local_manifest.git --depth 1 -b arrow-whyred .repo/local_manifests
+git clone https://github.com/matheucomth/local_manifest.git --depth 1 -b arrow-13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 #2
 
 # build rom
 . build/envsetup.sh
-lunch arrow_whyred-userdebug
+lunch arrow_tulip-userdebug
 export TZ=Asia/Dhaka
 export KBUILD_BUILD_USER=PaperBoy
 export BUILD_HOSTNAME=PaperBoy #put before last build command
