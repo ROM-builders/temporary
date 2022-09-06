@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch blaze_Z01R-userdebug
+lunch blaze_ZE620KL-userdebug
 export TZ=Asia/Kolkata 
 brunch Z01R
 
