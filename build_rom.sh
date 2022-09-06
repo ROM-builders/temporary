@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --forc
   
 # build rom 
 source build/envsetup.sh
-lunch posp_juice-userdebug
+lunch potato_juice-userdebug
 export TZ=Asia/Dhaka #put before last build command
 brunch juice
   
