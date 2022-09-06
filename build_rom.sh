@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch aicp_Z01R-userdebug
+lunch aicp_Z01R-user
 export TZ=Asia/Kolkata 
 bacon Z01R
 
