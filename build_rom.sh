@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b twelve-plus -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git@github.com:Havoc-OS/jenkins_manifest.git -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/StockAndroid/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # Set up environment
 . build/envsetup.sh
-lunch aosp_miatoll-userdebug
+brunch miatoll-userdebug
 export TZ=Asia/Dhaka #put before last build command
 # Build the ROM
 mka bacon
