@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.0 -g -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.0 -g -g default,-mips,-darwin,-notdefault
 git clone https://github.com/matheucomth/local_manifest.git --depth 1 -b arrow .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch arrow_tulip-userdebug
 export TZ=Asia/Dhaka
-export KBUILD_BUILD_USER=PaperBoy
+export ARROW_GAPPS=true
 m bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
