@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch Arrow_m12-eng
+lunch arrow_m12-eng
 export TZ=Asia/Dhaka #put before last build command
 mka arrow
 
