@@ -7,7 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch arrow_tulip-userdebug
 export TZ=Asia/Dhaka
-export ARROW_GAPPS=true
 m bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
