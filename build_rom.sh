@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch blaze_rosy-userdebug
+lunch evolution_rosy-userdebug
 export KBUILD_BUILD_USER=a3project
 export KBUILD_BUILD_HOST=a3project
 export BUILD_USERNAME=a3project
