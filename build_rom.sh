@@ -1,13 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/DotOS/manifest -b dot12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/abhishekhembrom08/manifest_local.git --depth 1 -b dotosGinkgo .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.0 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/abhishekhembrom08/manifest_local.git --depth 1 -b rova-13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 #export SELINUX_IGNORE_NEVERALLOWS=true
 #export ALLOW_MISSING_DEPENDENCIES=true
-lunch dot_ginkgo-userdebug
+lunch arrow_rova-userdebug
 export KBUILD_BUILD_USER=xyz_abhishek
 export KBUILD_BUILD_HOST=xyz_abhishek
 export BUILD_USERNAME=xyz_abhishek
