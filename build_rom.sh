@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Project-Fluid/manifest.git -b fluid-12.1 -g default,-mips,-darwin,-notdefault
+repo init -u https://github.com/PotatoProject/manifest -b frico_mr1-release;
 git clone https://github.com/buildbot-vinayak/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -7,13 +7,14 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 source build/envsetup.sh
 
-lunch fluid_lavender-userdebug
+lunch potato_avender-userdebug
 
-export WITH_GAPPS=true
+export WITH_GAPPS=false
 
 export TZ=Asia/Kolkata #put before last build command
 
-mka bacon
+brunch lavender;
+
 
 
 
