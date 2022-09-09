@@ -1,4 +1,4 @@
-# sync rom
+# sync rom 
 repo init -u https://github.com/Spark-Rom/manifest -b spark
 git clone https://github.com/ninjapika/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
