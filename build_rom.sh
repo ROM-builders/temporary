@@ -1,11 +1,11 @@
 # sync rom 
-repo init --depth=1 --no-repo-verify -u https://github.com/Project-Kaleidoscope/android_manifest.git -b sunflowerleaf -g default,-mips,-darwin,-notdefault 
+repo init --depth=1 --no-repo-verify -u https://github.com/CipherOS/android_manifest.git -b twelve-L -b sunflowerleaf -g default,-mips,-darwin,-notdefault 
 git clone https://github.com/newuserbtw/local_manifest.git --depth 1 -b main .repo/local_manifests 
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 #please fucking sync 
 # build rom 
 . build/envsetup.sh 
-lunch kscope_Mi439-userdebug 
+lunch cipher_Mi439-userdebug 
 export SELINUX_IGNORE_NEVERALLOWS=true 
 export TZ=Asia/Dhaka #put before last build command
 mka bacon 
