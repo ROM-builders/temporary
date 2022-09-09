@@ -4,7 +4,7 @@ git clone https://github.com/ninjapika/local_manifest.git --depth 1 -b main .rep
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/env*
+source build/envsetup.sh
 lunch spark_certus-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
