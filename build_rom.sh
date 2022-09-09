@@ -13,7 +13,7 @@ export WITH_GAPPS=false
 
 export TZ=Asia/Kolkata #put before last build command
 
-brunch lavender;
+brunch lavender
 
 
 
