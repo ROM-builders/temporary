@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch superior_lavender-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
+export BUILD_WITH_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
 m bacon
 
