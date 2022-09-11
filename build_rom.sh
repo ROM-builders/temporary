@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # Build rom
 source build/envsetup.sh
-lunch miatoll_lineage-user
+lunch miatoll_lineage-userdebug
 export TZ=Asia/Kolkata #Add before last build command
 mka bacon
 
