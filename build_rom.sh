@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/yograjsingh-cmd/local_manifest.git --depth 1 -b blaze .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b twelve -g default,-mips,-darwin,-notdefault
+git clone https://github.com/yograjfire18/local_manifest.git --depth 1 -b pissel-12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_Z01R-userdebug
+lunch aosp_Z01R-userdebug
 export TZ=Asia/Kolkata 
 mka bacon
 
