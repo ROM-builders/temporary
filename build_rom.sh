@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest.git -b 12.1 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-oss/xd_manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
 git clone https://github.com/abhishekhembrom08/manifest_local.git --depth 1 -b blazeGinkgo .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -7,11 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 #export SELINUX_IGNORE_NEVERALLOWS=true
 #export ALLOW_MISSING_DEPENDENCIES=true
-lunch blaze_ginkgo-userdebug
-export KBUILD_BUILD_USER=xyz_abhishek
-export KBUILD_BUILD_HOST=xyz_abhishek
-export BUILD_USERNAME=xyz_abhishek
-export BUILD_HOSTNAME=xyz_abhishek
+lunch xdroid_ginkgo-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
