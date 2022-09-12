@@ -8,10 +8,6 @@ source build/envsetup.sh
 #export SELINUX_IGNORE_NEVERALLOWS=true
 #export ALLOW_MISSING_DEPENDENCIES=true
 lunch evolution_rova-userdebug
-export KBUILD_BUILD_USER=xyz_abhishek
-export KBUILD_BUILD_HOST=xyz_abhishek
-export BUILD_USERNAME=xyz_abhishek
-export BUILD_HOSTNAME=xyz_abhishek
 export TZ=Asia/Kolkata #put before last build command
 mka evolution
 
