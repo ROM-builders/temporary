@@ -1,4 +1,4 @@
-AospExtended custom ROM for Redmi Note 4
+[![Build Status](https://api.cirrus-ci.com/github/ROM-builders/temporary.svg)](https://cirrus-ci.com/github/ROM-builders/temporary) AospExtended custom ROM for Redmi Note 4
 ==============================
 
 AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note 4(code name mido)
