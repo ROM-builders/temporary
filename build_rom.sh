@@ -4,7 +4,7 @@ git clone https://github.com/Uxtrom/local_manifests.git --depth 1 -b rice-12.1 .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch lineage_bitra-userdebug
 make bacon
 
