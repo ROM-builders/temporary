@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # Build rom
 source build/envsetup.sh
 lunch lineage_miatoll-userdebug
-export TZ=Asia/Kolkata # Put Before last build command
+export TZ=Asia/Kolkata ## Put Before last build command
 mka bacon
 
 # upload rom 
