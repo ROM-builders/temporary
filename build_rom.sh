@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch lighthouse_r5x-user
 make lighthouse
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Dhaka #put before last build  command
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
