@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 -u https://github.com/lighthouse-os/manifest.git -b sailboat_L1;
+repo init --depth=1 --no-repo-verify -u https://github.com/lighthouse-os/manifest.git -b sailboat_L1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/soyabkhanmalek/Local-Manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all);
 # build rom
