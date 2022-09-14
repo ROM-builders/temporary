@@ -1,11 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b spark -g default,-mips,-darwin,-notdefault
-git clone https://github.com/DineshMSDian/local_manifest --depth 1 -b Spark .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Project-Kaleidoscope/android_manifest.git -b sunflowerleaf -g default,-mips,-darwin,-notdefault
+git clone https://github.com/DineshMSDian/local_manifest --depth 1 -b kscope .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch spark_santoni-user
+lunch kscope_santoni-userdebug
+export WITH_GAPPS := false
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
