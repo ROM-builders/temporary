@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://https://github.com/SuperiorOS/manifest.git -b twelvedotone -g default,-mips,-darwin,-notdefault
-git clone https://github.com/GNX56S/local_manifest.git --depth 1 -b master .repo/local_manifests
+git clone https://github.com/GNX56S/local_manifest.git --depth 1 -b master .repo/local_manifest
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
