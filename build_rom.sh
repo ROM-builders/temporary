@@ -8,15 +8,6 @@ source build/envsetup.sh
 lunch evolution_spes-userdebug
 export TZ=Asia/Delhi #put before last build command
 export SELINUX_IGNORE_NEVERALLOWS=true
-export TARGET_BOOT_ANIMATION_RES=1080
-export TARGET_FACE_UNLOCK_SUPPORTED=true
-export TARGET_SUPPORTS_QUICK_TAP=false
-export TARGET_INCLUDE_LIVE_WALLPAPERS=false
-export TARGET_SUPPORTS_GOOGLE_RECORDER=false
-export TARGET_SUPPORTS_CALL_RECORDING=true
-export TARGET_SUPPORTS_NEXT_GEN_ASSISTANT=true
-export TARGET_INCLUDE_STOCK_ARCORE=false
-export TARGET_ENABLE_BLUR=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 mka evolution
 
