@@ -5,6 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
+export WITH_GAPPS=true
 lunch blaze_chime-userdebug
 brunch chime
 
