@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/CipherOS/android_manifest.git -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/yograjsingh-cmd/local_manifest.git --depth 1 -b Derp-12 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/RiceDroid/android -b twelve -g default,-mips,-darwin,-notdefault
+git clone https://github.com/JuanTamadski/local_manifest.git --depth 1 -b rice .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch cipher_Z01R-userdebug
+lunch lineage_Z01R-userdebug
 export TZ=Asia/Kolkata 
 mka bacon
 
