@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch xdroid_beryllium-userdebug
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 export TZ=Asia/Kolkata #put before last build command
 make xd
 
