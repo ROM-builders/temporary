@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/JuanTamadski/local_manifest.git --depth 1 -b cherish .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/PotatoProject/manifest -b frico_mr1-release -g default,-mips,-darwin,-notdefault
+git clone https://github.com/JuanTamadski/local_manifest.git --depth 1 -b posp .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch cherish_Z01R-userdebug
+lunch potato_Z01R-userdebug
 export TZ=Asia/Kolkata 
 mka bacon
 
