@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 #6
 # build rom
 . build/envsetup.sh
-lunch cherish_veux-userdebug
 export TZ=Asia/Dhaka #put before last build command
 brunch veux
 
