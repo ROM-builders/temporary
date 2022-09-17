@@ -5,7 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-breakfast kmini3g
 export TZ=Europe/Istanbul #put before last build command
 croot
 brunch kmini3g
