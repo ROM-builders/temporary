@@ -1,12 +1,15 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/yograjsingh-cmd/local_manifest.git --depth 1 -b cherish .repo/local_manifests
+git clone https://github.com/hsx02/Local-Manifests.git --depth 1 -b cherish .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch cherish_Z01R-userdebug
+lunch cherish_spes-userdebug
 export TZ=Asia/Kolkata 
+export WITH_GMS=true
+export SELINUX_IGNORE_NEVERALLOWS=true
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
