@@ -5,6 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build roms
 . build/envsetup.sh
+export WITH_GAPPS=true
 export TZ=Asia/Kolkata #put before the last build command
 brunch r5x
 
