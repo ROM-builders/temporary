@@ -5,7 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build roms
 . build/envsetup.sh
-lunch blaze_r5x-userdebug
 export TZ=Asia/Kolkata #put before the last build command
 brunch r5x
 
