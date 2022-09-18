@@ -6,8 +6,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch evolution_alioth-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
-export TZ=Africa/Egypt #put before last build command
+export TZ=Asia/Dhaka
+export BUILD_USERNAME=alioth
+export BUILD_HOSTNAME=userdebug
 mka evolution
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
