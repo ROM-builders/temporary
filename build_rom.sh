@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/DotOS/manifest.git -b dot12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/GNX56S/local_manifest --depth 1 -b dot12 .repo/local_manifest
+git clone https://github.com/GNX56S/local_manifest.git --depth 1 -b dot12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
