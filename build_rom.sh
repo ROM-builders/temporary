@@ -13,8 +13,6 @@ export BUILD_USERNAME=rosy
 export BUILD_HOSTNAME=nfsproject
 export use_GrapheneCamera=true
 export USE_NFSparts=true
-export LINUX_COMPILE_BY=NFS86
-export LINUX_COMPILE_HOST=NFS-project
 m bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
