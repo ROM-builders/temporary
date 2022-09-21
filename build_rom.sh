@@ -1,11 +1,12 @@
 # sync rom 
-repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 11.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/walternewtz/local_manifest.git --depth 1 -b crdroid11.0 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-11.0 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/walternewtz/local_manifest.git --depth 1 -b arrow11.0 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_beryllium-user
+lunch arrow_beryllium-user
+export ARROW_GAPPS=true
 export TZ=Asia/Delhi #put before last build command
 make bacon
 
