@@ -9,7 +9,7 @@ source build/envsetup.sh
 lunch lineage_m11q-userdebug
 export BUILD_USERNAME=atharv2951
 export BUILD_HOSTNAME=sarbhar
-export TZ=Asia/Mumbai #put before last build command
+export TZ=Asia/Kolkata #put before last build command
 
 # Bacon
 make bacon
