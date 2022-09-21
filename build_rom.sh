@@ -10,6 +10,7 @@ export KBUILD_BUILD_USER=a3project
 export KBUILD_BUILD_HOST=a3project
 export BUILD_USERNAME=a3project
 export BUILD_HOSTNAME=a3project
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
