@@ -1,13 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/RasyidAlKautsar/local_manifest.git --depth 1 -b cherish-12 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Prvtcmt/lcl_mnfst.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 -j1 --fail-fast
 
 # build rom
 . build/envsetup.sh
 lunch cherish_mido-user
-export BUILD_HOSTNAME=RasyidAlKautsar
-export BUILD_USERNAME=RasyidAlKautsar
+export BUILD_HOSTNAME=Rsyd
+export BUILD_USERNAME=Rsyd
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
