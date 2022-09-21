@@ -1,13 +1,12 @@
 # sync
 
-repo init --depth=1 --no-repo-verify -u https://github.com/The-RAVEN-OS/manifest.git -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/atharvnegi/local_manifest --depth 1 -b main .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-18.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/samsung-m11q/local_manifest --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_selene-userdebug
-export WITH_GAPPS=true
+lunch lineage_m11q-userdebug
 export BUILD_USERNAME=atharv2951
 export BUILD_HOSTNAME=sarbhar
 export TZ=Asia/Mumbai #put before last build command
