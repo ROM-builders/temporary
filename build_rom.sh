@@ -1,6 +1,8 @@
-# sync rom
+# initialize the repo
 repo init --depth=1 --no-repo-verify -u git://github.com/Evolution-X/manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
+# clone manifest
 git clone https://github.com/akash07k/local_manifests.git --depth 1 -b EvolutionX .repo/local_manifests
+# sync rom
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 # build rom
