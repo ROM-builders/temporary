@@ -6,10 +6,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch xdroid_X00TD-userdebug
-export TARGET_SUPPORTS_QUICK_TAP := true
-export TARGET_SUPPORTS_GOOGLE_RECORDER := false
 export TARGET_INCLUDE_STOCK_ARCORE := false
 export TARGET_INCLUDE_LIVE_WALLPAPERS := false
+export TARGET_SUPPORTS_GOOGLE_RECORDER := false
+export TARGET_SUPPORTS_QUICK_TAP := true
 export BUILD_USERNAME=nobody
 export BUILD_HOSTNAME=android-build
 export KBUILD_BUILD_USER=nobody
