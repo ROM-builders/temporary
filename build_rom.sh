@@ -1,26 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<manifest>
-  
-<remote name="ahmedhridoy371" fetch="https://github.com/ahmedhridoy371" />
-<remote name="kdrag0n" fetch="https://github.com/kdrag0n" />
-<remote name="nexus" fetch="https://github.com/projects-nexus" /> 
-<remote name="Arrow-Devices" fetch="https://github.com/ArrowOS-Devices" />
-<remote name="PE" fetch="https://github.com/PixelExperience-Devices" />
+# sync rom
+repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b tiramisu -g default,-mips,-darwin,-notdefault
+git clone https://github.com/ahmedhridoy371/local_manifest --depth 1 -b evo .repo/local_manifests
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-     <!--Trees-->
+# build rom
+. build/envsetup.sh
+lunch evolution_lavender-user
+#export WITH_GAPPS=TRUE
+export PRODUCT_BROKEN_VERIFY_USES_LIBRARIES=true
+export TZ=Asia/Jakarta
+mka evolution
 
-  <project path="device/xiaomi/lavender" name="device_xiaomi_lavender" remote="ahmedhridoy371" revision="13-4.4" />
-           
-  <project path="vendor/xiaomi/lavender" name="vendor_xiaomi_lavender" remote="ahmedhridoy371" revision="13-4.4" />
-
-  <!--project path="kernel/xiaomi/lavender" name="kernel_xiaomi_lavender" remote="ahmedhridoy371" revision="thirteen" /-->
-
-  <!--project path="kernel/xiaomi/lavender" name="nexus_kernel_xiaomi_lavender" remote="nexus" revision="qti" /-->
-
-  <project path="kernel/xiaomi/lavender" name="kernel_xiaomi_lavender" remote="PE" revision="thirteen" />
-  
-    <!-- Toolchain -->
-
-  <!--project path="prebuilts/clang/host/linux-x86/clang-proton" name="proton-clang" remote="kdrag0n" revision="master" clone-depth="1" /-->
-
-</manifest>
+# upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
+rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
