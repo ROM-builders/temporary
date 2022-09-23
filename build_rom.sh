@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/SuperiorOS/manifest.git -b twelvedotone -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Sensei205/local_manifest.git --depth 1 -b superior .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.0 -g -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Sensei205/local_manifest.git --depth 1 -b arrow .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
-source build/envsetup.sh
-lunch superior_onclite-userdebug
-export TZ=Asia/Jakarta #put before last build command
+# build roms
+. build/envsetup.sh
+lunch arrow_onclite-userdebug
+export TZ=Asia/Dhaka
 m bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
