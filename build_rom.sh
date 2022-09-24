@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch evolution_lavender-user
+lunch evolution_lavender-userdebug
 #export WITH_GAPPS=TRUE
 export PRODUCT_BROKEN_VERIFY_USES_LIBRARIES=true
 export TZ=Asia/Jakarta
