@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/DotOS/manifest.git -b
 git clone https://github.com/NeZoX-star/local_manifest.git --depth 1 -b dot-12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build roms
+# build rom
 source build/envsetup.sh
 lunch dot_onclite-userdebug
 export TZ=Asia/Dhaka #put before last build command
