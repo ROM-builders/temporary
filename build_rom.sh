@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch evolution_Mi439-userdebug
 export WITH_GAPPS=true
+export EVO_BUILD_TYPE=UNOFFICIAL
 export KBUILD_BUILD_USER=Anant_Hyperengine
 export KBUILD_BUILD_HOST=81
 export BUILD_USERNAME=Anant_1
