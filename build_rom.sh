@@ -1,5 +1,5 @@
 # sync rom
-repo init -u https://github.com/crdroidandroid/android.git -b 11.0
+repo init -u https://github.com/LineageOS/android.git -b lineage-18.1
 git clone https://gitlab.com/R9Lab/Manifest.git --depth 1 -b crDroid-11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
