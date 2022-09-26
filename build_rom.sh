@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch p404_vayu-userdebug
+lunch p404_vayu-user
 export WITH_GAPPS=true
 export TZ=Asia/Kolkata #put before last build command
 make bacon
