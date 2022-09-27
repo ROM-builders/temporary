@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android -b 12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/iTZUDAY2312/android_manifest --depth 1 -b CrDroid-S .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
+git clone https://github.com/iTZUDAY2312/android_manifest --depth 1 -b CherishOS .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_miatoll-userdebug
-export TZ=Asia/Kolkata # Put before last build command
+lunch cherish_miatoll-userdebug
+export TZ=Asia/Dhaka ##Add before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
