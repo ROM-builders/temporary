@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build roms
 source build/envsetup.sh
 lunch p404_r5x-userdebug
+export SKIP_ABI_CHECKS=true
 export TZ=Asia/Kolkata #put before last build commands
 make bacon
 
