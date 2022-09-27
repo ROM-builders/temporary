@@ -4,7 +4,7 @@ git clone https://github.com/NeZoX-star/local_manifest.git --depth 1 -b lineage 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build roms
- build/envsetup.sh
+. build/envsetup.sh
 lunch lineage_onclite-userdebug
 export TZ=Asia/Kolkata #put before last build command
 m bacon
