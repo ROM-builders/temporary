@@ -3,8 +3,8 @@ repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_man
 git clone https://github.com/raidenkkj/local_manifest.git --depth 1 -b cherish13-mithorium .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# 7
-# build rom 
+# 8
+# build rom
 . build/envsetup.sh
 export BUILD_HOSTNAME=RaidenIshigami
 export BUILD_USERNAME=RaidenIshigami
