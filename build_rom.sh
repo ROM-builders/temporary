@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/PixelExperience/manifest -b twelve-plus -g default,-mips,-darwin,-notdefault 
+repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/PixelPlusUI-SnowCone/manifest -b snowcone-12.1 -g default,-mips,-darwin,-notdefault 
 
 git clone https://gitlab.com/R9Lab/Manifest.git --depth 1 -b 12.1 .repo/local_manifests
 
