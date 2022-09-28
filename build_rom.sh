@@ -13,7 +13,7 @@ lunch aosp_lava-userdebug
 
 export TZ=Asia/Dhaka #put before last build command
 
-brunch lava
+mka bacon
 
 
 
