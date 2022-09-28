@@ -1,11 +1,11 @@
-# sync rom j1xlte-LineageOS-lineage-17.1-soyabkhanmalek
-repo init --depth=1 --no-repo-verify - git://github.com/wecouldcalliteven/android.git -b lineage-17.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/soyabkhanmalek/local_manifest.git --depth 1 -b j1xlte .repo/local_manifests
+# sync rom mojito-LineageOS-lineage-19.1-soyabkhanmalek
+repo init --depth=1 --no-repo-verify - git://github.com/LineageOS/android.git -b lineage-19.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/soyabkhanmalek/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_j1xlte-userdebug
+lunch lineage_mojito-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
