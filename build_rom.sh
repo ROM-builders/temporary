@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-19.1 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/crdroidandroid/android.git -b 12.1 -g default,-mips,-darwin,-notdefault
 
 git clone https://gitlab.com/R9Lab/Manifest.git --depth 1 -b LineageOS-12.1 .repo/local_manifests
 
@@ -12,7 +12,21 @@ source build/envsetup.sh
 lunch lineage_lava-userdebug
 
 export TZ=Asia/Dhaka #put before last build command
-mka bacon
+
+brunch lava
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
