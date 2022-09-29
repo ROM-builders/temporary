@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Sachin752002/local_manifest.git --depth 1 -b main .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Bootleggers-BrokenLab/manifest.git -b sambunimbo -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Sachin752002/local_manifest.git --depth 1 -b BTL .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_X01AD-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
+lunch bootleg_X01AD-userdebug
+# export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
