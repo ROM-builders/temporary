@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch xdroid_rova-userdebug
 export TZ=Asia/Jakarta
-export BUILD_USER=hklknz
+export BUILD_USER=haikal
 export BUILD_HOST=cloud
 export BUILD_USERNAME=honoka
 export SELINUX_IGNORE_NEVERALLOWS=true
