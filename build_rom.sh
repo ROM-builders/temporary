@@ -9,6 +9,8 @@ export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_DUP_RULES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
+export BUILD_USERNAME=zaidan
+export BUILD_HOSTNAME=zdx-labs
 export TZ=Asia/Jakarta #put before last build command
 brunch potato_juice-userdebug
 
