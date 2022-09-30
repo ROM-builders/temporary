@@ -5,8 +5,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-export ALLOW_MISSING_DEPENDENCIES=true
-export SELINUX_IGNORE_NEVERALLOWS=true
+export KBUILD_BUILD_USER=ImSurajx 
+export KBUILD_BUILD_HOST=Cirrus 
+export BUILD_USERNAME=ImSurajx 
+export BUILD_HOSTNAME=Cirrus 
 lunch arrow_lavender-userdebug
 export TZ=Asia/Kolkata #put before last build command
 m bacon
