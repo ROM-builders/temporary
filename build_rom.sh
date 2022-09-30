@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch Gravity_mido-dangi
+lunch mido-Gravity-13-dangi
 export TZ=Asia/india #put before last build command
 mka bacon
 
