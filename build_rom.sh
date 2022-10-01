@@ -4,7 +4,6 @@ git clone https://github.com/xack21/local_manifest-1.git --depth 1 -b master .re
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-git clone --depth=1 https://github.com/kdrag0n/proton-clang.git prebuilts/clang/host/linux-x86/proton-clang
 source build/envsetup.sh
 lunch arrow_land-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
