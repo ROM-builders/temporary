@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch xdroid_veux-userdebug
 export WITH_GAPPS=true
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export KBUILD_BUILD_USER=Anant_HyperCharge
 export KBUILD_BUILD_HOST=Krypto
 export BUILD_USERNAME=Anant_HyperCharge
