@@ -1,14 +1,14 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/a3project/local_manifests.git --depth 1 -b experience .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-Pixelish/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/a3project/local_manifests.git --depth 1 -b pixelos .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch aosp_rosy-userdebug
-export KBUILD_BUILD_USER=a3project
+export KBUILD_BUILD_USER=ibnuridwan
 export KBUILD_BUILD_HOST=a3project
-export BUILD_USERNAME=a3project
+export BUILD_USERNAME=ibnuridwan
 export BUILD_HOSTNAME=a3project
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Jakarta #put before last build command
