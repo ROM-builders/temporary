@@ -4,7 +4,7 @@ git clone https://github.com/anandhanajay/local-manifest.git --depth 1 -b main .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+.build/envsetup.sh
 lunch aosp_$device-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon -jX
