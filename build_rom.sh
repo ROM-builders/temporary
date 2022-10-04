@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/zaidannn7/manifest.git -b sailboat_L1 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/lighthouse-os/manifest.git -b sailboat_L1 -g default,-mips,-darwin,-notdefault
 git https://github.com/zaidannn7/local_manifest --depth 1 -b potato-test .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -7,6 +7,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
+export WITH_GAPPS=false
+export WITH_GMS=false
 export BUILD_BROKEN_DUP_RULES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export BUILD_USERNAME=zaidan
