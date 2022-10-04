@@ -5,8 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-export BUILD_USERNAME=RaidenIshigami
-export CHERISH_VANILLA=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Dhaka
