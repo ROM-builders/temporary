@@ -3,8 +3,8 @@ repo init --depth=1 --no-repo-verify -u ttps://github.com/PixelOS-Pixelish/manif
 git clone  https://github.com/matheucomth/local_manifest.git --depth 1 -b PixelOS .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
-. build/envsetup.sh
+# build roms
+. build/envssetup.sh
 lunch aosp_tulip-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
