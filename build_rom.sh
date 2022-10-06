@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/DotOS/manifest.git -b dot12.1 -g default,-mips,-darwin,-notdefault
-git clone https://gitlab.com/Futar0/Manifest.git --depth 1 -b DotOS-12.1 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-18.1 -g default,-mips,-darwin,-notdefault
+git clone https://github/Futar0/Manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 # build rom
 source build/envsetup.sh
-lunch dot_lava-userdebug
+lunch lineage_lava-userdebug
 export TZ=Asia/Dhaka #put before last build command
 
 make bacon
