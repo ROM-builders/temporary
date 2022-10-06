@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/PotatoProject/manifest -b frico_mr1-release -g default,-mips,-darwin,-notdefault
-git clone https://github.com/zaidannn7/local_manifest.git --depth 1 -b potato-test .repo/local_manifests
+git clone https://github.com/zaidannn7/local_manifest.git --depth 1 -b potato .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom 
@@ -12,7 +12,7 @@ export SELINUX_IGNORE_NEVERALLOWS=true
 export BUILD_USERNAME=zaidan
 export BUILD_HOSTNAME=ytta-labs
 export TZ=Asia/Jakarta #put before last build command
-brunch potato_juice-userdebug
+brunch potato_juice-user
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line) 
