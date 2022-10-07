@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b pyro -g default,-mips,-darwin,-notdefault
-git clone https://github.com/anandhan07/local_manifest.git --depth 1 -b spark-13.0 .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+git clone https://github.com/onkarsinghsahil/local_manifest.git --depth 1 -b spark .repo/local_manifests
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j24
 
 # build rom [8]
 . build/envsetup.sh
-lunch spark_vince-user
+lunch spark_mido-user
 export WITH_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
