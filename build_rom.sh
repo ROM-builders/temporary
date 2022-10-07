@@ -1,12 +1,12 @@
 # sync rom
 repo init -u https://github.com/PixelExperience/manifest -b thirteen
-git clone https://github.com/furkancakmak34x/local_manifest.git 1 -b master .repo/local_manifests
+git clone https://github.com/furkancakmak34x/local_manifest.git 1 -b main .repo/local_manifests
 repo sync -c -j8 --force-sync --no-clone-bundle --no-tags
 
 # build rom
 source build/envsetup.sh
 lunch aosp_taimen-userdebug
-export TZ=Asia/Dhaka
+export TZ=Europe/Istanbul
 mka bacon -j8
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
