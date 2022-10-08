@@ -8,7 +8,20 @@ git clone https://github.com/phoenix-1708/local_manifest.git --depth=1 -b spark 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
+
 # build rom
+lunch spark_sweet-userdebug
+
+
+export ALLOW_MISSING_DEPENDENCIES=true
+
+export SKIP_ABI_CHECKS=true
+
+export SKIP_API_CHECKS=true
+
+export TZ=Asia/Dhaka #put before last build command
+
+mka bacon
 lunch spark_sweet-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export SKIP_ABI_CHECKS=true
