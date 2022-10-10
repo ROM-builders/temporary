@@ -4,6 +4,7 @@ git clone https://github.com/zaidannn7/local_manifest.git --depth 1 -b voltage .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_DUP_RULES=true
