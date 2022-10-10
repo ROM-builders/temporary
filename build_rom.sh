@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch aosp_rosy-userdebug
+lunch lunch_rosy-userdebug
 export KBUILD_BUILD_USER=ibnuridwan
 export KBUILD_BUILD_HOST=a3project
 export BUILD_USERNAME=ibnuridwan
