@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/ConquerOS/manifest.gi
 git clone https://github.com/JaswantTeja/local_manifest.git --depth=1 -b conq-12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom #1
 source build/envsetup.sh
 lunch conquer_r5x-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
