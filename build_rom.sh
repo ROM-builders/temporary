@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/SuperiorOS/manifest.git -b twelvedotone -g default,-mips,-darwin,-notdefault
-git clone https://github.com/SKetU-l/local_manifest.git --depth 1 -b superior .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/RiceDroid/android -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/SKetU-l/local_manifest.git --depth 1 -b rice .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
 # build rom
 source build/envsetup.sh
-lunch superior_X00TD-userdebug
+lunch lineage_X00TD-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Kolkata #put before last build command
 make bacon
