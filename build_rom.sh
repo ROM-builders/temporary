@@ -4,7 +4,7 @@ git clone https://github.com/Prvtcmt/lcl_mnfst.git --depth 1 -b pyro .repo/local
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/env*
+. build/envsetup.sh
 lunch spark_mido-user
 export BUILD_HOSTNAME=Rsyd
 export BUILD_USERNAME=Rsyd
