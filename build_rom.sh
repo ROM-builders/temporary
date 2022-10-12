@@ -1,11 +1,14 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-19.1 -g default,-device,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android -b lineage-19.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/flame-0/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch lineage_alioth-eng
+export TARGET_INCLUDE_GBOARD=true
+export TARGET_INCLUDE_LAWNCHAIR=true
+export TARGET_REMOVE_PACKAGE=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
