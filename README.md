@@ -1,4 +1,4 @@
-Test GAospExtended custom ROM for Redmi Note 4
+ Test GAospExtended custom ROM for Redmi Note 4
 ==============================
 
 AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note 4(code name mido) 
