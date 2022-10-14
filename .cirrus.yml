@@ -39,7 +39,7 @@ task:
       $show" -d "chat_id=${your_telegram_id}" -d "parse_mode=HTML"
   test_script:
     - set -e
-    - curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/test.sh | bash
+    - curl -Ls https://github.com/AndVer2/my_tools/raw/main/rom/sync.sh | bash
 
 task:
   name: Build
