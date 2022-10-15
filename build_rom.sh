@@ -1,13 +1,15 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b pyro -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Prvtcmt/lcl_mnfst.git --depth 1 -b pyro .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-18.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Prvtcmt/lcl_mnfst.git --depth 1 -b los18 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
-lunch spark_mido-user
+lunch lineage_mido-userdebug
 export BUILD_HOSTNAME=Rsyd
 export BUILD_USERNAME=Rsyd
+export KBUILD_BUILD_USER=Rsyd
+export KBUILD_BUILD_HOST=Rsyd
 export PRODUCT_BROKEN_VERIFY_USES_LIBRARIES=true
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
