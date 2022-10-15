@@ -4,7 +4,7 @@ git clone https://github.com/xack21/local_manifest.git --depth 1 -b master .repo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 export TZ=Asia/Dhaka #put before last build command
 brunch Mi8937
 
