@@ -5,9 +5,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch spark_mido-user
-export BUILD_HOSTNAME=Rsyd
-export BUILD_USERNAME=Rsyd
+lunch spark_polaris-userdebug
+export ALLOW_MISSING_DEPENDENCIES=true
+export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
+export BUILD_BROKEN_DUP_RULES=true
+export SELINUX_IGNORE_NEVERALLOWS=true
 export PRODUCT_BROKEN_VERIFY_USES_LIBRARIES=true
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
