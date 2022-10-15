@@ -6,6 +6,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 export TZ=America/Sao_Paulo #put before last build command
+export ALLOW_MISSING_DEPENDENCIES=true
+export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
+export BUILD_BROKEN_DUP_RULES=true
+export SELINUX_IGNORE_NEVERALLOWS=true
 brunch polaris
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
