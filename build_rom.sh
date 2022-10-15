@@ -14,7 +14,6 @@ export RELAX_USES_LIBRARY_CHECK=true
 export SKIP_ABI_CHECKS=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export USE_DEXOPT=true
-export CHERISH_VANILLA=true
 export TZ=Asia/Kolkata #put before last build command
 brunch r5x
 
