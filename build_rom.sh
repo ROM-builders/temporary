@@ -1,11 +1,15 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest.git -b twelve-plus -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
 git clone https://github.com/sanjeevstunner/Manifest.git --depth 1 -b vayu_aosp .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom 
+# build rom
 source build/envsetup.sh
 lunch aosp_vayu-user
+export KBUILD_BUILD_USER=chandler
+export KBUILD_BUILD_HOST=17
+export BUILD_USERNAME=chandler
+export BUILD_HOSTNAME=17
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
