@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b pyro -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Prvtcmt/lcl_mnfst.git --depth 1 -b pyro .repo/local_manifests
+git clone https://github.com/bittencourtjulival/local_manifest -b spark13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
