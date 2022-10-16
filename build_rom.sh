@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/SKetU-l/local_manifest --depth 1 -b pe .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b pyro -g default,-mips,-darwin,-notdefault
+git clone https://github.com/SKetU-l/local_manifest --depth 1 -b spark .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
 # build rom
 source build/envsetup.sh
-lunch aosp_X00TD-userdebug
+lunch spark_X00TD-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Kolkata #put before last build command
 make bacon
