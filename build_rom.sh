@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/AOSPA/manifest -b top
 git clone https://github.com/AOSPA-RMX2030/local_manifest --depth 1 -b sapphire .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build roms
 . build/envsetup.sh
 lunch aospa_r5x-userdebug
 export TZ=Asia/Kolkata # put before last build command
