@@ -3,12 +3,10 @@ repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git
 git clone https://github.com/Azure-Helper/local_manifests.git --depth 1 -b lineage .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom [4]
+# build rom
 source build/envsetup.sh
 lunch lineage_raphael-userdebug
-export ALLOW_MISSING_DEPENDENCIES=true
-export SELINUX_IGNORE_NEVERALLOWS=true
-export TZ=Asia/Delhi #put before last build command
+export TZ=Asia/Kolkata #put before last build command
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
