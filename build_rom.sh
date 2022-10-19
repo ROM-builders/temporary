@@ -1,6 +1,6 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/mizdrake7/local_manifest.git --depth 1 -b cherish .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b tiramisu -g default,-mips,-darwin,-notdefault
+git clone https://github.com/mizdrake7/local_manifest.git --depth 1 -b evox .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
@@ -14,7 +14,6 @@ export RELAX_USES_LIBRARY_CHECK=true
 export SKIP_ABI_CHECKS=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export USE_DEXOPT=true
-export CHERISH_VANILLA=true
 export TZ=Asia/Kolkata #put before last build command
 brunch r5x
 
