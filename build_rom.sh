@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lineage_$device-userdebug
+lunch lineage_surya-userdebug
 export WITH_GMS=true
 make bacon -j$(nproc --all)
 
