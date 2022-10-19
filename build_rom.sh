@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ForkLineageOS/android.git -g default,-mips,-darwin,-notdefault
+repo init -u https://github.com/ForkLineageOS/android.git -b lineage-19.1
 git clone https://github.com/kitchen-at-night/local_manifest.git --depth 1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j
 
