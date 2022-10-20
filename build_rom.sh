@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manif
 git clone https://github.com/ImSurajx/manifest --depth 1 -b Pe-a13-4.4 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom 
 . build/envsetup.sh
 lunch aosp_lavender-userdebug
 export TZ=Asia/Kolkata #put before last build command
