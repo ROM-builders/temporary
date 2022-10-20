@@ -7,6 +7,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_X00TD-userdebug
+export BUILD_USER=SKetU
+export BUILD_HOST=cloud
+export BUILD_USERNAME=SKetU
+export BUILD_HOSTNAME=cloud
+export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Kolkata #put before last build command
 make bacon
