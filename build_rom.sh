@@ -1,9 +1,9 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/AOSPA/manifest -b topaz -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/AOSPA/manifest -b topaz-wip -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Azure-Helper/local_manifests.git --depth 1 -b topaz .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom [8]
+# build rom [9]
 source build/envsetup.sh
 lunch aospa_raphael-userdebug
 export KBUILD_BUILD_USER=azure
