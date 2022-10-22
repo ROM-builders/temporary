@@ -13,7 +13,7 @@ export BUILD_USERNAME=SKetU
 export BUILD_HOSTNAME=cloud
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
-export TZ=Asia/Kolkata #put before last build command
+export TZ=Asia/Kolkata #put before last build command 
 brunch X00TD
  
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
