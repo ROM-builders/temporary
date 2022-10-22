@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-18.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/RahifM/local_manifests -b lineage-18.1-beryllium --depth 1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-git clone https://gitlab.com/the-muppets/proprietary_vendor_xiaomi -b lineage-18.1 --depth=1 vendor/xiaomi
 
 # build rom
 source build/envsetup.sh
