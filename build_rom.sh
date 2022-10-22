@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-20.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Arafattex/local_manifest.git --depth 1 -b Lancelot_los .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Arafattex/local_manifest.git --depth 1 -b Lancelot_pixel .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
-lunch lineage_lava-userdebug
+lunch lineage_aosp-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
