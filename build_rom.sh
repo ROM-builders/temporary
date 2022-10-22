@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b pyro -g default,-mips,-darwin,-notdefault
-git clone https://github.com/JuanTamadski/local_manifest.git --depth 1 -b pyro-12 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/P-404/platform_manifest -b shinka -g default,-mips,-darwin,-notdefault
+git clone https://github.com/JuanTamadski/local_manifest.git --depth 1 -b 404 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch spark_Z01R-userdebug
+lunch p404_Z01R-userdebug
 export TZ=Asia/Kolkata 
 export SELINUX_IGNORE_NEVERALLOWS=true
 mka bacon
