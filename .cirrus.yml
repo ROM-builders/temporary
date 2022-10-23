@@ -67,14 +67,14 @@ task:
     - set -e
     - curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/test.sh | bash
   sync_script:
-    - set -e
+    - set -exv
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
     - rom_name=$rom_name-$branch_name
     - mkdir -p ~/roms/$rom_name
     - cd ~/roms/$rom_name
     
-    - clangrm=$(grep '<project path="prebuilts/clang/host/linux-x86/clang-' .repo/local_manifests/local_manifest.xml | wc -l)
+    - clangrm=$(grep '<project path="prebuilts/clang/host/linux-x86/clang-' .repo/local_manifests/local_manifest.xml | wc -l || true)
     - if [[ $clangrm -gt 0 ]]; then rm -rf prebuilts/clang/host/linux-x86; fi
     
     - rm -rf .repo/local_manifests
