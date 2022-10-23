@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch spark_vince-user
 export WITH_GAPPS=true
+export SKIP_ABI_CHECKS=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
