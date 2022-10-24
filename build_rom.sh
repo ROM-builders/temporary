@@ -12,10 +12,13 @@ export BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE=true
 export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
-export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
+export
+BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_DUP_RULES=true
 export BUILD_USERNAME=zaidannn7
-export BUILD_HOSTNAME=zdn-labs
+export BUILD_HOSTNAME=zaidan
+export BUILD_BROKEN_CLANG_ASFLAGS=true
+export BUILD_BROKEN_CLANG_CFLAGS=true
 export SKIP_ABI_CHECKS=true
 lunch carbon_juice-userdebug
 export TZ=Asia/Jakarta #put before last build command
