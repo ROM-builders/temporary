@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/baconpeedit/Local_Manifest.git --depth 1 -b blaze13 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/android_manifest -b triton -g default,-mips,-darwin,-notdefault
+git clone https://github.com/baconpeedit/Local_Manifest.git --depth 1 -b awaken13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch blaze_ginkgo-userdebug
+lunch awaken_ginkgo-userdebug
 export TZ=Asia/Delhi #put before last build command
 make bacon
 
