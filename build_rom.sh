@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-#export ARROW_GAPPS=true
+export ARROW_GAPPS=true
 lunch arrow_vince-user
 export TZ=Asia/Kolkata #put before last build command
 m bacon
