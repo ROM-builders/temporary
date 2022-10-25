@@ -6,11 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch cipher_RMX3031-userdebug
-export TARGET_FLOS=true
-export WITH_GMS=true
-export ALLOW_MISSING_DEPENDENCIES=true
-export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
-export BUILD_BROKEN_DUP_RULES=true
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Jakarta #put before last build command
 make bacon
 
