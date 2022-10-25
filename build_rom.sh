@@ -5,8 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-#export SELINUX_IGNORE_NEVERALLOWS=true
-#export ALLOW_MISSING_DEPENDENCIES=true
+export SELINUX_IGNORE_NEVERALLOWS=true
+export ALLOW_MISSING_DEPENDENCIES=true
 lunch superior_rova-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
