@@ -66,6 +66,20 @@ task:
   test_script:
     - set -e
     - curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/test.sh | bash
+
+  check_script:
+    - set -e
+    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
+    - rom_name=$rom_name-$branch_name
+    - z=$(grep 'clang' ~/roms/$rom_name/.repo/local_manifests/local_manifest.xml -m1 || true)
+    - if [[ $z == *'clang'* ]]
+    - then
+    - z=$(echo $z | cut -d '/' -f2 | tr -d ' ')
+    - rm -rf $z
+    - done
+    - fi
+
   sync_script:
     - set -exv
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
