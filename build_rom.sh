@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch awaken_rmx2117-userdebug
+lunch awaken_RMX2117-userdebug
 export TZ=Asia/Delhi #put before last build command
 make bacon
 
