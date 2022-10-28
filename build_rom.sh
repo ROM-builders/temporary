@@ -2,6 +2,7 @@
 repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-20.0 -g default,-mips,-darwin,-notdefault
 git reset --hard 5646a37199c90d887663b8af6bcafeebad854862
 git clone https://github.com/Joysorma/local_manifest.git --depth 1 -b los .repo/local_manifests
+rm -rf .repo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
