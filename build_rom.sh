@@ -7,7 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch lineage_vince-user
 export WITH_GMS=false
-export SKIP_ABI_CHECKS=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
