@@ -7,12 +7,14 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 export SELINUX_IGNORE_NEVERALLOWS=true
 export KBUILD_BUILD_USER=ZualoliconVN
-export KBUILD_BUILD_HOST=ZualoliconVN
+export KBUILD_BUILD_HOST=Zualolicon-Android-Lab
 export BUILD_USERNAME=ZualoliconVN
-export BUILD_HOSTNAME=ZualoliconVN
+export BUILD_HOSTNAME=Zualolicon-Android-Lab
 export RELAX_USES_LIBRARY_CHECK=true
 export SKIP_ABI_CHECKS=true
+BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export USE_DEXOPT=true
+export CHERISH_VANILLA=true
 export TZ=Asia/Kolkata #put before last build command
 brunch r5x
 
