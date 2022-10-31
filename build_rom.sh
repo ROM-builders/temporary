@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/PixelExp
 git clone https://github.com/Sachin9822/local_manifest.git --depth 1 -b pixel .repo/local_manifests 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 
  
-# build rom  
+# build rom   
 source build/envsetup.sh   
 lunch aosp_tissot-userdebug
 export TZ=Asia/Dhaka #put before last build command   
