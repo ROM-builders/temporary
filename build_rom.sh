@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/ZualoliconVN/local_manifest.git --depth 1 -b cherish .repo/local_manifests
+git clone https://github.com/ZualoliconVN/local_manifest.git --depth 1 -b cherish_whyred .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
@@ -15,7 +15,7 @@ export SKIP_ABI_CHECKS=true
 export USE_DEXOPT=true
 export CHERISH_VANILLA=true
 export TZ=Asia/Kolkata #put before last build command
-brunch r5x
+brunch whyred
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
