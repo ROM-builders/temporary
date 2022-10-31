@@ -4,6 +4,7 @@ git clone https://github.com/RahulGorai0206/local_manifest.git --depth 1 -b main
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+rm -rf device/xiaomi/beryllium/vendorsetup.sh
 source build/envsetup.sh
 export TZ=Asia/Kolkata #put before last build command
 brunch beryllium
