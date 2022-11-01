@@ -33,7 +33,7 @@ task:
     - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
     - your_telegram_id=@ROM_builders_junk
     - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
-    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Started
+    - curl "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Started
       
       https://cirrus-ci.com/build/$CIRRUS_BUILD_ID
       
