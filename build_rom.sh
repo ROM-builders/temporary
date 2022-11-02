@@ -1,6 +1,6 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/ZualoliconVN/local_manifest.git --depth 1 -b cherish_whyred .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/exthmui-legacy/android.git -b exthm-11 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/ZualoliconVN/local_manifest.git --depth 1 -b exthm .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
@@ -14,9 +14,9 @@ export RELAX_USES_LIBRARY_CHECK=true
 export SKIP_ABI_CHECKS=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export USE_DEXOPT=true
-export CHERISH_VANILLA=true
+lunch exthm_casuarina_userdebug
 export TZ=Asia/Kolkata #put before last build command
-brunch whyred
+mka bacon
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
