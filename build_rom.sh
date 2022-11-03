@@ -9,7 +9,6 @@ lunch corvus_X01AD-userdebug
 lunch corvus_X01AD-userdebug
 export SKIP_ABI_CHECKS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
-export TZ=Asia/Dhaka #put before last build command
 make corvus
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
