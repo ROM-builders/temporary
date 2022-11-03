@@ -3,7 +3,7 @@ git clone https://github.com/qwertyuiii-code/local_manifest.git --depth 1 -b mai
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
-# build rom
+# build  rom
 . build/envsetup.sh
 export TZ=Asia/Yekaterinburg
 lunch cherish_chime-userdebug
