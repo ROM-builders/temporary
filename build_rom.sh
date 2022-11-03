@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_man
 git clone https://github.com/qwertyuiii-code/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom(try #2)
 . build/envsetup.sh
 lunch cherish_chime-userdebug
 export TZ=Asia/Yekaterinburg
