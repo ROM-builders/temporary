@@ -7,9 +7,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch aosp_vayu-user
 export KBUILD_BUILD_USER=chandler
-export KBUILD_BUILD_HOST=17
+export KBUILD_BUILD_HOST=sanjeev
 export BUILD_USERNAME=chandler
-export BUILD_HOSTNAME=17
+export BUILD_HOSTNAME=sanjeev
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
