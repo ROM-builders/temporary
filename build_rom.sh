@@ -1,15 +1,23 @@
 #!/usr/bin/env bash
 
-export CCACHE_DIR=/home/amogus/cache
+# create directory for ccache
+mkdir -p ~/cache
+
+# export required environment variables
+export CCACHE_DIR=~/cache
+export CCACHE_EXEC=$(which ccache)
 export RELAX_USES_LIBRARY_CHECK=true
 export USE_CCACHE=1
 
-mkdir -p /home/amogus/cache
+# set discord webhook url
 wu='https://discord.com/api/webhooks/1017821133959077978/fYenpQNVuMZEfm9G5nctsH7prarMgNZA-l_J7eti5HvQJkG2PEKicaY3Qs3uFhMMuSju'
 
-# sync rom
+# download the source code
 repo init -u https://github.com/LineageOS/android.git -b lineage-19.1
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+
+# set ccache size
+ccache -M 50G &>> /dev/null
 
 # build rom
 source build/envsetup.sh
@@ -17,6 +25,7 @@ lunch lineage_alioth-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
+# upload generated cache
 zip amogus.zip -r /home/amogus/cache
 amogus="$(wget --method PUT --body-file=amogus.zip https://transfer.sh/amogus.zip -O - -nv)"
 wget https://raw.githubusercontent.com/ChaoticWeg/discord.sh/master/discord.sh && chmod +x discord.sh
