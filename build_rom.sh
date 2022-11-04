@@ -7,8 +7,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch stag_ginkgo-userdebug
 #export ALLOW_MISSING_DEPENDENCIES=true
-#export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
-#export BUILD_BROKEN_DUP_RULES=true
+export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
+export BUILD_BROKEN_DUP_RULES=true
 export TARGET_KERNEL_CLANG_VERSION=proton
 export TZ=Asia/Kolkata #put before last build command
 make stag
