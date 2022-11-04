@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 export SELINUX_IGNORE_NEVERALLOWS=true
+export BUILD_BROKEN_DUP_RULES=true
 brunch X01AD
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
