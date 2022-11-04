@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/P-404/android_manifes
 git clone https://github.com/Azure-Helper/local_manifests.git --depth=1 -b tokui .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom [3]
+# build rom [4]
 source build/envsetup.sh
 lunch p404_raphael-userdebug
 export WITH_GAPPS=true
