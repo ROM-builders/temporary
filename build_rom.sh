@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 export CCACHE_DIR=/home/amogus/cache
 export RELAX_USES_LIBRARY_CHECK=true
 export USE_CCACHE=1
