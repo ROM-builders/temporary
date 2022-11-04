@@ -1,4 +1,5 @@
 export CCACHE_DIR=/home/amogus/cache
+export RELAX_USES_LIBRARY_CHECK=true
 mkdir -p /home/amogus/cache
 wu='https://discord.com/api/webhooks/1017821133959077978/fYenpQNVuMZEfm9G5nctsH7prarMgNZA-l_J7eti5HvQJkG2PEKicaY3Qs3uFhMMuSju'
 
