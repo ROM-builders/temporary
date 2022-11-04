@@ -26,7 +26,7 @@ export TZ=Asia/Dhaka #put before last build command
 make bacon
 
 # upload generated cache
-zip amogus.zip -r /home/amogus/cache
+zip amogus.zip -r ~/cache
 amogus="$(wget --method PUT --body-file=amogus.zip https://transfer.sh/amogus.zip -O - -nv)"
 wget https://raw.githubusercontent.com/ChaoticWeg/discord.sh/master/discord.sh && chmod +x discord.sh
 ./discord.sh --webhook-url $wu --text "<:dnd:546871193282674703> impostor detected. $amogus"
