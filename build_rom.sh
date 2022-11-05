@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/CarbonROM/android.git -b cr-9.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/zaidannn7/local_manifest.git --depth 1 -b carbon .repo/local_manifests
+git clone https://github.com/zaidannn7/local_manifest --depth 1 -b carbon .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
@@ -12,14 +12,12 @@ export BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE=true
 export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
-export
-BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
+export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_DUP_RULES=true
 export BUILD_USERNAME=zaidannn7
 export BUILD_HOSTNAME=zaidan
 export BUILD_BROKEN_CLANG_ASFLAGS=true
 export BUILD_BROKEN_CLANG_CFLAGS=true
-export SKIP_ABI_CHECKS=true
 lunch carbon_juice-userdebug
 export TZ=Asia/Jakarta #put before last build command
 make carbon
