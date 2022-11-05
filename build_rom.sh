@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExtended/manifest -b trece -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Fr0ztyy43/local_manifests.git --depth 1 -b pex .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/RiceDroid/android -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Fr0ztyy43/local_manifests.git --depth 1 -b rice .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build romm
 source build/envsetup.sh
-lunch aosp_begonia-userdebug
+lunch lineage_begonia-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
