@@ -15,7 +15,9 @@ export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_DUP_RULES=true
 export BUILD_USERNAME=zaidannn7
-export BUILD_HOSTNAME=zaidan
+export BUILD_HOSTNAME=zdnx-labs
+export KBUILD_BUILD_NAME=zaidannn7
+export KBUILD_BUILD_HOST=zdnx-labs
 export BUILD_BROKEN_CLANG_ASFLAGS=true
 export BUILD_BROKEN_CLANG_CFLAGS=true
 lunch carbon_juice-userdebug
