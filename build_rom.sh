@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
-export SKIP_ABI_CHECKS=true
+export SKIP_API_CHECKS=true
 export TZ=Asia/Dhaka #put before last build command
 brunch lava
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
