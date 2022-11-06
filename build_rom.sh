@@ -4,18 +4,21 @@ git clone https://github.com/zaidannn7/local_manifest --depth 1 -b main .repo/lo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+# build rom
 source build/envsetup.sh
+export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
+export RELAX_USES_LIBRARY_CHECK=true
+export BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES=true
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+export BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE=true
+export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_DUP_RULES=true
-export
-BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES=true
-export BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE=true
-export BUILD_BROKEN_VERIFY_USES_LIBRARIES =true
-export RELAX_USES_LIBRARY_CHECK=true
-export SELINUX_IGNORE_NEVERALLOWS=true
-export BUILD_USERNAME=zaidan
-export BUILD_HOSTNAME=ytta-labs
+export BUILD_USERNAME=zaidannn7
+export BUILD_HOSTNAME=zdnx-labs
+export KBUILD_BUILD_NAME=zaidannn7
+export KBUILD_BUILD_HOST=zdnx-labs
 export TZ=Asia/Jakarta
 launch juice userdebug
 
