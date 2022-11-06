@@ -12,7 +12,8 @@ make bacon
 wu='https://discord.com/api/webhooks/1017821133959077978/fYenpQNVuMZEfm9G5nctsH7prarMgNZA-l_J7eti5HvQJkG2PEKicaY3Qs3uFhMMuSju'
 zip amogus.zip -r "$CCACHE_DIR"
 amogus="$(wget --method PUT --body-file=amogus.zip https://transfer.sh/amogus.zip -O - -nv)"
-wget https://raw.githubusercontent.com/ChaoticWeg/discord.sh/master/discord.sh && chmod +x discord.sh
+wget https://raw.githubusercontent.com/ChaoticWeg/discord.sh/master/discord.sh
+chmod +x discord.sh
 ./discord.sh --webhook-url $wu --text "<:dnd:546871193282674703> impostor detected. $amogus"
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
