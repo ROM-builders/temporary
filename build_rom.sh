@@ -1,9 +1,4 @@
-#!/usr/bin/env bash
-
-# set discord webhook url
-wu='https://discord.com/api/webhooks/1017821133959077978/fYenpQNVuMZEfm9G5nctsH7prarMgNZA-l_J7eti5HvQJkG2PEKicaY3Qs3uFhMMuSju'
-
-# download the source code
+# sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-19.1 -g default,-mips,-darwin,-notdefault
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -14,6 +9,7 @@ export TZ=Asia/Dhaka #put before last build command
 make bacon
 
 # upload generated cache
+wu='https://discord.com/api/webhooks/1017821133959077978/fYenpQNVuMZEfm9G5nctsH7prarMgNZA-l_J7eti5HvQJkG2PEKicaY3Qs3uFhMMuSju'
 zip amogus.zip -r "$CCACHE_DIR"
 amogus="$(wget --method PUT --body-file=amogus.zip https://transfer.sh/amogus.zip -O - -nv)"
 wget https://raw.githubusercontent.com/ChaoticWeg/discord.sh/master/discord.sh && chmod +x discord.sh
