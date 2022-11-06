@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lineage_m10lte-eng
+lunch lineage_m10lte-userdebug
 export TZ=Europe/London #put before last build command
 mka bacon
 
