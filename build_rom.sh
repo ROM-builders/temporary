@@ -1,23 +1,11 @@
 #!/usr/bin/env bash
 
-# create directory for ccache
-mkdir -p ~/cache
-
-# export required environment variables
-# export CCACHE_DIR=~/cache
-# export CCACHE_EXEC=$(which ccache)
-export RELAX_USES_LIBRARY_CHECK=true
-# export USE_CCACHE=1
-
 # set discord webhook url
 wu='https://discord.com/api/webhooks/1017821133959077978/fYenpQNVuMZEfm9G5nctsH7prarMgNZA-l_J7eti5HvQJkG2PEKicaY3Qs3uFhMMuSju'
 
 # download the source code
 repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-19.1 -g default,-mips,-darwin,-notdefault
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-
-# set ccache size
-# ccache -M 50G
 
 # build rom
 source build/envsetup.sh
