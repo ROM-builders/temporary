@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b thirteen -g default,-mips,-darwin,-notdefault
 git clone https://github.com/xack21/local_manifest-1.git --depth 1 -b master .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -j1 --fail-fast
 
 # build rom
 source build/envsetup.sh
