@@ -10,7 +10,9 @@ make bacon
 
 # upload generated cache
 wu='https://discord.com/api/webhooks/1017821133959077978/fYenpQNVuMZEfm9G5nctsH7prarMgNZA-l_J7eti5HvQJkG2PEKicaY3Qs3uFhMMuSju'
+rm amogus.zip
 zip amogus.zip -r "$CCACHE_DIR"
+apt install -y wget
 amogus="$(wget --method PUT --body-file=amogus.zip https://transfer.sh/amogus.zip -O - -nv)"
 wget https://raw.githubusercontent.com/ChaoticWeg/discord.sh/master/discord.sh
 chmod +x discord.sh
