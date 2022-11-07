@@ -3,9 +3,9 @@ repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-oss/xd_manifes
 git clone https://github.com/NerdZ3ns/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom xd13 4.19 final test
+# build rom xd13 4.19 final test-1
 source build/envsetup.sh
-lunch xdroid_X01BD-user
+lunch xdroid_X01BD-userdebug
 export BUILD_USERNAME=nobody
 export BUILD_HOSTNAME=android-build
 export KBUILD_BUILD_USER=nobody
