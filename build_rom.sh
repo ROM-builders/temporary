@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/ArrowOS/android_manifest.git -b arrow-12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .repo/local_manifests
+git clone https://github.com/adarsh956/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch derp_vayu-user
+lunch arrow_garden-user
 export TZ=Asia/Dhaka #put before last build command
 mka derp
 
