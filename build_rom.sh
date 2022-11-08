@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
+export TARGET_FLOS=true
 lunch lineage_lava-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
