@@ -5,8 +5,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch cherish_mido-user
-export BUILD_HOSTNAME=Rsyd
+lunch cherish_mido-userdebug
+export KBUILD_BUILD_USER=Rsyd
+export KBUILD_BUILD_HOST=Enka
+export BUILD_HOSTNAME=Enka
 export BUILD_USERNAME=Rsyd
 export CHERISH_VANILLA=true
 export PRODUCT_BROKEN_VERIFY_USES_LIBRARIES=true
