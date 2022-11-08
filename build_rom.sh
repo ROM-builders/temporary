@@ -4,6 +4,7 @@ git clone https://github.com/abhishekfire08/manifest_local.git --depth 1 -b blaz
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+neofetch 
 source build/envsetup.sh
 lunch arrow_ginkgo-userdebug
 #export ALLOW_MISSING_DEPENDENCIES=true
