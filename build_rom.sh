@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Bootleggers-BrokenLab/manifest.git -b tirimbino -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/RiceDroid/android -b thirteen -g default,-mips,-darwin,-notdefault
 git clone https://github.com/JuanTamadski/local_manifest.git --depth 1 -b btl .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch bootleg_Z01R-userdebug
+lunch lineage_Z01R-userdebug
 export TZ=Asia/Kolkata 
 export SELINUX_IGNORE_NEVERALLOWS=true
 mka bacon
