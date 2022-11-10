@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-oss/xd_manifest -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/NerdZ3ns/local_manifest.git --depth 1 -b master .repo/local_manifests
+git clone https://github.com/z3zens/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom xd13 4.19 final test-1
