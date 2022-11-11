@@ -4,7 +4,7 @@ git clone https://github.com/Sachin9822/local_manifest.git --depth 1 -b blaze .r
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j4
  
 # build rom  
-source build/envsetup.sh   
+source build/envsetup.sh  
 lunch blaze_tissot-userdebug
 export TZ=Asia/Dhaka #put before last build command   
 mka bacon  
