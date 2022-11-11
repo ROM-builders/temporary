@@ -6,10 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_alioth-user
-export KBUILD_BUILD_USER=nhAsif
-export KBUILD_BUILD_HOST=pricexd
-export BUILD_USERNAME=nhAsif
-export BUILD_HOSTNAME=pricexd
 export TZ=Asia/Dhaka
 mka bacon
 
