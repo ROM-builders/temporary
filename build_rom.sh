@@ -5,12 +5,21 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
+export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
+export RELAX_USES_LIBRARY_CHECK=true
+export BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES=true
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+export BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE=true
+export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_DUP_RULES=true
-export SELINUX_IGNORE_NEVERALLOWS=true
-export BUILD_USERNAME=zaidan
-export BUILD_HOSTNAME=ytta-labs
+export BUILD_USERNAME=zaidannn7
+export BUILD_HOSTNAME=zdnx-labs
+export KBUILD_BUILD_NAME=zaidannn7
+export KBUILD_BUILD_HOST=zaidanXcirrus-cl
+export BUILD_BROKEN_CLANG_ASFLAGS=true
+export BUILD_BROKEN_CLANG_CFLAGS=true
 export TZ=Asia/Jakarta #put before last build command
 brunch voltage_juice-userdebug
 
