@@ -3,6 +3,8 @@ repo init  --no-repo-verify -u https://github.com/RiceDroid/android -b thirteen 
 git clone https://github.com/raidenkkj/local_manifest.git --depth 1 -b ricedroid-spes .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+#TeSt1
+
 # build rom
 . build/envsetup.sh
 lunch lineage_spes-userdebug
