@@ -8,7 +8,7 @@ source build/envsetup.sh
 export SELINUX_IGNORE_NEVERALLOWS=true
 export BUILD_USERNAME=HDzungx
 export BUILD_HOSTNAME=HDzungx 
-export CHERISH_VANILLA=true
+export WITH_GMS=true
 export TZ=Asia/Kolkata #put before last build command
 brunch munch
 
