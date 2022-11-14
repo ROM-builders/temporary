@@ -1,5 +1,5 @@
 # sync rom
-repo init --no-repo-verify -u https://github.com/Project-Xtended/manifest.git -b xt
+repo init --depth=1 --no-repo-verify -u https://github.com/Project-Xtended/manifest.git -b xt -g default,-mips,-darwin,-notdefault
 git clone https://github.com/alecchangod/local_manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
