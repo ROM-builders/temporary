@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-20.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/danzox/local_manifest --depth 1 -b Lineage .repo/local_manifests
+git clone https://github.com/danzox/local_manifest.git --depth 1 -b Lineage .repo/local_manifests
 repo sync -c --no--bundle -no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
