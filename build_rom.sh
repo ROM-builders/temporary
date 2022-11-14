@@ -6,6 +6,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 # build rom 
 . build/envsetup.sh
 lunch xtended_monet-userdebug
+export TZ=Asia/Vladivostok #put before last build command
 make xtended
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
