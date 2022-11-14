@@ -16,7 +16,7 @@ lunch superior_spes-userdebug
 
 export TZ=Asia/Dhaka #put before last build command
 
-m bacon -j8
+m bacon 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 
