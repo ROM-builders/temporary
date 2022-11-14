@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Project-Xtended/manif
 git clone https://github.com/alecchangod/local_manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
-# build rom 
+# build rom
 . build/envsetup.sh
 lunch xtended_monet-userdebug
 export TZ=Asia/Vladivostok #put before last build command
