@@ -12,7 +12,7 @@ export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export TARGET_USES_MINI_GAPPS=true
 export BUILD_USERNAME=NISHANT
 export BUILD_HOSTNAME=Linux-Labs
-export TZ=Asia/Kolkata #put  before last build command
+export TZ=Asia/Kolkata #put before last build command
 mka evolution
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
