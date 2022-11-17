@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build ro
 source build/envsetup.sh
 lunch evolution_instantnoodle-user
-export TZ=Asia/Dhaka
+export TZ=America/Los_Angeles
 export BUILD_USERNAME=プラサンガ
 export BUILD_HOSTNAME=巻雲
 mka evolution
