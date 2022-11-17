@@ -15,7 +15,7 @@ export SKIP_ABI_CHECKS=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export USE_DEXOPT=true
 lunch spark_raphael-userdebug
-mka bacon -j$(nproc --all)
+mka bacon
 export TZ=Asia/Kolkata #put before last build command
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
