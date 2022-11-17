@@ -14,10 +14,8 @@ export RELAX_USES_LIBRARY_CHECK=true
 export SKIP_ABI_CHECKS=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export USE_DEXOPT=true
-export RICE_CHIPSET := "Snapdragon™ 855 Gaming"
-export TARGET_HAS_UDFPS := true
-export TARGET_USE_PIXEL_FINGERPRINT := true
-brunch raphael
+lunch lineage_raphael-user
+mka barcon
 export TZ=Asia/Kolkata #put before last build command
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
