@@ -5,15 +5,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-export SELINUX_IGNORE_NEVERALLOWS=true
 export KBUILD_BUILD_USER=ZualoliconVN
 export KBUILD_BUILD_HOST=ZualoliconAndroidLab
 export BUILD_USERNAME=ZualoliconVN
 export BUILD_HOSTNAME=ZualoliconAndroidLab
-export RELAX_USES_LIBRARY_CHECK=true
-export SKIP_ABI_CHECKS=true
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
-export USE_DEXOPT=true
 lunch spark_raphael-userdebug
 mka bacon
 export TZ=Asia/Kolkata #put before last build command
