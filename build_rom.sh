@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest 
 git clone https://github.com/paryal58/local_manifest.git --depth 1 -b tira .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build ro
+# build rom?
 source build/envsetup.sh
 lunch evolution_instantnoodle-user
 export TZ=Asia/Dhaka
