@@ -4,7 +4,7 @@ git clone https://github.com/iTZUDAY2312/android_manifest --depth 1 -b CR-12 .re
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source b*/e*
+source build/envsetup.sh
 lunch lineage_miatoll-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
