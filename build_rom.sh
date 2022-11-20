@@ -14,6 +14,10 @@ export SKIP_ABI_CHECKS=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export USE_DEXOPT=true
 export SELINUX_IGNORE_NEVERALLOWS=true
+export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
+export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
+export BUILD_BROKEN_DUP_RULES=true
+export BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE=true
 export CHERISH_VANILLA=false
 export TZ=Asia/Kolkata #put before last build command
 brunch r5x
