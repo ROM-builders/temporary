@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/ForkLineageOS/android
 git clone https://github.com/Arafattex/local_manifest.git --depth 1 -b Lancelot_lospromg .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom 
+# build rom
 source build/envsetup.sh 
 export ALLOW_MISSING_DEPENDENCIES=true
 export TARGET_FLOS=true
