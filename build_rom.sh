@@ -19,7 +19,7 @@ export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
 export BUILD_BROKEN_DUP_RULES=true
 export BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE=true
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Kolkata #put before last build command
 mka evolution
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
