@@ -1,7 +1,7 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
     BUILD_HOSTNAME: "cirrus-ci.org"
-    bot_api: "ENCRYPTED[d5f8289d835b201789b2b31e728d0cd82a100f1b47ddec69dd6ba49a3712fcfa2719b220fc6a8894865df517a78332ca]"
+    bot_api: "ENCRYPTED[!b5963522fdf5357a4832c52ab3f4f6b5c9f6d208423667e57fc69bdfae18a616bbf623a018a47044b614760e2999654c!]" 
 
 task:
   name: Test
@@ -30,7 +30,7 @@ task:
     - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
     - grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
     - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
-    - your_telegram_id=@ROM_builders_junk
+    - your_telegram_id=1570907697 
     - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
     - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Started
       
@@ -242,7 +242,7 @@ task:
     - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
     - grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
     - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
-    - your_telegram_id=@ROM_builders_channel
+    - your_telegram_id=1570907697
     - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Succeed
       
       https://cirrus-ci.com/build/$CIRRUS_BUILD_ID" -d "chat_id=${your_telegram_id}" -d "parse_mode=HTML"
