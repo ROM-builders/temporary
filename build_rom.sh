@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git
 git clone https://github.com/EmadGr8/local_manifest.git --depth 1 -b LOS-20-matheucomth .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build roms
+# build rom
 source build/envsetup.sh
 breakfast aosp_tulip-userdebug
 export TZ=Asia/Dhaka 
