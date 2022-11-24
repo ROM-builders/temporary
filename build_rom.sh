@@ -5,7 +5,7 @@ repo sync --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$
 
 # build rom
 source build/envsetup.sh
-lunch spark_phoenix-userdebug
+lunch spark_phoenix-user
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
