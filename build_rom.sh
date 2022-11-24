@@ -5,9 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch spark_sweet-userdebug
+lunch spark_phoenix-userdebug
 export BUILD_USERNAME=Risan
-export BUILD_HOSTNAME=prototype
 export TZ=Asia/Kolkata 
 mka bacon
 
