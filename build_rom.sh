@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/DerpFest-12/manifest.gi
 git clone https://github.com/ellenxdf/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build roms
 source build/envsetup.sh
 lunch derp_vayu-user
 export TZ=Asia/Dhaka #put before last build command
