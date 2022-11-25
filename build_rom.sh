@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b thirteen-plus -g default,-mips,-darwin,-notdefault 
-git clone https://github.com/Sachin9822/local_manifest.git --depth 1 -b pixel .repo/local_manifests 
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-20.0 -g default,-mips,-darwin,-notdefault 
+git clone https://github.com/Sachin9822/local_manifest.git --depth 1 -b lineage .repo/local_manifests 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j4
   
 # build rom    
 source build/envsetup.sh  
-lunch aosp_tissot-userdebug  
+lunch lineage_tissot-userdebug  
 export TZ=Asia/Dhaka #put before last build command   
 mka bacon  
  
