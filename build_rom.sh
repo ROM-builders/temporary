@@ -18,7 +18,7 @@ export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
 export BUILD_BROKEN_DUP_RULES=true
 export BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE=true
-export CHERISH_VANILLA=false
+export CHERISH_VANILLA=true
 export TZ=Asia/Kolkata #put before last build command
 brunch r5x
 
