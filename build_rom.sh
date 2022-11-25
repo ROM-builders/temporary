@@ -5,9 +5,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch spark_phoenix-userdebug
+export TARGET_KERNEL_CLANG_VERSION=proton
 export BUILD_USERNAME=Risan
 export TZ=Asia/Kolkata 
+lunch spark_phoenix-userdebug
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
