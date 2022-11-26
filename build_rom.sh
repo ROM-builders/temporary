@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-breakfast aosp_tulip-userdebug
+breakfast tulip
 export TZ=Asia/Dhaka 
 brunch tulip
 
