@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch evolution_X01AD-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export TARGET_USES_MINI_GAPPS=true
 export TZ=Asia/Kolkata #put  before last build command
