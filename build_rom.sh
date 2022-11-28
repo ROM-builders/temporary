@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lineage_rosy-eng
+lunch lineage_rosy-userdebug
 export KBUILD_BUILD_USER=aepranata
 export KBUILD_BUILD_HOST=a3project
 export BUILD_USERNAME=aepranata
