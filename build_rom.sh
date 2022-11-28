@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch corvus_mojito-user
 #export ALLOW_MISSING_DEPENDENCIES=true
 #export SELINUX_IGNORE_NEVERALLOWS=true
-export CORVUS_MAINTAINER=Rom Bdr. Gharti
+export CORVUS_MAINTAINER=Rom_Gharti
 export USE_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
 make corvus
