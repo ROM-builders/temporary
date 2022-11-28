@@ -4,8 +4,9 @@ git clone https://github.com/alecchangod/local_manifest.git --depth 1 -b xtended
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
  
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch xtended_monet-userdebug
+export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Hong_Kong #put before last build command
 make xtended
 # 3
