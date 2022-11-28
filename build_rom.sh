@@ -21,7 +21,7 @@ export KBUILD_BUILD_HOST=zdnx-labs
 export BUILD_BROKEN_CLANG_ASFLAGS=true
 export BUILD_BROKEN_CLANG_CFLAGS=true
 export WITH_GMS=false
-export TZ=Asia/Jakarta 
+export TZ=Asia/Jakarta
 make lighthouse
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
