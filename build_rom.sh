@@ -1,6 +1,6 @@
 # sync rom
 repo init -u https://github.com/ForkLineageOS/android.git -b lineage-19.1
-git clone https://github.com/RandiBot/local_manifest.git --depth 1 -b master .repo/local_manifests
+git clone https://github.com/emmanueeeeeel/local_manifest --depth 1 -b master .repo/local_manifest
 repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 
 # build rom
