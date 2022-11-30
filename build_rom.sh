@@ -1,11 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/DerpFest-11/manifest.git -b 11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/rahmanaagung/local_manifest .git --depth 1 -b main .repo/local_manifest
+repo init --depth=1 --no-repo-verify -u git://github.com/xdroid-CAF/xd_manifest.git -b twelve -g default,-mips,-darwin,-notdefault
+git clone https://github.com/rahmanaagung/Local_Manifest .git --depth 1 -b main .repo/local_manifest
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-https://github.com/rahmanaagung/local_manifest/tree/main
+
 # build rom
-source build/envsetup.sh
-lunch derp_wayne-user
+        . build/envsetup.sh
+        lunch xdroid_$wayne-userdebug
+        make xd -j$(nproc --all)
+
 export TZ=Asia/Dhaka #put before last build command
 mka derp
 
