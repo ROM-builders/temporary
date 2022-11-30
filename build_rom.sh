@@ -1,11 +1,12 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Corvus-AOSP/android_manifest.git -b 13 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/ThakurRahulSingh/local_manifest.git --depth 1 -b main .repo/local_manifests
+git clone https://github.com/ThakurRahulSingh/local_manifest.git --depth 1 -b corvus .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom #
+# build rom
 source build/envsetup.sh
 lunch corvus_miatoll-userdebug
+export CORVUS_MAINTAINER= Rahul-Singh
 export TZ=Asia/Dhaka #put before last build command
 make corvus
 
