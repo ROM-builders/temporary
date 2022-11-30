@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch corvus_miatoll-userdebug
-export CORVUS_MAINTAINER= Rahul-Singh
 export TZ=Asia/Dhaka #put before last build command
 make corvus
 
