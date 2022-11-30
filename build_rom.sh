@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch xdroid_$wayne-userdebug
+lunch xdroid_wayne-userdebug
 make xd -j$(nproc --all)
 
 
