@@ -4,8 +4,10 @@ git clone https://github.com/rahmanaagung/Local_Manifest .git --depth 1 -b main 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
-lunch xdroid_wayne-user
+. build/envsetup.sh
+lunch xdroid_$wayne-userdebug
+make xd -j$(nproc --all)
+
 
 export TZ=Asia/Dhaka #put before last build command
 mka derp
