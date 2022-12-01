@@ -8,7 +8,6 @@ source build/envsetup.sh
 lunch corvus_X01AD-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
-export USE_PROTON=true
 export CORVUS_MAINTAINER=⚡𝘕𝘪𝘴𝘩𝘢𝘯𝘵⚡
 export TZ=Asia/Dhaka #put before last build command
 make corvus
