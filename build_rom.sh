@@ -11,7 +11,7 @@ source build/envsetup.sh
 lunch arrow_wayne-buildtype
 export TZ=Asia/Jakarta
 export BUILD_USER=rahmanaagung
-export BUILD_HOST=wayje
+export BUILD_HOST=wayne
 export BUILD_USERNAME=rahmanaagung
 export BUILD_HOSTNAME=wayne
 m bacon
