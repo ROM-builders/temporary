@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/androi
 git clone https://github.com/paryal58/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build ro
+# build rom
 source build/envsetup.sh
 lunch lineage_instantnoodle-user
 export TZ=Asia/Dhaka #put before last build command
