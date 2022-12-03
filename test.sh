@@ -27,9 +27,6 @@ if [[ $sudo_check -gt 0 ]]; then echo Please dont use sudo inside script.; exit 
 forall_check=$(grep 'repo forall ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $forall_check -gt 0 ]]; then echo Please dont use repo forall inside script.; exit 1; fi
 
-curl_check=$(grep 'curl ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $curl_check -gt 0 ]]; then echo Please dont use curl inside script.; exit 1; fi
-
 mmma_check=$(grep 'mmma ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $mmma_check -gt 0 ]]; then echo Please dont use mmma inside script.; exit 1; fi
 
