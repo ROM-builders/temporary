@@ -11,6 +11,12 @@ if [[ $clone_check -gt 1 ]]; then echo Please use local manifest to clone trees 
 rm_check=$(grep 'rm ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $rm_check -gt 0 ]]; then echo Please dont use rm inside script, use local manifest for this purpose.; exit 1; fi
 
+url=https://$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 3-5 | cut -d ' ' -f 1)
+r_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+name_check=$(curl -Ls $url 2>&1 | grep 'repo init' | grep $r_name | wc -l)
+if [[ $r_name == "Havoc-OS" ]]; then name_check=1; fi
+if [[ $name_check == 0 ]]; then echo Please use init line url from rom manifest, its case sensitive. Also follow the format of build_rom.sh file of temporary repo main branch.; exit 1; fi
+
 command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v 'rclone copy')
 j_check=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v 'rclone copy' | grep '\-j' | wc -l)
 if [[ $j_check -gt 0 ]]; then echo Please dont specify j value in make line.; exit 1; fi
@@ -20,6 +26,9 @@ if [[ $sudo_check -gt 0 ]]; then echo Please dont use sudo inside script.; exit 
 
 forall_check=$(grep 'repo forall ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $forall_check -gt 0 ]]; then echo Please dont use repo forall inside script.; exit 1; fi
+
+curl_check=$(grep 'curl ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
+if [[ $curl_check -gt 0 ]]; then echo Please dont use curl inside script.; exit 1; fi
 
 mmma_check=$(grep 'mmma ' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $mmma_check -gt 0 ]]; then echo Please dont use mmma inside script.; exit 1; fi
