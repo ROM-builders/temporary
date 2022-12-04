@@ -5,9 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 export KBUILD_BUILD_USER=Atul
-export KBUILD_BUILD_HOST=Vacant
 export BUILD_USERNAME=Atul
-export BUILD_HOSTNAME=Vacant
 source build/envsetup.sh
 lunch corvus_garden-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
