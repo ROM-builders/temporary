@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build roms
 source build/envsetup.sh
 lunch lineage_X00TD-userdebug
-ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_USERNAME=aslenofarid
 export TZ=Asia/Jakarta #put before last build command
 brunch X00TD
