@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch aosp_vangogh-userdebug 
+lunch aosp_vangogh-userdebug
 export TZ=Asia/Chongqing #put before last build command  
 make bacon
 
