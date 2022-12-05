@@ -1,6 +1,6 @@
 # sync
 repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-oss/xd_manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/megumin775/Local-Manifests.git --depth 1 -b rolex .repo/local_manifests
+git clone https://github.com/hklknz/Local-Manifests.git --depth 1 -b tissot .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build
@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch xdroid_rova-userdebug
 export TZ=Asia/Jakarta
 export BUILD_USER=haikal
-export BUILD_HOST=cloud
+export BUILD_HOST=cirrus
 export BUILD_USERNAME=honoka
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
