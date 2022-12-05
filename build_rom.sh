@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Project-Kaleidoscope/android_manifest.git -b sunflowerleaf -g default,-mips,-darwin,-notdefault
-git clone https://github.com/romgharti/local_manifest.git --depth 1 -b kscope .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/android_manifest.git -b 12.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/pnplusplus/local_manifest.git --depth 1 -b awaken-12.1-core .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch kscope_mojito-user
+lunch awaken_mojito-user
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
