@@ -1,12 +1,12 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/AOSPK/manifest.git -b twelve -g default,-mips,-darwin,-notdefault
-git clone https://github.com/rahmanaagung/local_manifest.git --depth 1 -b main .repo/local_manifest
+git clone https://github.com/rahmanaagung/local_manifest.git --depth 1 -b AOSPK .repo/local_manifest
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch aosp_wayne-userdebug
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Jakarta #put before last build command
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
