@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build
 source build/envsetup.sh
-lunch xdroid_rova-userdebug
+lunch xdroid_tissot-userdebug
 export TZ=Asia/Jakarta
 export BUILD_USER=haikal
 export BUILD_HOST=cirrus
