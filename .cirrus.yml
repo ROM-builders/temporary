@@ -1,7 +1,7 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
     BUILD_HOSTNAME: "cirrus-ci.org"
-    bot_api: "ENCRYPTED[b16032643ad0994cda4822c9d477956f434278d0f786f8e131b585aa4f8510a11f3cd9f6a66a63568d2cba1c4dde25b4]"
+    bot_api: "ENCRYPTED[d5f8289d835b201789b2b31e728d0cd82a100f1b47ddec69dd6ba49a3712fcfa2719b220fc6a8894865df517a78332ca]"
 
 task:
   name: Test
@@ -67,7 +67,7 @@ task:
     - set -e
     - curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/test.sh | bash
   sync_script:
-    - set -exv
+    - set -e
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
     - rom_name=$rom_name-$branch_name
