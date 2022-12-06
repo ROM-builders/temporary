@@ -4,7 +4,7 @@ git clone https://github.com/Atul9977/local_manifest.git --depth 1 -b main .repo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-export KBUILD_BUILD_USER=Atul
+export KBUILD_BUILD_USER=Atul 
 export BUILD_USERNAME=Atul
 source build/envsetup.sh
 lunch kscope_garden-userdebug
