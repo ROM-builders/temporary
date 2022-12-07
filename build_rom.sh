@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-oss/xd_manifes
 git clone https://github.com/z3zens/local_manifest --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom xd13
+# build rom xd13 
 source build/envsetup.sh
 lunch xdroid_X01BD-userdebug
 export BUILD_USERNAME=nobody
