@@ -7,7 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch evolution_X01AD-userdebug
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
-export TARGET_USES_MINI_GAPPS=true
 export TZ=Asia/Kolkata #put before last build command
 mka evolution
 
