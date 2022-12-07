@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom xd13
 source build/envsetup.sh
-lunch xdroid_X01BD-user
+lunch xdroid_X01BD-userdebug
 export BUILD_USERNAME=nobody
 export BUILD_HOSTNAME=android-build
 export KBUILD_BUILD_USER=nobody
