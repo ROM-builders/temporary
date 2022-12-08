@@ -1,9 +1,9 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/AOSPA/manifest -b sapphire -g default,-mips,-darwin,-notdefault
-git clone https://github.com/z3zens/local_manifest.git --depth 1 -b sapphire .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/AOSPA/manifest -b topaz -g default,-mips,-darwin,-notdefault
+git clone https://github.com/z3zens/local_manifest.git --depth 1 -b topaz .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom AOSPA sapphire
+# build rom AOSPA topaz 
 source build/envsetup.sh
 lunch aospa_X01BD-userdebug
 export BUILD_USERNAME=nobody
