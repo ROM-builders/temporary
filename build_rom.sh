@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b twelve-one -g default,-mips,-darwin,-notdefault
-git clone https://github.com/CodeChas3r/local_manifest.git --depth 1 -b main .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-20.0 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/CodeChas3r/local_manifest.git --depth 1 -b thirteen .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch cherish_rosemary-userdebug
+lunch lineage_rosemary-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
