@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-export TZ=Asia/Delhi #put before last build command
+export TZ=Asia/Delhi #put before build command
 lunch arrow_r5x-userdebug
 m bacon
 
