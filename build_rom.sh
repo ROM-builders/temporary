@@ -1,11 +1,12 @@
 # sync rom
 repo init -u https://github.com/crdroidandroid/android.git -b 13.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/galang8664/local_manifest.git --depth 1 -b crd13 .repo/local_manifests
+git clone https://github.com/galang8664/local_manifest.git --depth 1 -b crd-13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
 lunch lineage_lava-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
