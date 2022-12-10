@@ -11,7 +11,7 @@ export BUILD_HOSTNAME=android-build
 export KBUILD_BUILD_USER=nobody
 export KBUILD_BUILD_HOST=android-build
 export TZ=Asia/Jakarta
-./rom-build.sh X01BD -c -t userdebug -v beta
+./rom-build.sh X01BD -t userdebug -v beta
 
 # upload rom
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
