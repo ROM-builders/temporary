@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 export TZ=Asia/Dhaka #put before last build command
 export BUILD_USERNAME=Des3rve
-export BUILD_HOSTNAME=user
+export BUILD_HOSTNAME=cirrus
 export WITH_GAPPS=true
 brunch havoc_rosemary-userdebug
 
