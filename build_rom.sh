@@ -5,11 +5,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 export KBUILD_BUILD_USER=alternoegraha
-export KBUILD_BUILD_HOST=cringe
+export KBUILD_BUILD_HOST=cirrus
 export BUILD_USERNAME=alternoegraha
-export BUILD_HOSTNAME=cringe
-. build/envsetup.sh
-lunch lineage_garden-userdebug
+export BUILD_HOSTNAME=cirrus
+source build/envsetup.sh
+lunch evolution_fog-userdebug
 export TZ=Asia/Jakarta #put before last build command
 mka evolution
 
