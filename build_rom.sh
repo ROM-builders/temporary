@@ -8,8 +8,6 @@ source build/envsetup.sh
 lunch lineage_rosemary-userdebug
 export BUILD_USERNAME=CodeChas3r
 export BUILD_HOSTNAME=cirrus
-export SELINUX_IGNORE_NEVERALLOWS=true
-export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
