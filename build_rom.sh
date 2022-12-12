@@ -3,9 +3,9 @@ repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_man
 git clone https://github.com/donboruza/local_manifests.git --depth 1 -b cherrish .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom 
+# build rom
 source build/envsetup.sh
-lunch cherish_sweet-userdebug
+lunch cherish_sweet-user
 export BUILD_USERNAME=don.boruza
 export BUILD_HOSTNAME=prototype
 export TZ=Asia/Jakarta
