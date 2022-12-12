@@ -7,9 +7,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch lineage_rosy-userdebug
 export KBUILD_BUILD_USER=aepranata
-export KBUILD_BUILD_HOST=a3project
+export KBUILD_BUILD_HOST=a3machine
 export BUILD_USERNAME=aepranata
-export BUILD_HOSTNAME=a3project
+export BUILD_HOSTNAME=a3machine
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
