@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Nem1xx/android.git -b 11.0 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Nem1xx/android.git -b crdroid-11.0 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Nem1xx/local_manifests.git --depth 1 -b lineage-18.1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
