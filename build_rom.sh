@@ -4,7 +4,7 @@ git clone https://github.com/Azure-Helper/local_manifests.git --depth 1 -b topaz
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+source build/envsetup.sh [1]
 lunch aospa_raphael-userdebug
 export KBUILD_BUILD_USER=azure
 export KBUILD_BUILD_HOST=azure
