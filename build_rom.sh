@@ -8,7 +8,7 @@ source build/envsetup.sh
 #export SELINUX_IGNORE_NEVERALLOWS=true
 #export ALLOW_MISSING_DEPENDENCIES=true
 lunch superior_rova-userdebug
-export TARGET_KERNEL_CLANG_VERSION=proton
+#export TARGET_KERNEL_CLANG_VERSION=proton
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
