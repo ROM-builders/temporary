@@ -6,7 +6,7 @@ repo sync
 # build rom
 source build/envsetup.sh
 breakfast fog
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia #put before last build command
 brunch fog eng
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
