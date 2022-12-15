@@ -4,12 +4,12 @@ git clone https://github.com/Atul9977/local_manifest.git --depth 1 -b main .repo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export KBUILD_BUILD_USER=Atul 
 export BUILD_USERNAME=Atul
 source build/envsetup.sh
 lunch kscope_garden-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
