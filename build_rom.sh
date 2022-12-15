@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_man
 git clone https://github.com/raidenkkj/local_manifest.git --depth 1 -b cherish13-mithorium .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom 00
+# build rom 0.2
 . build/envsetup.sh
 export CHERISH_VANILLA=true
 export TZ=Asia/Dhaka #put before last build command
