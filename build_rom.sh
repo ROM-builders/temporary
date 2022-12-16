@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 export BUILD_USERNAME=CodeChas3r
+export BUILD_HOSTNAME=cirrus
 export BUILD_WITH_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
 brunch havoc_rosemary-userdebug
