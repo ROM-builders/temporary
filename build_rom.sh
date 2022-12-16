@@ -4,7 +4,7 @@ git clone https://github.com/rinto02/local_manifest.git --depth 1 -b main .repo/
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 # build rom
 source build/envsetup.sh
-lunch evolution_RMX2020-userdebug
+lunch evolution_RMX2020-user
 export TZ=Asia/Dhaka #put before last build command
 mka evolution
 
