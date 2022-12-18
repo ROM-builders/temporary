@@ -1,18 +1,26 @@
-AospExtended custom ROM for Redmi Note 4
-==============================
+Copyright (C) 2018 The LineageOS Project
 
-AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note 4(code name mido)
+Device configuration for Xiaomi Pocophone F1
+=========================================
 
-[Features as video](https://www.youtube.com/watch?v=KuQ9jIVmOXY) or [Features as text](https://forum.xda-developers.com/t/rom-11-0-aospextended-rom-v8-0-unofficial-surya.4202905/)
+The Xiaomi Pocophone F1 (codenamed _"beryllium"_) is a high-end smartphone from Xiaomi.
 
-[Screenshots](https://t.me/Apon77Mido/5270) or [Video](https://www.youtube.com/watch?v=KuQ9jIVmOXY)
+It was announced in August 2018. Release date was August 2018.
 
-Distributed [here](https://t.me/rn4downloads/4885)
+## Device specifications
 
-Estimated installation no.: 150-500
+Basic   | Spec Sheet
+-------:|:-------------------------
+SoC     | Qualcomm SDM845 Snapdragon 845
+CPU     | Octa-core (4x2.8 GHz Kryo 385 Gold & 4x1.8 GHz Kryo 385 Silver)
+GPU     | Adreno 630
+Memory  | 6/8 GB RAM
+Shipped Android Version | 8.1 with MIUI 9.6
+Storage | 64/128/256 GB
+Battery | Non-removable Li-Po 4000 mAh battery
+Display | 1080 x 2246 pixels, 18:9 ratio, 6.18 inches, IPS LCD (~403 ppi density)
+Camera  | 12 MP + 5MP, dual pixel PDAF, dual-LED (dual tone) flash
 
-How to use this repository
--------------------
+## Device picture
 
-* [Instructions if you want to develop AospExtended custom ROM as a developer](https://github.com/Apon77/mido-AospExtended-Apon77/blob/main/Instructions%20for%20developers.md)
-* [Instructions if you want to use AospExtended custom ROM in your device as a user](https://github.com/Apon77/mido-AospExtended-Apon77/blob/main/Instructions%20for%20users.md)
+![Xiaomi Pocophone F1](https://xiaomi-mi.com/uploads/CatalogueImage/01B_17130_1534951225.jpg "Pocophone F1 in black")
