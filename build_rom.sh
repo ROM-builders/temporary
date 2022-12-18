@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 export BUILD_USERNAME=Des3rve
 export BUILD_HOSTNAME=cirrus
-export TZ=Asia/Jakarta #put before last build command
+export TZ=Asia/Dhaka #put before last build command
 brunch lineage_rosemary-userdebug
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
