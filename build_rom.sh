@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch device_xiaomi_beryllium1
+lunch aosp_beryllium-userdebug
 export TZ=Asia/Mumbai #put before last build command
 mka bacon 
 
