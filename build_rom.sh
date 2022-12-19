@@ -8,10 +8,7 @@ source build/envsetup.sh
 lunch awaken_ginkgo-userdebug
 export BUILD_USERNAME=xyz_abhishek
 export BUILD_HOSTNAME=xyz_abhishek
-export SKIP_ABI_CHECKS=tru
 #export ALLOW_MISSING_DEPENDENCIES=true
-export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
-export BUILD_BROKEN_DUP_RULES=true
 #export TARGET_KERNEL_CLANG_VERSION=proton
 export TZ=Asia/Kolkata #put before last build command
 make bacon 
