@@ -2,6 +2,8 @@ env:
     CIRRUS_CLONE_DEPTH: 1
     BUILD_HOSTNAME: "cirrus-ci.org"
     bot_api: "ENCRYPTED[b16032643ad0994cda4822c9d477956f434278d0f786f8e131b585aa4f8510a11f3cd9f6a66a63568d2cba1c4dde25b4]"
+    TG_BOT_TOKEN: "ENCRYPTED[!b37a9f2a43e462f4e339ec254eb15f26254b3f3482ec4a49fb0d37050860975e99066c479da9f14c6a4e3f2cca5f9076!]"
+    TG_CHANNEL_ID: "ENCRYPTED[!5b4e498bef3eda71b5055ed11abcea1e428edfb2baa52727721f5f22dc11e3dfa3d2e61c6d2d0deb84f60e4c960a2025!]"
 
 task:
   name: Test
@@ -174,6 +176,10 @@ task:
     - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
     - export CCACHE_DIR=~/ccache/$rom_name/$device
     - ccache -s
+  
+  tg_script:
+    - set -e
+    - ./tgpush.sh
 
   upload_script:
     - set -e
