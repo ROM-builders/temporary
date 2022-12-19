@@ -7,8 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 export BUILD_USERNAME=Des3rve
 export BUILD_HOSTNAME=cirrus
-export SELINUX_IGNORE_NEVERSALLOWS=true
-export BUILD_MISSING_REQUIRED_MODULES=true
 export TZ=Asia/Dhaka #put before last build command
 brunch lineage_rosemary-userdebug
 
