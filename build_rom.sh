@@ -13,6 +13,10 @@ export BUILD_USERNAME=honoka
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export RELAX_USES_LIBRARY_CHECK=true
+export BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES=true
+export BROKEN_ENFORCE_SYSPROP_OWNER=true
+export BROKEN_MISSING_REQUIRED_MODULES=true
+export BROKEN_VENDOR_PROPERTY_NAMESPACE=true
 mka xd
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
