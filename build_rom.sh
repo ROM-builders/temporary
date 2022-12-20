@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch aosp_tulip-user
+lunch arrow_tulip-user
 export TZ=Asia/Dhaka
 m bacon
 
