@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Project-Kaleidoscope/
 git clone https://github.com/alternoegraha/local_manifest.git --depth 1 -b kscope_fog .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build roms
+# build rom
 export KBUILD_BUILD_USER=alternoegraha
 export KBUILD_BUILD_HOST=cirrus
 export BUILD_USERNAME=alternoegraha
