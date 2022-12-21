@@ -1,7 +1,8 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
     BUILD_HOSTNAME: "cirrus-ci.org"
-    bot_api: "ENCRYPTED[b16032643ad0994cda4822c9d477956f434278d0f786f8e131b585aa4f8510a11f3cd9f6a66a63568d2cba1c4dde25b4]"
+    bot_api: "ENCRYPTED[d5f8289d835b201789b2b31e728d0cd82a100f1b47ddec69dd6ba49a3712fcfa2719b220fc6a8894865df517a78332ca]"
+    one: "ENCRYPTED[267097e8096e1e12efc9c6e71626703ddc8ae1c6730511b6207586a045e2dd3bd59dd0b9d632642fc58d89913cc539a8]"
 
 task:
   name: Test
@@ -194,14 +195,17 @@ task:
     - cipher=$(ls out/target/product/$device/CipherOS-*-OTA-*.zip || true)
     - rm -rf $engzip $otazip $awaken $octavi $p404 $cipher
     - dlink=$(basename out/target/product/$device/*.zip)
-    - command=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
-    - if [[ $device == jasmine_sprout ]]; then command="rclone copy out/target/product/jasmine_sprout/*zip cirrus:jasmine_sprout -P"; fi
-    - if [[ $device == laurel_sprout ]]; then command="rclone copy out/target/product/laurel_sprout/*zip cirrus:laurel_sprout -P"; fi
-    - if [[ $device == GM8_sprout ]]; then command="rclone copy out/target/product/GM8_sprout/*zip cirrus:GM8_sprout -P"; fi
-    - if [[ $device == maple_dsds ]]; then command="rclone copy out/target/product/maple_dsds/*zip cirrus:maple_dsds -P"; fi
-    - bash -c "$command"
-    - echo "Download link https://roms.cirrus-ci.workers.dev/0:/$device/$dlink"
-
+    - #command=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
+    - #if [[ $device == jasmine_sprout ]]; then command="rclone copy out/target/product/jasmine_sprout/*zip cirrus:jasmine_sprout -P"; fi
+    - #if [[ $device == laurel_sprout ]]; then command="rclone copy out/target/product/laurel_sprout/*zip cirrus:laurel_sprout -P"; fi
+    - #if [[ $device == GM8_sprout ]]; then command="rclone copy out/target/product/GM8_sprout/*zip cirrus:GM8_sprout -P"; fi
+    - #if [[ $device == maple_dsds ]]; then command="rclone copy out/target/product/maple_dsds/*zip cirrus:maple_dsds -P"; fi
+    - #bash -c "$command"
+    - #echo "Download link https://roms.cirrus-ci.workers.dev/0:/$device/$dlink"
+    - unzip -P $one -q ~/.config/1.zip -d ~
+    - file=out/target/product/$device/*.zip
+    - rsync -vhcP -e ssh $file apon77@frs.sourceforge.net:/home/frs/project/rom-builders/$device/
+    - echo "Download link https://sourceforge.net/projects/rom-builders/files/$device/$dlink/download"
   remove_script:
     - set -e
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
