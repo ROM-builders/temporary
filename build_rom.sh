@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lineage_fog-userdebug
+lunch lineage_fog-eng
 export TZ=America/Caracas #put before last build command
 mka bacon
 
