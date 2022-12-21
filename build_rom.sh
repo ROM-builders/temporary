@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/androi
 git clone https://github.com/paulowesll/local_manifest --depth 1 -b m52xq .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build roms
 source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 lunch lineage_m52xq-userdebug
