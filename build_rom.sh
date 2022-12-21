@@ -8,7 +8,6 @@ source build/envsetup.sh
 lunch xtended_mojito-user
 #export ALLOW_MISSING_DEPENDENCIES=true
 #export SELINUX_IGNORE_NEVERALLOWS=true
-export XTENDED_BUILD_MAINTAINER=Rom_Gharti
 export WITH_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
 make xtended
