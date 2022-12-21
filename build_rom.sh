@@ -1,4 +1,5 @@
 # THIS BUILD IS MEANT FOR PERSONAL USE. Anything I included here are all properly credited.
+# Attempt 2.
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-oss/xd_manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
 # (DT made by hsx02.. I will make my own soon.)
