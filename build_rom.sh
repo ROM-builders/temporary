@@ -1,5 +1,6 @@
 # THIS BUILD IS MEANT FOR PERSONAL USE. Anything I included here are all properly credited.
-# I hate counting attempts. Moved back to A13 and ruined the manifest.. lmfao
+# Attempt 1
+# Moved back to A13 and ruined the manifest.. lmfao
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/xdroid-oss/xd_manifest.git -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/nullprjkt/local_manifest.git --depth 1 -b xd-spes .repo/local_manifests
