@@ -8,7 +8,7 @@ source build/envsetup.sh
 cp packages/apps/Settings/res/values/awaken_strings.xml ../awaken_strings.xml
 perl -pe 's/Unofficial Maintainer/"Công Vĩnh"/g' ../awaken_strings.xml > packages/apps/Settings/res/values/awaken_strings.xml
 export TZ=Asia/Ho_Chi_Minh
-lunch awaken_flashlmdd-userdebug
+lunch awaken_miatoll-userdebug
 make bacon
 # re-run
 perl -pe 's/"Công Vĩnh"/Unofficial Maintainer/g' ../awaken_strings.xml > packages/apps/Settings/res/values/awaken_strings.xml
