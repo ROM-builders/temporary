@@ -5,8 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lineage_twolip-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
+lunch lineage_twolip-user
 export TZ=Asia/Dhaka
 make bacon
 
