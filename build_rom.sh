@@ -7,6 +7,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 export BUILD_USERNAME=Sonjay01
 export BUILD_HOSTNAME=userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
+BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Dhaka #put before last build command
 brunch lineage_rosemary-userdebug
 
