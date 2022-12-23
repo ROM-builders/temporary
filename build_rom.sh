@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # building rom
 source build/envsetup.sh
 lunch aosp_beryllium-userdebug
-export BUILD_USERNAME=RadeonPS 
+export BUILD_USERNAME=RadeonPS
 export BUILD_HOSTNAME=prototype
 export TZ=Asia/Mumbai #put before last build command
 mka bacon
