@@ -7,7 +7,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch syberia_vayu-userdebug
 export KBUILD_BUILD_USER=LuffyTaro008
-export KBUILD_BUILD_HOST=LuffyTaro008     
+export KBUILD_BUILD_HOST=LuffyTaro008
+export BUILD_USERNAME=LuffyTaro008
+export BUILD_HOSTNAME=LuffyTaro008
 export TZ=Asia/Jakarta #put before last build command
 mka syberia
 
