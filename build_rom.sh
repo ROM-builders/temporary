@@ -7,8 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch aosp_rosemary-user
 export BUILD_USERNAME=CodeChas3r
-export BUILD_HOSTNAME=user
-export SELINUX_IGNORE_NEVERALLOWS=true
+export BUILD_HOSTNAME=cirrus
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
