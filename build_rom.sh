@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/android_manifest -b 12.1 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/AICP/platform_manifest.git -b s12.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Atul977/local_manifest.git --depth 1 -b 12 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 export KBUILD_BUILD_USER=Atul
 export BUILD_USERNAME=Atul
 source build/envsetup.sh
-lunch awaken_garden-userdebug
+lunch aosp_garden-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export TZ=Asia/Dhaka #put before last build command
