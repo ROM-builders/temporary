@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/galang8664/local_manifest.git --depth 1 -b evoxT .repo/local_manifests
+git clone https://github.com/kitw4y/local_manifest.git --depth 1 -b evox .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch evolution_lava-userdebug
+lunch evolution_lancelot-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Kolkata #put before last build command
 mka evolution
