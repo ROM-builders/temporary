@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/NRanjan-17/local_manifest.git --depth 1 -b Evolution-X-tiramisu .repo/local_manifests
+git clone https://github.com/NRanjan-17/local_manifest.git --depth 1 -b EvolutionX-violet .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch evolution_mido-userdebug
+lunch evolution_violet-userdebug
 export KBUILD_BUILD_USER=HyperPower
 export KBUILD_BUILD_HOST=17
 export BUILD_USERNAME=HyperPower
