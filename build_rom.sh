@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
      
 # build rom     
 source build/envsetup.sh   
-lunch cipher_tissot-userdebug   
+lunch voltage_tissot-userdebug   
 export TZ=Asia/Dhaka #put before last build command   
 mka bacon  
   
