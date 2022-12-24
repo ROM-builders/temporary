@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch arrow_surya-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
 export ARROW_GAPPS=false
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
