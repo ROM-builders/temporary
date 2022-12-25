@@ -8,6 +8,8 @@ source build/envsetup.sh
 lunch cipher_rosemary-userdebug
 export BUILD_USERNAME=Des3rve
 export BUILD_HOSTNAME=userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
