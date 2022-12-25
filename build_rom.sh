@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/RiceDroid/android -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/DineshMSDian/local_manifest --depth 1 -b 13.0 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b thirteen-plus -g default,-mips,-darwin,-notdefault 
+git clone https://github.com/DineshMSDian/local_manifest --depth 1 -b aosp .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_santoni-user
+lunch aosp_santoni-user
 export TZ=Asia/Chennai #put before last build command
 mka bacon
 
