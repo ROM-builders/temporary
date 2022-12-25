@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manif
 git clone https://github.com/alternoegraha/local_manifest.git --depth 1 -b arrow_fog .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build arrow
 source build/envsetup.sh
 lunch arrow_fog-userdebug
 export KBUILD_BUILD_USER=alternoegraha
