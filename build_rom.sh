@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 #export TZ=Asia/Dhaka #put before last build command
-lunch evolution_gauguin-user
+lunch evolution_gauguin-userdebug
 #build code
 mka evolution
 
