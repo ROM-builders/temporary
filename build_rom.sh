@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/VoltageOS/manifest.git -b 13 -g default,-mips,-darwin,-notdefault 
-git clone https://github.com/Sachin9822/local_manifest.git --depth 1 -b voltage13 .repo/local_manifests  
+repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b tiramisu -g default,-mips,-darwin,-notdefault 
+git clone https://github.com/Sachin9822/local_manifest.git --depth 1 -b evo .repo/local_manifests  
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 
       
 # build rom     
 source build/envsetup.sh   
-lunch voltage_tissot-userdebug   
+lunch evolution_tissot-userdebug   
 export TZ=Asia/Dhaka #put before last build command    
 mka bacon  
   
