@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 -u https://github.com/catalyst-android/android.git -b 13
+repo init --depth=1 -g https://github.com/catalyst-android/android.git -b 13
 git clone https://github.com/emmanueeeeeel/local_manifest --depth 1 -b master .repo/local_manifest
 repo sync --current-branch --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune -j `nproc`
 
