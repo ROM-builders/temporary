@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 export KBUILD_BUILD_USER=Atul
 export BUILD_USERNAME=Atul
 source build/envsetup.sh
-lunch aosp_garden-userdebug
+lunch aicp_garden-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export TZ=Asia/Dhaka #put before last build command
