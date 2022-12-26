@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth=1 -u https://github.com/catalyst-android/android.git -b 13 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/emmanueeeeeel/local_manifest --depth 1 -b master .repo/local_manifest
-repo sync --current-branch --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune `nproc`
+repo sync --current-branch --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune -j `nproc`
 
 # build rom
 . build/envsetup.sh
