@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Ryofry/local_manifest.git --depth 1 -b surya-ardjlon-ryofry .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/P-404/android_manifest -b tokui -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Ryofry/local_manifest.git --depth 1 -b surya-p404 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch arrow_surya-user
-export ARROW_GAPPS=false
+lunch p404_surya-userdebug
+export WITH_GAPPS=true
 export TZ=Asia/Jakarta #put before last build command
 m bacon
 
