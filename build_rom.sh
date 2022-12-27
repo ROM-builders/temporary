@@ -4,7 +4,7 @@ git clone https://github.com/alternoegraha/local_manifest.git --depth 1 -b evolu
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build ROM
-source build/envsetup.sh
+. build/envsetup.sh
 lunch evolution_fog-userdebug
 export KBUILD_BUILD_USER=alternoegraha
 export KBUILD_BUILD_HOST=cirrus
