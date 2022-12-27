@@ -1,6 +1,6 @@
 # sync rom
 repo init -u https://github.com/PixelExtended/manifest -b trece default,-mips,-darwin,-notdefault
-git clone https://github.com/emmanueeeeeel/local_manifest.git --depth 1 -b master .repo/local_manifests
+git clone https://github.com/emmanueeeeeel/local_manifest.git --depth 1 -b master .repo/local_manifest
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
