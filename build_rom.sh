@@ -4,8 +4,14 @@ git clone https://github.com/Notkerd69/local_manifest.git --depth 1 -b fog_linea
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+export KBUILD_BUILD_USER=Notkerd69
+export KBUILD_BUILD_HOST=cirrushet
+export BUILD_USERNAME=Notkerd69
+export BUILD_HOSTNAME=cirrushet
 source build/envsetup.sh
-lunch lineage_fog-eng
+lunch lineage_fog-userdebug
+export ALLOW_MISSING_DEPENDENCIES=true
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=America/Caracas #put before last build command
 mka bacon
 
