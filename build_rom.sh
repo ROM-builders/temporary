@@ -8,7 +8,6 @@ source build/envsetup.sh
 lunch derp_rosemary-userdebug
 export BUILD_USERNAME=CodeChas3r
 export BUILD_HOSTNAME=userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
 mka derp
 
