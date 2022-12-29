@@ -4,40 +4,40 @@ env:
     bot_api: "ENCRYPTED[d5f8289d835b201789b2b31e728d0cd82a100f1b47ddec69dd6ba49a3712fcfa2719b220fc6a8894865df517a78332ca]"
     one: "ENCRYPTED[267097e8096e1e12efc9c6e71626703ddc8ae1c6730511b6207586a045e2dd3bd59dd0b9d632642fc58d89913cc539a8]"
 
-task:
-  name: Test
-  skip: $CIRRUS_BRANCH == 'main'
-  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
-  timeout_in: 2m
-  persistent_worker:
-    labels:
-      name: AX61-2
-    isolation:
-      container:
-        image: apon77/aosp:cirrus
-        cpu: 2
-        memory: 4G
+#task:
+# name: Test
+# skip: $CIRRUS_BRANCH == 'main'
+# only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
+# timeout_in: 2m
+# persistent_worker:
+#   labels:
+#     name: AX61-2
+#   isolation:
+#     container:
+#       image: apon77/aosp:cirrus
+#       cpu: 2
+#       memory: 4G
 
-  env_script:
-    - env
-  show_script:
-    - cat $CIRRUS_WORKING_DIR/build_rom.sh
-  notify_script:
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
-    - rom_name=$rom_name-$branch_name
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-    - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
-    - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
-    - grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
-    - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
-    - your_telegram_id=@ROM_builders_junk
-    - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
-    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Started
-      
-      https://cirrus-ci.com/build/$CIRRUS_BUILD_ID
-      
-      $show" -d "chat_id=${your_telegram_id}" -d "parse_mode=HTML"
+# env_script:
+#   - env
+# show_script:
+#   - cat $CIRRUS_WORKING_DIR/build_rom.sh
+# notify_script:
+#   - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+#   - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
+#   - rom_name=$rom_name-$branch_name
+#   - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
+#   - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
+#   - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
+#   - grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
+#   - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
+#   - your_telegram_id=@ROM_builders_junk
+#   - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
+#   - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Started
+#     
+#     https://cirrus-ci.com/build/$CIRRUS_BUILD_ID
+#     
+#     $show" -d "chat_id=${your_telegram_id}" -d "parse_mode=HTML"
 # test_script:
 #   - set -e
 #   - curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/test.sh | bash
