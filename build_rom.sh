@@ -1,9 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.0 -g default,-mips,-darwin,-notdefault
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-git clone https://github.com/Pzqqt/android_kernel_xiaomi_sm6150-1 -b pure-phoenix --depth=1 kernel/xiaomi/phoenix
-git clone https://github.com/SharmagRit/android_vendor_xiaomi_phoenix -b 13 --depth=1 vendor/xiaomi/phoenix
-git clone https://github.com/ArrowOS-Devices/android_device_xiaomi_extras device/xiaomi/extras
+git clone https://github.com/SimpleJony/local_manifest --depth=1 .repo/local_manifests
 
 # build rom
 source build/envsetup.sh
