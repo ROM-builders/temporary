@@ -1,2 +1,2 @@
-CirrusCI Crdroid 9 for Redmi Note 4
+CirrusCI Crdroid 9 config for Redmi Note 4
 ==============================
