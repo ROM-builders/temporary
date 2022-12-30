@@ -1,11 +1,11 @@
 # sync rom
-repo init -u https://github.com/PixelExtended/manifest -b trece default,-mips,-darwin,-notdefault
+repo init -u https://github.com/Komodo-OS/manifest -b 12.1 default,-mips,-darwin,-notdefault
 git clone https://github.com/emmanueeeeeel/local_manifest.git --depth 1 -b master .repo/local_manifest
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
 . build/envsetup.sh
-lunch aosp_lava-userdebug
+lunch komodo_lava-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon -jX
 
