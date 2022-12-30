@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Komodo-OS/manifest -b 12.1 default,-mips,-darwin,-notdefault
+repo init -u https://github.com/Komodo-OS/manifest -b 12.1 default,-mips,-darwin,-notdefault
 git clone https://github.com/emmanueeeeeel/local_manifest.git --depth 1 -b master .repo/local_manifest
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
