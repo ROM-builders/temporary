@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-brunch X01AD_crandroid-userdebug
+lunch X01AD_crandroid-userdebug
 export TZ=Asia/Jakarta #put before last build command
 mka derp
 
