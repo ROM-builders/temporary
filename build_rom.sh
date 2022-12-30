@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/crdroidandroid/android.
 git clone https://github.com/Wrdn28/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build romm
 source build/envsetup.sh
 lunch lineage_X01AD-userdebug
 export TZ=Asia/Jakarta #put before last build command
