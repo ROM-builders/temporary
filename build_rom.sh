@@ -4,7 +4,7 @@ git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch derp_vayu-user
 export TZ=Asia/Kolkata #put before last build command
 mka derp
