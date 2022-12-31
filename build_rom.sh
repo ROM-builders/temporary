@@ -6,8 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_vayu-user
-# Build Rules
-export RELAX_USES_LIBRARY_CHECK=true
 # Builder Variables
 export KBUILD_BUILD_USER=chandler
 export KBUILD_BUILD_HOST=bing
