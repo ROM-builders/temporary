@@ -1,7 +1,7 @@
-Pixel experience plus 13 custom ROM for OnePlus Nord ce 2 lite 5g
+AospExtended custom ROM for Redmi note 4
 ==============================
 
-Pixel experience plus [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for OnePlus Nord ce 2 lite (code name oscar)
+AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi note 4 (code name mido)
 
 [Features as video](https://www.youtube.com/watch?v=KuQ9jIVmOXY) or [Features as text](https://forum.xda-developers.com/t/rom-11-0-aospextended-rom-v8-0-unofficial-surya.4202905/)
 
