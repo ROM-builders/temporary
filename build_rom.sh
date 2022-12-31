@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch spark_ginkgo-user
+lunch spark_ginkgo-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
