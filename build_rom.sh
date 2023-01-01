@@ -4,7 +4,7 @@ git clone https://github.com/kitw4y/local_manifest.git --depth 1 -b evoxnew .rep
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 repo sync -j1 --fail-fast
 
-# build rom 
+# build rom 1
 source build/envsetup.sh
 lunch evolution_lancelot-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
