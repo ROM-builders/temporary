@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch superior_Mi8937-userdebug
+lunch superior_Mi8937_4_19-userdebug
 m bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
