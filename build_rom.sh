@@ -4,7 +4,7 @@ git clone https://github.com/SauRavRwT/Local-Manifest.git --depth 1 -b blaze .re
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 #7
-
+#8
 
 # build rom
 source build/envsetup.sh
