@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch p404_vayu-eng
+lunch p404_X01AD-eng
 export TZ=Asia/Dhaka #put  before last build command
 make bacon
 
