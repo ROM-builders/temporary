@@ -10,8 +10,6 @@ export BUILD_USERNAME=Notkerd69
 export BUILD_HOSTNAME=cirrushet
 source build/envsetup.sh
 lunch lineage_fog-userdebug
-export ALLOW_MISSING_DEPENDENCIES=true
-export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=America/Caracas #put before last build command
 brunch fog
 
