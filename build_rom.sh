@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/DerpFest-AOSP/manifes
 git clone https://github.com/z3zens/local_manifest --depth 1 -b derp .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom DerpFest-AOSP
 source build/envsetup.sh
 lunch derp_X01BD-user
 export BUILD_USERNAME=nobody
