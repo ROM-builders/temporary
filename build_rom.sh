@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-bash ./fun/blobs.sh && croot
+bash ./fun/blobs.sh
 lunch aosp_fajita-user
 export TZ=Asia/Shanghai #put before last build command
 mka bacon
