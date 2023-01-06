@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/DerpFest-AOSP/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/z3zens/local_manifest --depth 1 -b derp .repo/local_manifests
+git clone https://github.com/Asyanx/local_manifest --depth 1 -b derp .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom DerpFest-AOSP
 source build/envsetup.sh
-lunch derp_X01BD-user
+lunch derp_fog-userdebug
 export BUILD_USERNAME=nobody
 export BUILD_HOSTNAME=android-build
 export KBUILD_BUILD_USER=nobody
