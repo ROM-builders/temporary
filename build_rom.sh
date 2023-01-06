@@ -2,7 +2,7 @@
 repo init --depth=1 --no-repo-verify -u repo init -u //github.com/Evolution-X/manifest -b tiramisu -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Adalat222/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-#hash Hkbjdi727yJFPCY
+#hash Hkbjdi727yJFPCR
 
 # build rom
 . build/envsetup.sh
