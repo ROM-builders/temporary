@@ -1,4 +1,4 @@
-# sync rom
+# sync roms
 repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-AOSP/manifest.git -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/hklknz/Local-Manifests.git --depth 1 -b tissot-pos .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
@@ -14,10 +14,10 @@ export BUILD_BROKEN_ENFORCE_SYSPROP_OWNER=true
 export BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE=true
 export RELAX_USES_LIBRARY_CHECK=true
 RELAX_USES_LIBRARY_CHECK=true
-export BUILD_USERNAME=LisaImai
-export BUILD_HOSTNAME=Cloud
+export BUILD_USERNAME=Honoka
+export BUILD_HOSTNAME=μ's
 export KBUILD_BUILD_USER=Honoka
-export KBUILD_BUILD_HOST=Cloud
+export KBUILD_BUILD_HOST=μ's
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
