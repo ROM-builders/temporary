@@ -8,6 +8,7 @@ source build/envsetup.sh
 lunch derp_RMX2020-userdebug
 export SELINUX_IGNORE_NEVERALLOW=true
 export USE_CUSTOM_CLANG=true
+export USE_PROTON_CLANG=true
 export TZ=Asia/Dhaka #put before last build command
 mka derp
 
