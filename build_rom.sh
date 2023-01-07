@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch derp_RMX2020-userdebug
 export SELINUX_IGNORE_NEVERALLOW=true
+export USE_CUSTOM_CLANG=true
 export TZ=Asia/Dhaka #put before last build command
 mka derp
 
