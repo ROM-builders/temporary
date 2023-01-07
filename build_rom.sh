@@ -15,9 +15,9 @@ export BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE=true
 export RELAX_USES_LIBRARY_CHECK=true
 RELAX_USES_LIBRARY_CHECK=true
 export BUILD_USERNAME=Honoka
-export BUILD_HOSTNAME=μ's
+export BUILD_HOSTNAME=Aquors
 export KBUILD_BUILD_USER=Honoka
-export KBUILD_BUILD_HOST=μ's
+export KBUILD_BUILD_HOST=Aquors
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
