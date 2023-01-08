@@ -9,6 +9,10 @@ source build/envsetup.sh
 bash ./fun/blobs.sh
 croot
 lunch aosp_fajita-user
+export KBUILD_BUILD_USER=snnbyyds
+export KBUILD_BUILD_HOST=cirrus
+export BUILD_USERNAME=snnbyyds
+export BUILD_HOSTNAME=cirrus
 export TZ=Asia/Shanghai #put before last build command
 mka bacon
 
