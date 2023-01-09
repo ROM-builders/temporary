@@ -4,6 +4,7 @@ git clone https://github.com/SauRavRwT/Local-Manifest.git --depth 1 -b xdroid .r
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 #3
+#4
 # build rom
 source build/envsetup.sh
 lunch xdroid_veux-userdebug
