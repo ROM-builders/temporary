@@ -4,7 +4,7 @@ git clone https://github.com/kitw4y/local_manifest.git --depth 1 -b derp .repo/l
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 repo sync -j1 --fail-fast
 
-# build rom #
+# build rom
 source build/envsetup.sh
 lunch derp_lancelot-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
