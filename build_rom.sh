@@ -1,13 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 11.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Fr0ztyy43/local_manifests.git --depth 1 -b cr11 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/StagOS/manifest.git -b t13 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Fr0ztyy43/local_manifests.git --depth 1 -b corvus .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_begonia-userdebug
+lunch stag_begonia-userdebug
 export TZ=Asia/Dhaka #put before last build command
-make bacon
+make stag
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
