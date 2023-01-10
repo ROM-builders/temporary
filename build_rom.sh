@@ -11,7 +11,6 @@ export BUILD_HOSTNAME=cirrushet
 source build/envsetup.sh
 lunch lineage_fog-userdebug
 export TZ=America/Caracas #put before last build command
-export ALLOW_MISSING_DEPENDENCIES=true
 brunch fog
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
