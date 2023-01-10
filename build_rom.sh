@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_santoni-userdebug
-#export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export TZ=Asia/Chennai #put before last build command
 mka bacon
 
