@@ -6,7 +6,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch xdroid_clover-userdebug
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Dhaka 
+rm -rf hardware/qcom-caf/sdm660/audio
+git clone https://github.com/pix106/android_hardware_qcom-caf_audio -b sdm660-4.19-R-13 hardware/qcom-caf/sdm660/audio #put before last build command
 make xd
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
