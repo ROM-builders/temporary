@@ -1,14 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Havoc-OS/android_manifest.git -b eleven -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Lite009/local_manifests.git --depth 1 -b Havoc-OS .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-AOSP/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Lite009/local_manifests.git --depth 1 -b PixelOS .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
-lunch havoc_vince-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
-export ALLOW_MISSING_DEPENDENCIES=true
-export WITH_GAPPS=true
+lunch aosp_vince-user
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
