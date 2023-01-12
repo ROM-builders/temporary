@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 #  build rom
 source build/envsetup.sh
-lunch voltage_liber-eng
+lunch voltage_liber-userdebug
 export TZ=Asia/Delhi #put before last build command
 make bacon
 
