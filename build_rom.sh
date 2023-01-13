@@ -15,7 +15,7 @@ export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_DUP_RULES=true
 export BUILD_USERNAME=zaidannn7
-export BUILD_HOSTNAME=cirrus
+export BUILD_HOSTNAME=cirrusXzaidan
 export TZ=Asia/Jakarta
 launch juice userdebug
 
