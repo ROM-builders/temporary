@@ -4,7 +4,7 @@ git clone https://github.com/janakniraula/local_manifests.git --depth 1 -b linea
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch evolution_Mi439-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka evolution
