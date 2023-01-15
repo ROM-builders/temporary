@@ -8,6 +8,7 @@ source build/envsetup.sh
 bash ./fun/blobs.sh
 croot
 
+
 lunch aosp_fajita-user
 export KBUILD_BUILD_USER=snnbyyds
 export KBUILD_BUILD_HOST=uotan
