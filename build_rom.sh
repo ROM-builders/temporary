@@ -1,6 +1,6 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Fork-Krypton/manifest.git -b A12 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/zaidannn7/local_manifest --depth 1 -b kosp .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/ricedroidOSS/android -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/zaidannn7/local_manifest --depth 1 -b rice .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
@@ -15,7 +15,7 @@ export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_DUP_RULES=true
 export BUILD_USERNAME=zaidannn7
-export BUILD_HOSTNAME=cirrusXzaidan
+export BUILD_HOSTNAME=zaidannn7
 export TZ=Asia/Jakarta
 lunch lineage_chime-userdebug 
 make bacon -j8
