@@ -7,7 +7,7 @@ task:
   name: Build
   skip: $CIRRUS_BRANCH == 'main'
   timeout_in: 120m
-      container: 
+      container:
         image: apon77/aosp:cirrus
         cpu: 16
         memory: 32G
