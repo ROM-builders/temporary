@@ -5,7 +5,7 @@ env:
     
 task: 
   name: Build
-  skip: $CIRRUS_BRANCH == 'main'
+  only_if: $CIRRUS_REPO_OWNER == 'SimpleJony'
   timeout_in: 120m
   container: 
     image: apon77/aosp:cirrus
