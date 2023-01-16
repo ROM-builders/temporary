@@ -1,20 +1,20 @@
-env:
+env: 
     CIRRUS_CLONE_DEPTH: 1
     BUILD_HOSTNAME: "cirrus-ci.org"
     one: "ENCRYPTED[373a2e36dcef3e64853d0d199489f05e3c3660c692d0daf9c511bd3aa4a821575d7db9b7e2f34b68321b233420b4c70f]"
     
-task:
+task: 
   name: Build
   skip: $CIRRUS_BRANCH == 'main'
   timeout_in: 120m
-      container: 
-        image: apon77/aosp:cirrus
-        cpu: 16
-        memory: 32G
-        volumes:
-          - /home/cirrus/roms:/home/cirrus/roms
-          - /home/cirrus/ccache:/home/cirrus/ccache
-          - /home/cirrus/.config:/home/cirrus/.config
+  container: 
+    image: apon77/aosp:cirrus
+    cpu: 16
+    memory: 32G
+    volumes: 
+    - /home/cirrus/roms:/home/cirrus/roms
+    - /home/cirrus/ccache:/home/cirrus/ccache
+    - /home/cirrus/.config:/home/cirrus/.config
 
   show_script:
     - cat $CIRRUS_WORKING_DIR/build_rom.sh
