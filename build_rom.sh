@@ -9,6 +9,7 @@ export KBUILD_BUILD_USER=Rinto
 export KBUILD_BUILD_HOST=Rinto
 export BUILD_USERNAME=Rinto
 export BUILD_HOSTNAME=Rinto
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
 brunch RMX2020
 
