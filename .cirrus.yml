@@ -9,7 +9,7 @@ task:
   timeout_in: 120m
   container: 
     image: apon77/aosp:cirrus
-    cpu: 16
+    cpu: 8
     memory: 32G
     volumes: 
     - /home/cirrus/roms:/home/cirrus/roms
