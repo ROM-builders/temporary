@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b thirteen -b 11 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b 11 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Monster7773/local_manifest --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch aosp_lava-userdebug
-export TZ=Asia/Kolkata #put before last build command
+export TZ=Asia/Delhi #put before last build command
 mka bacon -j$(nproc --all)
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
