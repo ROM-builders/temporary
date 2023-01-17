@@ -13,11 +13,11 @@
  source build/envsetup.sh 
 
  export ALLOW_MISSING_DEPENDENCIES=true 
- export BUILD_HOSTNAME=already_dead_af
+ 
 
  lunch aosp_lava-userdebug 
 
- export TZ=Asia/Dhaka #put before last build command 
+ export TZ=Asia/Delhi #put before last build command 
 
  mka bacon 
 
