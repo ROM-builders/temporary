@@ -1,10 +1,25 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ricedroidOSS/android -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/rinto02/local_manifest.git --depth 1 -b rice .repo/local_manifests
+git clone https://github.com/rinto02/local_manifest.git --depth 1 -b ricedroid .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
+export KBUILD_BUILD_USER=Rinto
+export KBUILD_BUILD_HOST=Rinto
+export BUILD_USERNAME=Rinto
+export BUILD_HOSTNAME=Rinto
+export RELAX_USES_LIBRARY_CHECK=true
+export SKIP_ABI_CHECKS=true
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+export USE_DEXOPT=true
+export SELINUX_IGNORE_NEVERALLOWS=true
+export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
+export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
+export BUILD_BROKEN_DUP_RULES=true
+export BUILD_BROKEN_CLANG_ASFLAGS=true
+export BUILD_BROKEN_CLANG_CFLAGS=true
+export BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE=true
 export TZ=Asia/Dhaka #put before last build command
 brunch RMX2020
 
