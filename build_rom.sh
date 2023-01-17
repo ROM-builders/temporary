@@ -4,7 +4,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom [01]
 . build/envsetup.sh
-lunch lineage_spes-user
+lunch lineage_spes-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_DUP_RULES=true
