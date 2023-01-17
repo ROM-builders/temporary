@@ -1,19 +1,28 @@
-# sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b 11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Monster7773/local_manifest_2 --depth 1 -b main .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+# sync rom 
 
-# build rom
-source build/envsetup.sh
-lunch aosp_lava-userdebug
-export BUILD_USERNAME=deadaf
+ repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b thirteen -g default,-mips,-darwin,-notdefault 
 
-export KBUILD_BUILD_NAME=deadaf
+ git clone https://github.com/Arafattex/local_manifest.git --depth 1 -b Lancelot_pixel .repo/local_manifests 
 
-export BUILD_HOSTNAME=already_dead_af
+ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 
 
-export TZ=Asia/Delhi#put before last build command
-mka bacon
+  
 
-# upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
-rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
+ # build rom 
+
+ source build/envsetup.sh 
+
+ export ALLOW_MISSING_DEPENDENCIES=true 
+ export BUILD_HOSTNAME=already_dead_af
+
+ lunch aosp_lava-userdebug 
+
+ export TZ=Asia/Dhaka #put before last build command 
+
+ mka bacon 
+
+  
+
+ # upload rom (if you don't need to upload multiple files, then you don't need to edit next line) 
+
+ rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
