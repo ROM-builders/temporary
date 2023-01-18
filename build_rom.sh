@@ -1,10 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/VoltageOS/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/rinto02/local_manifest.git --depth 1 -b derp .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/rinto02/local_manifest.git --depth 1 -b pe .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
+lunch aosp_RMX2020-userdebug
 export KBUILD_BUILD_USER=Rinto
 export KBUILD_BUILD_HOST=Rinto
 export BUILD_USERNAME=Rinto
@@ -21,7 +22,7 @@ export BUILD_BROKEN_CLANG_ASFLAGS=true
 export BUILD_BROKEN_CLANG_CFLAGS=true
 export BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE=true
 export TZ=Asia/Dhaka #put before last build command
-brunch RMX2020
+mka bacon -j8
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
