@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/DerpFest-12/manifest.
 git clone https://github.com/hklknz/Local-Manifests.git --depth 1 -b tissot-derpfest .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build roms
 source build/envsetup.sh
 lunch derp_tissot-userdebug
 export TZ=Asia/Tokyo
