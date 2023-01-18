@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest 
 git clone https://github.com/kitw4y/local_manifest.git --depth 1 -b evox-r .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom 
+# build rom 1
 source build/envsetup.sh
 lunch evolution_lancelot-userdebug
 export TZ=Asia/Jakarta #put before last build command
