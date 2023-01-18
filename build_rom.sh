@@ -22,7 +22,7 @@ export BUILD_BROKEN_CLANG_ASFLAGS=true
 export BUILD_BROKEN_CLANG_CFLAGS=true
 export BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE=true
 export TZ=Asia/Dhaka #put before last build command
-mka bacon -j8
+mka bacon
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
