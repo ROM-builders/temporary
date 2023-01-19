@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-breakfast RMX2020
+lunch xtended_RMX2020-userdebug
 export KBUILD_BUILD_USER=Rinto
 export KBUILD_BUILD_HOST=Rinto
 export BUILD_USERNAME=Rinto
