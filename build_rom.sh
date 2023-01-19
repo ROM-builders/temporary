@@ -5,7 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-export WITH_GAPPS=true
 lunch banana_tulip-userdebug
 export TZ=Asia/Dhaka #put before last build command
 m banana
