@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch arrow_markw-user
+lunch arrow_markw-userdebug
 export TZ=Asia/Bandung #put before last build command
 mka bacon
 
