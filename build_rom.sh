@@ -2,7 +2,7 @@
 repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Monster7773/local_manifest_3 --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-
+repo j1 --fail-fast
 # build rom
 source build/envsetup.sh
 lunch aosp_lava-userdebug
