@@ -5,8 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch 
-export TZ=Asia/Dhaka #put before last build command
+lunch carbon_A001D-userdebug
+export TZ=America/Sao_Paulo
 make carbon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
