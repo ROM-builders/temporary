@@ -6,6 +6,12 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build romm
 source build/envsetup.sh
 lunch stag_begonia-userdebug
+
+export KBUILD_BUILD_USER=Fr0ztyy43 
+export KBUILD_BUILD_HOST=Fr0ztyy43 
+export BUILD_USERNAME=Fr0ztyy43 
+export BUILD_HOSTNAME=Fr0ztyy43 
+
 export TZ=Asia/Dhaka #put before last build command
 make stag
 
