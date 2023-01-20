@@ -4,8 +4,8 @@ git clone https://github.com/mountain47/Local_Manifests.git --depth 1 -b main .r
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
-lunch evolution_$device-userdebug
+source build/envsetup.sh
+lunch evolution_moon-userdebug
 export TZ=Asia/kolkata #put before last build command
 mka evolution 
 
