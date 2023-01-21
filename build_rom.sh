@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u repo init -u repo init -u https://github.com/LineageOS/android.git -b lineage-19.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Aflaungos/local_manifest.git --depth 1 -b m23xq-LineageOS-lineage-19.1-Aflaungos .repo/local_manifests
+git clone https://github.com/Aflaungos/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 #17
