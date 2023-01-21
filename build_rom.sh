@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 
 lunch aosp_lava-userdebug
+export ALLOW_MISSING_DEPENDENCIES=true
 export KBUILD_BUILD_USER=deadaf
 export KBUILD_BUILD_HOST=deadaf
 export BUILD_USERNAME=deadaf
