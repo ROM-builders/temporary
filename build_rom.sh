@@ -1,9 +1,9 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Bootleggers-BrokenLab/manifest.git -b tirimbino -g default,-mips,-darwin,-notdefault
 git clone https://github.com/dmb-kirya/local_manifest.git --depth 1 -b main .repo/local_manifests
-rm -rf hardware/qcom-caf/sm8150/display
-rm -rf hardware/qcom-caf/sm8150/media
-rm -rf hardware/qcom-caf/sm8150/audio
+
+
+
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
