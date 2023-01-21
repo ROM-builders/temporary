@@ -6,8 +6,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch xtended_ginkgo-userdebug
-export WITH_GAPPS=true
-export TZ=Asia/Delhi #put before last build command 
+export BUILD_USERNAME=tejas
+export KBUILD_BUILD_USER=tejas
+export KBUILD_BUILD_HOST=I_Am_Charsi
+export BUILD_HOSTNAME=I_Am_Charsi
+export TZ=Asia/Kolkata
 make xtended
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
