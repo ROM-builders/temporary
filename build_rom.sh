@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch blaze_sweet-userdebug
+lunch blaze_beryllium-userdebug
 export BUILD_USERNAME=don.boruza
 export BUILD_HOSTNAME=prototype
 export TZ=Asia/Jakarta
