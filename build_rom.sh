@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-18.1 -b 11 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git -b lineage-20.0 -b 11 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/mrxzzet/local_manifests --depth 1 -b master local_manifests/lineage-20.0.xml
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
