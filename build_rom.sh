@@ -4,7 +4,7 @@ git clone https://github.com/emanosi/local_manifest.git --depth 1 -b main .repo/
 repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 
-# build rom
+
 # chipset flag enclose var with "" if more than one
 # friendly tip: builders can use init_xxx.cpp as workaround for spacing
 # e.g. property_override("ro.rice.chipset", "Snapdragon 870 5G");
@@ -150,6 +150,7 @@ ro.apex.updatable=false
 # 3. Enable flatten apex - add to your device tree makefiles.
 OVERRIDE_TARGET_FLATTEN_APEX := true
 
+# build rom
 . build/envsetup.sh
 brunch "lancelot"
 
