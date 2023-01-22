@@ -1,8 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ricedroidOSS/android.git -b thirteen -g default,-mips,-darwin,-notdefault
 git clone https://github.com/emanosi/local_manifest.git --depth 1 -b main .repo/local_manifests
-repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc --all)
-
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
 # chipset flag enclose var with "" if more than one
