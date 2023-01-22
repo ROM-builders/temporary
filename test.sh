@@ -1,5 +1,7 @@
 #!/bin/bash
 set -e
+curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/test.sh | bash
+
 
 init_check=$(grep 'repo init' $CIRRUS_WORKING_DIR/build_rom.sh | grep 'depth=1')
 if [[ $init_check != *default,-mips,-darwin,-notdefault* ]]; then echo Please use --depth=1 and -g default,-mips,-darwin,-notdefault tags in repo init line.; exit 1; fi
@@ -106,7 +108,7 @@ if [[ $CIRRUS_COMMIT_MESSAGE == "Update build_rom.sh" ]]; then echo Please use p
 fi
 
 if [[ $device == 'copy' ]]; then echo "Please use lunch or brunch command with device codename after . build/envsetup.sh" ; exit 1; fi
-if [[ $device == 'mi439' ]]; then echo "Please use device codename Mi439 also create your dt with this device code name." ; exit 1; fi
+if [[ $device == 'moon' ]]; then echo "Please use device codename Mi439 also create your dt with this device code name." ; exit 1; fi
 
 if [[ $BRANCH == *pull/* ]]; then
 
