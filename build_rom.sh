@@ -149,7 +149,7 @@ ro.apex.updatable=false
 # 3. Enable flatten apex - add to your device tree makefiles.
 OVERRIDE_TARGET_FLATTEN_APEX := true
 
-# build rom
+# buildrom
 . build/envsetup.sh
 brunch "lancelot"
 
