@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-Pixelish/manifest -b thirteen -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-AOSP/manifest -b thirteen -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Monster7773/local_manifest_2 --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 
 lunch aosp_lava-userdebug
-export ALLOW_MISSING_DEPENDENCIES=true
+
 export KBUILD_BUILD_USER=deadaf
 export KBUILD_BUILD_HOST=deadaf
 export BUILD_USERNAME=deadaf
