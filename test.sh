@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+curl -Ls
 
 init_check=$(grep 'repo init' $CIRRUS_WORKING_DIR/build_rom.sh | grep 'depth=1')
 if [[ $init_check != *default,-mips,-darwin,-notdefault* ]]; then echo Please use --depth=1 and -g default,-mips,-darwin,-notdefault tags in repo init line.; exit 1; fi
@@ -132,5 +133,6 @@ if [ -z "$CIRRUS_PR" ]; then echo fine; else
 echo You are push user. Don\'t do pr and please follow pinned message in push group.; exit 1
 fi
 fi
-
+set -e
+curl -Ls
 echo Test passed
