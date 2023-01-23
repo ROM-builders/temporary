@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/eurekadevelopment/local_manifests --depth 1 -b rom-builders .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-19.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/A51-Development/local_manifests --depth 1 -b rom-builders .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch cherish_a20e-user
+lunch lineage_a51-eng
 export TZ=Asia/Seoul #put before last build command
 mka bacon
 
