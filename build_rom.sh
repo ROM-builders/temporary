@@ -5,6 +5,7 @@ git clone https://github.com/mrxzzet/local_manifests.git .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+git apply mrxzzet/mi-thorium_patches
 source build/envsetup.sh
 export TZ=Asia/Dhaka #put before last build command
 brunch Mi439
