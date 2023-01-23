@@ -1,9 +1,10 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 13.0 -g default,-mips,-darwin,-notdefault
 mkdir mkdir .repo/local_manifests
+mkdir mkdir .repo/local_manifests/patches
 git clone https://github.com/mrxzzet/local_manifests.git .repo/local_manifests
-git clone https://github.com/mrxzzet/mi-thorium_patches.git ~/patches
-git apply ~/patches
+git clone https://github.com/mrxzzet/mi-thorium_patches.git .repo/local_manifests/patches
+git apply .repo/local_manifests/patches
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
