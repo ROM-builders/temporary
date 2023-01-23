@@ -1,6 +1,6 @@
 # sync rom 
 
- repo init --depth=1 --no-repo-verify -u https://github.com/DerpFest-AOSP/manifest.git -b 13 -g default,-mips,-darwin,-notdefault 
+ repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/PixelExperience/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault 
 
  git clone https://github.com/Monster7773/local_manifest_3 --depth 1 -b main .repo/local_manifests 
 
@@ -14,7 +14,7 @@
 
   
 
- lunch derp_lava-user
+ lunch asop_lava-user
 
   
 
@@ -30,7 +30,7 @@
 
   
 
- mka derp  
+ mka bacon  
 
   
 
