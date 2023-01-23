@@ -1,10 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 13.0 -g default,-mips,-darwin,-notdefault
 mkdir mkdir .repo/local_manifests
-mkdir mkdir .repo/local_manifests/patches
 git clone https://github.com/mrxzzet/local_manifests.git .repo/local_manifests
-git clone https://github.com/mrxzzet/mi-thorium_patches.git .repo/local_manifests/patches
-git apply .repo/local_manifests/patches
+wget https://github.com/mrxzzet/mi-thorium_patches/blob/master/lineage-20.x/vendor/lineage/0001-Split-msm8937-from-UM_3_18_FAMILY-and-fix-it.patch .repo/local_manifests
+git apply .repo/local_manifests/0001-Split-msm8937-from-UM_3_18_FAMILY-and-fix-it.patch
+wget https://github.com/mrxzzet/mi-thorium_patches/blob/master/common/system/core/0001-liblp-Allow-to-flash-on-bigger-block-device.patch .repo/local_manifests
+git apply .repo/local_manifests/0001-liblp-Allow-to-flash-on-bigger-block-device.patch
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
