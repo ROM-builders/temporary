@@ -2,11 +2,11 @@
 repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 13.0 -g default,-mips,-darwin,-notdefault
 mkdir mkdir .repo/local_manifests
 git clone https://github.com/mrxzzet/local_manifests.git .repo/local_manifests
+git clone https://github.com/mrxzzet/mi-thorium_patches.git ~/patches
+git apply ~/patches
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-git clone https://github.com/mrxzzet/mi-thorium_patches.git ~/patches
-git apply ~/patches
 source build/envsetup.sh
 export TZ=Asia/Dhaka #put before last build command
 brunch Mi439
