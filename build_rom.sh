@@ -1,14 +1,13 @@
-repo init --depth=1 -u https://github.com/PixelPlusUI-SnowCone/manifest.git -b snowcone --depth=1 and -g default,-mips,-darwin,-notdefault
+repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 12.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/mountain47/local_manifest.git --depth 1 -b main .repo/local_manifest
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-
+repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 # build rom
 # Set up environment
-. build/envsetup.sh
+source build/envsetup.sh
 # Choose a target
-lunch aosp_moon-userdebug
+lunch derp_moon
 # Build the code
-mka bacon -jX
+mka derp
 export TZ=Asia/Kolkata #put before last build command
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
