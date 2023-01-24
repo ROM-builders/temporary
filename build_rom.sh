@@ -1,6 +1,6 @@
 repo init --depth=1 -u https://github.com/PixelPlusUI-SnowCone/manifest.git -b snowcone --depth=1 and -g default,-mips,-darwin,-notdefault
 git clone https://github.com/mountain47/local_manifest.git --depth 1 -b main .repo/local_manifest
-repo sync
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
 # Set up environment
