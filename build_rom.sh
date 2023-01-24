@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom #2
 . build/envsetup.sh
- brunch havoc_A001D-userdebug
+brunch havoc_A001D-userdebug
 export TZ=America/Sao_Paulo
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
