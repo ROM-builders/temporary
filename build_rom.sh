@@ -3,9 +3,9 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Havoc-OS/android_mani
 git clone https://github.com/CreeperAmigo19/local-manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom #2
 . build/envsetup.sh
-    brunch
+ brunch
 export TZ=America/Sao_Paulo
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
