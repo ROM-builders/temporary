@@ -8,6 +8,7 @@ source build/envsetup.sh
 lunch derp_rosemary-userdebug
 export BUILD_USERNAME=hyperlink12
 export BUILD_HOSTNAME=hyperlink12
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
 mka derp
 
