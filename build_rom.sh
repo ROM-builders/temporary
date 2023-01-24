@@ -1,6 +1,6 @@
 repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 12.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/mountain47/local_manifest.git --depth 1 -b main .repo/local_manifest
-repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
+repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
 # build rom
 # Set up environment
 source build/envsetup.sh
