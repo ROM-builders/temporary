@@ -6,8 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom (5)
 source build/envsetup.sh
 lunch evolution_markw-userdebug
-export BUILD_USERNAME=vanguard78 
-export BUILD_HOSTNAME=prototype
+export BUILD_USERNAME=van.
+export BUILD_HOSTNAME=Van.
 export TZ=Asia/Bandung #put before last build command
 mka evolution 
 
