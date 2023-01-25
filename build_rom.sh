@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/BlissRoms/platform_manifest.git -b r -g default,-mips,-darwin,-notdefault
 git clone https://github.com/JV007xp/local_manifest.git --depth 1 -b main .repo/local_manifests
-repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all) --optimized-fetch --prune
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
  . build/envsetup.sh
