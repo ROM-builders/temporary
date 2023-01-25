@@ -10,7 +10,7 @@ export KBUILD_BUILD_USER=Van.
 export KBUILD_BUILD_HOST=Van.
 export BUILD_USERNAME=Van.
 export BUILD_HOSTNAME=Van.
-export TZ=Asia/Bandung #put before last build command
+export TZ=Asia/Jakarta #put before last build command
 mka evolution 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
