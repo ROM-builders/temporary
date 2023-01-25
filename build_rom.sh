@@ -12,6 +12,7 @@ export BUILD_USERNAME=Rinto
 export BUILD_HOSTNAME=Rinto
 export SKIP_ABI_CHECKS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
+export WITH_GMS=false
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
