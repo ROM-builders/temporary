@@ -3,7 +3,7 @@ git clone https://github.com/mountain47/local_manifest.git --depth 1 -b main .re
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync --current-branch -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch pixys_moon_userdebug
 make pixys -j8
 export SELINUX_IGNORE_NEVERALLOWS=true
