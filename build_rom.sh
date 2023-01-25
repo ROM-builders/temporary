@@ -1,14 +1,15 @@
-repo init -u https://github.com/PixelOS-AOSP/manifest -b twelve -g default,-mips,-darwin,-notdefault
-git clone git://github.com/mountain47/local_manifest.git --depth 1 -b main .repo/local_manifest
-repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
+repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 12.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/mountain47/local_manifest.git --depth 1 -b main .repo/local_manifests
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+
 # build rom
-# Set up environment
-source build/envsetup.sh
-# Choose a target
-lunch aosp_moon-user
-# Build the code
-mka bacon -j8
-export TZ=Asia/Dhaka #put before last build command
+. build/envsetup.sh
+brunch moon
+lunch lineage_moon-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
+export ALLOW_MISSING_DEPENDENCIES=true
+export RELAX_USES_LIBRARY_CHECK=true
+export TZ=Asia/Dhaka 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
