@@ -4,7 +4,7 @@ git clone https://github.com/mrxzzet/local_manifests.git -b crdroid-11.0 --depth
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-build/envsetup.sh
+. build/envsetup.sh
 export TZ=Asia/Dhaka #put before last build command
 brunch Mi439
 
