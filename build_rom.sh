@@ -3,12 +3,12 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest 
 git clone https://github.com/Mozzaru/local_manifest.git --depth 1 -b evo-13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom 
 source build/envsetup.sh
 lunch evolution_markw-userdebug
 export BUILD_USERNAME=Domba 
 export BUILD_HOSTNAME=jabrig
-export TZ=Asia/Bandung #put before last build command
+export TZ=Asia/Jakarta #put before last build command
 mka evolution 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
