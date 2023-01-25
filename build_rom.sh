@@ -4,6 +4,7 @@ git clone https://github.com/hklknz/Local-Manifests.git --depth 1 -b tissot-bn .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build roms
+# Malas Mengetahui
 source build/envsetup.sh
 lunch banana_tissot-userdebug
 export TZ=Asia/Tokyo
