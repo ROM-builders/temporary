@@ -1,9 +1,9 @@
 repo init --depth=1 --no-repo-verify -u https://github.com/PixysOS/manifest -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/mountain47/local_manifest.git --depth 1 -b main .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync --current-branch 
+repo sync #-c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync --current-branch 
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch pixys_moon_userdebug
 make pixys -j8
 export SELINUX_IGNORE_NEVERALLOWS=true
