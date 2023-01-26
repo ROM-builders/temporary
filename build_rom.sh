@@ -10,8 +10,6 @@ export KBUILD_BUILD_USER=Rinto
 export KBUILD_BUILD_HOST=Rinto
 export BUILD_USERNAME=Rinto
 export BUILD_HOSTNAME=Rinto
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
-export LOCAL_MODULE_TAGS=userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
