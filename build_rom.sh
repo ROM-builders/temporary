@@ -5,9 +5,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch lineage_A001D-userdebug
 export TZ=America/Sao_Paulo
 export SELINUX_IGNORE_NEVERALLOWS=true
+lunch lineage_A001D-userdebug
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
