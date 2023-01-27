@@ -4,7 +4,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest 
 git clone https://github.com/Starliteaxe/local_manifest.git --depth 1 -b cipher .repo/local_manifests
 
 # Sync
-repo sync
+repo sync -c --no-clone-bundle -j8 -f --force-sync
 
 # Set up environment
 source build/envsetup.sh
