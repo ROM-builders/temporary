@@ -3,12 +3,12 @@ repo init --depth=1 --no-repo-verify -u https://github.com/StagOS/manifest.git -
 git clone https://github.com/Fr0ztyy43/local_manifests.git --depth 1 -b corvus .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build romm
 source build/envsetup.sh
 lunch stag_begonia-userdebug
 
 export KBUILD_BUILD_USER=Fr0ztyy43 
-export KBUILD_BUILD_HOST=Fr0ztyy43 
+export KBUILD_BUILD_HOST=Fr0ztyy43
 export BUILD_USERNAME=Fr0ztyy43 
 export BUILD_HOSTNAME=Fr0ztyy43 
 
