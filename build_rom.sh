@@ -11,7 +11,7 @@ source build/envsetup.sh
 # Choose a target
 lunch aosp_$moon-userdebug
 # Build the code
-mka bacon -j8
+mka bacon
 
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
