@@ -83,7 +83,7 @@ task:
     - done <<< "$outputchecker"
     
     - set -exv
-    - echo $(outputchecker)
+    - echo "${outputchecker}"
     - a=$(grep 'Cannot remove project' sync.log -m1|| true)
     - b=$(grep "^fatal: remove-project element specifies non-existent project" sync.log -m1 || true)
     - c=$(grep 'repo sync has finished' sync.log -m1 || true)
