@@ -1,19 +1,17 @@
-repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b snow -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelPlusUI-SnowCone/manifest -b snowcone-12.1 -g default,-mips,-darwin,-notdefault
 
 #localmanifest
-git clone https://github.com/Starliteaxe/local_manifest.git --depth 1 -b cipher .repo/local_manifests
+git clone https://github.com/mountain47/local_manifest-starliteaxe.git --depth 1 -b cipher .repo/local_manifests
 
 # Sync
-repo sync -c --no-clone-bundle -j8 -f --force-sync --current-branch
+repo sync -c -j8 --force-sync --no-clone-bundle --no-tags
 
 # Set up environment
 source build/envsetup.sh
-
 # Choose a target
-lunch evolution_moon-userdebug
-
+lunch aosp_$moon-userdebug
 # Build the code
-mka evolution
+mka bacon -j8
 
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
