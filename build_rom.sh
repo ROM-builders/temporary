@@ -4,8 +4,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixelPlusUI-SnowCone/
 git clone https://github.com/mountain47/local_manifest-starliteaxe.git --depth 1 -b cipher .repo/local_manifests
 
 # Sync
-repo sync -c -j8 --force-sync --no-clone-bundle --no-tags
-
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 # Set up environment
 source build/envsetup.sh
 # Choose a target
