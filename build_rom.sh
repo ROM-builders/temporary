@@ -1,4 +1,4 @@
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelPlusUI-SnowCone/manifest -b snowcone-12.1 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelPlusUI-SnowCone/manifest -b snowcone -g default,-mips,-darwin,-notdefault
 
 #localmanifest
 git clone https://github.com/mountain47/local_manifest-starliteaxe.git --depth 1 -b cipher .repo/local_manifests
@@ -8,7 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # Set up environment
 source build/envsetup.sh
 # Choose a target
-lunch aosp_$moon-userdebug
+lunch aosp_moon-userdebug
 # Build the code
 mka bacon
 
