@@ -1,4 +1,4 @@
- repo init --depth=1 -u https://github.com/ConquerOS/manifest.git -b twelve -g default,-mips,-darwin,-notdefault
+repo init --depth=1 -u https://github.com/CherishOS/android_manifest.git -b twelve-one -g default,-mips,-darwin,-notdefault
 #localmanifest
 git clone https://github.com/mountain47/local_manifest-starliteaxe.git --depth 1 -b cipher .repo/local_manifests
 
@@ -7,13 +7,12 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # Set up environment
 source build/envsetup.sh
 # Choose a target
-lunch conquer_moon-userdebug 
-# Build the code
-make carthage
+brunch moon
 
-export SELINUX_IGNORE_NEVERALLOWS=true
-export ALLOW_MISSING_DEPENDENCIES=true
-export RELAX_USES_LIBRARY_CHECK=true
+
+#export SELINUX_IGNORE_NEVERALLOWS=true
+#export ALLOW_MISSING_DEPENDENCIES=true
+#export RELAX_USES_LIBRARY_CHECK=true
 export TZ=Asia/Dhaka 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
