@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch xtended_ginkgo-userdebug
-export BUILD_USERNAME=tejas
+export BUILD_USERNAME=Tejas
 export KBUILD_BUILD_USER=tejas
 export KBUILD_BUILD_HOST=I_Am_Charsi
 export BUILD_HOSTNAME=I_Am_Charsi
