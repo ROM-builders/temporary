@@ -4,6 +4,7 @@ git clone https://github.com/SauRavRwT/Local-Manifest.git --depth 1 -b xt .repo/
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 #xt flag/latest kernel
+#4
 # build rom
 source build/envsetup.sh
 lunch xtended_veux-user
