@@ -1,4 +1,4 @@
- repo init --depth=1 -u https://github.com/ConquerOS/manifest.git -b twelve
+ repo init --depth=1 -u https://github.com/ConquerOS/manifest.git -b twelve -g default,-mips,-darwin,-notdefault
 #localmanifest
 git clone https://github.com/mountain47/local_manifest-starliteaxe.git --depth 1 -b cipher .repo/local_manifests
 
