@@ -1,6 +1,6 @@
 repo init --depth=1 -u https://github.com/CherishOS/android_manifest.git -b twelve-one -g default,-mips,-darwin,-notdefault
 #localmanifest
-git clone https://github.com/mountain47/local_manifest.git --depth 1 -b cherish .repo/local_manifests
+git clone https://github.com/mountain47/local_manifest.git --depth 1 -b main .repo/local_manifests
 
 # Sync
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
@@ -13,6 +13,9 @@ brunch moon
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export RELAX_USES_LIBRARY_CHECK=true
+export SKIP_ABI_CHECKS=true 
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true 
+export LOCAL_MODULE_TAGS=userdebug
 export TZ=Asia/Dhaka 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
