@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch aosp_$device-userdebug
+lunch aosp_beryllium-user
 export BUILD_USERNAME=Leo
 export BUILD_HOSTNAME=ArchX
 export TZ=Asia/Kolkata #put before last build command
