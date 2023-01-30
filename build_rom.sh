@@ -3,6 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Project-Xtended/manif
 git clone https://github.com/SauRavRwT/Local-Manifest.git --depth 1 -b xt .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+#Xt - 4
 # build rom
 source build/envsetup.sh
 lunch xtended_veux-user
