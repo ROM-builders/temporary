@@ -1,13 +1,34 @@
-# sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/DerpFest-11/manifest.git -b 11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+<?xml version="1.0" encoding="UTF-8"?>  
 
-# build rom
-source build/envsetup.sh
-lunch derp_vayu-user
-export TZ=Asia/Dhaka #put before last build command
-mka derp
+<manifest>
+        
+        <!-- fetching sources -->      
 
-# upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
-rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
+        <remote name="Rinto02"
+                fetch="https://github.com/rinto02" />
+
+         <remote name="r450784d"
+                fetch="https://gitlab.com/rintokhan" />
+
+         <remote name="mountain47"
+                fetch="https://github.com/mountain47" />
+ 
+        <remote name="Realme-G70-Series"
+                fetch="https://github.com/Realme-G70-Series" />
+
+
+
+      <!-- device trees -->
+
+     <project path="device/realme/RMX2193" name="android_device_realme_RMX2193" remote="mountain47" revision="11" />
+     <project path="vendor/realme/RMX2193" name="vendor_realme_RMX2193" remote="mountain47" revision="11" />
+      <project path="kernel/realme/RMX2193" name="kernel_realme_RMX2193" remote="mountain47" revision="Q" clone-depth="1" />
+      <project path="packages/apps/RealmeDirac" name="android_packages_apps_RealmeDirac" remote="Realme-G70-Series" revision="master" clone-depth="1" />
+
+        
+      <!-- clang -->
+
+        <project path="prebuilts/clang/host/linux-x86/clang-proton" name="proton-clang" remote="Rinto02" revision="main" clone-depth="1" />
+        <project path="prebuilts/clang/host/linux-x86/clang-r450784d" name="clang-r450784d" remote="r450784d" revision="master" clone-depth="1" />
+ 
+</manifest>
