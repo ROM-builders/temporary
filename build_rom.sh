@@ -5,6 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 #Xt - 4
 #2
+#3
 # build rom
 source build/envsetup.sh
 lunch xtended_veux-user
