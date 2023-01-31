@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Evolution-X/manifest -b tiramisu -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b tiramisu -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Saitama69k/local_manifest.git -b evo-13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch evolution_beryllium-user
-export BUILD_USERNAME=Saitama
+export BUILD_USERNAME=Akshat
 export BUILD_HOSTNAME=ArchX
 export TZ=Asia/Kolkata #put before last build command
 mka evolution
