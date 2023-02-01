@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch xdroid_X01AD-userdebug
+export ALLOW_MISSING_DEPEDENCIES=true
 export TZ=Asia/Jakarta #put before last build command
 make xd
 
