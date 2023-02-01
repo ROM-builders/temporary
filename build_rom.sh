@@ -4,7 +4,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch superior_<devicecodename>-userdebug
+lunch superior_RMX2193-userdebug
 mka bacon
 export TZ=Asia/Dhaka #put before last build command
 
