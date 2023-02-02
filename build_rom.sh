@@ -1,11 +1,11 @@
-repo init --depth=1 --no-repo-verify -u https://github.com/SuperiorOS/manifest.git -b eleven -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/PixysOS/manifest -b eleven -g default,-mips,-darwin,-notdefault
 git clone https://github.com/mountain47/local_manifest.git --depth 1 -b 11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch superior_RMX2193-userdebug
-mka bacon
+lunch pixys_RMX2193-userdebug
+make pixys
 export TZ=Asia/Dhaka #put before last build command
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
