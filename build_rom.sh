@@ -9,6 +9,10 @@ lunch carbon_A001D-userdebug
 export TZ=America/Sao_Paulo
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
+export RELAX_USES_LIBRARY_CHECK=true
+export TARGET_BOOT_ANIMATION_RES=1080
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+
 mka carbon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
