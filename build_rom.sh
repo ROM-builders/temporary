@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/androi
 git clone https://github.com/paryal58/local_manifest.git --depth 1 -b awak .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom?
+# build rom??
 source build/envsetup.sh
 lunch awaken_instantnoodle-userdebug
 export TZ=America/Los_Angeles #put before last build command
