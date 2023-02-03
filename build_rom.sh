@@ -3,12 +3,9 @@ repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest
 git clone https://github.com/SauRavRwT/Local-Manifest.git --depth 1 -b blaze .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-#4
 # build rom
 source build/envsetup.sh
 lunch blaze_veux-user
-export SELINUX_IGNORE_NEVERALLOWS=true
-export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Dhaka #put before last build command
 mka veux
 
