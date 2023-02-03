@@ -3,15 +3,9 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Bootleggers-BrokenLab
 git clone https://github.com/rinto02/local_manifest.git --depth 1 -b bootlegger .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom 
 source build/envsetup.sh
-export KBUILD_BUILD_USER=Rinto
-export KBUILD_BUILD_HOST=Rinto
-export BUILD_USERNAME=Rinto
-export BUILD_HOSTNAME=Rinto
 export WITH_GAPPS=true
-export SELINUX_IGNORE_NEVERALLOWS=true
-export SKIP_ABI_CHECKS=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export LOCAL_MODULE_TAGS=userdebug
