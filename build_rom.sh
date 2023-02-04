@@ -5,7 +5,7 @@ repo sync -j$(nproc --all) --force-sync --no-tags --no-clone-bundle
 
 # build rom
 source build/envsetup.sh
-lunch corvus_device-userdebug
+lunch corvus_viva-userdebug
 export TZ=Asia/Jakarta #put before last build command
 make corvus
 
