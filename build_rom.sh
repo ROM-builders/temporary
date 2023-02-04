@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 -u https://github.com/Corvus-AOSP/android_manifest.git -b 13 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/rizalef77/local_manifests.git --depth 1 -b main .repo/local_manifests
+git clone https://github.com/rizalef77/local_manifests.git --depth 1 -b corvus .repo/local_manifests
 repo sync -j$(nproc --all) --force-sync --no-tags --no-clone-bundle
 
 # build rom
