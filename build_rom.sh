@@ -1,9 +1,9 @@
 J# sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b tiramisu -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Mozzaru/manifest_evox.git -b terabit -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Mozzaru/local_manifest.git --depth 1 -b evolution-t .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom (1)        
+# build rom        
 source build/envsetup.sh
 lunch evolution_markw-userdebug
 export KBUILD_BUILD_USER=Van.
