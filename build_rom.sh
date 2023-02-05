@@ -1,4 +1,3 @@
-
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Sa-Sajjad/android_manifest_nusa.git -b 10 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Sa-Sajjad/manifest.git --depth 1 -b main .repo/local_manifests
