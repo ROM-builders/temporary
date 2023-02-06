@@ -2,18 +2,17 @@
 repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b thirteen-plus -g default,-mips,-darwin,-notdefault
 git clone https://github.com/snnbyyds/local_manifests.git --depth 1 -b thirteen-plus .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-bash ./fun/Ass.sh
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-bash ./fun/blobs.sh
+
 croot
 lunch aosp_fajita-user
 export KBUILD_BUILD_USER=snnbyyds
 export KBUILD_BUILD_HOST=uotan
 export BUILD_USERNAME=snnbyyds
-export BUILD_HOSTNAME=test
+export BUILD_HOSTNAME=uotan
+
 export TZ=Asia/Shanghai #put before last build command
 mka bacon
 
