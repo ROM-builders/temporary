@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b pyro -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Saitama69k/local_manifest.git -b main .repo/local_manifests
-repo sync --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
