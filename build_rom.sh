@@ -1,9 +1,9 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/ricedroidOSS/android -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/nhAsif/local_manifest.git --depth 1 -b rice .repo/local_manifests
+git clone https://github.com/nhAsif/local_manifest.git --depth 1 -b rice-sg .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom [27]
+# build rom [28]
 . build/envsetup.sh
 lunch lineage_alioth-user
 export WITH_GMS=true
