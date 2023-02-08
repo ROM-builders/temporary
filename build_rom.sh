@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/CarbonROM/android -b 
 git clone https://github.com/youssefnone/android_manifest_samsung_m10lte --depth 1 -b cr-9.0 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom..
+# build rom...
 source build/envsetup.sh
 lunch carbon_m10lte-user
 export TZ=Asia/Dhaka #put before last build command
