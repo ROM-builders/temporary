@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git
 git clone https://github.com/Sensei-Developer/local_manifest.git --depth 1 -b lineage-19.1_lavender .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build room
+# build rom
 . build/envsetup.sh
 breakfast lineage_lavender-user
 export TZ=Asia/Kolkata #put before last build command
