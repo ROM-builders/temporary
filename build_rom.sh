@@ -20,7 +20,7 @@ export BUILD_BROKEN_DUP_RULES=true
 export BUILD_BROKEN_CLANG_ASFLAGS=true
 export BUILD_BROKEN_CLANG_CFLAGS=true
 export BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE=true
-export CHERISH_VANILLA=false
+export CHERISH_VANILLA=true
 export TZ=Asia/Kolkata #put before last build command
 brunch r5x
 
