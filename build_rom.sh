@@ -4,8 +4,6 @@ git clone https://github.com/RintoKhan2003/local_manifest.git --depth 1 -b spark
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-rm -rf frameworks/opt/net/ims
-git clone https://github.com/CherishOS/android_frameworks_opt_net_ims.git --depth 1 -b tiramisu frameworks/opt/net/ims
 source build/envsetup.sh
 lunch spark_RMX2020-userdebug
 ALLOW_MISSING_DEPENDENCIES=true
