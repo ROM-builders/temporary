@@ -1,12 +1,12 @@
 
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b twelve-plus -g default,-mips,-darwin,-notdefault
-git clone https://github.com/BhashaRana/local_manifest --depth 1 -b m52xq .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/CipherOS/manifest -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/BhashaRana/tissot_manifest --depth 1 -b los13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
-lunch aosp_m52xq-userdebug
+lunch cipher_tissot-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
