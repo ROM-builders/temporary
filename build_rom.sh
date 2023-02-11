@@ -3,8 +3,9 @@ repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_man
 git clone https://github.com/CyanFinchLing/Local-Manifests.git --depth 1 -b cherish .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom 
+# build rom
 source build/envsetup.sh
+export WITH_GAPPS=false
 lunch cherish_RMX2020-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon 
