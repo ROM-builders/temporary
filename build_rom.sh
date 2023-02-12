@@ -7,8 +7,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch bootleg_ginkgo-userdebug
 export BUILD_USERNAME=Tejas
-export KBUILD_BUILD_USER=tejas
-export KBUILD_BUILD_HOST=I_Am_Charsi
+export KBUILD_BUILD_USERNAME=tejas
+export KBUILD_BUILD_HOSTNAME=I_Am_Charsi
 export BUILD_HOSTNAME=I_Am_Charsi
 export TZ=Asia/Kolkata
 mka bootleg
