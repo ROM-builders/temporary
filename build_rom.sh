@@ -1,13 +1,14 @@
-repo init --depth=1 --no-repo-verify -u https://github.com/DotOS/manifest.git -b dot12.1 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Fusion-OS/android_manifest -b twelve -g default,-mips,-darwin,-notdefault
 git clone https://github.com/mountain47/local_manifest.git --depth 1 -b a12.1 .repo/local_manifests
-repo sync -c -q --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync --current-branch --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # Initialize the environment with the envsetup.sh script:
 source build/envsetup.sh
 # lunch your device (codename)
-lunch dot_moon-userdebug
+lunch fuse_moon-userdebug
+
 # start compilation for your device
-make bacon
+make fuse-prod -j$(nproc --all)
 export TZ=Asia/Dhaka #put before last build command
 
 
