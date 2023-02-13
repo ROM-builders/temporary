@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch blaze_RMX2020-userdebug
 ALLOW_MISSING_DEPENDENCIES=true
+export WITH_GAPPS=true
 BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon 
