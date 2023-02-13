@@ -8,9 +8,10 @@ source build/envsetup.sh
 lunch fuse_moon-userdebug
 
 # start compilation for your device
-make fuse-prod -j8
-export TZ=Asia/Dhaka #put before last build command
+make fuse-prod
 export WITH_GAPPS=true
+export TZ=Asia/Dhaka #put before last build command
+
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
