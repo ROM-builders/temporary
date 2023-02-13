@@ -10,6 +10,7 @@ lunch fuse_moon-userdebug
 # start compilation for your device
 make fuse-prod -j$(nproc --all)
 export TZ=Asia/Dhaka #put before last build command
+export WITH_GAPPS=true
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
