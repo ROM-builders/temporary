@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch fuse_moon-userdebug
 
 # start compilation for your device
-make fuse-prod -j$(nproc --all)
+make fuse-prod -j8
 export TZ=Asia/Dhaka #put before last build command
 export WITH_GAPPS=true
 
