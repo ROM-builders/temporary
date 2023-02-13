@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch evolution_instantnoodle-userdebug
+lunch evolution_instantnoodle-user
 export TZ=America/Los_Angeles #put before last build command
 mka evolution
 
