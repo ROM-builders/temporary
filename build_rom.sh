@@ -6,6 +6,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch derp_rosemary-userdebug
+export BUILD_USERNAME=CodeChas3r
+export BUILD_HOSTNAME=userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export TZ=Asia/Dhaka #put before last build command
 mka derp
 
