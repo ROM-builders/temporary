@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b pyro -g default,-mips,-darwin,-notdefault
-git clone https://github.com/RintoKhan2003/local_manifest.git --depth 1 -b spark .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/RintoKhan2003/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch spark_RMX2020-userdebug
+lunch blaze_RMX2020-userdebug
 ALLOW_MISSING_DEPENDENCIES=true
 BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 export TZ=Asia/Dhaka #put before last build command
