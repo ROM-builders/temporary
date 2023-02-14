@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/GravityUI/platform_manifest.git -b 13 default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/AlphaDroid-Project/manifest -b alpha-13 default,-mips,-darwin,-notdefault
 git clone https://github.com/dangi-del/local-manifest.git --depth 1 -b main .repo/local_manifest
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch mido-Gravity-13-dangi
+lunch mido-AlphaDroid-13-dangi
 export TZ=Asia/india #put before last build command
 mka bacon
 
