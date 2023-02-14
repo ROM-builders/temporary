@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --force-remove-dirty --optimized-fetch --prune --
 # build rom
 source build/envsetup.sh
 lunch lineage_akari_kddi-defconfig
-export BUILD_USERNAME=ekkusa
+export BUILD_USERNAME=exer
 export BUILD_HOSTNAME=miyo
 export TZ=Asia/Singapore
 mka bacon -j16
