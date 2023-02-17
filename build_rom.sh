@@ -1,9 +1,11 @@
 # sync rom
-repo init -u https://github.com/PixelExperience/manifest -b twelve-plus
+repo init -u https://github.com/PixelExperience/manifest.git -b twelve-plus
 git clone https://github.com/weaponmasterjax/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+export SELINUX_IGNORE_NEVERALLOWS=true
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 source build/envsetup.sh
 lunch aosp_evergo-userdebug
 export TZ=Asia/Shanghai #put before last build command
