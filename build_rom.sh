@@ -8,7 +8,6 @@ source build/envsetup.sh
 lunch spark_beryllium-userdebug
 export BUILD_USERNAME=Akshat
 export BUILD_HOSTNAME=leopubglover
-export WITH_GAPPS=true
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
