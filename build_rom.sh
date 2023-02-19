@@ -13,7 +13,7 @@ export BUILD_USERNAME=Fr0ztyy43
 export BUILD_HOSTNAME=Fr0ztyy43 
 
 export TZ=Europe/Warsaw #put before last build command
-brunch a3lte
+mka bacon
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
