@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rommmm
 source build/envsetup.sh
-lunch a3lte_begonia-userdebug
+lunch lineage_a3lte-userdebug
 
 export KBUILD_BUILD_USER=Fr0ztyy43 
 export KBUILD_BUILD_HOST=Fr0ztyy43
