@@ -132,7 +132,7 @@ DATEJ=`echo -n "$join_date"`
 join_stamp=$(date -d "$DATEJ" +%s)
 now_stamp=$(date +%s)
 time_gap=$(expr $now_stamp - $join_stamp)
-if [[ $time_gap -gt 2592000 ]];
+if [ $time_gap -gt 2592000 ];
 then
    true;
 else
