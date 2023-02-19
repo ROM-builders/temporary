@@ -4,6 +4,7 @@ git clone https://github.com/omansh-krishn/local_manifest --depth 1 -b main .rep
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # building the rom
+#Ricedroidoss
 source build/envsetup.sh
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Chennai #put before last build command
