@@ -10,6 +10,7 @@ export BUILD_USERNAME=Tejas
 export KBUILD_BUILD_USER=tejas
 export KBUILD_BUILD_HOST=I_Am_Charsi
 export BUILD_HOSTNAME=I_Am_Charsi
+export WITH_GAPPS=true
 export TZ=Asia/Kolkata
 make xtended
 
