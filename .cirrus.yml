@@ -78,7 +78,14 @@ task:
     - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
     - only_sync=$(grep 'repo sync' $CIRRUS_WORKING_DIR/build_rom.sh)
     - bash -c "$command" || true
-    
+  tsync_script:
+    - set -e
+    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
+    - rom_name=$rom_name-$branch_name
+    - mkdir -p ~/roms/$rom_name
+    - cd ~/roms/$rom_name
+
     - set -exv
     - curl -sO https://api.cirrus-ci.com/v1/task/$CIRRUS_TASK_ID/logs/sync.log
     - a=$(grep 'Cannot remove project' sync.log -m1|| true)
