@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-AOSP/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/P-Salik/local_manifest.git --depth 1 -b pixelos .repo/local_manifests
+git clone https://github.com/hsx02/Local-Manifests.git --depth 1 -b pixelAOSP-13n .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
-lunch aosp_RMX1941-userdebug
+lunch aosp_spes-userdebug
 export TZ=Asia/Kolkata #put before last build command
 make bacon
 
