@@ -127,6 +127,18 @@ do
 done
 fi
 
+join_date=$(curl https://api.github.com/users/$AUTHOR | grep created_at | awk '{print $2}' | sed 's/"//g' | sed 's/Z//g' | sed 's/,//g' | sed 's/T/ /g' | sed 's/-/\//g')
+DATEJ=`echo -n "$join_date"`
+join_stamp=$(date -d "$DATEJ" +%s)
+now_stamp=$(date +%s)
+time_gap=$(expr $now_stamp - $join_stamp)
+if [[ $time_gap -gt 2592000 ]];
+then
+   true;
+else
+   echo "Please don't try to run build with your new account. Use your original account for doing PR"; exit 1;
+fi
+
 if [[ $CIRRUS_USER_PERMISSION == write ]]; then
 if [ -z "$CIRRUS_PR" ]; then echo fine; else
 echo You are push user. Don\'t do pr and please follow pinned message in push group.; exit 1
