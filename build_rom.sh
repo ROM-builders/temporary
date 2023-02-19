@@ -1,9 +1,8 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Project-Xtended/manifest.git -b xt -g default,-mips,-darwin,-notdefault
+repo init -u git://github.com/Project-Xtended/manifest.git -b xt -g default,-mips,-darwin,-notdefault
 git clone https://github.com/SauRavRwT/Local-Manifest.git --depth 1 -b xt .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 
-#2
 # build rom
 source build/envsetup.sh
 lunch xtended_veux-user
