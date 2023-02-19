@@ -5,7 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-export TZ=Asia/Dhaka #put before last build command
+export WITH_GAPPS=true
+export TZ=Asia/Kolkata #put before last build command
 brunch vince
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
