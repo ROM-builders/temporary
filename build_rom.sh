@@ -4,7 +4,7 @@ git clone https://github.com/baconpeedit/Local_Manifest.git --depth 1 -b xtended
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. b*/e*
+. build/env*.sh
 lunch xtended_ginkgo-userdebug
 export BUILD_USERNAME=Tejas
 export KBUILD_BUILD_USER=tejas
