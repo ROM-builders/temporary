@@ -1,13 +1,14 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ricedroidOSS/android -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Amritorock/local_manifest --depth 1 -b rice .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 13.0 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Amritorock/local_manifest --depth 1 -b los .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch lineage_r5x-userdebug
+export TARGET_DISABLE_EPPE=true
+export SELINUX_IGNORE_NEVERALLOWS=true 
 export TZ=Asia/Dhaka #put before last build command
-export WITH_GMS=false
 make bacon 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
