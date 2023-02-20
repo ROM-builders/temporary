@@ -86,8 +86,6 @@ if [[ $cd_check -gt 0 ]]; then echo Please dont use cd inside script, use local 
 or_check=$(grep "||" $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $or_check -gt 0 ]]; then echo Please dont use or operator inside script; exit 1; fi
 
-
-
 rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
 rom_name=$rom_name-$branch_name
@@ -127,8 +125,15 @@ do
 done
 fi
 
+if [ -z "$AUTHOR" ]; then true; else
+joindate=$(date -d $(curl -s https://api.github.com/users/$AUTHOR | grep created_at | cut -d '"' -f4) +%s)
+nowdate=$(date +%s)
+datediff=$(expr $nowdate - $joindate)
+if [[ $datediff -lt 2592000 ]]; then echo Please don\'t try to run build with your new account. Use your original account for doing PR.; exit 1; fi
+fi
+
 if [[ $CIRRUS_USER_PERMISSION == write ]]; then
-if [ -z "$CIRRUS_PR" ]; then echo fine; else
+if [ -z "$CIRRUS_PR" ]; then true; else
 echo You are push user. Don\'t do pr and please follow pinned message in push group.; exit 1
 fi
 fi
