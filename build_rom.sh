@@ -3,13 +3,9 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixysOS/manifest -b t
 git clone https://github.com/Mozzaru/local_manifest.git --depth 1 -b pixy-13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom 3        
+# build rom         
 source build/envsetup.sh
 lunch pixys_markw-userdebug
-export KBUILD_BUILD_USER=Van.
-export KBUILD_BUILD_HOST=Van.
-export BUILD_USERNAME=Van.
-export BUILD_HOSTNAME=Van.
 export TZ=Asia/Jakarta #put before last build command
 make pixys
 
