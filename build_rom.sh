@@ -7,6 +7,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
+export BUILD_USERNAME=omanshkrishn
+export BUILD_HOSTNAME=krishnomansh
 export TZ=Asia/Chennai #put before last build command
 lunch evolution_santoni-userdebug
 mka evolution
