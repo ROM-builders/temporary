@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch bootleg_certus-userdebug
+lunch lineage_certus-userdebug
 export TZ=asia/Dhaka #put before last build command
 export TARGET_BOOT_ANIMATION_RES=720
 export SELINUX_IGNORE_NEVERALLOWS=true
