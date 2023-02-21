@@ -3,13 +3,13 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest 
 git clone https://github.com/omansh-krishn/local_manifest --depth 1 -b evox .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build_rom
 source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
 export BUILD_USERNAME=omanshkrishn
 export BUILD_HOSTNAME=krishnomansh
-export TZ=Asia/Chennai #put before last build command
+export TZ=Asia/Kolkata #put before last build command
 lunch evolution_santoni-userdebug
 mka evolution
 
