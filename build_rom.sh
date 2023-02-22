@@ -1,6 +1,6 @@
 # sync rom
-repo init -u https://github.com/AOSPA/manifest -b topaz
-git clone https://github.com/mrxzzet/local_manifests -b lineage-kernel .repo/local_manifests
+repo init --depth=1 -u https://github.com/AOSPA/manifest -b topaz
+git clone https://github.com/mrxzzet/local_manifests --depth=1 -b lineage-kernel .repo/local_manifests
 repo sync --no-clone-bundle --current-branch --no-tags -j8
 
 # patches
