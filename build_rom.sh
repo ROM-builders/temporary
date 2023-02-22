@@ -3,18 +3,6 @@ repo init -u https://github.com/AOSPA/manifest -b topaz
 git clone https://github.com/mrxzzet/local_manifests -b lineage-kernel .repo/local_manifests
 repo sync --no-clone-bundle --current-branch --no-tags -j8
 
-# patches
-git clone https://github.com/mrxzzet/mi-thorium_patches patches
-cd patches/common/system/core
-git apply 0001-liblp-Allow-to-flash-on-bigger-block-device.patch
-cd ../../../
-cd lineage-20.x/vendor/lineage
-git apply 0001-Split-msm8937-from-UM_3_18_FAMILY-and-fix-it.patch
-cd ../../../../
-
-rm -rf vendor/qcom/opensource/data-ipa-cfg-mgr
-git clone https://github.com/mrxzzet/android_vendor_qcom_opensource_data-ipa-cfg-mgr -b arrow-13.0 vendor/qcom/opensource/data-ipa-cfg-mgr
-
 # build rom
 . build/envsetup.sh
 lunch aospa_Mi439-userdebug
