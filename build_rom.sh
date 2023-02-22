@@ -12,7 +12,6 @@ cd lineage-20.x/vendor/lineage
 git apply 0001-Split-msm8937-from-UM_3_18_FAMILY-and-fix-it.patch
 cd ../../../../
 
-cd 
 rm -rf vendor/qcom/opensource/data-ipa-cfg-mgr
 git clone https://github.com/mrxzzet/android_vendor_qcom_opensource_data-ipa-cfg-mgr -b arrow-13.0 vendor/qcom/opensource/data-ipa-cfg-mgr
 
