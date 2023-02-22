@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch spark_lancelot-userdebug
 
+export WITH_GAPPS=true
 export TZ=asia/Dhaka #put before last build command
 export TARGET_BOOT_ANIMATION_RES=1080
 export SELINUX_IGNORE_NEVERALLOWS=true
