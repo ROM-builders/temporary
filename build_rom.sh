@@ -8,7 +8,6 @@ source build/envsetup.sh
 export BUILD_USERNAME=CodeChas3r
 export BUILD_HOSTNAME=CodeChas3r
 export SELINUX_IGNORE_NEVERALLOWS=true
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export TZ=Asia/Dhaka #put before last build command
 brunch lineage_rosemary-userdebug
 
