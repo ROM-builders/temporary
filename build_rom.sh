@@ -9,6 +9,7 @@ export KBUILD_BUILD_USER=Van.
 export KBUILD_BUILD_HOST=Van.
 export BUILD_USERNAME=Van.
 export BUILD_HOSTNAME=Van.
+export WITH_GAPPS=true
 lunch pixys_markw-userdebug
 export TZ=Asia/Jakarta #put before last build command
 make pixys
