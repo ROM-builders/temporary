@@ -10,6 +10,7 @@ export KBUILD_BUILD_USER=Van.
 export KBUILD_BUILD_HOST=Van.
 export BUILD_USERNAME=Van.
 export BUILD_HOSTNAME=Van.
+export WITH_GAPPS=false
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
