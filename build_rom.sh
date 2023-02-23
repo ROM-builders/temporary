@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/omansh-krishn/manifes
 git clone https://github.com/omansh-krishn/local_manifest -b evox .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 # @omansh_krishn
-#added my telegram username, to get tagged in the ROM-builders-junk channel
+# added my telegram username, to get tagged in the ROM-builders-junk channel
 # build rom
 source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
