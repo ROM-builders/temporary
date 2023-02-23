@@ -122,7 +122,7 @@ if [[ $BRANCH == *pull/* ]]; then
 
 	for value in $logins
 	do
-		if [[ $AUTHOR == $value ]]; then echo Please check \#pr instruction in telegram group.; exit 1; fi
+		if [[ $AUTHOR == $value ]]; then echo Please check \#bad_people instruction in telegram group.; exit 1; fi
 	done
 
 	joindate=$(date -d $(curl -s https://api.github.com/users/$AUTHOR | grep created_at | cut -d '"' -f4) +%s)
