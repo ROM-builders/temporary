@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b twelve-plus -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android -b 12.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/redznn/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_m12-user
+lunch lineage_m12-user
 export TZ=America/Sao_Paulo #put before last build command
 mka bacon
 
