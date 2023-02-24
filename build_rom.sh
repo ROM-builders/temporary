@@ -4,7 +4,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 
 # Initialize the environment with the envsetup.sh script:
-source build/envsetup.sh
+. build/envsetup.sh
 # lunch your device (codename)
 lunch fuse_moon-userdebug
 
