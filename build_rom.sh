@@ -14,7 +14,7 @@ export SELINUX_IGNORE_NEVERALLOWS=true
 #export BUILD_HOSTNAME=Arch
 #export KBUILD_BUILD_USER=OmanshKrishn
 #export KBUILD_BUILD_HOST=Arch
-export TZ=Asia/Kolkata #put before last build command
+export TZ=Asia/Kolkata # put before last build command
 lunch evolution_santoni-userdebug
 mka evolution
 
