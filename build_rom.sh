@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom        
 source build/envsetup.sh
-lunch spark_markw-userdebug
+lunch spark_markw-eng
 export KBUILD_BUILD_USER=Van.
 export KBUILD_BUILD_HOST=Van.
 export BUILD_USERNAME=Van.
