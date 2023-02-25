@@ -8,6 +8,7 @@ source build/envsetup.sh
 lunch evolution_ginkgo-userdebug
 export BUILD_USERNAME=Tejas
 export BUILD_HOSTNAME=I_Am_Charsi
+export TZ=Asia/Kolkata
 mka evolution
 cat out/target/product/ginkgo/evolution_gink*.zip.json
 
