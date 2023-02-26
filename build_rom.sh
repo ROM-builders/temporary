@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch potato_a37-userdebug
 export TARGET_BOOT_ANIMATION_RES=720
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Jakarta #put before last build command
 mka a37
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
