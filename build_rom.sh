@@ -9,7 +9,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
-export SELINUX_IGNORE_NEVERALLOWS=true
+#export SELINUX_IGNORE_NEVERALLOWS=true
 #export BUILD_USERNAME=OmanshKrishn
 #export BUILD_HOSTNAME=Arch
 #export KBUILD_BUILD_USER=OmanshKrishn
