@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_akari_kddi-user
+export KERNEL_SUPPORTS_LLVM_TOOLS=true
 export BUILD_USERNAME=exer
 export BUILD_HOSTNAME=miyo
 export TZ=Asia/Singapore #put before last build command
