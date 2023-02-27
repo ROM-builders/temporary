@@ -5,11 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
   
 # build rom   
 source build/envsetup.sh
-lunch p404_markw-userdebug
-export KBUILD_BUILD_USER=Van.
-export KBUILD_BUILD_HOST=Van.
-export BUILD_USERNAME=Van.
-export BUILD_HOSTNAME=Van.
+lunch p404_markw-eng
 export WITH_GAPPS=false
 export TZ=Asia/Dhaka #put before last build command
 make bacon 
