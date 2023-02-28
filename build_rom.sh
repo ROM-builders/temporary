@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/android_manifest -b 12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Futar0/local_manifest.git --depth 1 -b awaken-12.1 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 12.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Futar0/local_manifest.git --depth 1 -b crdroid-12.1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch awaken_certus-userdebug
+lunch lineage_certus-userdebug
 export TZ=asia/Dhaka #put before last build command
 export TARGET_BOOT_ANIMATION_RES=720
 export SELINUX_IGNORE_NEVERALLOWS=true
