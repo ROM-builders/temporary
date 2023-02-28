@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/ricedroidOSS/android 
 git clone https://github.com/Miiyo/local-manifest.git --depth 1 -b thirteen .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build roms
 source build/envsetup.sh
 export KERNEL_SUPPORTS_LLVM_TOOLS=true
 export BUILD_USERNAME=exer
