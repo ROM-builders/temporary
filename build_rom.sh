@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/ricedroidOSS/android -b thirteen -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Fr0ztyy43/local_manifests.git --depth 1 -b blaze .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rommmmbbb
 source build/envsetup.sh
-lunch blaze_begonia-userdebug
+lunch lineage_begonia-userdebug
 
 export KBUILD_BUILD_USER=Fr0ztyy43 
 export KBUILD_BUILD_HOST=Fr0ztyy43
