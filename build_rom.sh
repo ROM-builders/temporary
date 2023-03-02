@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/omansh-krishn/local_manifest -b evox-test .repo/local_manifests
+git clone https://github.com/omansh-krishn/local_manifest -b evox .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # @omansh_krishn
 
-# b uild rom
+# build rom
 
 source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
