@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch lineage_RMX1941-userdebug
+export BUILD_USERNAME=P-Salik
 export TZ=Asia/Kolkata #put before last build command
 m bacon
 
