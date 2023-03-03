@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom        
 source build/envsetup.sh
-lunch spark_markw-eng
+lunch spark_markw-userdebug
 export WITH_GAPPS=false
 export TZ=Asia/Jakarta #put before last build command
 mka bacon           
