@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 #   @omansh_krishn
 #updated local manifest
 # build rom
-#retrying again, weird sync error
+
 source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
