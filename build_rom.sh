@@ -10,7 +10,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
-export PATH=$PATH:$rom_name/prebuilts/clang/host/linux-x86/clang-r450784d/bin
+#export PATH=$PATH:$rom_name/prebuilts/clang/host/linux-x86/clang-r450784d/bin
 #export SELINUX_IGNORE_NEVERALLOWS=true
 #export BUILD_USERNAME=OmanshKrishn
 #export BUILD_HOSTNAME=Arch
