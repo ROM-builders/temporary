@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/BlissRoms/platform_manifest.git -b typhoon -g default,-mips,-darwin,-notdefault
-git clonehttps://github.com/DESTROYER3264/local_manifest.git --depth 1 -b bliss .repo/local_manifests
+git clone https://github.com/DESTROYER3264/local_manifest.git --depth 1 -b bliss .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
