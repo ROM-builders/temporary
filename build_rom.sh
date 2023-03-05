@@ -4,7 +4,7 @@ git clone https://github.com/mitmac29/local_manifest.git --depth 1 -b main .repo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch carbon_lavender-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make carbon
