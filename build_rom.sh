@@ -2,7 +2,7 @@
 repo init --no-repo-verify -u https://github.com/PixelExperience/manifest.git -b thirteen-plus -g default,-mips,-darwin,-notdefault
 git clone https://github.com/omansh-krishn/local_manifest.git -b pe .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-#   @omansh_krishn
+# @omansh_krishn
 # updated local manifest
 # build rom
 
