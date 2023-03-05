@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # @omansh_krishn
 
-# build  rom
+# build rom
 
 source build/envsetup.sh
 export ALLOW_MISSING_DEPENDENCIES=true
