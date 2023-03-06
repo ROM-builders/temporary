@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build romfgaasd
 source build/envsetup.sh
-lunch lineage_a3lte-userdebug
+lunch lineage_a3ulte-userdebug
 export KBUILD_BUILD_USER=Fr0ztyy43 
 export KBUILD_BUILD_HOST=Fr0ztyy43
 export BUILD_USERNAME=Fr0ztyy43 
