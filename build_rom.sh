@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manif
 git clone https://github.com/omansh-krishn/local_manifest.git -b pe .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 # @omansh_krishn
-# added clang to local manifest
+# added to remove hardware_custom_compat instead of android_hardware_lineage_compat
 # build rom
 
 source build/envsetup.sh
