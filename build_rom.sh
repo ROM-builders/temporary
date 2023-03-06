@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest 
 git clone https://github.com/nhAsif/local_manifest.git --depth 1 -b evox .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom[17]
+# build rom[18]
 source build/envsetup.sh
 lunch evolution_alioth-user
 export TZ=Asia/Dhaka
