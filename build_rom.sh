@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch evolution_everpal-eng
+lunch evolution_everpal-userdebug
 export TZ=Asia/Shanghai #put before last build command
 export WITH_GAPPS=true
 mka evolution
