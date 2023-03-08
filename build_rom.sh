@@ -1,14 +1,16 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/BootleggersROM/manifest.git -b tirimbino -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Maxx12211/Local_manifest.git --depth 1 -b BTLG .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.0 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Maxx12211/Local_manifest.git --depth 1 -b arrow .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch bootleg_rova-userdebug
-export WITH_GAPPS := false
+lunch arrow_rova-userdebug
+export ARROW_GAPPS=false
 export ALLOW_MISSING_DEPENDENCIES=true
-export SELINUX_IGNORE_NEVERALLOWS=true 
+export SELINUX_IGNORE_NEVERALLOWS=true
+export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
+export BUILD_BROKEN_DUP_RULES=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
