@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 export TZ=Asia/Dhaka #put before last build command
-export WITH_GMS := true
+export WITH_GAPPS := true
 lunch xtended_everpal-userdebug
 make xtended
 
