@@ -9,7 +9,7 @@ lunch lineage_A001D-userdebug
 export TZ=America/Sao_Paulo
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
-OWS=true
+export OWS=true
 mka bacon
 
 
