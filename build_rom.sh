@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/ricedroidOSS/android 
 git clone https://github.com/SKetU-l/local_manifest.git --depth 1 -b rice-r2p .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom #9
+# build rom #10
 source build/envsetup.sh
 export TZ=Asia/Kolkata #put before last build command
 brunch RMX1801
