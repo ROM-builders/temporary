@@ -8,6 +8,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch evolution_ginkgo-userdebug
 export BUILD_USERNAME=Tejas
 export BUILD_HOSTNAME=I_Am_Charsi
+export KBUILD_BUILD_USER=Tejas
+export KBUILD_BUILD_HOST=I_Am_Charsi
 export TZ=Asia/Kolkata
 mka evolution
 cat o*/t*/p*/ginkgo/*.zip.json
