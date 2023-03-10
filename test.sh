@@ -4,7 +4,6 @@ set -e
 init_check=$(grep 'repo init' $CIRRUS_WORKING_DIR/build_rom.sh | grep 'depth=1')
 if [[ $init_check != *default,-mips,-darwin,-notdefault* ]]; then echo Please use --depth=1 and -g default,-mips,-darwin,-notdefault tags in repo init line.; exit 1; fi
 
-
 clone_check=$(grep 'git clone' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $clone_check -gt 1 ]]; then echo Please use local manifest to clone trees and other repositories, we dont allow git clone to clone trees.; exit 1; fi
 
@@ -86,8 +85,6 @@ if [[ $cd_check -gt 0 ]]; then echo Please dont use cd inside script, use local 
 or_check=$(grep "||" $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $or_check -gt 0 ]]; then echo Please dont use or operator inside script; exit 1; fi
 
-
-
 rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
 rom_name=$rom_name-$branch_name
@@ -101,36 +98,43 @@ grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_spro
 grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
 
 if [[ $BRANCH != *pull/* ]]; then 
-if [[ $BRANCH != $device-$rom_name-* ]]; then echo Please use proper branch naming described in push group.; exit 1; fi; 
-if [[ $CIRRUS_COMMIT_MESSAGE == "Update build_rom.sh" ]]; then echo Please use proper commit message.; exit 1; fi; 
+	if [[ $BRANCH != $device-$rom_name-* ]]; then echo Please use proper branch naming described in push group.; exit 1; fi; 
+	if [[ $CIRRUS_COMMIT_MESSAGE == "Update build_rom.sh" ]]; then echo Please use proper commit message.; exit 1; fi; 
 fi
 
 if [[ $device == 'copy' ]]; then echo "Please use lunch or brunch command with device codename after . build/envsetup.sh" ; exit 1; fi
 if [[ $device == 'mi439' ]]; then echo "Please use device codename Mi439 also create your dt with this device code name." ; exit 1; fi
 
 if [[ $BRANCH == *pull/* ]]; then
+	if [[ $CIRRUS_COMMIT_MESSAGE != $device-$rom_name-* ]]; then echo Please use proper PR label described in telegram group.; exit 1; fi
+	lunch_check=$(grep "unch" $CIRRUS_WORKING_DIR/build_rom.sh | grep -v 'rclone' | wc -l)
+	if [[ $rom_name != 'Corvus-R-12-test' ]]; then
+		if [[ $lunch_check -gt 1 ]]; then echo Please build for one device at a time.; exit 1; fi
+	fi
+	cd /tmp/cirrus-ci-build
+	PR_NUM=$(echo $BRANCH|awk -F '/' '{print $2}')
+	AUTHOR=$(gh pr view $PR_NUM|grep author| awk '{print $2}')
 
-if [[ $CIRRUS_COMMIT_MESSAGE != $device-$rom_name-* ]]; then echo Please use proper PR label described in telegram group.; exit 1; fi
+	for id in 66806243 100027207 77049889 37245252 87101173 91236805 56505303 77262770 60956846 1133897 92011891 80823029 58514579 102499518 73420351 69832543
+	do
+		logins+=" $(gh api -H "Accept: application/vnd.github+json" /user/$id -q '.login')"
+	done
 
-lunch_check=$(grep "unch" $CIRRUS_WORKING_DIR/build_rom.sh | grep -v 'rclone' | wc -l)
-if [[ $rom_name != 'Corvus-R-12-test' ]]; then
-if [[ $lunch_check -gt 1 ]]; then echo Please build for one device at a time.; exit 1; fi
-fi
+	for value in $logins
+	do
+		if [[ $AUTHOR == $value ]]; then echo Please check \#bad_people instruction in telegram group.; exit 1; fi
+	done
 
-cd /tmp/cirrus-ci-build
-PR_NUM=$(echo $BRANCH|awk -F '/' '{print $2}')
-AUTHOR=$(gh pr view $PR_NUM|grep author| awk '{print $2}')
-for value in vicenteicc2008 RintoKhan2003 CyanFinchLing random2907 RioChanY ajitlenka30 abhishekhembrom08 basic-general ZunayedDihan Badroel07 Ravithakral SumonSN SevralT yograjsingh-cmd nit-in Sanjeev stunner ini23 CyberTechWorld horoid ishakumari772 atharv2951 Lite120 anant-goel 01soni247 fakeriz TartagliaX Krtonia
-do
-    if [[ $AUTHOR == $value ]]; then
-    echo Please check \#pr instruction in telegram group.; exit 1; fi
-done
+	joindate=$(date -d $(curl -s https://api.github.com/users/$AUTHOR | grep created_at | cut -d '"' -f4) +%s)
+	nowdate=$(date +%s)
+	datediff=$(expr $nowdate - $joindate)
+	if [[ $datediff -lt 2592000 ]]; then echo Please don\'t try to run build with your new account. Use your original account for doing PR.; exit 1; fi
 fi
 
 if [[ $CIRRUS_USER_PERMISSION == write ]]; then
-if [ -z "$CIRRUS_PR" ]; then echo fine; else
-echo You are push user. Don\'t do pr and please follow pinned message in push group.; exit 1
-fi
+	if [ -z "$CIRRUS_PR" ]; then true; else
+		echo You are push user. Don\'t do pr and please follow pinned message in push group.; exit 1
+	fi
 fi
 
 echo Test passed
