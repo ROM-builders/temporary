@@ -4,7 +4,7 @@ git clone https://github.com/CodeChas3r1/local_manifest.git --depth 1 -b cr13 .r
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 export BUILD_USERNAME=CodeChas3r
 export BUILD_HOSTNAME=CodeChas3r
 export TZ=Asia/Dhaka #put before last build command
