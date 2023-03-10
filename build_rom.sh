@@ -5,9 +5,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-WITH_GAPPS := true
-export BUILD_CORE_GAPPS := true
-export BUILD_CORE_GAPPS_EXTRA := true
+WITH_GAPPS=true
+export BUILD_CORE_GAPPS=true
+export BUILD_CORE_GAPPS_EXTRA=true
 lunch banana_alioth-userdebug
 export TZ=Asia/Dhaka #put before last build command
 m banana
