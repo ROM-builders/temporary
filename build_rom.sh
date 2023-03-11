@@ -3,7 +3,8 @@ repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git
 git clone https://github.com/A51-Development/local_manifests --depth 1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+git --git-dir prebuilts/clang/host/linux-x86/ reset --hard
+# build r
 source build/envsetup.sh
 lunch lineage_a51-user
 export TZ=Asia/Seoul #put before last build command
