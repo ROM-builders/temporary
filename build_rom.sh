@@ -1,5 +1,5 @@
 #  sync rom
-repo init --depth=1 -u https://github.com/AOSPA/manifest -b topaz
+repo init --depth=1 -u https://github.com/AOSPA/manifest -b topaz -g default,-mips,-darwin,-notdefault
 git clone https://github.com/9QS/local_manifest-whyred.git --depth 1 -b main .repo/local_manifests
 repo sync -j(nproc --all)
 
