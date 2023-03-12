@@ -3,7 +3,7 @@ repo init --depth=1 -u https://github.com/AOSPA/manifest -b topaz -g default,-mi
 git clone https://github.com/9QS/local_manifest-whyred.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom AOSPA topaz
+# build rom AOSPA topaz  
 source build/envsetup.sh
 lunch aospa_whyred-eng
 export BUILD_USERNAME=nobody
