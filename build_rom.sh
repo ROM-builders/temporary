@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manif
 git clone https://github.com/mozzaru/local_manifest.git --depth 1 -b arrow-13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom 1
 source build/envsetup.sh
 lunch arrow_markw-userdebug
 export ARROW_GAPPS=false
