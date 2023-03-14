@@ -4,7 +4,6 @@ git clone https://github.com/omansh-krishn/local_manifest.git -b banana .repo/lo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # @omansh_krishn
-
 # build rom
 
 source build/envsetup.sh
