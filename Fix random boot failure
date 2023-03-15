@@ -5,6 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
+
 croot
 lunch aosp_fajita-user
 export KBUILD_BUILD_USER=snnbyyds
