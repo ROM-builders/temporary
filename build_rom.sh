@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/PrathamWasTaken/local_manifests.git --depth 1 -b blaze-13.0 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/CalyxOS/platform_manifest.git -b android13 -g default,-mips,-darwin,-notdefault
+git clone git@github.com:pythonpy1997/local_manifests.git --depth 1 -b Calyx-13.0 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch blaze_RM6785-user
+lunch calyx_RM6785-user
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
