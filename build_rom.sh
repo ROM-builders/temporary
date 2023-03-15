@@ -4,6 +4,7 @@ git clone https://github.com/omansh-krishn/local_manifest --depth 1 -b ricedroid
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+export ALLOW_MISSING_DEPENDENCIES=true
 source build/envsetup.sh
 export TZ=Asia/Kolkata #put before last build command
 brunch santoni
