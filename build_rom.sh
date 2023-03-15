@@ -5,6 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
+lunch bliss_RMX1941-userdebug
 export TZ=Asia/Kolkata #put before last build command
 blissify -v RMX1941
 
