@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/BlissRoms/platform_ma
 git clone https://github.com/IdkAnythin07/local_manifest --depth 1 -b bliss .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rum
 source build/envsetup.sh
 lunch bliss_RMX1941-userdebug
 export TZ=Asia/Kolkata #put before last build command
