@@ -11,7 +11,7 @@ export BUILD_USERNAME=fisuri
 export BUILD_HOSTNAME=fedora
 export KBUILD_BUILD_USER=fisuri
 export KBUILD_BUILD_HOST=fedora
-export TZ=Europe/Moscow #put before last build command
+export TZ=Asia/Dhaka #put before last build command
 brunch vayu
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
