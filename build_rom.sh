@@ -1,4 +1,4 @@
-# sync rom
+# sync rum
 repo init --depth=1 --no-repo-verify -u https://github.com/BlissRoms/platform_manifest -b typhoon -g default,-mips,-darwin,-notdefault
 git clone https://github.com/IdkAnythin07/local_manifest --depth 1 -b bliss .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
