@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_RM6785-user
-export PREBUILT_KERNEL=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
