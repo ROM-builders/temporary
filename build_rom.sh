@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rum
 source build/envsetup.sh
 lunch bliss_RMX1941-userdebug
-export TZ=Asia/Kolkata #put before last build command
+export TZ=Asia/Kolkata #put b4 last build command
 blissify -v RMX1941
 
 # upload rum (if you don't need to upload multiple files, then you don't need to edit next line)
