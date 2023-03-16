@@ -2,7 +2,7 @@
 repo init --depth=1 --no-repo-verify -u https://github.com/ricedroidOSS/android -b thirteen -g default,-mips,-darwin,-notdefault
 git clone https://github.com/omansh-krishn/local_manifest --depth 1 -b ricedroid .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-#rebuild
+#changed hardware custom compat branch 
 # build rom
 export ALLOW_MISSING_DEPENDENCIES=true
 source build/envsetup.sh
