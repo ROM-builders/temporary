@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b thirteen -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b thirteen-plus -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Killerpac/local_manifests.git --depth 1 -b aosp-13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
