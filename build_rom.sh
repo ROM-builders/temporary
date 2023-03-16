@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/android_manifest -b triton -g default,-mips,-darwin,-notdefault
-git clone https://github.com/abhishekfire08/manifest_local.git --depth 1 -b blazeGinkgo .repo/local_manifests
+git clone https://github.com/ShapeShiftOS/android_manifest.git --depth 1 -b android_13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch awaken_ginkgo-userdebug
+lunch ssos_ginkgo-userdebug
 export BUILD_USERNAME=xyz_abhishek
 export BUILD_HOSTNAME=xyz_abhishek
 #export ALLOW_MISSING_DEPENDENCIES=true
