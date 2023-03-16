@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch lineage_X01BD-userdebug
 
 export ALLOW_MISSING_DEPENDENCIES=true
-
+ 
 export TZ=Asia/Dhaka #put before last build command
 make bacon
   
