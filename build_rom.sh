@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch awaken_r5x-userdebug
+lunch awaken_bearmonets-userdebug
 export TZ=Asia/Kolkata ####
 make bacon
 
