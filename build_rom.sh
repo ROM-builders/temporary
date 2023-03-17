@@ -7,8 +7,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 
 export ALLOW_MISSING_DEPENDENCIES=true
-source build/envsetup.sh
-lunch blaze_santoni-userdebug
+source . build/envsetup.sh
+#lunch blaze_santoni-userdebug
 export TZ=Asia/Kolkata #put before last build command
 brunch santoni
 
