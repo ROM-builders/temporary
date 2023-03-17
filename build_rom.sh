@@ -4,6 +4,7 @@ git clone https://github.com/omansh-krishn/local_manifest --depth 1 -b blaze13 .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+
 export ALLOW_MISSING_DEPENDENCIES=true
 source build/envsetup.sh
 lunch blaze_santoni-userdebug
