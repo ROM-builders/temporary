@@ -3,14 +3,13 @@ repo init --depth=1 --no-repo-verify -u https://github.com/bananadroid/android_m
 git clone https://github.com/hklknz/Local-Manifests.git --depth 1 -b tissot-bananadroid-vanilla .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build roms
 source build/envsetup.sh
 lunch banana_tissot-userdebug
 export TZ=Asia/Tokyo #put before last build command
 m banana
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_PREBUILT_ELF_FILES=true
-export
 export KBUILD_BUILD_USER=hklknz
 export KBUILD_BUILD_HOST=Roselia-CI
 export BUILD_USERNAME=hklknz
