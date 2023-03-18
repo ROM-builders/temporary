@@ -9,7 +9,7 @@ export KBUILD_BUILD_USER=xtra_sharif
 export KBUILD_BUILD_HOST=xtra_sharif
 export BUILD_USERNAME=xtra_sharif
 export BUILD_HOSTNAME=xtra_sharif
-export TZ=Asia/Delhi #put before last build command
+export TZ=Asia/Delhi ##put before last build command
 brunch lavender
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
