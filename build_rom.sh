@@ -4,8 +4,8 @@ git clone https://github.com/Miiyo/local-manifest.git --depth 1 -b tirimbino .re
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build roms
-lunch bootleg_akari-userdebug
 source build/envsetup.sh
+lunch bootleg_akari-userdebug
 export WITH_GAPPS=true
 export BUILD_USERNAME=exer
 export BUILD_HOSTNAME=miyo
