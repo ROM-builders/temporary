@@ -1,4 +1,4 @@
-# sync rom
+# sync rom#
 repo init -u https://github.com/Havoc-OS/android_manifest.git -b twelve
 git clone https://github.com/blueseaxy/local_manifest.git .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
