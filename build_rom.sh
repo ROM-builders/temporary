@@ -4,7 +4,14 @@ git clone https://github.com/omansh-krishn/local_manifest --depth 1 -b blaze13 .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-
+#export LD_LIBRARY_PATH := $(PWD)prebuilts/clang/host/linux-x86/clang-r450784d/lib:$LD_LIBRARY_PATH
+#export CC := $(PWD)prebuilts/clang/host/linux-x86/clang-r450784d:$CC
+#export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+#export SELINUX_IGNORE_NEVERALLOWS=true
+#export BUILD_USERNAME=OmanshKrishn
+#export BUILD_HOSTNAME=Arch
+#export KBUILD_BUILD_USER=OmanshKrishn
+#export KBUILD_BUILD_HOST=Arch
 export ALLOW_MISSING_DEPENDENCIES=true
 source build/envsetup.sh
 lunch blaze_santoni-userdebug
