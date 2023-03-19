@@ -6,6 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_angelica-userdebug
+export BUILD_USERNAME=Krxyzn
+export BUILD_HOSTNAME=Zynn
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
