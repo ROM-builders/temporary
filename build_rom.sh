@@ -1,15 +1,15 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/bananadroid/android_manifest.git -b 13 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Mevadadarshan1997/local_manifest.git --depth 1 -b banana .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/BlissRoms/platform_manifest.git -b typhoon -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Mevadadarshan1997/local_manifest.git --depth 1 -b bliss .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch banana_X01BD-userdebug
+lunch bliss_X01BD-userdebug
 
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Dhaka #put before last build command
-m banana
+blissify X01BD
 
  
  
