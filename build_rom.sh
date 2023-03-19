@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom #9
 source build/envsetup.sh
-lunch lineage_RMX1801-user
+lunch lineage_RMX1801-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
