@@ -6,6 +6,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch syberia_X01AD-userdebug
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+export ALLOW_MISSING_DEPEDENCIES=true
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Jakarta #put before last build command
 mka syberia
 
