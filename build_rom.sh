@@ -1,11 +1,13 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b pyro -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Saitama69k/local_manifest.git -b spark .repo/local_manifests
+git clone https://github.com/Legendleo90/local_manifest.git -b spark .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch spark_beryllium-userdebug
+export BUILD_USERNAME=Akshat
+export BUILD_HOSTNAME=leopubglover
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
