@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch lineage_markw-userdebug
+lunch lineage_markw-eng
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
