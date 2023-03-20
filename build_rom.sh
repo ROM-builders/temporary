@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git
 git clone https://github.com/SKetU-l/local_manifest.git --depth 1 -b rice-r2p .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom #10
+# build rom #11
 source build/envsetup.sh
 lunch lineage_RMX1801-userdebug
 export TZ=Asia/Kolkata #put before last build command
