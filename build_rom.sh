@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify --git-lfs -u https://github.com/crdroidandr
 git clone https://github.com/trying122/local_manifest --depth 1 -b face .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
   
-# build rom
+# build rom 
 source build/envsetup.sh
 lunch lineage_beryllium-userdebug
 export BUILD_USERNAME=trying122
