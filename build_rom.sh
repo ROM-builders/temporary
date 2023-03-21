@@ -4,11 +4,10 @@ git clone https://github.com/Miiyo/local-manifest.git --depth 1 -b aospa-topaz .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build roms
+source build/envsetup.sh
 lunch aospa_akari-userdebug
-export BUILD_USERNAME=nobody
-export BUILD_HOSTNAME=android-build
-export KBUILD_BUILD_USER=nobody
-export KBUILD_BUILD_HOST=android-build
+export BUILD_USERNAME=exer
+export BUILD_HOSTNAME=miyo
 export TZ=Asia/Singapore
 ./rom-build.sh akari -c -t userdebug -v beta
 
