@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/P-404/android_manifest -b tokui -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Maxx12211/Local_manifest.git --depth 1 -b p404 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/BlissRoms/platform_manifest.git -b typhoon -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Maxx12211/Local_manifest.git --depth 1 -b bliss .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch p404_rova-userdebug
+lunch bliss_rova-userdebug
 export WITH_GAPPS=false
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
