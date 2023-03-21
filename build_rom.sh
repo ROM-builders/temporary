@@ -4,7 +4,7 @@ git clone https://github.com/Amritorock/local_manifest --depth 1 -b syb .repo/lo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom 
-source build/envsetup.sh 
+source build/envsetup.sh
 lunch syberia_r5x-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
