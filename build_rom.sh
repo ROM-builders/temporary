@@ -1,6 +1,6 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-18.1 --git-lfs -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Fr0ztyy43/local_manifests.git --depth 1 -b cr11 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Fr0ztyy43/local_manifests.git --depth 1 -b los20 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rommhhd
@@ -8,9 +8,9 @@ source build/envsetup.sh
 lunch lineage_begonia-userdebug
 
 export KBUILD_BUILD_USER=Fr0ztyy43 
-export KBUILD_BUILD_HOST=Fr0ztyy43
+export KBUILD_BUILD_HOST=Noob
 export BUILD_USERNAME=Fr0ztyy43 
-export BUILD_HOSTNAME=Fr0ztyy43 
+export BUILD_HOSTNAME=Noob
 
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
