@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ActualRealityOS/manifest -b thirteen -g default,-mips,-darwin,-notdefault
+repo init -u https://github.com/PixelExtended/manifest -b trece
 git clone https://github.com/Aayushk24/Manifest --depth 1 -b akmain .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
