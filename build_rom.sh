@@ -1,5 +1,5 @@
 # sync rom
-repo init -u https://github.com/PixelExtended/manifest -b trece
+repo init -u https://github.com/PixelExtended/manifest -b trece --depth=1 --no-repo-verify
 git clone https://github.com/Aayushk24/Manifest --depth 1 -b akmain .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
