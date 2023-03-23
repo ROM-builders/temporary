@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/AICP/platform_manifest.git -b s12.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/mitmac29/local_anifest.git --depth 1 -b yaap .repo/local_manifests
+git clone https://github.com/mitmac29/local_manifest.git --depth 1 -b yaap .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
