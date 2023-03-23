@@ -4,8 +4,7 @@ git clone https://github.com/omansh-krishn/local_manifest --depth 1 -b blaze13-p
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-#export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
-#export SELINUX_IGNORE_NEVERALLOWS=true
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export BUILD_USERNAME=OmanshKrishn
 export BUILD_HOSTNAME=Arch
 export KBUILD_BUILD_USER=OmanshKrishn
