@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Project-Xtended/manif
 git clone https://github.com/imranp0pz/local_manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-#build rom
+##build rom
 source build/envsetup.sh
 lunch xtended_sweet-userdebug
 export TZ=Asia/Dhaka #put before last build command
