@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Project-Xtended/manifest.git -b xt -g default,-mips,-darwin,-notdefault
-git clone https://github.com/pythonpy1997/local_manifests.git --depth 1 -b thirteen-xtm .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/PixysOS/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/pythonpy1997/local_manifests.git --depth 1 -b thirteen-pixys .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch xtended_RM6785-user
+lunch pixys_RM6785-user
 export TZ=Asia/Kolkata #put before last build command
 m bacon
 
