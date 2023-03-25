@@ -9,5 +9,5 @@ lunch awaken_RMX1941-userdebug
 export TZ=Asia/Kolkata #put b4 last build command
 mka bacon
 
-# upload rum (if you do not need to upload multiple files, then you do not need to edit next line)
+# upload rum (if you don't need to upload multiple files, then you do not need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
