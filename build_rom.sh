@@ -6,10 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom pixys
 source build/envsetup.sh
 lunch pixys_fog-userdebug
-export KBUILD_BUILD_USER=Asyanx
-export KBUILD_BUILD_HOST=sle
-export BUILD_USERNAME=Asyanx
-export BUILD_HOSTNAME=sle
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta #put before last build command
 make pixys
