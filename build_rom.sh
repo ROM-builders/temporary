@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth=1 -u https://github.com/PixelPlusUI/manifest -b tiramisu -g default,-mips,-darwin,-notdefault
 git clone https://github.com/d4fun/local_manifests.git --depth 1 -b tiramisu .repo/local_manifests
-repo sync -c -j8 --force-sync --no-clone-bundle --no-tags
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
