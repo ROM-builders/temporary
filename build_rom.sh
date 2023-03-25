@@ -15,3 +15,4 @@ mka bacon
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
 #P.S:I know u guys are working hard to support the servers and i wont cause troubles anymore TwT
 #Building spark cuz evox is WIP
+
