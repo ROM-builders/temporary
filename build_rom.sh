@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build
 source build/envsetup.sh
-lunch lineage_garden-userdebug
+lunch lineage_fog-userdebug
 export KBUILD_BUILD_USER=alternoegraha
 export KBUILD_BUILD_HOST=cirrus
 export BUILD_USERNAME=alternoegraha
