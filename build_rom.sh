@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 #export CUSTOM_BUILD_TYPE=OFFICIAL
 croot
-lunch aosp_fajita-userdebug
+lunch aosp_enchilada-userdebug
 export KBUILD_BUILD_USER=snnbyyds
 export KBUILD_BUILD_HOST=uotan
 export BUILD_USERNAME=snnbyyds
