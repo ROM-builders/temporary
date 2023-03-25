@@ -1,4 +1,4 @@
-# sync rom
+# sync rom crdroid
 repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Asyanx/local_manifest.git --depth 1 -b Los-20 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
