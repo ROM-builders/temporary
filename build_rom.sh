@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_man
 git clone https://github.com/IdkAnythin07/local_manifest --depth 1 -b cherish .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rum
 source build/envsetup.sh
 lunch cherish_RMX1941-userdebug
 export TZ=Asia/Kolkata #put before last build command
