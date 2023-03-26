@@ -5,7 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rum
 source build/envsetup.sh
-lunch cherish_RMX1941-userdebug
 export TZ=Asia/Kolkata #put b4 last build command
 brunch RMX1941
 
