@@ -1,15 +1,14 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Prettysir/local_manifest.git -b evo .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/ricedroidOSS/android -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Prettysir/local_manifest --depth 1 -b rice .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch evolution_x00qd-user
-export BUILD_USERNAME=fu
-export BUILD_HOSTNAME=cold
+export BUILD_USER=Prettysir
+export BUILD_USERNAME=Prettysir
 export TZ=Asia/Kolkata #put before last build command
-mka evolution
+brunch X00QD
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
