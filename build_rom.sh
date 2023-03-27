@@ -6,8 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch octavi_vince-user
-export USE_GAPPS=true
-export WITH_GAPPS=true
+#export USE_GAPPS=true
+#export WITH_GAPPS=true
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
