@@ -7,8 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 export BUILD_USER=IdkAnythin07
 export BUILD_USERNAME=IdkAnythin07
-export TARGET_ENABLE_BLUR=true
-export WITH_GMS=true
 export TZ=Asia/Kolkata #put before last build command
 brunch RMX1941
 
