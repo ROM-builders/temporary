@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rum
 source build/envsetup.sh
 export CHERISH_VANILLA=true
+export BUILD_USER=IdkAnythin07
 export BUILD_USERNAME=IdkAnythin07
 export TZ=Asia/Kolkata #put b4 last build command
 brunch RMX1941
