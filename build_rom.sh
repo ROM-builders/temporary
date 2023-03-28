@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch evolution_RMX1941-userdebug
+export USERNAME=IdkAnythin07
 export TZ=Asia/Kolkata #put before last build command
 mka evolution
 
