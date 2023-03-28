@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
 git clone  https://github.com/MiDoNaSR545/mainfest_personal --depth 1 -b master .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
