@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-20.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/rianza/local_manifet.git --depth 1 -b main .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest -b tiramisu -g default,-mips,-darwin,-notdefault
+git clone https://github.com/rianza/Local_Manifest.git --depth 1 -b cherishOS .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
-lunch lineage-markw-user
+. build/envsetup.sh
+lunch cherish_markw-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
