@@ -5,8 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch octavi_RM6785-userdebug
-export PREBUILT_KERNEL=true
+lunch octavi_RM6785-user
 export TZ=Asia/Kolkata #put before last build command
 brunch RM6785
 
