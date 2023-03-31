@@ -5,7 +5,6 @@ repo init --depth=1 -u https://github.com/crdroidandroid/android.git -b 11.0 --n
 git clone https://github.com/SurvivalHorror/manifest_cheryl_crdroid_tmp.git --depth 1 -b master .repo/local_manifests
 repo sync --force-sync --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune -j$(nproc --all)
 
-
 # build rom
 source build/envsetup.sh
 # lunch derp_vayu-user
