@@ -4,7 +4,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/androi
 # git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .repo/local_manifests
 git clone https://github.com/SurvivalHorror/local_manifest.git --depth 1 -b main .repo/local_manifests
 # repo sync --force-sync --current-branch --no-tags --no-clone-bundle --optimized-fetch --prune -j$(nproc --all)
-repo sync -c --no-clone-bundle --no-tags  --optimized-fetch --force-sync --prune -j$(nproc --all)
+repo sync -c --no-clone-bundle --no-tags  --optimized-fetch --force-sync --prune -j8
 
 # build rom
 source build/envsetup.sh
