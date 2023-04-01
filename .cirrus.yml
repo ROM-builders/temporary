@@ -41,9 +41,8 @@ task:
   test_script:
     - set -e
     - curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/test.sh | bash
-
 task:
-  name: Build
+  name: Build3
   skip: $CIRRUS_BRANCH == 'main'
   only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
   depends_on:
@@ -51,7 +50,7 @@ task:
   timeout_in: 4h
   persistent_worker:
     labels:
-      name: AX61-1
+      name: AX61-3
     isolation:
       container:
         image: apon77/aosp:cirrus
@@ -72,6 +71,8 @@ task:
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
     - rom_name=$rom_name-$branch_name
+    - ax613_roms=" crdroidandroid-13.0 Octavi-Staging-thirteen "
+    - if [[ $ax613_roms != *" $rom_name "* ]]; then exit 0; fi
     - mkdir -p ~/roms/$rom_name
     - cd ~/roms/$rom_name
     - rm -rf .repo/local_manifests
@@ -83,6 +84,8 @@ task:
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
     - rom_name=$rom_name-$branch_name
+    - ax613_roms=" crdroidandroid-13.0 Octavi-Staging-thirteen "
+    - if [[ $ax613_roms != *" $rom_name "* ]]; then exit 0; fi
     - mkdir -p ~/roms/$rom_name
     - cd ~/roms/$rom_name
 
@@ -152,6 +155,8 @@ task:
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
     - rom_name=$rom_name-$branch_name
+    - ax613_roms=" crdroidandroid-13.0 Octavi-Staging-thirteen "
+    - if [[ $ax613_roms != *" $rom_name "* ]]; then exit 0; fi
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
     - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
@@ -172,6 +177,8 @@ task:
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
     - rom_name=$rom_name-$branch_name
+    - ax613_roms=" crdroidandroid-13.0 Octavi-Staging-thirteen "
+    - if [[ $ax613_roms != *" $rom_name "* ]]; then exit 0; fi
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
     - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
@@ -185,6 +192,8 @@ task:
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
     - rom_name=$rom_name-$branch_name
+    - ax613_roms=" crdroidandroid-13.0 Octavi-Staging-thirteen "
+    - if [[ $ax613_roms != *" $rom_name "* ]]; then exit 0; fi
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
     - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
@@ -208,6 +217,194 @@ task:
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
     - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
     - rom_name=$rom_name-$branch_name
+    - ax613_roms=" crdroidandroid-13.0 Octavi-Staging-thirteen "
+    - if [[ $ax613_roms != *" $rom_name "* ]]; then exit 0; fi
+    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
+    - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
+    - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
+    - grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
+    - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
+    - rm -rf ~/roms/$rom_name/out/target/product/$device
+
+
+task:
+  name: Build
+  skip: $CIRRUS_BRANCH == 'main'
+  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
+  depends_on:
+    - Test
+  timeout_in: 4h
+  persistent_worker:
+    labels:
+      name: AX61-1
+    isolation:
+      container:
+        image: apon77/aosp:cirrus
+        cpu: 24
+        memory: 120G
+        volumes:
+          - /home/cirrus/roms:/home/cirrus/roms
+          - /home/cirrus/ccache:/home/cirrus/ccache
+          - /home/cirrus/.config:/home/cirrus/.config
+
+  show_script:
+    - cat $CIRRUS_WORKING_DIR/build_rom.sh
+  test_script:
+    - set -e
+    - curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/test.sh | bash
+  sync_script:
+    - set -e
+    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
+    - rom_name=$rom_name-$branch_name
+    - ax613_roms=" crdroidandroid-13.0 Octavi-Staging-thirteen "
+    - if [[ $ax613_roms == *" $rom_name "* ]]; then exit 0; fi
+    - mkdir -p ~/roms/$rom_name
+    - cd ~/roms/$rom_name
+    - rm -rf .repo/local_manifests
+    - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
+    - only_sync=$(grep 'repo sync' $CIRRUS_WORKING_DIR/build_rom.sh)
+    - bash -c "$command" || true
+  tsync_script:
+    - set -e
+    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
+    - rom_name=$rom_name-$branch_name
+    - ax613_roms=" crdroidandroid-13.0 Octavi-Staging-thirteen "
+    - if [[ $ax613_roms == *" $rom_name "* ]]; then exit 0; fi
+    - mkdir -p ~/roms/$rom_name
+    - cd ~/roms/$rom_name
+
+    - set -exv
+    - curl -sO https://api.cirrus-ci.com/v1/task/$CIRRUS_TASK_ID/logs/sync.log
+    - a=$(grep 'Cannot remove project' sync.log -m1|| true)
+    - b=$(grep "^fatal: remove-project element specifies non-existent project" sync.log -m1 || true)
+    - c=$(grep 'repo sync has finished' sync.log -m1 || true)
+    - d=$(grep 'Failing repos:' sync.log -n -m1 || true)
+    - e=$(grep 'fatal: Unable' sync.log || true)
+    - f=$(grep 'error.GitError' sync.log || true)
+    - g=$(grep 'error: Cannot checkout' sync.log || true)
+    - if [[ $a == *'Cannot remove project'* ]]
+    - then
+    - a=$(echo $a | cut -d ':' -f2 | tr -d ' ')
+    - rm -rf $a
+    - fi
+    - if [[ $b == *'remove-project element specifies non-existent'* ]]
+    - then exit 1
+    - fi
+    - if [[ $d == *'Failing repos:'* ]]
+    - then
+    - d=$(expr $(grep 'Failing repos:' sync.log -n -m 1| cut -d ':' -f1) + 1)
+    - d2=$(expr $(grep 'Try re-running' sync.log -n -m1 | cut -d ':' -f1) - 1 )
+    - fail_paths=$(head -n $d2 sync.log | tail -n +$d)
+    - for path in $fail_paths
+    - do
+    - rm -rf $path
+    - aa=$(echo $path|awk -F '/' '{print $NF}')
+    - rm -rf .repo/project-objects/*$aa.git .repo/projects/$path.git
+    - done
+    - fi
+    - if [[ $e == *'fatal: Unable'* ]]
+    - then
+    - fail_paths=$(grep 'fatal: Unable' sync.log | cut -d ':' -f2 | cut -d "'" -f2)
+    - for path in $fail_paths
+    - do
+    - rm -rf $path
+    - aa=$(echo $path|awk -F '/' '{print $NF}')
+    - rm -rf .repo/project-objects/*$aa.git .repo/project-objects/$path.git .repo/projects/$path.git
+    - done
+    - fi
+    - if [[ $f == *'error.GitError'* ]]
+    - then
+    - rm -rf $(grep 'error.GitError' sync.log | cut -d ' ' -f2)
+    - fi
+    - if [[ $g == *'error: Cannot checkout'* ]]
+    - then
+    - coerr=$(grep 'error: Cannot checkout' sync.log | cut -d ' ' -f 4| tr -d ':')
+    - for i in $coerr
+    - do
+    - rm -rf .repo/project-objects/$i.git
+    - done
+    - fi
+    #- (repo forall -c 'git checkout .' && bash -c "$only_sync") || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync")
+
+    - if [[ $c == *'repo sync has finished'* ]]
+    - then true
+    - else
+    - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+    - fi
+
+    - rm -rf sync.log
+
+  build_script:
+    - set -e
+    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
+    - rom_name=$rom_name-$branch_name
+    - ax613_roms=" crdroidandroid-13.0 Octavi-Staging-thirteen "
+    - if [[ $ax613_roms == *" $rom_name "* ]]; then exit 0; fi
+    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
+    - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
+    - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
+    - grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
+    - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
+    - cd ~/roms/$rom_name
+    - export CCACHE_DIR=~/ccache/$rom_name/$device
+    - export CCACHE_EXEC=$(which ccache)
+    - export USE_CCACHE=1
+    - ccache -M 8G
+    - ccache -z
+    - ls device/*/*/vendorsetup.sh | grep -v generic && echo "Please remove vendorsetup.sh file from device tree, use local manifest for cloning and removing repositories." && exit 1 || true
+    - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v 'rclone copy')
+    - bash -c "$command"
+
+  ccache_stats_script:
+    - set -e
+    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
+    - rom_name=$rom_name-$branch_name
+    - ax613_roms=" crdroidandroid-13.0 Octavi-Staging-thirteen "
+    - if [[ $ax613_roms == *" $rom_name "* ]]; then exit 0; fi
+    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
+    - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
+    - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
+    - grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
+    - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
+    - export CCACHE_DIR=~/ccache/$rom_name/$device
+    - ccache -s
+
+  upload_script:
+    - set -e
+    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
+    - rom_name=$rom_name-$branch_name
+    - ax613_roms=" crdroidandroid-13.0 Octavi-Staging-thirteen "
+    - if [[ $ax613_roms == *" $rom_name "* ]]; then exit 0; fi
+    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
+    - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
+    - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
+    - grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
+    - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
+    - cd ~/roms/$rom_name
+    - engzip=$(ls out/target/product/$device/*-eng*.zip | grep -v "retrofit" || true)
+    - otazip=$(ls out/target/product/$device/*-ota-*.zip | grep -v "hentai" | grep -v "evolution" || true)
+    - awaken=$(ls out/target/product/$device/Project-Awaken*.zip || true)
+    - octavi=$(ls out/target/product/$device/OctaviOS-R*.zip || true)
+    - p404=$(ls out/target/product/$device/?.*zip || true)
+    - cipher=$(ls out/target/product/$device/CipherOS-*-OTA-*.zip || true)
+    - rm -rf $engzip $otazip $awaken $octavi $p404 $cipher
+    - dlink=$(basename out/target/product/$device/*.zip)
+    - unzip -P $one -q ~/.config/1.zip -d ~
+    - file=out/target/product/$device/*.zip
+    - rsync -vhcP $file -e "ssh -o Compression=no" apon77@frs.sourceforge.net:/home/frs/project/rom-builders/$device/
+    - echo "Download link https://sourceforge.net/projects/rom-builders/files/$device/$dlink/download"
+  remove_script:
+    - set -e
+    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
+    - rom_name=$rom_name-$branch_name
+    - ax613_roms=" crdroidandroid-13.0 Octavi-Staging-thirteen "
+    - if [[ $ax613_roms == *" $rom_name "* ]]; then exit 0; fi
     - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
     - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
     - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
