@@ -4,12 +4,12 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manif
 git clone https://github.com/omansh-krishn/local_manifest --depth 1 -b pixelexperience-13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-export TARGET_GAPPS_ARCH := arm64
-export TARGET_KERNEL_CLANG_VERSION := trb_clang
-export TARGET_KERNEL_CLANG_PATH := $(pwd)/prebuilts/clang/host/linux-x86/$(TARGET_KERNEL_CLANG_VERSION)
-export TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(TARGET_KERNEL_CLANG_PATH)/bin/aarch64-linux-gnu-
-export TARGET_KERNEL_CROSS_COMPILE_ARM32_PREFIX := $(TARGET_KERNEL_CLANG_PATH)/bin/arm-linux-gnueabi-
-export TARGET_KERNEL_LLVM_BINUTILS := false
+export TARGET_GAPPS_ARCH=arm64
+export TARGET_KERNEL_CLANG_VERSION=trb_clang
+export TARGET_KERNEL_CLANG_PATH=$(pwd)/prebuilts/clang/host/linux-x86/${TARGET_KERNEL_CLANG_VERSION}
+export TARGET_KERNEL_CROSS_COMPILE_PREFIX=${TARGET_KERNEL_CLANG_PATH}/bin/aarch64-linux-gnu-
+export TARGET_KERNEL_CROSS_COMPILE_ARM32_PREFIX=${TARGET_KERNEL_CLANG_PATH}/bin/arm-linux-gnueabi-
+export TARGET_KERNEL_LLVM_BINUTILS=false
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export BUILD_USERNAME=OmanshKrishn
 export BUILD_HOSTNAME=ubuntu
