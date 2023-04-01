@@ -419,6 +419,7 @@ task:
   skip_notifications: true
   depends_on:
     - Build
+    - Build3
   timeout_in: 2m
   persistent_worker:
     labels:
