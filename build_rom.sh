@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_lancelot-userdebug
-export BUILD_USERNAME=@raizel69
+export BUILD_USERNAME=@raizel_69
 
 export BUILD_HOSTNAME=@raizel69X
 export TZ=Asia/Delhi #put before last build command
