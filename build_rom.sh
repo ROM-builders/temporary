@@ -4,7 +4,7 @@ git clone https://github.com/rianza/Local_Manifest.git --depth 1 -b cherishOS .r
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom 
-. build/envsetup.sh
+source build/envsetup.sh
 lunch cherish_markw-userdebug
 export TZ=Asia/Dhaka #put before last build command
 
