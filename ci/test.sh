@@ -2,8 +2,6 @@
 
 set -e
 
-env
-
 ccheck(){
 	check=$(grep "$1" $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 	if [[ $check -gt 0 ]]; then echo "$2"; exit 1; fi
@@ -109,3 +107,5 @@ if [[ $CIRRUS_USER_PERMISSION == write ]]; then
 fi
 
 echo Test passed
+echo "rom_name=$rom_name" >> $CIRRUS_ENV
+echo "device=$device" >> $CIRRUS_ENV
