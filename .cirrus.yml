@@ -20,8 +20,8 @@ task:
 
   env_script: env
   show_script: cat $CIRRUS_WORKING_DIR/build_rom.sh
-  notify_script: ./ci/notify.sh
-  test_script: ./ci/test.sh
+  notify_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/notify.sh | bash 
+  test_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/test.sh | bash
 task:
   name: Build3
   skip: $CIRRUS_BRANCH == 'main'
