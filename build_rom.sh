@@ -4,7 +4,7 @@ git clone https://github.com/escobar1945/local_manifest.git --depth 1 -b main .r
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source . build/envsetup.sh
 lunch syberia_raphael-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka syberia 
