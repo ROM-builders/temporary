@@ -51,7 +51,6 @@ if [[ $g == *'error: Cannot checkout'* ]]; then
 		rm -rf .repo/project-objects/$i.git
 	done
 fi
-(repo forall -c 'git checkout .' && bash -c "$only_sync") || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync")
 if [[ $c == *'repo sync has finished'* ]]; then
 	true
 else
