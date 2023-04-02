@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 set -e
 rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
@@ -49,3 +48,20 @@ done
 fi
 if [[ $f == *'error.GitError'* ]]
 then
+rm -rf $(grep 'error.GitError' sync.log | cut -d ' ' -f2)
+fi
+if [[ $g == *'error: Cannot checkout'* ]]
+then
+coerr=$(grep 'error: Cannot checkout' sync.log | cut -d ' ' -f 4| tr -d ':')
+for i in $coerr
+do
+rm -rf .repo/project-objects/$i.git
+done
+fi
+(repo forall -c 'git checkout .' && bash -c "$only_sync") || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync")
+if [[ $c == *'repo sync has finished'* ]]
+then true
+else
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+fi
+rm -rf sync.log
