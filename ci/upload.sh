@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -e
-ax613_roms=" crdroidandroid-13.0 Octavi-Staging-thirteen "
 if [[ $ax613_roms != *" $rom_name "* ]]; then exit 0; fi
 cd ~/roms/$rom_name
 engzip=$(ls out/target/product/$device/*-eng*.zip | grep -v "retrofit" || true)
