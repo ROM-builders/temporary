@@ -1,5 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 set -e
+
+env
 
 ccheck(){
 	check=$(grep "$1" $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
