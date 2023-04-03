@@ -49,6 +49,8 @@ task:
   ccache_stats_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/ccache_stats.sh | bash
   upload_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/upload.sh | bash
   remove_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/remove.sh | bash
+  post_build_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/post_build.sh | bash
+
 task:
   name: Build
   skip: $CIRRUS_BRANCH == 'main'
@@ -71,9 +73,7 @@ task:
 
   show_script:
     - cat $CIRRUS_WORKING_DIR/build_rom.sh
-  test_script:
-    - set -e
-    - curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/test.sh | bash
+  test_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/test.sh | bash
   sync_script:
     - set -e
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
@@ -233,25 +233,6 @@ task:
     - grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
     - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
     - rm -rf ~/roms/$rom_name/out/target/product/$device
-
-task:
-  name: Post Build
-  skip: $CIRRUS_BRANCH == 'main'
-  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
-  skip_notifications: true
-  depends_on:
-    - Build
-    - Build3
-  timeout_in: 2m
-  persistent_worker:
-    labels:
-      name: AX61-2
-    isolation:
-      container:
-        image: apon77/aosp:cirrus
-        cpu: 2
-        memory: 4G
-
   post_build_script:
     - set -e
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
