@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest.git -b thirteen 
+repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest.git -b thirteen --depth=1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/BreathLGD/local-manifest- --depth 1 -b main
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
