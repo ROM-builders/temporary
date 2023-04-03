@@ -20,8 +20,8 @@ task:
 
   env_script: env
   show_script: cat $CIRRUS_WORKING_DIR/build_rom.sh
-  notify_script: ./ci/notify.sh
-  test_script: ./ci/test.sh
+  notify_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/notify.sh | bash 
+  test_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/test.sh | bash
 task:
   name: Build3
   skip: $CIRRUS_BRANCH == 'main'
@@ -42,13 +42,15 @@ task:
           - /home/cirrus/.config:/home/cirrus/.config
 
   show_script: cat $CIRRUS_WORKING_DIR/build_rom.sh
-  test_script: ./ci/test.sh
-  sync_script: ./ci/sync.sh
-  tsync_script: ./ci/tsync.sh
-  build_script: ./ci/build.sh
-  ccache_stats_script: ./ci/ccache_stats.sh
-  upload_script: ./ci/upload.sh
-  remove_script: ./ci/remove.sh
+  test_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/test.sh | bash
+  sync_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/sync.sh | bash
+  tsync_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/tsync.sh | bash
+  build_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/build.sh | bash
+  ccache_stats_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/ccache_stats.sh | bash
+  upload_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/upload.sh | bash
+  remove_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/remove.sh | bash
+  post_build_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/post_build.sh | bash
+
 task:
   name: Build
   skip: $CIRRUS_BRANCH == 'main'
@@ -71,9 +73,7 @@ task:
 
   show_script:
     - cat $CIRRUS_WORKING_DIR/build_rom.sh
-  test_script:
-    - set -e
-    - curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/test.sh | bash
+  test_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/test.sh | bash
   sync_script:
     - set -e
     - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
@@ -233,36 +233,4 @@ task:
     - grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
     - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
     - rm -rf ~/roms/$rom_name/out/target/product/$device
-
-task:
-  name: Post Build
-  skip: $CIRRUS_BRANCH == 'main'
-  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
-  skip_notifications: true
-  depends_on:
-    - Build
-    - Build3
-  timeout_in: 2m
-  persistent_worker:
-    labels:
-      name: AX61-2
-    isolation:
-      container:
-        image: apon77/aosp:cirrus
-        cpu: 2
-        memory: 4G
-
-  post_build_script:
-    - set -e
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
-    - rom_name=$rom_name-$branch_name
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-    - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
-    - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
-    - grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
-    - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
-    - your_telegram_id=@ROM_builders_channel
-    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Succeed
-      
-      https://cirrus-ci.com/build/$CIRRUS_BUILD_ID" -d "chat_id=${your_telegram_id}" -d "parse_mode=HTML"
+  post_build_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/post_build.sh | bash
