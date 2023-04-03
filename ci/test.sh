@@ -2,6 +2,8 @@
 
 set -e
 
+env
+
 ccheck(){
 	check=$(grep "$1" $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 	if [[ $check -gt 0 ]]; then echo "$2"; exit 1; fi
