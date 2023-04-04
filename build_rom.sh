@@ -11,6 +11,7 @@ export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_DUP_RULES=true
 export USE_GAPPS=true
 export WITH_GAPPS=true
+export WITH_GMS=true
 export TZ=Asia/Jakarta #put before last build command
 brunch lavender
 
