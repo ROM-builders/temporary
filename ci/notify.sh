@@ -10,6 +10,6 @@ grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_spro
 grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
 your_telegram_id=@ROM_builders_junk
 show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
-curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Started
-https://cirrus-ci.com/build/$CIRRUS_BUILD_ID $show" -d "chat_id=${your_telegram_id}" -d "parse_mode=HTML"
+curl -s "https://api.telegram.org/bot${1892202510:AAEJtIzYMueagOIWc1zljKMrdfq5N6ePi54}/sendmessage" -d "text=<code>$device-$rom_name</code> Started
+https://cirrus-ci.com/build/$CIRRUS_BUILD_ID $show" -d "chat_id=${554913839}" -d "parse_mode=HTML"
 
