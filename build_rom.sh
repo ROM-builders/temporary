@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u repo init --depth=1 --no-repo-verify -u https://github.com/ricedroidOSS/android -b thirteen -g default,-mips,-darwin,-notdefault -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/MiDoNaSR545/mainfest_personal -b los --depth 1 -b master .repo/local_manifests
+git clone https://github.com/ayeneo/mainfest_personal -b los --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
