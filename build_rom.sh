@@ -5,7 +5,36 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch derp_vayu-user
+export SELINUX_IGNORE_NEVERALLOWS=true
+
+export ALLOW_MISSING_DEPENDENCIES=true
+
+export RELAX_USES_LIBRARY_CHECK=true
+
+export BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES=true
+
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+
+export BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE=true
+
+export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
+
+export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
+
+export BUILD_BROKEN_DUP_RULES=true
+
+export BUILD_USERNAME=escobar1945
+
+export BUILD_HOSTNAME=esco-labs
+
+export KBUILD_BUILD_NAME=escobar1945
+
+export KBUILD_BUILD_HOST=esco-labs
+
+export BUILD_BROKEN_CLANG_ASFLAGS=true
+
+export BUILD_BROKEN_CLANG_CFLAGS=true
+lunch banana_raphael-userdebug
 export TZ=Asia/Dhaka #put before last build command
 m banana
 
