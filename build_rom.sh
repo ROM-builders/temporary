@@ -35,6 +35,7 @@ export BUILD_BROKEN_CLANG_ASFLAGS=true
 
 export BUILD_BROKEN_CLANG_CFLAGS=true
 lunch banana_raphael-userdebug
+
 export TZ=Asia/Dhaka #put before last build command
 m banana
 
