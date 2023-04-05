@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/alternoegraha/local_manifest.git --depth 1 -b evolution_fog .repo/local_manifests
+git clone https://github.com/alternoegraha/local_manifest.git --depth 1 -b evo .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build evolution
 . build/envsetup.sh
-lunch evolution_fog-userdebug
+lunch evolution_fog-user
 export KBUILD_BUILD_USER=alternoegraha
 export KBUILD_BUILD_HOST=cirrus
 export BUILD_USERNAME=alternoegraha
