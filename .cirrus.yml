@@ -78,7 +78,14 @@ task:
     - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
     - only_sync=$(grep 'repo sync' $CIRRUS_WORKING_DIR/build_rom.sh)
     - bash -c "$command" || true
-    
+  tsync_script:
+    - set -e
+    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+    - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
+    - rom_name=$rom_name-$branch_name
+    - mkdir -p ~/roms/$rom_name
+    - cd ~/roms/$rom_name
+
     - set -exv
     - curl -sO https://api.cirrus-ci.com/v1/task/$CIRRUS_TASK_ID/logs/sync.log
     - a=$(grep 'Cannot remove project' sync.log -m1|| true)
@@ -105,8 +112,7 @@ task:
     - do
     - rm -rf $path
     - aa=$(echo $path|awk -F '/' '{print $NF}')
-    - rm -rf .repo/project-objects/*$aa.git
-    - rm -rf .repo/projects/$path.git
+    - rm -rf .repo/project-objects/*$aa.git .repo/projects/$path.git
     - done
     - fi
     - if [[ $e == *'fatal: Unable'* ]]
@@ -116,9 +122,7 @@ task:
     - do
     - rm -rf $path
     - aa=$(echo $path|awk -F '/' '{print $NF}')
-    - rm -rf .repo/project-objects/*$aa.git
-    - rm -rf .repo/project-objects/$path.git
-    - rm -rf .repo/projects/$path.git
+    - rm -rf .repo/project-objects/*$aa.git .repo/project-objects/$path.git .repo/projects/$path.git
     - done
     - fi
     - if [[ $f == *'error.GitError'* ]]
@@ -195,13 +199,6 @@ task:
     - cipher=$(ls out/target/product/$device/CipherOS-*-OTA-*.zip || true)
     - rm -rf $engzip $otazip $awaken $octavi $p404 $cipher
     - dlink=$(basename out/target/product/$device/*.zip)
-    - #command=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
-    - #if [[ $device == jasmine_sprout ]]; then command="rclone copy out/target/product/jasmine_sprout/*zip cirrus:jasmine_sprout -P"; fi
-    - #if [[ $device == laurel_sprout ]]; then command="rclone copy out/target/product/laurel_sprout/*zip cirrus:laurel_sprout -P"; fi
-    - #if [[ $device == GM8_sprout ]]; then command="rclone copy out/target/product/GM8_sprout/*zip cirrus:GM8_sprout -P"; fi
-    - #if [[ $device == maple_dsds ]]; then command="rclone copy out/target/product/maple_dsds/*zip cirrus:maple_dsds -P"; fi
-    - #bash -c "$command"
-    - #echo "Download link https://roms.cirrus-ci.workers.dev/0:/$device/$dlink"
     - unzip -P $one -q ~/.config/1.zip -d ~
     - file=out/target/product/$device/*.zip
     - rsync -vhcP $file -e "ssh -o Compression=no" apon77@frs.sourceforge.net:/home/frs/project/rom-builders/$device/
@@ -216,8 +213,7 @@ task:
     - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
     - grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
     - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
-    - cd ~/roms/$rom_name
-    - rm -rf out/target/product/$device
+    - rm -rf ~/roms/$rom_name/out/target/product/$device
 
 task:
   name: Post Build
