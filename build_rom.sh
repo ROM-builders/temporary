@@ -1,12 +1,12 @@
 # sync rom
-repo init -u https://github.com/bananadroid/android_manifest.git -b 13
+repo init --depth=1 --no-repo-verify -u https://github.com/bananadroid/android_manifest.git -b 13 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/ItsMeAlcazar/local_manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch banana_ysl-eng
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Kolkata #put before last build command
 m banana -j6
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
