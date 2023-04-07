@@ -1,16 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Prettysir/local_manifest.git --depth 1 -b arrow .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-20.0 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Prettysir/local_manifest.git --depth 1 -b lin1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom #2
 source build/envsetup.sh
-lunch arrow_lancelot-userdebug
-export BUILD_USERNAME=chuu
-
-export BUILD_HOSTNAME=@raizel69X
+lunch lineage_X00QD-user
 export TZ=Asia/Delhi #put before last build command
-export SELINUX_IGNORE_NEVERALLOWS=true
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
