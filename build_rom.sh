@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/android_manifest.git -b triton -g default,-mips,-darwin,-notdefault
-git clone https://github.com/SKetU-l/local_manifest-1 --depth 1 -b awaken-r2p .repo/local_manifests
+git clone https://github.com/SKetU-l/local_manifest --depth 1 -b awaken-r2p .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
   
