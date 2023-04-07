@@ -1,5 +1,5 @@
-BananaDroid custom ROM for Redmi Y2/S2
+BananaDroid custom ROM for Xiaomi 11 lite NE 5G
 ==============================
 
-BananaDroid Custom ROM for Redmi Y2/S2(code name ysl)
+BananaDroid Custom ROM for Xiaomi 11 lite NE 5G(code name lisa)
 
