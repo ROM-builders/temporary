@@ -6,7 +6,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch arrow_lancelot-user
-export TZ=Asia/Dhaka #put before last build command
+export BUILD_USERNAME=Aetherance
+export BUILD_HOSTNAME=aether192
+export TZ=Asia/Manila #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
