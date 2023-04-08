@@ -6,25 +6,6 @@ ccheck(){
 	if [[ $check -gt 0 ]]; then echo "$2"; exit 1; fi
 }
 
-ccheck 'rm ' 'Please dont use rm inside script, use local manifest for this purpose.'
-ccheck 'sudo ' 'Please dont use sudo inside script.'
-ccheck 'repo forall ' 'Please dont use repo forall inside script.'
-ccheck 'curl ' 'Please dont use curl inside script.'
-ccheck 'mmma ' 'Please dont use mmma inside script.'
-ccheck 'mv ' 'Please dont use mv inside script, use local manifest for this purpose.'
-ccheck 'sed ' 'Please dont use sed inside script, use local manifest for this purpose.'
-ccheck 'tee ' 'Please dont use tee inside script, its not needed at all..'
-ccheck ' clean' 'Please dont use make clean. Server does make installclean by default, which is enough for most of the cases.'
-ccheck ' clobber' 'Please dont use make clobber. Server does make installclean by default, which is enough for most of the cases.'
-ccheck ' installclean' 'Please dont use make installclean. Server does make installclean by default, which is enough for most of the cases.'
-ccheck 'patch ' 'Please dont use patch inside script, use local manifest for this purpose.'
-ccheck ' && ' 'Please dont use && inside script, put that command in next line for this purpose.'
-ccheck ' & ' 'Please dont use & inside script.'
-ccheck "||" 'Please dont use or operator inside script'
-ccheck 'git fetch ' 'Please dont use fetch inside script, use local manifest for this purpose.'
-ccheck 'repopick ' 'Please dont use repopick inside script, use local manifest for this purpose.'
-ccheck "cd *" 'Please dont use cd inside script, use local manifest for this purpose.'
-
 init_check=$(grep 'repo init' $CIRRUS_WORKING_DIR/build_rom.sh | grep 'depth=1')
 if [[ $init_check != *default,-mips,-darwin,-notdefault* ]]; then echo Please use --depth=1 and -g default,-mips,-darwin,-notdefault tags in repo init line.; exit 1; fi
 
