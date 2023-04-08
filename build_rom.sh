@@ -5,6 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
+lunch lineage_RMX2020-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
