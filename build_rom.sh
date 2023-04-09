@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch syberia_vince-userdebug
+export WITH_GMS=true
 mka syberia
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
