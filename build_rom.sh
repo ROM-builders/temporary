@@ -20,7 +20,8 @@ export RELAX_USES_LIBRARY_CHECK=true
 
 export SUPERIOR_GAPPS=true
 
-export TZ=Asia/Kolkata #put before last build command
+export TZ=Asia/Kolkata #put b4 last build command
+
 mka bacon
 
 
