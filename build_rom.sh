@@ -6,6 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_viva-user
+export WITH_GAPPS=true 
+export DEVICE_MAINTAINERS=Rom\ Bdr.\ stuepz
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
