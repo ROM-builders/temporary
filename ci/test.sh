@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 set -e
 
 ccheck(){
@@ -57,6 +58,7 @@ rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
 rom_name=$rom_name-$branch_name
 supported_roms=' AICP-s12.1 AOSPA-sapphire AOSPA-topaz AospExtended-12.1.x AOSPK-twelve ArrowOS-arrow-12.1 ArrowOS-arrow-13.0 bananadroid-13 BlissRoms-arcadia-next BlissRoms-typhoon BootleggersROM-tirimbino CarbonROM-cr-9.0 CherishOS-twelve-one CherishOS-tiramisu CipherOS-twelve-L CipherOS-thirteen ConquerOS-twelve Corvus-AOSP-13 Corvus-R-12-test crdroidandroid-11.0 crdroidandroid-12.1 crdroidandroid-13.0 DerpFest-12-12.1 DerpFest-AOSP-13 DotOS-dot12.1 Evolution-X-elle Evolution-X-snow Evolution-X-tiramisu Fork-Krypton-A12 ForkLineageOS-lineage-19.1 Fusion-OS-twelve Havoc-OS-eleven Havoc-OS-twelve Komodo-OS-12.1 lighthouse-os-sailboat_L1 LineageOS-cm-14.1 LineageOS-lineage-15.1 LineageOS-lineage-16.0 LineageOS-lineage-17.1 LineageOS-lineage-18.1 LineageOS-lineage-19.1 LineageOS-lineage-20.0 Octavi-Staging-thirteen P-404-shinka P-404-tokui PixelExperience-twelve PixelExperience-twelve-plus PixelExperience-thirteen PixelExperience-thirteen-plus PixelExtended-snow PixelExtended-trece PixelOS-AOSP-twelve PixelOS-AOSP-thirteen PixysOS-twelve PixysOS-thirteen PotatoProject-frico_mr1-release Project-Awaken-12.1 Project-Awaken-triton ProjectBlaze-12.1 ProjectBlaze-13 Project-Fluid-fluid-12.1 ProjectRadiant-twelve ProjectStreak-twelve.one Project-Kaleidoscope-sunflowerleaf Project-Xtended-xt ResurrectionRemix-Q  ricedroidOSS-thirteen ShapeShiftOS-android_12 ShapeShiftOS-android_13 Spark-Rom-spark Spark-Rom-pyro SuperiorOS-twelvedotone SuperiorOS-thirteen StagOS-s12.1 StagOS-t13 StyxProject-S syberia-project-12.1 syberia-project-13.0 The-RAVEN-OS-twelve VoltageOS-12l VoltageOS-13 xdroid-oss-twelve xdroid-oss-thirteen yaap-twelve '
+
 if [[ $supported_roms != *" $rom_name "* ]]; then echo Not supported rom or branch.; exit 1; fi
 
 device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
@@ -106,3 +108,5 @@ if [[ $CIRRUS_USER_PERMISSION == write ]]; then
 fi
 
 echo Test passed
+echo "rom_name=$rom_name" >> $CIRRUS_ENV
+echo "device=$device" >> $CIRRUS_ENV
