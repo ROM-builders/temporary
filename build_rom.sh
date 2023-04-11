@@ -18,7 +18,7 @@ export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export RELAX_USES_LIBRARY_CHECK=true
 
-export SUPERIOR_GAPPS=true
+export SUPERIOR_GAPPS=false
 
 export TZ=Asia/Kolkata #put before last build command
 
