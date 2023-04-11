@@ -6,32 +6,18 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 
 source build/envsetup.sh
+
 export BUILD_USER=IdkAnythin07
-
 export BUILD_USERNAME=IdkAnythin07
-
 export KBUILD_BUILD_USER=IdkAnythin07
-
 export KBUILD_BUILD_USERNAME=IdkAnythin07
-
 export BUILD_HOST=cirrus-ci
-
 export BUILD_HOSTNAME=cirrus-ci
-
-
-
-
-
-
-
-
-
-
-
 
 export WITH_GAPPS=true
 export TARGET_DISABLE_EPPE :=true
 export TZ=Asia/Dhaka #put before last build command
+
 brunch RMX1941
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
