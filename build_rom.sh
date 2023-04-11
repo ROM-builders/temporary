@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch octavi_vince-user
+lunch octavi_vince-userdebug
 #export USE_GAPPS=true
 #export WITH_GAPPS=true
 mka bacon
