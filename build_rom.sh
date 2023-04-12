@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch rr_Insignia_Delta3-userdebug
+lunch lineage_Insignia_Delta3-userdebug
 export TZ=America/Mexico_City #put before last build command
 mka bacon
 
