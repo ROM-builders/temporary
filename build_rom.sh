@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android -b 13.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Idkanythin07 --depth 1 -b CrDroid .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+git clone https://github.com/Idkanythin07/local_manifest --depth 1 -b CrDroid .repo/local_manifests
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 # build rom
 
@@ -16,7 +16,7 @@ export BUILD_HOSTNAME=cirrus-ci
 
 export WITH_GAPPS=true
 export TARGET_DISABLE_EPPE :=true
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Kolkata #put before last build command
 
 brunch RMX1941
 
