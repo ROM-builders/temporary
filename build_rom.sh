@@ -14,7 +14,7 @@ export KBUILD_BUILD_USERNAME=IdkAnythin07
 export BUILD_HOST=cirrus-ci
 export BUILD_HOSTNAME=cirrus-ci
 
-export WITH_GMS=false
+export WITH_GMS=true
 export TARGET_DISABLE_EPPE :=true
 export TZ=Asia/Kolkata #put before last build command
 
