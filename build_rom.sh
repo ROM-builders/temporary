@@ -4,7 +4,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manif
 git clone https://github.com/omansh-krishn/local_manifest --depth 1 -b pixelexperience-13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 # build rom
-#retry[1]
+#retry[2]
 source build/envsetup.sh
 export TARGET_GAPPS_ARCH=arm64
 export TARGET_KERNEL_CLANG_VERSION=clang-r450784d
