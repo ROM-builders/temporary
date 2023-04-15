@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch aosp_vayu-userdebug
+lunch aosp_vayu-user
 export TZ=America/Mexico_City #put before last build command
 make bacon
 
