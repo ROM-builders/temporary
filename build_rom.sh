@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch evolution_sunfish-userdebug
+export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export TZ=Asia/Kolkata #put before last build command
 mka evolution
 
