@@ -4,7 +4,7 @@ git clone https://github.com/pythonpy1997/local_manifests.git --depth 1 -b thirt
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+source build/envsetup.sh && repopick -t thirteen-ca
 lunch aosp_RM6785-user
 export PREBUILT_KERNEL=true
 export TZ=Asia/Kolkata #put before last build command
