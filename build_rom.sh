@@ -8,6 +8,8 @@ source build/envsetup.sh
 lunch spark_ginkgo-userdebug
 export TZ=Asia/Dhaka #put before last build command
 export BUILD_USERNAME=Unknow
+set FaceUnlockService = true
+set BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
