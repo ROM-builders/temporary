@@ -4,7 +4,7 @@ git clone https://github.com/pythonpy1997/local_manifests.git --depth 1 -b linea
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+source build/envsetup.sh && repopick -t thirteen-ca
 lunch lineage_RMX2001-userdebug
 export TZ=Asia/Kolkata #put before last build command
 m bacon 
