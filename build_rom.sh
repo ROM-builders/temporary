@@ -1,7 +1,7 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Octavi-Staging/android_manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
+repo init -u https://github.com/Octavi-Staging/manifest.git -b thirteen --depth=1
 git clone https://github.com/TheWinner02/local_manifest.git --depth 1 -b master .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
 
 # build rom
 source build/envsetup.sh
