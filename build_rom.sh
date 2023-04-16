@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-AOSP/manifest
 git clone https://github.com/hsx02/Local-Manifests.git --depth 1 -b pixelAOSP-13n .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rommmmmmmmmmm
+# build rommmmmmmmmm
 . build/envsetup.sh
 lunch aosp_spes-userdebug
 export TZ=Asia/Kolkata #put before last build command
