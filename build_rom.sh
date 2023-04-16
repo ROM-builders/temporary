@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch cherish_X00QD-user
 export CHERISH_VANILLA=false
 export BUILD_USERNAME=Akshat
-export BUILD_HOSTNAME=coldfree
+export BUILD_HOSTNAME=coldziin
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
