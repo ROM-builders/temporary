@@ -1,5 +1,5 @@
 # sync rom
-repo init -u https://github.com/Octavi-Staging/manifest.git -b thirteen --depth=1
+repo init -u https://github.com/Octavi-Staging/manifest.git -b thirteen --depth=1 and -g default,-mips,-darwin,-notdefault
 git clone https://github.com/TheWinner02/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
 
