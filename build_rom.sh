@@ -10,7 +10,7 @@ lunch evolution_X01BD-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Dhaka #put before last build command
 mka evolution
- 
+
  
 
 
