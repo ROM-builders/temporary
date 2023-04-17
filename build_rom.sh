@@ -3,7 +3,7 @@ repo init -u https://github.com/LineageOS/android.git -b lineage-20.0 depth=1 -g
 git clone https://github.com/askairt/local_manifest.git .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j6
 
-# build rom
+#build rom
 source build/envsetup.sh
 lunch lineage_selene-userdebug
 export TZ=Asia/Dhaka #put before last build command
