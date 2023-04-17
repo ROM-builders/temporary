@@ -1,7 +1,7 @@
 # sync rom
 repo init -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs --depth=1
 git clone https://github.com/askairt/local_manifest.git .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j6
 
 # build rom
 source build/envsetup.sh
