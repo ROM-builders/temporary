@@ -1,5 +1,5 @@
 # sync rom
-repo init -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs --depth=1
+repo init -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs --depth=1 and -g default,-mips,-darwin,-notdefault
 git clone https://github.com/YudhoPatrianto/local_manifest.git .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
