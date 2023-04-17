@@ -3,6 +3,7 @@ repo init -u https://github.com/CherishOS/android_manifest.git -b tiramisu -g de
 git clone https://https://github.com/YudhoPatrianto/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+
 # build rom
 source build/envsetup.sh
 lunch cherish_selene-user
