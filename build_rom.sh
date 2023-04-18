@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 if ! [ -d device/xiaomi/vince ]; then
     git clone --depth=1 -b 13 https://github.com/OctaviOS-Devices/device_xiaomi_vince.git device/xiaomi/vince
 else
-    rm -rf device/xiaomi/vince
+    find device/xiaomi/vince -delete
     git clone --depth=1 -b 13 https://github.com/OctaviOS-Devices/device_xiaomi_vince.git device/xiaomi/vince
 fi
 
