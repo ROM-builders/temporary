@@ -1,11 +1,12 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 13.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/iTZUDAY2312/android_manifest.git --depth 1 -b LOS .repo/local_manifests
+git clone https://github.com/iTZUDAY2312/android_manifest.git --depth=1 -b CR .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-## build rom
+# Build rom
 source build/envsetup.sh
 lunch lineage_miatoll-userdebug
+export KBUILD_BUILD_USER=iTZ_UDAY_404
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
