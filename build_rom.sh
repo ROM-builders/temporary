@@ -5,6 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
+export BUILD_USERNAME=Chas
+export BUILD_HOSTNAME=Chas
 export TZ=Asia/Jakarta #put before last build command
 brunch lineage_rosemary-userdebug
 
