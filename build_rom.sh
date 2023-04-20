@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manif
 git clone https://github.com/Neko059/local-manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom pixel
 source build/envsetup.sh
 lunch aosp_fog-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
