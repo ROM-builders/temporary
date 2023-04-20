@@ -4,6 +4,7 @@ git clone https://github.com/archero32/local_manifest.git --depth 1 -b main .rep
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+
 . build/envsetup.sh
 lunch banana_G-user
 m banana
