@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch lineage_miatoll-userdebug
 export KBUILD_BUILD_USER=iTZ_UDAY_404
+export TARGET_DISABLE_EPPE=true
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
