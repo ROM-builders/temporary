@@ -5,8 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-#export USE_GAPPS=true
-#export WITH_GAPPS=true
+# export TARGET_WITH_MINI_GAPPS=false
 lunch octavi_vince-user
 mka bacon
 
