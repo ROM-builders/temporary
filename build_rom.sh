@@ -1,10 +1,10 @@
 # sync rom
 repo init -u https://github.com/bananadroid/android_manifest.git -b 13 --git-lfs
-git clone https://github.com/archero32/local_manifest.git --depth 1 -b master .repo/local_manifests
+git clone https://github.com/archero32/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch banana_G-user
 m banana
 
