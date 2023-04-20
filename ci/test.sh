@@ -95,10 +95,6 @@ if [[ $BRANCH == *pull/* ]]; then
 		if [[ $AUTHOR == $value ]]; then echo Please check \#bad_people instruction in telegram group.; exit 1; fi
 	done
 
-	joindate=$(date -d $(curl -s https://api.github.com/users/$AUTHOR | grep created_at | cut -d '"' -f4) +%s)
-	nowdate=$(date +%s)
-	datediff=$(expr $nowdate - $joindate)
-	if [[ $datediff -lt 2592000 ]]; then echo Please don\'t try to run build with your new account. Use your original account for doing PR.; exit 1; fi
 fi
 
 if [[ $CIRRUS_USER_PERMISSION == write ]]; then
