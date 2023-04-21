@@ -1,11 +1,11 @@
 # sync rom  
-repo init --depth=1 --no-repo-verify -u https://github.com/Project-Xtended/manifest.git -g default,-mips,-darwin,-notdefault  
-git clone https://github.com/abhishekpeddada/local_manifest --depth 1 -b violet .repo/local_manifests  
+repo init --depth=1 --no-repo-verify -u https://github.com/RisingTechOSS/android.git -g default,-mips,-darwin,-notdefault  
+git clone https://github.com/athizz2005/local_manifest --depth 1 -b violet .repo/local_manifests  
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8  
   
 # build rom # 
 source build/envsetup.sh  
-lunch xtended_violet-userdebug  
+lunch lineage_violet-userdebug  
 export TZ=Asia/Dhaka #put before last build command  
 mka bacon  
   
