@@ -3,7 +3,7 @@ repo init -u https://github.com/Octavi-Staging/manifest.git -b thirteen --depth=
 git clone https://github.com/TheWinner02/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom.
+# build rom
 source build/envsetup.sh
 lunch octavi_a40-userdebug
 export TZ=Asia/Dhaka #put before last build command
