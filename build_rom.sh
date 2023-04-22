@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/VoidUI-Tiramisu/manifest -b aosp-13 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/VoidUI-Tiramisu/manifest.git -b aosp-13 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/ManitnjG/local_manifest.git --depth 1 -b voidui .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
