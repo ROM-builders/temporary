@@ -8,7 +8,6 @@ source build/envsetup.sh
 croot
 export CUSTOM_BUILD_TYPE=Aggressive
 
-
 lunch aosp_fajita-userdebug
 export KBUILD_BUILD_USER=snnbyyds
 export KBUILD_BUILD_HOST=uotan
