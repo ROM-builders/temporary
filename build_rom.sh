@@ -29,7 +29,7 @@ export BUILD_BROKEN_CLANG_ASFLAGS=true
 export BUILD_BROKEN_CLANG_CFLAGS=true
 export BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE=true
 export RELAX_USES_LIBRARY_CHECK=true
-export TZ=Asia/Kolkata #put before last build command
+export TZ=Asia/Kolkata #put b4 last build command
 
 mka derp
 
