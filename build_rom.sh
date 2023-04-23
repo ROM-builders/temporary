@@ -16,19 +16,8 @@ export KBUILD_BUILD_USERNAME=IdkAnythin07
 export BUILD_HOST=cirrus-ci
 export BUILD_HOSTNAME=cirrus-ci
 
-export ALLOW_MISSING_DEPENDENCIES=true
-export RELAX_USES_LIBRARY_CHECK=true
 export SKIP_ABI_CHECKS=true
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
-export USE_DEXOPT=true
-export SELINUX_IGNORE_NEVERALLOWS=true
-export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
-export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
-export BUILD_BROKEN_DUP_RULES=true
-export BUILD_BROKEN_CLANG_ASFLAGS=true
-export BUILD_BROKEN_CLANG_CFLAGS=true
-export BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE=true
-export RELAX_USES_LIBRARY_CHECK=true
+export SKIP_API_CHECKS=true
 export TZ=Asia/Kolkata #put before last build command
 
 mka derp
