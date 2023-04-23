@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/Evolution-X/manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/essaNAJJAR/local_manifest.git --depth 1 -b master .repo/local_manifests
+git clone https://github.com/essaNAJJAR/Local_Manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch Evo_sweet_essa
+lunch evo_sweet_user
 export TZ=Asia/Dhaka #put before last build command
 mka derp
 
