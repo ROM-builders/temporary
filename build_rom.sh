@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch superior_ginkgo-userdebug
 export BUILD_USERNAME=xyz_abhishek
 export BUILD_HOSTNAME=xyz_abhishek
-#export ALLOW_MISSING_DEPENDENCIES=true
+#export ALLOW_MISSING_DEPENDENCIES=true 
 #export TARGET_KERNEL_CLANG_VERSION=proton
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
