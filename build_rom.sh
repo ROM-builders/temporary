@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b pyro -g default,-mips,-darwin,-notdefault
-git clone https://github.com/msalihpelit/Local_Manifest.git --depth 1 -b pyro .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-20.0 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/msalihpelit/Local_Manifest.git --depth 1 -b los20 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch spark_ginkgo-userdebug
+lunch lineage_ginkgo-userdebug
 export TZ=Asia/Dhaka #put before last build command
 export BUILD_USERNAME=Unknow
 mka bacon
