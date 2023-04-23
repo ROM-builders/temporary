@@ -4,7 +4,7 @@ git clone https://github.com/khaeruirgi/local_manifests.git --depth 1 -b main .r
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch aosp_camellia-user
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
