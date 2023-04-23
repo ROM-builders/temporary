@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b
 git clone https://github.com/abhishekfire08/manifest_local.git --depth 1 -b blazeGinkgo .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom 
 source build/envsetup.sh
 lunch spark_ginkgo-userdebug
 export BUILD_USERNAME=xyz_abhishek
