@@ -1,6 +1,6 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Evolution-X/manifest -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/alpha15down/local_manifest --depth 1 -b main .repo/local_manifests
+repo init --no-repo-verify -u https://github.com/Project-Awaken/android_manifest -b triton --git-lfs,-mips,-darwin,-notdefault
+git clone https://github.com/alpha15down/local_manifest -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
