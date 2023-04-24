@@ -6,6 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom pixel part 6
 source build/envsetup.sh
 lunch aosp_fog-userdebug
+export BUILD_USERNAME=Zxyn
+export KBUILD_BUILD_USER=Zxyn
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
