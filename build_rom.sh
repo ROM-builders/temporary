@@ -4,6 +4,7 @@ git clone https://github.com/RahifM/local_manifests -b lineage-18.1-beryllium --
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+git clone --depth 1 https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86 -b android-11.0.0_r46 prebuilts/clang/host/linux-x86
 source build/envsetup.sh
 export TZ=Asia/Dhaka #put before last build command
 lunch lineage_beryllium-userdebug
