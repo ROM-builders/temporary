@@ -6,7 +6,7 @@ repo sync
 # build rom
 . build/envsetup.sh
 brunch lineage_RMX3031-userdebug
-export TZ=Asia/Dhaka #put before last build comman
+export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
