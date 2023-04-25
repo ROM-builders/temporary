@@ -11,6 +11,7 @@ export KBUILD_BUILD_HOST=a3machine
 export BUILD_USERNAME=aepranata
 export BUILD_HOSTNAME=a3machine
 export SELINUX_IGNORE_NEVERALLOWS=true
+export WITH_FM_RADIO=true
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
