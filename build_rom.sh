@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/SuperiorOS/manifest -
 git clone https://github.com/iTZUDAY2312/android_manifest --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+## build rom
 source build/envsetup.sh
 lunch superior_miatoll-userdebug
 export TARGET_WITH_KERNEL_SU=true
