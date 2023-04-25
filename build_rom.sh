@@ -1,11 +1,12 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/SuperiorOS/manifest -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/iTZUDAY2312/android_manifest --depth 1 -b sup13 .repo/local_manifests
+git clone https://github.com/iTZUDAY2312/android_manifest --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-## build rom
+# build rom
 source build/envsetup.sh
 lunch superior_miatoll-userdebug
+export TARGET_WITH_KERNEL_SU=true
 export KBUILD_BUILD_USER=iTZ_UDAY_404
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
