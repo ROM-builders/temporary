@@ -1,16 +1,18 @@
 # sync rom
+
 repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-Staging/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
 git clone https://github.com/ManitnjG/local_manifest.git --depth 1 -b octavi .repo/local_manifests
+# Remove existing dir before sync
+if [ -d prebuilts/clang/host/linux-x86 ]; then
+    find prebuilts/clang/host/linux-x86 -delete
+fi
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch octavi_X01BD-userdebug
-
-export ALLOW_MISSING_DEPENDENCIES=true
-export TZ=Asia/Dhaka #put before last build command
+#export TARGET_WITH_MINI_GAPPS=true
+lunch octavi_X01BD-user
 mka bacon
-  
 
  
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
