@@ -4,9 +4,8 @@ git clone github.com/AOSP-Silicon/local_manifest.git --depth 1 -b arrow-13.1 .re
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch arrow_vince-user
-#export ARROW_GAPPS=true
 m bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
