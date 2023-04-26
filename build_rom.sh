@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android -b 13.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Legendleo90/local_manifest.git -b cr .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest -b tiramisu -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Legendleo90/local_manifest.git -b cherish .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_beryllium-user
+lunch cherish_beryllium-user
 export BUILD_USERNAME=Akshat
 export BUILD_HOSTNAME=leopubglover
 export TZ=Asia/Kolkata #put before last build command
