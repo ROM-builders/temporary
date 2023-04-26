@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth=1 -g default,-mips,-darwin,-notdefault -u https://github.com/BootleggersROM/manifest.git -b tirimbino
 git clone https://github.com/mrxzzet/local_manifests-clo -b main .repo/local_manifests
-repo sync --main-branch --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune -j$(nproc --all)
+repo sync --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune -j$(nproc --all)
 
 # build rom
 . build/envsetup.sh
