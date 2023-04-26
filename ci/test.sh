@@ -8,6 +8,9 @@ ccheck(){
 }
 
 ccheck 'rm ' 'Please dont use rm inside script, use local manifest for this purpose.'
+ccheck 'find ' 'Please dont use find inside script, use local manifest for this purpose.'
+ccheck 'unlink ' 'Please dont use unlink inside script, use local manifest for this purpose.'
+ccheck 'shred ' 'Please dont use shred inside script, use local manifest for this purpose.'
 ccheck 'sudo ' 'Please dont use sudo inside script.'
 ccheck 'repo forall ' 'Please dont use repo forall inside script.'
 ccheck 'curl ' 'Please dont use curl inside script.'
