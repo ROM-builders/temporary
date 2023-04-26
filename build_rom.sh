@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 -u https://github.com/BootleggersROM/manifest.git -b tirimbino
+repo init --depth=1 -g default,-mips,-darwin,-notdefault -u https://github.com/BootleggersROM/manifest.git -b tirimbino
 git clone https://github.com/mrxzzet/local_manifests-clo -b main --depth 1 .repo/local_manifests
 repo sync --current-branch --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune -j$(nproc --all)
 
