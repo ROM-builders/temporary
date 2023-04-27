@@ -1,10 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-Staging/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
 git clone https://github.com/GhostMaster69-dev/local_manifest.git --depth 1 -b 13 .repo/local_manifests
-# Remove existing dir before sync
-if [ -d prebuilts/clang/host/linux-x86 ]; then
-    find prebuilts/clang/host/linux-x86 -delete
-fi
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
