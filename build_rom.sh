@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch xtended_RM6785-user
 export WITH_GAPPS=true
+export PREBUILT_KERNEL=true
 export TZ=Asia/Kolkata #put before last build command
 make xtended
 
