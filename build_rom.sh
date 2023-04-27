@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-AOSP/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/CodeChas3r1/local_manifest.git --depth 1 -b pixelos-13 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/android_manifest -b triton -g default,-mips,-darwin,-notdefault
+git clone https://github.com/CodeChas3r1/local_manifest.git --depth 1 -b awaken-triton .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_rosemary-userdebug
+lunch awaken_rosemary-userdebug
 export BUILD_HOSTNAME=Chas
 export BUILD_USERNAME=Chas
 export TZ=Asia/Jakarta #put before last build command
