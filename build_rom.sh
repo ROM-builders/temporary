@@ -11,7 +11,7 @@ export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_DUP_RULES=true
 export TZ=Asia/Jakarta #put before last build command
-make bacon
+mka bacon
 
 
  
