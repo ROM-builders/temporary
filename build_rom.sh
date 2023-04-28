@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/android_manifest.git -b triton -g default,-mips,-darwin,-notdefault
-git clone https://github.com/eartinity24/local_manifest.git --depth 1 -b awaken .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-AOSP/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/eartinity24/local_manifest.git --depth 1 -b Pos .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch awaken_r5x-userdebug
+lunch aosp_r5x-userdebug
 export TZ=Asia/Kolkata #put before last build command
 make bacon
 
