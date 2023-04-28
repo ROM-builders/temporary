@@ -56,5 +56,5 @@ rm -rf sync.log
 dirty_dirs="prebuilts/clang/host/linux-x86"
 for dir in $dirty_dirs
 do
-	[[ -n $(git -C "$dir" status -s) ]] && (rm -rf "$dir"; repo sync)
+	[[ -n $(git -C "$dir" status -s) ]] && (rm -rf "$dir"; repo sync) || true
 done
