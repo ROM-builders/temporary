@@ -5,7 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch yaap_RM6785-userdebug
+lunch yaap_RM6785-user
+export PREBUILT_KERNEL=true
 export TZ=Asia/Kolkata #put before last build command
 m yaap
 
