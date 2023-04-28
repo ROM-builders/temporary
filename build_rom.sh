@@ -6,8 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch fuse_rosemary-userdebug
-export BUILD_USERNAME=andrii
-export BUILD_HOSTNAME=andrii
 export TZ=Asia/Dhaka #put before last build command
 make fuse-prod -j
 
