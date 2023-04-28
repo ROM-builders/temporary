@@ -1,16 +1,18 @@
-# sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-Staging/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/ManitnjG/local_manifest.git --depth 1 -b octavi .repo/local_manifests
+git clone https://github.com/ManitnjG/local_manifest --depth 1 -b octavi .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch octavi_X01BD-userdebug
-
+#export USE_GAPPS=true
+#export WITH_GAPPS=true
 export ALLOW_MISSING_DEPENDENCIES=true
-export TZ=Asia/Dhaka #put before last build command
-mka bacon
-  
+export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
+export BUILD_BROKEN_DUP_RULES=true
+export TZ=Asia/Jakarta #put before last build command
+brunch X01BD
+
 
  
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
