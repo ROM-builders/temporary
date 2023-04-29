@@ -11,6 +11,7 @@ export KBUILD_BUILD_USER=snnbyyds
 export KBUILD_BUILD_HOST=uotan
 export BUILD_USERNAME=snnbyyds
 export BUILD_HOSTNAME=uotan
+
 export CUSTOM_BUILD_TYPE=114514
 
 export TZ=Asia/Shanghai #put before last build command
