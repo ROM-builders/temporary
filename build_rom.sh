@@ -6,6 +6,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom  
 source build/envsetup.sh
 lunch lineage_monet-userdebug
+export BUILD_USER=alecchangod
+export BUILD_USERNAME=alecchangod
+export KBUILD_BUILD_USER=alecchangod
+export KBUILD_BUILD_USERNAME=alecchangod
 export TZ=Asia/Hong_Kong #put before last build command 
 make bacon 
 # 10
