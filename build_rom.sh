@@ -11,7 +11,6 @@ export BUILD_USER=alecchangod
 export BUILD_USERNAME=alecchangod
 export KBUILD_BUILD_USER=alecchangod
 export KBUILD_BUILD_USERNAME=alecchangod
-# export WITH_GAPPS=true
 export TZ=Asia/Hong_Kong #put before last build command
 make xtended
 
