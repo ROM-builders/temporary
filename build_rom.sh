@@ -1,6 +1,6 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/ShahzebQureshi/local_manifest --depth 1 -b bliss .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/ShahzebQureshi/local_manifest --depth 1 -b arrow .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
@@ -9,7 +9,7 @@ export BUILD_USER=ShahzebQureshi
 export BUILD_HOST=cirrus-ci
 export BUILD_USERNAME=ShahzebQureshi
 export BUILD_HOSTNAME=cirrus-ci
-lunch blaze_joan-userdebug
+lunch arrow_joan-userdebug
 export TZ=Asia/Karachi #put before last build command
 m bacon
 
