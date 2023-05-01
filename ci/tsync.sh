@@ -53,15 +53,15 @@ if [[ $g == *'error: Cannot checkout'* ]]; then
 	done
 fi
 
+dirty_dirs="prebuilts/clang/host/linux-x86"
+for dir in $dirty_dirs
+do
+	[[ -n $(git -C "$dir" status -s) ]] && (rm -rf "$dir") || true
+done
+
 if [[ $c == *'repo sync has finished'* ]]; then
 	true
 else
 	repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 fi
 rm -rf sync.log
-
-dirty_dirs="prebuilts/clang/host/linux-x86"
-for dir in $dirty_dirs
-do
-	[[ -n $(git -C "$dir" status -s) ]] && (rm -rf "$dir"; repo sync) || true
-done
