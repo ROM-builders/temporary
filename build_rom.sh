@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Project-Awaken/android_manifest.git -b 12.1 -g default,-device,-mips,-darwin,-notdefault
-git clone https://github.com/kreioroscape/local_manifest.git --depth 1 -b Aosp .repo/local_manifest
+repo init --depth=1 --no-repo-verify -u github.com/tequilaOS/platform_manifest.git -b tortilla -g default,-mips,-darwin,-notdefault
+git clone https://github.com/kreiorogit/local_manifest.git --depth 1 -b Aosp .repo/local_manifest
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch awaken_ginkgo-userdebug
+lunch tequilaOS_sweet-userdebug
 export TZ=Asia/Jakarta #put before last build command
 make bacon -j$(nproc --all)
 
