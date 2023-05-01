@@ -47,8 +47,27 @@ if [[ $j_check -gt 0 ]]; then echo Please dont specify j value in make line.; ex
 bliss_check=$(grep blissify $CIRRUS_WORKING_DIR/build_rom.sh | grep '\-c' | wc -l)
 if [[ $bliss_check -gt 0 ]]; then echo Please dont use make clean flag. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
 
+bliss_check=$(grep blissify $CIRRUS_WORKING_DIR/build_rom.sh | grep '\--clean' | wc -l)
+if [[ $bliss_check -gt 0 ]]; then echo Please dont use make clean flag. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
+
 bliss_check=$(grep blissify $CIRRUS_WORKING_DIR/build_rom.sh | grep '\-d' | wc -l)
 if [[ $bliss_check -gt 0 ]]; then echo Please dont use make installclean flag. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
+
+bliss_check=$(grep blissify $CIRRUS_WORKING_DIR/build_rom.sh | grep '\--devclean' | wc -l)
+if [[ $bliss_check -gt 0 ]]; then echo Please dont use make installclean flag. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
+
+aospa_check=$(grep "rom-build.sh" $CIRRUS_WORKING_DIR/build_rom.sh | grep '\-c' | wc -l)
+if [[ $aospa_check -gt 0 ]]; then echo Please dont use make clean flag. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
+
+aospa_check=$(grep "rom-build.sh" $CIRRUS_WORKING_DIR/build_rom.sh | grep '\--clean' | wc -l)
+if [[ $aospa_check -gt 0 ]]; then echo Please dont use make clean flag. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
+
+aospa_check=$(grep "rom-build.sh" $CIRRUS_WORKING_DIR/build_rom.sh | grep '\-i' | wc -l)
+if [[ $aospa_check -gt 0 ]]; then echo Please dont use make installclean flag. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
+
+aospa_check=$(grep "rom-build.sh" $CIRRUS_WORKING_DIR/build_rom.sh | grep '\--installclean' | wc -l)
+if [[ $aospa_check -gt 0 ]]; then echo Please dont use make installclean flag. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
+
 rclone_check=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
 rclone_string="rclone copy out/target/product/\$(grep unch \$CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:\$(grep unch \$CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P"
 if [[ $rclone_check != *$rclone_string* ]]; then echo Please follow rclone copy line of main branch.; exit 1; fi
