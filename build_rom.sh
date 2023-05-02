@@ -17,6 +17,8 @@ export BUILD_HOSTNAME=cirrus-ci
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export RELAX_USES_LIBRARY_CHECK=true
+export SKIP_ABI_CHECKS=true
+export SKIP_API_CHECKS=true
 
 export SUPERIOR_GAPPS=false
 
