@@ -12,6 +12,7 @@ export BUILD_USERNAME=alecchangod
 export KBUILD_BUILD_USER=alecchangod
 export KBUILD_BUILD_USERNAME=alecchangod
 export TZ=Asia/Hong_Kong #put before last build command
+# 8
 make xtended
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
