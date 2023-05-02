@@ -5,7 +5,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
 source build/envsetup.sh
-lunch cherish_whyred-userdebug
+lunch cherish_whyred-user
 export TZ=Asia/Dhaka #put before last build command
 brunch whyred
 
