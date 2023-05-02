@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 croot
 
-export CUSTOM_BUILD_TYPE=LggPlayWithMe
+export CUSTOM_BUILD_TYPE=AutumnLaziness
 lunch aosp_fajita-userdebug
 export KBUILD_BUILD_USER=snnbyyds
 export KBUILD_BUILD_HOST=uotan
