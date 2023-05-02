@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-AOSP/manifest
 git clone https://github.com/Fr0ztyy43/local_manifests --depth 1 -b pixel .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build romvvhh
+# build rom
 source build/envsetup.sh
 lunch aosp_begonia-userdebug
 export KBUILD_BUILD_USER=Fr0ztyy43 
