@@ -16,3 +16,4 @@ rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1
 # rclone copy out/target/product/mojito/*.zip.md5sum cirrus:mojito -P                                  
  
  
+ 
