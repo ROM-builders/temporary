@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lineage_coral-eng
+lunch lineage_coral-eng #eng build
 export TZ=Asia/Dhaka #put before last build command
 mka lineage
 
