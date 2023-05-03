@@ -10,6 +10,7 @@ export KBUILD_BUILD_USER=Fr0ztyy43
 export KBUILD_BUILD_HOST=Noob
 export BUILD_USERNAME=Fr0ztyy43 
 export BUILD_HOSTNAME=Noob
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
