@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExtended/manifest -b thunder -g default,-mips,-darwin,-notdefault
-git clone https://github.com/pure-soul-kk/local_manifest.git --depth=1 -b main .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest -b tiramisu -g default,-mips,-darwin,-notdefault
+git clone https://github.com/pure-soul-kk/local_manifest.git --depth=1 -b cherish .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_sweet-user
+lunch cherish_PL2-userdebug
 export BUILD_USERNAME=K R I S H N A
 export BUILD_HOSTNAME=pure-soul-kk
 export TZ=Asia/Kolkata #put before last build command
