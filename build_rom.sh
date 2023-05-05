@@ -23,7 +23,7 @@ export SKIP_API_CHECKS=true
 
 export SUPERIOR_GAPPS=false
 
-export TZ=Asia/Kolkata #put before last build command
+export TZ=Asia/Kolkata #put b4 last build command
 
 mka bacon
 
