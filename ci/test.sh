@@ -3,39 +3,48 @@
 set -e
 
 ccheck(){
-	check=$(grep "$1" $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-	if [[ $check -gt 0 ]]; then echo "$2"; exit 1; fi
+	check=$(grep "$1" "$CIRRUS_WORKING_DIR"/build_rom.sh | wc -l)
+	if [[ $check -gt 0 ]]; then
+		echo "$2"
+		exit 1
+	fi
 }
 
-ccheck 'rm ' 'Please dont use rm inside script, use local manifest for this purpose.'
-ccheck 'find ' 'Please dont use find inside script, use local manifest for this purpose.'
-ccheck 'unlink ' 'Please dont use unlink inside script, use local manifest for this purpose.'
-ccheck 'shred ' 'Please dont use shred inside script, use local manifest for this purpose.'
-ccheck 'sudo ' 'Please dont use sudo inside script.'
-ccheck 'repo forall ' 'Please dont use repo forall inside script.'
-ccheck 'curl ' 'Please dont use curl inside script.'
-ccheck 'mmma ' 'Please dont use mmma inside script.'
-ccheck 'mv ' 'Please dont use mv inside script, use local manifest for this purpose.'
-ccheck 'sed ' 'Please dont use sed inside script, use local manifest for this purpose.'
-ccheck 'tee ' 'Please dont use tee inside script, its not needed at all..'
-ccheck ' clean' 'Please dont use make clean. Server does make installclean by default, which is enough for most of the cases.'
-ccheck ' clobber' 'Please dont use make clobber. Server does make installclean by default, which is enough for most of the cases.'
-ccheck ' installclean' 'Please dont use make installclean. Server does make installclean by default, which is enough for most of the cases.'
-ccheck 'patch ' 'Please dont use patch inside script, use local manifest for this purpose.'
-ccheck ' && ' 'Please dont use && inside script, put that command in next line for this purpose.'
-ccheck ' & ' 'Please dont use & inside script.'
-ccheck "||" 'Please dont use or operator inside script'
-ccheck 'git fetch ' 'Please dont use fetch inside script, use local manifest for this purpose.'
-ccheck 'repopick ' 'Please dont use repopick inside script, use local manifest for this purpose.'
-ccheck "cd *" 'Please dont use cd inside script, use local manifest for this purpose.'
+ccheck 'rm ' 'Please don'"'"'t use rm inside script, use local manifest for this purpose.'
+ccheck 'find ' 'Please don'"'"'t use find inside script, use local manifest for this purpose.'
+ccheck 'unlink ' 'Please don'"'"'t use unlink inside script, use local manifest for this purpose.'
+ccheck 'shred ' 'Please don'"'"'t use shred inside script, use local manifest for this purpose.'
+ccheck 'sudo ' 'Please don'"'"'t use sudo inside script.'
+ccheck 'repo forall ' 'Please don'"'"'t use repo forall inside script.'
+ccheck 'curl ' 'Please don'"'"'t use curl inside script.'
+ccheck 'mmma ' 'Please don'"'"'t use mmma inside script.'
+ccheck 'mv ' 'Please don'"'"'t use mv inside script, use local manifest for this purpose.'
+ccheck 'sed ' 'Please don'"'"'t use sed inside script, use local manifest for this purpose.'
+ccheck 'tee ' 'Please don'"'"'t use tee inside script, it'"'"'s not needed at all.'
+ccheck ' clean' 'Please don'"'"'t use make clean. Server does make installclean by default, which is enough for most cases.'
+ccheck ' clobber' 'Please don'"'"'t use make clobber. Server does make installclean by default, which is enough for most cases.'
+ccheck ' installclean' 'Please don'"'"'t use make installclean. Server does make installclean by default, which is enough for most cases.'
+ccheck 'patch ' 'Please don'"'"'t use patch inside script, use local manifest for this purpose.'
+ccheck ' && ' 'Please don'"'"'t use && inside script, put that command on the next line.'
+ccheck ' & ' 'Please don'"'"'t use & inside script.'
+ccheck "||" 'Please don'"'"'t use OR operator inside script'
+ccheck 'git fetch ' 'Please don'"'"'t use fetch inside script, use local manifest for this purpose.'
+ccheck 'repopick ' 'Please don'"'"'t use repopick inside script, use local manifest for this purpose.'
+ccheck "cd *" 'Please don'"'"'t use cd inside script, use local manifest for this purpose.'
 
-init_check=$(grep 'repo init' $CIRRUS_WORKING_DIR/build_rom.sh | grep 'depth=1')
-if [[ $init_check != *default,-mips,-darwin,-notdefault* ]]; then echo Please use --depth=1 and -g default,-mips,-darwin,-notdefault tags in repo init line.; exit 1; fi
+init_check=$(grep 'repo init' "$CIRRUS_WORKING_DIR"/build_rom.sh | grep 'depth=1')
+if [[ $init_check != *default,-mips,-darwin,-notdefault* ]]; then
+	echo 'Please use --depth=1 and -g default,-mips,-darwin,-notdefault tags in repo init line.'
+	exit 1
+fi
 
-clone_check=$(grep 'git clone' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
-if [[ $clone_check -gt 1 ]]; then echo Please use local manifest to clone trees and other repositories, we dont allow git clone to clone trees.; exit 1; fi
+clone_check=$(grep 'git clone' "$CIRRUS_WORKING_DIR"/build_rom.sh | wc -l)
+if [[ $clone_check -gt 1 ]]; then
+	echo 'Please use local manifest to clone trees and other repositories, we don'"'"'t allow git clone to clone trees.'
+	exit 1
+fi
 
-url=https://$(grep 'repo init' $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 3-5 | cut -d ' ' -f 1)
+url=https://$(grep 'repo init' "$CIRRUS_WORKING_DIR"/build_rom.sh -m 1 | cut -d / -f 3-5 | cut -d ' ' -f 1)
 r_name=$(grep 'repo init' $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 name_check=$(curl -Ls $url 2>&1 | grep 'repo init' | grep $r_name | wc -l)
 if [[ $r_name == "Havoc-OS" ]]; then name_check=1; fi
@@ -81,7 +90,10 @@ branch_name=$(grep 'repo init' $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '
 rom_name=$rom_name-$branch_name
 supported_roms=' AICP-s12.1 AOSPA-topaz ArrowOS-arrow-13.1 bananadroid-13 BlissRoms-arcadia-next BlissRoms-typhoon BootleggersROM-tirimbino CarbonROM-cr-9.0 CherishOS-tiramisu CipherOS-thirteen crdroidandroid-11.0 crdroidandroid-12.1 crdroidandroid-13.0 DerpFest-12-12.1 DerpFest-AOSP-13 Evolution-X-tiramisu Fusion-OS-twelve Havoc-OS-twelve LineageOS-cm-14.1 LineageOS-lineage-15.1 LineageOS-lineage-16.0 LineageOS-lineage-17.1 LineageOS-lineage-18.1 LineageOS-lineage-19.1 LineageOS-lineage-20.0 Octavi-Staging-thirteen P-404-tokui PixelExperience-twelve PixelExperience-twelve-plus PixelExperience-thirteen PixelExperience-thirteen-plus PixelExtended-trece PixelOS-AOSP-thirteen PixysOS-twelve PixysOS-thirteen Project-Awaken-triton ProjectBlaze-13 Project-Xtended-xt ResurrectionRemix-Q ShapeShiftOS-android_13 Spark-Rom-pyro SuperiorOS-twelvedotone SuperiorOS-thirteen StagOS-t13 syberia-project-13.0 VoltageOS-13 xdroid-oss-thirteen yaap-thirteen '
 
-if [[ $supported_roms != *" $rom_name "* ]]; then echo Not supported rom or branch.; exit 1; fi
+if [[ $supported_roms != *" $rom_name "* ]]; then 
+  echo "Not supported rom or branch."
+  exit 1
+fi
 
 device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
 grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
@@ -90,45 +102,76 @@ grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_spro
 grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
 
 if [[ $BRANCH != *pull/* ]]; then 
-	if [[ $BRANCH != $device-$rom_name-* ]]; then echo Please use proper branch naming described in push group.; exit 1; fi; 
-	if [[ $CIRRUS_COMMIT_MESSAGE == "Update build_rom.sh" ]]; then echo Please use proper commit message.; exit 1; fi; 
+  if [[ $BRANCH != $device-$rom_name-* ]]; then 
+    echo "Please use proper branch naming described in push group."
+    exit 1
+  fi
+  
+  if [[ $CIRRUS_COMMIT_MESSAGE == "Update build_rom.sh" ]]; then 
+    echo "Please use proper commit message."
+    exit 1
+  fi
 fi
 
-if [[ $device == 'copy' ]]; then echo "Please use lunch or brunch command with device codename after . build/envsetup.sh" ; exit 1; fi
-if [[ $device == 'mi439' ]]; then echo "Please use device codename Mi439 also create your dt with this device code name." ; exit 1; fi
+if [[ $device == 'copy' ]]; then 
+  echo "Please use lunch or brunch command with device codename after . build/envsetup.sh"
+  exit 1
+fi
+
+if [[ $device == 'mi439' ]]; then 
+  echo "Please use device codename Mi439 and create your dt with this device code name."
+  exit 1
+fi
 
 if [[ $BRANCH == *pull/* ]]; then
-	if [[ $CIRRUS_COMMIT_MESSAGE != $device-$rom_name-* ]]; then echo Please use proper PR label described in telegram group.; exit 1; fi
-	lunch_check=$(grep "unch" $CIRRUS_WORKING_DIR/build_rom.sh | grep -v 'rclone' | wc -l)
-	if [[ $rom_name != 'Corvus-R-12-test' ]]; then
-		if [[ $lunch_check -gt 1 ]]; then echo Please build for one device at a time.; exit 1; fi
-	fi
-	cd /tmp/cirrus-ci-build
-	PR_NUM=$(echo $BRANCH|awk -F '/' '{print $2}')
-	AUTHOR=$(gh pr view $PR_NUM|grep author| awk '{print $2}')
+  if [[ $CIRRUS_COMMIT_MESSAGE != $device-$rom_name-* ]]; then 
+    echo "Please use proper PR label described in telegram group."
+    exit 1
+  fi
+  
+  lunch_check=$(grep "unch" $CIRRUS_WORKING_DIR/build_rom.sh | grep -v 'rclone' | wc -l)
+  
+  if [[ $rom_name != 'Corvus-R-12-test' ]]; then
+    if [[ $lunch_check -gt 1 ]]; then 
+      echo "Please build for one device at a time."
+      exit 1
+    fi
+  fi
+  
+  cd /tmp/cirrus-ci-build
+  PR_NUM=$(echo $BRANCH|awk -F '/' '{print $2}')
+  AUTHOR=$(gh pr view $PR_NUM|grep author| awk '{print $2}')
 
-	for id in 66806243 100027207 77049889 37245252 87101173 91236805 56505303 77262770 60956846 1133897 92011891 80823029 58514579 102499518 73420351 69832543
-	do
-		logins+=" $(gh api -H "Accept: application/vnd.github+json" /user/$id -q '.login')"
-	done
+  for id in 66806243 100027207 77049889 37245252 87101173 91236805 56505303 77262770 60956846 1133897 92011891 80823029 58514579 102499518 73420351 69832543
+  do
+    logins+=" $(gh api -H 'Accept: application/vnd.github+json' /user/$id -q '.login')"
+  done
 
-	for value in $logins
-	do
-		if [[ $AUTHOR == $value ]]; then echo Please check \#bad_people instruction in telegram group.; exit 1; fi
-	done
+  for value in $logins
+  do
+    if [[ $AUTHOR == $value ]]; then 
+      echo "Please check #bad_people instruction in telegram group."
+      exit 1
+    fi
+  done
 
-	joindate=$(date -d $(curl -s https://api.github.com/users/$AUTHOR | grep created_at | cut -d '"' -f4) +%s)
-	nowdate=$(date +%s)
-	datediff=$(expr $nowdate - $joindate)
-	if [[ $datediff -lt 2592000 ]]; then echo Please don\'t try to run build with your new account. Use your original account for doing PR.; exit 1; fi
+  joindate=$(date -d $(curl -s https://api.github.com/users/$AUTHOR | grep created_at | cut -d '"' -f4) +%s)
+  nowdate=$(date +%s)
+  datediff=$(expr $nowdate - $joindate)
+  if [[ $datediff -lt 2592000 ]]; then
+  echo "Please don't try to run build with your new account. Use your original account for doing PR."
+  exit 1
 fi
 
-if [[ $CIRRUS_USER_PERMISSION == write ]]; then
-	if [ -z "$CIRRUS_PR" ]; then true; else
-		echo You are push user. Don\'t do pr and please follow pinned message in push group.; exit 1
-	fi
+if [[ $CIRRUS_USER_PERMISSION == "write" ]]; then
+  if [ -z "$CIRRUS_PR" ]; then
+    true
+  else
+    echo "You are a push user. Don't create pull requests, and please follow the pinned message in the push group."
+    exit 1
+  fi
 fi
 
-echo Test passed
+echo "Test passed"
 echo "rom_name=$rom_name" >> $CIRRUS_ENV
 echo "device=$device" >> $CIRRUS_ENV
