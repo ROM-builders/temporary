@@ -21,7 +21,7 @@ export SKIP_API_CHECKS=true
 
 export WITH_GAPPS=true
 
-export TZ=Asia/Kolkata #put before last build command
+export TZ=Asia/Kolkata #put b4 last build command
 mka bacon
 
 # upload rum (if you don't need to upload multiple files, then you don't need to edit next line)
