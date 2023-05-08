@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 -u https://github.com/bananadroid/android_manifest.git -g default,-mips,-darwin,-notdefault
+repo init --no-repo-verify --depth=1 -u https://github.com/bananadroid/android_manifest.git -g default,-mips,-darwin,-notdefault
 git clone https://github.com/GeneralFrosa/local_manifest.git --depth 1 -b banana-RMX3371 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
