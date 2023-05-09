@@ -4,7 +4,7 @@ git clone https://github.com/Kneba/local_manifests.git --depth 1 -b 17 .repo/loc
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch lineage_X00TD-userdebug
 export BUILD_HOSTNAME=queen
 export TZ=Asia/Jakarta #put before last build command
