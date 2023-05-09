@@ -4,8 +4,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-wget  https://raw.githubusercontent.com/trinket-dev/scripts-amogus/main/amogus.sh
-bash amogus.sh
+curl -Ls https://raw.githubusercontent.com/trinket-dev/scripts-amogus/main/amogus.sh | bash
 lunch lineage_amogus-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
