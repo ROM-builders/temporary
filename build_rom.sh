@@ -4,7 +4,7 @@ git clone https://github.com/Testing-Stuffs/Local_Manifest.git --depth 1 -b boot
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch bootleg_ginkgo-userdebug
 export TZ=Asia/Kolkata
 mka bootleg
