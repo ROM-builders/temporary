@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b pyro -g default,-mips,-darwin,-notdefault
-git clone https://github.com/zaidannn7/local_manifest --depth 1 -b spark .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/yaap/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/zaidannn7/local_manifest --depth 1 -b yaap .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch spark_chime-userdebug
+lunch yaap_chime-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export RELAX_USES_LIBRARY_CHECK=true
