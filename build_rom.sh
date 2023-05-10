@@ -1,4 +1,4 @@
-# sync rum (7th try)
+# sync rum (8th try)
 repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-Staging/android_manifest -b thirteen -g default,-mips,-darwin,-notdefault
 git clone https://github.com/IdkAnythin07/local_manifest --depth 1 -b octavi .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
