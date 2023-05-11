@@ -6,10 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_rosy-userdebug
-export KBUILD_BUILD_USER=aepranata
-export KBUILD_BUILD_HOST=a3machine
-export BUILD_USERNAME=aepranata
-export BUILD_HOSTNAME=a3machine
+export BUILD_USERNAME=@builder
+export BUILD_HOSTNAME=@atiga-pc
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Jakarta #put before last build command
 make bacon
