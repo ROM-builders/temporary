@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/CherishOS/android_manif
 git clone https://github.com/Legendleo90/local_manifest.git -b cherish .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom [2]
 source build/envsetup.sh
 lunch cherish_beryllium-user
 export BUILD_USERNAME=Akshat
