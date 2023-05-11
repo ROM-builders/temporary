@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b tiramisu -b 11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/abhis699/Local-Manifests.git --depth 1 -b evolution-x-rmx3371 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b tiramisu -g default,-mips,-darwin,-notdefault
+git clone https://github.com/abhis699/local_manifest.git --depth 1 -b evolution-x-rmx3371 .repo/local_manifest
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch evolution_rmx3371-userdebug
+lunch evolution_RMX3371-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka evolution
 
