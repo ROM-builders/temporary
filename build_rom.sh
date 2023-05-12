@@ -8,10 +8,10 @@ source build/envsetup.sh
 lunch banana_sweet-userdebug
 export TZ=Asia/Jakarta #put before last build command
 export TARGET_SUPPORTS_64_BIT_APPS=true
-export KBUILD_BUILD_USER=unsatifsed
-export KBUILD_BUILD_HOST=gedang
-export BUILD_USERNAME=unsatifsed
-export BUILD_HOSTNAME=gedang
+export KBUILD_BUILD_USER=DjancoX
+export KBUILD_BUILD_HOST=SemoxCoy
+export BUILD_USERNAME=DjancoX
+export BUILD_HOSTNAME=SemoxCoy
 m banana
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
