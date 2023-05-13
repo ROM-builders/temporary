@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify --git-lfs -u https://github.com/syberia-project/manifest.git -b 13.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/menorziin/local_manifests --depth 1 -b 13 .repo/local_manifest
+git clone https://github.com/Ctps123/local_manifests --depth 1 -b 13 .repo/local_manifest
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
