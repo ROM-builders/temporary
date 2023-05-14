@@ -5,8 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch lineage_X00T-userdebug
-export BUILD_HOSTNAME=queen
+lunch lineage_X00TD-userdebug
+export BUILD_USERNAME=queen
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
