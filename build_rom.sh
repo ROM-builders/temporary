@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/DerpFest-AOSP/manifest -b 13 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/A51-Development/local_manifests --depth 1 .repo/local_manifests -b derp
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b thirteen-plus -g default,-mips,-darwin,-notdefault
+git clone https://github.com/roynatech2544/local_manifests --depth 1 .repo/local_manifests -b dreamlte
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build r
 source build/envsetup.sh
-lunch derp_a51-user
+lunch aosp_dreamlte-user
 export TZ=Asia/Seoul #put before last build command
 mka bacon
 
