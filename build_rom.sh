@@ -1,15 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Project-Xtended/manifest.git -b xt -g default,-mips,-darwin,-notdefault
-git clone https://github.com/baconpeedit/Local_Manifest.git --depth 1 -b xtended .repo/local_manifests
+git clone https://github.com/Testing-Stuffs/Local_Manifest.git --depth 1 -b xtended .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch xtended_ginkgo-userdebug
-export BUILD_USERNAME=Tejas
-export KBUILD_BUILD_USER=tejas
-export KBUILD_BUILD_HOST=I_Am_Charsi
-export BUILD_HOSTNAME=I_Am_Charsi
 export TZ=Asia/Kolkata
 mka xtended
 
