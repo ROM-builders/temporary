@@ -8,6 +8,9 @@ ccheck(){
 }
 
 ccheck 'rm ' 'Please dont use rm inside script, use local manifest for this purpose.'
+ccheck 'find ' 'Please dont use find inside script, use local manifest for this purpose.'
+ccheck 'unlink ' 'Please dont use unlink inside script, use local manifest for this purpose.'
+ccheck 'shred ' 'Please dont use shred inside script, use local manifest for this purpose.'
 ccheck 'sudo ' 'Please dont use sudo inside script.'
 ccheck 'repo forall ' 'Please dont use repo forall inside script.'
 ccheck 'curl ' 'Please dont use curl inside script.'
@@ -32,8 +35,8 @@ if [[ $init_check != *default,-mips,-darwin,-notdefault* ]]; then echo Please us
 clone_check=$(grep 'git clone' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $clone_check -gt 1 ]]; then echo Please use local manifest to clone trees and other repositories, we dont allow git clone to clone trees.; exit 1; fi
 
-url=https://$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 3-5 | cut -d ' ' -f 1)
-r_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+url=https://$(grep 'repo init' $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 3-5 | cut -d ' ' -f 1)
+r_name=$(grep 'repo init' $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 name_check=$(curl -Ls $url 2>&1 | grep 'repo init' | grep $r_name | wc -l)
 if [[ $r_name == "Havoc-OS" ]]; then name_check=1; fi
 if [[ $name_check == 0 ]]; then echo Please use init line url from rom manifest, its case sensitive. Also follow the format of build_rom.sh file of temporary repo main branch.; exit 1; fi
@@ -44,8 +47,27 @@ if [[ $j_check -gt 0 ]]; then echo Please dont specify j value in make line.; ex
 bliss_check=$(grep blissify $CIRRUS_WORKING_DIR/build_rom.sh | grep '\-c' | wc -l)
 if [[ $bliss_check -gt 0 ]]; then echo Please dont use make clean flag. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
 
+bliss_check=$(grep blissify $CIRRUS_WORKING_DIR/build_rom.sh | grep '\--clean' | wc -l)
+if [[ $bliss_check -gt 0 ]]; then echo Please dont use make clean flag. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
+
 bliss_check=$(grep blissify $CIRRUS_WORKING_DIR/build_rom.sh | grep '\-d' | wc -l)
 if [[ $bliss_check -gt 0 ]]; then echo Please dont use make installclean flag. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
+
+bliss_check=$(grep blissify $CIRRUS_WORKING_DIR/build_rom.sh | grep '\--devclean' | wc -l)
+if [[ $bliss_check -gt 0 ]]; then echo Please dont use make installclean flag. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
+
+aospa_check=$(grep "rom-build.sh" $CIRRUS_WORKING_DIR/build_rom.sh | grep '\-c' | wc -l)
+if [[ $aospa_check -gt 0 ]]; then echo Please dont use make clean flag. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
+
+aospa_check=$(grep "rom-build.sh" $CIRRUS_WORKING_DIR/build_rom.sh | grep '\--clean' | wc -l)
+if [[ $aospa_check -gt 0 ]]; then echo Please dont use make clean flag. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
+
+aospa_check=$(grep "rom-build.sh" $CIRRUS_WORKING_DIR/build_rom.sh | grep '\-i' | wc -l)
+if [[ $aospa_check -gt 0 ]]; then echo Please dont use make installclean flag. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
+
+aospa_check=$(grep "rom-build.sh" $CIRRUS_WORKING_DIR/build_rom.sh | grep '\--installclean' | wc -l)
+if [[ $aospa_check -gt 0 ]]; then echo Please dont use make installclean flag. Server does make installclean by default, which is enough for most of the cases.; exit 1; fi
+
 rclone_check=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
 rclone_string="rclone copy out/target/product/\$(grep unch \$CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:\$(grep unch \$CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P"
 if [[ $rclone_check != *$rclone_string* ]]; then echo Please follow rclone copy line of main branch.; exit 1; fi
@@ -54,10 +76,10 @@ sync_check=$(grep 'repo sync' $CIRRUS_WORKING_DIR/build_rom.sh)
 sync_string="repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8"
 if [[ $sync_check != *$sync_string* ]]; then echo Please follow repo sync line of main branch.; exit 1; fi
 
-rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
+rom_name=$(grep 'repo init' $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
+branch_name=$(grep 'repo init' $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
 rom_name=$rom_name-$branch_name
-supported_roms=' AICP-s12.1 AOSPA-topaz ArrowOS-arrow-13.1 bananadroid-13 BlissRoms-arcadia-next BlissRoms-typhoon BootleggersROM-tirimbino CarbonROM-cr-9.0 CherishOS-tiramisu CipherOS-thirteen crdroidandroid-11.0 crdroidandroid-12.1 crdroidandroid-13.0 DerpFest-12-12.1 DerpFest-AOSP-13 Evolution-X-tiramisu Fusion-OS-twelve Havoc-OS-twelve LineageOS-cm-14.1 LineageOS-lineage-15.1 LineageOS-lineage-16.0 LineageOS-lineage-17.1 LineageOS-lineage-18.1 LineageOS-lineage-19.1 LineageOS-lineage-20.0 Octavi-Staging-thirteen P-404-tokui PixelExperience-twelve PixelExperience-twelve-plus PixelExperience-thirteen PixelExperience-thirteen-plus PixelExtended-trece PixelOS-AOSP-thirteen PixysOS-twelve PixysOS-thirteen Project-Awaken-triton ProjectBlaze-13 Project-Xtended-xt ResurrectionRemix-Q ShapeShiftOS-android_13 Spark-Rom-pyro SuperiorOS-twelvedotone SuperiorOS-thirteen StagOS-t13 syberia-project-13.0 VoltageOS-13 xdroid-oss-thirteen yaap-thirteen '
+supported_roms=' AICP-s12.1 AOSPA-topaz ArrowOS-arrow-13.1 bananadroid-13 BlissRoms-arcadia-next BlissRoms-typhoon-qpr2 BootleggersROM-tirimbino CarbonROM-cr-9.0 CherishOS-tiramisu CipherOS-thirteen crdroidandroid-11.0 crdroidandroid-12.1 crdroidandroid-13.0 DerpFest-12-12.1 DerpFest-AOSP-13 Evolution-X-tiramisu Fusion-OS-twelve Havoc-OS-twelve LineageOS-cm-14.1 LineageOS-lineage-15.1 LineageOS-lineage-16.0 LineageOS-lineage-17.1 LineageOS-lineage-18.1 LineageOS-lineage-19.1 LineageOS-lineage-20.0 Octavi-Staging-thirteen P-404-tokui PixelExperience-twelve PixelExperience-twelve-plus PixelExperience-thirteen PixelExperience-thirteen-plus PixelExtended-trece PixelOS-AOSP-thirteen PixysOS-twelve PixysOS-thirteen Project-Awaken-triton ProjectBlaze-13 Project-Xtended-xt ResurrectionRemix-Q ShapeShiftOS-android_13 Spark-Rom-pyro SuperiorOS-twelvedotone SuperiorOS-thirteen StagOS-t13 syberia-project-13.0 VoltageOS-13 xdroid-oss-thirteen yaap-thirteen '
 
 if [[ $supported_roms != *" $rom_name "* ]]; then echo Not supported rom or branch.; exit 1; fi
 
