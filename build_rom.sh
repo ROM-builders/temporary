@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b thirteen-plus -g default,-mips,-darwin,-notdefault
-git clone https://github.com/roynatech2544/local_manifests --depth 1 .repo/local_manifests -b dreamlte
+repo init --depth=1 --no-repo-verify -u https://github.com/RisingTechOSS/android -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/roynatech2544/local_manifests --depth 1 .repo/local_manifests -b dreamlte-rising
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build r
 source build/envsetup.sh
-lunch aosp_dreamlte-user
+lunch lineage_dreamlte-user
 export TZ=Asia/Seoul #put before last build command
 mka bacon
 
