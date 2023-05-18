@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/SuperiorOS/manifest.g
 git clone https://github.com/matheucomth/local_manifest.git --depth 1 -b superior .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build roms
+# build rom
 . build/envsetup.sh
 lunch superior_tulip-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
