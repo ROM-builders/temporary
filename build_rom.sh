@@ -8,6 +8,8 @@ source build/envsetup.sh
 lunch xtended_beryllium-user
 export BUILD_USERNAME=Akshat
 export BUILD_HOSTNAME=leopubglover
+export WITH_GAPPS=true
+export TARGET_INCLUDE_NGA=true
 export TZ=Asia/Kolkata #put before last build command
 mka xtended
 
