@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/bananadroid/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
+repo init -u https://github.com/bananadroid/android_manifest.git -b 13 --git-lfs
 git clone https://github.com/Saikrishna1504/Local-Manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
