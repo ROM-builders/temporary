@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-AOSP/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
 git clone https://github.com/emmnueel/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch cherish_lancelot-userdebug
 export BUILD_USERNAME=Emmanuel
 export BUILD_HOSTNAME=CI
-export TZ=Asia/Manila #put before last build command
+export TZ=Asia/Manila
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
