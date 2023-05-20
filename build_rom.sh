@@ -1,13 +1,20 @@
-# sync rum
+# sync rum (16th try)
 repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest -b tiramisu -g default,-mips,-darwin,-notdefault
 git clone https://github.com/IdkAnythin07/local_manifest --depth 1 -b cherish .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rum
 source build/envsetup.sh
-export CHERISH_VANILLA=true
+
 export BUILD_USER=IdkAnythin07
 export BUILD_USERNAME=IdkAnythin07
+export KBUILD_BUILD_USER=IdkAnythin07
+export KBUILD_BUILD_USERNAME=IdkAnythin07
+export BUILD_HOST=cirrus-ci
+export BUILD_HOSTNAME=cirrus-ci
+export SKIP_ABI_CHECKS=true
+export SKIP_API_CHECKS=true
+
 export TZ=Asia/Kolkata #put b4 last build command
 brunch RMX1941
 
