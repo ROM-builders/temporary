@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch cherish_lancelot-userdebug
+lunch aosp_lancelot-userdebug
 export BUILD_USERNAME=Emmanuel
 export BUILD_HOSTNAME=CI
 export TZ=Asia/Manila
