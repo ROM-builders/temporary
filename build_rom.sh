@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch lineage_X00TD-userdebug
-export KBUILD_USER_NAME=queen
+export KBUILD_BUILD_USER=queen
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
