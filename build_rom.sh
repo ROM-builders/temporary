@@ -1,11 +1,11 @@
 # sync rom
-repo init -u https://github.com/Spark-Rom/manifest -b pyro
+repo init -u https://github.com/Octavi-Staging/manifest.git -b thirteen --depth=1
 https://github.com/shravansayz/local_manifest.git -b main .repo/local_manifests
-repo sync --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
+repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
 
 # build rom
 source build/envsetup.sh
-lunch spark_RMX1901-userdebug
+lunch octavi_RMX1901-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon -j$(nproc --all)
 
