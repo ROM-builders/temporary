@@ -1,4 +1,4 @@
-# sync rom
+
 repo init -u https://github.com/Octavi-Staging/manifest.git -b thirteen -g default,-mips.-darwin.-notdefault
 https://github.com/shravansayz/local_manifest.git -b main .repo/local_manifests
 repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
