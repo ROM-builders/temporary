@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch carbon_A001D-userdebug
 export TZ=America/Sao_Paulo
-export ALLOW_MISSING_DEPENDENCIES=true
+export KBUILD_BUILD_HOST=queen
 OWS=true
 
 make carbon
