@@ -6,9 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch carbon_A001D-userdebug
+export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=America/Sao_Paulo
-export KBUILD_BUILD_HOST=queen
-OWS=true
 
 make carbon
 
