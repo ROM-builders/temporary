@@ -4,7 +4,7 @@ git clone https://github.com/AbrarNoob/local_manifest --depth 1 -b banana .repo/
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
-#again3
+#again4
 
 # build rom
 . build/envsetup.sh
