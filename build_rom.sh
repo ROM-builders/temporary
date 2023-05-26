@@ -1,6 +1,6 @@
 # sync rom
 repo init -u https://github.com/Octavi-Staging/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/xyz-sundram/local_manifest.git --depth 1 -b xyz-sundram-patch-1  .repo/local_manifest
+git clone https://github.com/xyz-sundram/local_manifest.git --depth 1 -b main  .repo/local_manifest
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build roms
