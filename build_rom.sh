@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch bootleg_mojito-user
 touch device/xiaomi/mojito/Boardconfig.mk
-# export WITH_GAPPS=true 
+export WITH_GAPPS=true 
 export DEVICE_MAINTAINERS=Rom\ Bdr.\ Gharti
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
