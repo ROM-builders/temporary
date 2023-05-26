@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh 
 lunch aosp_lancelot-userdebug 
 export TZ=Asia/Delhi  
-export BUILD_USERNAME=@raizel_69
+export BUILD_USERNAME=@raizel_69 
 export BUILD_HOSTNAME=@acex69  
 make bacon    
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line) 
