@@ -4,6 +4,7 @@ git clone https://github.com/IJoseph23/local_manifest.git --depth 1 -b main .rep
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+
 source build/envsetup.sh
 lunch lineage_gta4xl-user
 export TZ=Asia/Dhaka #put before last build command
