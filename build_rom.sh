@@ -10,7 +10,7 @@ export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export RELAX_USES_LIBRARY_CHECK=true
 export TZ=Asia/Dhaka  #put before last command
-brunch tulip
+mka bacon
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
