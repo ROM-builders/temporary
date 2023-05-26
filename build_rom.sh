@@ -6,7 +6,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch carbon_X00TD-userdebug
-export KBUILD_BUILD_HOST=queen
+export KBUILD_BUILD_USER=queen
+export BUILD_USER=queen
+export BUILD_USERNAME=queen
 export TZ=Asia/Jakarta #put before last build command
 make carbon
 
