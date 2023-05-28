@@ -35,6 +35,9 @@ if [[ $init_check != *default,-mips,-darwin,-notdefault* ]]; then echo Please us
 clone_check=$(grep 'git clone' $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 if [[ $clone_check -gt 1 ]]; then echo Please use local manifest to clone trees and other repositories, we dont allow git clone to clone trees.; exit 1; fi
 
+manifests_check=$(grep 'git clone' $CIRRUS_WORKING_DIR/build_rom.sh)
+if [[ $manifests_check != *.repo/local_manifests* ]]; then echo Please follow git clone line from main branch.; exit 1; fi
+
 url=https://$(grep 'repo init' $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 3-5 | cut -d ' ' -f 1)
 r_name=$(grep 'repo init' $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 name_check=$(curl -Ls $url 2>&1 | grep 'repo init' | grep $r_name | wc -l)
