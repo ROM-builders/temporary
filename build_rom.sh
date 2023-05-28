@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git
 git clone https://github.com/Kneba/local_manifests.git --depth 1 -b 17 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build roms
 . build/envsetup.sh
 lunch lineage_X00TD-userdebug
 export KBUILD_BUILD_USER=queen
