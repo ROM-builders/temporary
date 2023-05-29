@@ -7,7 +7,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch lineage_X00TD-userdebug
 export BUILD_USERNAME=stress
-export BUILD_HOSTNAME=queen
+export BUILD_USER=stress
+export KBUILD_BUILD_USER=stress
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
