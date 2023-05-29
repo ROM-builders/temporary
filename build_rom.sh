@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch pixelos_lancelot-userdebug
+lunch aosp_lancelot-user
 export TZ=Asia/Kolkata #put before last build command
 make bacon
 
