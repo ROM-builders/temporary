@@ -1,12 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-20.0 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest.git -b pyro -g default,-mips,-darwin,-notdefault
 git clone https://github.com/DeliUstaTR/Local_Manifest --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_ginkgo-userdebug
+lunch spark_ginkgo-userdebug
 export TZ=Asia/Dhaka #put before last build command
+export TARGET_KERNEL_CLANG_VERSION=r487747
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
