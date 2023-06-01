@@ -4,6 +4,7 @@ git clone https://github.com/SauRavRwT/redwood-manifest.git --depth 1 -b evo .re
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 #2
+#3
 # build rom
 source build/envsetup.sh
 lunch evolution_redwood-userdebug
