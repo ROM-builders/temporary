@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git
 git clone https://github.com/HemanthJabalpuri/local_manifest --depth 1 -b rhode .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom (1)
+# build rom (2)
 source build/envsetup.sh
 lunch lineage_rhode-userdebug
 export TZ=Asia/Kolkata #put before last build command
