@@ -2,7 +2,7 @@
 repo init --depth=1 --no-repo-verify -u https://github.com/RisingTechOSS/android -b thirteen -g default,-mips,-darwin,-notdefault
 git clone https://github.com/ozipoetra/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # build rom
 . build/envsetup.sh
