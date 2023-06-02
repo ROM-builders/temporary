@@ -5,8 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch lineage_lancelot-user
-export BUILD_USERNAME=ozip
+lunch lineage_lancelot-userdebug
+export BUILD_USERNAME=ozipoetra
 export TZ=Asia/Jakarta #put before last build command
 m bacon
 
