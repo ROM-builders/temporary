@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/RisingTechOSS/android
 git clone https://github.com/ozipoetra/local-manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom test
 . build/envsetup.sh
 lunch lineage_merlinx-user
 export TZ=Asia/Jakarta #put before last build command
