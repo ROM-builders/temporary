@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch lineage_merlinx-user
 export TZ=Asia/Jakarta #put before last build command
 export RISING_CHIPSET=MT6769Z
