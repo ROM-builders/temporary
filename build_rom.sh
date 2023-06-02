@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch drep_lancelot-userdebug
+lunch derp_lancelot-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
