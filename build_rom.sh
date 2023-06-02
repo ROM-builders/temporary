@@ -19,7 +19,6 @@ export WITH_GMS=true
 export TARGET_CORE_GMS=false
 export TARGET_USE_GOOGLE_TELEPHONY=true
 export TARGET_CORE_GMS_EXTRAS=true
-mka bacon
 make updatepackage
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
