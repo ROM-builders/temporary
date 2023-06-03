@@ -5,7 +5,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --optimiz
 
 # build rom
 source build/envsetup.sh
-lunch banana_<merlinx>-userdebug
+lunch banana_merlinx-userdebug
 export TZ=Asia/Jakarta #put before last build command
 mka derp
 
