@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build r
 source build/envsetup.sh
-lunch aosp_dreamlte-user
+lunch aosp_dream2lte-user
 export TZ=Asia/Seoul #put before last build command
 mka bacon
 
