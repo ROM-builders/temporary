@@ -1,12 +1,12 @@
 # sync rom
-repo init -u https://github.com/bananadroid/android_manifest.git -b 13 --git-lfs
-git clone https://github.com/LineageOS/android_device_xiaomi_merlinx.git --depth 1 -b aex .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/bananadroid/android_manifest.git -b 13 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/nullptr03/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune
 
 # build rom
 source build/envsetup.sh
 lunch banana_<merlinx>-userdebug
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Jakarta #put before last build command
 mka derp
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
