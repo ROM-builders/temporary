@@ -1,5 +1,6 @@
 # sync rom
 repo init -u https://github.com/bananadroid/android_manifest.git -b 13 --git-lfs
+git clone https://github.com/LineageOS/android_device_xiaomi_merlinx.git --depth 1 -b aex .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune
 
 # build rom
