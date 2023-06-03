@@ -8,7 +8,6 @@ source build/envsetup.sh
 lunch bootleg_rosemary-userdebug
 export BUILD_HOSTNAME=Chas
 export BUILD_USERNAME=Chas
-export WITH_GAPPS=true
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
