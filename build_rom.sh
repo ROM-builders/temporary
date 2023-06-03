@@ -1,11 +1,14 @@
 # sync rom
-repo init -u https://github.com/CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/YudhoPatrianto/local-manifest.git --depth 1 -b main .repo/local_manifests
+repo init -u https://github.com/xdroidOSS-Pixel/manifest -b thirteen  default,-mips,-darwin,-notdefault
+git clone https://github.com/YudhoPatrianto/local-manifest.git -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+export SELINUX_IGNORE_NEVERALLOWS=true
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+export SKIP_ABI_CHECKS=true
 source build/envsetup.sh
-lunch cherish_selene-userdebug
+lunch xdroid_selene-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
