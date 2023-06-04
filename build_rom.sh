@@ -6,7 +6,12 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch derp_merlinx-userdebug
-export TZ=Asia/Jakarta #put before last build command
+export BUILD_USERNAME = @nullptr03.
+export BUILD_HOSTNAME = @nullptr03.
+export KBUILD_BUILD_NAME = @nullptr03.
+export KBUILD_BUILD_HOST = @nullptr03.
+export TARGET_USES_MINI_GAPPS := true
+export TZ=Asia/Makassar #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
