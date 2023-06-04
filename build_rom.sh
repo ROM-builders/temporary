@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch evolution_X00TD-userdebug
-export TZ=Asia/Makassar #put before last build command
+export TZ=Asia/Jakarta #put before last build command
 export TARGET_INCLUDE_LIVE_WALLPAPERS := false
 export TARGET_USES_MINI_GAPPS := true
 mka evolution
