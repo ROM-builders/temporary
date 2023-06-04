@@ -6,11 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch derp_merlinx-userdebug
-export BUILD_USERNAME = @nullptr03.
-export BUILD_HOSTNAME = @nullptr03.
-export KBUILD_BUILD_NAME = @nullptr03.
-export KBUILD_BUILD_HOST = @nullptr03.
-export TARGET_USES_MINI_GAPPS := true
 export TZ=Asia/Makassar #put before last build command
 mka bacon
 
