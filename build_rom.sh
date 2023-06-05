@@ -7,7 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch bootleg_lancelot-userdebug
 export TZ=asia/Dhaka #put before last build command
-export TARGET_BOOT_ANIMATION_RES=720
 export SELINUX_IGNORE_NEVERALLOWS=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 mka bacon
