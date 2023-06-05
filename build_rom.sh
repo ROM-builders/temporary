@@ -6,9 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build roms
 . build/envsetup.sh
 lunch superior_twolip-user
-
 export ALLOW_MISSING_DEPENDENCIES=true
-
 export TZ=Asia/Dhaka  #put before last command
 mka bacon
 
