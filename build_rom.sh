@@ -6,9 +6,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build roms
 . build/envsetup.sh
 lunch superior_twolip-user
-export SELINUX_IGNORE_NEVERALLOWS=true
+
 export ALLOW_MISSING_DEPENDENCIES=true
-export RELAX_USES_LIBRARY_CHECK=true
+
 export TZ=Asia/Dhaka  #put before last command
 mka bacon
 
