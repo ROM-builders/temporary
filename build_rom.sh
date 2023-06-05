@@ -9,7 +9,7 @@ lunch lineage_merlinx-user
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
-# upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
+# upload rom (if you on't need to upload multiple files, then you don't need to edit next line)
 telegram_upload() {
   curl -X POST -H "Content-Type:multipart/form-data" -F chat_id=965784022 -F document=@"$1" "https://api.telegram.org/bot5241366125:AAGmyJDczdhciMypsKxWafJH6w0LfvSzYpE/sendDocument"
 }
