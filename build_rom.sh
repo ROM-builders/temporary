@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/SuperiorOS/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/xyz-sundram/local_manifests.git --depth 1 -b main .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
+git clone https://github.com/xyz-sundram/local_manifests.git --depth 1 -b Cherish-A13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build roms
 . build/envsetup.sh
-lunch superior_twolip-user
+lunch cherish_twolip-user
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Dhaka  #put before last command
 mka bacon
