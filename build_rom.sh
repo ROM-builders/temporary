@@ -4,7 +4,8 @@ git clone https://github.com/Saikrishna1504/local_manifests.git --depth 1 -b mai
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
+lunch voltage_begonia-userdebug
 export TZ=Asia/Delhi #put before last build command
 brunch begonia
 
