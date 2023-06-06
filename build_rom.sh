@@ -6,7 +6,12 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch evolution_merlinx-userdebug
-export TZ=Asia/Jakarta #put before last build command
+export KBUILD_BUILD_USER=ozipoetra
+export KBUILD_BUILD_HOST=ozip.my.id
+export BUILD_USERNAME=ozipoetra
+export BUILD_HOSTNAME=ozip.my.id
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+export TZ=Asia/Jakarta
 mka evolution
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
