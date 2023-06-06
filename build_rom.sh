@@ -6,11 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch syberia_merlinx-userdebug
-export KBUILD_BUILD_USER=Andy
-export KBUILD_BUILD_HOST=Andy
 export BUILD_USERNAME=Andy
 export BUILD_HOSTNAME=Andy
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export TZ=Asia/Makassar #put before last build command
 mka bacon
 
