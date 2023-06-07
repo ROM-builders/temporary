@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch aosp_fleur-userdebug
 export SKIP_ABI_CHECKS=true
 export SELINUX_IGNORE_NEVERALLOWS=true
-export TZ=Asia/Kolkata #put before last build command
+export TZ=Asia/Kolkata  #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
