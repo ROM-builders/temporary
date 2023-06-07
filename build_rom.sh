@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch cherish_merlinx-userdebug
+lunch bootleg_merlinx-userdebug
 export BUILD_USERNAME=Andy
 export BUILD_HOSTNAME=Andy
 export TZ=Asia/Makassar
