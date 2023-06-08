@@ -7,11 +7,8 @@ repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --pru
 source build/envsetup.sh
 lunch spark_RMX1901-userdebug
 export BUILD_USERNAME=shrav1
-
-export TZ=Asia/Kolkata
-mka bacon
 export TZ=Asia/Kolkata #put before last build command
-
+mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
