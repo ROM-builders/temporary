@@ -6,10 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch evolution_merlinx-userdebug
-export KBUILD_BUILD_USER=ozipoetra
-export KBUILD_BUILD_HOST=ozip.my.id
-export BUILD_USERNAME=ozipoetra
-export BUILD_HOSTNAME=ozip.my.id
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export TZ=Asia/Jakarta
 mka evolution
