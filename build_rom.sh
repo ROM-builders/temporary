@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android -b 
 git clone https://github.com/Whot1966/local_manifests.git --depth 1 -b X00TD/4.19/lineage-20.0 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom start
 source build/envsetup.sh
 lunch lineage_X00TD-user
 export BUILD_USERNAME=wo1966
