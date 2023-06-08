@@ -7,7 +7,7 @@ repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --pru
 source build/envsetup.sh
 lunch spark_RMX1901-userdebug
 export BUILD_USERNAME=shrav1
-export TZ=Asia/Kolkata #put before last build command
+export TZ=Asia/Makassar
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
