@@ -2,7 +2,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/androi
 git clone https://github.com/SKetU-l/local_manifest --depth=1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom #8
+# build rom
 source build/envsetup.sh
 lunch awaken_X00TD-userdebug
 export TZ=Asia/Kolkata #put before last build command
