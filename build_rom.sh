@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Evolution-X/manifest -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/STRK-ND/local-manifest.git --depth 1 -b evo .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b tiramisu -g default,-mips,-darwin,-notdefault
+git clone https://github.com/mainbond02/localmanifest.git --depth 1 -b evo .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
-lunch evolution_X00TD-userdebug
+source build/envsetup.sh
+lunch evolution_beryllium-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka evolution
 
