@@ -1,14 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/xyz-sundram/local_manifests.git --depth 1 -b Cherish-A13 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/SuperiorOS/manifest.git -b twelvedotone -g default,-mips,-darwin,-notdefault
+git clone https://github.com/baldwalterblack/local_manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build roms
-. build/envsetup.sh
-lunch cherish_twolip-user
-export ALLOW_MISSING_DEPENDENCIES=true
-export TZ=Asia/Dhaka  #put before last command
-mka bacon
+# build rom
+source build/envsetup.sh
+lunch superior_m307f-user
+export TZ=Asia/Dhaka #put before last build command
+m bacon
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
