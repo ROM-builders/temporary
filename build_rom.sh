@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest.
 git clone https://github.com/Legendleo90/local_manifest.git -b evo .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom#
+# build rom
 source build/envsetup.sh
 lunch evolution_beryllium-user
 export BUILD_USERNAME=Akshat
