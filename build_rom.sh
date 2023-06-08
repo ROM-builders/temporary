@@ -6,8 +6,20 @@ repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --pru
 # build rom
 source build/envsetup.sh
 lunch spark_RMX1901-userdebug
-export BUILD_HOSTNAME=SK
-export BUILD_USERNAME=SK
+export SELINUX_IGNORE_NEVERALLOWS=true
+export ALLOW_MISSING_DEPENDENCIES=true
+export RELAX_USES_LIBRARY_CHECK=true
+export BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES=true
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+export BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE=true
+export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
+export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
+export BUILD_BROKEN_DUP_RULES=true
+export SKIP_ABI_CHECKS=true
+export BUILD_USERNAME=SK.
+export BUILD_HOSTNAME=SK.
+export KBUILD_BUILD_NAME=SK.
+export KBUILD_BUILD_HOST=SK.
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
