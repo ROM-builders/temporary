@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch lineage_r5x-userdebug
 export ALPHA_MAINTAINER=Amrito
 export TARGET_ENABLE_BLUR=true
-export TARGET_ENABLE_BLUR=true
+export TARGET_DISABLE_EPPE=true
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
