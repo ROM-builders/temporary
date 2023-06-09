@@ -6,9 +6,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch lineage_merlinx-user
-export BUILD_USERNAME=neko
+export BUILD_USERNAME=mitsu00
 export TZ=Asia/Jakarta #put before last build command
-export WITH_GMS=true
+# export WITH_GMS=true
 # export TARGET_USE_GOOGLE_TELEPHONY=true
 m bacon
 
