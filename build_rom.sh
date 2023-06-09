@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/SuperiorOS/manifest.g
 git clone https://github.com/SwapnilVicky/local_manifest --depth 1 -b superior .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom#
+# build rom
 . build/envsetup.sh
 lunch superior_miatoll-userdebug
 export TZ=Asia/Dhaka #put before last build command
