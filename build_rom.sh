@@ -9,6 +9,7 @@ lunch cherish_merlinx-userdebug
 export BUILD_USERNAME=Andy
 export BUILD_HOSTNAME=Andy
 export TZ=Asia/Makassar
+export CHERISH_VANILLA=true
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
