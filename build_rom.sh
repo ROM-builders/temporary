@@ -4,7 +4,7 @@ git clone https://github.com/Amritorock/local_manifest.git --depth 1 -b alpha .r
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+source build/envsetup.sh 
 lunch lineage_r5x-userdebug
 export ALPHA_MAINTAINER=Amrito
 export TARGET_ENABLE_BLUR=true
