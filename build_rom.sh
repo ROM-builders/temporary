@@ -9,7 +9,7 @@ lunch lineage_merlinx-user
 export BUILD_USERNAME=neko
 export TZ=Asia/Jakarta #put before last build command
 export WITH_GMS=true
-export TARGET_USE_GOOGLE_TELEPHONY=true
+# export TARGET_USE_GOOGLE_TELEPHONY=true
 m bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
