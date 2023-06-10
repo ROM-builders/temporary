@@ -4,12 +4,12 @@ repo init --depth=1 --no-repo-verify -u https://github.com/alphadroid-project/ma
 git clone https://github.com/Legendleo90/local_manifest.git -b alpha .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom#
+# build rom
 source build/envsetup.sh
 lunch lineage_beryllium-user
 export BUILD_USERNAME=Akshat
 export BUILD_HOSTNAME=leopubglover
-export WITH_GAPPS=2
+export WITH_GAPPS=0
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
