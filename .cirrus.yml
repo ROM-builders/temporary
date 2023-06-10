@@ -15,8 +15,8 @@ task:
     isolation:
       container:
         image: apon77/aosp:cirrus
-        cpu: 8
-        memory: 10G
+        cpu: 2
+        memory: 4G
 
   env_script:
     - env
