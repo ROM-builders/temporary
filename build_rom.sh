@@ -7,10 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch spark_markw-eng
 #export WITH_GAPPS=true
-export KBUILD_BUILD_USER=biasa
-export KBUILD_BUILD_HOST=low
-export BUILD_USERNAME=biasa
-export BUILD_HOSTNAME=low
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
