@@ -3,9 +3,9 @@ repo init --depth=1 --no-repo-verify -u https://github.com/alphadroid-project/ma
 git clone https://github.com/Prashant-1695/local_manifest.git -b crdroid .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom#
-source build/envsetup.sh
-lunch lineage_lavender-user
+# build rom
+. build/envsetup.sh
+lunch lineage_lavender-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
