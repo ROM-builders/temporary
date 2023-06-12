@@ -9,8 +9,6 @@ lunch syberia_merlinx-userdebug
 export BUILD_USERNAME=Andy
 export BUILD_HOSTNAME=Andy
 export TZ=Asia/Makassar
-export WITH_GAPPS=2
-export SELINUX_IGNORE_NEVERALLOWS=true
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
