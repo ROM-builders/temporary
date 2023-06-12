@@ -9,7 +9,7 @@ lunch bootleg_merlinx-userdebug
 export BUILD_USERNAME=Andy
 export BUILD_HOSTNAME=Andy
 export TZ=Asia/Makassar
-export WITH_GAPPS=false
+export WITH_GAPPS=2
 export SELINUX_IGNORE_NEVERALLOWS=true
 mka bacon
 
