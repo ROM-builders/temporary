@@ -1,11 +1,11 @@
 # sync rom
-repo init --no-repo-verify --depth=1 -u https://github.com/LineageOS/android.git -b lineage-20.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/GeneralFrosa/local_manifest.git --depth 1 -b LineageOS-a53x .repo/local_manifests
+repo init --no-repo-verify --depth=1 -u https://github.com/pixeldust-project-caf/manifest -b tartufo-qpr2 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/GeneralFrosa/local_manifest.git --depth 1 -b PixelDust-rmx3371 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_a53x-user
+lunch aosp_rmx3371-user
 export TZ=Asia/Batam #put before last build command
 mka bacon
 
