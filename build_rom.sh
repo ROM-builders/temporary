@@ -1,6 +1,6 @@
 # sync rom
 repo init -u https://github.com/Spark-Rom/manifest -b pyro
-git clone https://github.com/Chkpon54/local_manifest.git --depth 1 -b master .repo/local_manifests
+git clone https://github.com/Chkpon54/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 
 # build rom
