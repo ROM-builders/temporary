@@ -4,7 +4,7 @@ git clone https://github.com/GeneralFrosa/local_manifest.git --depth 1 -b Lineag
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+source build/envsetup.sh 
 lunch lineage_a53x-user
 export TZ=Asia/Batam #put before last build command
 mka bacon
