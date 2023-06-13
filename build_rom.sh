@@ -5,11 +5,12 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch cherish_merlinx-userdebug
+lunch spark_merlinx-userdebug
 export KBUILD_USERNAME=Andy
 export KBUILD_HOSTNAME=Andy
 export BUILD_USERNAME=Andy
 export BUILD_HOSTNAME=Andy
+export WITH_GAPPS=false
 export TZ=Asia/Makassar
 mka bacon
 
