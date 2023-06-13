@@ -6,6 +6,7 @@ repo sync --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$
 # build rom
 build/env*
 lunch spark_lancelot-userdebug
+export WITH_GAPPS=false
 export TZ=Asia/Dhaka
 mka bacon -j$(nproc --all)
 
