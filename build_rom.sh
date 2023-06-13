@@ -10,7 +10,6 @@ export KBUILD_USERNAME=Andy
 export KBUILD_HOSTNAME=Andy
 export BUILD_USERNAME=Andy
 export BUILD_HOSTNAME=Andy
-export WITH_GAPPS=false
 export TZ=Asia/Makassar
 mka bacon
 
