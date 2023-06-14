@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch spark_merlinx-userdebug
+export WITH_GAPPS=false
 export KBUILD_USERNAME=Andy
 export KBUILD_HOSTNAME=Andy
 export BUILD_USERNAME=Andy
