@@ -5,7 +5,7 @@ git clone https://github.com/acex69/local_manifest.git --depth 1 -b merlinx .rep
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 # build rom             
 source build/envsetup.sh 
-lunch aosp_merlinx-userdebug  
+lunch aosp_merlinx-userdebug   
 export TZ=Asia/Delhi  
 export BUILD_USERNAME=@raizel_69 
 export BUILD_HOSTNAME=@acex69  
