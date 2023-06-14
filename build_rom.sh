@@ -4,13 +4,15 @@ git clone https://github.com/ManitnjG/local_manifest.git --depth 1 -b al .repo/l
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+
 source build/envsetup.sh
+
+lunch lineage_X01BD-userdebug
+
+make bacon
 
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Dhaka #put before last build command
-
-lunch lineage_X01BD-userdebug
-mka bacon
 
   
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
