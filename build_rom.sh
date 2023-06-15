@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch banana_merlinx-user
+export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_USERNAME=ozip
 export BUILD_HOSTNAME=ozip
 export TZ=Asia/Jakarta #putt before last build command
