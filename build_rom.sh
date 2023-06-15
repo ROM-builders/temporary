@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch derp_vayu-user
+lunch lineage_CPH2381-userdebug
 export TZ=Asia/Dhaka #put before last build command
 brunch CPH2381
 
