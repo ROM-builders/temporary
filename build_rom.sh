@@ -3,6 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Project-Xtended/manif
 git clone https://github.com/SauRavRwt/local-manifest.git --depth=1 -b xt .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+#2
 # build rom
 source build/envsetup.sh
 lunch xtended_redwood-userdebug
