@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch xtended_monet-userdebug
+lunch xtended_monet-eng
 export TZ=Asia/Dhaka #put before last build command
 make xtended
 # 2
