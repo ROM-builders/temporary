@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom 
 source build/envsetup.sh
 lunch aosp_vayu-user
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export KBUILD_BUILD_USER=chandler
 export KBUILD_BUILD_HOST=bing
 export BUILD_USERNAME=chandler
