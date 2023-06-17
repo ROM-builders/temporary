@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch spark_merlinx-userdebug
 export TZ=Asia/Makassar
-export WITH_GAPPS=false
+export WITH_GAPPS=true
 export KBUILD_USERNAME=Andy
 export KBUILD_HOSTNAME=Andy
 export BUILD_USERNAME=Andy
