@@ -1,7 +1,5 @@
 wget https://raw.githubusercontent.com/akhilnarang/scripts/master/setup/android_build_env.sh
 . android_build_env.sh
-git config --global user.name "Rishik"
-git config --global user.email "xxrishikcootr@gmail.com"
 
 # sync rom
 repo init --depth=1 -u https://github.com/SuperiorOS/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
