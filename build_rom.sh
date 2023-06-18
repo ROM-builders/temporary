@@ -1,10 +1,8 @@
 git clone https://github.com/akhilnarang/scripts
-cd scripts/setup
-. android_build_env.sh
+. scripts/setup/android_build_env.sh
 git config --global user.name "Rishik"
 git config --global user.email "xxrishikcootr@gmail.com"
-mkdir ppui
-cd ppui
+
 # sync rom
 repo init --depth=1 -u git://github.com/PixelPlusUI/manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
 git clone https://github.com/SamsungExynos9810/local_manifests-v2 .repo/local_manifests
