@@ -1,4 +1,3 @@
-
 # sync rom
 repo init --depth=1 -u https://github.com/PixelOS-AOSP/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
 git clone https://github.com/samsungexynos9810/local_manifests-V2 -b main .repo/local_manifests
