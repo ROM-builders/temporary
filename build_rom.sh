@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest.gi
 git clone https://github.com/AhmedGamal09/local_manifest.git --depth 1 -b spark .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom 15
+# build rom 16
 source build/envsetup.sh
 lunch spark_mojito-userdebug
 export WITH_GAPPS=true
