@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/P-404/android_manifest -b tokui -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/ShapeShiftOS/android_manifest.git -b android_13 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/WAR-DEPT/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch p404_miatoll-userdebug
+lunch ssos_miatoll-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
