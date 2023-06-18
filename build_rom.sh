@@ -4,7 +4,7 @@ git config --global user.name "Rishik"
 git config --global user.email "xxrishikcootr@gmail.com"
 
 # sync rom
-repo init --depth=1 -u https://github.com/PixelPlusUI/manifest -b tiramisu
+repo init --depth=1 -u https://github.com/PixelPlusUI/manifest -b tiramisu -g default,-mips,-darwin,-notdefault
 git clone https://github.com/SamsungExynos9810/local_manifests-v2 .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
