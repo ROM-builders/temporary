@@ -4,8 +4,9 @@ git config --global user.name "Rishik"
 git config --global user.email "xxrishikcootr@gmail.com"
 
 # sync rom
-repo init --depth=1 -u https://github.com/SuperiorOS/manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/SamsungExynos9810/local_manifests-v2 .repo/local_manifests
+repo init --depth=1 -u https://github.com/SuperiorOS/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/samsungexynos9810/local_manifests-V2 -b main .repo/local_manifests
+
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
