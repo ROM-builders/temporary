@@ -1,4 +1,4 @@
-curl -Ls https://raw.githubusercontent.com/akhilnarang/scripts/master/setup/android_build_env.sh
+curl https://raw.githubusercontent.com/akhilnarang/scripts/master/setup/android_build_env.sh
 . android_build_env.sh
 git config --global user.name "Rishik"
 git config --global user.email "xxrishikcootr@gmail.com"
