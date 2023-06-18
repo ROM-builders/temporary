@@ -1,15 +1,13 @@
-wget https://raw.githubusercontent.com/akhilnarang/scripts/master/setup/android_build_env.sh
-. android_build_env.sh
 
 # sync rom
-repo init --depth=1 -u https://github.com/SuperiorOS/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
+repo init --depth=1 -u https://github.com/PixelOS-AOSP/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
 git clone https://github.com/samsungexynos9810/local_manifests-V2 -b main .repo/local_manifests
 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch superior_star2lte-userdebug
+lunch aosp_star2lte-userdebug
 export TZ=Asia/Dhaka 
 # put before last build command
 mka bacon
