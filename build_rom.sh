@@ -3,8 +3,8 @@ cd scripts/setup
 . android_build_env.sh
 git config --global user.name "Rishik"
 git config --global user.email "xxrishikcootr@gmail.com"
+ls
 mkdir ppui
-cd ppui
 
 # sync rom
 repo init --depth=1 -u git://github.com/PixelPlusUI/manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
