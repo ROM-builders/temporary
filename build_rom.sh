@@ -1,5 +1,6 @@
 git clone https://github.com/akhilnarang/scripts
-. scripts/setup/android_build_env.sh
+cd scripts/setup
+. android_build_env.sh
 git config --global user.name "Rishik"
 git config --global user.email "xxrishikcootr@gmail.com"
 
