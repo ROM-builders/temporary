@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/CipherOS/android_manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/ProjectBlaze/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Burhanverse/local_manifest.git --depth 1 -b cipher .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch cipher_lancelot-userdebug
+lunch blaze_lancelot-userdebug
 
 export BUILD_USERNAME=burhan 
 export BUILD_HOSTNAME=burhan 
