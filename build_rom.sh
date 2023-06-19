@@ -1,16 +1,16 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/CipherOS/android_manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/nullptr03/local_manifest.git --depth 1 -b cipher .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/nullptr03/local_manifest.git --depth 1 -b blaze .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch cipher_merlinx-userdebug
-export TZ=Asia/Makassar
+lunch blaze_merlinx-userdebug
 export KBUILD_USERNAME=Andy
 export KBUILD_HOSTNAME=Andy
 export BUILD_USERNAME=Andy
 export BUILD_HOSTNAME=Andy
+export TZ=Asia/Makassar
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
