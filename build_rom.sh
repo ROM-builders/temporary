@@ -1,13 +1,15 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Project-Xtended/manifest.git -b xt -g default,-mips,-darwin,-notdefault
-git clone https://github.com/xyz-sundram/local_manifests.git --depth 1 -b xtended .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 11.0 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/xyz-sundram/local_manifests.git --depth 1 -b crd .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build roms
 . build/envsetup.sh
-lunch xtended_tulip-user
+lunch lineage_tulip-userdebug
+export WITH_GAPPS=true
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
-mka bacon
+make bacon
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
