@@ -1,9 +1,9 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Fr0ztyy43/local_manifests --depth 1 -b los2- .repo/local_manifests
+git clone https://github.com/Fr0ztyy43/local_manifests --depth 1 -b los20 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build romakb
+# build romakbh
 source build/envsetup.sh
 
 
