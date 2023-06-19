@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch yaap_fog-userdebug
-export SELINUX_IGNORE_NEVERALLOWS=true
 export TARGET_BUILD_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
 m yaap
