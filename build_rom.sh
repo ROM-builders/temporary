@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 -u https://android.googlesource.com/platform/manifest/ -b android-13.0.0_r52 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 -u https://github.com/PixelExperience/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Rishik-AKA-TPSRISHIKop/local_manifest -b main .repo/local_manifests
 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
