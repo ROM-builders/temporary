@@ -3,6 +3,7 @@ repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/Spark-Ro
 git clone https://github.com/Burhanverse/local_manifest.git --depth 1 -b spark .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+
 # build rom
 source build/envsetup.sh
 lunch spark_lancelot-userdebug
@@ -12,7 +13,6 @@ export BUILD_USERNAME=burhan
 export BUILD_HOSTNAME=burhan 
 export TZ=Asia/Kolkata #put before last build command
 #plox no gay moment again 
-
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
