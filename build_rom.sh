@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git --git-lfs -b 11.0 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/alphadroid-project/manifest.git --git-lfs -b alpha-13 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/crimzxd/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
-export TZ=Asia/Delhi
+export TZ=Asia/Delhi #put before last build command
 brunch RMX1821
 
 # upload rom (if you don't need to upload multiple files, then you don't to edit next lne)
