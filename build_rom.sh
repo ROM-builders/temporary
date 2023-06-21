@@ -1,11 +1,11 @@
 # sync rom
-repo init -u https://github.com/CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
+repo init -u https://github.com/PixysOS/manifest -b thirteen -b tiramisu -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Shravan55555/local_manifest.git -b main .repo/local_manifests
 repo sync -c -f --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
 
 # build rom
 source build/envsetup.sh
-lunch cherish_RMX1901-userdebug
+lunch pixys_RMX1901-userdebug
 export BUILD_USERNAME=shrav1
 export TZ=Asia/Makassar
 mka bacon
