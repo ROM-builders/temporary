@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom [07]
 source build/envsetup.sh
 lunch cherish_raphael-userdebug
+export CHERISH_VANILLA=true
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
