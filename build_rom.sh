@@ -2,11 +2,11 @@
 repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b thirteen-plus -g default,-mips,-darwin,-notdefault
 git clone https://github.com/snnbyyds/local_manifests.git --depth 1 -b thirteen-plus .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-repo pick 25115
 
 # build rom
 source build/envsetup.sh
 croot
+repopick 25115
 export CUSTOM_BUILD_TYPE=OFFICIAL
 lunch aosp_fajita-userdebug
 export KBUILD_BUILD_USER=snnbyyds
