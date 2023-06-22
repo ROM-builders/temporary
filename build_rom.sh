@@ -1,4 +1,4 @@
-# sync rom 
+# sync rom  
 repo init -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs
 git clone https://github.com/FollowNaim/local_manifest --depth 1 -b lineage-20.0 .repo/local_manifest
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
