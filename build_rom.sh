@@ -5,7 +5,16 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch derp_rmx1941-user
+lunch derp_rmx1941-userdebug
+export BUILD_USER=nxzhuuu47
+export BUILD_USERNAME=nxzhuuu47
+export KBUILD_BUILD_USER=nxzhuuu47
+export KBUILD_BUILD_USERNAME=nxzhuuu47
+export BUILD_HOST=cirrus-ci
+export BUILD_HOSTNAME=cirrus-ci
+export SKIP_ABI_CHECKS=true
+export SKIP_API_CHECKS=true
+
 export TZ=Asia/Jakarta #put before last build command
 mka derp
 
