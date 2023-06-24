@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom                 
 source build/envsetup.sh  
 lunch evolution_lancelot-userdebug 
-export TZ=Asia/Delhi   
+export TZ=Asia/Delhi    
 export BUILD_USERNAME=@raizel_69 
 export BUILD_HOSTNAME=@acex69  
 mka evolution 
