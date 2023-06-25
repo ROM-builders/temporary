@@ -4,7 +4,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manif
 git clone https://codeberg.org/omansh-krishn/local_manifest.git --depth 1 -b pixelexperience-13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 # build rom
-
+#retry[1]
 source build/envsetup.sh
 export TARGET_GAPPS_ARCH=arm64
 export TARGET_KERNEL_CLANG_VERSION=proton-clang
@@ -14,9 +14,9 @@ export TARGET_KERNEL_CROSS_COMPILE_ARM32_PREFIX=${TARGET_KERNEL_CLANG_PATH}/bin/
 export TARGET_KERNEL_LLVM_BINUTILS=false
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export BUILD_USERNAME=OmanshKrishn
-export BUILD_HOSTNAME=ubuntu
+export BUILD_HOSTNAME=debian
 export KBUILD_BUILD_USER=OmanshKrishn
-export KBUILD_BUILD_HOST=ubuntu
+export KBUILD_BUILD_HOST=debian
 export ALLOW_MISSING_DEPENDENCIES=true
 
 lunch aosp_santoni-userdebug
