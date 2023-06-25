@@ -8,7 +8,7 @@ source build/envsetup.sh
 
 
 lunch stag_begonia-userdebug
-
+export WITH_GAPPS=true
 export KBUILD_BUILD_USER=Fr0ztyy43 
 export KBUILD_BUILD_HOST=Noob
 export BUILD_USERNAME=Fr0ztyy43 
