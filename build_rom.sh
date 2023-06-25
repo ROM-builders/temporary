@@ -11,6 +11,7 @@ export KBUILD_USERNAME=Andy
 export KBUILD_HOSTNAME=Andy
 export BUILD_USERNAME=Andy
 export BUILD_HOSTNAME=Andy
+export ALLOW_MISSING_DEPENDENCIES=true
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
