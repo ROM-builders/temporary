@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 #retry[1]
 source build/envsetup.sh
+lunch aosp_santoni-userdebug
 export TARGET_GAPPS_ARCH=arm64
 export TARGET_KERNEL_CLANG_VERSION=proton-clang
 export TARGET_KERNEL_CLANG_PATH=$(pwd)/prebuilts/clang/host/linux-x86/${TARGET_KERNEL_CLANG_VERSION}
@@ -18,8 +19,6 @@ export BUILD_HOSTNAME=debian
 export KBUILD_BUILD_USER=OmanshKrishn
 export KBUILD_BUILD_HOST=debian
 export ALLOW_MISSING_DEPENDENCIES=true
-
-lunch aosp_santoni-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
