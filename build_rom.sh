@@ -14,7 +14,7 @@ export KBUILD_BUILD_HOST=Noob
 export BUILD_USERNAME=Fr0ztyy43 
 export BUILD_HOSTNAME=Noob
 export TZ=Asia/Dhaka #put before last build command
-mka bacon
+mka stag
 
 
 
