@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch evolution_RMX3371-userdebug
+export EVO_BUILD_TYPE=OFFICIAL
 export TZ=Asia/Dhaka #put before last build command
 mka evolution
 
