@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/BootleggersROM/manifest.git -b tirimbino -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Burhanverse/local_manifest.git --depth 1 -b btlg .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/bananadroid/android_manifest.git -b 13 --git-lfs -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Burhanverse/local_manifest.git --depth 1 -b banana .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch bootleg_lancelot-userdebug
+lunch banana_lancelot-userdebug
 
 export BUILD_USERNAME=burhan 
 export BUILD_HOSTNAME=burhan 
