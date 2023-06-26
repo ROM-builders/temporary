@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 export WITH_GAPPS=true
 source build/envsetup.sh
-lunch xtended_ginkgo-userdebug
+lunch xtended_ginkgo-user
 export TZ=Asia/Kolkata #put before last build command
 make xtended
 
