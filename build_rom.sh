@@ -3,10 +3,11 @@ repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/Bootlegg
 git clone https://github.com/Burhanverse/local_manifest.git --depth 1 -b btlg .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom fix 1
+# build rom fix 4
 source build/envsetup.sh
 lunch bootleg_lancelot-userdebug
 
+export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_USERNAME=burhan 
 export BUILD_HOSTNAME=burhan 
 export TZ=Asia/Kolkata #put before last build command
