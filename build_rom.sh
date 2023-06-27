@@ -6,9 +6,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom banana fix 4
 source build/envsetup.sh
 lunch banana_lancelot-userdebug
-
 export BUILD_USERNAME=burhan 
 export BUILD_HOSTNAME=burhan 
+export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Kolkata #put before last build command
 mka banana
 
