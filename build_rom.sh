@@ -7,9 +7,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch evolution_RMX3371-userdebug
 export KBUILD_BUILD_USER=Abhishek 
-export KBUILD_BUILD_HOST=thick-pc
+export KBUILD_BUILD_HOST=dumb-pc
 export BUILD_USERNAME=Abhishek 
-export BUILD_HOSTNAME=thick-pc
+export BUILD_HOSTNAME=dumb-pc
 export EVO_BUILD_TYPE=OFFICIAL
 export TZ=Asia/Dhaka #put before last build command
 mka evolution
