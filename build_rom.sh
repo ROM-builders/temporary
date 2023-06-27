@@ -4,7 +4,6 @@ git clone https://github.com/Seraphine3/sdm845-manifests.git --depth 1 -b main .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
 source build/envsetup.sh
 lunch evolution_crosshatch-userdebug
 export TZ=Asia/Dhaka #put before last build command
