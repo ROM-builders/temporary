@@ -1,6 +1,6 @@
 # sync rom
 repo init -u https://github.com/LineageOS/android.git -b lineage-19.1 --git-lfs
-git clone https://raw.githubusercontent.com/Redmi-MT6768/local_manifests/master/twelve.xml --depth 1 -b master .repo/local_manifests
+git clone https://raw.githubusercontent.com/Redmi-MT6768/local_manifests/master/twelve.xml --depth 1 -b master .repo/local_manifests/local_manifests.xml
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
