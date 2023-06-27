@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch arrow_selene-user
+lunch arrow_selene-userdebug
 export TZ=Asia/Ho_Chi_Minh # put before last build command
 m otapackage
 
