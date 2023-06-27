@@ -3,13 +3,12 @@ repo init --depth=1 --no-repo-verify -u https://github.com/CipherOS/android_mani
 git clone https://github.com/nullptr03/local_manifest.git --depth 1 -b cipher .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom gay 
 source build/envsetup.sh
 lunch cipher_merlinx-userdebug
+export BUILD_HOSTNAME=Andy
 export BUILD_USERNAME=Andy
 export KBUILD_USERNAME=Andy
 export KBUILD_HOSTNAME=Andy
-export BUILD_HOSTNAME=Andy
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Makassar
 mka bacon
