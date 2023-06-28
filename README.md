@@ -1,1 +1,3 @@
-Rom builder for POCO X5 5G(Moonstone)
+Main branch for moonstone rom builder
+
+moonstone_p = POCO X5 5G
