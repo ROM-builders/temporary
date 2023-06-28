@@ -8,8 +8,10 @@ source build/envsetup.sh
 lunch cherish_merlinx-userdebug
 export BUILD_USERNAME=Andy
 export BUILD_HOSTNAME=Andy
-export TZ=Asia/Makassar
+export KBUILD_USERNAME=Andy
+export KBUILD_HOSTNAME=Andy
 export CHERISH_VANILLA=true
+export TZ=Asia/Makassar
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
