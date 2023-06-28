@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build
 export TZ=Asia/Kolkata
 . build/envsetup.sh
-lunch evolution_ginkgo-userdebug
+lunch evolution_ginkgo-user
 mka evolution
 cat */*/*/ginkgo/*.zip.json
 
