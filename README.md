@@ -1,1 +1,2 @@
-Rom builder for moonstone(POCO X5 5G)
+Main branch for lavender rom builder
+Lavender = Redmi Note 7
