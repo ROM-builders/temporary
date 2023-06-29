@@ -1,14 +1,14 @@
 # sync rom
 
 repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest.git -b thirteen-plus -g default,-mips,-darwin,-notdefault
-git clone https://codeberg.org/omansh-krishn/local_manifest.git --depth 1 -b pixelexperience-13 .repo/local_manifests
+git clone https://codeberg.org/omansh-krishn/local_manifest.git --depth 1 -b pixelexperience-13-t .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 # build rom
-#retry[2]
+
 source build/envsetup.sh
 lunch aosp_santoni-userdebug
 export TARGET_GAPPS_ARCH=arm64
-export TARGET_KERNEL_CLANG_VERSION=zyc_clang
+export TARGET_KERNEL_CLANG_VERSION=clang-r383902b1
 export TARGET_KERNEL_CLANG_PATH=$(pwd)/prebuilts/clang/host/linux-x86/${TARGET_KERNEL_CLANG_VERSION}
 export TARGET_KERNEL_CROSS_COMPILE_PREFIX=${TARGET_KERNEL_CLANG_PATH}/bin/aarch64-linux-gnu-
 export TARGET_KERNEL_CROSS_COMPILE_ARM32_PREFIX=${TARGET_KERNEL_CLANG_PATH}/bin/arm-linux-gnueabi-
