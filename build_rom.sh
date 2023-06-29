@@ -3,10 +3,10 @@ repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_man
 git clone https://github.com/OmegaBeam69/local_manifest.git --depth 1 -b cherish .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom [13]
+# build rom [14]
 source build/envsetup.sh
 lunch cherish_raphael-userdebug
-export CHERISH_VANILLA=true
+export CHERISH_VANILLA=false
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
