@@ -3,13 +3,15 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-AOSP/manifest
 git clone https://github.com/sanjeevstunner/Manifest.git --depth 1 -b vayu_pos .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom 
+# build rom
 source build/envsetup.sh
 lunch aosp_vayu-user
+# Builder Variables
 export KBUILD_BUILD_USER=chandler
 export KBUILD_BUILD_HOST=bing
 export BUILD_USERNAME=chandler
 export BUILD_HOSTNAME=bing
+# Time Zone
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
