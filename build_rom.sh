@@ -8,6 +8,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch aosp_santoni-user
 export TARGET_GAPPS_ARCH=arm64
+export TARGET_KERNEL_CLANG_VERSION=zyc_clang
+export TARGET_KERNEL_CLANG_PATH=$(pwd)/prebuilts/clang/host/linux-x86/${TARGET_KERNEL_CLANG_VERSION}
+export TARGET_KERNEL_CROSS_COMPILE_PREFIX=${TARGET_KERNEL_CLANG_PATH}/bin/aarch64-linux-gnu-
+export TARGET_KERNEL_CROSS_COMPILE_ARM32_PREFIX=${TARGET_KERNEL_CLANG_PATH}/bin/arm-linux-gnueabi-
+export TARGET_KERNEL_LLVM_BINUTILS=false
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export BUILD_USERNAME=OmanshKrishn
 export BUILD_HOSTNAME=debian
