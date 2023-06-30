@@ -7,7 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch aosp_tissot-userdebug
 export TZ=Asia/Jakarta #put before last build command
-export BUILD_BROKEN_DUP_RULES=true
 export KBUILD_BUILD_USER=hklknz
 export KBUILD_BUILD_HOST=Honoka-CI
 export BUILD_USERNAME=hklknz
