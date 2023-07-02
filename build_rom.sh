@@ -10,7 +10,6 @@ export CUSTOM_BUILD_TYPE=OFFICIAL
 lunch aosp_fajita-userdebug
 export KBUILD_BUILD_USER=snnbyyds
 export KBUILD_BUILD_HOST=uotan
-
 export BUILD_USERNAME=snnbyyds
 export BUILD_HOSTNAME=uotan
 export TZ=Asia/Shanghai #put before last build command
