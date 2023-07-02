@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lavender_spark-userdebug
-export TZ=Asia/Jakarta #put before last build command
+export TZ=Asia/Jakarta
 export WITH_GAPPS=false
 export KBUILD_USERNAME=Kristoforusapm
 export KBUILD_HOSTNAME=Kristoforusapm
