@@ -4,7 +4,7 @@ git clone https://github.com/Enprytna/local_manifests.git --depth 1 -b DerpFest-
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch derp_ginkgo-userdebug
 export TZ=Asia/Jakarta #put before last build command
 mka derp
