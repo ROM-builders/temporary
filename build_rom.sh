@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Colt-Enigma/platform_manifest.git -b c13.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/DragonHunter71/local_manifest.git --depth 1 -b vayu-SuperiorOS-thirteen-DragonHunter71 .repo/local_manifests
+git clone https://github.com/DragonHunter71/local_manifest.git --depth 1 -b patch-1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
