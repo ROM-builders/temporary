@@ -1,6 +1,6 @@
 # sync rom
 repo init -u https://github.com/SuperiorOS/manifest.git -b thirteen
-git clone https://github.com/itzMaurya/temporary.git --depth 1 -b master .repo/local_manifests
+git clone https://github.com/itzMaurya/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
