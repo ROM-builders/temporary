@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -exv
+sleep 10
 mkdir -p ~/roms/$rom_name
 cd ~/roms/$rom_name
 curl -sO https://api.cirrus-ci.com/v1/task/$CIRRUS_TASK_ID/logs/sync.log
