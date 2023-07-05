@@ -1,1 +1,1 @@
-PixelExtended custom ROM for Redmi Note 10
+Banana custom ROM for Redmi Note 10
