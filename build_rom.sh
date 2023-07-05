@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b pyro -g default,-mips,-darwin,-notdefault
-git clone https://github.com/nullptr03/local_manifest.git --depth 1 -b spark_mstn .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/alphadroid-project/manifest -b alpha-13 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/nullptr03/local_manifest.git --depth 1 -b alpha_mstn .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch spark_moonstone-userdebug
+lunch lineage_moonstone-userdebug
 export BUILD_USERNAME=Andy
 export BUILD_HOSTNAME=Andy
 export KBUILD_USERNAME=Andy
