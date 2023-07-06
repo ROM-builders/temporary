@@ -4,14 +4,8 @@ git clone https://github.com/Koushikdey2003/local_manifest.git --depth 1 -b Evol
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch evolution_RMX2020-user
-export BUILD_USER=Koushikdey2003
-export BUILD_USERNAME=Koushikdey2003
-export KBUILD_BUILD_USER=Koushikdey2003
-export KBUILD_BUILD_USERNAME=Koushikdey2003
-export BUILD_HOST=cirrus-ci
-export BUILD_HOSTNAME=cirrus-ci
 export TZ=Asia/Kolkata #put before last build command
 mka evolution
 
