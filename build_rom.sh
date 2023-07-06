@@ -9,6 +9,7 @@ lunch carbon_A001D-userdebug
 export TZ=America/Sao_Paulo
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 
 make carbon
 
