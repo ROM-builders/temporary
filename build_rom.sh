@@ -6,7 +6,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --optimiz
 # build rom
 . build/envsetup.sh
 lunch lineage_merlinx-user
-export TZ=Asia/Delhi #put before last build command
+export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
