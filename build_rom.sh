@@ -7,7 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch blaze_lancelot-userdebug
 
-export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_USERNAME=burhan 
 export BUILD_HOSTNAME=burhan 
 export TZ=Asia/Kolkata #put before last build command
