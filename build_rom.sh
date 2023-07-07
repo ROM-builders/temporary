@@ -10,7 +10,8 @@ export BUILD_USERNAME=itsmeNaraa
 export BUILD_HOSTNAME=itsmeNaraa
 export KBUILD_USERNAME=itsmeNaraa
 export KBUILD_HOSTNAME=itsmeNaraa
-export TZ=Asia/Makassar
+export ALLOW_MISSING_DEPENDENCIES=true
+export TZ=Asia/Jakarta
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
