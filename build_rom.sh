@@ -6,10 +6,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_moonstone-userdebug
-export BUILD_USERNAME=Andy
-export BUILD_HOSTNAME=Andy
-export KBUILD_USERNAME=Andy
-export KBUILD_HOSTNAME=Andy
+export BUILD_USERNAME=itsmeNaraa
+export BUILD_HOSTNAME=itsmeNaraa
+export KBUILD_USERNAME=itsmeNaraa
+export KBUILD_HOSTNAME=itsmeNaraa
 export TZ=Asia/Makassar
 mka bacon
 
