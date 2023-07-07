@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lineage_moonstone-eng
+lunch lineage_moonstone-userdebug
 export TZ=Asia/Bangkok #put before last build command
 export ALLOW_MISSING_DEPENDENCIES=true
 mka bacon
