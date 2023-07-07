@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch lineage_merlinx-user
+export KBUILD_BUILD_USER=mitsu00
 export BUILD_USERNAME=mitsu00
 export BUILD_HOSTNAME=ozip.my.id
 export TZ=Asia/Jakarta #put before last build command
