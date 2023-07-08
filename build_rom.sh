@@ -7,11 +7,12 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch xtended_santoni-user
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
-export BUILD_USERNAME=OmanshKrishn
-export BUILD_HOSTNAME=debian
-export KBUILD_BUILD_USER=OmanshKrishn
-export KBUILD_BUILD_HOST=debian
+export BUILD_USERNAME=ok
+export BUILD_HOSTNAME=pc
+export KBUILD_BUILD_USER=ok
+export KBUILD_BUILD_HOST=pc
 export ALLOW_MISSING_DEPENDENCIES=true
+export WITH_GAPPS=true
 export TZ=Asia/Kolkata   #put before last build command
 make xtended
 
