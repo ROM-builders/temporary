@@ -5,12 +5,13 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch arrow_lavender-userdebug
+lunch arrow_moonstone-userdebug
 export BUILD_USERNAME=Kristo
 export BUILD_HOSTNAME=Kristo
 export KBUILD_USERNAME=Kristo
 export KBUILD_HOSTNAME=Kristo
 export TZ=Asia/Jakarta
+export ALLOW_MISSING_DEPENDENCIES=true
 m bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
