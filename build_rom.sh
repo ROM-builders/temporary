@@ -9,7 +9,7 @@ lunch lineage_X00TD-userdebug
 export KBUILD_BUILD_USER=stress
 export BUILD_USERNAME=stress
 export BUILD_USER=stress
-export TZ=Asia/Jakarta #put before last build command
+export TZ=Asia/Makassar #put before last build command
 m bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
