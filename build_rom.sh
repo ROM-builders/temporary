@@ -11,6 +11,7 @@ export BUILD_HOSTNAME=Kristo
 export KBUILD_USERNAME=Kristo
 export KBUILD_HOSTNAME=Kristo
 export TZ=Asia/Jakarta
+export ALLOW_MISSING_DEPENDENCIES=true
 m bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
