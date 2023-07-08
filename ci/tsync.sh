@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -exv
 mkdir -p ~/roms/$rom_name
 cd ~/roms/$rom_name
 find .repo -name '*.lock' -delete
@@ -12,10 +11,11 @@ d=$(grep 'Failing repos:' sync.log -n -m1 || true)
 e=$(grep 'fatal: Unable' sync.log || true)
 f=$(grep 'error.GitError' sync.log || true)
 g=$(grep 'error: Cannot checkout' sync.log || true)
+echo -e "a=$a \nb=$b \nc=$c \nd=$d \ne=$e \nf=$f \ng=$g \n"
 
 if [[ $a == *'Cannot remove project'* ]]; then
 	a=$(echo $a | cut -d ':' -f2 | tr -d ' ')
-	rm -rf $a
+	rm -rfv $a
 fi
 
 if [[ $b == *'remove-project element specifies non-existent'* ]]; then exit 1; fi
@@ -24,6 +24,7 @@ if [[ $d == *'Failing repos:'* ]]; then
 	d=$(expr $(grep 'Failing repos:' sync.log -n -m 1| cut -d ':' -f1) + 1)
 	d2=$(expr $(grep 'Try re-running' sync.log -n -m1 | cut -d ':' -f1) - 1 )
 	fail_paths=$(head -n $d2 sync.log | tail -n +$d)
+	echo -e "d=$d \nd2=$d2 \nfail_paths=$fail_paths"
 	for path in $fail_paths
 	do
 		rm -rf $path
@@ -34,6 +35,7 @@ fi
 
 if [[ $e == *'fatal: Unable'* ]]; then
 	fail_paths=$(grep 'fatal: Unable' sync.log | cut -d ':' -f2 | cut -d "'" -f2)
+	echo -e "fail_paths=$fail_paths"
 	for path in $fail_paths
 	do
 		rm -rf $path
@@ -48,6 +50,7 @@ fi
 
 if [[ $g == *'error: Cannot checkout'* ]]; then
 	coerr=$(grep 'error: Cannot checkout' sync.log | cut -d ' ' -f 4| tr -d ':')
+	echo -e "coerr=$coerr"
 	for i in $coerr
 	do
 		rm -rf .repo/project-objects/$i.git
