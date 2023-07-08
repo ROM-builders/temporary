@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 13.0 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b 20.0 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/EXPERT-JATT/local_manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_tulip-user
+lunch lineage_twolip-user
 export TZ=Asia/Dhaka #put before last build command
 m bacon
 
