@@ -9,7 +9,7 @@ lunch banana_merlinx-user
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_USERNAME=ozip
 export BUILD_HOSTNAME=ozip
-export TZ=Asia/Jakarta #putt before last build command
+export TZ=Asia/Dhaka #putt before last build command
 mka banana
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
