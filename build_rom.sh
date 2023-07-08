@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch xtended_haydn-userdebug
+lunch xtended_haydn-eng
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export BUILD_USER=alecchangod
 export BUILD_USERNAME=alecchangod
