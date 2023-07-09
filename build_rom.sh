@@ -1,17 +1,17 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/alphadroid-project/manifest -b alpha-13 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/nullptr03/local_manifest.git --depth 1 -b alpha_mstn .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/nullptr03/local_manifest.git --depth 1 -b blaze .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom 2
 source build/envsetup.sh
-lunch lineage_moonstone-userdebug
+lunch merlinx_blaze-userdebug
 export BUILD_USERNAME=itsmeNaraa
 export BUILD_HOSTNAME=itsmeNaraa
 export KBUILD_USERNAME=itsmeNaraa
 export KBUILD_HOSTNAME=itsmeNaraa
 export ALLOW_MISSING_DEPENDENCIES=true
-export TZ=Asia/Jakarta
+export TZ=Asia/Makassar
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
