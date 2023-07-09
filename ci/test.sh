@@ -125,7 +125,12 @@ if [[ $BRANCH == *pull/* ]]; then
 	datediff=$(expr $nowdate - $joindate)
 	if [[ $datediff -lt 2592000 ]]; then echo Please don\'t try to run build with your new account. Use your original account for doing PR.; exit 1; fi
 fi
-
+if [ -z "$AUTHOR" ]; then true; else
+joindate=$(date -d $(curl -s https://api.github.com/users/$AUTHOR | grep created_at | cut -d '"' -f4) +%s)
+nowdate=$(date +%s)
+datediff=$(expr $nowdate - $joindate)
+if [[ $datediff -lt 2592000 ]]; then echo Please don\'t try to run build with your new account. Use your original account for doing PR.; exit 1; fi
+fi
 if [[ $CIRRUS_USER_PERMISSION == write ]]; then
 	if [ -z "$CIRRUS_PR" ]; then true; else
 		echo You are push user. Don\'t do pr and please follow pinned message in push group.; exit 1
