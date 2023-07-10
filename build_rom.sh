@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch derp_ginkgo-userdebug
+lunch derp_ginkgo-user
 export TZ=Asia/Jakarta
 mka derp
 
