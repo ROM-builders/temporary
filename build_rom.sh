@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/nullptr03/local_manifest.git --depth 1 -b blaze .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 13.0 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/nullptr03/local_manifest.git --depth 1 -b crdroid .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom 2
+# ghay cache wen stop f
 source build/envsetup.sh
-lunch merlinx_blaze-userdebug
+lunch lineage_merlinx-userdebug
 export BUILD_USERNAME=itsmeNaraa
 export BUILD_HOSTNAME=itsmeNaraa
 export KBUILD_USERNAME=itsmeNaraa
