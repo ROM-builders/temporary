@@ -27,9 +27,9 @@ if [[ $d == *'Failing repos:'* ]]; then
 	echo -e "d=$d \nd2=$d2 \nfail_paths=$fail_paths"
 	for path in $fail_paths
 	do
-		rm -rf $path
+		rm -rfv $path
 		aa=$(echo $path|awk -F '/' '{print $NF}')
-		rm -rf .repo/project-objects/*$aa.git .repo/projects/$path.git
+		rm -rfv .repo/project-objects/*$aa.git .repo/projects/$path.git
 	done
 fi
 
@@ -38,9 +38,9 @@ if [[ $e == *'fatal: Unable'* ]]; then
 	echo -e "fail_paths=$fail_paths"
 	for path in $fail_paths
 	do
-		rm -rf $path
+		rm -rfv $path
 		aa=$(echo $path|awk -F '/' '{print $NF}')
-		rm -rf .repo/project-objects/*$aa.git .repo/project-objects/$path.git .repo/projects/$path.git
+		rm -rfv .repo/project-objects/*$aa.git .repo/project-objects/$path.git .repo/projects/$path.git
 	done
 fi
 
@@ -53,7 +53,7 @@ if [[ $g == *'error: Cannot checkout'* ]]; then
 	echo -e "coerr=$coerr"
 	for i in $coerr
 	do
-		rm -rf .repo/project-objects/$i.git
+		rm -rfv .repo/project-objects/$i.git
 	done
 fi
 
@@ -67,5 +67,5 @@ rm -rf sync.log
 dirty_dirs="prebuilts/clang/host/linux-x86"
 for dir in $dirty_dirs
 do
-	[[ -n $(git -C "$dir" status -s) ]] && (rm -rf "$dir"; repo sync) || true
+	[[ -n $(git -C "$dir" status -s) ]] && (rm -rfv "$dir"; repo sync) || true
 done
