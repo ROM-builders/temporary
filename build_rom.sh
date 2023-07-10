@@ -5,7 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build roms
 . build/envsetup.sh
-lunch cherish_tulip-user
+lunch cherish_twolip-user
+export CHERISH_VANILLA=true
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
