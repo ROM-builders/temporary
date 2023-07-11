@@ -8,11 +8,10 @@ source build/envsetup.sh
 croot
 lunch aosp_enchilada-userdebug
 export KBUILD_BUILD_USER=snnbyyds
-
 export KBUILD_BUILD_HOST=uotan
 export BUILD_USERNAME=snnbyyds
 export BUILD_HOSTNAME=uotan
-export CUSTOM_BUILD_TYPE=CI
+export CUSTOM_BUILD_TYPE=OFFICIAL
 
 export TZ=Asia/Shanghai #put before last build command
 mka bacon
