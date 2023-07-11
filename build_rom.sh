@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch octavi_RMX2020-user
 export TZ=Asia/Kolkata #put before last build command
-brunch RMX2020
+mka bacon
 cat */*/*/RMX2020/*.zip.json
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
