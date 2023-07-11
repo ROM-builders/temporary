@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/android_manifest.git -b triton -g default,-mips,-darwin,-notdefault
-git clone https://github.com/eartinity/local_manifest.git --depth 1 -b main .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/PixysOS/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/eartinity/local_manifest.git --depth 1 -b pixys .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch awaken_r5x-userdebug
-export TZ=Asia/Dhaka #put before last build command
+lunch pixys_r5x-userdebug
+export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
