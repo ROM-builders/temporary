@@ -3,10 +3,10 @@ repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/ProjectB
 git clone https://github.com/Burhanverse/local_manifest.git --depth 1 -b blaze .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom die sur
+# build rom gay dependencies 
 source build/envsetup.sh
 lunch blaze_lancelot-userdebug
-
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export BUILD_USERNAME=burhan 
 export BUILD_HOSTNAME=burhan 
 export TZ=Asia/Kolkata #put before last build command
