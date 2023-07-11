@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rommmmmm
 
 . build/envsetup.sh
-lunch aosp_spes-eng
+lunch aosp_spes-userdebug
 export TZ=Asim bg.ca/Kolkata #put before last build command
 make bacon
 
