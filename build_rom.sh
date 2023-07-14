@@ -6,10 +6,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_merlinx-userdebug
-export BUILD_USERNAME=Andy
-export BUILD_HOSTNAME=Andy
-export KBUILD_USERNAME=Andy
-export KBUILD_HOSTNAME=Andy
+export BUILD_USERNAME=Dins
+export BUILD_HOSTNAME=Dins
+export KBUILD_USERNAME=Dins
+export KBUILD_HOSTNAME=Dins
 export TZ=Asia/Makassar
 export WITH_GAPPS=false
 mka bacon
