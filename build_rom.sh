@@ -1,13 +1,12 @@
-# sync rom
+# sync
 repo init --depth=1 --no-repo-verify -u https://github.com/BootleggersROM/manifest.git -b tirimbino -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Testing-Stuffs/Local_Manifest.git --depth 1 -b bootleg .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
-. build/envsetup.sh
-export WITH_GAPPS=true
-lunch bootleg_ginkgo-userdebug
+# build
 export TZ=Asia/Kolkata
+. build/envsetup.sh
+lunch bootleg_ginkgo-user
 mka bootleg
 
 # upload rom
