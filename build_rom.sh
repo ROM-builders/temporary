@@ -6,6 +6,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch octavi_merlinx-user
+
+#export TARGET_WITH_MINI_GAPPS=false
+export BUILD_USERNAME=Shakib
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
