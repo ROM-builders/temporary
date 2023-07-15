@@ -13,7 +13,7 @@ export BUILD_USERNAME=OmanshKrishn
 export BUILD_HOSTNAME=pc
 export KBUILD_BUILD_USER=OmanshKrishn
 export KBUILD_BUILD_HOST=pc
-
+export CUSTOM_BUILD_TYPE=UNOFFICIAL-OmanshKrishn
 export TZ=Asia/Kolkata
 mka bacon
 
