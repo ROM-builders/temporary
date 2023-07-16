@@ -1,14 +1,14 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/bananadroid/android_manifest.git -b 13 --git-lfs -g default,-mips,-darwin,-notdefault
-git clone https://github.com/shakib-bd/local_manifest.git --depth 1 -b banana .repo/local_manifests
+git clone https://github.com/Shakib-BD/local_manifest.git --depth 1 -b banana .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
 lunch banana_merlinx-user
 export ALLOW_MISSING_DEPENDENCIES=true
-export BUILD_USERNAME=ozip
-export BUILD_HOSTNAME=ozip
+export BUILD_USERNAME=Shakib
+export BUILD_HOSTNAME=Shakib
 export TZ=Asia/Dhaka #putt before last build command
 mka banana
 
