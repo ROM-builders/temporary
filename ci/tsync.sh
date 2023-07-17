@@ -15,7 +15,8 @@ echo -e "a=$a \nb=$b \nc=$c \nd=$d \ne=$e \nf=$f \ng=$g \n"
 
 if [[ $a == *'Cannot remove project'* ]]; then
 	a=$(echo $a | cut -d ':' -f2 | tr -d ' ')
-	rm -rfv $a
+	rm -rf $a
+	echo removed $a
 fi
 
 if [[ $b == *'remove-project element specifies non-existent'* ]]; then exit 1; fi
@@ -28,8 +29,10 @@ if [[ $d == *'Failing repos:'* ]]; then
 	for path in $fail_paths
 	do
 		rm -rf $path
+		echo removed $path
 		aa=$(echo $path|awk -F '/' '{print $NF}')
 		rm -rf .repo/project-objects/*$aa.git .repo/projects/$path.git
+		echo removed .repo/project-objects/*$aa.git .repo/projects/$path.git
 	done
 fi
 
@@ -39,8 +42,10 @@ if [[ $e == *'fatal: Unable'* ]]; then
 	for path in $fail_paths
 	do
 		rm -rf $path
+		echo removed $path
 		aa=$(echo $path|awk -F '/' '{print $NF}')
 		rm -rf .repo/project-objects/*$aa.git .repo/project-objects/$path.git .repo/projects/$path.git
+		echo removed .repo/project-objects/*$aa.git .repo/project-objects/$path.git .repo/projects/$path.git
 	done
 fi
 
@@ -54,6 +59,7 @@ if [[ $g == *'error: Cannot checkout'* ]]; then
 	for i in $coerr
 	do
 		rm -rf .repo/project-objects/$i.git
+		echo removed .repo/project-objects/$i.git
 	done
 fi
 
@@ -67,5 +73,5 @@ rm -rf sync.log
 dirty_dirs="prebuilts/clang/host/linux-x86"
 for dir in $dirty_dirs
 do
-	[[ -n $(git -C "$dir" status -s) ]] && (rm -rf "$dir"; repo sync) || true
+	[[ -n $(git -C "$dir" status -s) ]] && (rm -rf "$dir"; echo removed $dir; repo sync) || true
 done
