@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build
 export TZ=Asia/Kolkata
 . build/envsetup.sh
+export WITH_GAPPS=true
 lunch bootleg_ginkgo-user
 mka bootleg
 
