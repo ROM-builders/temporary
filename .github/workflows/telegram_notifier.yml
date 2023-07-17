@@ -29,7 +29,7 @@ jobs:
           BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
         run: |
-          curl -sS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+          curl -sS -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
             -d "chat_id=${CHAT_ID}" \
             -d "text=New Build has been triggered! 
             curl -s "https://api.telegram.org/bot${BOT_TOKEN}/sendmessage" -d "text=<code>$device-$rom_name</code> Started has started.%0ALink: ${{ steps.cirrus-ci.outputs.build_url }}
