@@ -7,6 +7,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch evolution_vayu-user
 
+export TARGET_KERNEL_CLANG_VERSION := proton
+export TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-proton/bin
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Manila #put before last build command
 mka evolution
