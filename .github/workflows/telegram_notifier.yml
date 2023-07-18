@@ -1,0 +1,35 @@
+name: Telegram Notifier
+on:
+  pull_request:
+    types: [created]
+
+jobs:
+  send-notification:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Get Cirrus CI build link
+        id: cirrus-ci
+        run: |
+          echo "::set-output name=build_url::https://cirrus-ci.com/build/$CIRRUS_BUILD_ID"
+
+      - name: Send Telegram notification
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+        run: |
+          curl -sS -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${CHAT_ID}" \
+            -d "text=New Build has been triggered! 
+            curl -s "https://api.telegram.org/bot${BOT_TOKEN}/sendmessage" -d "text=<code>$device-$rom_name</code> Started has started.%0ALink: ${{ steps.cirrus-ci.outputs.build_url }}
