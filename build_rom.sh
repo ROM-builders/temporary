@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch derp_rosemary-userdebug
 export BUILD_USERNAME=CodeChas3r
-export BUILD_HOSTNAME=CodeChas3r
+export BUILD_HOSTNAME=Chas
 export TZ=Asia/Jakarta #put before last build command
 mka derp
 
