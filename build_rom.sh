@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q -g default,-mips,-darwin,-notdefault
-git clone https://github.com/leole0leoleo/local_manifests.git --depth 1 -b main .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://https://github.com/Havoc-OS/android_manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/leole0leoleo/local_manifest.git --depth 1 -b main .repo/local_manifest
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch rr_j5lte-userdebug
+lunch havoc_devon-user
 export TZ=Asia/Dhaka #put before last build command
 mka derp
 
