@@ -6,10 +6,16 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch evolution_vayu-user
-
+# build variables
+export CONFIG_LOCALVERSION="-coup-de-grace"
+export KBUILD_BUILD_USER=dogpoopy
+export KBUILD_BUILD_HOST=linux
+export BUILD_USERNAME=dogpoopy
+export BUILD_HOSTNAME=linux
 export TARGET_KERNEL_CLANG_VERSION := proton
 export TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-proton/bin
 export ALLOW_MISSING_DEPENDENCIES=true
+# timezone
 export TZ=Asia/Manila #put before last build command
 mka evolution
 
