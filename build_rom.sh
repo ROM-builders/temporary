@@ -1,6 +1,6 @@
 # sync rom
 repo init -u https://github.com/PixelExperience/manifest -b thirteen
-git clone https://github.com/leole0leoleo/local_manifest.git --depth 1 -b devon .repo/local_manifest
+git clone https://github.com/leole0leoleo/local_manifest.git --depth 1 -b devon .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
