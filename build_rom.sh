@@ -1,4 +1,4 @@
-# build count = 2
+# build count = 3
 
 # sync rom 
 repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
