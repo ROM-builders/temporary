@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://https://github.com/BlissRoms/platform_manifest -b t -g default,-mips,-darwin,-notdefault
+repo init -u https://github.com/PixelExperience/manifest -b thirteen
 git clone https://github.com/leole0leoleo/local_manifest.git --depth 1 -b devon .repo/local_manifest
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
 source build/envsetup.sh
-lunch bliss_devon-userdebug
+lunch pe_devon-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka derp
 
