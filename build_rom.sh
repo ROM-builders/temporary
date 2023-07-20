@@ -7,7 +7,13 @@ sed -i "s/CONFIG_LOCALVERSION=.*/CONFIG_LOCALVERSION="-coup-de-grace"/g" $(shell
 # build rom
 source build/envsetup.sh
 lunch evolution_vayu-user
-
+# build variables
+export KBUILD_BUILD_USER=dogpoopy
+export KBUILD_BUILD_HOST=linux
+export BUILD_USERNAME=dogpoopy
+export BUILD_HOSTNAME=linux
+export TARGET_KERNEL_CLANG_VERSION=proton
+export TARGET_KERNEL_CLANG_PATH=$(shell pwd)/prebuilts/clang/host/linux-x86/clang-proton/bin
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Manila #put before last build command
 mka evolution
