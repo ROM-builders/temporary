@@ -1,8 +1,7 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/DerpFest-11/manifest.git -b 11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-
+repo init -u https://github.com/StatiXOS/android_manifest.git -b tm-qpr3
+git clone https://github.com/JoseGustavo154/Local-Manifests.git --depth 1 -b master .repo/local_manifests
+repo sync --force-sync --no-clone-bundle --current-branch --no-tags -j$(nproc --all)
 # build rom
 source build/envsetup.sh
 lunch derp_vayu-user
