@@ -4,7 +4,7 @@ git clone https://github.com/Burhanverse/local_manifest.git --depth 1 -b blaze .
  repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8  
  # build rom            
  source build/envsetup.sh  
- lunch blaze_lancelot-userdebug  
+ lunch blaze_lancelot-userdebug   
  export TZ=Asia/Delhi  
  export BUILD_USERNAME=@raizel_69 
  export BUILD_HOSTNAME=@acex69   
