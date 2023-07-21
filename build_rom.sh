@@ -6,8 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch superior_mojito-user
-# export WITH_GAPPS=true
-# export DEVICE_MAINTAINERS=Rom\ Bdr.\ Gharti
+export SUPERIOR_GAPPS=minimal
 export TZ=Asia/Dhaka #put before last build command
 m bacon
 
