@@ -3,7 +3,7 @@ repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.1
 git clone https://github.com/angelomds42/local_manifest --depth 1 -b arrow .repo/local_manifests
 repo sync --no-tags -c -j$(nproc --all) --force-sync --no-clone-bundle
 
-# build rom
+# build rom.
 source build/envsetup.sh
 lunch arrow_devon-userdebug
 export TZ=Asia/Dhaka #put before last build command
