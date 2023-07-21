@@ -1,12 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/alphadroid-project/manifest.git -b alpha-13 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/AhmedGamal09/Local-Manifests.git --depth 1 -b alpha-13 .repo/local_manifests
+git clone https://github.com/AhmedGamal09/local_manifest.git --depth 1 -b alpha-13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch lineage_mojito-userdebug
-export WITH_GAPPS=1
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
