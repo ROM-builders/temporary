@@ -1,5 +1,5 @@
 # sync rom
-repo init -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs -g default,-mips,-darwin,-notdefault
+repo init -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs
 git clone https://github.com/Amit152505/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
