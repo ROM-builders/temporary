@@ -1,7 +1,7 @@
 # sync rom
-repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.1 
+repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.1,-mips,-darwin,-notdefault
 git clone https://github.com/angelomds42/local_manifest --depth 1 -b arrow .repo/local_manifests
-repo sync --no-tags -c -j$(nproc --all) --force-sync --no-clone-bundle
+repo sync repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
 
 # build rom
 source build/envsetup.sh
