@@ -6,7 +6,7 @@ repo sync --no-tags -c -j$(nproc --all) --force-sync --no-clone-bundle
 # build rom
 source build/envsetup.sh
 lunch arrow_devon-userdebug
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Dhaka #put before last build comman
 m otapackage
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
