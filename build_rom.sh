@@ -3,7 +3,7 @@ repo init -u https://github.com/crdroidandroid/android.git -b 13.0 --git-lfs
 git clone https://github.com/Amit152505/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build roma
 source build/envsetup.sh
 lunch lineage_lisa-userdebug
 mka bacon
