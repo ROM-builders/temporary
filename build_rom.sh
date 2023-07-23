@@ -12,7 +12,7 @@ export KBUILD_BUILD_HOST=linux
 export BUILD_USERNAME=dogpoopy
 export BUILD_HOSTNAME=linux
 export TARGET_KERNEL_CLANG_VERSION=proton
-export TARGET_KERNEL_CLANG_PATH=$(shell pwd)/prebuilts/clang/host/linux-x86/clang-proton/bin
+export TARGET_KERNEL_CLANG_PATH=$(shell pwd)/prebuilts/clang/host/linux-x86/clang-proton
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Manila #put before last build command
 mka evolution
