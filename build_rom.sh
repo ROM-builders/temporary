@@ -6,9 +6,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch lineage_rosemary-userdebug
-export BUILD_USERNAME=CodeChas3r
-export BUILD_HOSTNAME=Chas
-export TZ=Asia/Dhaka #put before last build command
+export BUILD_USERNAME=Chas
+export BUILD_HOSTNAME=CodeChas3r
+export TZ=Asia/Jakarta #put before last build command
 m bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
