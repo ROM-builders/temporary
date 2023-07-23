@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 export TZ=Asia/Dhaka #put before last build command
-lunch lineage_RMX2185-user
+lunch lineage_RMX2185-userdebug
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
