@@ -1,1 +1,1 @@
-Banana custom ROM for Redmi Note 10
+Custom ROM for Redmi Note 10
