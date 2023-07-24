@@ -1,12 +1,12 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-AOSP/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
 git clone https://github.com/angelomds42/local_manifest --depth 1 -b pixelos .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 # build rom
 source build/envsetup.sh
 lunch aosp_devon-userdebug
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
