@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom 2
 source build/envsetup.sh
-lunch banana_mojito-userdebug
+lunch banana_merlinx-userdebug
 export TZ=Asia/Dhaka #put before last build command
 m banana
 
