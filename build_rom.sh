@@ -7,11 +7,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 croot
 export CUSTOM_BUILD_TYPE=Snnbyyds_UOTAN
-
 breakfast blossom
 export KBUILD_BUILD_USER=snnbyyds
 export KBUILD_BUILD_HOST=uotan
-export BUILD_USERNAME=snnbyyds
+export BUILD_USERNAME=sn
 export BUILD_HOSTNAME=uotan
 export TZ=Asia/Shanghai #put before last build command
 brunch blossom
