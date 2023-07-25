@@ -5,13 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-#export TARGET_WITH_MINI_GAPPS=false
-export PLATFORM_VERSION="13"
-export BUILD_ID="TQ3A.230705.001"
-export KBUILD_BUILD_VERSION="1"
-export KBUILD_BUILD_USER="Unitrix-Kernel"
-export KBUILD_BUILD_HOST="Cosmic-Horizon"
-export KBUILD_BUILD_TIMESTAMP="$(TZ='Asia/Kolkata' date)"
 lunch octavi_vince-user
 mka bacon
 
