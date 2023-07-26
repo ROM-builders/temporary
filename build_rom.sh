@@ -1,13 +1,13 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/alphadroid-project/manifest -b alpha-13 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/CodeChas3r1/local_manifest.git --depth 1 -b alpha-13 .repo/local_manifests
+git clone https://github.com/CodeChas3r1/local_manifest.git --depth 1 -b alpha-13-vanilla .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
 lunch lineage_rosemary-userdebug
-export BUILD_HOSTNAME=CodeChas3r
-export BUILD_USERNAME=Chas
+export BUILD_HOSTNAME=Chas
+export BUILD_USERNAME=CodeChas3r
 export TZ=Asia/Jakarta #put before last build command
 make bacon
 
