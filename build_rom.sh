@@ -3,9 +3,9 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-AOSP/manifest
 git clone https://github.com/ihklknz/Local-Manifests.git --depth 1 -b PixelOS-thirteen .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build roms
+# build rom
 source build/envsetup.sh
-lunch aosp_tissot-userdebug
+lunch aosp_tissot-user
 export TZ=Asia/Jakarta #put before last build command
 export KBUILD_BUILD_USER=hklknz
 export KBUILD_BUILD_HOST=Honoka-CI
