@@ -1,4 +1,4 @@
-# build count = 5 
+# build count = 6
  
 # sync rom 
 repo init --depth=1 --no-repo-verify -u https://github.com/P-404/android_manifest -b tokui -g default,-mips,-darwin,-notdefault
