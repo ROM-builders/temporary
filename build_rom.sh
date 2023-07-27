@@ -6,11 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch evolution_vayu-user
-# build variables
-export KBUILD_BUILD_USER=dogpoopy
-export KBUILD_BUILD_HOST=linux
-export BUILD_USERNAME=dogpoopy
-export BUILD_HOSTNAME=linux
+
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Manila #put before last build command
 mka evolution
