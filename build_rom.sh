@@ -8,7 +8,6 @@ source build/envsetup.sh
 export TZ=Asia/Chungking #put before last build command
 export BUILD_USERNAME=weaponmasterjax
 export BUILD_HOSTNAME=jax
-. private_patches/install.sh
 lunch evolution_everpal-userdebug
 mka bacon
 
