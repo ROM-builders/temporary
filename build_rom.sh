@@ -5,7 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-brunch cherish_crosshatch-userdebug
+lunch cherish_crosshatch-userdebug
+mka bacon
 export TZ=Asia/Dhaka #put before last build command
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
