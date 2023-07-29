@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch arrow_moonstone-userdebug
+lunch arrow_stone-userdebug
 export BUILD_USERNAME=Kristo
 export BUILD_HOSTNAME=Kristo
 export KBUILD_USERNAME=Kristo
