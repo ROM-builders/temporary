@@ -1,20 +1,18 @@
 # sync rom
-
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest.git -b thirteen-plus -g default,-mips,-darwin,-notdefault
-git clone https://codeberg.org/omansh-krishn/local_manifest.git --depth 1 -b pixelexperience-13 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b pyro -g default,-mips,-darwin,-notdefault 
+git clone https://github.com/DineshMSDian/local_manifest --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+
 # build rom
 source build/envsetup.sh
-lunch aosp_santoni-user
-
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
-export BUILD_USERNAME=OmanshKrishn
-export BUILD_HOSTNAME=pc
-export KBUILD_BUILD_USER=OmanshKrishn
-export KBUILD_BUILD_HOST=pc
-export CUSTOM_BUILD_TYPE=UNOFFICIAL-OmanshKrishn
-export TZ=Asia/Kolkata
+export BUILD_USERNAME=DineshMSDian
+export BUILD_HOSTNAME=DB-lab
+export KBUILD_BUILD_USER=DineshMSDian
+export KBUILD_BUILD_HOST=DB-lab
+export TZ=Asia/Chennai #put before last build command
+lunch spark_santoni-userdebug
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line )
