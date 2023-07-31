@@ -6,8 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_fleur-userdebug
-export BUILD_HOSTNAME=Chas
-export BUILD_USERNAME=CodeChas3r
+export BUILD_HOSTNAME=Fleur
+export BUILD_USERNAME=FleurMiel
 export TZ=Asia/Jakarta #put before last build command
 make bacon
 
