@@ -6,8 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch derp_merlinx-userdebug
-export BUILD_USERNAME=Andy
-export BUILD_HOSTNAME=Andy
+export BUILD_USERNAME=emorafsan
+export BUILD_HOSTNAME=emorafsan
 export TZ=Asia/Dhaka
 mka bacon
 
