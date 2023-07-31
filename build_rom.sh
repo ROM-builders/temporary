@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-AOSP/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/angelomds42/local_manifest --depth 1 -b pixelos-rhode .repo/local_manifests
+git clone https://github.com/angelomds42/local_manifest --depth 1 -b pixelos-hawao .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_rhode-userdebug
+lunch aosp_hawao-userdebug
 export TZ=Asia/Kolkata #put before last build command 
 mka bacon
 
