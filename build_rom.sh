@@ -1,7 +1,7 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-18.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/sounddrill31/android_device_motorola_addison.git --depth 1 -b lineage-18.1 device/motorola/addison
-git clone 
+git clone https://github.com/sounddrill31/android_device_motorola_addison.git -b lineage-18.1 device/motorola/addison
+git clone https://github.com/TheMuppets/proprietary_vendor_motorola.git -b lineage-18.1 vendor/motorola
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
