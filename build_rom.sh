@@ -4,7 +4,7 @@ git clone https://github.com/ERLinks/local_manifest.git --depth 1 -b main .repo/
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch aosp_sweet-user
 mka bacon
 
