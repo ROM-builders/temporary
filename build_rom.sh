@@ -3,13 +3,13 @@ repo init --depth=1 --no-repo-verify -u https://github.com/ResurrectionRemix/pla
 git clone https://github.com/strongreasons/local_manifest.git --depth 1 -b rr .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build roms
+# build rom
 source build/envsetup.sh
 lunch rr_X00TD-userdebug
 export BUILD_USER=stress
 export BUILD_USERNAME=stress
 export KBUILD_BUILD_USER=stress
-export TZ=Asia/Jakarta # put before last build command
+export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
