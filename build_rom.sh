@@ -2,8 +2,6 @@
 repo init -u https://github.com/PixelExperience/manifest -b thirteen-plus
 git clone https://github.com/ERLinks/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
-rm -rf packages/apps/Settings 
-git clone https://github.com/PixelExperience-sweet/packages_apps_Settings.git packages/apps/Settings
 
 # build rom
 . build/envsetup.sh
