@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch rr_X00TD-userdebug
+export SELINUX_IGNORE_NEVERALLOWS=true
 export BUILD_USER=stress
 export BUILD_USERNAME=stress
 export KBUILD_BUILD_USER=stress
