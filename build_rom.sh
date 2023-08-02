@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Spark-Rom/manifest -b sparkrom_rhode -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/bananadroid/android_manifest.git -b banana_rhode -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Dememe999/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch spark_rhode-user
+lunch banana_rhode-user
 export TZ=Asia/Dhaka #put before last build command
 mka spark
 
