@@ -8,6 +8,7 @@ source build/envsetup.sh
 lunch lineage_begonia-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
+export RELAX_USES_LIBRARY_CHECK=true
 export TZ=Asia/Dhaka #put before last build command
 m bacon
 
