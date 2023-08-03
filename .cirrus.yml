@@ -7,11 +7,11 @@ env:
 task:
   name: Test
   skip: $CIRRUS_BRANCH == 'main'
-  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
+  only_if: $CIRRUS_REPO_OWNER == 'Seraphine3'
   timeout_in: 2m
   persistent_worker:
     labels:
-      name: AX61-2
+      name: XVX-1
     isolation:
       container:
         image: apon77/aosp:cirrus
@@ -25,40 +25,40 @@ task:
 task:
   name: Build
   skip: $CIRRUS_BRANCH == 'main'
-  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
+  only_if: $CIRRUS_REPO_OWNER == 'Seraphine3'
   depends_on: Test
   timeout_in: 4h
   persistent_worker:
     labels:
-      name: AX61-1
+      name: XVX-2
     isolation:
       container:
         image: apon77/aosp:cirrus
-        cpu: 24
+        cpu: 32
         memory: 120G
         volumes:
           - /home/cirrus/roms:/home/cirrus/roms
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
   show_script: cat $CIRRUS_WORKING_DIR/build_rom.sh
-  test_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/test.sh | bash
-  sync_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/sync.sh | bash
-  tsync_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/tsync.sh | bash
-  build_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/build.sh | bash
-  ccache_stats_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/ccache_stats.sh | bash
-  upload_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/upload.sh | bash
-  remove_script: curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/remove.sh | bash
+  test_script: curl -Ls https://raw.githubusercontent.com/Seraphine3/temporary/main/ci/test.sh | bash
+  sync_script: curl -Ls https://raw.githubusercontent.com/Seraphine3/temporary/main/ci/sync.sh | bash
+  tsync_script: curl -Ls https://raw.githubusercontent.com/Seraphine3/temporary/main/ci/tsync.sh | bash
+  build_script: curl -Ls https://raw.githubusercontent.com/Seraphine3/temporary/main/ci/build.sh | bash
+  ccache_stats_script: curl -Ls https://raw.githubusercontent.com/Seraphine3/temporary/main/ci/ccache_stats.sh | bash
+  upload_script: curl -Ls https://raw.githubusercontent.com/Seraphine3/temporary/main/ci/upload.sh | bash
+  remove_script: curl -Ls https://raw.githubusercontent.com/Seraphine3/temporary/main/ci/remove.sh | bash
 
 task:
   name: Post Build
   skip: $CIRRUS_BRANCH == 'main'
-  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
+  only_if: $CIRRUS_REPO_OWNER == 'Seraphine3'
   skip_notifications: true
   depends_on: Build
   timeout_in: 2m
   persistent_worker:
     labels:
-      name: AX61-2
+      name: XVX-0
     isolation:
       container:
         image: apon77/aosp:cirrus
