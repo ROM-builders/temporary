@@ -5,12 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-export ALLOW_MISSING_DEPENDENCIES=true
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
-export BUILD_USERNAME=DineshMSDian
-export BUILD_HOSTNAME=DB-lab
-export KBUILD_BUILD_USER=DineshMSDian
-export KBUILD_BUILD_HOST=DB-lab
 export TZ=Asia/Chennai #put before last build command
 lunch lineage_santoni-userdebug
 make bacon
