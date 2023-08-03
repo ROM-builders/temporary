@@ -1,11 +1,11 @@
 # sync
-repo init -u https://github.com/CherishOS/android_manifest.git -b tiramisu
+repo init --depth=1 -u https://github.com/Havoc-OS/android_manifest.git -b thirteen --git-lfs
 git clone https://github.com/ramshell688/Builders.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch cherish_camellia-userdebug
+lunch lineage_camellia-userdebug
 export TZ=Asia/Jakarta #put before last build command
 brunch camellia
 
