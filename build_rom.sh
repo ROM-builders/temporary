@@ -6,16 +6,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch evolution_vayu-user
-# build variables
-export KBUILD_BUILD_USER=dogpoopy
-export KBUILD_BUILD_HOST=linux
-export BUILD_USERNAME=dogpoopy
-export BUILD_HOSTNAME=linux
-export USER=dogpoopy
-export HOSTNAME=linux
 # flags
 export ALLOW_MISSING_DEPENDENCIES=true
-export TZ=Asia/Manila #put before last build command
+# timezone
+export TZ=Asia/Manila
 m evolution
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
