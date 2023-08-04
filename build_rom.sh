@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Project-Elixir/manifest -b Tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/shenprjkt/local_manifest.git --depth 1 -b elixir-13 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Havoc-OS-Revived/android_manifest.git -b eleven --git-lfs -g default,-mips,-darwin,-notdefault
+git clone https://github.com/shenprjkt/local_manifest.git --depth 1 -b Havoc .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom [61]
 source build/envsetup.sh
-lunch aosp_vince-userdebug
+lunch havoc_vince-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
