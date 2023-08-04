@@ -2,7 +2,6 @@
 repo init --depth=1 --no-repo-verify -u git://github.com/DerpFest-AOSP/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Beta-boom/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-rm -rf hardware/qcom-caf/sdm845/media/libplatformconfig/
 
 # build rom
 source build/envsetup.sh
