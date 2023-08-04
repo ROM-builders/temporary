@@ -3,10 +3,9 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-AOSP/manifest
 git clone https://github.com/shenprjkt/local_manifest.git --depth 1 -b PixelOS .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom [61]
+# build rom [62]
 source build/envsetup.sh
 lunch aosp_vince-userdebug
-export BUILD_USERNAME=ShenRn
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
