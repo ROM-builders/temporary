@@ -10,7 +10,9 @@ source build/envsetup.sh
 timedatectl
 
 lunch evolution_Mi8937-user
-
+export WITH_GMS=true
+export TARGET_KERNEL_CLANG_VERSION=zyc_clang
+export TARGET_KERNEL_CLANG_PATH=$(pwd)/prebuilts/clang/host/linux-x86/${TARGET_KERNEL_CLANG_VERSION}
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_USERNAME=OmanshKrishn
