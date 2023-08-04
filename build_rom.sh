@@ -1,12 +1,14 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/bananadroid/android_manifest.git -b 13 --git-lfs -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Shakib-BD/local_manifest.git --depth 1 -b main .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/DerpFest-AOSP/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Shakib-BD/local_manifest.git --depth 1 -b derp-13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
-lunch lineage_merlinx-user
-export TZ=Asia/Dhaka #put before last build command
+source build/envsetup.sh
+lunch derp_merlinx-userdebug
+export BUILD_USERNAME=Shakib
+export BUILD_HOSTNAME=Shakib
+export TZ=Asia/Dhaka
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
