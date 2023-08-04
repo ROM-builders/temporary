@@ -1,8 +1,4 @@
 # sync rom
-git clone https://github.com/akhilnarang/scripts
-cd scripts
-bash setup/android_build_env.sh
-cd ..
 repo init -u https://github.com/CherishOS/android_manifest.git -b tiramisu
 git clone https://github.com/dinonomous/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
