@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/alphadroid-project/ma
 git clone https://github.com/matheucomth/local_manifest.git --depth 1 -b alpha .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build roms
+# build rom
 . build/envsetup.sh
 lunch lineage_onclite-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
