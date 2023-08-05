@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 
 source build/envsetup.sh
-timedatectl
+
 
 lunch evolution_Mi8937-user
 export WITH_GMS=true
@@ -20,7 +20,6 @@ export BUILD_HOSTNAME=pc
 export KBUILD_BUILD_USER=OmanshKrishn
 export KBUILD_BUILD_HOST=pc
 export TZ=Asia/Kolkata
-timedatectl
 
 m evolution
 
