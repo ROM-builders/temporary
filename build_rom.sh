@@ -5,10 +5,7 @@ repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all) --optimiz
 
 
 # build rom
-rm -rf platform/system/sepolicy/vendor/hal_light_default.te
-rm -rf platform/system/sepolicy/vendor/rild.te
-rm -rf system/sepolicy/vendor/hal_light_default.te
-rm -rf system/sepolicy/vendor/rild.te
+
 . build/envsetup.sh
 lunch syberia_fleur-userdebug 
 mka syberia
