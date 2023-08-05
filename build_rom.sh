@@ -8,7 +8,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 source build/envsetup.sh
 
-
 lunch evolution_Mi8937-user
 export WITH_GMS=true
 export TARGET_KERNEL_CLANG_VERSION=zyc_clang
