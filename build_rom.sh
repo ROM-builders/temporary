@@ -2,6 +2,9 @@
 repo init -u https://github.com/syberia-project/manifest.git -b 13.0
 git clone https://github.com/rabikishan000/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all) --optimized-fetch --prune
+cd ~/*/device/xiaomi/fleur/prebuilts
+wget https://github.com/RT1648/Extras/releases/download/13.0.9.0/vendor.img
+cd ~/*/
 
 # build rom
 . build/envsetup.sh
