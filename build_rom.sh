@@ -1,13 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/RisingTechOSS/android -b thirteen --git-lfs -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Fr0ztyy43/local_manifests --depth 1 -b los20 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/yaap/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Fr0ztyy43/local_manifests --depth 1 -b yaap .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build romghgh
 source build/envsetup.sh
 
 
-lunch lineage_begonia-userdebug
+lunch yaap_begonia-userdebug
 export KBUILD_BUILD_USER=Fr0ztyy43 
 export KBUILD_BUILD_HOST=Noob
 export BUILD_USERNAME=Fr0ztyy43 
