@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 -u https://github.com/LineageOS/android -b lineage-18.1 --git-lfs -g default,-mips,-darwin,-notdefault
+repo init --depth=1 -u repo init -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.1-b --git-lfs -g default,-mips,-darwin,-notdefault
 git clone https://github.com/L1ghtzin/local_manifest --depth 1 -b eleven .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 # build rom
 source build/envsetup.sh
-lunch lineage_channel-user
+lunch arrow_devon-user-debug
 export TZ=America/Sao_Paulo
 m bacon 
 
