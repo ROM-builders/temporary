@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/BootleggersROM/manife
 git clone https://github.com/shenprjkt/local_manifest.git --depth 1 -b bootleg .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom [62]
+# build rom [64]
 source build/envsetup.sh
 lunch bootleg_vince-user
 export TZ=Asia/Dhaka #put before last build command
