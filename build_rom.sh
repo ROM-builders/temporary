@@ -1,12 +1,12 @@
 # sync
-repo init --depth=1 -u https://github.com/Havoc-OS/android_manifest.git -b thirteen --git-lfs
+repo init --depth=1 --no-repo-verify -u https://github.com/Havoc-OS/android_manifest.git -b thirteen --git-lfs -g default,-mips,-darwin,-notdefault
 git clone https://github.com/ramshell688/Builders.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
 lunch lineage_camellia-userdebug
-export TZ=Asia/Jakarta #put before last build command
+export TZ=Asia/Dhaka #put before last build command
 brunch camellia
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
