@@ -6,7 +6,7 @@ repo sync -c -j8 --force-sync --no-clone-bundle --no-tags
 # build rom
 source build/envsetup.sh
 lunch superior_camellia-userdebug
-export TZ=Asia/Jakarta #put before last build command
+export TZ=Asia/Dhaka #put before last build command
 m bacon -j8
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
