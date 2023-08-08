@@ -1,6 +1,6 @@
 # sync rom
-repo init --depth=1 --no-repo-verify https://github.com/CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/ShahzebQureshi/local_manifest --depth 1 -b cherish .repo/local_manifests
+repo init --depth=1 --no-repo-verify https://github.com/RisingTechOSS/android -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/ShahzebQureshi/local_manifest --depth 1 -b rising .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
@@ -9,7 +9,7 @@ export BUILD_USER=ShahzebQureshi
 export BUILD_HOST=cirrus-ci
 export BUILD_USERNAME=ShahzebQureshi
 export BUILD_HOSTNAME=cirrus-ci
-lunch cherish_joan-userdebug
+lunch lineage_joan-userdebug
 export TZ=Asia/Karachi #put before last build command
 mka bacon
 
