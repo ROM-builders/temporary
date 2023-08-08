@@ -5,7 +5,7 @@ repo sync -c -j8 --force-sync --no-clone-bundle --no-tags
 
 # build rom
 source build/envsetup.sh
-lunch lineage_camellia-userdebug
+lunch superior_camellia-userdebug
 export TZ=Asia/Jakarta #put before last build command
 m bacon -j8
 
