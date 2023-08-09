@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lineage_channe-user-debug
+lunch lineage_channel-user-debug
 export TZ=America/Sao_Paulo #put before last build command
 m otapackage
 
