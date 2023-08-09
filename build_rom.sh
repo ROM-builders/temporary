@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-Staging/manife
 git clone https://github.com/pure-soul-kk/local_manifest --depth 1 -b octa .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom 
 source build/envsetup.sh
 lunch octavi_sweet-userdebug
 export TZ=Asia/Kolkata #put before last build command
