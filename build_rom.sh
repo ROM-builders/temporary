@@ -8,6 +8,8 @@ source build/envsetup.sh
 lunch evolution_rosemary-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
+export BUILD_HOSTNAME=pingvinkirpich
+export BUILD_USERNAME=pingvinkirpich
 export TZ=Asia/Dhaka #put before last build command
 m evolution
 
