@@ -1,6 +1,6 @@
 
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/syberia-project/manifest.git -b 13.0 -g default, -device, -mips, -darwin, -notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/syberia-project/manifest.git -b 13.0 
 git clone https://github.com/Bikesh-Kumar-Gupta/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
