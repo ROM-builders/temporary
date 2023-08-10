@@ -1,7 +1,7 @@
 # sync rom
 
 repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest.git -b thirteen-plus -g default,-mips,-darwin,-notdefault
-git clone https://codeberg.org/omansh-krishn/local_manifest.git --depth 1 -b pixelexperience-13-modified-vendor .repo/local_manifests
+git clone https://codeberg.org/omansh-krishn/local_manifest.git --depth 1 -b pixelexperience-13-t .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
