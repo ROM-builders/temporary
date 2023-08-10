@@ -9,7 +9,7 @@ lunch lineage_lancelot-userdebug
 export WITH_GMS=false
 export TZ=Asia/Mumbai #put before last build command 
 export BUILD_USERNAME=Di Raizel  
-export BUILD_HOSTNAME=@acex88   
+export BUILD_HOSTNAME=@acex88    
 make bacon 
 
 # upload rom (if your don't need to upload multiple files, then you don't need to edit next line)
