@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch superior_mojito-user
-#export BUILD_WITH_GAPPS=true
+export BUILD_WITH_GAPPS=true
 export SUPERIOR_OFFICIAL=true
 export TZ=Asia/Dhaka #put before last build command
 m bacon
