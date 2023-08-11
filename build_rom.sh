@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch aospa_r5x-userdebug
 export TZ=Asia/Dhaka #put before last build command
 export TARGET_BOARD_PLATFORM=trinket
-export BOARD_USES_QCOM_HARDWARE=true
+export BOARD_USES_QCOM_HARDWARE=true 
 ./rom-build.sh r5x -t userdebug
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
