@@ -8,6 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch derp_rosemary-userdebug
 export BUILD_USERNAME=CodeChas3r
 export BUILD_HOSTNAME=Chas
+export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta #put before last build command
 mka derp
 
