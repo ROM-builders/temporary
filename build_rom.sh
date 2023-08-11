@@ -11,8 +11,8 @@ export ALLOW_MISSING_DEPENDENCIES=true
 # builder variables
 export BUILD_USERNAME=dogpoopy
 export BUILD_HOSTNAME=linux
-export USER=dogpoopy
-export HOSTNAME=linux
+export KBUILD_BUILD_USER=dogpoopy
+export KBUILD_BUILD_HOST=linux
 # timezone
 export TZ=Asia/Manila
 m evolution
