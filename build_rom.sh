@@ -3,9 +3,9 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest 
 git clone https://github.com/hsx02/Local-Manifests.git --depth 1 -b evo-14 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build romm
+# build rommm
 source build/envsetup.sh
-lunch evolution_spes-eng
+lunch evolution_spes-userdebug
 
 export TZ=Asia/Delhi #put before last build command
 mka evolution
