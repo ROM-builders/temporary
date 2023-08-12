@@ -6,7 +6,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_lancelot-userdebug
-export WITH_GMS=false
+export WITH_GMS=true
+export TARGET_CORE_GMS := true
+export TARGET_USE_GOOGLE_TELEPHONY := true
 export TZ=Asia/Mumbai #put before last build command 
 export BUILD_USERNAME=Di Raizel  
 export BUILD_HOSTNAME=@acex88    
