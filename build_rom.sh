@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch blaze_X00TD-userdebug
+lunch blaze_X00TD-user
 export TZ=Asia/Jakarta #put before last build command
 make bacon
 
