@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch derp_alioth-userdebug
+lunch derp_alioth-user
 export TZ=Asia/Jakarta
 mka derp
 
