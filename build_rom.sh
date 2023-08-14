@@ -8,6 +8,11 @@ source build/envsetup.sh
 lunch aosp_vayu-user
 # flags
 export ALLOW_MISSING_DEPENDENCIES=true
+# builder variables
+export BUILD_USERNAME=dogpoopy
+export BUILD_HOSTNAME=linux
+export KBUILD_BUILD_USER=dogpoopy
+export KBUILD_BUILD_HOST=linux
 # timezone
 export TZ=Asia/Manila
 mka bacon
