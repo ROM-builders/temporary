@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixysOS/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/eartinity/local_manifest.git --depth 1 -b Pixys .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/eartinity/local_manifest.git --depth 1 -b PixelExperience .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch pixys_r5x-userdebug
+lunch aosp_r5x-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
