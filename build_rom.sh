@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest 
 git clone https://github.com/Fr0ztyy43/local_manifests --depth 1 -b los20 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build romghghhasdasb
+# build romghghhasdasbe
 source build/envsetup.sh
 
 
