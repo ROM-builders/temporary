@@ -16,7 +16,7 @@ https://cirrus-ci.com/build/$CIRRUS_BUILD_ID $show" -d "chat_id=${your_telegram_
 github_userid=$(gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /repos/ROM-builders/temporary/commits/$CIRRUS_CHANGE_IN_REPO -q '.author.id')
 github_username=$(gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /repos/ROM-builders/temporary/commits/$CIRRUS_CHANGE_IN_REPO -q '.author.login')
 triggered_date=$(date +%s)
-curl -X POST "$two" \
+curl -Xs POST "$two" \
 -H "apikey: $three" \
 -H "Authorization: Bearer $three" \
 -H "Content-Type: application/json" \
