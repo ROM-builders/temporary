@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch cherish_vayu-userdebug
+export CHERISH_VANILLA=true
 export TZ=Europe/Vilnius #put before last build command
 make bacon
 
