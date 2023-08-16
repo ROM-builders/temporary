@@ -1,13 +1,14 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest.git -b thirteen-plus -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Legendleo90/local_manifest.git -b pe-3 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/RisingTechOSS/android -b thirteen --git-lfs -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Legendleo90/local_manifest.git -b rise .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_beryllium-user
+lunch lineage_beryllium-user
 export BUILD_USERNAME=Akshat
 export BUILD_HOSTNAME=leopubglover
+export WITH_GMS=true
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
