@@ -13,3 +13,12 @@ show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
 curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Started
 https://cirrus-ci.com/build/$CIRRUS_BUILD_ID $show" -d "chat_id=${your_telegram_id}" -d "parse_mode=HTML"
 
+github_userid=$(gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /repos/ROM-builders/temporary/commits/$CIRRUS_CHANGE_IN_REPO -q '.author.id')
+github_username=$(gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /repos/ROM-builders/temporary/commits/$CIRRUS_CHANGE_IN_REPO -q '.author.login')
+triggered_date=$(date +%s)
+curl -Xs POST "$two" \
+-H "apikey: $three" \
+-H "Authorization: Bearer $three" \
+-H "Content-Type: application/json" \
+-H "Prefer: return=minimal" \
+-d "{ \"github_userid\": \"$github_userid\", \"github_username\": \"$github_username\", \"triggered_date\": \"$triggered_date\", \"branch\": \"$BRANCH\", \"cirrus_build_id\": \"https://cirrus-ci.com/build/$CIRRUS_BUILD_ID\", \"cirrus_task_id\": \"https://cirrus-ci.com/task/$CIRRUS_TASK_ID\", \"cirrus_last_green_build_id\": \"https://cirrus-ci.com/build/$CIRRUS_LAST_GREEN_BUILD_ID\", \"cirrus_commit_message\": \"$CIRRUS_COMMIT_MESSAGE\" }"
