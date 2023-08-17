@@ -8,6 +8,7 @@ device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut
 grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
 grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
 grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
+grep _SCW_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=SCW_sprout
 grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
 your_telegram_id=@ROM_builders_junk
 show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
