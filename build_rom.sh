@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/dogpoopy/local_manifest.git --depth 1 -b Evolution-X-common .repo/local_manifests
+git clone https://github.com/dogpoopy/local_manifest.git --depth 1 -b Evolution-X .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch evolution_vayu-userdebug
+lunch evolution_vayu-user
 # flags
 export ALLOW_MISSING_DEPENDENCIES=true
 # builder variables
