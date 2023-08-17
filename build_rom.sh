@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/LineageOS/android.git  -b lineage-20.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/sounddrill31/android_device_hmd_SCW-Sprout-lineage --depth 1 -b local_manifests .repo/local_manifests
+git clone https://github.com/VNGamerGit/local_manifest --depth 1 -b lineage-20.0 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
