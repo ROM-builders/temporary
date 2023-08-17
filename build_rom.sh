@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch lineage_beryllium-user
 export BUILD_USERNAME=Akshat
 export BUILD_HOSTNAME=leopubglover
-export WITH_GMS=true
+export WITH_GMS=false
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
