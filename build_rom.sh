@@ -6,6 +6,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_CPH2381-userdebug
+export KBUILD_BUILD_USER=nobiraja
+export KBUILD_BUILD_HOST=nobiraja
+export BUILD_USERNAME=nobiraja
+export BUILD_HOSTNAME=nobiraja
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export TZ=Asia/Dhaka #put before last build command
 make updatepackage
