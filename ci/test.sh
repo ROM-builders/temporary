@@ -21,6 +21,7 @@ ccheck 'tee ' 'Please dont use tee inside script, its not needed at all..'
 ccheck ' clean' 'Please dont use make clean. Server does make installclean by default, which is enough for most of the cases.'
 ccheck ' clobber' 'Please dont use make clobber. Server does make installclean by default, which is enough for most of the cases.'
 ccheck ' installclean' 'Please dont use make installclean. Server does make installclean by default, which is enough for most of the cases.'
+ccheck 'cmka ' 'Please dont use cmka. Server does make installclean by default, which is enough for most of the cases.'
 ccheck 'patch ' 'Please dont use patch inside script, use local manifest for this purpose.'
 ccheck ' && ' 'Please dont use && inside script, put that command in next line for this purpose.'
 ccheck ' & ' 'Please dont use & inside script.'
@@ -90,6 +91,7 @@ device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut
 grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
 grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
 grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
+grep _SCW_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=SCW_sprout
 grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
 
 if [[ $BRANCH != *pull/* ]]; then 
