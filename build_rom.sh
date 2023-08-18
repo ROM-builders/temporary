@@ -1,6 +1,6 @@
 # sync rom
 repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/dikiawan-9/Local-Manifests.git --depth 1 -b main .repo/local_manifests
+git clone https://github.com/dikiawan/Local-Manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j8
 
 # build rom
