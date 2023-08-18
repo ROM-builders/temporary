@@ -6,6 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch voltage_merlinx-userdebug
+export BUILD_USERNAME=Shakib
+export BUILD_HOSTNAME=ArchX
 export TZ=Asia/Dhaka #put before last build command
 m bacon
 
