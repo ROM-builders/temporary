@@ -1,14 +1,18 @@
-# sync rom
-repo init --depth=1 --no-repo-verify -u git@github.com:CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/YudhoPatrianto/local_manifest.git --depth 1 -b beta .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+# Sync Rom Manifest
+repo init https://github.com/CherishOS/android_manifest.git -b tiramisu
+# Sync Manifest
+git clone https://github.com/YudhoPatrianto/local_manifests -b beta .repo/local_manifests
+
+#Sync ROM
+repo sync -c --force-sync --no-clone-bundle -j$(nproc --all)
 
 # build rom
 build/envsetup.sh
+lunch cherish_selene-userdebug
 export TARGET_USES_BLUR=false
 export TARGET_USE_BLUR=false
 export EXTRA_UDFPS_ANIMATIONS=true
-lunch cherish_selene-userdebug
+export SELINUX_INGNORE_NEVERALLOWS=true
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
