@@ -12,6 +12,7 @@ lunch lineage_santoni-user
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export RISING_PACKAGE_TYPE=VANILLA-AOSP-OmanshKrishn
+export TARGET_ENABLE_BLUR=false
 export BUILD_USERNAME=OmanshKrishn
 export BUILD_HOSTNAME=pc
 export KBUILD_BUILD_USER=OmanshKrishn
