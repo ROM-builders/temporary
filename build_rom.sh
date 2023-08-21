@@ -8,7 +8,6 @@ source build/envsetup.sh
 croot
 export CUSTOM_BUILD_TYPE=Snnbyyds_UOTAN
 breakfast blossom
-
 export KBUILD_BUILD_USER=snnbyyds
 export KBUILD_BUILD_HOST=uotan
 export BUILD_USERNAME=sn
