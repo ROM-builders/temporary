@@ -13,6 +13,7 @@ export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export WITH_GMS=flase
 export GAPPS_BUILD_TYPE=0
+export TARGET_ENABLE_BLUR=flase
 export BUILD_USERNAME=OmanshKrishn
 export BUILD_HOSTNAME=pc
 export KBUILD_BUILD_USER=OmanshKrishn
