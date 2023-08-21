@@ -9,8 +9,6 @@ lunch evolution_vayu-user
 # builder variables
 export BUILD_USERNAME=dogpoopy
 export BUILD_HOSTNAME=linux
-export USER=dogpoopy
-export HOSTNAME=linux
 # timezone
 export TZ=Asia/Manila
 mka evolution
