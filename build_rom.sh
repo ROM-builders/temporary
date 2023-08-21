@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/P-404/android_manifest -b tokui -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Amritorock/local_manifest.git --depth 1 -b tokui .repo/local_manifests
+git clone https://github.com/Project-404-r5x/Local_manifest --depth 1 -b tokui .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
