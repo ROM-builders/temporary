@@ -4,6 +4,7 @@ git clone https://github.com/mizdrake7/local_manifest.git --depth 1 -b voltage .
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+lunch voltage_r5x-eng
 source build/envsetup.sh
 export KBUILD_BUILD_USER=MAdMiZ
 export KBUILD_BUILD_HOST=MAdMiZ
