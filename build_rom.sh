@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/Project-
 git clone https://github.com/mozzaru/local_manifest.git --depth 1 -b awaken-13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom            
+# build rom             
 source build/envsetup.sh
 lunch awaken_markw-userdebug
 export TZ=Asia/Dhaka #put before last build command
