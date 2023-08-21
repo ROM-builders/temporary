@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/RisingTechOSS/android
 git clone https://github.com/bronya30/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom [64]
+# build rom [65]
 source build/envsetup.sh
 lunch lineage_rosy-userdebug
 make bacon
