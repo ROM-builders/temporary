@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch p404_r5x-eng
+export WITH_GMS=true
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export TZ=Asia/Dhaka #put before last build command
 make bacon 
