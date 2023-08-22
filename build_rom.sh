@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-AOSP/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/acex69/local_manifest.git --depth 1 -b pos .repo/local_manifests
+git clone https://github.com/deadmeatXX/local_manifest --depth 1 -b pos .repo/local_manifests
 
 # build rom
 source build/envsetup.sh
