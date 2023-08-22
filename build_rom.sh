@@ -6,7 +6,7 @@ git clone https://github.com/deadmeatXX/local_manifest --depth 1 -b pos .repo/lo
 source build/envsetup.sh
 lunch aosp_lancelot-userdebug
 export TZ=Asia/Dhaka #put before last build command
-BUILD_USERNAME=ASCE  
+export BUILD_USERNAME=ASCE  
 export BUILD_HOSTNAME=@ascex_x  
 make bacon   
 
