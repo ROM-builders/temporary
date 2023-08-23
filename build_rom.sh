@@ -6,6 +6,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch lineage_RMX1801-userdebug
+export KBUILD_BUILD_HOST=android-build
+export KBUILD_BUILD_USER=yudi
+export BUILD_HOSTNAME=android-build
+export BUILD_USERNAME=yudi
 export TZ=Asia/Makassar #put before last build command
 mka bacon
 
