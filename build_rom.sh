@@ -6,6 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch awaken_merlinx-userdebug
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 export BUILD_HOSTNAME=Shakib
 export BUILD_USERNAME=Merlinx
 export TZ=Asia/Dhaka #put before last build command
