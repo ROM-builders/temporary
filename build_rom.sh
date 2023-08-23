@@ -1,13 +1,19 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/DerpFest-11/manifest.git -b 11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-20.0 -g default,-mips,-darwin,-notdefault --git-lfs
+git clone https://github.com/sanjeevstunner/Manifest.git --depth 1 -b vayu_lineage .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom#
 source build/envsetup.sh
-lunch derp_vayu-user
-export TZ=Asia/Dhaka #put before last build command
-mka derp
+lunch lineage_vayu-userdebug
+# Builder Variables
+export KBUILD_BUILD_USER=chandler
+export KBUILD_BUILD_HOST=bing
+export BUILD_USERNAME=chandler
+export BUILD_HOSTNAME=bing
+# Time Zone
+export TZ=Asia/Kolkata #put before last build command
+make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
