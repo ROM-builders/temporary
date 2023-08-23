@@ -10,7 +10,8 @@ lunch lineage_santoni-user
 
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export ALLOW_MISSING_DEPENDENCIES=true
-export RISING_PACKAGE_TYPE=VANILLA-AOSP-WITHPL-OmanshKrishn
+export WITH_GMS=true
+export RISING_PACKAGE_TYPE=GAPPS-OmanshKrishn
 export TARGET_ENABLE_BLUR=false
 export BUILD_USERNAME=OmanshKrishn
 export BUILD_HOSTNAME=pc
