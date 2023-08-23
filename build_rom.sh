@@ -1,11 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/android_manifest.git -b triton -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/android_manifest -b triton -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Shakib-BD/local_manifest.git --depth 1 -b awaken .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch awaken_merlinx-user
+lunch awaken_merlinx-userdebug
+export BUILD_HOSTNAME=Shakib
+export BUILD_USERNAME=Merlinx
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
