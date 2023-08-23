@@ -9,6 +9,9 @@ lunch evolution_vayu-user
 # builder variables
 export BUILD_USERNAME=dogpoopy
 export BUILD_HOSTNAME=linux
+# flags
+export TARGET_KERNEL_CLANG_VERSION=proton
+export TARGET_KERNEL_CLANG_PATH=$(shell pwd)/prebuilts/clang/host/linux-x86/proton
 # timezone
 export TZ=Asia/Manila
 mka evolution
