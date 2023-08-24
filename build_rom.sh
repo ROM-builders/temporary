@@ -8,6 +8,8 @@ source build/envsetup.sh
 lunch octavi_vince-user
 export BUILD_HOSTNAME="codespace"
 export BUILD_USERNAME="ghostmaster69-dev"
+export KBUILD_BUILD_HOST="codespace"
+export KBUILD_BUILD_USER="ghostmaster69-dev"
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
