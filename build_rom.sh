@@ -8,6 +8,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch lineage_rosemary-userdebug
 export BUILD_HOSTNAME=CodeChas3r
 export BUILD_USERNAME=Chas
+export KBUILD_BUILD_USER=CodeChas3r
+export KBUILD_BUILD_HOST=Chas
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
