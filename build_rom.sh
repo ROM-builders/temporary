@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch syberia-user
+lunch miatoll-syberia-user
 export TZ=Asia/Dhaka #put before last build command
 mka miatoll-syberiaos-13.0-GunaisHere
 
