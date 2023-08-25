@@ -2,6 +2,7 @@
 
 set -e
 cd ~/roms/$rom_name
+BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export CCACHE_DIR=~/ccache/$rom_name/$device
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
