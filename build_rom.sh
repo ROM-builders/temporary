@@ -4,8 +4,11 @@ git clone https://github.com/Shakib-BD/local_manifest.git --depth 1 -b rising-13
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch lineage_merlinx-userdebug
+export BUILD_HOSTNAME=shakib
+export BUILD_USERNAME=bd
+export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
