@@ -9,7 +9,7 @@ export KBUILD_BUILD_USER=nosebs
 export KBUILD_BUILD_HOST=blossom
 export BUILD_USERNAME=nosebs
 export BUILD_HOSTNAME=blossom
-export TZ=Europe/Moscow #put before last build commandk
+export TZ=Europe/Moscow #put before last build command
 brunch blossom eng
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
