@@ -11,6 +11,7 @@ lunch lineage_santoni-user
 
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export ALLOW_MISSING_DEPENDENCIES=true
+export ALPHA_BUILD_TYPE=UNOFFICIAL-OmanshKrishn
 export WITH_GMS=flase
 export GAPPS_BUILD_TYPE=0
 export TARGET_ENABLE_BLUR=flase
