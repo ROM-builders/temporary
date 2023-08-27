@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/aether192/local_manifest.git --depth 1 -b master .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-18.1 --git-lfs -g default,-mips,-darwin,-notdefault
+git clone https://github.com/aether192/local_manifest.git --depth=1 -b 11 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch arrow_lancelot-user
+lunch lineage_lancelot-userdebug
 export BUILD_USERNAME=Aetherance
 export BUILD_HOSTNAME=aether192
 export TZ=Asia/Manila #put before last build command
