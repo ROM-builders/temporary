@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/DerpFest-AOSP/manifest -b 13 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Lenovo-SM6225-Fork/local_manifests --depth 1 .repo/local_manifests -b derp
+git clone https://github.com/Lenovo-SM6225-Fork/local_manifests --depth 1 .repo/local_manifests -b derp-13
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
