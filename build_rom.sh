@@ -5,6 +5,7 @@ git clone https://codeberg.org/omansh-krishn/local_manifest.git --depth 1 -b alp
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+
 source build/envsetup.sh
 lunch lineage_santoni-user
 
