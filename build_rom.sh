@@ -3,7 +3,6 @@ repo init --depth=1 --no-repo-verify -u git://github.com/Evolution-X/manifest -b
 git clone https://github.com/STRK-ND/local-manifest.git --depth 1 -b evo .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-
 # build rom
 . build/envsetup.sh
 lunch evolution_X00TD-userdebug
