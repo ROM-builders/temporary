@@ -1,17 +1,15 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Prvtcmt/lcl_mnfst.git --depth 1 -b main .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-Staging/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Rsyd1997/local_manifest.git --depth 1 -b master .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
-lunch cherish_mido-userdebug
-export KBUILD_BUILD_USER=Rsyd
-export KBUILD_BUILD_HOST=Enka
-export BUILD_HOSTNAME=Enka
-export BUILD_USERNAME=Rsyd
-export CHERISH_VANILLA=true
-export PRODUCT_BROKEN_VERIFY_USES_LIBRARIES=true
+lunch octavi_beryllium-userdebug
+export KBUILD_BUILD_USER=Rasyid
+export KBUILD_BUILD_HOST=Fontain
+export BUILD_HOSTNAME=Fontain
+export BUILD_USERNAME=Rasyid
 export TZ=Asia/Jakarta
 mka bacon
 
