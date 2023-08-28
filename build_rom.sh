@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/AOSPA/manifest -b top
 git clone https://github.com/back-up-git/local_manifests.git --depth 1 -b topaz .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom [64]
+# build rom [65]
 source build/envsetup.sh
 lunch aospa_raphael-userdebug
 export KBUILD_BUILD_USER=azure
