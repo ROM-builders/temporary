@@ -6,7 +6,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build roms
 . build/envsetup.sh
 lunch lineage_twolip-user
-export TARGET_DISABLE_EPPE=true
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
