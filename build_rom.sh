@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch awaken_lancelot-user
 export BUILD_USERNAME=Aetherance
 export BUILD_HOSTNAME=aether192
-export TZ=Asia/Manila #put before last build command
+export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
