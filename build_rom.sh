@@ -1,7 +1,7 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/LineageOS/android.git -b lineage-18.1 --git-lfs -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Nobodyayushhere/local_manifest.git --depth=1
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo init -u https://github.com/LineageOS/android.git -b lineage-18.1 --git-lfs
+git clone https://github.com/Nobodyayushhere/local_manifest.git
+repo sync
 
 # build rom
 source build/envsetup.sh
