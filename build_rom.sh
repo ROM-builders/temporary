@@ -5,8 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-export TZ=Asia/Delhi #put before last build command
 lunch lineage_X01BD-userdebug
+export TZ=Asia/Delhi #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
