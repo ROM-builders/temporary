@@ -5,12 +5,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch evolution_vayu-user
+lunch evolution_vayu-userdebug
 # builder variables
 export BUILD_USERNAME=dogpoopy
 export BUILD_HOSTNAME=linux
-export KBUILD_BUILD_USER="dogpoopy"
-export KBUILD_BUILD_HOST="linux"
 # timezone
 export TZ=Asia/Manila
 mka evolution
