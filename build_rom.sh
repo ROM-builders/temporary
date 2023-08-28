@@ -1,7 +1,7 @@
 # sync rom
 repo init -u https://github.com/LineageOS/android.git -b lineage-18.1 --git-lfs
 git clone git@github.com:Nobodyayushhere/local_manifest.git
-repo syn
+repo sync
 
 # build rom
 source build/envsetup.sh
