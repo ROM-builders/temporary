@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/LineageOS/android.git -b lineage-18.1 --git-lfs -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Nobodyayushhere/local_manifst.git --depth 1 -b
+git clone https://github.com/Nobodyayushhere/local_manifest.git --depth 1 -b
 # build rom
 source build/envsetup.sh
 lunch lineage_RMX1821-userdebug
