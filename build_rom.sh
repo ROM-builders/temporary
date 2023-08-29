@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/alphadroid-project/manifest -b alpha-13 --git-lfs -g default,-mips,-darwin,-notdefault
-git clone https://github.com/DeliUstaTR/local_manifest --depth 1 -b alphadroid .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b pyro-next --git-lfs -g default,-mips,-darwin,-notdefault
+git clone https://github.com/DeliUstaTR/local_manifest --depth 1 -b pyro .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_ginkgo-user
+lunch spark_ginkgo-user
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
