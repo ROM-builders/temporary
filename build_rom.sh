@@ -21,7 +21,7 @@ export BUILD_BROKEN_CLANG_ASFLAGS=true
 export BUILD_BROKEN_CLANG_CFLAGS=true
 export BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE=true
 export RELAX_USES_LIBRARY_CHECK=true
-export TZ=Asia/Kolkata #put before last build command
+export TZ=Asia/Dhaka #put before last build command
 brunch r5x
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
