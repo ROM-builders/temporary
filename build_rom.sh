@@ -6,7 +6,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 source build/envsetup.sh
 lunch pixel_yogurt-user
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
-export TZ=Asia/Dhakaexport TZ=Asia/Dhaka 
+export TZ=Asia/Dhakaexport 
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
