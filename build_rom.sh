@@ -10,7 +10,7 @@ export KBUILD_BUILD_HOST=blossom
 export BUILD_USERNAME=nosebs
 export BUILD_HOSTNAME=blossom
 lunch evolution_blossom-eng
-export TZ=Europe/Moscow #put before last build command
+export TZ=Europe/Moscow #put beforem last build command
 m evolution
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
