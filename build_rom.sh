@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manif
 git clone https://github.com/sanjeevstunner/Manifest.git --depth 1 -b vayu_arrow .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# Fix partition sizes 
+# See if ksu error from other repos got fixedd
 # build rom
 source build/envsetup.sh
 lunch arrow_vayu-userdebug
