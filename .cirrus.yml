@@ -45,6 +45,7 @@ task:
           - /home/cirrus/.config:/home/cirrus/.config
   show_script: cat $CIRRUS_WORKING_DIR/build_rom.sh
   test_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/test.sh | bash
+  clean_kernels_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/clean_dirty_kernels.sh | bash
   sync_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/sync.sh | bash
   tsync_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/tsync.sh | bash
   build_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/build.sh | bash
