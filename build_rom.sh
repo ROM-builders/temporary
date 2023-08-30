@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-AOSP/manifest
 git clone https://github.com/Amritorock/local_manifest.git --depth 1 -b pos .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom  
+# build rom
 source build/envsetup.sh
 lunch aosp_r5x-userdebug
 export TZ=Asia/Dhaka #put before last build command
