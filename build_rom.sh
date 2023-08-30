@@ -3,7 +3,7 @@ git clone https://github.com/GunaisHere/local_manifests.git --depth 1 -b 13 .rep
 repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all) --optimized-fetch --prune
 # build rom
 source build/envsetup.sh
-lunch syberia-project_miatoll-userdebug
+lunch syberia-project_miatoll-user
 export BUILD_USERNAME=GL_Founder
 export TZ=Asia/Dhaka #put before last build command
 brunch projectsyberia
