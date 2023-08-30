@@ -1,5 +1,5 @@
 repo init --depth=1 --git-lfs --no-repo-verify -u https://github.com/syberia-project/manifest.git -b 13.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/GunaisHere/local_manifests.git --depth 1 -b 13 .repo/local_manifest
+git clone https://github.com/GunaisHere/local_manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all) --optimized-fetch --prune
 # build rom
 source build/envsetup.sh
