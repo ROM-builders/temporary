@@ -1,4 +1,3 @@
-
 repo init -u https://github.com/syberia-project/manifest.git -b 13.0 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/GunaisHere/local_manifests.git --depth 1 -b 13 .repo/local_manifests
 repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all) --optimized-fetch --prune
@@ -6,7 +5,6 @@ repo sync -c --force-sync --no-tags --no-clone-bundle -j$(nproc --all) --optimiz
 source build/envsetup.sh
 lunch syberia-project_miatoll-userdebug
 export BUILD_USERNAME=GL_Founder
-export BUILD_HOSTNAME=GunaisHere
 export TZ=Asia/Dhaka #put before last build command
 make projectsyberia
 
