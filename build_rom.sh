@@ -10,6 +10,7 @@ export BUILD_USERNAME=CodeChas3r
 export BUILD_HOSTNAME=Chas
 export KBUILD_BUILD_USER=CodeChas3r
 export KBUILD_BUILD_HOST=Chas
+export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Jakarta #put before last build command
 m bacon
 
