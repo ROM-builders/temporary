@@ -75,11 +75,3 @@ for dir in $dirty_dirs
 do
 	[[ -n $(git -C "$dir" status -s) ]] && (rm -rf "$dir"; echo removed $dir; repo sync) || true
 done
-
-needed=$(awk -F "path=" '/kernel\// {print $2}' .repo/local_manifests/* | awk -F '"' '{print $2}')
-devices='asus xiaomi realme motorola micromax wingtech'
-for device in $devices; do
-safe_to_remove=$(ls kernel/$device/* -d 2> /dev/null | grep -v $needed)
-rm -rf $safe_to_remove
-if [ -z $safe_to_remove ]; then echo "Removed $safe_to_remove"; fi
-done
