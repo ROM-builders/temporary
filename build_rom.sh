@@ -5,6 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
+export WITH_GMS=true
 export KBUILD_BUILD_USER=rinto
 export KBUILD_BUILD_HOST=rinto
 export BUILD_USERNAME=rinto
