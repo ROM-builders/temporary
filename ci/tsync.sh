@@ -70,6 +70,18 @@ else
 fi
 rm -rf sync.log
 
+needed_device=$(awk -F "path=" '/device\// {print $2}' .repo/local_manifests/* | awk -F '"' '{print $2}')
+needed_kernel=$(awk -F "path=" '/kernel\// {print $2}' .repo/local_manifests/* | awk -F '"' '{print $2}')
+needed_vendor=$(awk -F "path=" '/vendor\// {print $2}' .repo/local_manifests/* | awk -F '"' '{print $2}')
+devices='asus xiaomi realme motorola micromax wingtech'
+for device in $devices; do
+	safe_to_remove_device=$(ls device/$device/* -d 2> /dev/null | grep -v $needed_device)
+	safe_to_remove_kernel=$(ls kernel/$device/* -d 2> /dev/null | grep -v $needed_kernel)
+	safe_to_remove_vendor=$(ls vendor/$device/* -d 2> /dev/null | grep -v $needed_vendor)
+	rm -rf $safe_to_remove_kernel $safe_to_remove_device $safe_to_remove_vendor
+	echo removed $safe_to_remove_kernel $safe_to_remove_device $safe_to_remove_vendor
+done
+
 dirty_dirs="prebuilts/clang/host/linux-x86"
 for dir in $dirty_dirs
 do
