@@ -1,9 +1,12 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/LineageOS/android.git -b lineage-18.1 --git-lfs -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Nobodyayushhere/local_manifest.git --depth 1 -b main .repo/local_manifests
+
 git clone cd external/selinux && curl -o 0001-Revert-libsepol-Make-an-unknown-permission-an-error-.patch -L https://github.com/Maanush2004/android_device_realme_RMX1821/blob/lineage-18.1-rmui/patches/external/selinux/0001-Revert-libsepol-Make-an-unknown-permission-an-error-.patch && git am 0001-Revert-libsepol-Make-an-unknown-permission-an-error-.patch && cd ../..
 
 git clone cd build/make && curl -o 0001-build-Add-option-to-append-vbmeta-image-to-boot-imag.patch -L https://github.com/Maanush2004/android_device_realme_RMX1821/blob/lineage-18.1-rmui/patches/build/make/0001-build-Add-option-to-append-vbmeta-image-to-boot-imag.patch && git am 0001-build-Add-option-to-append-vbmeta-image-to-boot-imag.patch && cd ../..
+
+git clone cd build/make && curl -o 0001-Port-face-unlock-feature.patch -L https://github.com/Maanush2004/android_device_realme_RMX1821/blob/lineage-18.1-rmui/patches/packages/apps/Settings/0001-Port-face-unlock-feature.patch && git am 0001-Port-face-unlock-feature.patch && cd ../..
 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
