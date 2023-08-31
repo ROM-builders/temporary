@@ -8,9 +8,9 @@ needed_kernel=$(awk -F "path=" '/kernel\// {print $2}' .repo/local_manifests/* |
 needed_vendor=$(awk -F "path=" '/vendor\// {print $2}' .repo/local_manifests/* | awk -F '"' '{print $2}')
 devices='asus xiaomi realme motorola micromax wingtech oneplus lenovo'
 for device in $devices; do
-	safe_to_remove_device=$(ls device/$device/* -d 2> /dev/null | grep -v $needed_device)
-	safe_to_remove_kernel=$(ls kernel/$device/* -d 2> /dev/null | grep -v $needed_kernel)
-	safe_to_remove_vendor=$(ls vendor/$device/* -d 2> /dev/null | grep -v $needed_vendor)
+	safe_to_remove_device=$(ls device/$device/* -d 2> /dev/null | grep -v $needed_device 2> /dev/null)
+	safe_to_remove_kernel=$(ls kernel/$device/* -d 2> /dev/null | grep -v $needed_kernel 2> /dev/null)
+	safe_to_remove_vendor=$(ls vendor/$device/* -d 2> /dev/null | grep -v $needed_vendor 2> /dev/null)
 	if [[ -n "$safe_to_remove_device" ]]; then rm -rf $safe_to_remove_device; echo removed $safe_to_remove_device; fi
 	if [[ -n "$safe_to_remove_kernel" ]]; then rm -rf $safe_to_remove_kernel; echo removed $safe_to_remove_kernel; fi
 	if [[ -n "$safe_to_remove_vendor" ]]; then rm -rf $safe_to_remove_vendor; echo removed $safe_to_remove_vendor; fi
