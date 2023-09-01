@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Havoc-OS/android_mani
 git clone https://github.com/Shakib-BD/local_manifest.git --depth 1 -b havoc-13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom 
+## build rom 
 source build/envsetup.sh
 lunch lineage_merlinx-userdebug
 export TZ=Asia/Dhaka #put before last build command
