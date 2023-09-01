@@ -4,7 +4,6 @@ git clone https://github.com/Rinto02/Local-Manifest.git --depth 1 -b rising .rep
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-export WITH_GMS=true
 source build/envsetup.sh
 export KBUILD_BUILD_USER=rinto
 export KBUILD_BUILD_HOST=rinto
