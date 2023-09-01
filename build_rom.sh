@@ -1,6 +1,6 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/LineageOS/android.git -b lineage-20.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/anuragnn4823/local-manifest.git --depth 1 -b main .repo/local_manifest
+repo init --depth=1 --no-repo-verify -u repo init -u repo init -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs -g default,-mips,-darwin,-notdefault
+git clone https://github.com/anuragnn4823/local_manifest.git --depth 1 -b main .repo/local_manifest
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
