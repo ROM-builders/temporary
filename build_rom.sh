@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch aospa_r5x-userdebug
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
+export SELINUX_IGNORE_NEVERALLOWS=true
 export TZ=Asia/Dhaka #put before last build command
 ./rom-build.sh r5x -t userdebug
 
