@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch xtended_blossom-userdebug
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Dhaka #put before last build comman d
 mka xtended
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
