@@ -13,4 +13,4 @@ command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetu
 bash -c "$command"
 
 succeed_date=$(date +%s)
-curl -X PATCH "$two?cirrus_build_id=eq.https://cirrus-ci.com/build/$CIRRUS_BUILD_ID" -H "apikey: $three" -H "Authorization: Bearer $three" -H "Content-Type: application/json" -H "Prefer: return=minimal" -d "{ \"succeed_date\": \"$succeed_date\" }"
+curl -X PATCH "$two?cirrus_build_id=eq.https://cirrus-ci.com/build/$CIRRUS_BUILD_ID" -H "apikey: $three" -H "Authorization: Bearer $four" -H "Content-Type: application/json" -H "Prefer: return=minimal" -d "{ \"succeed_date\": \"$succeed_date\" }"
