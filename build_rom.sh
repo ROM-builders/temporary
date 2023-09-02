@@ -1,6 +1,6 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest.git -b pyro -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Legendleo90/local_manifest.git -b spark .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest.git -b pyro-next -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Legendleo90/local_manifests.git -b spark .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
