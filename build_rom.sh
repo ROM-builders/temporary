@@ -1,4 +1,3 @@
-
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-18.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Rsyd1997/local_manifest.git --depth 1 -b master .repo/local_manifests
