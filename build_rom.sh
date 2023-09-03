@@ -4,8 +4,6 @@ git clone https://github.com/zaid2sultan/local_manifests.git --depth 1 -b thirte
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 # build rom
 source build/envsetup.sh
-croot
-export CUSTOM_BUILD_TYPE=UNOFFICIAL
 lunch aosp_fajita-userdebug
 export KBUILD_BUILD_USER=zaid2sultan
 export KBUILD_BUILD_HOST=uotan
