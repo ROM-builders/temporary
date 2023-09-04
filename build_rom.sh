@@ -11,6 +11,7 @@ export BUILD_USERNAME=dogpoopy
 export BUILD_HOSTNAME=linux
 # timezone
 export TZ=Asia/Manila
+export ALLOW_MISSING_DEPENDENCIES=true
 ./rom-build.sh vayu
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
