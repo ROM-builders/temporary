@@ -10,7 +10,7 @@ export KBUILD_BUILD_USER=zaid2sultan
 export KBUILD_BUILD_HOST=zaid2sultan
 export BUILD_USERNAME=zaid2sultan
 export BUILD_HOSTNAME=zaid2sultan
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Shanghai #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
