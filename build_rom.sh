@@ -9,6 +9,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch rr_santoni-userdebug
 
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+export ALLOW_MISSING_DEPENDENCIES=true
+export RR_BUILD_TYPE=UNOFFICIAL-OmanshKrishn
 export BUILD_USERNAME=OmanshKrishn
 export BUILD_HOSTNAME=pc
 export KBUILD_BUILD_USER=OmanshKrishn
