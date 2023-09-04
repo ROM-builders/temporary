@@ -23,7 +23,7 @@ task:
   env_script: env
   show_script: cat $CIRRUS_WORKING_DIR/build_rom.sh
   notify_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/notify.sh | bash
-  test_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/test.sh | bash
+  test_script: curl -s https://raw.githubusercontent.com/ultra-noob-max/temporary/main/ci/test.sh | bash
 
 task:
   name: Build
@@ -44,7 +44,7 @@ task:
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
   show_script: cat $CIRRUS_WORKING_DIR/build_rom.sh
-  test_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/test.sh | bash
+  test_script: curl -s https://raw.githubusercontent.com/ultra-noob-max/temporary/main/ci/test.sh | bash
   sync_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/sync.sh | bash
   tsync_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/tsync.sh | bash
   build_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/build.sh | bash
@@ -67,5 +67,5 @@ task:
         image: apon77/aosp:cirrus
         cpu: 2
         memory: 4G
-  test_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/test.sh | bash
+  test_script: curl -s https://raw.githubusercontent.com/ultra-noob-max/temporary/main/ci/test.sh | bash
   post_build_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/post_build.sh | bash
