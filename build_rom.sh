@@ -3,10 +3,10 @@ repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manif
 git clone https://github.com/OmegaBeam69/local_manifest.git --depth 1 -b arrow .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom [01]
+# build rom [02]
 source build/envsetup.sh
 lunch arrow_raphael-userdebug
-export WITH_GAPPS=true
+export WITH_GAPPS=false
 export TZ=Asia/Dhaka #put before last build command
 m bacon
 
