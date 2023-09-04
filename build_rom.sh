@@ -3,11 +3,11 @@ repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manif
 git clone https://github.com/sanjeevstunner/Manifest.git --depth 1 -b vayu_arrow .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# Fix clang error
+# Drop duplicate prop 
 # build rom
 source build/envsetup.sh
 lunch arrow_vayu-userdebug
-export WITH_GAPPS=false
+export ARROW_GAPPS=false
 # Builder Variables
 export KBUILD_BUILD_USER=chandler
 export KBUILD_BUILD_HOST=bing
