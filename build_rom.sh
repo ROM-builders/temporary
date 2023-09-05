@@ -6,13 +6,13 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_CPH2381-userdebug
-export KBUILD_BUILD_USER=nobiraja
-export KBUILD_BUILD_HOST=nobiraja
-export BUILD_USERNAME=nobiraja
-export BUILD_HOSTNAME=nobiraja
+export KBUILD_BUILD_USER=ajaysinghx
+export KBUILD_BUILD_HOST=ajaysinghx
+export BUILD_USERNAME=ajaysinghx
+export BUILD_HOSTNAME=ajaysinghx
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export TZ=Asia/Dhaka #put before last build command
-make updatepackage
+make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
