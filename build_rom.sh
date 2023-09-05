@@ -10,6 +10,6 @@ export TZ=Asia/Kolkata #put before last build command
 mka systemimage
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
-zip out/target/product/MiThoriumSSI/MiThoriumSSI-LineageOS.zip out/target/product/*/*.img
-mv out/target/product/MiThoriumSSI/MiThoriumSSI-LineageOS.zip out/target/product/MiThoriumSSI/$(printf '%s_' $(grep -lZ 'MiThoriumSSI' out/target/product/*/*.img) | sed 's/_$/.zip/')
+zip out/target/product/MiThoriumSSI/MiThoriumSSI-LineageOS.zip out/target/product/MiThoriumSSI/*.img
+mv out/target/product/MiThoriumSSI/MiThoriumSSI-LineageOS.zip out/target/product/MiThoriumSSI/$(printf '%s_' $(grep -lZ 'MiThoriumSSI' out/target/product/MiThoriumSSI/*.img) | sed 's/_$/.zip/')
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
