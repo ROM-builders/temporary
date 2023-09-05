@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch derp_selene-userdebug
+lunch derp_selene-eng
 export TZ=Asia/Ho_Chi_Minh # put before last build command
 mka derp
 
