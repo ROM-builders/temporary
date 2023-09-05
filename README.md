@@ -9,7 +9,7 @@ LineageOS [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for 
 
 Distributed [here](https://t.me/rn4downloads/4885)
 
-Estimated installation no.: 1
+Estimated installation no.: 0
 
 How to use this repository
 -------------------
