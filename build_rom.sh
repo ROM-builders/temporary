@@ -1,11 +1,10 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/DerpFest-11/manifest.git -b 11 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/pocox3pro/Local-Manifests.git --depth 1 -b master .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git@github.com:NusantaraProject-ROM/android_manifest.git -b nad-10-mtk -g default,-mips,-darwin,-notdefault
+git clone https://github.com/IMYdev/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-
 # build rom
 source build/envsetup.sh
-lunch derp_vayu-user
+lunch nad_X657C-user
 export TZ=Asia/Dhaka #put before last build command
 mka derp
 
