@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git@github.com:NusantaraProject-ROM/android_manifest.git -b nad-10-mtk -g default,-mips,-darwin,-notdefault
-git clone https://github.com/IMYdev/local_manifest.git --depth 1 -b main .repo/local_manifests
+git clone https://github.com/Miraclev1/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 # build rom
 source build/envsetup.sh
