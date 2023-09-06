@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom     
 source build/envsetup.sh   
 lunch aosp_lancelot-userdebug
-export TZ=Asia/Delhi #put before last build command  
+export TZ=Asia/Delhi #put before last build command   
 export BUILD_USERNAME=Di Raizel  
 export BUILD_HOSTNAME=@acex88     
 make bacon     
