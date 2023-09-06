@@ -5,9 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch 
-export TZ=Asia/Dhaka #put before last build command
-mka derp
+lunch aospa_Vili-userdebug
 # builder variables
 export BUILD_USERNAME=yomom
 export BUILD_HOSTNAME=linux
