@@ -6,6 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_beryllium-userdebug
+export BUILD_HOSTNAME=Fountain-CI
+export BUILD_USERNAME=Rsyd1997
 export TZ=Asia/Jakarta #put before last build command
 brunch beryllium
 
