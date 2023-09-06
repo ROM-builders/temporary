@@ -12,9 +12,10 @@ env:
     ght: "ENCRYPTED[!616bfef24eafbd26238c00272434caa03215da3dd1f362cd1509a6980858f21fb999da7c56a6c8d4bd5aaddfbcc6204c!]"
 
 task:
-  name: Test
+  name: Build
   skip: $CIRRUS_BRANCH == 'main'
   only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
+  # depends_on: Test
   timeout_in: 4h
   persistent_worker:
     labels:
@@ -24,6 +25,10 @@ task:
         image: snaxpsycho/cirrus:latest
         cpu: 24
         memory: 120G
+        volumes:
+          - /home/cirrus/roms:/home/cirrus/roms
+          - /home/cirrus/ccache:/home/cirrus/ccache
+          - /home/cirrus/.config:/home/cirrus/.config
   env_script: env
   show_script: cat $CIRRUS_WORKING_DIR/build_rom.sh
   notify_script: bash <(curl -s $script/sync.sh)
