@@ -1,6 +1,6 @@
 # sync rom
 repo init -u https://github.com/DotOS/manifest.git -b dot12.1
-git clone https://github.com/kopicetheprojects/Local-Manifests.git --depth 1 -b master .repo/local_manifests
+git clone https://github.com/kopicetheprojects/Local-Manifest.git --depth 1 -b master .repo/local_manifests
 repo sync
 
 # build rom
