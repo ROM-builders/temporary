@@ -26,4 +26,4 @@ task:
   Build_script:
       - ./ci/build.sh
   upload_script:
-      - ./scripts/upl0ad
+      - ./ci/upl0ad
