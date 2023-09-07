@@ -1,12 +1,11 @@
 # sync rom
 repo init -u https://github.com/DotOS/manifest.git -b dot12.1
 git clone https://github.com/kopicetheprojects/Local-Manifests.git --depth 1 -b master .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync
 
 # build rom
 source build/envsetup.sh
 lunch dot_mido-userdebug
-export TZ=Asia/Dhaka #put before last build command
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
