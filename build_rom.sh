@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/AOSPA/manifest -b topaz -g default,-mips,-darwin,-notdefault
-git clone https://github.com/strongreasons/local_manifest.git --depth 1 -b topaz .repo/local_manifests
+git clone https://github.com/aslenofarid/local_manifest.git --depth 1 -b topaz .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
