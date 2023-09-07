@@ -2,7 +2,6 @@
 chk() {
 df -h
 nproc
-cat /etc/os*
 env
 }
 sudo apt update &&sudo apt install pigz wget
