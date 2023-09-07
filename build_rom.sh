@@ -4,6 +4,7 @@ repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune 
 git clone https://github.com/chinnappadoss007/local_manifest.git --depth 1 -b main .repo/local_manifests
 
 
+
 # build rom
 source build/envsetup.sh
 lunch derp_derp_userdebug
