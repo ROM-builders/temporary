@@ -1,0 +1,23 @@
+#!/bin/bash
+
+cd /tmp
+rm ccache.tar.gz
+com () 
+{ 
+    tar --use-compress-program="pigz -k -$2 " -cf $1.tar.gz $1
+}
+
+time com ccache 1
+
+mkdir -p ~/.config/rclone
+echo "$CLO_1" > ~/.config/rclone/rclone.conf
+time rclone copy ccache.tar.gz $CLO -P
+
+if [ "$ROM_U" == "1" ]; then
+cd ~/work/out/target/product/$DEVICE
+wget https://github.com/ij-israfil/GoFile-Upload/raw/master/upload.sh
+chmod +x upload.sh
+ls
+./upload.sh $OUTPUT
+./upload.sh boot.img
+fi
