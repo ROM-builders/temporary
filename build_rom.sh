@@ -1,6 +1,6 @@
 # sync rom
-repo init --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-16.0-beryllium-prevendor --depth=1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/RahifM/local_manifests --depth 1 -b lineage-16.0 .repo/local_manifests
+repo init --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-16.0 --depth=1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/RahifM/local_manifests --depth 1 -b lineage-16.0-beryllium-prevendor .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
