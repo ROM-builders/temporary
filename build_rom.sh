@@ -8,6 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch arrow_onclite-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
+export WITH_GAPPS=true
 export RELAX_USES_LIBRARY_CHECK=true
 export TZ=Asia/Dhaka 
 
