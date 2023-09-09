@@ -7,7 +7,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh
 lunch lineage_lancelot-userdebug
 export BUILD_USERNAME=raizel
-export TARGET_DISABLE_EPPE=true
 export BUILD_HOSTNAME=acex88
 export KBUILD_BUILD_USER=raizel
 export KBUILD_BUILD_HOST=acex88
