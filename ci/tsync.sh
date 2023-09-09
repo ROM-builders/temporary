@@ -79,7 +79,7 @@ fi
 if [[ $c == *'repo sync has finished'* ]]; then
 	true
 else
-	repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+	repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync
 fi
 rm -rf sync.log
 
