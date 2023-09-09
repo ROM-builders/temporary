@@ -1,11 +1,11 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/RisingTechOSS/android -b thirteen --git-lfs -g default,-mips,-darwin,-notdefault
-git clone https://github.com/strongreasons/local_manifest.git --depth 1 -b rising .repo/local_manifests
+git clone https://github.com/ihklknz/Local-Manifests.git --depth 1 -b risingOSS-beryllium .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_X00TD-userdebug
+lunch lineage_beryllium-user
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
