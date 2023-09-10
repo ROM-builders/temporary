@@ -8,7 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 lunch lineage_lancelot-userdebug
 export BUILD_USERNAME=raizel
 export BUILD_HOSTNAME=acex88
-export KBUILD_BUILD_USER=raizel
+export KBUILD_BUILD_USER=raizel 
 export KBUILD_BUILD_HOST=acex88
 export TZ=Asia/Delhi #put before last build command
 m bacon
