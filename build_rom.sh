@@ -4,6 +4,7 @@ git clone https://github.com/chinnappadoss007/local_manifest.git --depth 1 -b ma
 repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 # build rom
 source build/envsetup.sh
+
 lunch derp_ebba_userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka derp
