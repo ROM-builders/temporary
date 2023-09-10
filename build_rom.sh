@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch lineage_beryllium-user
 export TZ=Asia/Shibuya #put before last build command
+export TARGET_BUILD_APERTURE_CAMERA=false
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
