@@ -137,4 +137,3 @@ fi
 echo Test passed
 echo "rom_name=$rom_name" >> $CIRRUS_ENV
 echo "device=$device" >> $CIRRUS_ENV
-#
