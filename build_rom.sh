@@ -3,14 +3,13 @@
 repo init --depth=1 --no-repo-verify -u https://github.com/ResurrectionRemix/platform_manifest.git -b Q -g default,-mips,-darwin,-notdefault
 git clone https://codeberg.org/omansh-krishn/local_manifest.git --depth 1 -b rrrrrrrr .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+
 # build rom
 
 source build/envsetup.sh
 lunch rr_santoni-userdebug
 
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
-export ALLOW_MISSING_DEPENDENCIES=true
-export RR_BUILD_TYPE=UNOFFICIAL-OmanshKrishn
+export RR_BUILDTYPE=Unofficial-OmanshKrishn
 export BUILD_USERNAME=OmanshKrishn
 export BUILD_HOSTNAME=pc
 export KBUILD_BUILD_USER=OmanshKrishn
