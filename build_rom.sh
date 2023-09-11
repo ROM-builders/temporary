@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lineage_SM-A500x-userdebug
+lunch lineage_a5ultexx-userdebug
 export TZ=Asia/Jharkhand #put before last build command
 mka bacon
 
