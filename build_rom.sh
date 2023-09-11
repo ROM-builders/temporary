@@ -9,7 +9,6 @@ lunch lineage_RMX1901-userdebug
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Kolkata #put before last build command
-./rom-build.sh RMX1901 -t eng
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
