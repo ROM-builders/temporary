@@ -26,4 +26,4 @@ jobs:
         github_token: ${{ secrets.GH_TOKEN }}
         author_email: 'israfilkhan494@gmail.com'
         author_name: 'ij-israfil'
-        message: 'ij-israfil: RMX1901-Evolution-X-tiramisu-Israfil'
+        message: 'RMX1901-Evolution-X-tiramisu-Israfil'
