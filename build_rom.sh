@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest 
 git clone https://github.com/mitsu00/local_manifest.git --depth 1 -b evox-13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j4
 
-# build rom
+# build rom 
 . build/envsetup.sh
 lunch evolution_merlinx-user
 export TZ=Asia/Jakarta #put before last build command
