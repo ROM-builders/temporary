@@ -1,4 +1,4 @@
-AospExtended custom ROM for Generic System Image
+LineageOS 20.0 custom ROM for Generic System Image
 ==============================
 
 AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note 4(code name mido)
