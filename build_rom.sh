@@ -6,6 +6,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch aosp_lavender-userdebug
+export BUILD_USERNAME=Zaid
+export BUILD_HOSTNAME=zaid2sultan
 export TZ=Asia/Kolkata #put before last build command
 make bacon
 
