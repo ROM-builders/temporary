@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 brunch "device_lavender" userdebug
 lunch lineage_lavender-userdebug
-mka bacon -jX
+mka bacon
 lunch lineage_lavender-userdebug
 export RISING_CHIPSET=SDM660
 export RISING_MAINTAINER=Ritikk11
