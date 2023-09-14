@@ -9,7 +9,7 @@ brunch "device_lavender" userdebug/user
 lunch lineage_lavender-userdebug/user
 mka bacon -jX
 lunch lineage_lavender-userdebug/user
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Dhaka
 make updatepackage
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
