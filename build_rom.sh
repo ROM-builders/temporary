@@ -1,13 +1,13 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Rsyd1997/local_manifest.git --depth 1 -b thirteen .repo/local_manifests
+git clone https://github.com/Rsyd58/local_manifest.git --depth 1 -b thirteen .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 . build/envsetup.sh
 lunch cherish_beryllium-user
 export BUILD_HOSTNAME=Fountain-build
-export BUILD_USERNAME=Rsyd1997
+export BUILD_USERNAME=Rsyd58
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
