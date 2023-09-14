@@ -7,6 +7,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch derp_tulip-user
 export TZ=Asia/Kolkata #put before last build command
+export BUILD_USERNAME=ghostmaster69-dev
+export BUILD_HOSTNAME=codespace
 mka derp
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
