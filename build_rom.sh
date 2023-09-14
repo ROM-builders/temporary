@@ -5,7 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-brunch "device_lavender" userdebug
 lunch lineage_lavender-userdebug
 export RISING_CHIPSET=SDM660
 export RISING_MAINTAINER=Ritikk11
