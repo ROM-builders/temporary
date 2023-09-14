@@ -14,6 +14,7 @@ export RISING_MAINTAINER=Ritikk11
 export TARGET_ENABLE_BLUR := true
 export TARGET_BUILD_APERTURE_CAMERA := true
 export TARGET_USE_PIXEL_FINGERPRINT := true
+export TARGET_HAS_UDFPS := true
 export TZ=Asia/Dhaka
 make updatepackage
 
