@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch cherish_beryllium-userdebug
+lunch cherish_beryllium-user
 export BUILD_HOSTNAME=Fountain-build
 export BUILD_USERNAME=Rsyd1997
 export TZ=Asia/Jakarta #put before last build command
