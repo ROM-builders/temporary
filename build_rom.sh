@@ -5,10 +5,15 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-brunch "device_lavender" userdebug/user
-lunch lineage_lavender-userdebug/user
+brunch "device_lavender" userdebug
+lunch lineage_lavender-userdebug
 mka bacon -jX
-lunch lineage_lavender-userdebug/user
+lunch lineage_lavender-userdebug
+export RISING_CHIPSET=SDM660
+export RISING_MAINTAINER=Ritikk11
+export TARGET_ENABLE_BLUR := true
+export TARGET_BUILD_APERTURE_CAMERA := true
+export TARGET_USE_PIXEL_FINGERPRINT := true
 export TZ=Asia/Dhaka
 make updatepackage
 
