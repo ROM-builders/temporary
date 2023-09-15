@@ -4,7 +4,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/SuperiorOS/manifest.g
 git clone https://github.com/rifathossan/local_manifest.git --depth 1 -b superior-13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
  
-# build rom
+# build rom 
 source build/envsetup.sh
 lunch superior_rosemary-user
 export BUILD_WITH_GAPPS=true
