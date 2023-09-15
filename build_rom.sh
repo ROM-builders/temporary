@@ -3,10 +3,6 @@ repo init --depth=1 --no-repo-verify -u repo init -u repo init -u https://github
 git clone https://github.com/anuragnn/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j4
 
-# edit rom
-rm -rf frameworks/av
-git clone https://github.com/anuragnn/android_frameworks_av frameworks/av
-
 # build rom
 source build/envsetup.sh
 lunch lineage_selene-userdebug
