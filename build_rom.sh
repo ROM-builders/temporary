@@ -5,9 +5,16 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch derp_vayu-user
+brunch "lancelot" userdebug/user
+lunch lineage_device-userdebug/user
+RISING_CHIPSET := "snapdragon 845"
+RISING_MAINTAINER := a idiot
+RISING_PACKAGE_TYPE := VANILLA AOSP
+TARGET_ENABLE_BLUR := true
+TARGET_HAS_UDFPS := false
+TARGET_USE_PIXEL_FINGERPRINT := false
 export TZ=Asia/Dhaka #put before last build command
-mka derp
+mka bacon -jX
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
