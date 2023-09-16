@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Havoc-OS/android_manifest.git -b thirteen --git-lfs -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Koushikdey2003/local_manifest.git --depth 1 -b Havoc-OS-thirteen .repo/local_manifests
+git clone https://github.com/Koushikdey2003/local_manifest.git --depth 1 -b Havoc-OS-thirteen-rui2 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom #3
