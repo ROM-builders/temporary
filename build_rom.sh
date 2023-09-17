@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS-UL/android.git -b lineage-20.0 --git-lfs -g default,-mips,-darwin,-notdefault
-git clone https://github.com/sounddrill31/local_manifests.git --depth 1 -b addison-20.0 .repo/local_manifests
+git clone https://github.com/sounddrill31/lineageOS-UL.git --depth 1 -b manifest .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
