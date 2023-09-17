@@ -3,9 +3,9 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Havoc-OS/android_mani
 git clone https://github.com/Koushikdey2003/local_manifest.git --depth 1 -b Havoc-OS-thirteen-rui2 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom #3
+# build rom #4
 source build/envsetup.sh
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Kolkata #put before last build command
 brunch RMX2020 user
 
 # upload rom - (if you don't need to upload multiple files, then you don't need to edit next line)
