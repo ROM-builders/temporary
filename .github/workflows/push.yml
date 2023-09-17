@@ -23,8 +23,8 @@ jobs:
     - name: Commit & Push changes
       uses: actions-js/push@v1.4
       with:
-        branch: "alpha"
+        branch: "rise"
         github_token: ${{ secrets.GH_TOKEN }}
         author_email: 'israfilkhan494@gmail.com'
         author_name: 'ij-israfil'
-        message: 'RMX1901-alphadroid-project-alpha-13-Israfil'
+        message: 'RMX1901-RisingTechOSS-thirteen-Ij'
