@@ -1,3 +1,4 @@
+
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Rsyd58/local_manifest.git --depth 1 -b thirteen .repo/local_manifests
