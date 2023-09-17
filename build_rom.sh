@@ -5,7 +5,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-brunch "lancelot" userdebug/user
 lunch lineage_device-userdebug/user
 RISING_CHIPSET := "snapdragon 845"
 RISING_MAINTAINER := a idiot
