@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-AOSP/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/zaid2sultan/local_manifests.git --depth 1 -b pixelos13-sdm845 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/android_manifest -b triton --git-lfs -g default,-mips,-darwin,-notdefault
+git clone https://github.com/zaid2sultan/local_manifests.git --depth 1 -b awaken13-lav .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
-lunch aosp_fajita-userdebug
+source build/envsetup.sh
+lunch awaken_lavender-userdebug
 export TZ=Asia/Kolkata #put before last build command
 make bacon
 
