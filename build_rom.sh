@@ -1,10 +1,12 @@
+# sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b pyro-next -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Shakib-BD/local_manifest.git --depth 1 -b spark-pyro .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j4
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
-source build/envsetup.sh
-lunch spark_merlinx-userdebug
+# build rom [01]
+. build/envsetup.sh
+lunch spark_merlinx-user
+export WITH_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
