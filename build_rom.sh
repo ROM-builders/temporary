@@ -11,6 +11,18 @@ export KBUILD_BUILD_HOST=krishnaspeace
 export BUILD_USERNAME=krisha
 export BUILD_HOSTNAME=krishnaspeace
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+export ALLOW_MISSING_DEPENDENCIES=true
+export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
+export BUILD_BROKEN_DUP_RULES=true
+export RELAX_USES_LIBRARY_CHECK=true
+export SELINUX_IGNORE_NEVERALLOWS=true
+export TARGET_DISABLE_EPPE=true  
+export PREBUILT_KERNEL=true
+export BUILD_BROKEN_VERIFY_USES_LIBRARIES=true
+export BUILD_BROKEN_CLANG_ASFLAGS=true
+export BUILD_BROKEN_CLANG_CFLAGS=true
+export BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE=true
+export RELAX_USES_LIBRARY_CHECK=true
 export TZ=Asia/Dhaka #put before last build command
 mka evolution
 
