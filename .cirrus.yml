@@ -3,6 +3,9 @@ env:
     BUILD_HOSTNAME: "cirrus-ci.org"
     bot_api: "ENCRYPTED[d5f8289d835b201789b2b31e728d0cd82a100f1b47ddec69dd6ba49a3712fcfa2719b220fc6a8894865df517a78332ca]"
     one: "ENCRYPTED[267097e8096e1e12efc9c6e71626703ddc8ae1c6730511b6207586a045e2dd3bd59dd0b9d632642fc58d89913cc539a8]"
+    two: "ENCRYPTED[7aa062112fa8a4acebe3b71432937334ed3fa05f2d8eaa044d7976e01cbf3fdff7f01f8c91a9e723304aa8b45816c459]"
+    three: "ENCRYPTED[799a19ef34b1bd39bd174dbc5b2044e1fd4124b0bf9436ed68a3a197e68be303e15a59b4b448a4f58c44b0faa3c3892b]"
+    four: "ENCRYPTED[9e0496c7d952b248073be75b1c017479eaf1e341786b6210025800b5d2f4d40b82452928bd6cc43ed1bc1065ee915363]"
 
 task:
   name: Test
@@ -17,37 +20,16 @@ task:
         image: apon77/aosp:cirrus
         cpu: 2
         memory: 4G
-
-  env_script:
-    - env
-  show_script:
-    - cat $CIRRUS_WORKING_DIR/build_rom.sh
-  notify_script:
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
-    - rom_name=$rom_name-$branch_name
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-    - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
-    - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
-    - grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
-    - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
-    - your_telegram_id=@ROM_builders_junk
-    - show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
-    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Started
-      
-      https://cirrus-ci.com/build/$CIRRUS_BUILD_ID
-      
-      $show" -d "chat_id=${your_telegram_id}" -d "parse_mode=HTML"
-  test_script:
-    - set -e
-    - curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/test.sh | bash
+  env_script: env
+  show_script: cat $CIRRUS_WORKING_DIR/build_rom.sh
+  notify_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/notify.sh | bash
+  test_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/test.sh | bash
 
 task:
   name: Build
   skip: $CIRRUS_BRANCH == 'main'
   only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
-  depends_on:
-    - Test
+  depends_on: Test
   timeout_in: 4h
   persistent_worker:
     labels:
@@ -61,178 +43,21 @@ task:
           - /home/cirrus/roms:/home/cirrus/roms
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
-
-  show_script:
-    - cat $CIRRUS_WORKING_DIR/build_rom.sh
-  test_script:
-    - set -e
-    - curl -Ls https://raw.githubusercontent.com/ROM-builders/temporary/main/test.sh | bash
-  sync_script:
-    - set -e
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
-    - rom_name=$rom_name-$branch_name
-    - mkdir -p ~/roms/$rom_name
-    - cd ~/roms/$rom_name
-    - rm -rf .repo/local_manifests
-    - command=$(head $CIRRUS_WORKING_DIR/build_rom.sh -n $(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1))
-    - only_sync=$(grep 'repo sync' $CIRRUS_WORKING_DIR/build_rom.sh)
-    - bash -c "$command" || true
-  tsync_script:
-    - set -e
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
-    - rom_name=$rom_name-$branch_name
-    - mkdir -p ~/roms/$rom_name
-    - cd ~/roms/$rom_name
-
-    - set -exv
-    - curl -sO https://api.cirrus-ci.com/v1/task/$CIRRUS_TASK_ID/logs/sync.log
-    - a=$(grep 'Cannot remove project' sync.log -m1|| true)
-    - b=$(grep "^fatal: remove-project element specifies non-existent project" sync.log -m1 || true)
-    - c=$(grep 'repo sync has finished' sync.log -m1 || true)
-    - d=$(grep 'Failing repos:' sync.log -n -m1 || true)
-    - e=$(grep 'fatal: Unable' sync.log || true)
-    - f=$(grep 'error.GitError' sync.log || true)
-    - g=$(grep 'error: Cannot checkout' sync.log || true)
-    - if [[ $a == *'Cannot remove project'* ]]
-    - then
-    - a=$(echo $a | cut -d ':' -f2 | tr -d ' ')
-    - rm -rf $a
-    - fi
-    - if [[ $b == *'remove-project element specifies non-existent'* ]]
-    - then exit 1
-    - fi
-    - if [[ $d == *'Failing repos:'* ]]
-    - then
-    - d=$(expr $(grep 'Failing repos:' sync.log -n -m 1| cut -d ':' -f1) + 1)
-    - d2=$(expr $(grep 'Try re-running' sync.log -n -m1 | cut -d ':' -f1) - 1 )
-    - fail_paths=$(head -n $d2 sync.log | tail -n +$d)
-    - for path in $fail_paths
-    - do
-    - rm -rf $path
-    - aa=$(echo $path|awk -F '/' '{print $NF}')
-    - rm -rf .repo/project-objects/*$aa.git
-    - rm -rf .repo/projects/$path.git
-    - done
-    - fi
-    - if [[ $e == *'fatal: Unable'* ]]
-    - then
-    - fail_paths=$(grep 'fatal: Unable' sync.log | cut -d ':' -f2 | cut -d "'" -f2)
-    - for path in $fail_paths
-    - do
-    - rm -rf $path
-    - aa=$(echo $path|awk -F '/' '{print $NF}')
-    - rm -rf .repo/project-objects/*$aa.git
-    - rm -rf .repo/project-objects/$path.git
-    - rm -rf .repo/projects/$path.git
-    - done
-    - fi
-    - if [[ $f == *'error.GitError'* ]]
-    - then
-    - rm -rf $(grep 'error.GitError' sync.log | cut -d ' ' -f2)
-    - fi
-    - if [[ $g == *'error: Cannot checkout'* ]]
-    - then
-    - coerr=$(grep 'error: Cannot checkout' sync.log | cut -d ' ' -f 4| tr -d ':')
-    - for i in $coerr
-    - do
-    - rm -rf .repo/project-objects/$i.git
-    - done
-    - fi
-    #- (repo forall -c 'git checkout .' && bash -c "$only_sync") || (find -name shallow.lock -delete && find -name index.lock -delete && bash -c "$only_sync")
-
-    - if [[ $c == *'repo sync has finished'* ]]
-    - then true
-    - else
-    - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
-    - fi
-
-    - rm -rf sync.log
-
-  build_script:
-    - set -e
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
-    - rom_name=$rom_name-$branch_name
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-    - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
-    - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
-    - grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
-    - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
-    - cd ~/roms/$rom_name
-    - export CCACHE_DIR=~/ccache/$rom_name/$device
-    - export CCACHE_EXEC=$(which ccache)
-    - export USE_CCACHE=1
-    - ccache -M 8G
-    - ccache -z
-    - ls device/*/*/vendorsetup.sh | grep -v generic && echo "Please remove vendorsetup.sh file from device tree, use local manifest for cloning and removing repositories." && exit 1 || true
-    - command=$(tail $CIRRUS_WORKING_DIR/build_rom.sh -n +$(expr $(grep 'build/envsetup.sh' $CIRRUS_WORKING_DIR/build_rom.sh -n | cut -f1 -d:) - 1)| head -n -1 | grep -v 'rclone copy')
-    - bash -c "$command"
-
-  ccache_stats_script:
-    - set -e
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
-    - rom_name=$rom_name-$branch_name
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-    - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
-    - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
-    - grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
-    - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
-    - export CCACHE_DIR=~/ccache/$rom_name/$device
-    - ccache -s
-
-  upload_script:
-    - set -e
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
-    - rom_name=$rom_name-$branch_name
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-    - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
-    - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
-    - grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
-    - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
-    - cd ~/roms/$rom_name
-    - engzip=$(ls out/target/product/$device/*-eng*.zip | grep -v "retrofit" || true)
-    - otazip=$(ls out/target/product/$device/*-ota-*.zip | grep -v "hentai" | grep -v "evolution" || true)
-    - awaken=$(ls out/target/product/$device/Project-Awaken*.zip || true)
-    - octavi=$(ls out/target/product/$device/OctaviOS-R*.zip || true)
-    - p404=$(ls out/target/product/$device/?.*zip || true)
-    - cipher=$(ls out/target/product/$device/CipherOS-*-OTA-*.zip || true)
-    - rm -rf $engzip $otazip $awaken $octavi $p404 $cipher
-    - dlink=$(basename out/target/product/$device/*.zip)
-    - #command=$(grep 'rclone copy' $CIRRUS_WORKING_DIR/build_rom.sh)
-    - #if [[ $device == jasmine_sprout ]]; then command="rclone copy out/target/product/jasmine_sprout/*zip cirrus:jasmine_sprout -P"; fi
-    - #if [[ $device == laurel_sprout ]]; then command="rclone copy out/target/product/laurel_sprout/*zip cirrus:laurel_sprout -P"; fi
-    - #if [[ $device == GM8_sprout ]]; then command="rclone copy out/target/product/GM8_sprout/*zip cirrus:GM8_sprout -P"; fi
-    - #if [[ $device == maple_dsds ]]; then command="rclone copy out/target/product/maple_dsds/*zip cirrus:maple_dsds -P"; fi
-    - #bash -c "$command"
-    - #echo "Download link https://roms.cirrus-ci.workers.dev/0:/$device/$dlink"
-    - unzip -P $one -q ~/.config/1.zip -d ~
-    - file=out/target/product/$device/*.zip
-    - rsync -vhcP $file -e "ssh -o Compression=no" apon77@frs.sourceforge.net:/home/frs/project/rom-builders/$device/
-    - echo "Download link https://sourceforge.net/projects/rom-builders/files/$device/$dlink/download"
-  remove_script:
-    - set -e
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
-    - rom_name=$rom_name-$branch_name
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-    - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
-    - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
-    - grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
-    - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
-    - cd ~/roms/$rom_name
-    - rm -rf out/target/product/$device
+  show_script: cat $CIRRUS_WORKING_DIR/build_rom.sh
+  test_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/test.sh | bash
+  sync_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/sync.sh | bash
+  tsync_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/tsync.sh | bash
+  build_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/build.sh | bash
+  ccache_stats_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/ccache_stats.sh | bash
+  upload_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/upload.sh | bash
+  remove_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/remove.sh | bash
 
 task:
   name: Post Build
   skip: $CIRRUS_BRANCH == 'main'
   only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
   skip_notifications: true
-  depends_on:
-    - Build
+  depends_on: Build
   timeout_in: 2m
   persistent_worker:
     labels:
@@ -242,18 +67,5 @@ task:
         image: apon77/aosp:cirrus
         cpu: 2
         memory: 4G
-
-  post_build_script:
-    - set -e
-    - rom_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
-    - branch_name=$(grep init $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
-    - rom_name=$rom_name-$branch_name
-    - device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)
-    - grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
-    - grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
-    - grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
-    - grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
-    - your_telegram_id=@ROM_builders_channel
-    - curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Succeed
-      
-      https://cirrus-ci.com/build/$CIRRUS_BUILD_ID" -d "chat_id=${your_telegram_id}" -d "parse_mode=HTML"
+  test_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/test.sh | bash
+  post_build_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/post_build.sh | bash
