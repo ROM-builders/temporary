@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom [65]
 source build/envsetup.sh
-lunch lineage_certus64-userdebug
+lunch lineage_certus-userdebug
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
