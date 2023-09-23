@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify --git-lfs -u https://github.com/crdroidandroid/android.git -b 13 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify --git-lfs -u https://github.com/crdroidandroid/android.git -b 13.0 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/TelegramAt25/rombuilders_manifest.git --depth 1 -b lineage-20.0 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j4
 
