@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/PixelOS-AOSP/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/ij-israfil/local_manifest.git --depth 1 -b pixelos .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/AICP/platform_manifest.git -b t13.0 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/ij-israfil/local_manifest.git --depth 1 -b aicp .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j4
 
 # build rom
 source build/envsetup.sh
-lunch aosp_RMX1901-userdebug
+lunch aicp_RMX1901-userdebug
 export TZ=Asia/Dhaka #put before last build command#
 mka bacon
 
