@@ -4,21 +4,6 @@ git clone https://github.com/Asce-XOX/local_manifest.git --depth 1 -b rise .repo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 
-#flags
-RISING_CHIPSET := "Mt6768"
-RISING_MAINTAINER := "Asce||エース°"
-RISING_PACKAGE_TYPE := "AOSP"
-TARGET_BUILD_APERTURE_CAMERA := true
-TARGET_ENABLE_BLUR := false
-TARGET_HAS_UDFPS := false
-TARGET_USE_PIXEL_FINGERPRINT := true
-
-#GMS
-WITH_GMS := true
-TARGET_USE_GOOGLE_TELEPHONY := false
-TARGET_CORE_GMS := true
-TARGET_CORE_GMS_EXTRAS := true
-
 
 # build rom
 source build/envsetup.sh
