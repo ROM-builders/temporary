@@ -26,4 +26,4 @@ jobs:
         github_token: ${{ secrets.GH_TOKEN }}
         author_email: 'shravankumarsayz@gmail.com'
         author_name: 'shravansayz'
-        message: 'shravansayz: RMX1901-Spark-Rom-pyro-next-shravansayz'
+        message: 'shravansayz: RMX1901-VoltageOS-13-shravansayz'
