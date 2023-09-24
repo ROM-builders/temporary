@@ -4,7 +4,7 @@ git clone https://github.com/Miraclev1/local_manifest.git --depth 1 -b main .rep
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 # build rom
 source build/envsetup.sh
-lunch nad_X657C-user
+lunch nad_Max-user
 export TZ=Asia/Dhaka #put before last build command
 mka derp
 
