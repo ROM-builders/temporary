@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/VoltageOS/manifest.git -b 13 --git-lfs -g default,-mips,-darwin,-notdefault
-git clone https://github.com/shravansayz/local_manifest.git --depth 1 -b voltage .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Octavi-Staging/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/shravansayz/local_manifest.git --depth 1 -b oct .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j4
 
 # build rom
 source build/envsetup.sh
-lunch voltage_RMX1901-userdebug
+lunch octavi_RMX1901-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
