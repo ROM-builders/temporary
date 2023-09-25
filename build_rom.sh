@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/AICP/platform_manifest.git -b t13.0 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u repo init -u $ repo init -u https://github.com/AICP/platform_manifest.git -b t13.0 --git-lfs -g default,-mips,-darwin,-notdefault
 git clone https://github.com/ij-israfil/local_manifest.git --depth 1 -b aicp .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j4
 
