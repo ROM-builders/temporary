@@ -21,7 +21,7 @@ export KBUILD_BUILD_USER=MAdMiZ
 export KBUILD_BUILD_HOST=MAdMiZ
 export BUILD_USERNAME=MAdMiZ
 export BUILD_HOSTNAME=MAdMiZ
-export CHERISH_VANILLA=true
+export CHERISH_VANILLA=false
 export TZ=Asia/Kolkata #put before last build command
 brunch r5x
 
