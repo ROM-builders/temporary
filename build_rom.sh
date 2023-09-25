@@ -8,6 +8,7 @@ source build/envsetup.sh
 lunch derp_merlinx-userdebug
 export BUILD_USERNAME=mi
 export BUILD_HOSTNAME=shakib
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export TZ=Asia/Dhaka
 mka bacon
 
