@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 ## build rom
 source build/envsetup.sh
-lunch evolution_vayu-user
+lunch evolution_vayu-eng
 # builder variables
 export BUILD_USERNAME=dogpoopy
 export BUILD_HOSTNAME=linux
