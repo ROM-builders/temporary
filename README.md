@@ -1,4 +1,4 @@
-AospExtended custom ROM for Moto Z Play
+LineageOS custom ROM for Moto Z Play
 ==============================
 
 AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Moto Z Play(code name addison)
