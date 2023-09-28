@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch aosp_ruby-user
 export BUILD_USERNAME=mikhanastiar
-export BUILD_HOSTNAME=RaidenElectro
+export BUILD_HOSTNAME=mikhanastiar
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
