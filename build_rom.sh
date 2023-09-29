@@ -5,7 +5,7 @@
   
  # build rom 
  build/envsetup.sh 
- lunch lineage_ysl-userdebug 
+ lunch lineage_ysl-userdebug
  export TZ=Asia/Dhaka #put before last build command 
  mka crDroid
   
