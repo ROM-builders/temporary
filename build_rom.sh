@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh 
- lunch evolution_ysl-userdebug 
+ lunch crdroid_ysl-userdebug 
  export KBUILD_BUILD_USER=skhife  
  export KBUILD_BUILD_HOST=skhifekzk  
  export BUILD_USERNAME=skhife 
