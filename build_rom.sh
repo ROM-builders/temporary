@@ -5,9 +5,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch lineage_monet-userdebug
+lunch lineage_monet-eng
 export TZ=Asia/Dhaka #put before last build command
-# 1
+# 2
 m bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
