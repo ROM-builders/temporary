@@ -22,7 +22,7 @@ export KBUILD_BUILD_HOST=Shakib
 export BUILD_USERNAME=Shakib
 export BUILD_HOSTNAME=Shakib
 export CHERISH_VANILLA=true
-export TZ=Asia/Dhaka ##put before last build command
+export TZ=Asia/Dhaka #put before last build command
 brunch merlinx
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
