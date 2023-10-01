@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
   
 # build rom 
 source build/envsetup.sh 
-lunch lineage_merlinx-userdebug
+lunch lineage_merlinx-userdebug 
 export BUILD_USERNAME=raizel 
 export BUILD_HOSTNAME=acex88     
 export TARGET_DISABLE_EPPE=true  
