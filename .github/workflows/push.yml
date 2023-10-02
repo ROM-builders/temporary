@@ -23,8 +23,8 @@ jobs:
     - name: Commit & Push changes
       uses: actions-js/push@v1.4
       with:
-        branch: "RMX1901-PixelOS-AOSP-thirteen-IJ"
+        branch: "aospa"
         github_token: ${{ secrets.GH_TOKEN }}
         author_email: 'israfilkhan494@gmail.com'
         author_name: 'ij-israfil'
-        message: 'RMX1901-Evolution-X-tiramisu-Israfil'
+        message: 'RMX1901-AOSPA-topaz-Israfil'
