@@ -6,9 +6,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch cherish_beryllium-user
-export CHERISH_VANILLA=false
+export CHERISH_VANILLA=true
 export BUILD_USERNAME=Akshat
-export BUILD_HOSTNAME=leopubglover
+export BUILD_HOSTNAME=Legendleo90
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
