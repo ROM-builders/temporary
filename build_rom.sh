@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch aosp_merlinx-user
 export BUILD_USERNAME=Shakib
 export BUILD_HOSTNAME=cirrus
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Dhaka ##put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
