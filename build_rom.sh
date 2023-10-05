@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/AICP/platform_manifes
 git clone https://github.com/giosaja96/local_manifest.git --depth 1 -b aicp .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom 2
+# build rom 3
 source build/envsetup.sh
 lunch aicp_mojito-userdebug
 export TZ=Asia/Jakarta #put before last build command
