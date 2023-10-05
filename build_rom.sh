@@ -1,6 +1,6 @@
 # sync rom
 # PE  A11 Repo
-repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b 11 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/PixelExperience/manifest -b eleven -g default,-mips,-darwin,-notdefault
 # My local Manifests
 git clone https://github.com/dreAd1811/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
