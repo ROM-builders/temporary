@@ -1,5 +1,5 @@
 # sync rom
-repo init -u https://github.com/exthmui/android.git -b exthm-10 --depth=1 --repo-url=https://mirrors.bfsu.edu.cn/git/git-repo -g default,-mips,-darwin,-notdefault
+repo init -u https://github.com/exthmui/android.git -b exthm-10 --depth=1 -g default,-mips,-darwin,-notdefault --repo-url=https://mirrors.bfsu.edu.cn/git/git-repo
 git clone https://github.com/Misakiayasaka/local_manifest --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
