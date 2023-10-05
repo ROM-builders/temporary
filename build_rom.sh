@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 # Give permission to create smylinks
 chmod 777 kernel/lenovo/moba/build.sh
-# Run this script to fix broken symlnink errors 
+# fix broken symlnink errors 
 bash kernel/lenovo/moba/build.sh
 # Build Variant - eng
 lunch lineage_moba-eng
