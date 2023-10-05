@@ -1,12 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/Havoc-OS/android_manifest.git -b eleven -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Misakiayasaka/local_manifest --depth 1 -b havoc-11-UI1 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/exthmui/android.git -b exthm-10 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Misakiayasaka/local_manifest --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch havoc_RMX2185-userdebug
+lunch exthm_RMX2185-userdebug
 export TZ=Asia/Bangkok #put before last build command
+breakfast RMX2185
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
