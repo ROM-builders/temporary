@@ -4,7 +4,8 @@ git clone https://github.com/acex88/local_manifest --depth 1 -b pixys .repo/loca
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 
 # build rom  
 source build/envsetup.sh 
-lunch pixys_lancelot-userdebug   
+lunch pixys_lancelot-userdebug 
+export BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 export TZ=Asia/Kolkata #put before last build command  
 make pixys 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line) 
