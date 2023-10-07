@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Project-Awaken/android_manifest.git -b triton -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Legendleo90/local_manifests.git --depth 1 -b awaken .repo/local_manifests
+git clone https://github.com/SergenAllen/local_manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
@@ -8,6 +8,9 @@ source build/envsetup.sh
 lunch awaken_lavender-userdebug
 export BUILD_USERNAME=Sergen
 export BUILD_HOSTNAME=SergenAllen
+export ALLOW_MISSING_DEPENDENCIES=true
+export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
+export BUILD_BROKEN_DUP_RULES=true
 export TZ=Asia/Kolkata #put before last build command
 make bacon
 
