@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.1  -g default,-mips,-darwin,-notdefault
-git clone https://github.com/sounddrill31/local_manifests.git --depth 1 -b arrow-13.1-generic .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-18.1 --git-lfs -g default,-mips,-darwin,-notdefault
+git clone https://github.com/addison-experimentations/local_manifests.git --depth 1 -b addison-18.1-4.9exp .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch arrow_gsi-userdebug
+lunch lineage_addison-userdebug 
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
