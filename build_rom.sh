@@ -10,11 +10,8 @@ lunch lineage_santoni-user
 
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export ALLOW_MISSING_DEPENDENCIES=true
-export WITH_GMS=true
-export RISING_PACKAGE_TYPE=CORE-GAPPS-OmanshKrishn
-export TARGET_CORE_GMS=true
+export RISING_PACKAGE_TYPE=VANILLA-OmanshKrishn
 export TARGET_ENABLE_BLUR=false
-export TARGET_PREBUILT_PIXEL_LAUNCHER=true
 export RISING_CHIPSET=MSM8937
 export RISING_MAINTAINER=OmanshKrishn
 export BUILD_USERNAME=OmanshKrishn
