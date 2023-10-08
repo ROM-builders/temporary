@@ -8,7 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch lineage_fajita-user
 export BUILD_USERNAME=Akshat
-export BUILD_HOSTNAME=leopubglover
+export BUILD_HOSTNAME=Legendleo90
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
