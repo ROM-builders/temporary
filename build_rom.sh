@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/alphadroid-project/manifest -b alpha-13 --git-lfs -g default,-mips,-darwin,-notdefault
-git clone https://github.com/bdjmfoe/local_manifests --depth 1 -b alpha .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/ResurrectionRemix/platform_manifest -b Q --git-lfs -g default,-mips,-darwin,-notdefault
+git clone https://github.com/bdjmfoe/local_manifests --depth 1 -b rr .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom 
 . build/envsetup.sh
-lunch lineage_RMX1801-userdebug
+lunch rr_RMX1801-userdebug
 export TZ=Asia/Singapore #put before last build command
 mka bacon
 
