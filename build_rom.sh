@@ -7,8 +7,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch aicp_mojito-userdebug
 export TZ=Asia/Jakarta #put before last build command
-export BUILD_USERNAME=dioparminggo 
-export BUILD_HOSTNAME=gioaprilino
+export KBUILD_BUILD_USER=gioaprilino
+export KBUILD_BUILD_HOST=aicp
+export BUILD_USERNAME=gioaprilino
+export BUILD_HOSTNAME=aicp
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
