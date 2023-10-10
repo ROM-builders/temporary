@@ -1,11 +1,11 @@
 # sync roms
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-AOSP/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/matheucomth/local_manifest.git --depth 1 -b PixelOS .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/PixysOS/manifest -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/matheucomth/local_manifest.git --depth 1 -b pixys .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build roms
 . build/envsetup.sh
-lunch aosp_onclite-userdebug
+lunch pixys_onclite-userdebug
 export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export RELAX_USES_LIBRARY_CHECK=true
