@@ -10,7 +10,6 @@ export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_DUP_RULES=true
 export TARGET_USES_BLUR=false
-export WITH_GMS=false
 export TZ=Asia/Jakarta #put before last build command
 mka derp
 
