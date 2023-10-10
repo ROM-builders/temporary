@@ -11,5 +11,5 @@ mka systemimage
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 cp out/target/product/*/system.img . 
-zip out/target/product/arm64_bgN/ArrowOS-arrow-13.1-$(date +%Y%m%d)-SoundDrillGSI.zip system.img  
+zip out/target/product/gsi/ArrowOS-arrow-13.1-$(date +%Y%m%d)-SoundDrillGSI.zip system.img  
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
