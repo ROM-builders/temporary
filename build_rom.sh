@@ -1,11 +1,14 @@
 # sync rom
-repo init --depth=1 -u https://github.com/LineageOS/android.git -b lineage-20.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/mateoalfaro/local_manifest.git --depth 1 -b LOS .repo/local_manifests
+repo init --depth=1 -u https://github.com/PixelExperience/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/mateoalfaro/local_manifest.git --depth 1 -b PE .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_vayu-userdebug
+lunch aosp_vayu-user
+#variables
+export BUILD_USERNAME=Mateo
+export BUILD_HOSTNAME=Alfaro
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
