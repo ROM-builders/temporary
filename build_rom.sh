@@ -1,12 +1,12 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ResurrectionRemix/platform_manifest -b Q --git-lfs -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/ResurrectionRemix/platform_manifest -b Q -g default,-mips,-darwin,-notdefault
 git clone https://github.com/bdjmfoe/local_manifests --depth 1 -b rr .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom 
 . build/envsetup.sh
 lunch rr_RMX1801-userdebug
-export TZ=Asia/Singapore #put before last build command
+export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
