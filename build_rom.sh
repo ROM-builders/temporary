@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/DerpFest-AOSP/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/ahmedhridoy371/local_manifest --depth 1 -b test .repo/local_manifests
+git clone https://github.com/ahmedhridoy371/local_manifest --depth 1 -b DerpFest-AOSP-13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
@@ -9,7 +9,8 @@ lunch derp_lavender-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_DUP_RULES=true
-export TARGET_USES_BLUR=false
+export TARGET_NOT_USES_BLUR=true
+export WITH_GMS=false
 export TZ=Asia/Jakarta #put before last build command
 mka derp
 
