@@ -8,7 +8,7 @@ source build/envsetup.sh
 lunch octavi_lavender-userdebug
 #export USE_GAPPS=true
 #export WITH_GAPPS=true
-#export SELINUX_IGNORE_NEVERALLOWS=true
+export SELINUX_IGNORE_NEVERALLOWS=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_DUP_RULES=true
