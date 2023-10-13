@@ -1,13 +1,12 @@
 
 ## sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/SuperiorOS/manifest.git -b thirteen-g default,-mips,-darwin,-notdefault
-git clone https://github.com/RT1648/local_manifest-fleurprebuilt.git --depth 1 -b main .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b thirteen-plus -g default,-mips,-darwin,-notdefault
+git clone https://github.com/RT1648/local_manifest-fleuross.git --depth 1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch superior_fleur-user
-rm -rf system/sepolicy/vendor/hal_fingerprint_default.te && rm -rf system/sepolicy/vendor/hal_health_default.te && rm -rf system/sepolicy/vendor/rild.te && rm -rf system/sepolicy/vendor/hal_light_default.te && rm -rf system/sepolicy/vendor/mediacodec.te
+lunch aosp_fleur-eng
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
