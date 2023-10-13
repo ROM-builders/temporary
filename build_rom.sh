@@ -1,7 +1,7 @@
 # sync rom
-repo init --no-repo-verify -u https://github.com/ResurrectionRemix/platform_manifest -b Q -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/ResurrectionRemix/platform_manifest -b Q --git-lfs -g default,-mips,-darwin,-notdefault
 git clone https://github.com/bdjmfoe/local_manifests --depth 1 -b rr .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j4
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom 
 . build/envsetup.sh
