@@ -1,12 +1,14 @@
 # sync rom
 repo init -u https://gitlab.com/Project-Madhav/nad/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/clyfly/local_manifest.git --depth 1 -b main .repo/local_manifests
+git clone https://github.com/clyfly/local_manifest.git --depth 1 -b pixelos-13 .repo/local_manifests
 repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
 
 # build rom
 source build/envsetup.sh
 lunch nad_rosemary-userdebug
-export TZ=Asia/Dhaka #put before last build command
+export BUILD_HOSTNAME=ClyFly
+export BUILD_USERNAME=ClyFly
+export TZ=Asia/Jakarta #put before last build command
 mka nad
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
