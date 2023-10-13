@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git
 git clone https://github.com/igniteinm/local_manifest.git --depth 1 -b van .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom 
 source build/envsetup.sh
 lunch lineage_beryllium-user
 export TZ=Asia/Delhi #put before last build command
