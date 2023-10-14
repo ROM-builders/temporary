@@ -7,6 +7,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch aosp_fleur-eng
+wget https://github.com/RT1648/Extras/raw/main/remove.sh
+source remove.sh
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
