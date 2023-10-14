@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/baikalos/android.git -b 13.0 --git-lfs -g default,-mips,-darwin,-notdefault
-git clone https://github.com/iamrh1819/local_manifest.git --depth 1 -b baikalos-13.0 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u git://github.com/alphadroid-project/manifest -b alpha-13 --git-lfs -g default,-mips,-darwin,-notdefault
+git clone https://github.com/iamrh1819/local_manifest.git --depth 1 -b AlphaDroid-Project-alpha-13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_a10-userdebug
+lunch lineage_samsung_a10-userdebug_vanilla
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES= true 
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
