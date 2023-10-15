@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build bliss
 source build/envsetup.sh
-lunch aicp_mojito-userdebug
+lunch bliss_mojito-userdebug
 export TZ=Asia/Jakarta #put before last build command
 export KBUILD_BUILD_USER=dioparminggo
 export KBUILD_BUILD_HOST=bliss
