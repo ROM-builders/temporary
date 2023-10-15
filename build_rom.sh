@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 bash ./lineage_build_unified/apply_patches.sh ./lineage_patches_unified/${1}
-lunch lineage_gsi-userdebug
+lunch  lineage_gsi_arm64_vN-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
