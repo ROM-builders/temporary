@@ -1,6 +1,6 @@
 # sync rom
-repo init -u https://gitlab.com/Project-Madhav/nad/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/clyfly/local_manifest.git --depth 1 -b master .repo/local_manifests
+$ repo init -u https://github.com/AICP/platform_manifest.git -b t13.0 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/clyfly/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
