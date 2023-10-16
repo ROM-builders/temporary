@@ -1,7 +1,4 @@
 # sync rom
-rm -rf external/chromium-webview/prebuilt/*
-rm -rf .repo/projects/external/chromium-webview/prebuilt/*.git
-rm -rf .repo/project-objects/LineageOS/android_external_chromium-webview_prebuilt_*.git
 repo init --depth=1 --no-repo-verify -u git@github.com:RisingTechOSS/android.git -b thirteen -g default,-mips,-darwin,-notdefault
 git clone https://github.com/YudhoPatrianto/manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
