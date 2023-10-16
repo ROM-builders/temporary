@@ -1,12 +1,12 @@
 # sync rom
 repo init -u https://github.com/CherishOS/android_manifest.git -b tiramisu
-git clone https://github.com/YudhoPatrianto/local_manifest.git --depth 1 -b master .repo/local_manifests
+git clone https://github.com/YudhoPatrianto/local_manifest -b main .repo/local_manifests
 repo sync -c -j$(nproc --all) --no-clone-bundle
 
 # build rom
-source build/envsetup.sh
-lunch selene_cherish-userdebug
 export TZ=Asia/Dhaka #put before last build command
+. build/envsetup.sh
+lunch cherish_selene-userdebug
 make bacon -j$(nproc --all)
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
