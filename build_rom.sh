@@ -6,7 +6,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --optimiz
 
 # build rom
 . build/envsetup.sh
-lunch blaze_a10-user
+lunch blaze_a10-userdebug
 export TZ=Asia/Dhaka
 make bacon
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
