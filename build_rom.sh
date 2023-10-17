@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/DerpFest-AOSP/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/RT1649/local_manifest-X01BD.git --depth 1 .repo/local_manifests
+git clone https://github.com/RT1648/local_manifest-X01BD.git --depth 1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
