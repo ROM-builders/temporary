@@ -9,8 +9,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --optimiz
 lunch lineage_a10-userdebug_vanilla
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
-export BUILD_BROKEN_DUP_RULES=true 
-export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
+export BUILD_BROKEN_DUP_RULES=true
 export TZ=Asia/Dhaka
 make bacon
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
