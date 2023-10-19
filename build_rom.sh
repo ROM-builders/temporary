@@ -1,6 +1,6 @@
 # sync rom
 repo init -u https://github.com/CherishOS/android_manifest.git -b tiramisu
-git clone https://github.com/Assunzain/local_manifest -b chiper .repo/local_manifests
+git clone https://github.com/Assunzain/local_manifest -b cherish .repo/local_manifests
 repo sync -c -j$(nproc --all) --no-clone-bundle
 
 # build rom
