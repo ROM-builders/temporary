@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch evolution_X01BD-user
+lunch evolution_X01BD-userdebug
 export TZ=Asia/Dhaka ##put before last build command
 mka evolution
 
