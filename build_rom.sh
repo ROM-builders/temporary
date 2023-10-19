@@ -6,11 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_whyred-userdebug
-export TZ=Asia/Jakarta
-export BUILD_USERNAME=nueee
-export BUILD_HOSTNAME=uwuntu
-export KBUILD_BUILD_USER=$BUILD_USERNAME
-export KBUILD_BUILD_HOST=$BUILD_HOSTNAME #put before last build command
+export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
