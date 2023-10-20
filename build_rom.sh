@@ -6,6 +6,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch mido_aosp_userdebug
+export BUILD_BROKEN_DUP_RULES=true
+export BUILD_BROKEN_PHONY_TARGETS=true
+export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
+export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
