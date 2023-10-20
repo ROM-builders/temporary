@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/AlphaDroid-Project/manifest.git --git-lfs -b alpha-13 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/alphadroid-project/manifest.git --git-lfs -b alpha-13 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Prashant-1695/local_manifest.git --depth 1 -b proton .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
