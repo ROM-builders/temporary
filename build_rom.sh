@@ -4,7 +4,7 @@ git clone https://github.com/xyz-sundram/local_manifests.git --depth 1 -b topaz 
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom 
-source build/envsetup.sh 
+source build/envsetup.sh  
 lunch aospa_tulip-userdebug
 export TZ=Asia/Dhaka #put before last build command
 ./rom-build.sh tulip -t userdebug
