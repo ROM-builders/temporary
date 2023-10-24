@@ -4,7 +4,7 @@ git clone https://github.com/Ritikk11/local_manifest.git --depth 1 -b main .repo
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+source . build/envsetup.sh
 lunch superior_lavender-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export TZ=Asia/Dhaka #put before last build command
