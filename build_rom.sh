@@ -8,10 +8,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 source build/envsetup.sh
 
-lunch evolution_Mi8937-user
-export WITH_GMS=true
-export TARGET_KERNEL_CLANG_VERSION=zyc_clang
-export TARGET_KERNEL_CLANG_PATH=$(pwd)/prebuilts/clang/host/linux-x86/${TARGET_KERNEL_CLANG_VERSION}
+lunch evolution_santoni-user
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_USERNAME=OmanshKrishn
