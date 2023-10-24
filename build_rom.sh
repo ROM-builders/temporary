@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch arrow_monet-userdebug
+lunch arrow_monet-eng
 export RELAX_USES_LIBRARY_CHECK=true
 export TZ=Asia/Dhaka #put before last build command
 make bacon
