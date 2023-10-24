@@ -12,6 +12,6 @@ mka systemimage
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 mkdir out/target/product/gsi
 cp out/target/product/*/system.img . 
-zip out/target/product/gsi/DerpFest-13-$(date +%Y%m%d)-SoundDrillGSI.zip system.img  
+zip out/target/product/gsi/BakaFest-13-demo-$(date +%Y%m%d)-OkBuddyGSI.zip system.img  
 
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
