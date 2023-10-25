@@ -5,7 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch blaze_vayu-userdebug
+lunch blaze_vayu-user
+export WITH_GAPPS=true
 export TZ=Asia/Manila
 make bacon
 
