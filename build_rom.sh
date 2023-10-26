@@ -9,6 +9,7 @@ lunch lineage_A001D-userdebug
 export TZ=America/Sao_Paulo
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
+OWS=true
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
