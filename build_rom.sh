@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-17.0 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-18.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/raidenkkj/local_manifest.git --depth 1 -b a001d-lineageos .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -9,7 +9,6 @@ lunch lineage_A001D-userdebug
 export TZ=America/Sao_Paulo
 export ALLOW_MISSING_DEPENDENCIES=true
 export SELINUX_IGNORE_NEVERALLOWS=true
-OWS=true
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
