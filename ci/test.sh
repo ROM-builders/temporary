@@ -2,6 +2,14 @@
 
 set -e
 
+if [[ -z $CIRRUS_WORKING_DIR ]]; then
+	echo running locally
+	export LOCAL=1
+	export CIRRUS_WORKING_DIR=.
+	export BRANCH=$1
+	export CIRRUS_COMMIT_MESSAGE=$2
+fi
+
 ccheck(){
 	check=$(grep "$1" $CIRRUS_WORKING_DIR/build_rom.sh | wc -l)
 	if [[ $check -gt 0 ]]; then echo "$2"; exit 1; fi
@@ -108,24 +116,27 @@ if [[ $BRANCH == *pull/* ]]; then
 	if [[ $rom_name != 'Corvus-R-12-test' ]]; then
 		if [[ $lunch_check -gt 1 ]]; then echo Please build for one device at a time.; exit 1; fi
 	fi
-	cd /tmp/cirrus-ci-build
-	PR_NUM=$(echo $BRANCH|awk -F '/' '{print $2}')
-	AUTHOR=$(gh pr view $PR_NUM|grep author| awk '{print $2}')
 
-	for id in 66806243 25178653 100027207 77049889 37245252 87101173 91236805 56505303 77262770 60956846 1133897 92011891 80823029 58514579 102499518 73420351 69832543
-	do
-		logins+=" $(gh api -H "Accept: application/vnd.github+json" /user/$id -q '.login')"
-	done
+	if [[ $LOCAL != 1 ]] ; then
+		cd /tmp/cirrus-ci-build
+		PR_NUM=$(echo $BRANCH|awk -F '/' '{print $2}')
+		AUTHOR=$(gh pr view $PR_NUM|grep author| awk '{print $2}')
 
-	for value in $logins
-	do
-		if [[ $AUTHOR == $value ]]; then echo Please check \#bad_people instruction in telegram group.; exit 1; fi
-	done
+		for id in 66806243 25178653 100027207 77049889 37245252 87101173 91236805 56505303 77262770 60956846 1133897 92011891 80823029 58514579 102499518 73420351 69832543
+		do
+			logins+=" $(gh api -H "Accept: application/vnd.github+json" /user/$id -q '.login')"
+		done
 
-	joindate=$(date -d $(curl -s https://api.github.com/users/$AUTHOR | grep created_at | cut -d '"' -f4) +%s)
-	nowdate=$(date +%s)
-	datediff=$(expr $nowdate - $joindate)
-	if [[ $datediff -lt 2592000 ]]; then echo Please don\'t try to run build with your new account. Use your original account for doing PR.; exit 1; fi
+		for value in $logins
+		do
+			if [[ $AUTHOR == $value ]]; then echo Please check \#bad_people instruction in telegram group.; exit 1; fi
+		done
+
+		joindate=$(date -d $(curl -s https://api.github.com/users/$AUTHOR | grep created_at | cut -d '"' -f4) +%s)
+		nowdate=$(date +%s)
+		datediff=$(expr $nowdate - $joindate)
+		if [[ $datediff -lt 2592000 ]]; then echo Please don\'t try to run build with your new account. Use your original account for doing PR.; exit 1; fi
+	fi
 fi
 
 if [[ $CIRRUS_USER_PERMISSION == write ]]; then
@@ -135,5 +146,7 @@ if [[ $CIRRUS_USER_PERMISSION == write ]]; then
 fi
 
 echo Test passed
-echo "rom_name=$rom_name" >> $CIRRUS_ENV
-echo "device=$device" >> $CIRRUS_ENV
+if [[ $LOCAL != 1 ]] ; then
+	echo "rom_name=$rom_name" >> $CIRRUS_ENV
+	echo "device=$device" >> $CIRRUS_ENV
+fi
