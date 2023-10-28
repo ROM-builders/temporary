@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/sounddrill31/local_manifests.git --depth 1 -b CherishOS-tiramisu-oxygen .repo/local_manifests
+git clone https://github.com/sounddrill31/local_manifests.git --depth 1 -b CherishOS-tiramisu-oxygen2 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom 
