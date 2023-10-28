@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 . build/envsetup.sh
-lunch derp_miatoll-userdebug
+lunch derp_miatoll-eng
 export TZ=Asia/Kolkata #put before last build command
 mka derp
 
