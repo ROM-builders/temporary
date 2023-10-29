@@ -4,7 +4,7 @@ git clone https://github.com/bdjmfoe/local_manifests --depth 1 -b evo .repo/loca
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch evolution_RMX1801-userdebug
 export TZ=Asia/Singapore #put before last build command
 mka evolution
