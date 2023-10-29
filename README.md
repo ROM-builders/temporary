@@ -1,4 +1,4 @@
-DerpFest custom ROM for Mi Max 2 
+cherishOS custom ROM for Mi Max 2 
 ==============================
 
 DerpFest [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Mi Max 2(oxygen)
