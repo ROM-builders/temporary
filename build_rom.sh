@@ -7,6 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch aospa_monet-eng
 export TZ=Asia/Dhaka #put before last build command
+# 1
 ./rom-build.sh monet -t eng
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
