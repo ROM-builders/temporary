@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch evolution_mojito-userdebug
+lunch evolution_mojito-eng
 # export BUILD_WITH_GAPPS=true
 export TZ=Asia/Dhaka #put before last build command
 mka evolution
