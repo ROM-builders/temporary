@@ -1,4 +1,4 @@
-BakaFest custom ROM for Redmi Note 4  
+BakaFest custom ROM for new vndk phones 
 ==============================
 
 AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note 4(code name mido)
