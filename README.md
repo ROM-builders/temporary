@@ -10,7 +10,7 @@ CherishOS [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for 
 
 Distributed [here](https://t.me/rn4downloads/4885)
 
-Estimated installation no.: It's over 9000! 
+Estimated installation no.: It's over 9000!
 
 How to use this repository
 -------------------
