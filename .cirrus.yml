@@ -69,3 +69,4 @@ task:
         memory: 4G
   test_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/test.sh | bash
   post_build_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/post_build.sh | bash
+
