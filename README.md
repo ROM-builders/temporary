@@ -1,7 +1,7 @@
 BakaFest custom ROM for new vndk phones 
 ==============================
 
-AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note 4(code name mido)
+AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for GSI(treble)
 
 [Features as video](https://www.youtube.com/watch?v=KuQ9jIVmOXY) or [Features as text](https://forum.xda-developers.com/t/rom-11-0-aospextended-rom-v8-0-unofficial-surya.4202905/)
 
