@@ -7,7 +7,7 @@ env:
 task:
   name: Test
   skip: $CIRRUS_BRANCH == 'main'
-  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
+  only_if: $CIRRUS_REPO_OWNER == 'tamanegi-mogumogu'
   timeout_in: 2m
   persistent_worker:
     labels:
@@ -19,13 +19,13 @@ task:
         memory: 4G
   env_script: env
   show_script: cat $CIRRUS_WORKING_DIR/build_rom.sh
-  notify_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/notify.sh | bash
-  test_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/test.sh | bash
+  notify_script: curl -s https://raw.githubusercontent.com/tamanegi-mogumogu/temporary/main/ci/notify.sh | bash
+  test_script: curl -s https://raw.githubusercontent.com/tamanegi-mogumogu/temporary/main/ci/test.sh | bash
 
 task:
   name: Build
   skip: $CIRRUS_BRANCH == 'main'
-  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
+  only_if: $CIRRUS_REPO_OWNER == 'tamanegi-mogumogu'
   depends_on: Test
   timeout_in: 4h
   persistent_worker:
@@ -41,18 +41,18 @@ task:
           - /home/cirrus/ccache:/home/cirrus/ccache
           - /home/cirrus/.config:/home/cirrus/.config
   show_script: cat $CIRRUS_WORKING_DIR/build_rom.sh
-  test_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/test.sh | bash
-  sync_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/sync.sh | bash
-  tsync_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/tsync.sh | bash
-  build_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/build.sh | bash
-  ccache_stats_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/ccache_stats.sh | bash
-  upload_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/upload.sh | bash
-  remove_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/remove.sh | bash
+  test_script: curl -s https://raw.githubusercontent.com/tamanegi-mogumogu/temporary/main/ci/test.sh | bash
+  sync_script: curl -s https://raw.githubusercontent.com/tamanegi-mogumogu/temporary/main/ci/sync.sh | bash
+  tsync_script: curl -s https://raw.githubusercontent.com/tamanegi-mogumogu/temporary/main/ci/tsync.sh | bash
+  build_script: curl -s https://raw.githubusercontent.com/tamanegi-mogumogu/temporary/main/ci/build.sh | bash
+  ccache_stats_script: curl -s https://raw.githubusercontent.com/tamanegi-mogumogu/temporary/main/ci/ccache_stats.sh | bash
+  upload_script: curl -s https://raw.githubusercontent.com/tamanegi-mogumogu/temporary/main/ci/upload.sh | bash
+  remove_script: curl -s https://raw.githubusercontent.com/tamanegi-mogumogu/temporary/main/ci/remove.sh | bash
 
 task:
   name: Post Build
   skip: $CIRRUS_BRANCH == 'main'
-  only_if: $CIRRUS_REPO_OWNER == 'ROM-builders'
+  only_if: $CIRRUS_REPO_OWNER == 'tamanegi-mogumogu'
   skip_notifications: true
   depends_on: Build
   timeout_in: 2m
@@ -64,6 +64,6 @@ task:
         image: apon77/aosp:cirrus
         cpu: 2
         memory: 4G
-  test_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/test.sh | bash
-  post_build_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/post_build.sh | bash
+  test_script: curl -s https://raw.githubusercontent.com/tamanegi-mogumogu/temporary/main/ci/test.sh | bash
+  post_build_script: curl -s https://raw.githubusercontent.com/tamanegi-mogumogu/temporary/main/ci/post_build.sh | bash
 
