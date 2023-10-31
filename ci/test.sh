@@ -103,7 +103,6 @@ if [[ $device == 'copy' ]]; then echo "Please use lunch or brunch command with d
 if [[ $device == 'mi439' ]]; then echo "Please use device codename Mi439 also create your dt with this device code name." ; exit 1; fi
 
 if [[ $BRANCH == *pull/* ]]; then
-	if [[ $CIRRUS_COMMIT_MESSAGE != $device-$rom_name-* ]]; then echo Please use proper PR label described in telegram group.; exit 1; fi
 	lunch_check=$(grep "unch" $CIRRUS_WORKING_DIR/build_rom.sh | grep -v 'rclone' | wc -l)
 	if [[ $rom_name != 'Corvus-R-12-test' ]]; then
 		if [[ $lunch_check -gt 1 ]]; then echo Please build for one device at a time.; exit 1; fi
