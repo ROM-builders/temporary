@@ -1,7 +1,7 @@
 CherishOS custom ROM for Mi Max 2 
 ==============================
 
-CherishOS [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Mi Max 2(oxygen)
+CherishOS [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Mi Max 2(codenamed oxygen)
  
 
 [Features as video](https://www.youtube.com/watch?v=KuQ9jIVmOXY) or [Features as text](https://forum.xda-developers.com/t/rom-11-0-aospextended-rom-v8-0-unofficial-surya.4202905/)
