@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-17.1 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Hassan-kareem/local_manifests.git --depth 1 -b LOS-17 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/PixelExperience/manifest -b thirteen-plus -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Hassan-kareem/local_manifests.git --depth 1 -b thirteen .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_a5ultexx-userdebug
+lunch aosp_mido-userdebug
 export TZ=Asia/Kolkata #put before last build command
 mka bacon
 
