@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest 
 git clone https://github.com/bdjmfoe/local_manifests --depth 1 -b evox .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build rom 
 . build/envsetup.sh
 lunch evolution_RMX1801-userdebug
 export TZ=Asia/Singapore #put before last build command
