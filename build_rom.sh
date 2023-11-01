@@ -4,7 +4,7 @@ git clone https://github.com/iamrh420/local_manifests.git --depth 1 -b main .rep
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch blaze_a10-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
