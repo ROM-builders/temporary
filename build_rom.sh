@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/alphadroid-project/manifest -b alpha-13 --git-lfs -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/ProjectBlaze/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/iamrh420/local_manifests.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
-lunch lineage_a10-userdebug
+source build/envsetup.sh
+lunch blaze_a10-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
 
