@@ -23,7 +23,7 @@ jobs:
     - name: Commit & Push changes
       uses: actions-js/push@v1.4
       with:
-        branch: "derp"
+        branch: "derp-14"
         github_token: ${{ secrets.GH_TOKEN }}
         author_email: 'israfilkhan494@gmail.com'
         author_name: 'ij-israfil'
