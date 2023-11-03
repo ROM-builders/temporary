@@ -10,6 +10,7 @@ grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laure
 grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
 grep _SCW_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=SCW_sprout
 grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
+grep _selene $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=selene
 your_telegram_id=@ROM_builders_junk
 show=$(cat $CIRRUS_WORKING_DIR/build_rom.sh)
 curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" -d "text=<code>$device-$rom_name</code> Started
