@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch AICP_fleur-userdebug 
+lunch aicp_fleur-userdebug 
 export TZ=Asia/Dhaka #put before last build command
 brunch
 
