@@ -1,10 +1,10 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest.git -b pyro-next -g default,-mips,-darwin,-notdefault
-git clone https://github.com/YudhoPatrianto/local_manifests.git --depth 1 -b main .repo/local_manifests
+git clone https://github.com/YudhoPatrianto/local_manifests -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch spark_selene-userdebug
 export BUILD_USERNAME=YudhoPatrianto 
 export BUILD_HOSTNAME=YudhoPRJKT
