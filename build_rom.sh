@@ -4,6 +4,10 @@ git clone https://github.com/YudhoPatrianto/local_manifests -b 13 .repo/local_ma
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
+
+# Make Permissions append_certs.py
+chmod 777 device/xiaomi/selene/dtbo/append_certs.py
+
 . build/envsetup.sh
 lunch spark_selene-userdebug
 export BUILD_USERNAME=YudhoPatrianto 
