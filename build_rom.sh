@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/AOSPA/manifest -b uvi
 git clone https://github.com/matheucomth/local_manifest.git --depth 1 -b evo .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build roms
 . build/envsetup.sh
 lunch aospa_onclite-eng
 export SELINUX_IGNORE_NEVERALLOWS=true
