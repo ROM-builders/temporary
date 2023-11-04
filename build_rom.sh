@@ -8,6 +8,10 @@ source build/envsetup.sh
 lunch derp_A001D-userdebug
 export TZ=America/Sao_Paulo
 export ALLOW_MISSING_DEPENDENCIES=true
+export KBUILD_BUILD_USER=jv007xp
+export KBUILD_BUILD_HOST=jv007xp
+export BUILD_USERNAME=jv007xp
+export BUILD_HOSTNAME=jv007xp
 mka derp
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
