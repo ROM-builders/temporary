@@ -21,6 +21,7 @@ ccheck 'tee ' 'Please dont use tee inside script, its not needed at all..'
 ccheck ' clean' 'Please dont use make clean. Server does make installclean by default, which is enough for most of the cases.'
 ccheck ' clobber' 'Please dont use make clobber. Server does make installclean by default, which is enough for most of the cases.'
 ccheck ' installclean' 'Please dont use make installclean. Server does make installclean by default, which is enough for most of the cases.'
+ccheck 'cmka ' 'Please dont use cmka. Server does make installclean by default, which is enough for most of the cases.'
 ccheck 'patch ' 'Please dont use patch inside script, use local manifest for this purpose.'
 ccheck ' && ' 'Please dont use && inside script, put that command in next line for this purpose.'
 ccheck ' & ' 'Please dont use & inside script.'
@@ -76,13 +77,13 @@ rclone_string="rclone copy out/target/product/\$(grep unch \$CIRRUS_WORKING_DIR/
 if [[ $rclone_check != *$rclone_string* ]]; then echo Please follow rclone copy line of main branch.; exit 1; fi
 
 sync_check=$(grep 'repo sync' $CIRRUS_WORKING_DIR/build_rom.sh)
-sync_string="repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8"
+sync_string="repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j"
 if [[ $sync_check != *$sync_string* ]]; then echo Please follow repo sync line of main branch.; exit 1; fi
 
 rom_name=$(grep 'repo init' $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d / -f 4)
 branch_name=$(grep 'repo init' $CIRRUS_WORKING_DIR/build_rom.sh | awk -F "-b " '{print $2}' | awk '{print $1}')
 rom_name=$rom_name-$branch_name
-supported_roms=' AICP-t13.0 AICP-s12.1 alphadroid-project-alpha-13 AOSPA-topaz ArrowOS-arrow-13.1 bananadroid-13 BlissRoms-arcadia-next BlissRoms-typhoon BootleggersROM-tirimbino CarbonROM-cr-9.0 CherishOS-tiramisu CipherOS-thirteen crdroidandroid-11.0 crdroidandroid-12.1 crdroidandroid-13.0 DerpFest-12-12.1 DerpFest-AOSP-13 Evolution-X-tiramisu Fusion-OS-twelve Havoc-OS-twelve LineageOS-cm-14.1 LineageOS-lineage-15.1 LineageOS-lineage-16.0 LineageOS-lineage-17.1 LineageOS-lineage-18.1 LineageOS-lineage-19.1 LineageOS-lineage-20.0 Octavi-Staging-thirteen P-404-tokui PixelExperience-twelve PixelExperience-twelve-plus PixelExperience-thirteen PixelExperience-thirteen-plus PixelExtended-thunder PixelOS-AOSP-thirteen PixysOS-twelve PixysOS-thirteen Project-Awaken-triton ProjectBlaze-13 Project-Xtended-xt RisingTechOSS-thirteen ResurrectionRemix-Q ShapeShiftOS-android_13 Spark-Rom-pyro SuperiorOS-twelvedotone SuperiorOS-thirteen StagOS-t13 syberia-project-13.0 VoltageOS-13 xdroid-oss-thirteen yaap-thirteen '
+supported_roms=' AICP-t13.0 alphadroid-project-alpha-13 AOSPA-uvite ArrowOS-arrow-13.1 bananadroid-13 BlissRoms-typhoon BootleggersROM-tirimbino CarbonROM-cr-9.0 CherishOS-tiramisu CipherOS-thirteen crdroidandroid-11.0 crdroidandroid-12.1 crdroidandroid-13.0 DerpFest-AOSP-14 Evolution-X-udc Havoc-OS-thirteen LineageOS-cm-14.1 LineageOS-lineage-15.1 LineageOS-lineage-16.0 LineageOS-lineage-17.1 LineageOS-lineage-18.1 LineageOS-lineage-19.1 LineageOS-lineage-20.0 Octavi-Staging-thirteen P-404-tokui PixelExperience-thirteen PixelExperience-thirteen-plus PixelExtended-thunder PixelOS-AOSP-thirteen PixysOS-twelve PixysOS-thirteen Project-Awaken-triton ProjectBlaze-13 RisingTechOSS-thirteen ResurrectionRemix-Q Spark-Rom-pyro-next SuperiorOS-thirteen syberia-project-13.0 VoltageOS-13 yaap-thirteen '
 
 if [[ $supported_roms != *" $rom_name "* ]]; then echo Not supported rom or branch.; exit 1; fi
 
@@ -90,6 +91,7 @@ device=$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut
 grep _jasmine_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=jasmine_sprout
 grep _laurel_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=laurel_sprout
 grep _GM8_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=GM8_sprout
+grep _SCW_sprout $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=SCW_sprout
 grep _maple_dsds $CIRRUS_WORKING_DIR/build_rom.sh > /dev/null && device=maple_dsds
 
 if [[ $BRANCH != *pull/* ]]; then 
