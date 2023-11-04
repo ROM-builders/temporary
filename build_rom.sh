@@ -17,5 +17,8 @@ export KBUILD_BUILD_HOST=$BUILD_HOSTNAME
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
+# Send Logs If Error Builds
+curl -T out/error.log https://free.keep.sh
+
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
