@@ -11,5 +11,5 @@ rm -rf $engzip $otazip $awaken $octavi $p404 $cipher
 dlink=$(basename out/target/product/$device/*.zip)
 unzip -P $one -q ~/.config/1.zip -d ~
 file=out/target/product/$device/*.zip
-rsync -vhcP $file -e "ssh -o Compression=no" apon77@frs.sourceforge.net:/home/frs/project/rom-builders/$device/
+rsync -vhcP -e ssh $file apon77@frs.sourceforge.net:/home/frs/project/rom-builders/$device/
 echo "Download link https://sourceforge.net/projects/rom-builders/files/$device/$dlink/download"
