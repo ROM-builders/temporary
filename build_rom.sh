@@ -5,8 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-./device/motorola/targets/scripts/replace_camera_sepolicy.sh
-lunch arrow_amogus-userdebug
+lunch arrow_topaz-userdebug
 export TZ=Asia/Dhaka #put before last build command
 m bacon
 
