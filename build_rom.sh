@@ -1,4 +1,14 @@
 # sync rom
+
+# For webview related errors due to git lfs
+sudo apt install git-lfs
+git lfs install
+rm -rf external/chromium-webview/prebuilt/*
+rm -rf .repo/projects/external/chromium-webview/prebuilt/*.git
+rm -rf .repo/project-objects/LineageOS/android_external_chromium-webview_prebuilt_*.git
+
+
+# Sync
 repo init --depth=1 --no-repo-verify -u https://github.com/RisingTechOSS/android.git -b thirteen -g default,-mips,-darwin,-notdefault
 git clone https://github.com/YudhoPatrianto/local_manifests -b rising .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
