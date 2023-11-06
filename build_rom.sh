@@ -1,5 +1,5 @@
 # sync rom
-repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 13
+repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/KiwiBlock27/local_manifest.git --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
