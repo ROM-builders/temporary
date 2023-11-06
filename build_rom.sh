@@ -1,7 +1,6 @@
 # sync rom
 
 # For webview related errors due to git lfs
-sudo apt install git-lfs
 git lfs install
 rm -rf external/chromium-webview/prebuilt/*
 rm -rf .repo/projects/external/chromium-webview/prebuilt/*.git
