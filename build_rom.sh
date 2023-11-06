@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u git://github.com/Evolution-X/manifest.gi
 git clone https://github.com/alternoegraha/local_manifest --depth 1 -b evolution_fog_14 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom
+# build roms
 source build/envsetup.sh
 lunch evolution_fog-userdebug
 export TZ=Asia/Jakarta #put before last build command
