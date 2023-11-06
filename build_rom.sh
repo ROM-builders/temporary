@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/Colt-Enigma/platform_manifest -b minimal -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u git://github.com/Colt-Enigma/platform_manifest.git -b minimal -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Alfianfach/local_manifest.git --depth 1 -b Colt-fog .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
