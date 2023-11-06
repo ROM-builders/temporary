@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u git://github.com/DerpFest-AOSP/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/wolvfyxmoon-ornery/local_manifest --depth 1 -b crdroid .repo/local_manifests
+git clone https://github.com/MxkulSharma/local_manifest --depth 1 -b crdroid .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
