@@ -4,9 +4,9 @@ git clone https://github.com/Dwyor-tmx/local_manifest.git --depth 1 -b master .r
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch cipher_(fog)-userdebug
-export TZ=Asia/Dhaka #put before last build comman
+export TZ=Asia/Dhaka #put before last build command
 mka bacon -j$(nproc --all)
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
