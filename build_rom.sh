@@ -1,10 +1,10 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u git://github.com/CipherOS/android_manifest.git -b thirteen
+repo init -u https://github.com/CipherOS/android_manifest.git -b thirteen
 git clone https://github.com/blueseaxy/local_manifests -b aosp-fog .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo sync -c --force-sync --optimized
 
 # build rom
-source build/envsetup.sh
+. build/envsetup.sh
 lunch cipher_(fog)-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
