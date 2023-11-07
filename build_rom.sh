@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 ## build rom
 source build/envsetup.sh
-lunch evolution_vayu-userdebug
+lunch evolution_vayu-eng
 # timezone
 export TZ=Asia/Manila
 mka evolution
