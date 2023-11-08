@@ -4,7 +4,7 @@ git clone https://github.com/KiwiBlock27/local_manifest.git --depth 1 -b main .r
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
-source . build/envsetup.sh
+source build/envsetup.sh
 lunch lineage_r5x-userdebug
 export TZ=Asia/Dhaka #put before last build command
 make bacon
