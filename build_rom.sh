@@ -3,7 +3,7 @@
 repo init --depth=1 --no-repo-verify -u https://github.com/Evolution-X/manifest.git -b udc -g default,-mips,-darwin,-notdefault
 git clone https://codeberg.org/omansh-krishn/local_manifest.git --depth 1 -b evolution-x .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
-
+#retry
 # build rom
 
 source build/envsetup.sh
