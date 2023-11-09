@@ -5,10 +5,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-export KBUILD_BUILD_USER=Test
-export KBUILD_BUILD_HOST=Test
-export BUILD_USERNAME=Test
-export BUILD_HOSTNAME=Test
+export KBUILD_BUILD_USER=KiwiBlock97
+export KBUILD_BUILD_HOST=KiwiBlock97
+export BUILD_USERNAME=KiwiBlock97
+export BUILD_HOSTNAME=KiwiBlock97
 export RELAX_USES_LIBRARY_CHECK=true
 export SKIP_ABI_CHECKS=true
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
