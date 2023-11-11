@@ -23,7 +23,7 @@ task:
   env_script: env
   show_script: cat $CIRRUS_WORKING_DIR/build_rom.sh
   notify_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/notify.sh | bash
-  test_script: curl -s https://raw.githubusercontent.com/YZ-Bruh/temporary/main/ci/test.sh | bash
+  test_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/test.sh | bash
 
 task:
   name: Build
