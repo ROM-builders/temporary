@@ -1,16 +1,16 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/crdroidandroid/android.git -b 13.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Shakib-BD/local_manifest.git --depth 1 -b crdroid-13 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/syberia-project/manifest.git -b 13.0 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/Shakib-BD/local_manifest.git --depth 1 -b syberia-13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # ghay cache wen stop f
 source build/envsetup.sh
-lunch lineage_merlinx-userdebug
+lunch syberia_merlinx-userdebug
 export TZ=Asia/Dhaka
 export BUILD_USERNAME=Shakib
-export BUILD_HOSTNAME=Shakib
+export BUILD_HOSTNAME=mi
 export KBUILD_USERNAME=Shakib
-export KBUILD_HOSTNAME=Shakib
+export KBUILD_HOSTNAME=mi
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
