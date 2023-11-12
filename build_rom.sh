@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch evolution_RMX1901-userdebug
+lunch evolution_RMX1901-eng
 export TZ=Asia/Dhaka #put before last build command#
 mka evolution
 
