@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/lightnest57/local_manifest --depth 1 -b cherish13 .repo/local_manifests
+git clone https://github.com/Night-Raids-Reborn/local_manifest --depth 1 -b 13-n .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
