@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/DerpFest-AOSP/manifest.git -b 13 -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/DerpFest-AOSP/manifest.git -b 14 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/Legendleo90/local_manifests.git -b derp .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch derp_beryllium-user
 export BUILD_USERNAME=Akshat
-export BUILD_HOSTNAME=leopubglover
+export BUILD_HOSTNAME=Legendleo90
 export TZ=Asia/Kolkata #put before last build command
 mka derp
 
