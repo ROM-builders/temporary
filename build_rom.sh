@@ -7,7 +7,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch evolution_chef-user
 export TARGET_BOOT_ANIMATION_RES=1080
-export export TARGET_SUPPORTS_QUICK_TAP=true
+export TARGET_SUPPORTS_QUICK_TAP=true
 export TARGET_USES_MINI_GAPPS=true
 export TARGET_ENABLE_BLUR=true
 export TARGET_FACE_UNLOCK_SUPPORTED=true
