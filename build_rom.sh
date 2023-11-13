@@ -11,7 +11,7 @@ export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_DUP_RULES=true
 #export awaken_GAPPS=minimal
 export TZ=Asia/Jakarta #put before last build command
-#make bacon
+#make
 mka derp
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
