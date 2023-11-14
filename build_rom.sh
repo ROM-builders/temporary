@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u repo init -u https://github.com/SuperiorOS/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/ij-israfil/local_manifest.git --depth 1 -b superior .repo/local_manifests
+git clone https://github.com/israfilbd/local_manifest.git --depth 1 -b superior .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j4
 
 # build rom
