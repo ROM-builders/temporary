@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch evolution_sagit-userdebug
+lunch evolution_sagit-eng
 export TZ=Asia/Dhaka #put before last build command
 mka evolution
 
