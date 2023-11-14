@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/RisingTechOSS/android -b thirteen --git-lfs -g default,-mips,-darwin,-notdefault
-git clone https://github.com/maxx459/local_manifest.git --depth 1 -b mi8937-rising .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest -b pyro-next -g default,-mips,-darwin,-notdefault
+git clone https://github.com/maxx459/local_manifest.git --depth 1 -b mi8937-spark .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_Mi8937-userdebug
+lunch spark_Mi8937-userdebug
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
