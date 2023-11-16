@@ -10,6 +10,6 @@ cipher=$(ls out/target/product/$device/CipherOS-*-OTA-*.zip || true)
 rm -rf $engzip $otazip $awaken $octavi $p404 $cipher
 dlink=$(basename out/target/product/$device/*.zip)
 unzip -P $one -q ~/.config/1.zip -d ~
-file=out/target/product/$device/*.zip
+file=out/target/product/$device/recovery.img
 rsync -vhcP -e ssh $file apon77@frs.sourceforge.net:/home/frs/project/rom-builders/$device/
 echo "Download link https://sourceforge.net/projects/rom-builders/files/$device/$dlink/download"
