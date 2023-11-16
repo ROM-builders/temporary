@@ -5,7 +5,7 @@ cd ~/roms/$rom_name
 export CCACHE_DIR=~/ccache/$rom_name/$device
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
-ccache -M 8G
+ccache -M 10G
 ccache -z
 ls device/*/*/vendorsetup.sh | grep -v generic && echo "Please remove vendorsetup.sh file from device tree, use local manifest for cloning and removing repositories." && exit 1 || true
 if [[ " LineageOS-cm-14.1 LineageOS-lineage-15.1 LineageOS-lineage-16.0 " == *"$rom_name"* ]]; then sudo mkdir -p /usr/share/man/man1; sudo apt update; sudo apt install openjdk-8-jdk --no-install-recommends -y; sudo curl -L -o /etc/java-8-openjdk/security/java.security https://raw.githubusercontent.com/Apon77Lab/repo_update/java/java.security; sudo ln -sf /usr/bin/python2 /usr/bin/python; fi
