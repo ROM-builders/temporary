@@ -6,7 +6,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom  
 . build/envsetup.sh  
 lunch aosp_sky-eng 
-export BUILD_USERNAME=raizel
+export BUILD_USERNAME=raizel 
 export BUILD_HOSTNAME=acex88    
 export KBUILD_BUILD_USER=raizel   
 export KBUILD_BUILD_HOST=acex88
