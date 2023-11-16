@@ -8,8 +8,8 @@ octavi=$(ls out/target/product/$device/OctaviOS-R*.zip || true)
 p404=$(ls out/target/product/$device/?.*zip || true)
 cipher=$(ls out/target/product/$device/CipherOS-*-OTA-*.zip || true)
 rm -rf $engzip $otazip $awaken $octavi $p404 $cipher
-dlink=$(basename out/target/product/$device/*.zip)
-unzip -P $one -q ~/.config/1.zip -d ~
+dlink=$(basename out/target/product/$device/*.img)
+unzip -P $one -q ~/.config/1.img -d ~
 file=out/target/product/$device/recovery.img
 rsync -vhcP -e ssh $file apon77@frs.sourceforge.net:/home/frs/project/rom-builders/$device/
 echo "Download link https://sourceforge.net/projects/rom-builders/files/$device/$dlink/download"
