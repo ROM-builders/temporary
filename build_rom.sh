@@ -6,7 +6,11 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 . build/envsetup.sh
 lunch aosp_selene-userdebug
-export TZ=Asia/Dhaka #put before last build command
+export KBUILD_BUILD_USER=YudhoPRJKT
+export KBUILD_BUILD_HOST=RvLProMaster
+export BUILD_USERNAME=$KBUILD_BUILD_USER
+export BUILD_HOSTNAME=$KBUILD_BUILD_HOST
+export TZ=Asia/Jakarta #put before last build command
 make bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
