@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/HorizonDroidLab/manifest.git -b fourteen -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/HorizonDroidLab/manifest.git -b fourteen
 git clone https://github.com/YudhoPatrianto/local_manifests.git --depth 1 -b HorizonDroid .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
