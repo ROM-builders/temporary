@@ -14,4 +14,4 @@ export TZ=Asia/Delhi #put before last build command
 m recoveryimage
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
-rclone copy out/target/product/recovery.img cirrus:$(grep unch recovery.img -P
+rclone copy out/target/product/recovery.img cirrus:recovery.img -P
