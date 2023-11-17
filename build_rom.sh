@@ -6,9 +6,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom Alphadroid
 . build/envsetup.sh  
 lunch Alphadroid_sky-user 
-export BUILD_USERNAME=Duck Yellow
+export BUILD_USERNAME=Duck 
 export BUILD_HOSTNAME=duck
-export KBUILD_BUILD_USER=Duck Yellow   
+export KBUILD_BUILD_USER=Duck 
 export KBUILD_BUILD_HOST=duck
 export TZ=Asia/Delhi #put before last build command
 m bacon
