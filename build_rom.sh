@@ -6,6 +6,22 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 # build rom
 source build/envsetup.sh
 lunch lineage_chef-user
+export TARGET_HAS_UDFPS=false
+export TARGET_ENABLE_BLUR=true
+export TARGET_EXCLUDES_AUDIOFX=true
+export TARGET_FACE_UNLOCK_SUPPORTED=true
+export WITH_GAPPS=false
+export TARGET_INCLUDE_GOOGLE_TELEPHONY=false
+export TARGET_INCLUDE_PIXEL_FRAMEWORK=false
+export TARGET_INCLUDE_GOOGLE_CAMERA=false
+export TARGET_SUPPORTS_GOOGLE_RECORDER=false
+export TARGET_SUPPORTS_QUICK_TAP=true
+export TARGET_INCLUDE_GMAIL=false
+export TARGET_INCLUDE_GOOGLE_MAPS=false
+export TARGET_INCLUDE_MATLOG=false
+export TARGET_DEFAULT_ADB_ENABLED=true
+export ALPHA_BUILD_TYPE=Official
+export ALPHA_MAINTAINER=rushiranpise
 export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
