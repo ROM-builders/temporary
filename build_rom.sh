@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch aosp_vayu-eng
+lunch aosp_vayu-user
 
 # builder variables
 export BUILD_USERNAME=dogpoopy
