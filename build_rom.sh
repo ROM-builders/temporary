@@ -8,7 +8,7 @@ source build/envsetup.sh
 export BUILD_USERNAME=Nikhil
 export BUILD_HOSTNAME=Naruto242
 export TZ=Asia/Dhaka #put before last build command
-./rom-build.sh beryllium -i -t user
+./rom-build.sh beryllium user
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
 rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
