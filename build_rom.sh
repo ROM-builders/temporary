@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-brunch device-mido
+lunch cherish_mido-userdebug
 export TZ=Asia/Udaipur #put before last build command
 m bacon
 
