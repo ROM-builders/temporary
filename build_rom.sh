@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-breakfast X00TD
+brunch X00TD
 export TZ=Europe/Moscow #put before last build command
 mka sign_target_files_apks
 coot
