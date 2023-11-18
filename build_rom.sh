@@ -5,19 +5,19 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch lineage_chef-user
+lunch lineage_chef-userdebug
 export TARGET_HAS_UDFPS=false
 export TARGET_ENABLE_BLUR=true
 export TARGET_EXCLUDES_AUDIOFX=true
 export TARGET_FACE_UNLOCK_SUPPORTED=true
-export WITH_GAPPS=false
-export TARGET_INCLUDE_GOOGLE_TELEPHONY=false
-export TARGET_INCLUDE_PIXEL_FRAMEWORK=false
-export TARGET_INCLUDE_GOOGLE_CAMERA=false
-export TARGET_SUPPORTS_GOOGLE_RECORDER=false
+# export WITH_GAPPS=false
+# export TARGET_INCLUDE_GOOGLE_TELEPHONY=false
+# export TARGET_INCLUDE_PIXEL_FRAMEWORK=false
+# export TARGET_INCLUDE_GOOGLE_CAMERA=false
+# export TARGET_SUPPORTS_GOOGLE_RECORDER=false
 export TARGET_SUPPORTS_QUICK_TAP=true
-export TARGET_INCLUDE_GMAIL=false
-export TARGET_INCLUDE_GOOGLE_MAPS=false
+# export TARGET_INCLUDE_GMAIL=false
+# export TARGET_INCLUDE_GOOGLE_MAPS=false
 export TARGET_INCLUDE_MATLOG=false
 export TARGET_DEFAULT_ADB_ENABLED=true
 export ALPHA_BUILD_TYPE=Official
@@ -26,5 +26,7 @@ export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
-rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
-#10
+# rclone copy out/target/product/$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1)/*.zip cirrus:$(grep unch $CIRRUS_WORKING_DIR/build_rom.sh -m 1 | cut -d ' ' -f 2 | cut -d _ -f 2 | cut -d - -f 1) -P
+rclone copy out/target/product/chef/*.zip cirrus:chef/alphadroid13 -P
+rclone copy out/target/product/chef/boot.img cirrus:chef/alphadroid13 -P
+#11
