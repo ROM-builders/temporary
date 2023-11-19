@@ -5,9 +5,9 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch banana_lavender-userdebug
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/jakarta #put before last build command
 m banana
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
