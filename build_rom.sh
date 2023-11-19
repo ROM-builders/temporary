@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-14.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/dogpoopy/android_build_manifest.git --depth 1 -b arrow-14.0 .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/ArrowOS/android_manifest.git -b arrow-13.1 -g default,-mips,-darwin,-notdefault
+git clone https://github.com/dogpoopy/android_build_manifest.git --depth 1 -b arrow-13.1 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch arrow_vayu-eng
+lunch arrow_vayu-userdebug
 export TZ=Asia/Manila #put before last build command
 m bacon
 
