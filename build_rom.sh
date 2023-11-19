@@ -1,6 +1,6 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs -g default,-mips,-darwin,-notdefault
-git clone https://github.com/Shakib-BD/local_manifest --depth 1 -b LineageOS-20.0 .repo/local_manifests
+git clone https://github.com/MT6789-BrokenDev/local_manifests --depth 1 -b main .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
