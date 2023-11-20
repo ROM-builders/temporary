@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 chmod 777 device/xiaomi/selene/dtbo/append_certs.py
-. build/envsetup.sh
+source build/envsetup.sh
 lunch spark_selene-userdebug
 export BUILD_USERNAME=YudhoPatrianto 
 export BUILD_HOSTNAME=YudhoPRJKT
