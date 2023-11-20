@@ -11,7 +11,7 @@ export BUILD_USERNAME=YudhoPatrianto
 export BUILD_HOSTNAME=YudhoPRJKT
 export KBUILD_BUILD_USER=$BUILD_USERNAME
 export KBUILD_BUILD_HOST=$BUILD_HOSTNAME
-export TZ=Asia/Jakarta #put before last build command
+export TZ=Asia/Dhaka #put before last build command
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
