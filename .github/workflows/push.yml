@@ -25,7 +25,7 @@ jobs:
       with:
         branch: "crdroid-13"
         github_token: ${{ secrets.GH_TOKEN }}
-        author_email: 'israfilbd0236@gmail.com'
+        author_email: 'israfilbd0235@gmail.com'
         author_name: 'Israfilbd'
         message: 'Builder: Trigger Build'
         
