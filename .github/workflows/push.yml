@@ -1,0 +1,31 @@
+name: Commit push
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  build:
+    if: github.event.repository.owner.id == github.event.sender.id
+    runs-on: ubuntu-20.04
+    permissions:
+      contents: write
+    steps:
+    - name: Check Out
+      uses: actions/checkout@v3.6.0
+    - name: Display Run Parameters
+      run: |
+        rm trigger.txt
+        echo "#!/bin/bash" >> trigger.txt
+        echo "export RANDOM=${RANDOM}" >> trigger.txt
+        echo  "::endgroup::"
+        cat trigger.txt
+
+    - name: Commit & Push changes
+      uses: actions-js/push@v1.4
+      with:
+        branch: "crdroid-13"
+        github_token: ${{ secrets.GH_TOKEN }}
+        author_email: 'israfilkhan494@gmail.com'
+        author_name: 'Ij-Israfil'
+        message: 'Builder: Trigger Build'
+        
