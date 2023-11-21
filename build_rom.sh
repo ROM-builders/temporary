@@ -13,7 +13,7 @@ croot
     $OUT/obj/PACKAGING/target_files_intermediates/*-target_files-*.zip \
     signed-target_files.zip
 
-./build/tools/releasetools/ota_from_target_files -k NAMAFOLDERCERTS/releasekey \
+./build/tools/releasetools/ota_from_target_files -k android-certs/releasekey \
     --block --backup=true \
     signed-target_files.zip \
     signed-ota_update.zip
