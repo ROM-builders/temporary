@@ -1,17 +1,17 @@
 # sync rom
 repo init --depth=1 --no-repo-verify -u https://github.com/Spark-Rom/manifest.git -b pyro-next -g default,-mips,-darwin,-notdefault
-git clone https://github.com/YudhoPatrianto/local_manifests -b 13 .repo/local_manifests
+git clone https://github.com/YudhoPatrianto/local_manifests.git --depth 1 -b 13 .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 chmod 777 device/xiaomi/selene/dtbo/append_certs.py
-source build/envsetup.sh
+. build/envsetup.sh
 lunch spark_selene-userdebug
 export BUILD_USERNAME=YudhoPatrianto 
 export BUILD_HOSTNAME=YudhoPRJKT
 export KBUILD_BUILD_USER=$BUILD_USERNAME
 export KBUILD_BUILD_HOST=$BUILD_HOSTNAME
-export TZ=Asia/Dhaka #put before last build command
+export TZ=Asia/Dhaka
 mka bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
