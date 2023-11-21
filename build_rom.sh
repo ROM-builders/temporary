@@ -9,6 +9,9 @@ lunch superior_lavender-userdebug
 export ALLOW_MISSING_DEPENDENCIES=true
 export BUILD_BROKEN_USES_BUILD_COPY_HEADERS=true
 export BUILD_BROKEN_DUP_RULES=true
+export SKIP_ABI_CHECKS=true
+export BUILD_USERNAME=Ritikk11
+export BUILD_HOSTNAME=superior-Ritik
 #export awaken_GAPPS=minimal
 export TZ=Asia/Jakarta #put before last build command
 #make
