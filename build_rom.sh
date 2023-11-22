@@ -9,7 +9,6 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 source build/envsetup.sh
 lunch aosp_santoni-user
 
-export BUILD_SIGNATURE_KEYS=release-keys
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
 export ALLOW_MISSING_DEPENDENCIES=true
 export CUSTOM_BUILD_TYPE=UNOFFICIAL-OmanshKrishn
