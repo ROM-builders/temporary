@@ -1,5 +1,6 @@
 # sync rom
 repo init -u https://github.com/SuperiorOS/manifest.git -b thirteen-aosp-qp
+git clone https://github.com/belugaA330/temporary.git --depth 1 -b master.repo/local_manifest
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
