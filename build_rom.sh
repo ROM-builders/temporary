@@ -1,12 +1,19 @@
 # sync rom
 repo init -u https://github.com/SuperiorOS/manifest.git -b thirteen-aosp-qp
-git clone https://github.com/belugaA330/temporary.git --depth 1 -b master.repo/local_manifest
+git clone https://github.com/belugaA330/local_manifest.git --depth 1 -b ysl.repo/local_manifest
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
 . build/envsetup.sh
 lunch superior_ysl-userdebug
 m bacon -j$(nproc --all)
+
+
+export KBUILD_BUILD_USER=beluga
+export KBUILD_BUILD_HOST=beluga330
+export BUILD_USERNAME=beluga
+export BUILD_HOSTNAME=beluga330
+
 
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
