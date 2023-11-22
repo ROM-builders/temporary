@@ -4,7 +4,7 @@ git clone https://github.com/acex88/local_manifest.git --depth 1 -b crdroid-merl
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8  
    
 # build rom 
-source build/envsetup.sh 
+source build/envsetup.sh  
 lunch lineage_merlinx-userdebug 
 export BUILD_USERNAME=raizel 
 export BUILD_HOSTNAME=acex88     
