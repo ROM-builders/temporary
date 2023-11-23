@@ -3,7 +3,7 @@ repo init --depth=1 --no-repo-verify -u https://github.com/AOSPA/manifest -b uvi
 git clone https://github.com/anandhan07/local_manifest.git --depth 1 -b AOSPA-uvite .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
-# build rom [17]
+# build rom [18]
 source build/envsetup.sh
 lunch aospa_vince-userdebug
 export TZ=Asia/Dhaka #put before last build command
