@@ -1,9 +1,9 @@
 # sync rom
 repo init -u https://github.com/SuperiorOS/manifest.git -b thirteen
-git clone https://github.com/belugaA330/local_manifest.git --depth 1 -b main.repo/local_manifest
+git clone https://github.com/belugaA330/local_manifest.git --depth 1 -b master.repo/local_manifest
 repo sync -c --force-sync --no-clone-bundle --no-tags
 # build rom
-. build/envsetup.sh
+source build/envsetup.sh
 lunch superior_ysl-userdebug
 export KBUILD_BUILD_USER=beluga
 export KBUILD_BUILD_HOST=beluga330
