@@ -5,7 +5,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
     
 # build rom  
 . build/envsetup.sh 
-lunch lineage_lancelot-userdebug     
+lunch lineage_lancelot-eng   
 export BUILD_USERNAME=raizel
 export BUILD_HOSTNAME=acex88       
 export TARGET_DISABLE_EPPE=true     
