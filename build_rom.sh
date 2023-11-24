@@ -1,7 +1,7 @@
 # sync rom
 repo init -u https://github.com/bananadroid/android_manifest.git -b 13 --git-lfs
 git clone https://github.com/belugaA330/local_manifests.git --depth 1 -b ysl .repo/local_manifests
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune
+repo sync -c --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune
 # build rom
 . build/envsetup.sh
 lunch banana_ysl-userdebug
