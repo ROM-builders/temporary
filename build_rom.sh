@@ -1,11 +1,13 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest.git -b tiramisu -g default,-mips,-darwin,-notdefault
-git clone https://github.com/lovelohar05/Local_Manifests.git --depth 1 -b cherish .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://github.com/SuperiorOS/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
+git clone https://github.com/lovelohar05/Local_Manifests.git --depth 1 -b superior .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch cherish_mido-userdebug
+lunch superior_mido-userdebug
+export BUILD_USERNAME=lovelohar05
+export BUILD_HOSTNAME=cirrus-ci
 export TZ=Asia/Udaipur #put before last build command
 m bacon
 
