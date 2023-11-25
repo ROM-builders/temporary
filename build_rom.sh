@@ -5,10 +5,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 # build rom
 source build/envsetup.sh
-lunch arrow_vayu-userdebug
+lunch arrow_vayu-user
 export TZ=Asia/Manila #put before last build command
-export ARROW_GAPPS=true
-export WITH_GAPPS=true
 m bacon
 
 # upload rom (if you don't need to upload multiple files, then you don't need to edit next line)
