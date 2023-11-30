@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/PixelOS-AOSP/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
-git clone https://github.com/fisuri/local_manifest.git --depth 1 -b aosp .repo/local_manifests
+repo init --depth=1 --no-repo-verify -u https://gitlab.e.foundation/e/os/android.git -b v1-t --git-lfs -g default,-mips,-darwin,-notdefault
+git clone https://github.com/fisuri/local_manifest.git --depth 1 -b eos .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
 # build rom
 source build/envsetup.sh
-lunch aosp_vayu-userdebug
+lunch lineage_vayu-userdebug
 export BUILD_USERNAME=fisuri
 export BUILD_HOSTNAME=linux
 export TZ=Asia/Dhaka #put before last build command
