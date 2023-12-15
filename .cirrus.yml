@@ -19,6 +19,9 @@ task:
         memory: 4G
   env_script: env
   show_script: cat $CIRRUS_WORKING_DIR/build_rom.sh
+               free -h
+               nproc
+               df -h
   notify_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/notify.sh | bash
   test_script: curl -s https://raw.githubusercontent.com/ROM-builders/temporary/main/ci/test.sh | bash
 
