@@ -1,4 +1,4 @@
-AospExtended custom ROM for Redmi Note 4
+AospExtended custom ROM for Redmi Note 4  
 ==============================
 
 AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note 4(code name mido)
@@ -9,7 +9,7 @@ AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) f
 
 Distributed [here](https://t.me/rn4downloads/4885)
 
-Estimated installation no.: 150-500
+Estimated installation no.: It's over 9000!   
 
 How to use this repository
 -------------------
