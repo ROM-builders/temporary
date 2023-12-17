@@ -1,4 +1,4 @@
-AospExtended custom ROM for Redmi Note 4
+BakaFest custom ROM for Redmi Note 4  
 ==============================
 
 AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note 4(code name mido)
@@ -9,10 +9,12 @@ AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) f
 
 Distributed [here](https://t.me/rn4downloads/4885)
 
-Estimated installation no.: 150-500
+Estimated installation no.: It's over 9000!   
 
 How to use this repository
 -------------------
 
 * [Instructions if you want to develop AospExtended custom ROM as a developer](https://github.com/Apon77/mido-AospExtended-Apon77/blob/main/Instructions%20for%20developers.md)
 * [Instructions if you want to use AospExtended custom ROM in your device as a user](https://github.com/Apon77/mido-AospExtended-Apon77/blob/main/Instructions%20for%20users.md)
+
+https://t.me/OkBuddyGSI
