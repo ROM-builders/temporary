@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -e
+
 cd ~/roms/$rom_name
 engzip=$(ls out/target/product/$device/*-eng*.zip | grep -v "retrofit" || true)
 otazip=$(ls out/target/product/$device/*-ota-*.zip | grep -v "hentai" | grep -v "evolution" || true)

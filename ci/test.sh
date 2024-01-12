@@ -7,7 +7,7 @@ ccheck(){
 	if [[ $check -gt 0 ]]; then echo "$2"; exit 1; fi
 }
 
-ccheck 'rm ' 'Please dont use rm inside script, use local manifest for this purpose.'
+ccheck 'rm ' 'Please dont use rm inside script, use local manifest for this purpose .'
 ccheck 'find ' 'Please dont use find inside script, use local manifest for this purpose.'
 ccheck 'unlink ' 'Please dont use unlink inside script, use local manifest for this purpose.'
 ccheck 'shred ' 'Please dont use shred inside script, use local manifest for this purpose.'
