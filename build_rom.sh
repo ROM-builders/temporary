@@ -1,7 +1,7 @@
 # Initialize local repository
 repo init -u https://github.com/PixelExperience-Staging/manifest -b fourteen
 
-# Sync
+https://github.com/PixelExperience-Devices/device_google_coral.git -b thirteen .repo/local_manifests
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
  #put before last build cmnd
 
