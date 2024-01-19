@@ -1,5 +1,5 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/SuperiorOS/manifest.git -b thirteen -g default,-mips,-darwin,-notdefault
+repo init -u https://github.com/LineageOS/android.git -b lineage-20.0 --git-lfs
 git clone https://github.com/Antony-Braiano/local_manifest.git --depth 1 -b ricedroid-spes .repo/local_manifests
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
