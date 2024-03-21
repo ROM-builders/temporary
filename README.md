@@ -1,7 +1,8 @@
-AospExtended custom ROM for Redmi Note 4
+CherishOS custom ROM for Mi Max 2 
 ==============================
 
-AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Redmi Note 4(code name mido)
+CherishOS [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) for Mi Max 2(codenamed oxygen)
+ 
 
 [Features as video](https://www.youtube.com/watch?v=KuQ9jIVmOXY) or [Features as text](https://forum.xda-developers.com/t/rom-11-0-aospextended-rom-v8-0-unofficial-surya.4202905/)
 
@@ -9,7 +10,7 @@ AospExtended [Custom ROM](https://beebom.com/best-custom-roms-android-phones/) f
 
 Distributed [here](https://t.me/rn4downloads/4885)
 
-Estimated installation no.: 150-500
+Estimated installation no.: It's over 9000!
 
 How to use this repository
 -------------------
