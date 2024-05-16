@@ -7,10 +7,10 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 . build/envsetup.sh 
 lunch lineage_lancelot-userdebug   
 export BUILD_USERNAME=andexzu
-export BUILD_HOSTNAME=aspire       
+export BUILD_HOSTNAME=aspirezu       
 export TARGET_DISABLE_EPPE=true     
 export KBUILD_BUILD_USER=andexzu      
-export KBUILD_BUILD_HOST=aspire
+export KBUILD_BUILD_HOST=aspirezu
 export TZ=Asia/Delhi #put before last build command 
 m bacon 
 cat out/target/product/lancelot/lancelot.json
