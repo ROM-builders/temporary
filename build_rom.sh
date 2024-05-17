@@ -1,7 +1,7 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/CherishOS/android_manifest -b udc -g default,-mips,-darwin,-notdefault
-git clone https://github.com/whoarchie/local_manifest --depth 1 -b cherish-a14 .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+repo init -u https://github.com/CherishOS/android_manifest.git -b uqpr2
+git clone https://github.com/whoarchie/local_manifest --depth 1 -b cherish-qpr2 .repo/local_manifests
+repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
 # build rom
 source build/envsetup.sh
