@@ -1,11 +1,11 @@
 # sync rom
-repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-16.0 -g default,-mips,-darwin,-notdefault
-git clone https://github.com/strongreasons/local_manifest.git --depth 1 -b pie .repo/local_manifests
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+repo init --depth=1 -u https://github.com/LineageOS/android.git -b lineage-16.0
+git clone https://github.com/KAGA-KOKO/local_manifest --depth=1 -b main .repo/local_manifests
+repo sync -c -f --no-tags --no-clone-bundle -j8
 
 # build rom
 source build/envsetup.sh
-lunch lineage_X00TD-userdebug
+lunch lineage_OP4BFB-userdebug
 export TZ=Asia/Jakarta #put before last build command
 mka bacon
 
